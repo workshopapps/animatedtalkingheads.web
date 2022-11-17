@@ -1,0 +1,38 @@
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 20.5px;
+    margin-bottom: -5px;
+
+    &-roller {
+        position: absolute;
+        margin-top: -5px;
+        border-radius: 50%;
+        border-width: 2px;
+        border-style: solid;
+        border-color: transparent transparent white white;
+        width: 20px;
+        height: 20px;
+        background: transparent none repeat scroll 0 0;
+        animation: 1500ms linear 0s normal none infinite running rotate-loader;
+        -webkit-animation: 1500ms linear 0s normal none infinite running rotate-loader;
+
+        &.two {
+            border-color: transparent transparent #e25a5a #e25a5a;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    @keyframes rotate-loader {
+        100% {
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+        }
+    }
+}

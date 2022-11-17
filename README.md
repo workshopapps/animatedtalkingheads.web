@@ -1,18 +1,35 @@
-# welcome to the official frontend repo for team-clutch
+# Project Title
 
-This project is powered by React using CRA
+Welcome to team-clutch official Frontend repo.
 
-## Available Scripts
+## Tech Stack
 
-clone the repo
+**Client:** React, Redux, TailwindCSS, SASS, Storybook, ESlint
 
-install the dependencies
+## Installation
 
-### `yarn `
+clone this repo.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+  git clone  https://github.com/workshopapps/animatedtalkingheads.web.git
+  cd
+```
 
+install the project on your locals repo.
 
-### `yarn storybook`
-Lunches the storybook interface in your browser
+```bash
+  yarn
+  cd animatedtalkingheads.web
+```
+
+start the App.
+
+```bash
+  yarn start
+```
+
+Lunch storybook server to view components.
+
+```bash
+  yarn  storybook
+```

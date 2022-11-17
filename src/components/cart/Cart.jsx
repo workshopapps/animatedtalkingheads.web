@@ -9,26 +9,14 @@ function Cart() {
 
   return (
     <div className="cart">
-      <h2>Number of items in Cart: {stateValue.numOfItems}</h2>
-      <button
-        onClick={() => {
-          dispatch(addItem());
-        }}
-        type="submit"
-        className="green"
-      >
-        Add Item to Cart
-      </button>
-      <button
-        disabled={!(stateValue.numOfItems > 0)}
-        onClick={() => {
-          dispatch(deleteItem());
-        }}
-        type="submit"
-        className="red"
-      >
-        Remove Item from Cart
-      </button>
+      <h2>Number of items in Cart: {"4"}</h2>
+      <div className="fade-in w-full bg-red-100 h-40  ">
+        <div className="spinner">
+          <div className="spinner-roller two">
+            <div className="two"></div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
