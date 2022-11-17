@@ -1,12 +1,7 @@
-import Layout from "../../components/UI/Layout";
-
+import Layout from '../../components/UI/Layout';
 
 const About = () => {
-    return (
-        <Layout>
-
-        </Layout>
-    )
-}
+  return <Layout></Layout>;
+};
 
 export default About;

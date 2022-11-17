@@ -1,11 +1,7 @@
-import Layout from "../../../components/UI/Layout";
+import Layout from '../../../components/UI/Layout';
 
 const Characters = () => {
-    return (
-        <Layout>
-
-        </Layout>
-    )
-}
+  return <Layout></Layout>;
+};
 
 export default Characters;

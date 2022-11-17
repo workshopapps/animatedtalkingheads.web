@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import Home from "./pages"
+import Home from './pages';
 import About from './pages/about';
 import Blog from './pages/blogs';
 import Careers from './pages/careers';
@@ -20,14 +20,13 @@ import DownloadPodcast from './pages/podcast/download';
 import Characters from './pages/podcast/characters';
 import Setting from './pages/settings';
 
-
 function App() {
   return (
     <Provider store={store}>
       <Routes>
-        <Route path="/" element={<Home /> } />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/blog" element={<Blog/>} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/community" element={<Communities />} />
         <Route path="/faqs" element={<Faqs />} />
@@ -38,13 +37,12 @@ function App() {
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/settings" element={<Setting />} />
         <Route path="/podcast/upload" element={<UploadPodcast />} />
-        <Route path="/podcast/customize" element={<Customization/>} />
+        <Route path="/podcast/customize" element={<Customization />} />
         <Route path="/podcast/download" element={<DownloadPodcast />} />
-        <Route path="/podcast/characters" element={<Characters />} /> 
+        <Route path="/podcast/characters" element={<Characters />} />
       </Routes>
     </Provider>
   );
 }
 
 export default App;
-
