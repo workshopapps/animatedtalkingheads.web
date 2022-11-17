@@ -8,7 +8,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:prettier/recommended',
+    // 'plugin:prettier/recommended',
     'plugin:storybook/recommended'
   ],
   overrides: [],
@@ -16,7 +16,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['prettier'],
+  plugins: ['react'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     // 'prettier/prettier': 'off',
