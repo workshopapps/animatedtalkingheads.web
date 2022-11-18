@@ -12,3 +12,13 @@ body {
     font-family: "Mulish", sans-serif;
     font-style: normal;
 }
+
+.h2-text{
+    font-size:clamp(1.563rem, 2.5vw + 0.9rem, 3.125rem);
+}
+.p-text{
+    font-size:clamp(1rem, 1vw + 0.6rem, 1.5rem);
+}
+.h3-text{
+    font-size:clamp(1rem, 2vw + 0.6rem, 2rem);
+}
