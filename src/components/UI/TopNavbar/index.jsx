@@ -2,14 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import headerLogo from "./../../../assets/icons/header-logo.png";
 import menuIcon from "./../../../assets/icons/menu-icon.png";
-
-const links = [
-  { name: "Home", link: "/"},
-  { name: "About Us", link: "/about"},
-  { name: "Use cases", link: "/use-cases"},
-  { name: "Contact", link: "/contact"},
-  { name: "How it work", link: "/how-it-works"},
-]
+import { links } from "../../../libs/links";
 
 const TopNavbar = () => {
   return (
