@@ -2,12 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './text.module.scss';
 
-// text  can take  type and weight
-// 2 erver
-// pro staging
-// cicd for dev pull re in to dev
-// main merge to main pro lunches
-
 export const Text = ({ type, w, cap, label, className, ...props }) => {
   function textType(type) {
     switch (type) {
