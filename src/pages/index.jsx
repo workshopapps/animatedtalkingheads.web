@@ -13,8 +13,6 @@ const Home = () => {
           <Text type={'header2'} cap w={'bold'}>
             variants of buttons
           </Text>
-
-          <hr />
           <Text cap type={'text1'} w={'md'}>
             primary button
           </Text>
@@ -22,10 +20,10 @@ const Home = () => {
           <Button label={'hello world'} />
 
           <Text type={'text3'} w={'md'}>
-            how to
+            code
           </Text>
 
-          <div className="code_block w-full h-auto p-11 bg-black text-orange-300">
+          <div className="code_block md:w-1/2 h-auto p-11 bg-black text-orange-300">
             <code>
               import {' {Button}'} from '../components/UI/Button';
               <br />
@@ -35,8 +33,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="code my-11 space-y-">
-          <hr />
+        <div className="code my-11 space-y-3">
           <Text cap type={'text1'} w={'md'}>
             ghost button
           </Text>
@@ -44,10 +41,10 @@ const Home = () => {
           <Button label={'hello world'} ghost />
 
           <Text type={'text3'} w={'md'}>
-            how to
+            code
           </Text>
 
-          <div className="code_block w-full h-auto p-11 bg-black text-orange-300">
+          <div className="code_block md:w-1/2 h-auto p-11 bg-black text-orange-300">
             <code>
               import {'{Button}'} from '../components/UI/Button';
               <br />
@@ -57,19 +54,18 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="code my-11 space-y-">
-          <hr />
+        <div className="code my-11 space-y-3">
           <Text cap type={'text1'} w={'md'}>
             loading button
           </Text>
 
-          <Button label={'hello world'} ghost isLoading />
+          <Button label={'hello world'} isLoading />
 
           <Text type={'text3'} w={'md'}>
-            how to
+            code
           </Text>
 
-          <div className="code_block w-full h-auto p-11 bg-black text-orange-300">
+          <div className="code_block md:w-1/2 h-auto p-11 bg-black text-orange-300">
             <code>
               import {'{Button}'} from '../components/UI/Button';
               <br />

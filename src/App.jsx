@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Home from './pages';
 import About from './pages/about';
+import Docs from './pages/FEdocs';
 import Blog from './pages/blogs';
 import Careers from './pages/careers';
 import Communities from './pages/communities';
@@ -28,11 +29,12 @@ function App() {
     <Provider store={store}>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/fe-docs" element={<Docs />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/community" element={<Communities />} />
-        <Route path="/contact" element={<Contact/>} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/use-cases" element={<UseCases />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/faqs" element={<Faqs />} />

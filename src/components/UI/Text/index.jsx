@@ -75,5 +75,5 @@ Text.propTypes = {
 Text.defaultProps = {
   type: 'header1',
   w: 'bold',
-  label: 'hello bob'
+  label: ''
 };
