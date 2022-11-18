@@ -22,9 +22,9 @@ const TopNavbar = () => {
           { links.map( (link, index) => <Link className="block" key={index} to={link.link}> {link.name} </Link> ) }
         </div>
         <div className={`${styles.create} hidden md:flex`}>
-          <button className="btn px-10 py-3">
+          <Link to="/podcast/upload" className="btn px-10 py-3">
             Create Video
-          </button>
+          </Link>
         </div>
         <button className="md:hidden">
           <img src={menuIcon} alt="home"/>

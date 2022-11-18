@@ -1,7 +1,10 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import TopNavbar from '.';
+import { render, screen } from '@testing-library/react';
+import TopNavbar from './';
+import { BrowserRouter } from 'react-router-dom';
 
-it('renders TopNavbar', () => {
-    render(<TopNavbar />)
+test('Renders TopNavbar', () => {
+    render(<TopNavbar />, {wrapper: BrowserRouter})
+
+
 });
