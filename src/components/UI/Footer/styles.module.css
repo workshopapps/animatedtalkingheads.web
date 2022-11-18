@@ -8,3 +8,28 @@
     line-height: 25px;
     margin-bottom: 20px;
 }
+
+.lang {
+    position: relative;
+    width: 13.125em;
+    height: 4em;
+    top: -3.75em;
+    background: #FAFAFA;
+    border-radius: 0.5em;
+}
+
+.lang select {
+    outline: none;
+    width: 66%;
+    margin-left: 10%;
+    background-color: #FAFAFA;
+}
+
+
+@media screen and  (max-width: 756px) {
+    
+    .footer a {
+        font-size: 16px;
+    }
+    
+}

@@ -26,5 +26,5 @@ export const links = [
   { name: "About Us", link: routes.about },
   { name: "Use cases", link: routes.useCases },
   { name: "Contact", link: routes.contact },
-  { name: "How it work", link: routes.careers },
+  { name: "How it work", link: routes.howItWorks },
 ]
