@@ -1,0 +1,10 @@
+.footer {
+    background: #171D2E;
+}
+
+.footer a {
+    color: white;
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 20px;
+}

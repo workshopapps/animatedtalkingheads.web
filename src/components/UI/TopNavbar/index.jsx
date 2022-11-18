@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { Button } from '../Button';
 import styles from "./styles.module.css";
 import headerLogo from "./../../../assets/icons/header-logo.png";
 import menuIcon from "./../../../assets/icons/menu-icon.png";
+
 
 const links = [
   { name: "Home", link: "/"},
@@ -21,9 +23,9 @@ const TopNavbar = () => {
         <div className={`${styles.links} hidden md:flex justify-between basis-3/5`}>
           { links.map( (link, index) => <Link className="block" key={index} to={link.link}> {link.name} </Link> ) }
         </div>
-        <div className={`${styles.create} hidden md:flex`}>
-          <Link to="/podcast/upload" className="btn px-10 py-3">
-            Create Video
+        <div className={`hidden md:flex`}>
+          <Link to="/podcast/upload">
+            <Button label={"Create Video"}>Create Video</Button>
           </Link>
         </div>
         <button className="md:hidden">
