@@ -19,6 +19,9 @@ import store from './store/store';
 import DownloadPodcast from './pages/podcast/download';
 import Characters from './pages/podcast/characters';
 import Setting from './pages/settings';
+import Contact from './pages/contact';
+import UseCases from './pages/use-cases';
+import HowItWorks from './pages/how-it-works';
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/community" element={<Communities />} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/use-cases" element={<UseCases />} />
+        <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/faqs" element={<Faqs />} />
         <Route path="/help-center" element={<HelpCenter />} />
         <Route path="/pricing" element={<Pricing />} />
