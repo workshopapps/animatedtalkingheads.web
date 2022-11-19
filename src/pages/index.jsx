@@ -56,7 +56,7 @@ const Home = () => {
       <section className="bg-white">
         <div className="pt-[60px] ">
           <h3 className="text-center text-xl pb-12 md:pb-32 md:text-[40px] text-[#292d32] font-bold ">
-            4 Simple Clicks gets you there
+            4 Simple clicks gets you there
           </h3>
           <div className="md:flex justify-between items-center flex-wrap">
             <div className="mx-auto pb-5">
@@ -100,7 +100,7 @@ const Home = () => {
       </section>
       <section className="bg-[#fbfbfb] ">
         <h3 className="text-[292d32] pt-20  text-center font-bold text-xl pb-10 md:pb-[72px] md:text-[40px]">
-          What People are saying
+          What people are saying
         </h3>
         <div className="md:flex flex-wrap gap-12 justify-around pb-[40px] md:px-6">
           <div className=" px-8 bg-white w-[261px] mx-auto md:w-[378px]  mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
@@ -137,6 +137,43 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <section className="py-20 bg-white px-8">
+        <div className="flex justify-around items-center">
+          <div>
+            <h3 className="font-bold md:text-[32px] text-xl mb-3 md:mb-8 w-56 md:w-[365px] md:leading-[50px]  text-sec">
+              Conveniently download your output on different video qualities
+            </h3>
+            <Button label={"Let's Go"} />
+          </div>
+          <div>
+            <div className="flex justify-between-items-center  md:gap-10 gap-[10px] mb-[10px] md:mb-10 ">
+              <div className="bg-[#fbfbfb]  md:gap-10 gap-[10px] rounded p-2.5 md:p-[30px] md:h-32 md:w-32 h-16 w-16">
+                <p className="text-black text-[8px] border-[1px] border-black border-solid h-full w-full rounded grid items-center justify-center  md:text-base">
+                  1080p
+                </p>
+              </div>
+              <div className="bg-[#fbfbfb] rounded p-2.5 md:p-[30px] md:h-32 md:w-32 h-16 w-16">
+                <p className="text-black text-[8px] border-[1px] border-black border-solid h-full w-full rounded grid items-center justify-center md:text-base ">
+                  720p
+                </p>
+              </div>
+            </div>
+            <div className="flex justify-between-items-center md:gap-10 gap-[10px] ">
+              <div className="bg-[#fbfbfb] rounded p-2.5 md:p-[30px] md:h-32 md:w-32 h-16 w-16">
+                <p className="text-black text-[8px] border-[1px] border-black border-solid h-full w-full rounded grid items-center justify-center  md:text-base">
+                  480p
+                </p>
+              </div>
+              <div className="bg-[#fbfbfb] rounded p-2.5 md:p-[30px] md:h-32 md:w-32 h-16 w-16">
+                <p className="text-black text-[8px] border-[1px] border-black border-solid h-full w-full rounded grid items-center justify-center  md:text-base">
+                  4k
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-sec "></section>
     </Layout>
   );
 };
