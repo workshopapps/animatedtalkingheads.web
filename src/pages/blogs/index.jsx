@@ -42,13 +42,13 @@ const Blog = () => {
             />
             <Card
               photo={img2}
-              heading="Complete Guide on How to Start A Podcast"
+              heading="Podcast Content Strategy"
               text="Are you looking to start your podcast in 2022?"
               avatar={avatar}
             />
             <Card
               photo={img3}
-              heading="Complete Guide on How to Start A Podcast"
+              heading="Animated Podcast"
               text="Are you looking to start your podcast in 2022?"
               avatar={avatar}
             />
