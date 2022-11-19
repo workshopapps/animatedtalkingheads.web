@@ -1,0 +1,7 @@
+@media screen and (min-width: px) {
+  container {
+    display: flex;
+    flex-direction: row;
+    background-color: aqua;
+  }
+}

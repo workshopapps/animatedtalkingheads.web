@@ -1,0 +1,34 @@
+.nav {
+  background: #fbfbfb;
+  border-bottom: 1px solid rgba(68, 68, 68, 0.1);
+  height: 4em;
+  color: #292d32;
+}
+
+.nav .links {
+  font-size: 1em;
+  line-height: 20px;
+  color: #292d32;
+}
+
+/* .nav .create {
+  background-color: #2158d2;
+  border-radius: 0.5em;
+  color: white;
+} */
+
+@media screen and (min-width: 480px) {
+  .nav {
+    height: 5.5em;
+  }
+
+  .nav .links {
+    max-width: 28em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav .links {
+    max-width: 31.9375em;
+  }
+}

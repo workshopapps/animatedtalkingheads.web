@@ -28,7 +28,8 @@ export const routes = {
   useCaseArticle: '/use-cases/article',
   press: '/press',
   scenery: '/avatar/scenery',
-  exploreBackground: '/explore-background'
+  exploreBackground: '/explore-background',
+  api: '/api-page'
 };
 
 export const links = [
@@ -37,4 +38,11 @@ export const links = [
   { name: 'Use cases', link: routes.useCases },
   { name: 'Contact', link: routes.contact },
   { name: 'How it work', link: routes.howItWorks }
+];
+
+export const navLinks = [
+  { name: 'Documentation', link: '/api/documentation' },
+  { name: 'Database', link: '/api/database' },
+  { name: 'API Status', link: '/api/status' },
+  { name: 'API History', link: '/api/history' }
 ];
