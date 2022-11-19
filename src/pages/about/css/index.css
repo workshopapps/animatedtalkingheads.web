@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 
 .about {
-  height: 400px;
   display: grid;
 }
 
@@ -14,7 +13,9 @@
 
 .about_hero {
   background: rgb(7, 7, 22);
-  position: relative;
+  position: relative !important;
+  display: grid;
+  height: fit-content;
 }
 
 .about_hero_image {
@@ -24,7 +25,6 @@
   background-position: center;
   background-size: cover;
   opacity: 0.3;
-  position: relative;
 }
 
 .about_hero_text {
@@ -44,11 +44,6 @@
 
 /* about_main_content */
 
-.about_main_content {
-  position: absolute;
-  top: 65%;
-}
-
 /* about_main_content */
 
 /* about_mission */
@@ -58,6 +53,8 @@
 }
 
 .about_mission_section1 {
+  position: absolute;
+  top: 65%;
   width: 50%;
   justify-self: center;
   text-align: center;
@@ -84,7 +81,7 @@
   align-items: center;
   justify-self: center;
   grid-template-columns: 1fr 1fr;
-  margin-top: 80px;
+  margin-top: 180px;
 }
 
 .mission_grid {
@@ -386,7 +383,7 @@
     font-size: 28px;
   }
 
-  .about_main_content {
+  .about_mission_section1 {
     top: 70%;
   }
 
@@ -400,7 +397,7 @@
 
   .about_mission_section2 {
     grid-template-columns: 1fr;
-    margin-top: 20px;
+    margin-top: 200px;
   }
 
   .mission_grid {
@@ -494,5 +491,11 @@
 @media screen and (max-width: 540px) {
   .values_grid_section {
     grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .about_mission_section2 {
+    margin-top: 300px;
   }
 }
