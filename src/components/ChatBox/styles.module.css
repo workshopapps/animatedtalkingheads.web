@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 .ChatBoxContainer {
   position: relative;
-  left: calc(100% - 0.343 * 100% - 50px);
-  width: calc(0.343 * 100%);
+  left: calc(100% - 0.343 * 100vw - 50px);
+  top: calc(100% - 0.343 * 100vh - 400px);
+  width: calc(0.343 * 100vw);
   height: calc(0.8 * 100vh);
   /* width: 518px; */
   /* height: 765px; */
@@ -238,7 +239,7 @@
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
   .ChatBoxContainer {
-    left: calc(100% - 0.5 * 100% - 50px);
+    left: calc(100% - 0.5 * 100vw - 50px);
     width: calc(0.5 * 100%);
     min-height: 100vh;
     height: 110vh;
@@ -251,7 +252,8 @@
 
 @media all and (min-width: 480px) and (max-width: 768px) {
   .ChatBoxContainer {
-    left: calc(100% - 0.7 * 100% - 50px);
+    top: calc(100% - 0.343 * 100vh - 400px);
+    left: calc(100% - 0.7 * 100vw - 50px);
     width: calc(0.7 * 100%);
     min-height: 100vh;
     height: 110vh;
