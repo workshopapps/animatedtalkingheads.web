@@ -173,6 +173,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <section className="bg-sec "></section>
     </Layout>
   );
 };
