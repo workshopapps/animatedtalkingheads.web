@@ -17,7 +17,7 @@ const TermsOfService = () => {
             <ul>
               <li><a href="#Introduction">Introduction</a></li>
               <li><a href="#Services">Services</a></li>
-              <li><a href="#Licences">Licences</a></li>
+             <li><a href="#Licences">Licences</a></li>
               <li><a href="#Companys-Intellectual-Property">Company's Intellectual Property</a></li>
               <li><a href="#Users-Intellectual-Property">User's Intellectual Property</a></li>
               <li><a href="#General-Conditions">General Conditions</a></li>
