@@ -29,6 +29,7 @@ import Setting from './pages/settings';
 import Contact from './pages/contact';
 import UseCases from './pages/use-cases';
 import HowItWorks from './pages/how-it-works';
+import Scenery from './pages/scenery/Scenery';
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
         <Route path="/podcast/customize" element={<Customization />} />
         <Route path="/podcast/download" element={<DownloadPodcast />} />
         <Route path="/podcast/characters" element={<Characters />} />
+        <Route path="/avatar/scenery" element={<Scenery />} />
       </Routes>
     </Provider>
   );
