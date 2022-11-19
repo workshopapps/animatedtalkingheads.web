@@ -1,0 +1,168 @@
+.tosContainer {
+}
+
+.tosHeader {
+  padding-left: 100px;
+  padding-right: 100px;
+  height: 640px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #0a0c14;
+  background: url('../../assets/icons/termsofservice/bgImageDesktop.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  background: #e4e8fb;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -10;
+}
+
+.headerHeading {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 80px;
+}
+
+.headerP {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.contentSection {
+  padding-left: 100px;
+  padding-right: 100px;
+  display: flex;
+  color: #171d2e;
+  font-size: 20px;
+  padding-bottom: 400px;
+  justify-content: space-between;
+}
+
+.contentNav {
+  flex-basis: 31%;
+  padding-top: 32px;
+}
+
+.contentBody {
+  flex-basis: 64%;
+}
+
+.contentBody h2 {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  margin-top: 32px;
+}
+
+.contentBody p {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  margin-top: 16px;
+}
+
+a {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #0a0c14;
+  text-decoration: none;
+}
+
+a :hover {
+  color: #2563eb;
+}
+
+a :active {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.contentNav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+li {
+  list-style-type: disc;
+}
+
+.contentBodyUnit li {
+  margin-left: 1.5rem;
+}
+
+@media (max-width: 788px) {
+  .tosContainer {
+  }
+  .tosHeader {
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 640px;
+    background: url('../../assets/icons/termsofservice/bgImageMobile.png');
+  }
+
+  .headerHeading {
+    line-height: 64px;
+    font-size: 60px;
+  }
+
+  .headerP {
+    font-size: 20px;
+  }
+
+  .contentSection {
+    display: flex;
+    font-size: 16px;
+    padding-top: 1rem;
+    padding-bottom: 250px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .contentNav {
+    display: none;
+  }
+
+  .contentBody {
+    flex-basis: 100%;
+  }
+
+  .contentBody h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin-top: 16px;
+  }
+
+  .contentBody p {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 16px;
+  }
+
+  a {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    color: #0a0c14;
+    text-decoration: none;
+  }
+}

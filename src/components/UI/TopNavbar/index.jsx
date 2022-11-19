@@ -25,36 +25,53 @@ const TopNavbar = () => {
     <div className={styles.nav}>
       <div className={`h-full flex justify-between items-center px-3 lg:px-20`}>
         <div className="flex">
-          <Link to="/"> <img src={headerLogo} alt="home"/></Link>
+          <Link to="/">
+            {' '}
+            <img src={headerLogo} alt="home" />
+          </Link>
         </div>
         <div className={`${styles.links} hidden md:flex justify-between basis-3/5`}>
-          { links.map( (link, index) => <Link className="block" key={index} to={link.link}> {link.name} </Link> ) }
+          {links.map((link, index) => (
+            <Link className="block" key={index} to={link.link}>
+              {' '}
+              {link.name}{' '}
+            </Link>
+          ))}
         </div>
         <div className={`hidden md:flex`}>
-          <Link to="/podcast/upload">
-            <Button label={"Create Video"}>Create Video</Button>
+          <Link to="/customize-audio">
+            <Button label={'Create Video'}>Create Video</Button>
           </Link>
         </div>
         <button className="md:hidden" onClick={() => setShow(!show)}>
-          <img src={show ? closeIcon : menuIcon} alt="home"/>
+          <img src={show ? closeIcon : menuIcon} alt="home" />
         </button>
       </div>
 
-      <div className={`${styles.menu} ${show ? "" : "hidden" } px-3 py-10 md:hidden`}>
-
+      <div className={`${styles.menu} ${show ? '' : 'hidden'} px-3 py-10 md:hidden`}>
         <div className={`${styles.links}`}>
-          { links.map( (link, index) => <Link onClick={close} className="block" key={index} to={link.link}> {link.name} </Link> ) }
+          {links.map((link, index) => (
+            <Link onClick={close} className="block" key={index} to={link.link}>
+              {' '}
+              {link.name}{' '}
+            </Link>
+          ))}
         </div>
 
         <div className={`${styles.line}`}> </div>
 
         <div className={`${styles.links2}`}>
-          { miniLinks.map( (link, index) => <Link onClick={close} className="block" key={index} to={link.link}> {link.name} </Link> ) }
+          {miniLinks.map((link, index) => (
+            <Link onClick={close} className="block" key={index} to={link.link}>
+              {' '}
+              {link.name}{' '}
+            </Link>
+          ))}
         </div>
         <div className={`${styles.line}`}> </div>
 
         <div className="flex w-full justify-center h-28 items-center">
-          <Link onClick={close} className={styles.createVideo} to="/podcast/upload">
+          <Link onClick={close} className={styles.createVideo} to="/customize-audio">
             <button> Create Video </button>
           </Link>
         </div>
