@@ -1,6 +1,7 @@
 export const routes = {
   home: "/",
   about: "/about",
+  customizeAudio: "/customize-audio",
   blog: "/blog",
   docs: "/fe-docs",
   useCases: "/use-cases",
