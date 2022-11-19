@@ -67,8 +67,8 @@ const CustomizeAudio = () => {
             </div>
           </div>
 
-          <div className="customization-center w-full">
-            <Text w={'md'} type={'text4'} cap>
+          <div className="customization-center w-full space-y-3">
+            <Text w={'md'} type={'text4'} cap className={'text-[#666666]'}>
               Video Selection Preview
             </Text>
 
