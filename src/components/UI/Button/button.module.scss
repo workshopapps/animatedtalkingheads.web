@@ -1,0 +1,17 @@
+.button {
+  @apply px-8 p-3 capitalize  rounded-lg space-x-8 flex items-center;
+
+  &.ghost {
+    @apply bg-white border border-pri text-pri;
+  }
+
+  &.primary {
+    @apply bg-pri border border-pri text-white;
+  }
+
+  &:disabled,
+  &.loading {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+}

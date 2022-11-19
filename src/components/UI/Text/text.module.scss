@@ -1,0 +1,54 @@
+.text {
+    &.medium {
+        font-weight: medium;
+    }
+    &.cap {
+        @apply capitalize;
+    }
+
+    &.bold {
+        @apply font-bold;
+    }
+
+    &.semiBold {
+        @apply font-semibold;
+    }
+
+    &.black {
+        font-weight: 900;
+    }
+
+    &.header1 {
+        font-size: 28px;
+        @media screen and (min-width: 682px) {
+            & {
+                @apply text-5xl;
+            }
+        }
+    }
+
+    &.header2 {
+        font-size: 20px;
+        @media screen and (min-width: 682px) {
+            & {
+                font-size: 28px;
+            }
+        }
+    }
+
+    &.text1 {
+        font-size: 32px;
+    }
+
+    &.text2 {
+        font-size: 24px;
+    }
+
+    &.text3 {
+        font-size: 20px;
+    }
+
+    &.text4 {
+        font-size: 16px;
+    }
+}
