@@ -1,0 +1,50 @@
+.meet-team {
+  background-color: #ecf2ff;
+}
+
+.careers__meet-team {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.careers__meet-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 70%;
+}
+
+.info {
+  font-size: 0.8rem;
+}
+
+.careers__meet-image {
+  width: 45%;
+}
+
+.careers__secondary-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 43.75em) {
+  .careers__meet-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .careers__meet-info {
+    width: 100%;
+  }
+
+  .careers__meet-image {
+    width: 100%;
+  }
+}
