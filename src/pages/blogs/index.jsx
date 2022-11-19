@@ -1,5 +1,5 @@
 import Layout from '../../components/UI/Layout';
-import './index.scss';
+import styles from './index.scss';
 import img1 from './assets/img-1.png';
 import img2 from './assets/img-2.png';
 import img3 from './assets/img-3.png';
@@ -11,12 +11,12 @@ import Card from './Card';
 const Blog = () => {
   return (
     <Layout>
-      <div className="blog__header">
+      <div className={styles.blog__header}>
         <h1>Our Blog</h1>
         <p>All about audio, animations, podcasting and more!</p>
       </div>
-      <main className="blog__main">
-        <div className="blog__sidebar">
+      <main className={styles.blog__main}>
+        <div className={styles.blog__sidebar}>
           <div className="form-group">
             <input type="text" />
           </div>
@@ -31,9 +31,9 @@ const Blog = () => {
             <li>Social Media</li>
           </ul>
         </div>
-        <div className="blog__content">
+        <div className={styles.blog__content}>
           <h2>Latest Post</h2>
-          <div className="blog__grid">
+          <div className={styles.blog__grid}>
             <Card
               photo={img1}
               heading="Complete Guide on How to Start A Podcast"

@@ -1,14 +1,14 @@
 import React from 'react';
-import './index.scss';
+import styles from './index.scss';
 
 function Card(props) {
   return (
-    <div className="card">
+    <div className={styles.card}>
       <img src={props.photo} alt="" className="card__img" />
-      <h2 className="card-heading">{props.heading}</h2>
+      <h2 className={styles.card__heading}>{props.heading}</h2>
       <p>{props.text}</p>
-      <div className="blog__thumbnail">
-        <div className="image__container">
+      <div className={styles.blog__thumbnail}>
+        <div className={styles.image__container}>
           <img src={props.avatar} alt="avatar" />
         </div>
         <h3>Nowso Emmanuel</h3>
