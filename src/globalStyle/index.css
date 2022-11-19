@@ -1,4 +1,5 @@
 body {
     font-family: 'Mulish';
     font-style: normal;
+    min-height: 100vh;
 }
