@@ -67,27 +67,6 @@ const Blog = () => {
           </div>
         </div>
       </main>
-      {/* 
-     
-
-     
-     ent}>
-         
-          <div className={styles.blog__grid}>
-           
-            <div className="card">
-              <img src="" alt="" className="card__img" />
-              <h2>Complete Guide on How to Start A Podcast</h2>
-              <p>Are you looking to start your podcast in 2022?</p>
-              <div className="thumbnail">
-                <img src="" alt="" />
-                <h3>Nowso Emmanuel</h3>
-                <span> 20 Nov 2022</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main> */}
     </Layout>
   );
 };
