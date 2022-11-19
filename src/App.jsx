@@ -23,31 +23,34 @@ import Setting from './pages/settings';
 import Contact from './pages/contact';
 import UseCases from './pages/use-cases';
 import HowItWorks from './pages/how-it-works';
+import { routes } from './libs/links';
+import UseCaseArticle from './pages/use-cases/article';
 
 function App() {
   return (
     <Provider store={store}>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/fe-docs" element={<Docs />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/careers" element={<Careers />} />
-        <Route path="/community" element={<Communities />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/use-cases" element={<UseCases />} />
-        <Route path="/how-it-works" element={<HowItWorks />} />
-        <Route path="/faqs" element={<Faqs />} />
-        <Route path="/help-center" element={<HelpCenter />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-and-conditions" element={<TermsAndCondition />} />
-        <Route path="/terms-of-service" element={<TermsOfService />} />
-        <Route path="/settings" element={<Setting />} />
-        <Route path="/podcast/upload" element={<UploadPodcast />} />
-        <Route path="/podcast/customize" element={<Customization />} />
-        <Route path="/podcast/download" element={<DownloadPodcast />} />
-        <Route path="/podcast/characters" element={<Characters />} />
+        <Route path={routes.home} element={<Home />} />
+        <Route path={routes.docs} element={<Docs />} />
+        <Route path={routes.about} element={<About />} />
+        <Route path={routes.blog} element={<Blog />} />
+        <Route path={routes.careers} element={<Careers />} />
+        <Route path={routes.community} element={<Communities />} />
+        <Route path={routes.contact} element={<Contact />} />
+        <Route exact path={routes.useCases} element={<UseCases />} />
+        <Route path={`${routes.useCaseArticle}/:id`} element={<UseCaseArticle />} />
+        <Route path={routes.howItWorks} element={<HowItWorks />} />
+        <Route path={routes.faqs} element={<Faqs />} />
+        <Route path={routes.helperCenter} element={<HelpCenter />} />
+        <Route path={routes.pricing} element={<Pricing />} />
+        <Route path={routes.privacy} element={<PrivacyPolicy />} />
+        <Route path={routes.termsCondition} element={<TermsAndCondition />} />
+        <Route path={routes.termsService} element={<TermsOfService />} />
+        <Route path={routes.settings} element={<Setting />} />
+        <Route path={routes.podcastUpload} element={<UploadPodcast />} />
+        <Route path={routes.podcastCustomize} element={<Customization />} />
+        <Route path={routes.podcastDownload} element={<DownloadPodcast />} />
+        <Route path={routes.podcastCharacters} element={<Characters />} />
       </Routes>
     </Provider>
   );
