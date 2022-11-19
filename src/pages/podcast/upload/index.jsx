@@ -1,24 +1,29 @@
 import Layout from '../../../components/UI/Layout';
-import microphone from '../../../assets/icons/microphone-podcast_upload.svg'
-import musicnote from '../../../assets/icons/musicnote.svg'
-import google from '../../../assets/icons/google-drive.svg'
-import dropbox from '../../../assets/icons/dropbox.svg'
-import one_drive from '../../../assets/icons/one-drive.svg'
-import link from '../../../assets/icons/bx_link.svg'
+import microphone from '../../../assets/icons/upload_podcast/microphone-podcast_upload.svg'
+import musicnote from '../../../assets/icons/upload_podcast/musicnote.svg'
+import google from '../../../assets/icons/upload_podcast/google-drive.svg'
+import dropbox from '../../../assets/icons/upload_podcast/dropbox.svg'
+import one_drive from '../../../assets/icons/upload_podcast/one-drive.svg'
+import link from '../../../assets/icons/upload_podcast/bx_link.svg'
+import music from '../../../assets/icons/upload_podcast/music.svg'
+import correct from '../../../assets/icons/upload_podcast/correct.svg'
 import { Button } from '../../../components/UI/Button';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Header1 } from '../../../components/UI/Text/text.stories';
 import { Text } from '../../../components/UI/Text';
 import DragDropFile from './dragdrop';
+import styles from '../upload/index.module.scss'
 
 const UploadPodcast = () => {
   const [audio,setAudio]=useState(null)
   const [name,setName] = useState(null)
   const [upload,setUpload] = useState(false)
+  const [uploaded,setUploaded] = useState(false)
   const [loading,setLoading] = useState({
     label: 'Upload',
     isDisabled:false, })  
+
 
   const handleFileSelected = (e) => {
     const {files}=e.target
@@ -30,12 +35,20 @@ const UploadPodcast = () => {
 
   }
   const uploadFile=()=>{
+    if(audio){
     setLoading({...loading,isDisabled:true})
     setUpload(true)
+    setTimeout(()=>{
+      setUploaded(true)
+      setUpload(false)
+      console.log("yes")
+     }, 2000);
+    }
   }
   const onUpload=(file)=>{
    console.log(file)
    setName(file[0].name)
+   
   }
  
  
@@ -60,35 +73,56 @@ const UploadPodcast = () => {
       <div className=' opacity-70 my-5 py-10 border-[3px] bg-[#FFFFFF] rounded-lg border-dashed border-opacity-20 w-[90%] mx-auto'>
       
         <div className='flex justify-center'>
+          {uploaded? 
+          <img 
+          src={correct}
+          alt="microphone podcast"
+          className='w-[30px] md:w-[50px]'
+          />
+          :
           <img 
           src={microphone}
           alt="microphone podcast"
           className='w-[30px] md:w-[100px]'
           />
+            }
         </div>
-      
-        {!upload ?
+       
+        {!uploaded && <div>{!upload ?
         <div><DragDropFile
         onUpload={onUpload}
-      /></div>:
+        /></div>:<div>
        <Text label="Your file is uploading" type="text2" w="sm" />  
-      }
-       
-        <div className='flex justify-center gap-2 items-center mb-20'>
-          {name? <Text label={name} type="text4" w="sm" />  
-:         
+       <div className={styles.ring}><div></div><div></div><div></div><div></div></div>
+       </div>
+      }</div>
+    }
 
+       {uploaded &&
+       <div className='flex justify-center mt-5'>
+           <img 
+           src={music}
+           alt="microphone podcast"
+           className='w-[20px] md:w-[30px]'
+           />
+           </div>
+          }
+        <div className='flex justify-center gap-2 items-center mb-20'>
+          
+          {name? <Text label={name} type="text4" w="sm" />    
+            :    
           <label onClick={()=>handleFileSelected} className="text-[#2563EB] p-text cursor-pointer">
           <input 
           onChange={handleFileSelected}
           type='file' 
           className='hidden'/>
-          browse
+          {uploaded? "change":"browse"}
           </label>
           }
         </div>
-       
+     
       </div>
+    
      
       <div className='-[3px] border-green-50 my-5'>
         <div className='flex mx-auto  justify-center  text-[12px] font-bold gap-3 gap-y-2'>
