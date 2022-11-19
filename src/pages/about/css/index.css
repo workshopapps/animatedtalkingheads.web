@@ -371,6 +371,11 @@
   margin-top: 10px;
 }
 
+.about_build_box button:hover {
+  background-color: #2563eb !important;
+  color: white !important;
+}
+
 /* about_build */
 
 @media screen and (max-width: 768px) {
