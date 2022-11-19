@@ -10,6 +10,7 @@ const links1 = [
   { name: "About", link: routes.about},
   { name: "Avatars", link: "/"},
   { name: "Custom Avatars", link: "/"},
+  { name: "Explore Background", link: routes.exploreBackground },
   { name: "Blog", link: routes.blog },
 ]
 
@@ -17,7 +18,7 @@ const links2 = [
   { name: "Customer Support", link: "/"},
   { name: "Community", link: routes.community},
   { name: "Careers", link: routes.careers },
-  { name: "Press", link: "/"},
+  { name: "Press", link: routes.press},
   { name: "FAQ", link: routes.faqs },
   { name: "Contact Us", link: routes.contact },
   { name: "APIs", link: "/" },

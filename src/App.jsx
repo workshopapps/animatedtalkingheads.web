@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Home from './pages';
 import About from './pages/about';
+// import CustomizeAudio from './pages/customize-audio';
 import Docs from './pages/FEdocs';
 import Blog from './pages/blogs';
 import Careers from './pages/careers';
@@ -13,6 +14,11 @@ import Pricing from './pages/pricing';
 import TermsAndCondition from './pages/terms-and-conditions';
 import TermsOfService from './pages/terms-of-service';
 import PrivacyPolicy from './pages/privacy-policy';
+import PrivacyAbout from './pages/privacy-policy/about';
+import PrivacyChanges from './pages/privacy-policy/changes-to-policy';
+import PrivacyInformation from './pages/privacy-policy/information';
+import PrivacyCookies from './pages/privacy-policy/cookies';
+import HowWeUseInformation from './pages/privacy-policy/how-we-use-information';
 import UploadPodcast from './pages/podcast/upload';
 import Customization from './pages/podcast/customization';
 
@@ -25,6 +31,7 @@ import UseCases from './pages/use-cases';
 import HowItWorks from './pages/how-it-works';
 import { routes } from './libs/links';
 import UseCaseArticle from './pages/use-cases/article';
+import Scenery from './pages/scenery/Scenery';
 
 function App() {
   return (
@@ -51,6 +58,14 @@ function App() {
         <Route path={routes.podcastCustomize} element={<Customization />} />
         <Route path={routes.podcastDownload} element={<DownloadPodcast />} />
         <Route path={routes.podcastCharacters} element={<Characters />} />
+        <Route path={routes.exploreBackground} element={<></>} />
+
+        <Route path="about" element={<PrivacyAbout />} />
+        <Route path="cookies" element={<PrivacyCookies />} />
+        <Route path="changes-to-policy" element={<PrivacyChanges />} />
+        <Route path="how-we-use-information" element={<HowWeUseInformation />} />
+        <Route path="information" element={<PrivacyInformation />} />
+        <Route path="/avatar/scenery" element={<Scenery />} />
       </Routes>
     </Provider>
   );
