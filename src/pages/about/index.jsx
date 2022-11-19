@@ -7,7 +7,17 @@ import lamp_charge from './images/lamp-charge.png'
 import lovely from './images/lovely.png'
 import unlimited from './images/unlimited.png'
 import { Link } from 'react-router-dom';
+// import { useRef, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css'
+import { Pagination, Navigation } from 'swiper'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+import { Engineering, Management, Design, Marketing } from './team-data/teamData.jsx'
 const About = () => {
+  
+
+
   return <Layout>
 
     {/* about page wrapper */}
@@ -176,6 +186,142 @@ const About = () => {
                   <h5>At Voxclip we value trust, teamwork, and bringing engament and visibilty to help podcasters create visual content out of their audio recordings.</h5>
                 </div>
 
+              </div>
+
+
+              <div className="about_team_section2">
+                <div className="about_team_tabs">
+                  <div className="about_team_tab"  tabIndex={0}>
+                    <p>Management</p>
+                    <div className="about_team_slider" id='first_slider'>
+                      <Swiper
+                         style={{                  
+                          "--swiper-navigation-size": "25px",
+                        }}
+             
+                        
+                        modules={[Pagination, Navigation]}
+
+                        loopFillGroupWithBlank={true}
+                        navigation={true}
+                        slidesPerView={4.5}
+                        spaceBetween={40}
+                        slidesPerGroup={1}
+                        loop={true}>
+
+
+                        {Management.map((slide) => (
+                          <SwiperSlide className="about_team_slide" key={slide.name} >
+                            <img src={slide.image} alt="" />
+                            <h3>{slide.name}</h3>
+                            <p>{slide.role}</p>
+                          </SwiperSlide>
+                        ))}
+
+
+                      </Swiper>
+                    </div>
+                  </div>
+
+                  <div className="about_team_tab" tabIndex={1}>
+                    <p id='second_slider'>Engineering</p>
+                    <div className="about_team_slider"  id='second_slider'>
+
+
+                    <Swiper
+                         style={{                  
+                          "--swiper-navigation-size": "25px",
+                        }}
+                        modules={[Pagination, Navigation]}
+
+                        loopFillGroupWithBlank={true}
+                        navigation={true}
+                        slidesPerView={4.5}
+                        spaceBetween={40}
+                   
+                        slidesPerGroup={1}
+                        loop={true}>
+
+
+                        {Engineering.map((slide) => (
+                          <SwiperSlide className="about_team_slide" key={slide.name} >
+                            <img src={slide.image} alt="" />
+                            <h3>{slide.name}</h3>
+                            <p>{slide.role}</p>
+                          </SwiperSlide>
+                        ))}
+
+
+                      </Swiper>
+
+                    </div>
+                  </div>
+
+                  <div className="about_team_tab" tabIndex={2}>
+                    <p id='third_slider'>Design</p>
+                    <div className="about_team_slider"  id='third_slider'>
+
+                    <Swiper
+                         style={{                  
+                          "--swiper-navigation-size": "25px",
+                        }}
+                        modules={[Pagination, Navigation]}
+
+                        loopFillGroupWithBlank={true}
+                        navigation={true}
+                        slidesPerView={4.5}
+                        spaceBetween={40}about_team_slide
+                        slidesPerGroup={1}
+                        loop={true}>
+
+
+                        {Design.map((slide) => (
+                          <SwiperSlide className="about_team_slide" key={slide.name} >
+                            <img src={slide.image} alt="" />
+                            <h3>{slide.name}</h3>
+                            <p>{slide.role}</p>
+                          </SwiperSlide>
+                        ))}
+
+
+                      </Swiper>
+
+                    </div>
+                  </div>
+
+                  <div className="about_team_tab" tabIndex={3}>
+                    <p id='fourth_slider'>Marketing</p>
+                    <div className="about_team_slider"  id='fourth_slider'>
+
+                    <Swiper
+                         style={{                  
+                          "--swiper-navigation-size": "25px",
+                        }}
+                        modules={[Pagination, Navigation]}
+
+                        loopFillGroupWithBlank={true}
+                        navigation={true}
+                        slidesPerView={4.5}
+                        spaceBetween={40}about_team_slide
+                        slidesPerGroup={1}
+                        loop={true}>
+
+
+                        {Marketing.map((slide) => (
+                          <SwiperSlide className="about_team_slide" key={slide.name} >
+                            <img src={slide.image} alt="" />
+                            <h3>{slide.name}</h3>
+                            <p>{slide.role}</p>
+                          </SwiperSlide>
+                        ))}
+
+
+                      </Swiper>
+
+                    </div>
+                  </div>
+
+                </div>
               </div>
 
             </div>

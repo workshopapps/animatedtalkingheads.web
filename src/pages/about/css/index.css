@@ -152,14 +152,17 @@
   width: 88%;
   justify-self: center;
 }
+
 .values_grid img {
   height: 40px;
 }
+
 .values_grid h3 {
   font-size: 20px;
   margin: 10px 0px;
   font-family: 'Mulish', sans-serif;
 }
+
 .values_grid p {
   font-size: 14px;
   font-family: 'Mulish', sans-serif;
@@ -206,6 +209,7 @@
   font-size: 14px;
   margin: 10px 0px;
 }
+
 /* about_story */
 
 /* about_team */
@@ -249,16 +253,107 @@
   margin: 10px 0px;
 }
 
+.about_team_section2 {
+  width: 85%;
+  justify-self: center;
+  display: grid;
+  position: relative;
+  padding-bottom: 350px;
+}
+
+.about_team_tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 50px;
+}
+
+.about_team_tab {
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+}
+
+.about_team_slider {
+  color: #171d2e;
+  display: block;
+}
+
+.about_team_tab:focus .about_team_slider {
+  color: #171d2e;
+  display: block;
+}
+
+.about_team_tab p {
+  padding: 20px 0px;
+}
+
+.about_team_tab:focus p {
+  background-color: #fbfbfb;
+  color: #171d2e;
+}
+
+.about_team_slider {
+  position: absolute;
+  width: 100%;
+  padding: 46px 20px;
+  background-color: #fbfbfb;
+  left: 0;
+  display: none;
+  z-index: 990;
+  place-items: center;
+  justify-content: center;
+}
+
+.about_team_slider#first_slider {
+  display: block;
+}
+
+.about_team_slider .swiper-button-prev {
+  color: #171d2e;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 0;
+}
+.about_team_slider .swiper-button-next {
+  color: #171d2e;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  right: 0;
+}
+
+.about_team_slide {
+  display: grid;
+  justify-content: center;
+  justify-self: center;
+  place-items: center;
+}
+
+.about_team_slide img {
+  margin-bottom: 10px;
+}
+.about_team_slide h3 {
+  margin: 0 !important;
+}
+
+.about_team_slide p {
+  font-size: 14px;
+}
+
 /* about_team */
 
 /* about_build */
 
 .about_build {
   margin: 100px 0px;
+  display: grid;
 }
 
 .about_build_box {
   text-align: center;
+  width: 95%;
+  justify-self: center;
 }
 
 .about_build_box h3 {
@@ -266,6 +361,15 @@
   font-weight: 600;
   font-size: 25px;
 }
+
+.about_build_box button {
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
 /* about_build */
 
 @media screen and (max-width: 768px) {
@@ -350,6 +454,25 @@
 
   .team_grid p {
     font-size: 20px;
+  }
+
+  .about_build_box h3 {
+    font-size: 20px;
+  }
+
+  .about_team_tabs {
+    grid-template-columns: 1fr;
+  }
+
+  #second_slider,
+  #third_slider,
+  #fourth_slider {
+    display: none;
+  }
+
+  .about_team_tab:focus p {
+    background-color: #171d2e;
+    color: #ffffff;
   }
 }
 
