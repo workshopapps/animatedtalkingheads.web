@@ -102,7 +102,7 @@ const Home = () => {
         <h3 className="text-[292d32] pt-20  text-center font-bold text-xl pb-10 md:pb-[72px] md:text-[40px]">
           What People are saying
         </h3>
-        <div className="md:flex gap-x-12 justify-around pb-[40px]">
+        <div className="md:flex flex-wrap gap-12 justify-around pb-[40px] md:px-6">
           <div className=" px-8 bg-white w-[261px] mx-auto md:w-[378px]  mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
             <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
               <img src={MarkImg} alt="Mark Essien" className="w-full h-full" />
