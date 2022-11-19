@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+.about {
+  height: 400px;
+  display: grid;
+}
+
+/* .about_child{
+    width: 88%;
+    justify-self: center;
+} */
+
+/* hero */
+
+.about_hero {
+  background: rgb(7, 7, 22);
+  position: relative;
+}
+
+.about_hero_image {
+  background-image: url(../images/soundtrap-mFASGqpB0Mg-unsplash.jpg);
+  height: 65vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.3;
+  position: relative;
+}
+
+.about_hero_text {
+  position: absolute;
+  text-align: center;
+  top: 30%;
+  width: 100%;
+}
+
+.about_hero_text h3 {
+  font-family: 'Mulish', sans-serif;
+  color: #ffffff;
+  font-size: 48px;
+}
+
+/* hero */
+
+/* about_main_content */
+
+.about_main_content {
+  position: absolute;
+  top: 65%;
+}
+
+/* about_main_content */
+
+/* about_mission */
+
+.about_mission {
+  display: grid;
+}
+
+.about_mission_section1 {
+  width: 50%;
+  justify-self: center;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.about_mission_section1 h3 {
+  color: #292d32;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.about_mission_section1 p {
+  color: #292d32;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.about_mission_section2 {
+  display: grid;
+  align-items: center;
+  justify-self: center;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 80px;
+}
+
+.mission_grid {
+  width: 75%;
+  display: grid;
+  justify-self: center;
+}
+
+.mission_grid_box {
+  display: flex;
+  padding: 7px 0px;
+}
+
+.mission_grid_box img {
+  margin-right: 5px;
+}
+
+/* about_mission */
+
+/* about_values */
+
+.about_values {
+  display: grid;
+  padding: 100px 0px;
+  background-color: #171d2e;
+  margin-top: 50px;
+}
+
+.about_values_heading {
+  text-align: center;
+  width: 50%;
+  justify-self: center;
+  color: #ffffff;
+}
+
+.about_values_heading h3 {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.about_values_heading h2 {
+  font-size: 30px;
+  font-family: 'Mulish', sans-serif;
+}
+
+.about_values_heading p {
+  font-family: 'Mulish', sans-serif;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.values_grid_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 88%;
+  justify-self: center;
+  margin-top: 50px;
+}
+
+.values_grid {
+  background-color: #ffffff;
+  padding: 35px 30px;
+  margin: 20px 0px;
+  width: 88%;
+  justify-self: center;
+}
+.values_grid img {
+  height: 40px;
+}
+.values_grid h3 {
+  font-size: 20px;
+  margin: 10px 0px;
+  font-family: 'Mulish', sans-serif;
+}
+.values_grid p {
+  font-size: 14px;
+  font-family: 'Mulish', sans-serif;
+}
+
+/* about_values */
+
+/* about_story */
+
+.about_story {
+  display: grid;
+  margin-top: 100px;
+}
+
+.about_story_section {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: center;
+}
+
+.story_grid {
+  width: 75%;
+  justify-self: center;
+}
+
+.story_grid h3 {
+  font-weight: 500;
+  font-size: 14px;
+  margin: 10px 0px;
+  font-family: 'Mulish', sans-serif;
+}
+
+.story_grid p {
+  color: #292d32;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.story_grid h5 {
+  color: #292d32;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 10px 0px;
+}
+/* about_story */
+
+/* about_team */
+
+.about_team {
+  display: grid;
+  background-color: #171d2e;
+  padding: 100px 0px;
+  color: #ffffff;
+  margin-top: 100px;
+}
+
+.about_team_section1 {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: center;
+}
+
+.team_grid {
+  width: 75%;
+  justify-self: center;
+}
+
+.team_grid h3 {
+  font-weight: 500;
+  font-size: 14px;
+  margin: 10px 0px;
+  font-family: 'Mulish', sans-serif;
+}
+
+.team_grid p {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.team_grid h5 {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 10px 0px;
+}
+
+/* about_team */
+
+/* about_build */
+
+.about_build {
+  margin: 100px 0px;
+}
+
+.about_build_box {
+  text-align: center;
+}
+
+.about_build_box h3 {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+}
+/* about_build */
+
+@media screen and (max-width: 768px) {
+  .about_hero_image {
+    background-position: left;
+    height: 35vh;
+  }
+
+  .about_hero_text h3 {
+    font-size: 28px;
+  }
+
+  .about_main_content {
+    top: 70%;
+  }
+
+  .about_mission_section1 {
+    width: 70%;
+  }
+
+  .about_mission_section1 p {
+    font-size: 20px;
+  }
+
+  .about_mission_section2 {
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+  }
+
+  .mission_grid {
+    margin: 20px 0px;
+    justify-content: center;
+    text-align: center;
+    display: grid;
+  }
+
+  .about_values_heading {
+    width: 70%;
+  }
+
+  .about_values_heading h2 {
+    font-size: 25px;
+  }
+
+  .about_values_heading p {
+    font-size: 14px;
+  }
+
+  .values_grid_section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about_story {
+    margin-top: 50px;
+  }
+
+  .about_story_section {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .story_grid {
+    margin: 10px 0px;
+  }
+
+  .story_grid p {
+    font-size: 20px;
+  }
+
+  .about_team {
+    padding-top: 50px;
+  }
+
+  .about_team_section1 {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .team_grid {
+    margin: 10px 0px;
+  }
+
+  .team_grid p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .values_grid_section {
+    grid-template-columns: 1fr;
+  }
+}
