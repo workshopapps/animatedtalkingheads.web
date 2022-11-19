@@ -2,7 +2,7 @@ import { ReactComponent as Tag2 } from "./assets/tag-2.svg";
 
 const VoxClips = () => {
     return (
-        <section>
+        <section className="mt-6">
             <header className="flex mb-6">
                 <Tag2 />
                 <p className="text-[#2563EB]">VoxClips</p>

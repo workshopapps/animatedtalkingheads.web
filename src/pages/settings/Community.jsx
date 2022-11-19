@@ -2,7 +2,7 @@ import { ReactComponent as People } from "./assets/people.svg";
 
 const Community = () => {
     return (
-        <section>
+        <section className="">
             <header className="flex mb-6">
                 <People />
                 <p className="text-[#2563EB]">Community</p>

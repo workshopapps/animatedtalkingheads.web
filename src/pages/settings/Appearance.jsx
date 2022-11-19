@@ -2,12 +2,12 @@ import { ReactComponent as Brush } from "./assets/brush.svg"
 
 const Appearance = () => {
     return (
-        <section className="mt-8 max-w-[460px] border-b-[#D9D9D9] border-b pb-4 ">
+        <section className="mt-8 sm:w-[460px] w-[350px] border-b-[#D9D9D9] border-b pb-4 grid">
             <header className="flex mb-6">
                 <Brush />
                 <p className="text-[#2563EB]">Appearance</p>
             </header>
-            <div className="flex flex-wrap gap-x-20 lg:gap-x-36">
+            <div className="flex flex-wrap gap-x-7 sm:gap-x-20 lg:gap-x-36 ">
                 <div className="border-b-[#D9D9D9] border-b w-[150px] pb-4 mb-4">
                     <p className="text-sm">Theme</p>
                     <select className="text-xs">
@@ -45,7 +45,7 @@ const Appearance = () => {
                     </select>
                 </div>
             </div>
-            <button type="button" className="bg-[#2563EB] px-3 h-14 w-28 rounded-md mt-8 right-0">Save</button>
+            <button type="button" className="bg-[#2563EB] px-3 h-14 w-28 rounded-md mt-8 justify-self-end">Save</button>
         </section>
     )
 }
