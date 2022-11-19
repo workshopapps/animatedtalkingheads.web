@@ -92,7 +92,7 @@ const UploadPodcast = () => {
      
       <div className='-[3px] border-green-50 my-5'>
         <div className='flex mx-auto  justify-center  text-[12px] font-bold gap-3 gap-y-2'>
-          <div className='flex gap-1 md:gap-2 items-center cursor-pointer'><img src={link} alt="google-drive" className='w-[16px] max-w-[25px]'/><p>Url</p></div>
+          <div className='flex gap-1 md:gap-2 items-center cursor-pointer'><img src={link} alt="google-drive" className='w-[16px] max-w-[25px]'/><p data-testid="url">Url</p></div>
           <div className='flex gap-1 md:gap-2 items-center cursor-pointer'><img src={google} alt="google-drive" className='w-[16px] max-w-[25px]' /><p>Google Drive</p></div>
           <div className='flex gap-1 md:gap-2 items-center cursor-pointer'><img src={dropbox} alt="google-drive" className='w-[16px] max-w-[25px]'/><p>Dropbox</p></div>
           <div className='flex gap-1 md:gap-2 items-center cursor-pointer'><img src={one_drive} alt="google-drive" className='max-w-[25px]'/><p>One Drive</p></div>    
