@@ -10,6 +10,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Header1 } from '../../../components/UI/Text/text.stories';
 import { Text } from '../../../components/UI/Text';
+import DragDropFile from './dragdrop';
 
 const UploadPodcast = () => {
   const [audio,setAudio]=useState(null)
@@ -20,23 +21,27 @@ const UploadPodcast = () => {
     isDisabled:false, })  
 
   const handleFileSelected = (e) => {
-    setAudio(e.target.files[0])
+    const {files}=e.target
+    console.log(files)
+    console.log(setAudio(files))
     setName(e.target.files[0].name)
-    console.log("files:", audio)
-    setLoading({...loading,isLoading:true})
+    console.log(audio)
+    
 
   }
   const uploadFile=()=>{
     setLoading({...loading,isDisabled:true})
     setUpload(true)
   }
-
+  const onUpload=(file)=>{
+   console.log(file)
+   setName(file[0].name)
+  }
  
  
   return <Layout>
     <div className='text-center max-w-[1440px] w-[90%] mx-auto mt-10 '>
       <Header1 label="Upload Audio" w="semibold" />
-
       <div className='opacity-60 my-5 border rounded-lg bg-[#EFF3F6] border-opacity-20 text-center py-5 px-2 grid gap-3'>
         <Text label="Over 0.5MB, up to 500MB, 2 Hours max." type="text4" w="sm" />
         <div className='flex gap-1 justify-center items-center'>
@@ -61,14 +66,18 @@ const UploadPodcast = () => {
           className='w-[30px] md:w-[100px]'
           />
         </div>
+      
         {!upload ?
-        <Text label="Drag and Drop Podcast Audio" type="text3" w="sm" />:
-       <Text label="Your file is uploading" type="text3" w="sm" />  
+        <div><DragDropFile
+        onUpload={onUpload}
+      /></div>:
+       <Text label="Your file is uploading" type="text2" w="sm" />  
       }
        
         <div className='flex justify-center gap-2 items-center mb-20'>
           {name? <Text label={name} type="text4" w="sm" />  
-:
+:         
+
           <label onClick={()=>handleFileSelected} className="text-[#2563EB] p-text cursor-pointer">
           <input 
           onChange={handleFileSelected}
@@ -78,8 +87,9 @@ const UploadPodcast = () => {
           </label>
           }
         </div>
+       
       </div>
-
+     
       <div className='-[3px] border-green-50 my-5'>
         <div className='flex mx-auto  justify-center  text-[12px] font-bold gap-3 gap-y-2'>
           <div className='flex gap-1 md:gap-2 items-center cursor-pointer'><img src={link} alt="google-drive" className='w-[16px] max-w-[25px]'/><p>Url</p></div>
