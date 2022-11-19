@@ -55,6 +55,7 @@ const Home = () => {
           </div>
         </div>
 
+        {showChat && <ChatBox isChatBoxShowing={showChat} setIsChatBoxShowing={setShowChat} />}
         <div className="w-6 md:w-12 h-6 md:h-12 absolute  right-8 md:right-10 bottom-6">
           <img
             src={ChatIcon}
@@ -62,7 +63,6 @@ const Home = () => {
             className="w-[100%] h-[100%] cursor-pointer "
             onClick={() => setShowChat((prevState) => !prevState)}
           />
-          {showChat && <ChatBox isChatBoxShowing={showChat} setIsChatBoxShowing={setShowChat} />}
         </div>
       </main>
       <section className="bg-white">
