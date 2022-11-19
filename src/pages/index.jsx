@@ -112,7 +112,7 @@ const Home = () => {
               Voxclips is the ideal app for intriguing my listeners. It has helped me gain more
               views and engagements and I love it
             </p>
-            <h5 className="text-center pb-6 text-[11px] ">Mark Essien</h5>
+            <h5 className="text-center pb-6 text-[11px] md:text-base ">Mark Essien</h5>
           </div>
           <div className=" px-8 bg-white md:w-[378px]  w-[261px] mx-auto mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
             <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
@@ -123,7 +123,7 @@ const Home = () => {
               I stumbled on this app by accident and to be honest, this has been the best mistake of
               my life
             </p>
-            <h5 className="text-center pb-6 text-[11px] ">Lavy Engine</h5>
+            <h5 className="text-center pb-6 text-[11px] md:text-base ">Lavy Engine</h5>
           </div>
           <div className=" px-8 bg-white w-[261px] md:w-[378px]  mx-auto mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl md:pb-0">
             <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
@@ -133,7 +133,7 @@ const Home = () => {
             <p className="text-center text-black opacity-60 text-xs md:text-base italic">
               Simple, Straightforward and works Nahh. To good to be true
             </p>
-            <h5 className="text-center pb-6 text-[11px] ">Nonso</h5>
+            <h5 className="text-center pb-6 text-[11px] md:text-base ">Nonso</h5>
           </div>
         </div>
       </section>
