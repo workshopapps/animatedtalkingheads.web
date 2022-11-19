@@ -41,7 +41,7 @@ const UploadPodcast = () => {
  
   return <Layout>
     <div className='text-center max-w-[1440px] w-[90%] mx-auto mt-10 '>
-      <Header1 label="Upload Audio" w="semibold" />
+      <Header1 label="Upload Audio" w="semibold" data-testid="header"/>
       <div className='opacity-60 my-5 border rounded-lg bg-[#EFF3F6] border-opacity-20 text-center py-5 px-2 grid gap-3'>
         <Text label="Over 0.5MB, up to 500MB, 2 Hours max." type="text4" w="sm" />
         <div className='flex gap-1 justify-center items-center'>
