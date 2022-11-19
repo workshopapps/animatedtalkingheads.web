@@ -1,8 +1,8 @@
-.meet-team {
+.meet_team {
   background-color: #ecf2ff;
 }
 
-.careers__meet-team {
+.careers__meet_team {
   width: 90%;
   margin: 0 auto;
   padding: 1.5rem;
@@ -11,7 +11,7 @@
   justify-content: space-between;
 }
 
-.careers__meet-info {
+.careers__meet_info {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -22,29 +22,29 @@
   font-size: 0.8rem;
 }
 
-.careers__meet-image {
+.careers__meet_image {
   width: 45%;
 }
 
-.careers__secondary-heading {
+.careers__secondary_heading {
   font-size: 1.5rem;
   font-weight: 700;
   padding-bottom: 1rem;
 }
 
 @media (max-width: 43.75em) {
-  .careers__meet-team {
+  .careers__meet_team {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
   }
 
-  .careers__meet-info {
+  .careers__meet_info {
     width: 100%;
   }
 
-  .careers__meet-image {
+  .careers__meet_image {
     width: 100%;
   }
 }

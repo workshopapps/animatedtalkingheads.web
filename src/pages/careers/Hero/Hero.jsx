@@ -1,5 +1,5 @@
 import React from 'react';
-import './hero.modules.scss';
+import styles from './hero.module.scss';
 import Ethics from './ethics/Ethics';
 import hero from '../Images/Hero-img.png';
 import equal from '../Images/equality-icon.svg';
@@ -7,22 +7,22 @@ import diverse from '../Images/Diversity-icon.svg';
 
 export default function Hero() {
   return (
-    <section className="careers__hero">
-      <div className="careers__theme">
-        <h1 className="careers__main-heading">Be a part of our Mission</h1>
-        <p className="careers__theme-text">
+    <section className={styles.careers__hero}>
+      <div className={styles.careers__theme}>
+        <h1 className={styles.careers__main_heading}>Be a part of our Mission</h1>
+        <p className={styles.careers__theme_text}>
           At Voxclip we believe that a cross-disciplinary team is what it takes to build a wholesome
           and delightful product experience and we would love you to join us
         </p>
-        <button className="careers__hero-btn">See open roles</button>
+        <button className={styles.careers__hero_btn}>See open roles</button>
       </div>
-      <div className="careers__hero-image">
-        <img src={hero} alt="" className="hero-image" />
+      <div className={styles.careers__hero_image}>
+        <img src={hero} alt="" className={styles.hero_image} />
       </div>
-      <div className="careers__work-ethics">
-        <div className="work-ethics">
-          <h3 className="careers__secondary-heading">Our core work ethics</h3>
-          <p className="work-ethics-text">
+      <div className={styles.careers__work_ethics}>
+        <div className={styles.work_ethics}>
+          <h3 className={styles.careers__secondary_heading}>Our core work ethics</h3>
+          <p className={styles.work_ethics_text}>
             We are innovative and customer focused. We are organised and communicate effectively
             across all teams
           </p>
