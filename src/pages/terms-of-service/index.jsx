@@ -5,14 +5,17 @@ const TermsOfService = () => {
   return (
     <Layout>
       <div className={styles.tosContainer}>
-
+        
+        {/* header section for terms of service */}
         <header className={styles.tosHeader}>
           <h1 className={styles.headerHeading}>Terms of Service</h1>
           <p className={styles.headerP}>Effective as of November 16, 2022.</p>
           <div className={styles.overlay}></div>
         </header>
-
+        
+        {/* content section for terms of service */}
         <section className={styles.contentSection}>
+          {/* sideNav for content*/}
           <div className={styles.contentNav}>
             <ul>
               <li><a href="#Introduction">Introduction</a></li>
@@ -28,7 +31,7 @@ const TermsOfService = () => {
               <li><a href="#Contact-Information">Contact Information</a></li>
             </ul>
           </div>
-
+          {/* Content Body */}
           <div className={styles.contentBody}>
             <div className={styles.contentBodyUnit} id='Introduction'>
               <h2 className={styles.contentHeading}>Introduction</h2>

@@ -1,99 +1,89 @@
 .nav {
-    background: #FBFBFB;
-    border-bottom: 1px solid rgba(68, 68, 68, 0.1);
-    height: 4em;
-    color: #292D32;
+  background: #fbfbfb;
+  border-bottom: 1px solid rgba(68, 68, 68, 0.1);
+  height: 4em;
+  color: #292d32;
 }
 
 .nav .links {
-    font-size: 1em;
-    line-height: 20px;
-    color: #292D32;
+  font-size: 1em;
+  line-height: 20px;
+  color: #292d32;
 }
 
 .menu {
-    background: rgba(251, 251, 251, 0.8);
-    backdrop-filter: blur(7.5px);
-    position: fixed;
-    top: 4em;
-    left: 0;
-    width: 100%;
-    height: calc(100% - 4em);
+  background: rgba(251, 251, 251, 0.8);
+  backdrop-filter: blur(7.5px);
+  position: fixed;
+  top: 4em;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 4em);
 }
 
 .menu .links {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    color: #606368;
-    margin-bottom: 1.25em;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #606368;
+  margin-bottom: 1.25em;
 }
 
-.menu  a {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    color: #606368;
-    margin-bottom: 1.25em;
+.menu a {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #606368;
+  margin-bottom: 1.25em;
 }
 
 .menu .line {
-    border: 0.5px solid #AFB0B3;
+  border: 0.5px solid #afb0b3;
 }
 
 .menu .links2 {
-    margin-top: 14px;
+  margin-top: 14px;
 }
 
-
-.menu .links2  a {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 18px;
-    color: #606368;
-    margin-top: 14px;
+.menu .links2 a {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #606368;
+  margin-top: 14px;
 }
 
+@media screen and (min-width: 480px) {
+  .nav {
+    height: 5.5em;
+  }
 
-@media screen and  (min-width: 480px) {
-    .nav {
-        height: 5.5em;
-    }
-
-    .nav .links {
-        max-width: 28em;
-    }
-    
+  .nav .links {
+    max-width: 28em;
+  }
 }
 
-@media screen and  (min-width: 1024px) {
-    .nav .links {
-        max-width: 31.9375em;
-    }
-    
+@media screen and (min-width: 1024px) {
+  .nav .links {
+    max-width: 31.9375em;
+  }
 }
 
 .createVideo {
-    position: absolute;
-    width: 240px;
-    height: 58px;
-    background: #2563EB;
-    border-radius: 8px;
-    color: #FEFEFE !important;
-    line-height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  width: 240px;
+  height: 58px;
+  background: #2563eb;
+  border-radius: 8px;
+  color: #fefefe !important;
+  line-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-@media screen and  (max-width: 756px) {
-
-    a:hover {
-        color: #292D32;
-    }
-
-
-    
+@media screen and (max-width: 756px) {
+  a:hover {
+    color: #292d32;
+  }
 }
-

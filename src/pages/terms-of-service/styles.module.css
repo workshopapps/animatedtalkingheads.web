@@ -108,6 +108,8 @@ li {
   margin-left: 1.5rem;
 }
 
+/* unique styles for mobile */
+
 @media (max-width: 788px) {
   .tosContainer {
   }
