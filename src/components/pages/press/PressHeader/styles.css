@@ -1,0 +1,212 @@
+.press-header {
+  height: 700px;
+}
+.press-header .header-img {
+  background: #000;
+  background: url(../Images/press-header.png);
+  background-size: cover;
+  height: 430px;
+}
+
+.press-header .header-img .overlay {
+  background: rgba(38, 50, 56, 0.8);
+  height: inherit;
+}
+
+.press-header .header-img .overlay2 {
+  position: relative;
+  background: rgba(217, 217, 217, 0.3);
+  height: inherit;
+  display: flex;
+  justify-content: center;
+}
+
+.header-img .overlay2 h1 {
+  font-size: 48px;
+  line-height: 60px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.press-header .container {
+  position: absolute;
+  bottom: -50%;
+  max-width: 800px;
+  background: #f2f3fd;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.press-header .container .date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 16px;
+  color: #737479;
+}
+
+.container .date img {
+  width: 24px;
+  margin-right: 8px;
+}
+
+.press-header .container h3 {
+  font-weight: 700;
+  font-size: 48px;
+  text-align: center;
+  margin: 10px 0 16px;
+  color: #292d32;
+}
+
+.press-header .container p {
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  color: #737479;
+  margin-bottom: 24px;
+}
+
+.container .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: auto;
+  width: 143px;
+  height: 48px;
+  background: #2563eb;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.container .btn img {
+  width: 24px;
+}
+
+/* ################################################# */
+/* Tablet Screen */
+@media screen and (max-width: 768px) {
+  .press-header .header-img {
+    background: url(../Images/press-header.png);
+    background-size: contain;
+    height: 430px;
+    background-repeat: no-repeat;
+  }
+
+  .header-img .overlay2 h1 {
+    font-size: 36px;
+    line-height: 50px;
+    margin-top: 80px;
+  }
+
+  .press-header .container {
+    position: absolute;
+    bottom: -45%;
+    padding: 32px 24px;
+  }
+
+  .press-header .container .date {
+    font-weight: 500;
+    font-size: 14px;
+    color: #737479;
+  }
+
+  .press-header .container h3 {
+    font-weight: 700;
+    font-size: 36px;
+    margin: 10px 0 16px;
+  }
+
+  .press-header .container p {
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    color: #737479;
+    margin-bottom: 24px;
+  }
+
+  .btn {
+    width: 130px;
+    height: 44px;
+    font-size: 14px;
+  }
+}
+
+/* ################################################# */
+/* Mobile Screen */
+@media screen and (max-width: 480px) {
+  .press-header {
+    height: 360px;
+  }
+  .press-header .header-img {
+    background: url(../Images/press-header-mob.png);
+    background-size: cover;
+    height: 190px;
+    background-repeat: no-repeat;
+  }
+
+  .press-header .header-img .overlay {
+    background: none;
+    height: inherit;
+  }
+
+  .header-img .overlay2 h1 {
+    font-size: 24px;
+    line-height: 50px;
+    margin-top: 40px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #2563eb;
+  }
+
+  .press-header .container {
+    position: absolute;
+    width: 85%;
+    bottom: -85%;
+    padding: 16px;
+    text-align: left;
+  }
+
+  .press-header .container .date {
+    font-size: 8px;
+  }
+
+  .container .date img {
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+  }
+
+  .press-header .container h3 {
+    font-weight: 700;
+    font-size: 20px;
+    margin: 8px 0;
+    text-align: left;
+  }
+
+  .press-header .container p {
+    font-weight: 500;
+    font-size: 12px;
+    text-align: left;
+    color: #737479;
+    margin-bottom: 16px;
+  }
+
+  .container .btn {
+    gap: 4px;
+    width: 130px;
+    height: 44px;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .container .btn img {
+    width: 16px;
+  }
+}
