@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Home from './pages';
 import About from './pages/about';
+import CustomizeAudio from './pages/customize-audio';
 import Docs from './pages/FEdocs';
 import Blog from './pages/blogs';
 import Careers from './pages/careers';
@@ -33,6 +34,7 @@ function App() {
         <Route path={routes.home} element={<Home />} />
         <Route path={routes.docs} element={<Docs />} />
         <Route path={routes.about} element={<About />} />
+        <Route path={routes.customizeAudio} element={<CustomizeAudio />} />
         <Route path={routes.blog} element={<Blog />} />
         <Route path={routes.careers} element={<Careers />} />
         <Route path={routes.community} element={<Communities />} />
@@ -51,7 +53,7 @@ function App() {
         <Route path={routes.podcastDownload} element={<DownloadPodcast />} />
         <Route path={routes.podcastCharacters} element={<Characters />} />
         <Route path={routes.press} element={<Press />} />
-        
+
       </Routes>
     </Provider>
   );
