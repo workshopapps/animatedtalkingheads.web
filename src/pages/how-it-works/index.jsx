@@ -5,8 +5,37 @@ import customizeCharacterIllustration from '../../assets/icons/Group 817.svg';
 import downloadIllustration from '../../assets/icons/Group 828.svg';
 import documentUploadIcon from '../../assets/icons/document-download.svg';
 import documentDownloadIcon from '../../assets/icons/document-upload.svg';
-
 import uploadArrowUp from '../../assets/icons/arrow-up.svg';
+
+const items = [
+  {
+    id: 1,
+    step: 'step 1',
+    heading: 'Upload your audio podcast',
+    description: 'Get started and upload a sound fille of your podcast from any device.',
+    icon: documentUploadIcon,
+    illustration: uploadIllustration
+  },
+
+  {
+    id: 2,
+    step: 'step 2',
+    heading: 'Customise your character and select a background',
+    description:
+      'Select a character from our extensive library and modify it to your taste. Select an eye catching backdrop image and include subtitles.',
+    icon: uploadArrowUp,
+    illustration: customizeCharacterIllustration
+  },
+
+  {
+    id: 3,
+    heading: 'Convert audio podcast to video and download.',
+    description:
+      'After Voxclips has generated your video podcast for you, download and enjoy. You now have a fascinating podcast video that viewers can watch.',
+    icon: documentDownloadIcon,
+    illustration: downloadIllustration
+  }
+];
 
 const HowItWorks = () => {
   return (
@@ -31,68 +60,28 @@ const HowItWorks = () => {
         </section>
 
         <section className=" flex flex-col gap-8 py-6">
-          <div className=" flex flex-col md:flex-row justify-between px-3 md:px-8 py-3 md:py-6 items-center gap-5">
-            <div className=" w-full">
-              <h5 className=" py-4 text-xl text-pri-600">step one</h5>
-              <div className=" flex gap-5 items-start">
-                <img src={documentUploadIcon} alt="" />
-                <div className=" flex flex-col gap-3">
-                  <h3 className=" text-2xl md:text-3xl">Upload your audio podcast</h3>
-                  <p className=" text-xl">
-                    Get started and upload a sound fille of your podcast from any device.
-                  </p>
+          {items.map((item) => (
+            <div
+              key={item.id}
+              className={` ${
+                item.id === 2 ? ' md:flex-row-reverse' : 'md:flex-row'
+              } flex flex-col  justify-between px-3 md:px-8 py-3 md:py-6 items-center gap-5`}>
+              <div className=" w-full">
+                <h5 className=" py-4 text-xl text-pri-600">{item.step}</h5>
+                <div className=" flex gap-5 items-start">
+                  <img src={item.icon} alt="" />
+                  <div className=" flex flex-col gap-3">
+                    <h3 className=" text-2xl md:text-3xl">{item.heading}</h3>
+                    <p className=" text-xl">{item.description}</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className=" w-full">
-              <img className=" w-full" src={uploadIllustration} alt="" />
-            </div>
-          </div>
-
-          <div className=" flex flex-col md:flex-row-reverse justify-between px-3 md:px-8 py-3 md:py-6 items-center gap-5">
-            <div className=" w-full">
-              <h5 className=" py-4 text-xl text-pri-600">step two</h5>
-              <div className=" flex gap-5 items-start">
-                <img src={uploadArrowUp} alt="" />
-                <div className=" flex flex-col gap-3">
-                  <h3 className=" text-2xl md:text-3xl">
-                    Customise your character and select a background
-                  </h3>
-                  <p className=" text-xl">
-                    Select a character from our extensive library and modify it to your taste.
-                    Select an eye catching backdrop image and include subtitles.
-                  </p>
-                </div>
+              <div className=" w-full">
+                <img className=" w-full" src={item.illustration} alt="" />
               </div>
             </div>
-
-            <div className="w-full">
-              <img className=" w-full" src={customizeCharacterIllustration} alt="" />
-            </div>
-          </div>
-
-          <div className=" flex flex-col md:flex-row justify-between px-3 md:px-8 py-3 md:py-6 items-center gap-5">
-            <div className=" w-full">
-              <h5 className=" py-4 text-xl text-pri-600">step three</h5>
-              <div className=" flex gap-5 items-start">
-                <img src={documentDownloadIcon} alt="" />
-                <div className=" flex flex-col gap-3">
-                  <h3 className=" text-2xl md:text-3xl">
-                    Convert audio podcast to video and download.
-                  </h3>
-                  <p className=" text-xl">
-                    After Voxclips has generated your video podcast for you, download and enjoy. You
-                    now have a fascinating podcast video that viewers can watch.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="w-full">
-              <img className=" w-full" src={downloadIllustration} alt="" />
-            </div>
-          </div>
+          ))}
         </section>
       </main>
     </Layout>
