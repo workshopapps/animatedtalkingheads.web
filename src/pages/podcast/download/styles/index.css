@@ -1,0 +1,174 @@
+section.download-video-section {
+  margin-top: 3rem;
+}
+section.download-video-section .download-video {
+  width: 93%;
+  max-width: 1512px;
+  margin: 0 auto;
+}
+section.download-video-section .download-video > h1.page-title {
+  font-size: 3rem;
+  text-align: center;
+}
+section.download-video-section .download-video .page-content {
+  display: flex;
+  margin-top: 2.5rem;
+  border: 2px solid red;
+}
+section.download-video-section .download-video .page-content > .desktop-lhs {
+  flex: 4;
+}
+section.download-video-section .download-video .page-content .desktop-lhs {
+  border-radius: 10px;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container {
+  border-radius: 10px;
+  background-color: black;
+  width: 90%;
+  max-width: 864px;
+  height: auto;
+  border-radius: 10px;
+  position: relative;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container.fullscreen {
+  width: initial;
+  max-width: 100%;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container > video {
+  border-radius: 10px;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container:hover .video-controls-container, section.download-video-section .download-video .page-content .desktop-lhs .video-container.paused .video-controls-container, section.download-video-section .download-video .page-content .desktop-lhs .video-container:focus-within .video-controls-container {
+  opacity: 1;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container.paused .pause-icon {
+  display: none;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container:not(.paused) .play-icon {
+  display: none;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0px 0px 10px 10px;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .controls {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  -webkit-align-content: flex-end;
+  align-content: flex-end;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .controls button {
+  padding: 0;
+  height: 48px;
+  border: 2px solid greenyellow;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 150ms ease-in-out;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .controls button:hover {
+  opacity: 1;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .controls button:nth-child(4) {
+  margin-left: auto;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container iframe {
+  width: 100%;
+  border-radius: 10px;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container.theater {
+  max-width: initial !important;
+  width: 100% !important;
+}
+section.download-video-section .download-video .page-content .desktop-rhs {
+  border: 2px solid red;
+}
+section.download-video-section .download-video .page-content .desktop-rhs .video-share-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+}
+section.download-video-section .download-video .page-content .desktop-rhs .video-share-container > h3 {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 1rem 0;
+}
+section.download-video-section .download-video .page-content .desktop-rhs .video-share-container .video-share {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+section.download-video-section .download-video .page-content .desktop-rhs .video-share-container .video-share .video-share__icons {
+  display: flex;
+  gap: 0.6rem;
+}
+section.download-video-section .download-video .page-content .desktop-rhs .video-settings > h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+section.download-video-section .download-video .page-content .desktop-rhs .video-settings > p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+section.download-video-section .download-video .page-content .desktop-rhs fieldset.video-settings-quality-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+section.download-video-section .download-video .page-content .desktop-rhs fieldset.video-settings-quality-container .video-settings-quality {
+  display: flex;
+  border: 2px solid blue;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+}
+section.download-video-section .download-video .page-content .desktop-rhs fieldset.video-settings-quality-container .video-settings-quality > input[type=radio] {
+  cursor: pointer;
+  border-radius: 50%;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: 1px solid rgba(0, 0, 0, 0.2);
+  width: 16px;
+  height: 16px;
+  transform: translateY(5px);
+}
+section.download-video-section .download-video .page-content .desktop-rhs fieldset.video-settings-quality-container .video-settings-quality > input[type=radio]:focus-visible {
+  outline-offset: 0;
+}
+section.download-video-section .download-video .page-content .desktop-rhs fieldset.video-settings-quality-container .video-settings-quality > input[type=radio]:checked {
+  background-color: #1877f2;
+  border-width: 0.2rem;
+}
+section.download-video-section .download-video .page-content .desktop-rhs fieldset.video-settings-quality-container .video-settings-quality > label {
+  display: flex;
+  margin-right: auto;
+  cursor: pointer;
+}
+section.download-video-section .download-video .page-content .desktop-rhs fieldset.video-settings-quality-container .video-settings-quality > label > svg {
+  margin-right: 0.5rem;
+}
+section.download-video-section .download-video .page-content .desktop-rhs button.button {
+  width: 100%;
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 1.5em 0;
+  border-radius: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+/*# sourceMappingURL=index.css.map */

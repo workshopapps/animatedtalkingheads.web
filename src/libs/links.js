@@ -20,7 +20,8 @@ export const routes = {
   podcastCustomize: '/podcast/customize',
   podcastDownload: '/podcast/download',
   podcastCharacters: '/podcast/characters',
-  press: '/press'
+  press: '/press',
+  scenery: '/avatar/scenery'
 };
 
 export const links = [

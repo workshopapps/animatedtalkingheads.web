@@ -14,6 +14,7 @@ import { Header1 } from '../../../components/UI/Text/text.stories';
 import { Text } from '../../../components/UI/Text';
 import DragDropFile from './dragdrop';
 import styles from '../upload/index.module.scss'
+import { Link } from 'react-router-dom';
 
 const UploadPodcast = () => {
   const [audio,setAudio]=useState(null)
@@ -103,7 +104,7 @@ const UploadPodcast = () => {
            <img 
            src={music}
            alt="microphone podcast"
-           className='w-[20px] md:w-[30px]'
+           className='w-[20px] md:w-[31px]'
            />
            </div>
           }
@@ -132,8 +133,13 @@ const UploadPodcast = () => {
           <div className='flex gap-1 md:gap-2 items-center cursor-pointer'><img src={one_drive} alt="google-drive" className='max-w-[25px]'/><p>One Drive</p></div>    
         </div>
       </div>
+      {uploaded ?
+      <Link to="/podcast/customize">
+        <div className='my-10 justify-center flex'>< Button label="Start Creating" /></div>
+      </Link>
+      :
       <div className='my-10 justify-center flex '>< Button {...loading} onClick={uploadFile} /></div>
-
+      }
     </div>
   </Layout>;
 };
