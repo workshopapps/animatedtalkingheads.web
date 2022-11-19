@@ -134,7 +134,7 @@ const UploadPodcast = () => {
         </div>
       </div>
       {uploaded ?
-      <Link to="/">
+      <Link to="/podcast/customize">
       <div className='my-10 justify-center flex '>< Button label="Start Creating" /></div>
       </Link>
       :
