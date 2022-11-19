@@ -43,7 +43,7 @@ const TopNavbar = () => {
             <Button label={'Create Video'}>Create Video</Button>
           </Link>
         </div>
-        <button className="md:hidden" onClick={() => setShow(!show)}>
+        <button className="md:hidden hover:border-0" onClick={() => setShow(!show)}>
           <img src={show ? closeIcon : menuIcon} alt="home" />
         </button>
       </div>

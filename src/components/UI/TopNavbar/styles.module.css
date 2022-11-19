@@ -19,6 +19,7 @@
   left: 0;
   width: 100%;
   height: calc(100% - 4em);
+  z-index: 100000;
 }
 
 .menu .links {

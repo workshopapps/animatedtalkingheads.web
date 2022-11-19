@@ -13,7 +13,9 @@ import 'swiper/css'
 import { Pagination, Navigation } from 'swiper'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-import { Engineering, Management, Design, Marketing } from './team-data/teamData.jsx'
+import { Engineering, Management, Design, Marketing } from './team-data/teamData.jsx';
+
+
 const About = () => {
   
 
