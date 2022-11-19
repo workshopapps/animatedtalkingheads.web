@@ -1,5 +1,5 @@
 import Layout from '../../components/UI/Layout';
-import styles from './index.scss';
+import styles from './index.module.scss';
 import img1 from './assets/img-1.png';
 import img2 from './assets/img-2.png';
 import img3 from './assets/img-3.png';
