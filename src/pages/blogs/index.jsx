@@ -43,25 +43,25 @@ const Blog = () => {
             <Card
               photo={img2}
               heading="Podcast Content Strategy"
-              text="Are you looking to start your podcast in 2022?"
+              text="Expectation versus reality"
               avatar={avatar}
             />
             <Card
               photo={img3}
               heading="Animated Podcast"
-              text="Are you looking to start your podcast in 2022?"
+              text="Today animation is becoming a popular way to add life and personality to video production"
               avatar={avatar}
             />
             <Card
               photo={img4}
-              heading="Complete Guide on How to Start A Podcast"
-              text="Are you looking to start your podcast in 2022?"
+              heading="How we solved The Cringy AI Voice"
+              text="Ever Cringed after hearing the AI voice"
               avatar={avatar}
             />
             <Card
               photo={img5}
-              heading="Complete Guide on How to Start A Podcast"
-              text="Are you looking to start your podcast in 2022?"
+              heading="How To Reach More Audience From YourPodcast"
+              text="Tips & Tricks"
               avatar={avatar}
             />
           </div>
