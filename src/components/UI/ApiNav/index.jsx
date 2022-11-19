@@ -42,34 +42,6 @@ const ApiNav = () => {
 };
 export default ApiNav;
 
-{
-  {
-    /* <div className={`${styles.create} hidden md:flex`}>
-          <Link to="/podcast/upload" className="btn px-10 py-3">
-            Create Video
-          </Link>
-        </div> */
-  }
-  /* <div className={`h-full flex justify-between items-center px-3 lg:px-20`}>
-<div className="flex">
-  <Link to="/"> <img src={headerLogo} alt="home"/></Link>
-</div>
-<div className={`${styles.links} hidden md:flex justify-between basis-3/5`}>
-  { links.map( (link, index) => <Link className="block" key={index} to={link.link}> {link.name} </Link> ) }
-</div>
-<div className={`${styles.create} hidden md:flex`}>
-  <Link to="/podcast/upload" className="btn px-10 py-3">
-    Create Video
-  </Link>
-</div>
-<button className="md:hidden">
-  <img src={menuIcon} alt="home"/>
-</button>
-</div>
-</div>
-); */
-}
-
 <nav>
   <div className="mx-w-[1440px] h-full flex items-center justify-between p-4 sm:p-5 lg:p-6">
     <div>

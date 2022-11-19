@@ -18,10 +18,10 @@ const ApiPage = () => {
   return (
     <>
       <ApiNav />
-      <main className="flex flex-col items-left py-2 px-10 gap-8 max-w-[1440px] items-center">
-        <section className="max-w-[1440px] flex flex-col">
+      <main className="flex flex-col items-left py-2 px-10 gap-4 items-center lg:py-20">
+        <section className=" flex flex-col lg:gap-0">
           <div className="py-5 items-center flex flex-col justify-center gap:5  lg:gap-64 md:flex-row md:justify-between ">
-            <div className="flex text-center flex-col gap-5 md:justify-left max-w-[500px] md:text-left">
+            <div className="flex text-center flex-col gap-7 lg:gap-5 md:justify-left max-w-[500px] md:text-left">
               <div className="  md:text-left flex flex-col ">
                 <Text type={'header2'} w={'bold'} className=" ">
                   {' '}
@@ -36,13 +36,13 @@ const ApiPage = () => {
                   </Text>
                 </div>
                 <div className="hidden gap-4 md:flex md:flex-col lg:flex-row max-w-[250px] lg:max-w-[500px]">
-                  <Button label="Register as a Developer" />
-                  <Button label="View Documentation" ghost />
+                  <Button label="Register" />
+                  <Button label="Documentation" ghost />
                 </div>
               </div>
             </div>
 
-            <div className="px-2 lg:basis-2/5">
+            <div className="px-2 lg:basis-2/5 py-5 md:py-0">
               <img src={codeImg} alt="api-img" className=" w-[250px] sm:w-[400px] lg:w-[500px]" />
             </div>
             <div className="flex flex-col items-center gap-4 md:hidden">
@@ -82,11 +82,11 @@ const ApiPage = () => {
         </section>
 
         <section>
-          <div className="flex  flex-wrap pt-36 my-0 -mx-10 gap-1 justify-center ">
+          <div className="flex  flex-wrap pt-36 my-0 -mx-10 gap-3 justify-center ">
             {ApiPageImages.map((image) => {
               return (
                 <img
-                  className=" h-[350px] w-[310px] my-0 mx-5"
+                  className=" h-[350px] w-[310px] my-0 mx-1"
                   src={image.img}
                   alt={image.name}
                   key={image.name}
@@ -96,7 +96,7 @@ const ApiPage = () => {
           </div>
         </section>
 
-        <section className="text-center sm:text-left max-w-[1440px] flex flex-col gap-5">
+        <section className="text-center sm:text-left flex flex-col gap-5 lg:py-14">
           <div className="flex flex-col  gap-5 md:flex-row lg:gap-64 md:justify-between py-10">
             <div className="flex flex-col gap-5 md:justify-left lg:max-w-[500px] md:text-left">
               <div className="  md:text-left flex flex-col ">
@@ -114,8 +114,8 @@ const ApiPage = () => {
                   </Text>
                 </div>
                 <div className="gap-4 flex flex-col w-[250px] sm:flex-row sm:w-[400px] sm:max-w-[500px]">
-                  <Button label="Get an Avatar" />
-                  <Button label="start a podcast" ghost />
+                  <Button label="Avatar" />
+                  <Button label="Podcast" ghost />
                 </div>
               </div>
               <div className="flex flex-col gap-2">
@@ -132,7 +132,7 @@ const ApiPage = () => {
             </div>
 
             <div className="px-2  flex flex-col lg:basis-2/5 items-center ">
-              <img src={codeImg} alt="api-img" className=" w-[250px] sm:w-[400px] lg:w-[450px]" />
+              <img src={codeImg} alt="api-img" className=" w-[250px] sm:w-[400px] lg:w-[500px]" />
             </div>
           </div>
           <div className="flex flex-row lg:gap-12 p-9 flex-wrap justify-around  lg:justify-around ml-6">
@@ -174,7 +174,7 @@ const ApiPage = () => {
               The Voxclip API was built to fit right into your workflow. Here are some toools.
             </Text>
           </div>
-          <div className="flex flex-wrap text-center justify-around p-7 gap-4">
+          <div className="flex flex-wrap text-center justify-around p-7 gap-4 max-w-[1200px]">
             <div className=" bg-white rounded-lg py-8 px-4">
               <div className="flex flex-col items-left">
                 <Text type={'text2'} w={'medium'} className="max-w-[400px] text-left">
@@ -236,7 +236,7 @@ const ApiPage = () => {
             </Text>
           </div>
           <div className="flex flex-col items-center">
-            <Button label="Register As a Developer" />
+            <Button label="Register" />
           </div>
         </section>
       </main>
