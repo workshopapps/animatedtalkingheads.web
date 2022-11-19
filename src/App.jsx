@@ -23,6 +23,11 @@ import Setting from './pages/settings';
 import Contact from './pages/contact';
 import UseCases from './pages/use-cases';
 import HowItWorks from './pages/how-it-works';
+import PrivacyAbout from './pages/privacy-policy/about';
+import PrivacyChanges from './pages/privacy-policy/changes-to-policy';
+import PrivacyInformation from './pages/privacy-policy/information';
+import PrivacyCookies from './pages/privacy-policy/cookies';
+import HowWeUseInformation from './pages/privacy-policy/how-we-use-information';
 
 function App() {
   return (
@@ -40,7 +45,14 @@ function App() {
         <Route path="/faqs" element={<Faqs />} />
         <Route path="/help-center" element={<HelpCenter />} />
         <Route path="/pricing" element={<Pricing />} />
+        {/* privacy-policy  routes */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/privacy-policy/about" element={<PrivacyAbout />} />
+        <Route path="/privacy-policy/changes-to-policy" element={<PrivacyChanges />} />
+        <Route path="/privacy-policy/information" element={<PrivacyInformation />} />
+        <Route path="/privacy-policy/cookies" element={<PrivacyCookies />} />
+        <Route path="/privacy-policy/how-we-use-information" element={<HowWeUseInformation />} />
+        {/*  */}
         <Route path="/terms-and-conditions" element={<TermsAndCondition />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/settings" element={<Setting />} />
