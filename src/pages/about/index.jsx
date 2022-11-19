@@ -7,7 +7,7 @@ import lamp_charge from './images/lamp-charge.png'
 import lovely from './images/lovely.png'
 import unlimited from './images/unlimited.png'
 import { Link } from 'react-router-dom';
-// import { useRef, useEffect } from 'react';
+import {useEffect} from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'
 import { Pagination, Navigation } from 'swiper'
@@ -15,7 +15,11 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import { Engineering, Management, Design, Marketing } from './team-data/teamData.jsx'
 const About = () => {
-  
+
+  useEffect(() => {
+    document.title='About Us';
+
+}, []);
 
 
   return <Layout>
@@ -191,21 +195,21 @@ const About = () => {
 
               <div className="about_team_section2">
                 <div className="about_team_tabs">
-                  <div className="about_team_tab"  tabIndex={0}>
+                  <div className="about_team_tab" tabIndex={0}>
                     <p>Management</p>
                     <div className="about_team_slider" id='first_slider'>
                       <Swiper
-                         style={{                  
+                        style={{
                           "--swiper-navigation-size": "25px",
                         }}
-             
-                        
+
                         modules={[Pagination, Navigation]}
 
                         loopFillGroupWithBlank={true}
                         navigation={true}
                         slidesPerView={4.5}
                         spaceBetween={40}
+
                         slidesPerGroup={1}
                         loop={true}>
 
@@ -221,24 +225,69 @@ const About = () => {
 
                       </Swiper>
                     </div>
+
+
+                    {/* for small screen */}
+
+
+                    <div className="about_team_slider" id='swiper_small_screen'>
+                      <Swiper
+                        style={{
+                          "--swiper-navigation-size": "25px",
+                        }}
+
+                        modules={[Pagination, Navigation]}
+
+                        loopFillGroupWithBlank={true}
+                        navigation={true}
+                        slidesPerView={1}
+                        spaceBetween={40}
+
+                        slidesPerGroup={1}
+                        loop={true}>
+
+
+                        {Management.map((slide) => (
+                          <SwiperSlide className="about_team_slide" key={slide.name} >
+                            <img src={slide.image} alt="" />
+                            <h3>{slide.name}</h3>
+                            <p>{slide.role}</p>
+                          </SwiperSlide>
+                        ))}
+
+
+                      </Swiper>
+                    </div>
+
+                    {/* for small screen */}
+
+
                   </div>
+
+
+
+       
+
+
+
 
                   <div className="about_team_tab" tabIndex={1}>
                     <p id='second_slider'>Engineering</p>
-                    <div className="about_team_slider"  id='second_slider'>
+                    <div className="about_team_slider" id='second_slider'>
 
 
-                    <Swiper
-                         style={{                  
+                      <Swiper
+                        style={{
                           "--swiper-navigation-size": "25px",
                         }}
+
                         modules={[Pagination, Navigation]}
 
                         loopFillGroupWithBlank={true}
                         navigation={true}
                         slidesPerView={4.5}
                         spaceBetween={40}
-                   
+
                         slidesPerGroup={1}
                         loop={true}>
 
@@ -259,10 +308,10 @@ const About = () => {
 
                   <div className="about_team_tab" tabIndex={2}>
                     <p id='third_slider'>Design</p>
-                    <div className="about_team_slider"  id='third_slider'>
+                    <div className="about_team_slider" id='third_slider'>
 
-                    <Swiper
-                         style={{                  
+                      <Swiper
+                        style={{
                           "--swiper-navigation-size": "25px",
                         }}
                         modules={[Pagination, Navigation]}
@@ -270,7 +319,7 @@ const About = () => {
                         loopFillGroupWithBlank={true}
                         navigation={true}
                         slidesPerView={4.5}
-                        spaceBetween={40}about_team_slide
+                        spaceBetween={40} about_team_slide
                         slidesPerGroup={1}
                         loop={true}>
 
@@ -291,10 +340,10 @@ const About = () => {
 
                   <div className="about_team_tab" tabIndex={3}>
                     <p id='fourth_slider'>Marketing</p>
-                    <div className="about_team_slider"  id='fourth_slider'>
+                    <div className="about_team_slider" id='fourth_slider'>
 
-                    <Swiper
-                         style={{                  
+                      <Swiper
+                        style={{
                           "--swiper-navigation-size": "25px",
                         }}
                         modules={[Pagination, Navigation]}
@@ -302,7 +351,7 @@ const About = () => {
                         loopFillGroupWithBlank={true}
                         navigation={true}
                         slidesPerView={4.5}
-                        spaceBetween={40}about_team_slide
+                        spaceBetween={40} about_team_slide
                         slidesPerGroup={1}
                         loop={true}>
 

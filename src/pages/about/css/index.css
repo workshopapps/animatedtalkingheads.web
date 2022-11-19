@@ -323,6 +323,10 @@
   right: 0;
 }
 
+.about_team_slider#swiper_small_screen {
+  display: none !important;
+}
+
 .about_team_slide {
   display: grid;
   justify-content: center;
@@ -464,6 +468,13 @@
     grid-template-columns: 1fr;
   }
 
+  .about_team_slider#swiper_small_screen {
+    display: block !important;
+  }
+  .about_team_slider#first_slider {
+    display: none !important;
+  }
+
   #second_slider,
   #third_slider,
   #fourth_slider {
@@ -471,8 +482,12 @@
   }
 
   .about_team_tab:focus p {
-    background-color: #171d2e;
+    background-color: transparent;
     color: #ffffff;
+  }
+
+  .about_team_slide p {
+    color: #171d2e !important;
   }
 }
 
