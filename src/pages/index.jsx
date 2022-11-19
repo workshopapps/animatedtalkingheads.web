@@ -8,6 +8,7 @@ import MarkImg from '../assets/images/mark-essien.png';
 import LavyImg from '../assets/images/lavy-engine.png';
 import NonsoImg from '../assets/images/Nonso.png';
 import { Button } from '../components/UI/Button';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -43,9 +44,11 @@ const Home = () => {
             <div className="h-[5rem] mb-6 lg:mb-10 lg:h-[10%] md:block hidden">
               <img src={Microphone} alt="microphone" className="mx-auto h-[100%] " />
             </div>
-            <div className="mb-10 w-[10.785rem] pt-16 md:pt-0 mx-auto">
-              <Button label={'Upload Audio'} />
-            </div>
+            <Link to="/podcast/upload">
+              <div className="mb-10 w-[10.785rem] pt-16 md:pt-0 mx-auto">
+                <Button label={'Upload Audio'} />
+              </div>
+            </Link>
           </div>
         </div>
 
