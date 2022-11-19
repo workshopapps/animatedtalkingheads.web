@@ -20,6 +20,7 @@ export const routes = {
   podcastCustomize: "/podcast/customize",
   podcastDownload: "/podcast/download",
   podcastCharacters: "/podcast/characters",
+  scenery: "/avatar/scenery",
 }
 
 export const links = [

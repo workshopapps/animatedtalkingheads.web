@@ -1,0 +1,138 @@
+.backgroundContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 100px;
+    padding-bottom: 30px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-family: 'Mulish';
+}
+.heading {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 35px;
+    text-align: center;
+    color: #252525;
+    padding-bottom: 10px;
+}
+.headingP {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #878787;
+    padding-bottom: 50px;
+}
+
+.figureContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.figure {
+    width: 100%;
+    padding: 20px 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.figCaption {
+    padding: 10px 0 10px 0;
+}
+.image {
+    border-radius: 8px;
+}
+
+.name {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    color: #292D32;
+    padding-bottom: 3px;
+}
+
+.location {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    color: #3A3D41;
+    padding-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.description {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #737479;
+    padding-bottom: 20px;
+    max-width: 352px;
+}
+
+.expand {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    color: #1C4CB6;
+}
+
+@media only screen and (min-width: 601px) {
+    .figure {
+        justify-content: flex-start;
+    }
+    .description{
+        max-width: 530px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .backgroundContainer {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+    .heading {
+        font-weight: 800;
+        font-size: 48px;
+        line-height: 60px;
+    }
+    .headingP {
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 40px;
+    }
+    
+    .figureContainer {
+        align-items: flex-start;
+    }
+    .figure {
+        width: 400px;
+    }    
+    
+}
+
+@media only screen and (min-width: 1200px) {
+    .figure {
+        width: calc((100% - 5rem)/2);
+    }
+
+    .name {
+        font-size: 24px;
+        line-height: 28px;
+    }  
+    .figCaption {
+        padding: 10px 0 10px 0;
+    }
+      
+}

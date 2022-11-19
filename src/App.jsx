@@ -25,6 +25,7 @@ import Contact from './pages/contact';
 import UseCases from './pages/use-cases';
 import HowItWorks from './pages/how-it-works';
 import { routes } from './libs/links';
+import Scenery from './pages/scenery/Scenery';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
         <Route path={routes.podcastCustomize} element={<Customization />} />
         <Route path={routes.podcastDownload} element={<DownloadPodcast />} />
         <Route path={routes.podcastCharacters} element={<Characters />} />
+        <Route path={routes.scenery} element={<Scenery />} />
       </Routes>
     </Provider>
   );
