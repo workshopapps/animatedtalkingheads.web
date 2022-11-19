@@ -9,8 +9,11 @@ import LavyImg from '../assets/images/lavy-engine.png';
 import NonsoImg from '../assets/images/Nonso.png';
 import { Button } from '../components/UI/Button';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import ChatBox from '../components/ChatBox';
 
 const Home = () => {
+  const [showChat, setShowChat] = useState(false);
   return (
     <Layout>
       <main className="bg-sec md:pb-[100px] relative">
@@ -53,7 +56,13 @@ const Home = () => {
         </div>
 
         <div className="w-6 md:w-12 h-6 md:h-12 absolute  right-8 md:right-10 bottom-6">
-          <img src={ChatIcon} alt="chat icon" className="w-[100%] h-[100%] cursor-pointer " />
+          <img
+            src={ChatIcon}
+            alt="chat icon"
+            className="w-[100%] h-[100%] cursor-pointer "
+            onClick={() => setShowChat((prevState) => !prevState)}
+          />
+          {showChat && <ChatBox isChatBoxShowing={showChat} setIsChatBoxShowing={setShowChat} />}
         </div>
       </main>
       <section className="bg-white">
