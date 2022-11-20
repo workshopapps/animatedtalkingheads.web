@@ -24,49 +24,49 @@ const About = () => {
   }, []);
 
 
-  return (
-    <Layout>
+  return <Layout>
 
-      {/* about page wrapper */}
-      <div className="about">
+    {/* about page wrapper */}
+    <div className="about">
+      <div className="about_child">
 
-        <div className="about_child">
+      </div>
+      {/* hero section */}
+      <div className="about_hero">
 
-          {/* hero section */}
-          <div className="about_hero">
+        <div className="about_hero_image">
 
-            <div className="about_hero_image">
+        </div>
 
-            </div>
+        <div className="about_hero_text">
+          <h3>About Us</h3>
+        </div>
 
-            <div className="about_hero_text">
-              <h3>About Us</h3>
-            </div>
+        <div className="about_mission_section1">
 
-            <div className="about_mission_section1">
-
-              <h3>OUR MISSION</h3>
-              <p>Voxclips is the product of an ideation-to-implementation project that was created to provide a solution for podcasters who struggle to make any waves doing what they love</p>
-            </div>
-
-          </div>
-          {/* hero section */}
+          <h3>OUR MISSION</h3>
+          <p>Voxclips is the product of an ideation-to-implementation project that was created to provide a solution for podcasters who struggle to make any waves doing what they love</p>
+        </div>
+        jj
+      </div>
+      {/* hero section */}
 
 
-          <div className="about_main_content">
-            {/* mission */}
-            <div className="about_mission">
+      <div className="about_main_content">
+        {/* mission */}
+        <div className="about_mission">
 
-                  <div className="about_mission_section2">
-                    <div className="mission_grid">
-                      <div className="mission_grid_box">
-                        <p>
-                          Our mission is to redefine how Nigerians interact with podcast titles. We
-                          have identified podcasts as a great tool for education, so that is why we
-                          have created a platform that enables podcasters to get creative with how
-                          they market their titles.
-                        </p>
-                      </div>
+
+          <div className="about_mission_section2">
+            <div className="mission_grid">
+              <div className="mission_grid_box">
+                <p>
+                  Our mission is to redefine how Nigerians interact with podcast titles. We
+                  have identified podcasts as a great tool for education, so that is why we
+                  have created a platform that enables podcasters to get creative with how
+                  they market their titles.
+                </p>
+              </div>
 
 
 
@@ -180,265 +180,268 @@ const About = () => {
                       </p>
                     </div>
 
-              </div>
-
-            </div>
-            {/* values section */}
-
-
-
-            {/* story section */}
-
-            <div className="about_story">
-              <div className="about_story_section">
-
-                <div className="story_grid">
-                  <h3>OUR STORY</h3>
-                  <p>Voxclips was developed by team Clutch—a team of skilled learners who were part of the HNG internship (9th cohort), under the guidance of the renowned technopreneur, Mark Essien.</p>
-                </div>
-
-                <div className="story_grid">
-                  <h5>The problem that Voxclips is solving is one that we have identified to be an itch-on-the-back problem for creatives with great content who struggle to thrive in the podcast industry.</h5>
-                  <h5> We were provided an incubation platform by the HNG organising team where we prioritised learning, and worked together as a team in an agile framework that not only saw us scaling different tasks, but also working to help one another become better.</h5>
+                  </div>
 
                 </div>
-
-              </div>
-            </div>
-
-            {/* story section */}
+                {/* values section */}
 
 
-            {/* team section */}
 
-            <div className="about_team">
+                {/* story section */}
 
-              <div className="about_team_section1">
+                <div className="about_story">
+                  <div className="about_story_section">
 
-                <div className="team_grid">
-                  <h3>MEET THE TEAM</h3>
-                  <p>Working at Voxclip means surrounding yourself with smart passionate people, striving to build the best podcasting tool in the world.</p>
-                </div>
-                <div className="team_grid">
-                  <h5>At Voxclip we value trust, teamwork, and bringing engament and visibilty to help podcasters create visual content out of their audio recordings.</h5>
-                </div>
-
-              </div>
-
-
-              <div className="about_team_section2">
-                <div className="about_team_tabs">
-                  <div className="about_team_tab" tabIndex={0}>
-                    <p>Management</p>
-                    <div className="about_team_slider" id='first_slider'>
-                      <Swiper
-                        style={{
-                          "--swiper-navigation-size": "25px",
-                        }}
-
-                        modules={[Pagination, Navigation]}
-
-                        loopFillGroupWithBlank={true}
-                        navigation={true}
-                        slidesPerView={4.5}
-                        spaceBetween={40}
-
-                        slidesPerGroup={1}
-                        loop={true}>
-
-
-                        {Management.map((slide) => (
-                          <SwiperSlide className="about_team_slide" key={slide.name} >
-                            <img src={slide.image} alt="" />
-                            <h3>{slide.name}</h3>
-                            <p>{slide.role}</p>
-                          </SwiperSlide>
-                        ))}
-
-
-                      </Swiper>
+                    <div className="story_grid">
+                      <h3>OUR STORY</h3>
+                      <p>Voxclips was developed by team Clutch—a team of skilled learners who were part of the HNG internship (9th cohort), under the guidance of the renowned technopreneur, Mark Essien.</p>
                     </div>
 
+                    <div className="story_grid">
+                      <h5>The problem that Voxclips is solving is one that we have identified to be an itch-on-the-back problem for creatives with great content who struggle to thrive in the podcast industry.</h5>
+                      <h5> We were provided an incubation platform by the HNG organising team where we prioritised learning, and worked together as a team in an agile framework that not only saw us scaling different tasks, but also working to help one another become better.</h5>
 
-                    {/* for small screen */}
-
-
-                    <div className="about_team_slider" id='swiper_small_screen'>
-                      <Swiper
-                        style={{
-                          "--swiper-navigation-size": "25px",
-                        }}
-
-                        modules={[Pagination, Navigation]}
-
-                        loopFillGroupWithBlank={true}
-                        navigation={true}
-                        slidesPerView={1}
-                        spaceBetween={40}
-
-                        slidesPerGroup={1}
-                        loop={true}>
-
-
-                        {Management.map((slide) => (
-                          <SwiperSlide className="about_team_slide" key={slide.name} >
-                            <img src={slide.image} alt="" />
-                            <h3>{slide.name}</h3>
-                            <p>{slide.role}</p>
-                          </SwiperSlide>
-                        ))}
-
-
-                      </Swiper>
                     </div>
 
-                    {/* for small screen */}
+                  </div>
+                </div>
 
+                {/* story section */}
+
+
+                {/* team section */}
+
+                <div className="about_team">
+
+                  <div className="about_team_section1">
+
+                    <div className="team_grid">
+                      <h3>MEET THE TEAM</h3>
+                      <p>Working at Voxclip means surrounding yourself with smart passionate people, striving to build the best podcasting tool in the world.</p>
+                    </div>
+                    <div className="team_grid">
+                      <h5>At Voxclip we value trust, teamwork, and bringing engament and visibilty to help podcasters create visual content out of their audio recordings.</h5>
+                    </div>
 
                   </div>
 
 
+                  <div className="about_team_section2">
+                    <div className="about_team_tabs">
+                      <div className="about_team_tab" tabIndex={0}>
+                        <p>Management</p>
+                        <div className="about_team_slider" id='first_slider'>
+                          <Swiper
+                            style={{
+                              "--swiper-navigation-size": "25px",
+                            }}
+
+                            modules={[Pagination, Navigation]}
+
+                            loopFillGroupWithBlank={true}
+                            navigation={true}
+                            slidesPerView={4.5}
+                            spaceBetween={40}
+
+                            slidesPerGroup={1}
+                            loop={true}>
+
+
+                            {Management.map((slide) => (
+                              <SwiperSlide className="about_team_slide" key={slide.name} >
+                                <img src={slide.image} alt="" />
+                                <h3>{slide.name}</h3>
+                                <p>{slide.role}</p>
+                              </SwiperSlide>
+                            ))}
+
+
+                          </Swiper>
+                        </div>
+
+
+                        {/* for small screen */}
+
+
+                        <div className="about_team_slider" id='swiper_small_screen'>
+                          <Swiper
+                            style={{
+                              "--swiper-navigation-size": "25px",
+                            }}
+
+                            modules={[Pagination, Navigation]}
+
+                            loopFillGroupWithBlank={true}
+                            navigation={true}
+                            slidesPerView={1}
+                            spaceBetween={40}
+
+                            slidesPerGroup={1}
+                            loop={true}>
+
+
+                            {Management.map((slide) => (
+                              <SwiperSlide className="about_team_slide" key={slide.name} >
+                                <img src={slide.image} alt="" />
+                                <h3>{slide.name}</h3>
+                                <p>{slide.role}</p>
+                              </SwiperSlide>
+                            ))}
+
+
+                          </Swiper>
+                        </div>
+
+                        {/* for small screen */}
+
+
+                      </div>
 
 
 
 
 
 
-                  <div className="about_team_tab" tabIndex={1}>
-                    <p id='second_slider'>Engineering</p>
-                    <div className="about_team_slider" id='second_slider'>
 
 
-                      <Swiper
-                        style={{
-                          "--swiper-navigation-size": "25px",
-                        }}
-
-                        modules={[Pagination, Navigation]}
-
-                        loopFillGroupWithBlank={true}
-                        navigation={true}
-                        slidesPerView={4.5}
-                        spaceBetween={40}
-
-                        slidesPerGroup={1}
-                        loop={true}>
+                      <div className="about_team_tab" tabIndex={1}>
+                        <p id='second_slider'>Engineering</p>
+                        <div className="about_team_slider" id='second_slider'>
 
 
-                        {Engineering.map((slide) => (
-                          <SwiperSlide className="about_team_slide" key={slide.name} >
-                            <img src={slide.image} alt="" />
-                            <h3>{slide.name}</h3>
-                            <p>{slide.role}</p>
-                          </SwiperSlide>
-                        ))}
+                          <Swiper
+                            style={{
+                              "--swiper-navigation-size": "25px",
+                            }}
+
+                            modules={[Pagination, Navigation]}
+
+                            loopFillGroupWithBlank={true}
+                            navigation={true}
+                            slidesPerView={4.5}
+                            spaceBetween={40}
+
+                            slidesPerGroup={1}
+                            loop={true}>
 
 
-                      </Swiper>
-
-                    </div>
-                  </div>
-
-                  <div className="about_team_tab" tabIndex={2}>
-                    <p id='third_slider'>Design</p>
-                    <div className="about_team_slider" id='third_slider'>
-
-                      <Swiper
-                        style={{
-                          "--swiper-navigation-size": "25px",
-                        }}
-                        modules={[Pagination, Navigation]}
-
-                        loopFillGroupWithBlank={true}
-                        navigation={true}
-                        slidesPerView={4.5}
-                        spaceBetween={40} about_team_slide
-                        slidesPerGroup={1}
-                        loop={true}>
+                            {Engineering.map((slide) => (
+                              <SwiperSlide className="about_team_slide" key={slide.name} >
+                                <img src={slide.image} alt="" />
+                                <h3>{slide.name}</h3>
+                                <p>{slide.role}</p>
+                              </SwiperSlide>
+                            ))}
 
 
-                        {Design.map((slide) => (
-                          <SwiperSlide className="about_team_slide" key={slide.name} >
-                            <img src={slide.image} alt="" />
-                            <h3>{slide.name}</h3>
-                            <p>{slide.role}</p>
-                          </SwiperSlide>
-                        ))}
+                          </Swiper>
+
+                        </div>
+                      </div>
+
+                      <div className="about_team_tab" tabIndex={2}>
+                        <p id='third_slider'>Design</p>
+                        <div className="about_team_slider" id='third_slider'>
+
+                          <Swiper
+                            style={{
+                              "--swiper-navigation-size": "25px",
+                            }}
+                            modules={[Pagination, Navigation]}
+
+                            loopFillGroupWithBlank={true}
+                            navigation={true}
+                            slidesPerView={4.5}
+                            spaceBetween={40} about_team_slide
+                            slidesPerGroup={1}
+                            loop={true}>
 
 
-                      </Swiper>
-
-                    </div>
-                  </div>
-
-                  <div className="about_team_tab" tabIndex={3}>
-                    <p id='fourth_slider'>Marketing</p>
-                    <div className="about_team_slider" id='fourth_slider'>
-
-                      <Swiper
-                        style={{
-                          "--swiper-navigation-size": "25px",
-                        }}
-                        modules={[Pagination, Navigation]}
-
-                        loopFillGroupWithBlank={true}
-                        navigation={true}
-                        slidesPerView={4.5}
-                        spaceBetween={40} about_team_slide
-                        slidesPerGroup={1}
-                        loop={true}>
+                            {Design.map((slide) => (
+                              <SwiperSlide className="about_team_slide" key={slide.name} >
+                                <img src={slide.image} alt="" />
+                                <h3>{slide.name}</h3>
+                                <p>{slide.role}</p>
+                              </SwiperSlide>
+                            ))}
 
 
-                        {Marketing.map((slide) => (
-                          <SwiperSlide className="about_team_slide" key={slide.name} >
-                            <img src={slide.image} alt="" />
-                            <h3>{slide.name}</h3>
-                            <p>{slide.role}</p>
-                          </SwiperSlide>
-                        ))}
+                          </Swiper>
+
+                        </div>
+                      </div>
+
+                      <div className="about_team_tab" tabIndex={3}>
+                        <p id='fourth_slider'>Marketing</p>
+                        <div className="about_team_slider" id='fourth_slider'>
+
+                          <Swiper
+                            style={{
+                              "--swiper-navigation-size": "25px",
+                            }}
+                            modules={[Pagination, Navigation]}
+
+                            loopFillGroupWithBlank={true}
+                            navigation={true}
+                            slidesPerView={4.5}
+                            spaceBetween={40} about_team_slide
+                            slidesPerGroup={1}
+                            loop={true}>
 
 
-                      </Swiper>
+                            {Marketing.map((slide) => (
+                              <SwiperSlide className="about_team_slide" key={slide.name} >
+                                <img src={slide.image} alt="" />
+                                <h3>{slide.name}</h3>
+                                <p>{slide.role}</p>
+                              </SwiperSlide>
+                            ))}
+
+
+                          </Swiper>
+
+                        </div>
+                      </div>
 
                     </div>
                   </div>
 
                 </div>
+
+                {/* team section */}
+
+
+
+                {/* build section */}
+
+                <div className="about_build">
+                  <div className="about_build_box">
+                    <h3>Let’s build the future of podcasting <br /> together</h3>
+                    <Link><button>Try for free now</button></Link>
+                  </div>
+                </div>
+
+                {/* build section */}
+
               </div>
+
+
+
+
+
+
 
             </div>
 
-            {/* team section */}
+
+          </div> </div></div>
+      {/* about page wrapper */}
 
 
 
-            {/* build section */}
+    </div>
 
-            <div className="about_build">
-              <div className="about_build_box">
-                <h3>Let’s build the future of podcasting <br /> together</h3>
-                <Link><button>Try for free now</button></Link>
-              </div>
-            </div>
-
-            {/* build section */}
-
-          </div>
-
-        </div>
-
-      </div>
-    {/* about page wrapper */}
-
-  </div>
-
-  </div>
-
-  </div>
-
-  </div>
-
-  </Layout>);
+  </Layout>;
 };
 
 export default About;
