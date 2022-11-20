@@ -84,8 +84,9 @@ export const NumberSpan = styled.span`
 
 export const CardSection = styled.div`
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 0px;
   margin-top: 3.7rem;
 

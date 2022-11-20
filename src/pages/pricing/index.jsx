@@ -74,9 +74,14 @@ const Pricing = () => {
         </FirstSection>
 
         <CardSection>
-          <Card title="Forever Plan" tier="free" currency="$0">
+          <Card
+            title="Forever Plan"
+            tier="free"
+            currency="$0"
+            buttonLabel={'Get Started'}
+            slogan="Start creating videos on the go">
             {offers[0].map((value, index) => (
-              <>
+              <div key={index}>
                 <LoopDiv key={index}>
                   <LoopImg src={tick} alt="tick" />
                   <div className="text">{value}</div>
@@ -84,13 +89,15 @@ const Pricing = () => {
                 <Line>
                   <hr></hr>
                 </Line>
-              </>
+              </div>
             ))}
           </Card>
           <Card
             title="Podcaster Plan"
             tier="Billed yearly or $9.99 billed monthly"
-            currency="$8.50/mo">
+            currency="$8.50/mo"
+            buttonLabel={'Go Pro'}
+            slogan="Access to creative possibilities">
             {offers[1].map((value, index) => (
               <>
                 <LoopDiv key={index}>
@@ -104,7 +111,12 @@ const Pricing = () => {
               </>
             ))}
           </Card>
-          <Card title="Forever Plan" tier="Billed yearly or $23.99 billed monthly" currency="$0">
+          <Card
+            title="Forever Plan"
+            tier="Billed yearly or $23.99 billed monthly"
+            currency="$0"
+            buttonLabel={'Go Pro'}
+            slogan="A world of limitless possibilities">
             {offers[2].map((value, index) => (
               <>
                 <LoopDiv key={index}>

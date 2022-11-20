@@ -10,12 +10,13 @@ import Communities from './pages/communities';
 import Faqs from './pages/faqs';
 import HelpCenter from './pages/help-center';
 import Pricing from './pages/pricing';
+import GetStarted from './pages/pricing-getstarted';
+import Checkout from './pages/pricing-checkout';
 import TermsAndCondition from './pages/terms-and-conditions';
 import TermsOfService from './pages/terms-of-service';
 import PrivacyPolicy from './pages/privacy-policy';
 import UploadPodcast from './pages/podcast/upload';
 import Customization from './pages/podcast/customization';
-
 import store from './store/store';
 import DownloadPodcast from './pages/podcast/download';
 import Characters from './pages/podcast/characters';
@@ -49,6 +50,8 @@ function App() {
         <Route path={routes.podcastCustomize} element={<Customization />} />
         <Route path={routes.podcastDownload} element={<DownloadPodcast />} />
         <Route path={routes.podcastCharacters} element={<Characters />} />
+        <Route path={routes.getStarted} element={<GetStarted />} />
+        <Route path={routes.checkout} element={<Checkout />} />
       </Routes>
     </Provider>
   );

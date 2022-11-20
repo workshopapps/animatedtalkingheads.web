@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const CardWrapper = styled.div`
   box-sizing: border-box;
-
-  width: 30%;
+  width: 380px;
+  /* width: 30%; */
   height: 78rem;
 
   background: #fafafa;

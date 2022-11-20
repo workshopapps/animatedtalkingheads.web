@@ -1,8 +1,9 @@
 import React from 'react';
-import { Button } from '../../components/UI/Button';
+import { Link } from 'react-router-dom';
+import { Button } from '../../../src/pages/pricing-getstarted/getStartedStyle';
 import { Btn, CardWrapper, Desc, FirstDiv, Price, Tier, Title } from './cardStyle';
 
-const Card = ({ title, tier, currency, children }) => {
+const Card = ({ title, slogan, buttonLabel, tier, currency, children }) => {
   return (
     <CardWrapper>
       <FirstDiv>
@@ -10,10 +11,14 @@ const Card = ({ title, tier, currency, children }) => {
 
         <Price>{currency}</Price>
         <Tier> {tier} </Tier>
-        <Desc> Start creating videos on the go</Desc>
-        <Btn>
-          <Button>Get Started</Button>
-        </Btn>
+        <Desc> {slogan}</Desc>
+        <Link to="/getStarted">
+          <Btn>
+            <Button bgColor={'#2563EB'} width={'142px'}>
+              {buttonLabel}
+            </Button>
+          </Btn>
+        </Link>
       </FirstDiv>
       <div>{children}</div>
     </CardWrapper>
