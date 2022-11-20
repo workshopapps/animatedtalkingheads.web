@@ -1,7 +1,74 @@
 import Layout from '../../components/UI/Layout';
+import styles from './index.module.scss';
+import img1 from './assets/img-1.png';
+import img2 from './assets/img-2.png';
+import img3 from './assets/img-3.png';
+import img4 from './assets/img-4.png';
+import img5 from './assets/img-5.png';
+import avatar from './assets/Avatar.png';
+import Card from './Card';
 
 const Blog = () => {
-  return <Layout></Layout>;
+  return (
+    <Layout>
+      <div className={styles.blog__header}>
+        <h1>Our Blog</h1>
+        <p>All about audio, animations, podcasting and more!</p>
+      </div>
+      <main className={styles.blog__main}>
+        <div className={styles.blog__sidebar}>
+          <div className="form-group">
+            <input type="text" />
+          </div>
+          <p>Blog categories</p>
+          <ul>
+            <li>View all</li>
+            <li>Podcasts</li>
+            <li>Animations</li>
+            <li>Marketing</li>
+            <li>Video creation</li>
+            <li>Research</li>
+            <li>Social Media</li>
+          </ul>
+        </div>
+        <div className={styles.blog__content}>
+          <h2>Latest Post</h2>
+          <div className={styles.blog__grid}>
+            <Card
+              photo={img1}
+              heading="Complete Guide on How to Start A Podcast"
+              text="Are you looking to start your podcast in 2022?"
+              avatar={avatar}
+            />
+            <Card
+              photo={img2}
+              heading="Podcast Content Strategy"
+              text="Expectation versus reality"
+              avatar={avatar}
+            />
+            <Card
+              photo={img3}
+              heading="Animated Podcast"
+              text="Today animation is becoming a popular way to add life and personality to video production"
+              avatar={avatar}
+            />
+            <Card
+              photo={img4}
+              heading="How we solved The Cringy AI Voice"
+              text="Ever Cringed after hearing the AI voice"
+              avatar={avatar}
+            />
+            <Card
+              photo={img5}
+              heading="How To Reach More Audience From YourPodcast"
+              text="Tips & Tricks"
+              avatar={avatar}
+            />
+          </div>
+        </div>
+      </main>
+    </Layout>
+  );
 };
 
 export default Blog;

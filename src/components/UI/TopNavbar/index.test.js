@@ -1,10 +1,16 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+
 import TopNavbar from './';
-import { BrowserRouter } from 'react-router-dom';
 
-test('Renders TopNavbar', () => {
-    render(<TopNavbar />, {wrapper: BrowserRouter})
+describe('NavBar Test', () => {
+  test('Renders TopNavbar', () => {
+    render(<TopNavbar />, { wrapper: MemoryRouter });
+  });
 
-
+  test('should render and match snapshot', () => {
+    const { asFragment } = render(<TopNavbar />, { wrapper: MemoryRouter });
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

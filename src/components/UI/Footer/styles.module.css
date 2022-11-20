@@ -1,0 +1,37 @@
+.footer {
+  background: #171d2e;
+}
+
+.footer a {
+  color: white;
+  font-size: 20px;
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+
+.lang {
+  position: relative;
+  width: 13.125em;
+  height: 4em;
+  top: -3.75em;
+  background: #fafafa;
+  border-radius: 0.5em;
+}
+
+.lang select {
+  outline: none;
+  width: 66%;
+  margin-left: 10%;
+  background-color: #fafafa;
+}
+
+@media screen and (max-width: 756px) {
+  .footer a {
+    font-size: 16px;
+  }
+
+  .lang {
+    width: 156.15px;
+    height: 48px;
+  }
+}
