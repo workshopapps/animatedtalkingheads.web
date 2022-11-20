@@ -25,10 +25,10 @@ const PrivacyPolicy = () => {
               </ul>
               <div className="p-[16px] lg:pt-[24px] lg:px-[32px] bg-white rounded-md rounded-br-none rounded-bl-none">
                 <Text className={'!text-base lg:!text-2xl !font-normal'}>
-                  Privacy Policy for Podstar (Suggested Web Name)
+                  Privacy Policy for voxclips
                 </Text>
                 <Text className={'!text-base lg:!text-2xl !font-normal mb-[15px] '}>
-                  Thank you for visiting the Podcast.com website. You arrived at this Privacy Policy
+                  Thank you for visiting the voxclips.hng.tech website. You arrived at this Privacy Policy
                   page from one of the above sites, referred to herein as “this website”. This
                   Privacy Policy is subject to changes by Team Clutch (hereinafter “Team/Company”)
                   at any time and at our discretion without notice by updating this posting. We
