@@ -7,6 +7,14 @@ import HeroIcon from '../assets/images/hero-anime.png';
 import MarkImg from '../assets/images/mark-essien.png';
 import LavyImg from '../assets/images/lavy-engine.png';
 import NonsoImg from '../assets/images/Nonso.png';
+import Avatar1 from '../assets/images/avatar-one.png';
+import Avatar2 from '../assets/images/avatar-two.png';
+import Avatar3 from '../assets/images/avatar-three.png';
+import Avatar4 from '../assets/images/avatar-four.png';
+import Avatar5 from '../assets/images/avatar-five.png';
+import Avatar6 from '../assets/images/avatar-six.png';
+import AvatarMeet from '../assets/images/avatar-meet.png';
+
 import { Button } from '../components/UI/Button';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -115,8 +123,8 @@ const Home = () => {
           What people are saying
         </h3>
         <div className="md:flex flex-wrap gap-12 justify-around pb-[40px] md:px-6">
-          <div className=" px-8 bg-white w-[261px] mx-auto md:w-[378px]  mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
-            <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
+          <article className=" px-8 bg-white w-[261px] mx-auto md:w-[378px]  mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
+            <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%]  translate-x-[-50%] translate-y-[-50%] ">
               <img src={MarkImg} alt="Mark Essien" className="w-full h-full" />
             </div>
             <img src={Quotes} alt="" className="pt-[34px] md:pt-12 mx-auto" />
@@ -125,8 +133,8 @@ const Home = () => {
               views and engagements and I love it
             </p>
             <h5 className="text-center pb-6 text-[11px] md:text-base ">Mark Essien</h5>
-          </div>
-          <div className=" px-8 bg-white md:w-[378px]  w-[261px] mx-auto mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
+          </article>
+          <article className=" px-8 bg-white md:w-[378px]  w-[261px] mx-auto mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
             <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
               <img src={LavyImg} alt="Mark Essien" className="w-full h-full" />
             </div>
@@ -136,8 +144,8 @@ const Home = () => {
               my life
             </p>
             <h5 className="text-center pb-6 text-[11px] md:text-base ">Lavy Engine</h5>
-          </div>
-          <div className=" px-8 bg-white w-[261px] md:w-[378px]  mx-auto mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl md:pb-0">
+          </article>
+          <article className=" px-8 bg-white w-[261px] md:w-[378px]  mx-auto mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl md:pb-0">
             <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
               <img src={NonsoImg} alt="Mark Essien" className="w-full h-full" />
             </div>
@@ -146,17 +154,17 @@ const Home = () => {
               Simple, Straightforward and works Nahh. To good to be true
             </p>
             <h5 className="text-center pb-6 text-[11px] md:text-base ">Nonso</h5>
-          </div>
+          </article>
         </div>
       </section>
       <section className="py-20 bg-white px-8">
         <div className="flex justify-around items-center">
-          <div>
+          <article>
             <h3 className="font-bold md:text-[32px] text-base mb-3 md:mb-8 w-44 md:w-[365px] md:leading-[50px]  text-sec">
               Conveniently download your output on different video qualities
             </h3>
             <Button label={"Let's Go"} />
-          </div>
+          </article>
           <div>
             <div className="flex justify-between-items-center  md:gap-10 gap-[10px] mb-[10px] md:mb-10 ">
               <div className="bg-[#fbfbfb]  md:gap-10 gap-[10px] rounded p-2.5 md:p-[30px] md:h-32 md:w-32 h-16 w-16">
@@ -185,7 +193,102 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="bg-sec "></section>
+      <section className="bg-sec ">
+        <div className="md:flex items-center justify-around py-[60px] md:py-32 border-b-[1px] border-solid border-white gap-10 px-10 ">
+          <article className="md:w-[60%]">
+            <div className="flex items-center justify-center mb-4 md:mb-8 gap-4 md:gap-8">
+              <div className="w-[72px] h-[72px] md:w-32 md:h-32 rounded-[50%] bg-white border-2 boder-solid grid items-center justify-center ">
+                <img
+                  src={Avatar1}
+                  alt="animetad image"
+                  className=" h-[100%] w-[100%] mx-auto object-cover p-0 "
+                />
+              </div>
+              <div className="w-[72px] h-[72px] md:w-32 md:h-32 rounded-[50%] bg-white border-2 boder-solid grid items-center justify-center ">
+                <img
+                  src={Avatar2}
+                  alt="animetad image"
+                  className=" h-[100%] w-[100%] mx-auto object-cover p-0 "
+                />
+              </div>
+              <div className="w-[72px] h-[72px] md:w-32 md:h-32 rounded-[50%] bg-white border-2 boder-solid grid items-center justify-center ">
+                <img
+                  src={Avatar3}
+                  alt="animetad image"
+                  className=" h-[100%] w-[100%] mx-auto object-cover p-0 "
+                />
+              </div>
+            </div>
+            <div className="flex items-center justify-center gap-4 md:gap-8">
+              <div className="w-[72px] h-[72px] md:w-32 md:h-32 rounded-[50%] bg-white border-2 boder-solid grid items-center justify-center ">
+                <img
+                  src={Avatar4}
+                  alt="animetad image"
+                  className=" h-[100%] w-[100%] mx-auto object-cover p-0 "
+                />
+              </div>
+              <div className="w-[72px] h-[72px] md:w-32 md:h-32 rounded-[50%] bg-white border-2 boder-solid grid items-center justify-center ">
+                <img
+                  src={Avatar5}
+                  alt="animetad image"
+                  className=" h-[100%] w-[100%] mx-auto object-cover p-0 "
+                />
+              </div>
+              <div className="w-[72px] h-[72px] md:w-32 md:h-32 rounded-[50%] bg-white border-2 boder-solid grid items-center justify-center ">
+                <img
+                  src={Avatar6}
+                  alt="animetad image"
+                  className=" h-[100%] w-[100%] mx-auto object-cover p-0 "
+                />
+              </div>
+            </div>
+          </article>
+          <article className="w-[217px] mx-auto md:mx-0 md:w-[434px] ">
+            <h3 className="text-white font-bold text-center mt-11 md:mt-0 text-xl md:text-[32px] md:leading-[50px] ">
+              Freestyle with various diverse characters and share on any social platform
+            </h3>
+          </article>
+        </div>
+      </section>
+      <section className="bg-sec">
+        <div className="py-[60px] md:py-32">
+          <article className="md:w-[700px] w-72 mx-auto">
+            <h3 className="text-white md:text-[40px] text-xl font-bold md:leading-[50px] text-center mb-5 md:mb-20">
+              Transform your audio podcast contents to amazing videos of form of talking heads
+            </h3>
+          </article>
+          <article className="md:flex items-center justify-around px-6">
+            <article className="mb-4 w-80 md:w-[50%] mx-auto md-w-1/2 md:mx-0">
+              <p className="font-normal text-white text-sm md:text-2xl mb-6 md:mb-8">
+                Voxclip is the #1 rated Animated Video creation platform. Thousands of podcasters
+                use it to create animated content to connect better with their audience and also
+                increase their brand awareness.
+              </p>
+              <p className="font-normal text-white text-sm md:text-2xl mb-6 md:mb-8">
+                Say Goodbye to the old boring traditional audio podcasts. Voxclips gives you the
+                opportunity to bring your imagination to life, connect better with your listeners
+                viewers and drop creative content.
+              </p>
+              <p className="font-medium text-white text-base md:text-left text-center md:text-3xl mb-6 md:mb-8">
+                NO signup required
+              </p>
+            </article>
+            <div className="w-[277px] md:w-[50%]  md:h-[356px] mx-auto md:mx-0  ">
+              <img src={AvatarMeet} alt="" className="object-contain w-full h-full" />
+            </div>
+          </article>
+        </div>
+      </section>
+      <section className="bg-[#292d32] ">
+        <div className="py-[60px] md:py-32 grid justify-center">
+          <h3 className="text-white text-xl md:leading-[50px] md:text-[40px] text-center font-bold mb-10 md:-[30px] ">
+            Let’s start creating!!
+          </h3>
+          <button className="bg-white font-bold text-[10.23px] leading-3 text-[#292d32 mx-auto capitalize border-none  text-center rounded-md md:rounded-lg py-[7px] px-[15px] md:px-[19px] md:py-[10px] w-[200px] md:w-[275px] md:text-sm  ">
+            create video
+          </button>
+        </div>
+      </section>
     </Layout>
   );
 };

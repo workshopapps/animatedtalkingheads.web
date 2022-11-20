@@ -3,6 +3,9 @@ export const routes = {
   about: '/about',
   customizeAudio: '/customize-audio',
   blog: '/blog',
+
+  blogContent: '/blog/content',
+
   docs: '/fe-docs',
   useCases: '/use-cases',
   careers: '/careers',
@@ -13,7 +16,6 @@ export const routes = {
   faqs: '/faqs',
   pricing: '/pricing',
   privacy: '/privacy-policy',
-
 
   privacyAbout: '/privacy-policy/about',
   privaCookies: '/privacy-policy/cookies',
@@ -33,6 +35,7 @@ export const routes = {
   scenery: '/avatar/scenery',
   exploreBackground: '/explore-background',
   avatars: '/avatars',
+  exploreAvatar: '/explore-avatar',
   api: '/api-page'
 };
 

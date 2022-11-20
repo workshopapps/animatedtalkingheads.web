@@ -1,9 +1,9 @@
 .heading {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 50px;
-    color: #292D32;
-    margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  color: #292d32;
+  margin-bottom: 40px;
 }
 
 .paragraph {
@@ -36,25 +36,25 @@
 }
 
 .page {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 78px;
-    height: 72px;
-    border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 78px;
+  height: 72px;
+  border-radius: 6px;
 }
 
 .active {
-    background: #2158D2;
-    color: aliceblue;
+  background: #2158d2;
+  color: aliceblue;
 }
 
 .navigation {
-    width: 117px;
-    height: 72px;
-    border: 1px solid #BDBDBD;
-    border-radius: 6px;
+  width: 117px;
+  height: 72px;
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
 }
 
 .description {
@@ -169,22 +169,22 @@
         color: #FFFFFF;
     }
 
-    .heading {
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 30px;
-        /* White/Black/text */
-        color: #292D32;
-        margin-bottom: 20px;
-    }
+  .heading {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    /* White/Black/text */
+    color: #292d32;
+    margin-bottom: 20px;
+  }
 
-    .paragraph {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        text-align: justify;
-        color: #292D32;
-    }
+  .paragraph {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: justify;
+    color: #292d32;
+  }
 
     .navigation {
         width: 64px;

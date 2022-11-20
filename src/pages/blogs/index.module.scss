@@ -1,4 +1,15 @@
 .blog {
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      color: #2158d2;
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+  }
   &__header {
     // border: 1px solid #90a0c2;
     // padding: 4.8rem 0 9.6rem 0;
@@ -37,7 +48,7 @@
     flex: 80rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    // align-items: flex-start;
   }
 
   &__grid {
@@ -60,15 +71,10 @@
 
   &__thumbnail {
     display: grid;
-    // grid-template-columns: repeat(2, 10rem);
-    grid-template-columns: 3rem 10rem;
-    grid-template-rows: repeat(2, 1fr);
-    justify-content: start;
-    align-items: center;
 
-    .image__container {
-      grid-row: 1/-1;
-    }
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 }
 
@@ -85,4 +91,46 @@
   color: #374151;
   font-size: 24px;
   width: 75%;
+}
+
+.link a:hover {
+  color: #374151;
+}
+
+.form {
+  display: flex;
+  input {
+    font-family: inherit;
+    // padding: 1.2rem;
+    // background-color: #90a0c2;
+    border: none;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+.p,
+.ul {
+  color: #2158d2;
+}
+
+.ul {
+  list-style: none;
+}
+
+.ul li {
+  list-style-type: none;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+  padding-left: 8px;
+  // background-color: #2158d2;
+}
+
+.ul li:hover {
+  background-color: #90a0c2;
+  cursor: pointer;
+  padding: 10px;
 }

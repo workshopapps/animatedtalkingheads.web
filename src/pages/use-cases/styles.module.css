@@ -1,38 +1,38 @@
 .bg {
-    background: #F9FAFB;
+  background: #f9fafb;
 }
 
 .heroBg {
-    width: 100%;
-    height: 216px;
-    background: #2158D2;
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 60px;
-    color: #F4F4F4;
+  width: 100%;
+  height: 216px;
+  background: #2158d2;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 60px;
+  color: #f4f4f4;
 }
 
 .heading {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 50px;
-    color: #292D32;
-    margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  color: #292d32;
+  margin-bottom: 40px;
 }
 
 .paragraph {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 154%;
-    text-align: justify;
-    opacity: 0.9;
-    max-width: 472px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 154%;
+  text-align: justify;
+  opacity: 0.9;
+  max-width: 472px;
 }
 
 .readmore {
-    width: 176px;
-    height: 43px;
-    margin-top: 40px;
+  width: 176px;
+  height: 43px;
+  margin-top: 40px;
 }
 
 @media screen and  (max-width: 756px) {
