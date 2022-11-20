@@ -15,7 +15,7 @@ export default function Future() {
         <Features
           title="Product Management"
           subTitle="Coordinators"
-          text="Oversees, develop and help improve our company products. You’d need excellent managment skills and strong technical background."
+          text="Oversee develop and help improve our company products. You’d need excellent managment skills and strong technical background."
         />
         <Features
           title="Product Design"

@@ -1,11 +1,6 @@
-.careers__hero {
+.careers__theme {
   width: 90%;
   margin: 0 auto;
-  padding: 1rem;
-  // background-color: #fff;
-}
-
-.careers__theme {
   text-align: center;
   padding: 0 5rem;
 }
@@ -17,8 +12,8 @@
 }
 
 .careers__theme_text {
-  font-size: 1rem;
-  line-height: 1;
+  font-size: 1.2rem;
+  line-height: 1.5;
   padding-bottom: 2rem;
 }
 
@@ -27,6 +22,12 @@
   color: #fff;
   padding: 0.8rem 1rem;
   border-radius: 5px;
+}
+
+.careers__hero {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 .careers__hero_image {

@@ -17,7 +17,6 @@ const links2 = [
   { name: 'Customer Support', link: '/' },
   { name: 'Community', link: routes.community },
   { name: 'Careers', link: routes.careers },
-  { name: 'Blog', link: routes.blog },
   { name: 'Press', link: routes.press },
   { name: 'FAQ', link: routes.faqs },
   { name: 'Contact Us', link: routes.contact },
