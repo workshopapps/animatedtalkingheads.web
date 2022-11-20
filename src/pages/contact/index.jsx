@@ -36,20 +36,20 @@ const [efull_name,setEFullName]=useState("")
       {!submitted ?
       <div>
       <div className='text-center w-[90%] mx-auto grid my-5'>
-        <Header1 label="Get in Touch With Us" w='semibold' />
+        <p className='md:text-[48px] font-[500] text-[35px]'>Get in Touch With Us</p>
         <Text label="Kindly fill the form and we will get back to you" type="text3" w="sm"  className="mt-5"/>
         <Text label="Our customer support are available to attend to you 24/7" type="text3" w="sm" />
       </div>
 
       <form className='mt-10  ' onSubmit={onSubmitForm}>
-        <div className='grid md:grid-cols-2 gap-5'>
+        <div className='grid md:grid-cols-2 gap-5 xl:gap-7 text-[16px] md:text-[20px]'>
         <div>
           <input
           value={full_name}
           onChange={updateName}
           type="text"
           placeholder='Enter your full name'
-          className={`border w-full p-2 bg-white rounded-[10px] outline-none px-5 ${!efull_name ?"border-[#6B7280]": "border-red-600"}`}
+          className={`border w-full p-3 md:p-4 bg-white rounded-[10px] outline-none px-5 ${!efull_name ?"border-[#6B7280]": "border-red-600"}`}
           />
           {efull_name && <p className='text-red-600 text-xs'>this field is required</p>}
         </div>
@@ -60,7 +60,7 @@ const [efull_name,setEFullName]=useState("")
           onChange={updateEmail}
           type="email"
           placeholder='Enter your full name '
-          className={`border w-full p-2 bg-white rounded-[10px] outline-none px-5 ${!eemail ?"border-[#6B7280]": "border-red-600"}`}
+          className={`border w-full p-3 md:p-4 bg-white rounded-[10px] outline-none px-5 ${!eemail ?"border-[#6B7280]": "border-red-600"}`}
           />
            {eemail && <p className='text-red-600 text-xs'>this field is required</p>}
         </div>
@@ -68,9 +68,9 @@ const [efull_name,setEFullName]=useState("")
         <textarea
         value={message}
         onChange={updateMessage}
-        className={`md:col-span-2 border p-2 bg-white rounded-[10px] outline-none px-5 ${!emessage ?"border-[#6B7280]": "border-red-600"}`}
+        className={`md:col-span-2 border p-4 bg-white rounded-[10px] outline-none px-5 ${!emessage ?"border-[#6B7280]": "border-red-600"}`}
         placeholder='Type in your message'
-        rows="5"
+        rows="10"
         />
          {emessage && <p className='text-red-600 text-xs'>this field is required</p>}
         </div>

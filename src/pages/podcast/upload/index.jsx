@@ -10,7 +10,6 @@ import correct from '../../../assets/icons/upload_podcast/correct.svg'
 import { Button } from '../../../components/UI/Button';
 import { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Header1 } from '../../../components/UI/Text/text.stories';
 import { Text } from '../../../components/UI/Text'; 
 import styles from '../upload/index.module.scss'
 import { Link } from 'react-router-dom';
@@ -83,7 +82,7 @@ const UploadPodcast = () => {
   return(
   <Layout>
     <div className='text-center max-w-[1440px] w-[90%] mx-auto mt-10 '>
-      <Header1 label="Upload Audio" w="semibold" data-testid="header"/>
+      <Text label="Upload Audio" w="semibold" type="text1" data-testid="header"/>
       <div className='opacity-60 my-5 border rounded-lg bg-[#EFF3F6] border-opacity-20 text-center py-5 px-2 grid gap-3'>
         <Text label="Over 0.5MB, up to 500MB, 2 Hours max." type="text4" w="sm" />
         <div className='flex gap-1 justify-center items-center'>
@@ -147,7 +146,7 @@ const UploadPodcast = () => {
                     <p>Drop the files here ...</p> :
                     <div>
                     <Text label="Drag and Drop Podcast Audio" type="text2" w="sm"/>
-                    <p>or <span className='text-pri-600 cursor-pointer'>browse</span></p>
+                    <p>or <span className='text-pri-600 cursor-pointer'>{uploaded ? "change file" : "browse"}</span></p>
                     </div>
                 }
               </div>
