@@ -14,7 +14,6 @@ const UseCaseArticle = () => {
   const navigate = useNavigate();
 
   const page = blogs[id];
-  console.log(page);
 
   React.useEffect(() => {
 
@@ -42,7 +41,7 @@ const UseCaseArticle = () => {
 
           <div className={`mt-10 flex justify-between`}>
             <button onClick={() => navigate(-1)} className={`${styles.back} flex items-center`}>
-              {' '}
+
               <img
                 className="m-5"
                 height={'16px'}

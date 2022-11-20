@@ -10,11 +10,25 @@
   z-index: 10000;
 }
 
+
 .nav .links {
+  max-width: 511px;
+}
+
+.nav .links  a{
   font-size: 1em;
   line-height: 20px;
   color: #292d32;
 }
+
+.nav .links a:hover {
+  color: #2158D2;
+}
+
+.nav .links .active {
+  color: #2158D2;
+}
+
 
 .navDummy {
   height: 4em;
@@ -69,7 +83,7 @@
   }
 
   .nav .links {
-    max-width: 28em;
+
   }
 
   .navDummy {
@@ -77,11 +91,6 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .nav .links {
-    max-width: 31.9375em;
-  }
-}
 
 .createVideo {
   position: absolute;

@@ -60,8 +60,8 @@ function App() {
         <Route path={routes.customizeAudio} element={<CustomizeAudio />} />
         <Route path={routes.exploreAvatar} element={<ExploreAvatar />} />
         <Route path={routes.contact} element={<Contact />} />
-        <Route exact path={routes.useCases} element={<UseCases />} />
-        <Route path={`${routes.useCaseArticle}/:id`} element={<UseCaseArticle />} />
+        <Route exact path={`${routes.useCases}/:page`} element={<UseCases />} />
+        <Route exact path={`${routes.useCaseArticle}/:id`} element={<UseCaseArticle />} />
         <Route path={routes.howItWorks} element={<HowItWorks />} />
         <Route path={routes.faqs} element={<Faqs />} />
         <Route path={routes.helperCenter} element={<HelpCenter />} />

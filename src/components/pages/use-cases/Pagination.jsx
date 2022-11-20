@@ -20,7 +20,7 @@ const Pagination = ({rows, current, total, link}) => {
     <div className='flex h-full basis-full justify-between '>    
 
         <button 
-          onClick={() => navigate(`${link}?page=${current - 1}`)} 
+          onClick={() => navigate(`${link}/${current - 1}`)} 
           className={`${styles.navigation} ${current <= 1 ? "hidden": ""} flex md:items-center`}> 
           <img className="m-5" height={"16px"} width="7px" src={arrowBack} alt="Arrow Back" />
           <p className="hidden md:block">Back</p> 
@@ -33,7 +33,7 @@ const Pagination = ({rows, current, total, link}) => {
                 console.log(current == page)
                 return (
                   <Link key={index}
-                    to={`${link}?page=${page}`} 
+                    to={`${link}/${page}`} 
                     className={`${styles.page} flex mx-2 ${current == page ? `${styles.active}` : ""} `}>
                       {page}
                   </Link>
@@ -44,7 +44,7 @@ const Pagination = ({rows, current, total, link}) => {
         </div>
 
         <button 
-          onClick={() => navigate(`${link}?page=${current + 1}`)} 
+          onClick={() => navigate(`${link}/${current + 1}`)} 
           className={`${styles.navigation} ${current >= pageCount ? "hidden": ""} flex items-center`}> 
           <p className="md:ml-5 hidden md:block">Next</p> 
           <img className="m-8" height={"16px"} width="7px" src={arrowForward} alt="Arrow Back" />

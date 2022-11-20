@@ -5,7 +5,7 @@ import { data } from "./data";
 import React from "react";
 import Pagination from "../../components/pages/use-cases/Pagination";
 import { routes } from "../../libs/links";
-import { useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
 
@@ -13,8 +13,8 @@ const rows = 4;
 
 const UseCases = () => {
 
-  const [searchParams] = useSearchParams()
-  let page = Number(searchParams.get("page"))
+  let { page } = useParams();
+
   page = page === 0 ? 1 : page;
   const start =  (page - 1) * rows;
   const count = start + rows
@@ -59,7 +59,7 @@ const UseCases = () => {
           </div>
 
           <div className="my-14">
-            <Pagination rows={4} current={page} link={routes.useCases} total={data.length}/>
+            <Pagination rows={4} current={Number(page)} link={routes.useCases} total={data.length}/>
           </div>
 
         </div>
