@@ -74,8 +74,8 @@ function App() {
         <Route path={routes.privacyhowWeUseInformation} element={<HowWeUseInformation />} />
         <Route path={routes.privacyInformation} element={<PrivacyInformation />} />
 
+        <Route path={routes.scenery} element={<Scenery />} />
 
-        <Route path="/avatar/scenery" element={<Scenery />} />
       </Routes>
     </Provider>
   );

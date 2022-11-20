@@ -1,5 +1,5 @@
 import Accessibility from "./Accessibility";
-import Community from "./Community"
+import Community from "./Community";
 import VoxClips from "./VoxClips";
 
 const RightSection = () => {

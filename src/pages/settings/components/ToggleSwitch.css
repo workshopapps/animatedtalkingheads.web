@@ -1,8 +1,8 @@
 .toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 25px;
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 16px;
 }
 
 .toggle-switch input[type='checkbox'] {
@@ -36,6 +36,20 @@
 .toggle-switch input[type='checkbox']:checked + .switch::before {
   transform: translateX(25px);
   background-color: white;
+    position: absolute;
+    content: "";
+    left: 1px;
+    top: 1px;
+    width: 14px;
+    height: 14px;
+    background-color: #aaa;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.toggle-switch input[type="checkbox"]:checked+.switch::before {
+    transform: translateX(17px);
+    background-color: white;
 }
 
 .toggle-switch input[type='checkbox']:checked + .switch {
