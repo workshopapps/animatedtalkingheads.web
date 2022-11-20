@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./ToggleSwitch.css";
 
-const ToggleSwitch = () => {
-  const [isToggled, setIsToggled] = useState(false);
+const ToggleSwitch = ({ toggledState }) => {
+  const [isToggled, setIsToggled] = useState(toggledState);
   const onToggle = () => setIsToggled(!isToggled);
   return (
     <label className="toggle-switch">

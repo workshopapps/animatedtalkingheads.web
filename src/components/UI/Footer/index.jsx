@@ -5,14 +5,16 @@ import globe from './../../../assets/icons/globe.png';
 import { routes } from '../../../libs/links';
 
 const links1 = [
-  { name: 'How it Works', link: routes.howItWorks },
-  { name: 'Use Case', link: routes.useCases },
-  { name: 'About', link: routes.about },
-  { name: 'Avatars', link: '/' },
-  { name: 'Custom Avatars', link: '/' },
-  { name: 'Explore Background', link: routes.exploreBackground },
-  { name: 'Blog', link: routes.blog }
-];
+  { name: "How it Works", link: routes.howItWorks},
+  { name: "Use Case", link: routes.useCases},
+  { name: "About", link: routes.about},
+  { name: "Avatars", link: "/"},
+  { name: "Custom Avatars", link: "/"},
+  { name: "Explore Background", link: routes.scenery },
+  { name: "Blog", link: routes.blog },
+]
+
+
 
 const links2 = [
   { name: 'Customer Support', link: '/' },

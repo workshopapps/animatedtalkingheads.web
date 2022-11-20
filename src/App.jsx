@@ -34,6 +34,7 @@ import { routes } from './libs/links';
 import UseCaseArticle from './pages/use-cases/article';
 import Scenery from './pages/scenery/Scenery';
 import Press from './pages/press';
+import Avatars from './pages/avatar';
 
 function App() {
   return (
@@ -62,9 +63,10 @@ function App() {
         <Route path={routes.podcastCharacters} element={<Characters />} />
         <Route path={routes.exploreBackground} element={<></>} />
         <Route path={routes.press} element={<Press />} />
+        <Route path={routes.avatars} element={<Avatars />} />
         <Route path={routes.press} element={<Press />} />
         <Route path={routes.api} element={<ApiPage />} />
-
+        
         {/* privacy-policy nested routes */}
         <Route path={routes.privacyAbout} element={<PrivacyAbout />} />
         <Route path={routes.privaCookies} element={<PrivacyCookies />} />
@@ -72,7 +74,8 @@ function App() {
         <Route path={routes.privacyhowWeUseInformation} element={<HowWeUseInformation />} />
         <Route path={routes.privacyInformation} element={<PrivacyInformation />} />
 
-        <Route path="/avatar/scenery" element={<Scenery />} />
+        <Route path={routes.scenery} element={<Scenery />} />
+
       </Routes>
     </Provider>
   );
