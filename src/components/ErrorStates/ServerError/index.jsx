@@ -14,7 +14,7 @@ const index = () => {
             <div className=' flex align-middle justify-center'>
                 <div className={`hidden md:flex pt-3 px-3`}>
                     <Link to="/home">
-                        <Button label={'Go back home'}>Create Video</Button>
+                        <Button label={'Go back home'}>Go back home</Button>
                     </Link>
                 </div>
                 <div>
