@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar Test should render and match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="nav"
+  >
+    <div
+      class="h-full flex justify-between items-center px-3 lg:px-20"
+    >
+      <div
+        class="flex"
+      >
+        <a
+          href="/"
+        >
+           
+          <img
+            alt="home"
+            src="header-logo.png"
+          />
+        </a>
+      </div>
+      <div
+        class="links hidden md:flex justify-between basis-3/5"
+      >
+        <a
+          class="block"
+          href="/"
+        >
+           Home 
+        </a>
+        <a
+          class="block"
+          href="/about"
+        >
+           About Us 
+        </a>
+        <a
+          class="block"
+          href="/use-cases"
+        >
+           Use cases 
+        </a>
+        <a
+          class="block"
+          href="/contact"
+        >
+           Contact 
+        </a>
+        <a
+          class="block"
+          href="/how-it-works"
+        >
+           How it work 
+        </a>
+      </div>
+      <div
+        class="hidden md:flex"
+      >
+        <a
+          href="/customize-audio"
+        >
+          <button
+            class="button false primary"
+            type="button"
+          >
+            <p
+              class="btn_text"
+            >
+              Create Video
+            </p>
+          </button>
+        </a>
+      </div>
+      <button
+        class="md:hidden hover:border-0"
+      >
+        <img
+          alt="home"
+          src="menu-icon.png"
+        />
+      </button>
+    </div>
+    <div
+      class="menu hidden px-3 py-10 md:hidden"
+    >
+      <div
+        class="links"
+      >
+        <a
+          class="block"
+          href="/"
+        >
+           Home 
+        </a>
+        <a
+          class="block"
+          href="/about"
+        >
+           About Us 
+        </a>
+        <a
+          class="block"
+          href="/use-cases"
+        >
+           Use cases 
+        </a>
+        <a
+          class="block"
+          href="/contact"
+        >
+           Contact 
+        </a>
+        <a
+          class="block"
+          href="/how-it-works"
+        >
+           How it work 
+        </a>
+      </div>
+      <div
+        class="line"
+      >
+         
+      </div>
+      <div
+        class="links2"
+      >
+        <a
+          class="block"
+          href="/"
+        >
+           Support 
+        </a>
+        <a
+          class="block"
+          href="/settings"
+        >
+           Settings 
+        </a>
+        <a
+          class="block"
+          href="/community"
+        >
+           Community 
+        </a>
+      </div>
+      <div
+        class="line"
+      >
+         
+      </div>
+      <div
+        class="flex w-full justify-center h-28 items-center"
+      >
+        <a
+          class="createVideo"
+          href="/customize-audio"
+        >
+          <button>
+             Create Video 
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
