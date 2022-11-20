@@ -1,89 +1,86 @@
 .heading {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 50px;
-    color: #292D32;
-    margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  color: #292d32;
+  margin-bottom: 40px;
 }
 
 .paragraph {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 154%;
-    text-align: justify;
-    opacity: 0.9;
-    max-width: 472px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 154%;
+  text-align: justify;
+  opacity: 0.9;
+  max-width: 472px;
 }
 
 .readmore {
-    width: 176px;
-    height: 43px;
-    margin-top: 40px;
+  width: 176px;
+  height: 43px;
+  margin-top: 40px;
 }
 
-
-
 .page {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 78px;
-    height: 72px;
-    border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 78px;
+  height: 72px;
+  border-radius: 6px;
 }
 
 .active {
-    background: #2158D2;
-    color: aliceblue;
+  background: #2158d2;
+  color: aliceblue;
 }
 
 .navigation {
-    width: 117px;
-    height: 72px;
-    border: 1px solid #BDBDBD;
-    border-radius: 6px;
+  width: 117px;
+  height: 72px;
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
 }
 
-@media screen and  (max-width: 756px) {
-    .heroBg {
-        height: 129px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 28px;
-        line-height: 35px;
-        color: #FFFFFF;
-    }
+@media screen and (max-width: 756px) {
+  .heroBg {
+    height: 129px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 35px;
+    color: #ffffff;
+  }
 
-    .heading {
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 30px;
-        /* White/Black/text */
-        color: #292D32;
-        margin-bottom: 20px;
-    }
+  .heading {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    /* White/Black/text */
+    color: #292d32;
+    margin-bottom: 20px;
+  }
 
-    .paragraph {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        text-align: justify;
-        color: #292D32;
-    }
+  .paragraph {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: justify;
+    color: #292d32;
+  }
 
-    .navigation {
-        position: absolute;
-        width: 64px;
-        height: 50px;
-        border: 1px solid #BDBDBD;
-        border-radius: 6px;
-    }
+  .navigation {
+    position: absolute;
+    width: 64px;
+    height: 50px;
+    border: 1px solid #bdbdbd;
+    border-radius: 6px;
+  }
 
-    .page {
-        border-radius: 6px;
-        width: 52px;
-        height: 48px;
-    }
-    
+  .page {
+    border-radius: 6px;
+    width: 52px;
+    height: 48px;
+  }
 }
