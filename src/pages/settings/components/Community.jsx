@@ -3,7 +3,7 @@ import ToggleSwitch from "./ToggleSwitch";
 
 const Community = () => {
     return (
-        <section className="mt-8">
+        <section className="mt-8 md:mt-0">
             <header className="flex gap-2 mb-6">
                 <People />
                 <p className="text-[#2563EB] h-8 text-2xl">Community</p>
