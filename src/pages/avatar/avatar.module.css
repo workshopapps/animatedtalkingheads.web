@@ -1,18 +1,24 @@
 .avatars_page {
-  padding: 5rem;
+}
+
+.links {
+  display: flex;
+  justify-self: flex-start;
 }
 
 .link {
-  display: none;
-}
-
-.section {
-  text-align: center;
+  font-family: 'inherit';
+  font-style: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #737479;
 }
 
 .header {
   border-bottom: 2px solid #c6cff7;
-  height: 304px;
+  padding: 5rem;
+  margin-bottom: 4.46rem;
 }
 .heading {
   font-weight: 800;
@@ -20,44 +26,66 @@
   line-height: 35px;
   text-align: center;
 }
-.text {
+
+.info {
   font-weight: 600;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 16px;
+  line-height: 20px;
   text-align: center;
 }
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text {
+  width: 100%;
+  max-width: 303px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+}
+
 .avatars {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 33px;
 }
+.front {
+  margin-top: 2.9rem;
+  margin-bottom: 2.4rem;
+}
 
 .side {
+  margin-top: 2.7rem;
+  margin-bottom: 3.4rem;
 }
 
 .bckg {
+  position: relative;
+  display: flex;
+  justify-content: center;
   background-color: #c6cff7;
   border-radius: 50%;
-  position: relative;
-  height: 90px;
-  width: 91px;
+  width: 64.14px;
+  height: 64.14px;
 }
 .img {
   position: absolute;
-  top: -1rem;
+  top: -2rem;
+  max-width: 91px;
 }
 
 @media only screen and (min-width: 1050px) {
   .avatars_page {
-    padding: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 185px;
   }
 
   .header {
-    height: 447px;
+    height: 449px;
+    margin-bottom: 8.26rem;
   }
 
   .links {
@@ -66,8 +94,8 @@
   }
 
   .link {
-    font-family: 'Mulish';
-    font-style: normal;
+    font-family: 'inherit';
+    font-style: inherit;
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
@@ -84,11 +112,15 @@
     line-height: 60px;
   }
 
+  .info {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
   .text {
-    font-weight: 600;
+    max-width: 520px;
     font-size: 24px;
     line-height: 30px;
-    text-align: center;
   }
   .avatars {
     display: grid;
@@ -96,21 +128,36 @@
     grid-gap: 53px;
   }
 
+  .front {
+    margin-top: 6.1rem;
+    margin-bottom: 5.2rem;
+  }
+
   .side {
+    margin-top: 4.4rem;
+    margin-bottom: 5.98rem;
   }
 
   .bckg {
-    background-color: #61dafb;
-    border-radius: 50%;
     position: relative;
-    height: 142px;
-    width: 145px;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
   }
   .img {
     position: absolute;
-    top: -1rem;
+    top: -3rem;
+    max-width: 145px;
   }
-  .section {
-    text-align: center;
+
+  .btn {
+    background-color: #1877f2;
+    border-radius: 12.908px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+
+    color: #fefefe;
+    padding: 30.66px 45px;
   }
 }

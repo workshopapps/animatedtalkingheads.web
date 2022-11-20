@@ -32,7 +32,7 @@ import HowItWorks from './pages/how-it-works';
 import { routes } from './libs/links';
 import UseCaseArticle from './pages/use-cases/article';
 import Scenery from './pages/scenery/Scenery';
-import Avatars from './pages/avatar/avatar';
+import Avatars from './pages/avatar';
 
 function App() {
   return (
