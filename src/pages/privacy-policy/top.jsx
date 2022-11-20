@@ -1,9 +1,11 @@
-import { Text } from "../../components/UI/Text";
 
 const Top = () => {
     return (
       <div className="bg-pri pt-8 h-[251px]">
-        <Text className={"text-white !font-medium text-4xl  text-center"} type={"header2"}> Privacy Policy</Text>
+        <p className={'text-white !font-medium text-[25px] lg:text-4xl  text-center'}>
+          {' '}
+          Privacy Policy
+        </p>
       </div>
     );
 }
