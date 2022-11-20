@@ -10,7 +10,7 @@ const links1 = [
   { name: "About", link: routes.about},
   { name: "Avatars", link: "/"},
   { name: "Custom Avatars", link: "/"},
-  { name: "Explore Background", link: routes.exploreBackground },
+  { name: "Explore Background", link: routes.scenery },
   { name: "Blog", link: routes.blog },
 ]
 
