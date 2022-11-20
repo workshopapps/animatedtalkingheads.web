@@ -14,7 +14,6 @@ export const routes = {
   pricing: '/pricing',
   privacy: '/privacy-policy',
 
-
   privacyAbout: '/privacy-policy/about',
   privaCookies: '/privacy-policy/cookies',
   privacyChangesToPolicy: '/privacy-policy/changes-to-policy',
@@ -33,6 +32,7 @@ export const routes = {
   scenery: '/avatar/scenery',
   exploreBackground: '/explore-background',
   avatars: '/avatars',
+  exploreAvatar: '/explore-avatar',
   api: '/api-page'
 };
 
