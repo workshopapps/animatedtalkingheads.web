@@ -14,7 +14,6 @@ exports[`NavBar Test should render and match snapshot 1`] = `
         <a
           href="/"
         >
-           
           <img
             alt="home"
             src="header-logo.png"
@@ -22,50 +21,50 @@ exports[`NavBar Test should render and match snapshot 1`] = `
         </a>
       </div>
       <div
-        class="links hidden md:flex justify-between basis-3/5"
+        class="links hidden md:flex md:grow justify-between"
       >
         <a
-          class="block"
+          class="active block"
           href="/"
         >
-           Home 
+          Home
         </a>
         <a
-          class="block"
+          class=" block"
           href="/about"
         >
-           About Us 
+          About Us
         </a>
         <a
-          class="block"
-          href="/use-cases"
+          class=" block"
+          href="/use-cases/1"
         >
-           Use cases 
+          Use cases
         </a>
         <a
-          class="block"
+          class=" block"
           href="/contact"
         >
-           Contact 
+          Contact
         </a>
         <a
-          class="block"
+          class=" block"
           href="/how-it-works"
         >
-           How it work 
+          How it work
         </a>
         <a
-          class="block"
+          class=" block"
           href="/avatars"
         >
-           Avatars 
+          Avatars
         </a>
       </div>
       <div
         class="hidden md:flex"
       >
         <a
-          href="/customize-audio"
+          href="/podcast/upload"
         >
           <button
             class="button false primary"
@@ -98,37 +97,37 @@ exports[`NavBar Test should render and match snapshot 1`] = `
           class="block"
           href="/"
         >
-           Home 
+          Home
         </a>
         <a
           class="block"
           href="/about"
         >
-           About Us 
+          About Us
         </a>
         <a
           class="block"
-          href="/use-cases"
+          href="/use-cases/1"
         >
-           Use cases 
+          Use cases
         </a>
         <a
           class="block"
           href="/contact"
         >
-           Contact 
+          Contact
         </a>
         <a
           class="block"
           href="/how-it-works"
         >
-           How it work 
+          How it work
         </a>
         <a
           class="block"
           href="/avatars"
         >
-           Avatars 
+          Avatars
         </a>
       </div>
       <div
@@ -143,19 +142,19 @@ exports[`NavBar Test should render and match snapshot 1`] = `
           class="block"
           href="/"
         >
-           Support 
+          Support
         </a>
         <a
           class="block"
           href="/settings"
         >
-           Settings 
+          Settings
         </a>
         <a
           class="block"
           href="/community"
         >
-           Community 
+          Community
         </a>
       </div>
       <div
@@ -168,7 +167,7 @@ exports[`NavBar Test should render and match snapshot 1`] = `
       >
         <a
           class="createVideo"
-          href="/customize-audio"
+          href="/podcast/upload"
         >
           <button>
              Create Video 
