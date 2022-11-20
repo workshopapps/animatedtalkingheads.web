@@ -11,8 +11,8 @@ export default function DragDropFile({onUpload}) {
         drop.current.addEventListener('drop', handleDrop);
     
         return () => {
-        // drop.current.removeEventListener('dragover', handleDragOver);
-        // drop.current.removeEventListener('drop', handleDrop);
+        drop.current.removeEventListener('dragover', handleDragOver);
+        drop.current.removeEventListener('drop', handleDrop);
         };
     }, []);
     
@@ -37,6 +37,7 @@ export default function DragDropFile({onUpload}) {
         <div  ref={drop}
         className='FilesDragAndDrop'>
         <Text label="Drag and Drop Podcast Audio" type="text3" w="sm" />
+
       </div>
     )
   }
