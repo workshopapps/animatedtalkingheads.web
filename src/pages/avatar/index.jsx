@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Layout from '../../components/UI/Layout';
-import Home from '..';
 import AVATAR_IMAGES from './avatar.data';
 import SIDE_IMAGES from './avatar-side.data';
 
@@ -14,10 +13,11 @@ const Avatars = () => {
       <div className={avatarStyles.avatars_page}>
         <div className={avatarStyles.header}>
           <div className={avatarStyles.links}>
-            <a href={Home} className={avatarStyles.link}>
+            <a href="/" className={avatarStyles.link}>
               Home
             </a>
-            <a href={Avatars} className={avatarStyles.link}>
+            <span className={avatarStyles.gap}>&gt;</span>
+            <a href="/avatars" className={avatarStyles.link}>
               Avatars
             </a>
           </div>
@@ -50,6 +50,9 @@ const Avatars = () => {
             ))}
           </div>
           <button className={avatarStyles.btn}> Meet the Avatars</button>
+          <a href="/avatar/scenery" className={avatarStyles.scenery}>
+            Explore our Various Environments and Scenery &gt;&gt;
+          </a>
         </div>
       </div>
     </Layout>

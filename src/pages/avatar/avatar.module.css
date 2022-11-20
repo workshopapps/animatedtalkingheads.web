@@ -1,18 +1,5 @@
-.avatars_page {
-}
-
 .links {
-  display: flex;
-  justify-self: flex-start;
-}
-
-.link {
-  font-family: 'inherit';
-  font-style: inherit;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 20px;
-  color: #737479;
+  display: none;
 }
 
 .header {
@@ -52,7 +39,8 @@
 .avatars {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 33px;
+  grid-column-gap: 77.86px;
+  grid-row-gap: 81.25px;
 }
 .front {
   margin-top: 2.9rem;
@@ -79,10 +67,33 @@
   max-width: 91px;
 }
 
-@media only screen and (min-width: 1050px) {
-  .avatars_page {
-  }
+.btn {
+  font-family: inherit;
+  font-style: normal;
+  background-color: #1877f2;
+  border-radius: 12.908px;
+  font-weight: 700;
+  font-size: 15.7px;
+  line-height: 20px;
+  text-align: center;
+  color: #fefefe;
+  padding: 12px 20.5px;
+}
 
+.scenery {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  text-decoration: underline;
+  color: #2563eb;
+  margin-top: 53px;
+  margin-bottom: 286px;
+}
+
+@media only screen and (min-width: 768px) {
   .header {
     height: 449px;
     margin-bottom: 8.26rem;
@@ -91,15 +102,23 @@
   .links {
     display: flex;
     justify-self: flex-start;
+    align-items: center;
   }
 
   .link {
-    font-family: 'inherit';
+    font-family: inherit;
     font-style: inherit;
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
     color: #737479;
+  }
+
+  .gap {
+    margin-left: 13.94px;
+    margin-right: 20.33px;
+    color: #737479;
+    font-size: 16px;
   }
 
   .link:active,
@@ -123,9 +142,9 @@
     line-height: 30px;
   }
   .avatars {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 53px;
+    grid-column-gap: 113px;
+    grid-row-gap: 72px;
   }
 
   .front {
@@ -139,8 +158,6 @@
   }
 
   .bckg {
-    position: relative;
-    border-radius: 50%;
     height: 100px;
     width: 100px;
   }
@@ -151,13 +168,15 @@
   }
 
   .btn {
-    background-color: #1877f2;
-    border-radius: 12.908px;
-    font-weight: 700;
     font-size: 32px;
     line-height: 40px;
-
-    color: #fefefe;
     padding: 30.66px 45px;
+  }
+
+  .scenery {
+    font-size: 24px;
+    line-height: 30px;
+    margin-top: 84.69px;
+    margin-bottom: 220px;
   }
 }

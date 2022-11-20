@@ -60,13 +60,13 @@ function App() {
         <Route path={routes.podcastDownload} element={<DownloadPodcast />} />
         <Route path={routes.podcastCharacters} element={<Characters />} />
         <Route path={routes.exploreBackground} element={<></>} />
+        <Route path={routes.avatars} element={<Avatars />} />
 
         <Route path="about" element={<PrivacyAbout />} />
         <Route path="cookies" element={<PrivacyCookies />} />
         <Route path="changes-to-policy" element={<PrivacyChanges />} />
         <Route path="how-we-use-information" element={<HowWeUseInformation />} />
         <Route path="information" element={<PrivacyInformation />} />
-        <Route path="/avatars" element={<Avatars />} />
         <Route path="/avatar/scenery" element={<Scenery />} />
       </Routes>
     </Provider>
