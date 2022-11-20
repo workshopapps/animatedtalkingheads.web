@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ReactComponent as Brush } from "../assets/brush.svg"
+import Proptypes  from "prop-types";
 
 const Appearance = () => {
     const [defaultState, setDefaultState] = useState(true);
@@ -77,6 +78,11 @@ const Appearance = () => {
             <button type="button" className="bg-[#2563EB] disabled:bg-[#A8C1F7] px-3 h-14 w-28 rounded-md mt-8 justify-self-end text-white" disabled={defaultState}>Save</button>
         </section>
     )
+}
+
+Appearance.propTypes = {
+    defaultState: Proptypes.bool,
+    appearance: Proptypes.object
 }
 
 export default Appearance;
