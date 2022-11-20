@@ -21,6 +21,8 @@ import PrivacyCookies from './pages/privacy-policy/cookies';
 import HowWeUseInformation from './pages/privacy-policy/how-we-use-information';
 import UploadPodcast from './pages/podcast/upload';
 import Customization from './pages/podcast/customization';
+import ApiPage from './pages/api-page';
+
 import store from './store/store';
 import DownloadPodcast from './pages/podcast/download';
 import Characters from './pages/podcast/characters';
@@ -32,6 +34,7 @@ import { routes } from './libs/links';
 import UseCaseArticle from './pages/use-cases/article';
 import Scenery from './pages/scenery/Scenery';
 import Press from './pages/press';
+import Avatars from './pages/avatar';
 
 function App() {
   return (
@@ -61,12 +64,19 @@ function App() {
         <Route path={routes.podcastCharacters} element={<Characters />} />
         <Route path={routes.exploreBackground} element={<></>} />
         <Route path={routes.press} element={<Press />} />
-        <Route path="about" element={<PrivacyAbout />} />
-        <Route path="cookies" element={<PrivacyCookies />} />
-        <Route path="changes-to-policy" element={<PrivacyChanges />} />
-        <Route path="how-we-use-information" element={<HowWeUseInformation />} />
-        <Route path="information" element={<PrivacyInformation />} />
-        <Route path="/avatar/scenery" element={<Scenery />} />
+        <Route path={routes.avatars} element={<Avatars />} />
+        <Route path={routes.press} element={<Press />} />
+        <Route path={routes.api} element={<ApiPage />} />
+        
+        {/* privacy-policy nested routes */}
+        <Route path={routes.privacyAbout} element={<PrivacyAbout />} />
+        <Route path={routes.privaCookies} element={<PrivacyCookies />} />
+        <Route path={routes.privacyChangesToPolicy} element={<PrivacyChanges />} />
+        <Route path={routes.privacyhowWeUseInformation} element={<HowWeUseInformation />} />
+        <Route path={routes.privacyInformation} element={<PrivacyInformation />} />
+
+        <Route path={routes.scenery} element={<Scenery />} />
+
       </Routes>
     </Provider>
   );
