@@ -8,35 +8,40 @@ import link from '../../../assets/icons/upload_podcast/bx_link.svg'
 import music from '../../../assets/icons/upload_podcast/music.svg'
 import correct from '../../../assets/icons/upload_podcast/correct.svg'
 import { Button } from '../../../components/UI/Button';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Header1 } from '../../../components/UI/Text/text.stories';
-import { Text } from '../../../components/UI/Text';
-import DragDropFile from './dragdrop';
+import { Text } from '../../../components/UI/Text'; 
 import styles from '../upload/index.module.scss'
 import { Link } from 'react-router-dom';
+import {useDropzone} from 'react-dropzone'
+
 
 const UploadPodcast = () => {
   const [audio,setAudio]=useState(null)
   const [name,setName] = useState(null)
   const [upload,setUpload] = useState(false)
+  const [error,setError]=useState(null)
   const [uploaded,setUploaded] = useState(false)
   const [loading,setLoading] = useState({
     label: 'Upload',
     isDisabled:false, })  
 
+  
+      const onDrop = useCallback(acceptedFiles => {
+        console.log(acceptedFiles[0])
+        setAudio(acceptedFiles[0])
+        setName(acceptedFiles[0].name)
+      }, [])
+      const {getRootProps, getInputProps,isDragActive}
+       = useDropzone({onDrop})
 
-  const handleFileSelected = (e) => {
-    const {files}=e.target
-    console.log(files)
-    console.log(setAudio(files))
-    setName(e.target.files[0].name)
-    console.log(audio)
-    
-
-  }
+ 
   const uploadFile=()=>{
-    if(audio){
+  if(audio.type !=='audio/mpeg'){
+    setError('Only audio files are supported')
+  } 
+   else if(audio ){
     setLoading({...loading,isDisabled:true})
     setUpload(true)
     setTimeout(()=>{
@@ -46,14 +51,11 @@ const UploadPodcast = () => {
      }, 2000);
     }
   }
-  const onUpload=(file)=>{
-   console.log(file)
-   setName(file[0].name)
-   
-  }
+
  
  
-  return <Layout>
+  return(
+  <Layout>
     <div className='text-center max-w-[1440px] w-[90%] mx-auto mt-10 '>
       <Header1 label="Upload Audio" w="semibold" data-testid="header"/>
       <div className='opacity-60 my-5 border rounded-lg bg-[#EFF3F6] border-opacity-20 text-center py-5 px-2 grid gap-3'>
@@ -71,7 +73,7 @@ const UploadPodcast = () => {
           </div>
       </div>
 
-      <div className=' opacity-70 my-5 py-10 border-[3px] bg-[#FFFFFF] rounded-lg border-dashed border-opacity-20 w-[90%] mx-auto'>
+      <div  {...getRootProps()} className={` cursor-pointer  my-5 py-10 border-[3px] bg-[#FFFFFF] rounded-lg border-dashed border-opacity-20 w-[90%] mx-auto ${error && "border-red-600 opacity-100"}`}>
       
         <div className='flex justify-center'>
           {uploaded? 
@@ -90,9 +92,8 @@ const UploadPodcast = () => {
         </div>
        
         {!uploaded && <div>{!upload ?
-        <div><DragDropFile
-        onUpload={onUpload}
-        /></div>:<div>
+        <div></div>
+        :<div>
        <Text label="Your file is uploading" type="text2" w="sm" />  
        <div className={styles.ring}><div></div><div></div><div></div><div></div></div>
        </div>
@@ -104,7 +105,7 @@ const UploadPodcast = () => {
            <img 
            src={music}
            alt="microphone podcast"
-           className='w-[20px] md:w-[31px]'
+           className='w-[20px] md:w-[30px]'
            />
            </div>
           }
@@ -112,19 +113,26 @@ const UploadPodcast = () => {
           
           {name? <Text label={name} type="text4" w="sm" />    
             :    
-          <label onClick={()=>handleFileSelected} className="text-[#2563EB] p-text cursor-pointer">
-          <input 
-          onChange={handleFileSelected}
-          type='file' 
-          className='hidden'/>
-          {uploaded? "change":"browse"}
-          </label>
-          }
+        <div >
+              <div >
+                <input {...getInputProps({id:"mine",accept:"audio/*"})} />
+                {
+                  isDragActive ?
+                    <p>Drop the files here ...</p> :
+                    <div>
+                    <Text label="Drag and Drop Podcast Audio" type="text2" w="sm"/>
+                    <p>or <span className='text-pri-600 cursor-pointer'>browse</span></p>
+                    </div>
+                }
+              </div>
+             
+         </div>
+          }  
         </div>
-     
+        {error &&<p className='text-red-700'>{error}</p>}
       </div>
     
-     
+
       <div className='-[3px] border-green-50 my-5'>
         <div className='flex mx-auto  justify-center  text-[12px] font-bold gap-3 gap-y-2'>
           <div className='flex gap-1 md:gap-2 items-center cursor-pointer'><img src={link} alt="google-drive" className='w-[16px] max-w-[25px]'/><p data-testid="url">Url</p></div>
@@ -141,7 +149,9 @@ const UploadPodcast = () => {
       <div className='my-10 justify-center flex '>< Button {...loading} onClick={uploadFile} /></div>
       }
     </div>
-  </Layout>;
+   
+  </Layout>
+  )
 };
 
 UploadPodcast.propTypes = {

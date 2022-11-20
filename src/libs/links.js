@@ -13,6 +13,14 @@ export const routes = {
   faqs: '/faqs',
   pricing: '/pricing',
   privacy: '/privacy-policy',
+
+
+  privacyAbout: '/privacy-policy/about',
+  privaCookies: '/privacy-policy/cookies',
+  privacyChangesToPolicy: '/privacy-policy/changes-to-policy',
+  privacyhowWeUseInformation: '/privacy-policy/how-we-use-information',
+  privacyInformation: '/privacy-policy/information',
+
   termsCondition: '/terms-and-conditions',
   termsService: '/terms-of-service',
   settings: '/settings',
@@ -23,8 +31,12 @@ export const routes = {
   useCaseArticle: '/use-cases/article',
   press: '/press',
   scenery: '/avatar/scenery',
+
   exploreBackground: '/explore-background',
   avatars: '/avatars'
+
+  exploreBackground: '/explore-background'
+
 };
 
 export const links = [

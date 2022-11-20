@@ -62,13 +62,18 @@ function App() {
         <Route path={routes.podcastCharacters} element={<Characters />} />
         <Route path={routes.exploreBackground} element={<></>} />
         <Route path={routes.press} element={<Press />} />
+
         <Route path={routes.avatars} element={<Avatars />} />
 
-        <Route path="about" element={<PrivacyAbout />} />
-        <Route path="cookies" element={<PrivacyCookies />} />
-        <Route path="changes-to-policy" element={<PrivacyChanges />} />
-        <Route path="how-we-use-information" element={<HowWeUseInformation />} />
-        <Route path="information" element={<PrivacyInformation />} />
+        
+        {/* privacy-policy nested routes */}
+        <Route path={routes.privacyAbout} element={<PrivacyAbout />} />
+        <Route path={routes.privaCookies} element={<PrivacyCookies />} />
+        <Route path={routes.privacyChangesToPolicy} element={<PrivacyChanges />} />
+        <Route path={routes.privacyhowWeUseInformation} element={<HowWeUseInformation />} />
+        <Route path={routes.privacyInformation} element={<PrivacyInformation />} />
+
+
         <Route path="/avatar/scenery" element={<Scenery />} />
       </Routes>
     </Provider>
