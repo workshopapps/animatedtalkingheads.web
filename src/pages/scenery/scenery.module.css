@@ -84,7 +84,6 @@
   white-space: nowrap; 
   overflow: hidden;
   text-overflow: ellipsis; 
-  border: #1c4cb6 1px solid;
 }
 
 .ellipsis {
