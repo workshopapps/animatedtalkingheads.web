@@ -1,14 +1,23 @@
 .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: #fbfbfb;
   border-bottom: 1px solid rgba(68, 68, 68, 0.1);
   height: 4em;
   color: #292d32;
+  z-index: 10000;
 }
 
 .nav .links {
   font-size: 1em;
   line-height: 20px;
   color: #292d32;
+}
+
+.navDummy {
+  height: 4em;
 }
 
 .menu {
@@ -19,6 +28,7 @@
   left: 0;
   width: 100%;
   height: calc(100% - 4em);
+  z-index: 100000;
 }
 
 .menu .links {
@@ -60,6 +70,10 @@
 
   .nav .links {
     max-width: 28em;
+  }
+
+  .navDummy {
+    height: 5.5em;
   }
 }
 

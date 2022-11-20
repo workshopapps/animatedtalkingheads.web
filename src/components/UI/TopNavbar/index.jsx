@@ -1,25 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '../Button';
-import styles from "./styles.module.css";
-import headerLogo from "./../../../assets/icons/header-logo.png";
-import menuIcon from "./../../../assets/icons/menu-icon.png";
-import closeIcon from "./../../../assets/icons/close.png";
-import { links, routes } from "../../../libs/links";
+import styles from './styles.module.css';
+import headerLogo from './../../../assets/icons/header-logo.png';
+import menuIcon from './../../../assets/icons/menu-icon.png';
+import closeIcon from './../../../assets/icons/close.png';
+import { links, routes } from '../../../libs/links';
 
 const miniLinks = [
-  { name: "Support", link: "#" },
-  { name: "Settings", link: routes.settings },
-  { name: "Community", link: routes.community },
-]
+  { name: 'Support', link: '#' },
+  { name: 'Settings', link: routes.settings },
+  { name: 'Community', link: routes.community }
+];
 
 const TopNavbar = () => {
-
   const [show, setShow] = React.useState(false);
 
   const close = () => {
-    setShow(false)
-  }
+    setShow(false);
+  };
 
   return (
     <div className={styles.nav}>
@@ -43,7 +42,7 @@ const TopNavbar = () => {
             <Button label={'Create Video'}>Create Video</Button>
           </Link>
         </div>
-        <button className="md:hidden" onClick={() => setShow(!show)}>
+        <button className="md:hidden hover:border-0" onClick={() => setShow(!show)}>
           <img src={show ? closeIcon : menuIcon} alt="home" />
         </button>
       </div>

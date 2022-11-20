@@ -5,6 +5,7 @@ import globe from './../../../assets/icons/globe.png';
 import { routes } from '../../../libs/links';
 
 const links1 = [
+<<<<<<< HEAD
   { name: 'How it Works', link: routes.howItWorks },
   { name: 'Use Case', link: routes.useCases },
   { name: 'About', link: routes.about },
@@ -12,6 +13,21 @@ const links1 = [
   { name: 'Avatars', link: '/' },
   { name: 'Custom Avatars', link: '/' }
 ];
+=======
+
+  { name: "How it Works", link: routes.howItWorks},
+  { name: "Use Case", link: routes.useCases},
+  { name: "About", link: routes.about},
+  { name: "Avatars", link: routes.avatars},
+ 
+  { name: "Custom Avatars", link: "/explore-avatar" },
+
+  { name: "Explore Background", link: routes.scenery },
+  { name: "Blog", link: routes.blog },
+]
+>>>>>>> a065ca798a2066997524de88b3918db5574e7682
+
+
 
 const links2 = [
   { name: 'Customer Support', link: '/' },
@@ -20,7 +36,11 @@ const links2 = [
   { name: 'Press', link: routes.press },
   { name: 'FAQ', link: routes.faqs },
   { name: 'Contact Us', link: routes.contact },
+<<<<<<< HEAD
   { name: 'APIs', link: '/' }
+=======
+  { name: 'APIs', link: routes.api }
+>>>>>>> a065ca798a2066997524de88b3918db5574e7682
 ];
 
 const links3 = [
@@ -34,7 +54,11 @@ const Footer = () => {
   return (
     <footer className={`${styles.footer} h-full md:py-16  pb-4 md:pb-8 px-3 lg:px-20 w-full`}>
       <div className={`flex flex-col md:flex-row `}>
+<<<<<<< HEAD
         <div className="flex h-24 md:basis-3/12">
+=======
+        <div className="flex mt-20 md:mt-0 h-24 md:basis-3/12">
+>>>>>>> a065ca798a2066997524de88b3918db5574e7682
           <Link to="/">
             {' '}
             <img src={footerLogo} alt="home" />
