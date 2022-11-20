@@ -54,6 +54,12 @@ exports[`NavBar Test should render and match snapshot 1`] = `
         >
            How it work 
         </a>
+        <a
+          class="block"
+          href="/avatars"
+        >
+           Avatars 
+        </a>
       </div>
       <div
         class="hidden md:flex"
@@ -117,6 +123,12 @@ exports[`NavBar Test should render and match snapshot 1`] = `
           href="/how-it-works"
         >
            How it work 
+        </a>
+        <a
+          class="block"
+          href="/avatars"
+        >
+           Avatars 
         </a>
       </div>
       <div
