@@ -4,6 +4,7 @@ import tick from '../../assets/icons/tick-box.svg';
 
 import {
   CardSection,
+  FirstMobileParagraph,
   FirstSection,
   Header,
   LastSection,
@@ -71,6 +72,15 @@ const Pricing = () => {
             personal brands.
           </SecondParagraph>
           <Paragraph>Try the Free Plan and then Go Pro to enjoy more exciting features</Paragraph>
+          <FirstMobileParagraph>
+            {' '}
+            Trusted by <NumberSpan>2,000</NumberSpan> content creators, podcasters and personal
+            brands
+          </FirstMobileParagraph>
+
+          <FirstMobileParagraph>
+            Pick the right plan for you and then Go Pro to enjoy more exciting features.
+          </FirstMobileParagraph>
         </FirstSection>
 
         <CardSection>

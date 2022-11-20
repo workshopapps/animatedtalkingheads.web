@@ -31,6 +31,9 @@ export const FirstSection = styled.div`
   flex: none;
   order: 0;
   flex-grow: 0;
+  @media only screen and (max-width: 600px) {
+    margin-bottom: -3rem;
+  }
 `;
 
 export const Header = styled.p`
@@ -43,6 +46,12 @@ export const Header = styled.p`
   line-height: 60px;
 
   color: #1a1924;
+
+  @media only screen and (max-width: 600px) {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const Paragraph = styled.p`
@@ -58,6 +67,10 @@ export const Paragraph = styled.p`
   text-align: center;
 
   color: #1a1924;
+
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const SecondParagraph = styled.p`
@@ -76,6 +89,24 @@ export const SecondParagraph = styled.p`
   line-height: 30px;
 
   color: #1a1924;
+
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+`;
+
+export const FirstMobileParagraph = styled.div`
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const NumberSpan = styled.span`
@@ -154,6 +185,9 @@ WEB
   font-weight: 600;
   font-size: 48px;
   line-height: 60px;
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 0rem;
+  }
 `;
 
 export const SubQuestion = styled.div`
@@ -169,6 +203,9 @@ export const SubQuestion = styled.div`
 
   color: #1a1924;
   margin-bottom: 1.5rem;
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 0.7rem;
+  }
 `;
 
 export const SubAnswer = styled.div`
@@ -182,6 +219,9 @@ export const SubAnswer = styled.div`
   line-height: 25px;
 
   color: #1a1924;
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 3rem;
+  }
 `;
 
 export const VeryLastSection = styled.div`
