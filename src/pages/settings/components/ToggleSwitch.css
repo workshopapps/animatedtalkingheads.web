@@ -1,8 +1,8 @@
 .toggle-switch {
     position: relative;
     display: inline-block;
-    width: 50px;
-    height: 25px;
+    width: 32px;
+    height: 16px;
 }
 
 .toggle-switch input[type="checkbox"] {
@@ -24,17 +24,17 @@
 .toggle-switch .switch::before {
     position: absolute;
     content: "";
-    left: 2px;
-    top: 2px;
-    width: 21px;
-    height: 21px;
+    left: 1px;
+    top: 1px;
+    width: 14px;
+    height: 14px;
     background-color: #aaa;
     border-radius: 50%;
     transition: transform 0.3s ease;
 }
 
 .toggle-switch input[type="checkbox"]:checked+.switch::before {
-    transform: translateX(25px);
+    transform: translateX(17px);
     background-color: white;
 }
 
