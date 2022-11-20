@@ -106,10 +106,11 @@
 
   .newscard-text p {
     font-size: 8px;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
 
   .newscard-text a {
     font-size: 8px;
+    margin: 0;
   }
 }
