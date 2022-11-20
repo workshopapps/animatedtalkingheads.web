@@ -7,19 +7,33 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { blogs } from '../data';
 
 const UseCaseArticle = () => {
+
+  const [width, setWidth] = React.useState(100000);
+
   const { id } = useParams();
   const navigate = useNavigate();
 
   const page = blogs[id];
-  console.log(page);
+
+  React.useEffect(() => {
+
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+
+    handleResize()
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <Layout>
       <div className={styles.bg}>
-        <div className="block px-5 py-20 md:p-24 lg:py-40 lg:px-48">
-          <div>
-            <img className={styles.image} src={page.image} alt="image" />{' '}
-          </div>
+
+        <div className="px-5 lg:py-24 py-6 md:py-16 md:px-16 lg:px-20 xl:px-28 2xl:px-48">
+
+          <div><img className={styles.image} src={ width > 756 ? page.image : page.mobileImg}  alt="image" /> </div>
 
           <h2 className={styles.heading}> {page.title}</h2>
 
@@ -27,7 +41,7 @@ const UseCaseArticle = () => {
 
           <div className={`mt-10 flex justify-between`}>
             <button onClick={() => navigate(-1)} className={`${styles.back} flex items-center`}>
-              {' '}
+
               <img
                 className="m-5"
                 height={'16px'}

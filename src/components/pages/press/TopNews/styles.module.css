@@ -1,12 +1,12 @@
-.topnews-section {
+.topnews_section {
   margin: 3rem 5rem;
 }
 
-.topnews-section .menu {
+.topnews_section .menu {
   margin: 32px 0;
 }
 
-.topnews-section .menu a {
+.topnews_section .menu a {
   text-decoration: none;
   margin-right: 56px;
   font-weight: 500;
@@ -14,7 +14,7 @@
   color: #292d32;
 }
 
-.topnews-section .menu a.active {
+.topnews_section .menu a.active {
   color: #2563eb;
   padding-bottom: 10px;
   border-bottom: 2px solid #2563eb;
@@ -25,25 +25,25 @@
   width: 100%;
 }
 
-.topnews-image {
+.topnews_image {
   width: 58%;
 }
 
-.topnews-image > img {
+.topnews_image > img {
   width: 100%;
 }
 
-.topnews-text {
+.topnews_text {
   width: 40%;
 }
 
-.topnews-text .date {
+.topnews_text .date {
   font-weight: 500;
   font-size: 16px;
   color: #737479;
 }
 
-.topnews-text h3 {
+.topnews_text h3 {
   font-weight: 700;
   font-size: 40px;
   line-height: 44px;
@@ -52,7 +52,7 @@
   margin-top: 12px;
 }
 
-.topnews-text p {
+.topnews_text p {
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
@@ -60,7 +60,7 @@
   margin: 10px 0 28px;
 }
 
-.topnews-text .btn {
+.topnews_text .btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,26 +72,27 @@
   font-weight: 500;
   font-size: 16px;
   color: #ffffff;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1024px) {
 }
 
 @media screen and (max-width: 768px) {
-  .topnews-section {
+  .topnews_section {
     margin: 2rem 1rem;
   }
 
-  .topnews-section .menu {
+  .topnews_section .menu {
     margin: 20px 0;
   }
 
-  .topnews-section .menu a {
+  .topnews_section .menu a {
     margin-right: 40px;
     font-size: 14px;
   }
 
-  .topnews-section .menu a.active {
+  .topnews_section .menu a.active {
     color: #2563eb;
     padding-bottom: 8px;
     border-bottom: 2px solid #2563eb;
@@ -103,35 +104,35 @@
     width: 100%;
   }
 
-  .topnews-image {
+  .topnews_image {
     width: 60%;
   }
 
-  .topnews-image > img {
+  .topnews_image > img {
     height: 138px;
   }
 
-  .topnews-text {
+  .topnews_text {
     width: 38%;
   }
 
-  .topnews-text .date {
+  .topnews_ext .date {
     font-size: 8px;
   }
 
-  .topnews-text h3 {
+  .topnews_text h3 {
     font-size: 14px;
     line-height: 16px;
     margin-top: 2px;
   }
 
-  .topnews-text p {
+  .topnews_text p {
     font-size: 8px;
     line-height: 10px;
     margin: 4px 0 8px;
   }
 
-  .topnews-text .btn {
+  .topnews_text .btn {
     width: 55px;
     height: 26px;
     background: #2563eb;
