@@ -1,0 +1,115 @@
+.newscard-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  gap: 70px 40px;
+  margin: 3rem 7rem;
+}
+
+.newscard {
+  display: flex;
+  flex-shrink: 1;
+  flex-direction: column;
+  width: 376px;
+}
+
+.newscard-image img {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.newscard-text .date {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  color: #737479;
+}
+
+.newscard-text .date img {
+  width: 24px;
+  margin-right: 8px;
+}
+
+.newscard-text h4 {
+  font-weight: 700;
+  font-size: 24px;
+  color: #171d2e;
+  margin: 10px 0 4px;
+}
+
+.newscard-text p {
+  font-weight: 600;
+  font-size: 16px;
+  color: #737479;
+  margin-bottom: 8px;
+}
+
+.newscard-text a {
+  font-weight: 600;
+  font-size: 16px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .newscard-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 40px 20px;
+    margin: 2rem 1rem;
+  }
+
+  .newscard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .newscard-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 40px 20px;
+    margin: 2rem 1rem;
+  }
+
+  .newscard {
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
+    width: 10rem;
+  }
+
+  .newscard-image img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .newscard-text .date {
+    font-size: 10px;
+  }
+
+  .newscard-text .date img {
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+  }
+
+  .newscard-text h4 {
+    font-size: 14px;
+    margin: 4px 0 4px;
+  }
+
+  .newscard-text p {
+    font-size: 8px;
+    margin-bottom: 4px;
+  }
+
+  .newscard-text a {
+    font-size: 8px;
+  }
+}

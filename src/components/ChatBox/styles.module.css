@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+.ChatBoxContainer {
+  position: absolute;
+  left: calc(100% - 0.343 * 100vw - 100px);
+  top: calc(100% - 0.343 * 100vh - 400px);
+  width: calc(0.343 * 100vw);
+  height: calc(0.85 * 100vh);
+  max-height: 1024px;
+  /* width: 518px; */
+  /* height: 765px; */
+  background: #fbfbfb;
+  box-shadow: 3px 6px 12px 5px rgba(0, 13, 33, 0.25);
+  border-radius: 23px;
+  transition: all 500ms ease;
+}
+
+.ChatBoxMainContent {
+  padding-inline: 16px;
+  height: calc(100% - 78px);
+}
+
+.ChatBoxMainContent > p:first-of-type {
+  padding-top: 40px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 24px;
+  color: #171d2e;
+}
+
+.CloseChatBoxButton {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: none;
+  color: transparent;
+  border: none;
+}
+
+.LeaveAMessageButton {
+  color: transparent;
+  border: none;
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #ffffff;
+  border: 0.5px solid #c6cff7;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.LeaveAMessageButton div {
+  flex: 1;
+}
+
+.LeaveAMessageButton div p {
+  text-align: left;
+  font-size: 16px;
+}
+
+.LeaveAMessageButton div > p:first-of-type {
+  font-weight: 700;
+  color: #171d2e;
+}
+
+.LeaveAMessageButton div > p:last-of-type {
+  font-weight: 500;
+  color: #737479;
+}
+
+.OptionsContainer {
+  padding: 8px 14px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 32px;
+}
+
+.OptionsContainer button {
+  width: 100%;
+  display: flex;
+  padding: 18px 8px;
+  border-radius: 8px;
+}
+
+.OptionsContainer > button:first-of-type {
+  background-color: #f2f3fd;
+}
+
+.OptionsContainer button p {
+  flex: 1;
+  text-align: left;
+}
+
+.MessageBoxContainer {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.MessageBoxContainer > p:first-of-type {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #171d2e;
+}
+
+.MessageBoxContainer > p:last-of-type {
+  word-wrap: break-word;
+  margin: calc(50% - 100px) 0;
+  flex: 3;
+  padding-inline: 45px;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #171d2e;
+}
+
+.MessageBoxContainer > button {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  width: 100%;
+  background-color: #2158d2;
+  color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.MessageBoxContainer > button > img {
+  filter: opacity(0.5) drop-shadow(0 0 0 white);
+}
+
+.ChatBoxFooter {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  width: 100%;
+  height: max-content;
+  position: absolute;
+  bottom: 0;
+}
+
+.ChatBoxFooterItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ChatBoxFooterItem:hover {
+  cursor: pointer;
+}
+
+.ChatBoxFooterItem p {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.selectedFooterItem {
+  color: hsla(221, 83%, 53%, 1);
+}
+
+.selectedFooterItem > img {
+  filter: opacity(0.5) drop-shadow(0 0 0 blue);
+}
+
+.link {
+  color: hsla(221, 83%, 53%, 1);
+  text-decoration: underline;
+  text-decoration-color: hsla(221, 83%, 53%, 1);
+}
+
+.LeaveAMessageSection {
+  height: inherit;
+}
+
+.LeaveAMessageSectionHeader {
+  background: hsla(221, 74%, 24%, 1);
+  min-height: 72px;
+  border-top-left-radius: 23px;
+  border-top-right-radius: 23px;
+  padding: 16px 0 16px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.LeaveAMessageSectionHeader button {
+  color: transparent;
+  margin-right: 8px;
+}
+
+.LeaveAMessageSectionHeader > div {
+  display: flex;
+  align-items: center;
+}
+
+.LeaveAMessageSectionHeader > div > p {
+  padding-left: 16px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.LeaveAMessageSectionHeader > div > p > span:first-of-type {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.LeaveAMessageSectionBody {
+  padding-top: 32px;
+  padding-inline: 50px;
+  text-align: center;
+}
+
+.LeaveAMessageBoxContainer {
+  width: 100%;
+  padding-inline: 16px;
+  padding-bottom: 23px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.LeaveAMessageBoxContainer input {
+  padding-left: 16px;
+  min-width: 85%;
+  outline: none;
+  border-radius: 24px;
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .ChatBoxContainer {
+    top: calc(100% - 0.2 * 100vh - 500px);
+    left: calc(100% - 0.5 * 100vw - 100px);
+    width: calc(0.5 * 100%);
+    min-height: 90vh;
+    height: 100vh;
+  }
+
+  .MessageBoxContainer {
+    height: calc(100% - 50px);
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .ChatBoxContainer {
+    top: calc(100% - 0.2 * 100vh - 400px);
+    left: calc(100% - 0.6 * 100vw - 50px);
+    width: calc(0.6 * 100%);
+    min-height: 80vh;
+    height: 90vh;
+  }
+
+  .MessageBoxContainer {
+    height: calc(100% - 50px);
+  }
+
+  .ChatBoxMainContent > p:first-of-type {
+    font-size: 16px;
+  }
+
+  .LeaveAMessageButton div p {
+    font-size: 12px;
+  }
+
+  .OptionsContainer {
+    font-size: 13px;
+  }
+
+  .MessageBoxContainer > p:first-of-type {
+    font-size: 22px;
+  }
+
+  .MessageBoxContainer > p:last-of-type {
+    font-size: 18px;
+  }
+
+  .MessageBoxContainer > button {
+    font-size: 14px;
+  }
+
+  .ChatBoxFooterItem p {
+    font-size: 10px;
+  }
+
+  .LeaveAMessageSectionHeader > div > p > span:first-of-type {
+    font-size: 18px;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .ChatBoxContainer {
+    position: static;
+    width: 100%;
+    min-height: 100vh;
+    height: 110vh;
+    border-radius: 0;
+  }
+
+  .ChatBoxFooter {
+    position: relative;
+  }
+
+  .ChatBoxMainContent > p:first-of-type {
+    font-size: 18px;
+  }
+
+  .LeaveAMessageButton div p {
+    font-size: 14px;
+  }
+
+  .OptionsContainer {
+    font-size: 15px;
+  }
+
+  .CloseChatBoxButton {
+    display: block;
+  }
+
+  .ChatBoxMainContent > p:first-of-type {
+    padding-top: 16px;
+  }
+
+  .MessageBoxContainer {
+    height: calc(100% - 40px);
+  }
+
+  .MessageBoxContainer > p:last-of-type {
+    margin: calc(50% - 70px) 0;
+  }
+
+  .LeaveAMessageBoxContainer {
+    position: absolute;
+    top: calc(100% - 240px);
+  }
+}

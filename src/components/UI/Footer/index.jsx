@@ -8,16 +8,17 @@ const links1 = [
   { name: "How it Works", link: routes.howItWorks},
   { name: "Use Case", link: routes.useCases},
   { name: "About", link: routes.about},
-  { name: "Use cases", link: routes.useCases },
   { name: "Avatars", link: "/"},
   { name: "Custom Avatars", link: "/"},
+  { name: "Explore Background", link: routes.exploreBackground },
+  { name: "Blog", link: routes.blog },
 ]
 
 const links2 = [
   { name: "Customer Support", link: "/"},
   { name: "Community", link: routes.community},
   { name: "Careers", link: routes.careers },
-  { name: "Press", link: "/"},
+  { name: "Press", link: routes.press},
   { name: "FAQ", link: routes.faqs },
   { name: "Contact Us", link: routes.contact },
   { name: "APIs", link: "/" },
@@ -36,7 +37,7 @@ const Footer = () => {
       
       <div className={`flex flex-col md:flex-row `}>
 
-        <div className="flex h-24 md:basis-3/12">
+        <div className="flex mt-20 md:mt-0 h-24 md:basis-3/12">
           <Link to="/"> <img src={footerLogo} alt="home"/></Link>
         </div>
 
