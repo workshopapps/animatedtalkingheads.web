@@ -59,7 +59,7 @@ const [efull_name,setEFullName]=useState("")
           value={email}
           onChange={updateEmail}
           type="email"
-          placeholder='Enter your full name '
+          placeholder='Enter your Email Address'
           className={`border w-full p-3 md:p-4 bg-white rounded-[10px] outline-none px-5 ${!eemail ?"border-[#6B7280]": "border-red-600"}`}
           />
            {eemail && <p className='text-red-600 text-xs'>this field is required</p>}
