@@ -1,4 +1,4 @@
-import "./styles.css"
+import styles from "./styles.module.css"
 import newsImg2 from "../Images/news-image2.png"
 import newsImg3 from "../Images/news-image3.png"
 import newsImg4 from "../Images/news-image4.png"
@@ -9,7 +9,7 @@ import calendar from "../Images/calendar-icon.png"
 
 export default function NewsCard() {
     return (
-        <div className="newscard-box">
+        <div className={styles.newscard_box}>
             <News1 />
             <News2 />
             <News3 />
@@ -23,10 +23,10 @@ export default function NewsCard() {
 // Created 6 components to be replace with propTypes
 const News1 = () => {
     return (
-        <div className="newscard">
-            <div className="newscard-image"><img src={newsImg2} alt="" /></div>
-            <div className="newscard-text">
-                <span className="date">
+        <div className={styles.newscard}>
+            <div className={styles.newscard_image}><img src={newsImg2} alt="" /></div>
+            <div className={styles.newscard_text}>
+                <span className={styles.date}>
                     <img src={calendar} alt="" /> Nov 12, 2022
                 </span>
 
@@ -44,10 +44,10 @@ const News1 = () => {
 
 const News2 = () => {
     return (
-        <div className="newscard">
-            <div className="newscard-image"><img src={newsImg3} alt="" /></div>
-            <div className="newscard-text">
-                <span className="date">
+        <div className={styles.newscard}>
+            <div className={styles.newscard_image}><img src={newsImg3} alt="" /></div>
+            <div className={styles.newscard_text}>
+                <span className={styles.date}>
                     <img src={calendar} alt="" /> Nov 12, 2022
                 </span>
 
@@ -66,10 +66,10 @@ const News2 = () => {
 }
 const News3 = () => {
     return (
-        <div className="newscard">
-            <div className="newscard-image"><img src={newsImg4} alt="" /></div>
-            <div className="newscard-text">
-                <span className="date">
+        <div className={styles.newscard}>
+            <div className={styles.newscard_image}><img src={newsImg4} alt="" /></div>
+            <div className={styles.newscard_text}>
+                <span className={styles.date}>
                     <img src={calendar} alt="" /> Nov 12, 2022
                 </span>
 
@@ -88,10 +88,10 @@ const News3 = () => {
 }
 const News4 = () => {
     return (
-        <div className="newscard">
-            <div className="newscard-image"><img src={newsImg5} alt="" /></div>
-            <div className="newscard-text">
-                <span className="date">
+        <div className={styles.newscard}>
+            <div className={styles.newscard_image}><img src={newsImg5} alt="" /></div>
+            <div className={styles.newscard_text}>
+                <span className={styles.date}>
                     <img src={calendar} alt="" /> Nov 12, 2022
                 </span>
 
@@ -109,10 +109,10 @@ const News4 = () => {
 }
 const News5 = () => {
     return (
-        <div className="newscard">
-            <div className="newscard-image"><img src={newsImg6} alt="" /></div>
-            <div className="newscard-text">
-                <span className="date">
+        <div className={styles.newscard}>
+            <div className={styles.newscard_image}><img src={newsImg6} alt="" /></div>
+            <div className={styles.newscard_text}>
+                <span className={styles.date}>
                     <img src={calendar} alt="" /> Nov 12, 2022
                 </span>
 
@@ -131,10 +131,10 @@ const News5 = () => {
 }
 const News6 = () => {
     return (
-        <div className="newscard">
-            <div className="newscard-image"><img src={newsImg7} alt="" /></div>
-            <div className="newscard-text">
-                <span className="date">
+        <div className={styles.newscard}>
+            <div className={styles.newscard_image}><img src={newsImg7} alt="" /></div>
+            <div className={styles.newscard_text}>
+                <span className={styles.date}>
                     <img src={calendar} alt="" /> Nov 12, 2022
                 </span>
 
