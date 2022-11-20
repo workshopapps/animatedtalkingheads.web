@@ -1,4 +1,5 @@
-import { ReactComponent as People } from "./assets/people.svg";
+import { ReactComponent as People } from "../assets/people.svg";
+import ToggleSwitch from "./ToggleSwitch";
 
 const Community = () => {
     return (
@@ -10,14 +11,16 @@ const Community = () => {
             <div className="grid gap-3">
                 <div className="border-b border-b-[#D9D9D9] pb-4">
                     <p className="text-md">Public Visibility</p>
-                    <div>
+                    <div className="flex gap-12">
                         <p className="text-xs">Make your video publicly available in community</p>
+                        <ToggleSwitch />
                     </div>
                 </div>
                 <div className="border-b border-b-[#D9D9D9] pb-4">
                     <p className="text-md">Automation: Synchronization</p>
-                    <div>
+                    <div className="flex gap-12">
                         <p className="text-xs">Automatically refresh feed for new posts</p>
+                        <ToggleSwitch />
                     </div>
                 </div>
             </div>

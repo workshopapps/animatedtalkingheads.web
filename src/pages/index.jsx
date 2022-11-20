@@ -152,7 +152,7 @@ const Home = () => {
       <section className="py-20 bg-white px-8">
         <div className="flex justify-around items-center">
           <div>
-            <h3 className="font-bold md:text-[32px] text-xl mb-3 md:mb-8 w-56 md:w-[365px] md:leading-[50px]  text-sec">
+            <h3 className="font-bold md:text-[32px] text-base mb-3 md:mb-8 w-44 md:w-[365px] md:leading-[50px]  text-sec">
               Conveniently download your output on different video qualities
             </h3>
             <Button label={"Let's Go"} />

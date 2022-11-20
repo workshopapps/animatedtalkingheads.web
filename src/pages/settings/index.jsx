@@ -1,6 +1,6 @@
 import Layout from '../../components/UI/Layout';
-import LeftSection from './LeftSection';
-import RightSection from './RightSection';
+import LeftSection from './components/LeftSection';
+import RightSection from './components/RightSection';
 
 const Setting = () => {
   return (
