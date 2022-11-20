@@ -7,6 +7,13 @@ import HeroIcon from '../assets/images/hero-anime.png';
 import MarkImg from '../assets/images/mark-essien.png';
 import LavyImg from '../assets/images/lavy-engine.png';
 import NonsoImg from '../assets/images/Nonso.png';
+import Avatar1 from '../assets/images/avatar-one.png';
+import Avatar2 from '../assets/images/avatar-two.png';
+import Avatar3 from '../assets/images/avatar-three.png';
+import Avatar4 from '../assets/images/avatar-four.png';
+import Avatar5 from '../assets/images/avatar-five.png';
+import Avatar6 from '../assets/images/avatar-six.png';
+
 import { Button } from '../components/UI/Button';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -115,8 +122,8 @@ const Home = () => {
           What people are saying
         </h3>
         <div className="md:flex flex-wrap gap-12 justify-around pb-[40px] md:px-6">
-          <div className=" px-8 bg-white w-[261px] mx-auto md:w-[378px]  mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
-            <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
+          <article className=" px-8 bg-white w-[261px] mx-auto md:w-[378px]  mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
+            <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%]  translate-x-[-50%] translate-y-[-50%] ">
               <img src={MarkImg} alt="Mark Essien" className="w-full h-full" />
             </div>
             <img src={Quotes} alt="" className="pt-[34px] md:pt-12 mx-auto" />
@@ -125,8 +132,8 @@ const Home = () => {
               views and engagements and I love it
             </p>
             <h5 className="text-center pb-6 text-[11px] md:text-base ">Mark Essien</h5>
-          </div>
-          <div className=" px-8 bg-white md:w-[378px]  w-[261px] mx-auto mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
+          </article>
+          <article className=" px-8 bg-white md:w-[378px]  w-[261px] mx-auto mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
             <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
               <img src={LavyImg} alt="Mark Essien" className="w-full h-full" />
             </div>
@@ -136,8 +143,8 @@ const Home = () => {
               my life
             </p>
             <h5 className="text-center pb-6 text-[11px] md:text-base ">Lavy Engine</h5>
-          </div>
-          <div className=" px-8 bg-white w-[261px] md:w-[378px]  mx-auto mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl md:pb-0">
+          </article>
+          <article className=" px-8 bg-white w-[261px] md:w-[378px]  mx-auto mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl md:pb-0">
             <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
               <img src={NonsoImg} alt="Mark Essien" className="w-full h-full" />
             </div>
@@ -146,17 +153,17 @@ const Home = () => {
               Simple, Straightforward and works Nahh. To good to be true
             </p>
             <h5 className="text-center pb-6 text-[11px] md:text-base ">Nonso</h5>
-          </div>
+          </article>
         </div>
       </section>
       <section className="py-20 bg-white px-8">
         <div className="flex justify-around items-center">
-          <div>
-            <h3 className="font-bold md:text-[32px] text-xl mb-3 md:mb-8 w-56 md:w-[365px] md:leading-[50px]  text-sec">
+          <article>
+            <h3 className="font-bold md:text-[32px] text-base mb-3 md:mb-8 w-44 md:w-[365px] md:leading-[50px]  text-sec">
               Conveniently download your output on different video qualities
             </h3>
             <Button label={"Let's Go"} />
-          </div>
+          </article>
           <div>
             <div className="flex justify-between-items-center  md:gap-10 gap-[10px] mb-[10px] md:mb-10 ">
               <div className="bg-[#fbfbfb]  md:gap-10 gap-[10px] rounded p-2.5 md:p-[30px] md:h-32 md:w-32 h-16 w-16">
@@ -185,7 +192,63 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="bg-sec "></section>
+      <section className="bg-sec ">
+        <div className="md:flex items-center justify-around py-[60px] md:py-32  ">
+          <article className="">
+            <div className="flex items-center justify-center mb-4 md:mb-8 gap-4 md:gap-8">
+              <div className="w-[72px] h-[72px] md:w-32 md:h-32 rounded-[50%] bg-white border-2 boder-solid grid items-center justify-center ">
+                <img
+                  src={Avatar1}
+                  alt="animetad image"
+                  className=" h-[100%] w-[100%] mx-auto object-cover p-0 "
+                />
+              </div>
+              <div className="w-[72px] h-[72px] md:w-32 md:h-32 rounded-[50%] bg-white border-2 boder-solid grid items-center justify-center ">
+                <img
+                  src={Avatar2}
+                  alt="animetad image"
+                  className=" h-[100%] w-[100%] mx-auto object-cover p-0 "
+                />
+              </div>
+              <div className="w-[72px] h-[72px] md:w-32 md:h-32 rounded-[50%] bg-white border-2 boder-solid grid items-center justify-center ">
+                <img
+                  src={Avatar3}
+                  alt="animetad image"
+                  className=" h-[100%] w-[100%] mx-auto object-cover p-0 "
+                />
+              </div>
+            </div>
+            <div className="flex items-center justify-center gap-4 md:gap-8">
+              <div className="w-[72px] h-[72px] md:w-32 md:h-32 rounded-[50%] bg-white border-2 boder-solid grid items-center justify-center ">
+                <img
+                  src={Avatar4}
+                  alt="animetad image"
+                  className=" h-[100%] w-[100%] mx-auto object-cover p-0 "
+                />
+              </div>
+              <div className="w-[72px] h-[72px] md:w-32 md:h-32 rounded-[50%] bg-white border-2 boder-solid grid items-center justify-center ">
+                <img
+                  src={Avatar5}
+                  alt="animetad image"
+                  className=" h-[100%] w-[100%] mx-auto object-cover p-0 "
+                />
+              </div>
+              <div className="w-[72px] h-[72px] md:w-32 md:h-32 rounded-[50%] bg-white border-2 boder-solid grid items-center justify-center ">
+                <img
+                  src={Avatar6}
+                  alt="animetad image"
+                  className=" h-[100%] w-[100%] mx-auto object-cover p-0 "
+                />
+              </div>
+            </div>
+          </article>
+          <article className="w-[217px] mx-auto md:mx-0 md:w-[434px] ">
+            <h3 className="text-white font-bold text-center mt-11 md:mt-0 text-xl md:text-[32px] md:leading-[50px] ">
+              Freestyle with various diverse characters and share on any social platform
+            </h3>
+          </article>
+        </div>
+      </section>
     </Layout>
   );
 };
