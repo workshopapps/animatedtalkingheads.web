@@ -1,0 +1,39 @@
+.why {
+  background-color: #fff;
+}
+
+.careers__why {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.careers__secondary_heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+.reasons {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.reason {
+  width: 30%;
+}
+
+.title {
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+
+.text {
+  font-size: 0.9rem;
+}

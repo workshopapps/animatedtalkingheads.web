@@ -54,12 +54,18 @@ exports[`NavBar Test should render and match snapshot 1`] = `
         >
            How it work 
         </a>
+        <a
+          class="block"
+          href="/avatars"
+        >
+           Avatars 
+        </a>
       </div>
       <div
         class="hidden md:flex"
       >
         <a
-          href="/podcast/upload"
+          href="/customize-audio"
         >
           <button
             class="button false primary"
@@ -74,7 +80,7 @@ exports[`NavBar Test should render and match snapshot 1`] = `
         </a>
       </div>
       <button
-        class="md:hidden"
+        class="md:hidden hover:border-0"
       >
         <img
           alt="home"
@@ -118,6 +124,12 @@ exports[`NavBar Test should render and match snapshot 1`] = `
         >
            How it work 
         </a>
+        <a
+          class="block"
+          href="/avatars"
+        >
+           Avatars 
+        </a>
       </div>
       <div
         class="line"
@@ -156,7 +168,7 @@ exports[`NavBar Test should render and match snapshot 1`] = `
       >
         <a
           class="createVideo"
-          href="/podcast/upload"
+          href="/customize-audio"
         >
           <button>
              Create Video 

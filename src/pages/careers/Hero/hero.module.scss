@@ -1,0 +1,75 @@
+.careers__theme {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 5rem;
+}
+
+.careers__main_heading {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  padding-bottom: 1.5rem;
+}
+
+.careers__theme_text {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  padding-bottom: 2rem;
+}
+
+.careers__hero_btn {
+  background-color: #2563eb;
+  color: #fff;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+}
+
+.careers__hero {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.careers__hero_image {
+  margin: 1.5rem 0;
+}
+
+.hero_image {
+  width: 100%;
+}
+
+.careers__work_ethics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.careers__secondary_heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+
+.work-ethics_text {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 36.875em) {
+  .careers__theme {
+    padding: 0 2rem;
+  }
+
+  .careers__main_heading {
+    font-size: 1.5rem;
+  }
+
+  .careers__theme_text {
+    font-size: 0.6rem;
+  }
+
+  .careers__work_ethics {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+}
