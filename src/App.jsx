@@ -32,6 +32,7 @@ import HowItWorks from './pages/how-it-works';
 import { routes } from './libs/links';
 import UseCaseArticle from './pages/use-cases/article';
 import Scenery from './pages/scenery/Scenery';
+import Avatars from './pages/avatar/avatar';
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
         <Route path="changes-to-policy" element={<PrivacyChanges />} />
         <Route path="how-we-use-information" element={<HowWeUseInformation />} />
         <Route path="information" element={<PrivacyInformation />} />
+        <Route path="/avatars" element={<Avatars />} />
         <Route path="/avatar/scenery" element={<Scenery />} />
       </Routes>
     </Provider>
