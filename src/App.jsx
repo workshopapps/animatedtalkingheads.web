@@ -38,17 +38,14 @@ import BlogContent from './pages/blogs/BlogContent';
 import Avatars from './pages/avatar';
 
 function App() {
-
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
-    })
-
-  }, [pathname])
-
+    });
+  }, [pathname]);
 
   return (
     <Provider store={store}>
@@ -90,7 +87,6 @@ function App() {
         <Route path={routes.privacyInformation} element={<PrivacyInformation />} />
 
         <Route path={routes.scenery} element={<Scenery />} />
-
       </Routes>
     </Provider>
   );

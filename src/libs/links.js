@@ -3,7 +3,9 @@ export const routes = {
   about: '/about',
   customizeAudio: '/customize-audio',
   blog: '/blog',
+
   blogContent: '/blog/content',
+
   docs: '/fe-docs',
   useCases: '/use-cases',
   careers: '/careers',
