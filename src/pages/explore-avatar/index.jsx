@@ -96,8 +96,8 @@ const CustomizeAudio = () => {
           {
 
             avatarArary.map((item, index) => (
-              <div key={index} className="avatar_card text-center flex flex-col justify-between bg-blue-100 rounded-xl p-4 space-y-3 items-center">
-                <div className="image ">
+              <div key={index} className="avatar_card py-3 text-center flex flex-col justify-between bg-blue-100 rounded-xl p-4 space-y-3 items-center">
+                <div className="image">
                   <img src={item.img} alt="" className='w-[95%] h-[95%] md:w-full md:h-full mx-auto' />
                 </div>
 
