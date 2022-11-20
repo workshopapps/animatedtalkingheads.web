@@ -46,8 +46,8 @@ const ApiPage = () => {
               <img src={codeImg} alt="api-img" className=" w-[250px] sm:w-[400px] lg:w-[500px]" />
             </div>
             <div className="flex flex-col items-center gap-4 md:hidden">
-              <Button label="Register As a Developer" />
-              <Button label="View Documentation" ghost />
+              <Button label="Register" />
+              <Button label="Documentation" ghost />
             </div>
           </div>
           <div className="flex flex-wrap justify-around py-6">
