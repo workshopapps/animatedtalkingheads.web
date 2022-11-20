@@ -90,7 +90,6 @@
     "webpack": "^5.75.0"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
     "*.{js,css,md,html,json}": "prettier --cache --write"
   }
 }
