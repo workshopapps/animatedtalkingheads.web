@@ -32,6 +32,7 @@ export const routes = {
   scenery: '/avatar/scenery',
   exploreBackground: '/explore-background',
   avatars: '/avatars',
+  exploreAvatar: '/explore-avatar',
   api: '/api-page'
 };
 
