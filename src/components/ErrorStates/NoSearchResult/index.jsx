@@ -1,14 +1,14 @@
 import React from 'react'
 import Layout from '../../UI/Layout';
-import styles from "./../PageNotFound/notfound.module.scss";
-import { page } from "./image/pagenotfound.svg"
+
+import { Result } from "./image/noresult.svg"
 import { Link } from "react-router-dom";
 import { Button } from '../Button';
 
 const index = () => {
     return <Layout>
         <div className=' flex align-middle justify-center py-10 flex-col md:flex-row md:px-3'>
-            <div>{page}</div>
+            <div>{Result}</div>
             <h2 className=' pt-2 font-semibold'>Oops! Sorry we can’t find the page <br></br>you are looking for..</h2>
             <h5 className=' pt-2 font-light'>The page you are looking for doesn’t exist, or it has been moved</h5>
             <div className=' flex align-middle justify-center'>
