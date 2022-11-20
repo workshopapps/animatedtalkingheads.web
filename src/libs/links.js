@@ -32,7 +32,7 @@ export const routes = {
   press: '/press',
   scenery: '/avatar/scenery',
   exploreBackground: '/explore-background',
-  avatars: '/avatars'
+  avatars: '/avatars',
   api: '/api-page'
 };
 
