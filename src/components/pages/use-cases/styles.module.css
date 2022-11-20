@@ -12,16 +12,28 @@
     line-height: 154%;
     text-align: justify;
     opacity: 0.9;
-    max-width: 472px;
 }
 
 .readmore {
-    width: 176px;
+    width: 164px;
     height: 43px;
     margin-top: 40px;
 }
 
 
+.readmore p{
+    font-weight: 400;
+    font-size: 24px;
+    text-align: justify;
+    color: #2158D2;
+    opacity: 0.9;
+}
+
+.readmore img {
+    width: 28px;
+    height: 28px;
+    margin-top: 4px;
+}
 
 .page {
     display: flex;
@@ -44,6 +56,108 @@
     border: 1px solid #BDBDBD;
     border-radius: 6px;
 }
+
+.description {
+    height: 394px;
+    max-width: 84%;
+}
+
+
+
+
+
+@media screen and  (max-width: 1280px) {
+
+
+    .paragraph {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        text-align: justify;
+        color: #292D32;
+    }
+
+    .readmore {
+        width: 112px;
+        height: 22px;
+        margin-top: 40px;
+    }
+
+    .readmore p{
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .readmore img {
+        width: 24px;
+        height: 20px;
+        margin-top: 1px;
+    }
+
+    .description {
+        max-height: 212px;
+    }
+    
+}
+
+
+@media screen and  (max-width: 1024px) {
+
+
+    .heading {
+        font-weight: 600;
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .paragraph {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: justify;
+        color: #292D32;
+    }
+
+    .navigation {
+        height: 50px;
+        border: 1px solid #BDBDBD;
+        border-radius: 6px;
+    }
+
+    .page {
+        border-radius: 6px;
+        width: 52px;
+        height: 48px;
+    }
+
+    .readmore {
+        width: 112px;
+        height: 22px;
+        margin-top: 40px;
+    }
+
+    .readmore p{
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .readmore img {
+        width: 24px;
+        height: 20px;
+        margin-top: 1px;
+    }
+
+    .description {
+        max-height: 212px;
+    }
+    
+}
+
+
+
+
+
+
 
 @media screen and  (max-width: 756px) {
     .heroBg {
@@ -73,7 +187,6 @@
     }
 
     .navigation {
-        position: absolute;
         width: 64px;
         height: 50px;
         border: 1px solid #BDBDBD;
@@ -84,6 +197,28 @@
         border-radius: 6px;
         width: 52px;
         height: 48px;
+    }
+
+    .readmore {
+        width: 112px;
+        height: 22px;
+        margin-top: 40px;
+    }
+
+    .readmore p{
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .readmore img {
+        width: 24px;
+        height: 20px;
+        margin-top: 1px;
+    }
+
+    .description {
+        max-height: 212px;
+        max-width: 100%;
     }
     
 }

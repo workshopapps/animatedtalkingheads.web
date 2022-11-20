@@ -29,10 +29,10 @@ export const data = [
             <>            
                 The idea is simple: we have created a tool 
                 to help content creators go viral.
-                <ul>
-                <li>  Record a podcast. </li>
-                <li>  Share on Anchor and other audio-hosting platforms </li>
-                <li>  But there's still a problem...  </li>
+                <ul style={{marginLeft: 30}}>
+                    <li>  Record a podcast. </li>
+                    <li>  Share on Anchor and other audio-hosting platforms </li>
+                    <li>  But there's still a problem...  </li>
                 </ul>
             </>,
         image: headphone
@@ -108,7 +108,8 @@ export const blogs = [
 
             </>
         ),
-        image: micLG
+        image: micLG,
+        mobileImg: mic
     },
     {
         title: "Increase Organic Podcast Listeners",
@@ -150,7 +151,8 @@ export const blogs = [
                     <li> Build fans and grow your brand. </li>
                 </ul>
             </>,
-        image: headphoneLG
+        image: headphoneLG,
+        mobileImg: headphone
     },
     {
         title: "Make your Interview Podcasts fun",
@@ -192,7 +194,8 @@ export const blogs = [
 
             </>
         ) ,
-        image: talkLG
+        image: talkLG,
+        mobileImg: talk
     },
     {
         title: "Debates and Round-table Talks",
@@ -222,7 +225,8 @@ export const blogs = [
             </>
 
         ) ,
-        image: tablesLG
+        image: tablesLG,
+        mobileImg: tables
     },
     {
         title: "Language Tutoring",
@@ -245,7 +249,8 @@ export const blogs = [
                 ⦁	Download and share for your listeners to watch and practice, and learn the language you're teaching.
            
             </>,
-        image: laptopLG
+        image: laptopLG,
+        mobileImg: laptop
     },
     {
         title: "Cartoon Avatars",
@@ -268,6 +273,7 @@ export const blogs = [
 
             </>
         ) ,
-        image: cartoonLG
+        image: cartoonLG,
+        mobileImg: cartoon
     },
 ]

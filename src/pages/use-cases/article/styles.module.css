@@ -25,7 +25,7 @@
 }
 
 .paragraph li {
-    list-style-type: circle;
+    list-style-type: disc;
     text-indent: 0.4em;
     margin-left: 1.6em;
 }
@@ -48,8 +48,6 @@
 
     .image {
         width: 100%;
-        height: calc(100vw - 1em);
-        object-fit: cover;
     }
 
     .heading {
