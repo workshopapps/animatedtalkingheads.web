@@ -21,6 +21,7 @@ import PrivacyCookies from './pages/privacy-policy/cookies';
 import HowWeUseInformation from './pages/privacy-policy/how-we-use-information';
 import UploadPodcast from './pages/podcast/upload';
 import Customization from './pages/podcast/customization';
+import ApiPage from './pages/api-page';
 
 import store from './store/store';
 import DownloadPodcast from './pages/podcast/download';
@@ -33,6 +34,7 @@ import { routes } from './libs/links';
 import UseCaseArticle from './pages/use-cases/article';
 import Scenery from './pages/scenery/Scenery';
 import Press from './pages/press';
+import Avatars from './pages/avatar';
 
 function App() {
   return (
@@ -61,6 +63,9 @@ function App() {
         <Route path={routes.podcastCharacters} element={<Characters />} />
         <Route path={routes.exploreBackground} element={<></>} />
         <Route path={routes.press} element={<Press />} />
+        <Route path={routes.avatars} element={<Avatars />} />
+        <Route path={routes.press} element={<Press />} />
+        <Route path={routes.api} element={<ApiPage />} />
         
         {/* privacy-policy nested routes */}
         <Route path={routes.privacyAbout} element={<PrivacyAbout />} />
@@ -70,6 +75,7 @@ function App() {
         <Route path={routes.privacyInformation} element={<PrivacyInformation />} />
 
         <Route path={routes.scenery} element={<Scenery />} />
+
       </Routes>
     </Provider>
   );
