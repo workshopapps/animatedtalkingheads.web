@@ -13,6 +13,7 @@ import Avatar3 from '../assets/images/avatar-three.png';
 import Avatar4 from '../assets/images/avatar-four.png';
 import Avatar5 from '../assets/images/avatar-five.png';
 import Avatar6 from '../assets/images/avatar-six.png';
+import AvatarMeet from '../assets/images/avatar-meet.png';
 
 import { Button } from '../components/UI/Button';
 import { Link } from 'react-router-dom';
@@ -193,8 +194,8 @@ const Home = () => {
         </div>
       </section>
       <section className="bg-sec ">
-        <div className="md:flex items-center justify-around py-[60px] md:py-32  ">
-          <article className="">
+        <div className="md:flex items-center justify-around py-[60px] md:py-32 border-b-[1px] border-solid border-white gap-10 px-10 ">
+          <article className="md:w-[60%]">
             <div className="flex items-center justify-center mb-4 md:mb-8 gap-4 md:gap-8">
               <div className="w-[72px] h-[72px] md:w-32 md:h-32 rounded-[50%] bg-white border-2 boder-solid grid items-center justify-center ">
                 <img
@@ -247,6 +248,45 @@ const Home = () => {
               Freestyle with various diverse characters and share on any social platform
             </h3>
           </article>
+        </div>
+      </section>
+      <section className="bg-sec">
+        <div className="py-[60px] md:py-32">
+          <article className="md:w-[700px] w-72 mx-auto">
+            <h3 className="text-white md:text-[40px] text-xl font-bold md:leading-[50px] text-center mb-5 md:mb-20">
+              Transform your audio podcast contents to amazing videos of form of talking heads
+            </h3>
+          </article>
+          <article className="md:flex items-center justify-around px-6">
+            <article className="mb-4 w-80 md:w-[50%] mx-auto md-w-1/2 md:mx-0">
+              <p className="font-normal text-white text-sm md:text-2xl mb-6 md:mb-8">
+                Voxclip is the #1 rated Animated Video creation platform. Thousands of podcasters
+                use it to create animated content to connect better with their audience and also
+                increase their brand awareness.
+              </p>
+              <p className="font-normal text-white text-sm md:text-2xl mb-6 md:mb-8">
+                Say Goodbye to the old boring traditional audio podcasts. Voxclips gives you the
+                opportunity to bring your imagination to life, connect better with your listeners
+                viewers and drop creative content.
+              </p>
+              <p className="font-medium text-white text-base md:text-left text-center md:text-3xl mb-6 md:mb-8">
+                NO signup required
+              </p>
+            </article>
+            <div className="w-[277px] md:w-[50%]  md:h-[356px] mx-auto md:mx-0  ">
+              <img src={AvatarMeet} alt="" className="object-contain w-full h-full" />
+            </div>
+          </article>
+        </div>
+      </section>
+      <section className="bg-[#292d32] ">
+        <div className="py-[60px] md:py-32 grid justify-center">
+          <h3 className="text-white text-xl md:leading-[50px] md:text-[40px] text-center font-bold mb-10 md:-[30px] ">
+            Let’s start creating!!
+          </h3>
+          <button className="bg-white font-bold text-[10.23px] leading-3 text-[#292d32 mx-auto capitalize border-none  text-center rounded-md md:rounded-lg py-[7px] px-[15px] md:px-[19px] md:py-[10px] w-[200px] md:w-[275px] md:text-sm  ">
+            create video
+          </button>
         </div>
       </section>
     </Layout>
