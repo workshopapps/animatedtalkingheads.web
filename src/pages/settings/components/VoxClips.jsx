@@ -1,4 +1,4 @@
-import { ReactComponent as Tag2 } from "./assets/tag-2.svg";
+import { ReactComponent as Tag2 } from "../assets/tag-2.svg";
 
 const VoxClips = () => {
     return (

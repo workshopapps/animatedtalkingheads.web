@@ -1,4 +1,4 @@
-import { ReactComponent as Brush } from "./assets/brush.svg"
+import { ReactComponent as Brush } from "../assets/brush.svg"
 
 const Appearance = () => {
     return (

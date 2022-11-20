@@ -32,6 +32,7 @@ import HowItWorks from './pages/how-it-works';
 import { routes } from './libs/links';
 import UseCaseArticle from './pages/use-cases/article';
 import Scenery from './pages/scenery/Scenery';
+import Press from './pages/press';
 import Avatars from './pages/avatar';
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
         <Route path={routes.podcastDownload} element={<DownloadPodcast />} />
         <Route path={routes.podcastCharacters} element={<Characters />} />
         <Route path={routes.exploreBackground} element={<></>} />
+        <Route path={routes.press} element={<Press />} />
         <Route path={routes.avatars} element={<Avatars />} />
 
         <Route path="about" element={<PrivacyAbout />} />
