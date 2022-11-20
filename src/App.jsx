@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Home from './pages';
 import About from './pages/about';
-// import CustomizeAudio from './pages/customize-audio';
+import CustomizeAudio from './pages/customize-audio';
 import Docs from './pages/FEdocs';
 import Blog from './pages/blogs';
 import Careers from './pages/careers';
@@ -21,7 +21,6 @@ import PrivacyCookies from './pages/privacy-policy/cookies';
 import HowWeUseInformation from './pages/privacy-policy/how-we-use-information';
 import UploadPodcast from './pages/podcast/upload';
 import Customization from './pages/podcast/customization';
-
 import store from './store/store';
 import DownloadPodcast from './pages/podcast/download';
 import Characters from './pages/podcast/characters';
@@ -44,6 +43,7 @@ function App() {
         <Route path={routes.blog} element={<Blog />} />
         <Route path={routes.careers} element={<Careers />} />
         <Route path={routes.community} element={<Communities />} />
+        <Route path={routes.customizeAudio} element={<CustomizeAudio />} />
         <Route path={routes.contact} element={<Contact />} />
         <Route exact path={routes.useCases} element={<UseCases />} />
         <Route path={`${routes.useCaseArticle}/:id`} element={<UseCaseArticle />} />
@@ -61,7 +61,6 @@ function App() {
         <Route path={routes.podcastCharacters} element={<Characters />} />
         <Route path={routes.exploreBackground} element={<></>} />
         <Route path={routes.press} element={<Press />} />
-
         <Route path="about" element={<PrivacyAbout />} />
         <Route path="cookies" element={<PrivacyCookies />} />
         <Route path="changes-to-policy" element={<PrivacyChanges />} />
