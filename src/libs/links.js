@@ -1,8 +1,8 @@
 export const routes = {
   home: '/',
   about: '/about',
-  customizeAudio: '/customize-audio',
   blog: '/blog',
+  customizeAudio: '/customize-audio',
 
   blogContent: '/blog/content',
 
@@ -15,6 +15,8 @@ export const routes = {
   helperCenter: '/help-center',
   faqs: '/faqs',
   pricing: '/pricing',
+  getStarted: '/getstarted',
+  checkout: '/checkout',
   privacy: '/privacy-policy',
 
   privacyAbout: '/privacy-policy/about',
