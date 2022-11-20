@@ -13,11 +13,14 @@ export const routes = {
   faqs: '/faqs',
   pricing: '/pricing',
   privacy: '/privacy-policy',
+
+
   privacyAbout: '/privacy-policy/about',
   privaCookies: '/privacy-policy/cookies',
   privacyChangesToPolicy: '/privacy-policy/changes-to-policy',
   privacyhowWeUseInformation: '/privacy-policy/how-we-use-information',
   privacyInformation: '/privacy-policy/information',
+
   termsCondition: '/terms-and-conditions',
   termsService: '/terms-of-service',
   settings: '/settings',
@@ -29,6 +32,7 @@ export const routes = {
   press: '/press',
   scenery: '/avatar/scenery',
   exploreBackground: '/explore-background',
+  avatars: '/avatars',
   api: '/api-page'
 };
 
@@ -37,7 +41,8 @@ export const links = [
   { name: 'About Us', link: routes.about },
   { name: 'Use cases', link: routes.useCases },
   { name: 'Contact', link: routes.contact },
-  { name: 'How it work', link: routes.howItWorks }
+  { name: 'How it work', link: routes.howItWorks },
+  { name: 'Avatars', link: routes.avatars }
 ];
 
 export const navLinks = [
