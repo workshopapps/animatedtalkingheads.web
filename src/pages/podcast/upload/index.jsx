@@ -28,13 +28,13 @@ const UploadPodcast = () => {
     isDisabled:false, })  
 
   
-      const onDrop = useCallback(acceptedFiles => {
-        console.log(acceptedFiles[0])
-        setAudio(acceptedFiles[0])
-        setName(acceptedFiles[0].name)
-      }, [])
-      const {getRootProps, getInputProps,isDragActive}
-       = useDropzone({onDrop})
+  const onDrop = useCallback(acceptedFiles => {
+    console.log(acceptedFiles[0])
+    setAudio(acceptedFiles[0])
+    setName(acceptedFiles[0].name)
+  }, [])
+  const {getRootProps, getInputProps,isDragActive}
+    = useDropzone({onDrop})
 
  
   const uploadFile=()=>{
@@ -44,6 +44,7 @@ const UploadPodcast = () => {
    else if(audio ){
     setLoading({...loading,isDisabled:true})
     setUpload(true)
+    uploadFunction()
     setTimeout(()=>{
       setUploaded(true)
       setUpload(false)
@@ -52,6 +53,31 @@ const UploadPodcast = () => {
     }
   }
 
+  const uploadFunction = () => {
+
+    const data = new FormData()
+    data.append('podcast', audio)
+   
+    fetch('https://api.voxlips.hng.tech/podcasts/upload/', {
+      
+      method: 'POST',
+      body: data,
+      headers:{
+        'Access-Control-Allow-Origin': "*",
+        'content-type': 'multipart/form-data',
+        'Access-Control-Allow-Credentials': 'true',
+        "user_id":"507f191e810c19729de860ea"
+
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+    })
+    .catch(error => {
+      console.error(error)
+    })
+  }
  
  
   return(
