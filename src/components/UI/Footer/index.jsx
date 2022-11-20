@@ -15,6 +15,7 @@ const links1 = [
 ]
 
 
+
 const links2 = [
   { name: 'Customer Support', link: '/' },
   { name: 'Community', link: routes.community },
@@ -22,7 +23,7 @@ const links2 = [
   { name: 'Press', link: routes.press },
   { name: 'FAQ', link: routes.faqs },
   { name: 'Contact Us', link: routes.contact },
-  { name: 'APIs', link: '/' }
+  { name: 'APIs', link: routes.api }
 ];
 
 const links3 = [
