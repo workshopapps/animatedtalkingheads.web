@@ -17,7 +17,7 @@
 
 .CommunityPageContainer main {
   text-align: center;
-  margin-bottom: 184px;
+  margin-bottom: 140px;
 }
 
 .CommunityPageContainer main h1 {
@@ -431,6 +431,10 @@
     padding-inline: 18px;
     padding-bottom: 12px;
     margin-bottom: 25px;
+  }
+
+  .CommunityPageHeaderBanner:last-of-type {
+    margin-top: 18px;
   }
 
   .CommunityPageHeaderBanner p:first-of-type {

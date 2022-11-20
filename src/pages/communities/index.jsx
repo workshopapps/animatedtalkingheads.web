@@ -54,9 +54,9 @@ const Communities = () => {
     imgSrc = Logo,
     title = 'FREE Animate 2D Podcast Starter Package',
     titleType = 'text2',
-    text = 'Voxclip has partnered with the team at HNG to offer Animate Podcast 2D started packages to our entire community for free!',
+    text = 'Voxclips has partnered with the team at HNG to offer Animate Podcast 2D starter packages to our entire community for free!',
     textType = 'text3',
-    details = 'Voxclip Admin_Admin( Admin). 1 yr ago. 3 replies.',
+    details = 'Voxclips Admin_Admin( Admin). 1 yr ago. 3 replies.',
     detailsType = 'text3'
   }) => {
     return (
@@ -75,12 +75,12 @@ const Communities = () => {
     <Layout>
       <div className={styles.CommunityPageContainer}>
         <main>
-          <h1>Welcome to the Voxclip community!</h1>
-          <h2>Why Choose Voxclip?</h2>
+          <h1>Welcome to the Voxclips community!</h1>
+          <h2>Why Choose Voxclips?</h2>
           <p>
             Are you a creator looking for more ways to give your podcast traction and more
             listeners? Voxclips unlocks a creative way to engage your listeners, tell great stories
-            and make impact.
+            and make an impact.
           </p>
         </main>
         <ul>
@@ -93,7 +93,7 @@ const Communities = () => {
           />
           <WhyChooseVoxClipsItem
             title="Our Technology"
-            text="Voxclips is committed to producing top quality animated video by incorporating an easy AI model that breathes life into your podcasts.
+            text="Voxclips is committed to producing top-quality animated videos by incorporating an easy AI model that breathes life into your podcasts.
             Using Artificial Intelligence, we’re transforming the process of content creation to unleash human creativity for good.
             "
             imgSrc={WhyVoxClips2}
@@ -101,14 +101,14 @@ const Communities = () => {
           />
           <WhyChooseVoxClipsItem
             title="Our Value"
-            text="Since 2022 Voxclips has been committed to creating more engaging and attention grabbing podcasts that would visualize and deliver 
-            all users podcasts experiences better.
-            "
+            text="Since 2022 Voxclips has been committed to creating 
+            more engaging and attention-grabbing podcasts that would 
+            visualize and deliver all users' podcast experiences better."
             imgSrc={WhyVoxClips3}
           />
         </ul>
         <Text
-          label="Subscribe to our Newsletter for latest Updates and Events"
+          label="Subscribe to our newsletter for the latest updates and events"
           type="header2"
           className={styles.CommunityPageSubscribeHeader}
         />
@@ -142,21 +142,21 @@ const Communities = () => {
             imgSrc={User}
             title="Download Source Video"
             titleType="text1"
-            text="Hey Team, Love your work, i was however wondering if i could download src videos for an..."
+            text="Hey Team, love your work, I was however wondering if I could download src videos for an..."
             details="Bambam.   1 yr ago.   3 replies."
           />
           <CommunityPageAnnouncementsListItem
             imgSrc={User}
             title="Why is the podcast Upload limited to 1?"
             titleType="text1"
-            text="Hey Team, Love your work, i was however wondering if i could download src videos for an..."
+            text="Hey Team, love your work, I was however wondering if I could download src videos for an..."
             details="Bambam.   1 yr ago.   3 replies."
           />
           <CommunityPageAnnouncementsListItem
             imgSrc={User}
             title="Animation that can be edited before download"
             titleType="text1"
-            text="Hey Team, Love your work, why cant animations be edited after i have finished rconversion? wolud re.."
+            text="Hey Team, love your work, why can't animations be edited after I have finished conversion? Would re..."
             details="Bambam.   1 yr ago.   3 replies."
           />
         </ul>
