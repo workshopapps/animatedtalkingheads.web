@@ -33,6 +33,7 @@ import { routes } from './libs/links';
 import UseCaseArticle from './pages/use-cases/article';
 import Scenery from './pages/scenery/Scenery';
 import Press from './pages/press';
+import BlogContent from './pages/blogs/BlogContent';
 
 function App() {
   return (
@@ -41,7 +42,8 @@ function App() {
         <Route path={routes.home} element={<Home />} />
         <Route path={routes.docs} element={<Docs />} />
         <Route path={routes.about} element={<About />} />
-        <Route path={routes.blog} element={<Blog />} />
+        <Route exact path={routes.blog} element={<Blog />} />
+        <Route path={`${routes.blogContent}/:id`} element={<BlogContent />} />
         <Route path={routes.careers} element={<Careers />} />
         <Route path={routes.community} element={<Communities />} />
         <Route path={routes.contact} element={<Contact />} />

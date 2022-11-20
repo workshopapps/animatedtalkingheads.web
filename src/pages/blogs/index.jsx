@@ -1,14 +1,28 @@
 import Layout from '../../components/UI/Layout';
 import styles from './index.module.scss';
-import img1 from './assets/img-1.png';
-import img2 from './assets/img-2.png';
-import img3 from './assets/img-3.png';
-import img4 from './assets/img-4.png';
-import img5 from './assets/img-5.png';
-import avatar from './assets/Avatar.png';
 import Card from './Card';
+// import { routes } from "../../libs/links";
+import { data } from './data';
+import { useSearchParams } from 'react-router-dom';
+import { ReactComponent as Search } from './assets/search-blue.svg';
+import { ReactComponent as SearchWhite } from './assets/search-white.svg';
 
+const rows = 5;
 const Blog = () => {
+  const [searchParams] = useSearchParams();
+  let page = Number(searchParams.get('page'));
+  page = page === 0 ? 1 : page;
+  const start = (page - 1) * rows;
+  const count = start + rows;
+  const end = count > data.length ? data.length : count;
+
+  console.log(end);
+
+  console.log(page);
+
+  const arr = data.slice(start, end).map((el, index) => console.log(el, index));
+  console.log(arr);
+
   return (
     <Layout>
       <div className={styles.blog__header}>
@@ -17,11 +31,12 @@ const Blog = () => {
       </div>
       <main className={styles.blog__main}>
         <div className={styles.blog__sidebar}>
-          <div className="form-group">
+          <div className={styles.form}>
+            <SearchWhite />
             <input type="text" />
           </div>
-          <p>Blog categories</p>
-          <ul>
+          <p className={styles.p}>Blog categories</p>
+          <ul className={styles.ul}>
             <li>View all</li>
             <li>Podcasts</li>
             <li>Animations</li>
@@ -32,15 +47,25 @@ const Blog = () => {
           </ul>
         </div>
         <div className={styles.blog__content}>
-          <h2>Latest Post</h2>
+          <div className={styles.blog__heading}>
+            <h2>Latest Post</h2>
+            <Search />
+          </div>
           <div className={styles.blog__grid}>
-            <Card
-              photo={img1}
-              heading="Complete Guide on How to Start A Podcast"
-              text="Are you looking to start your podcast in 2022?"
-              avatar={avatar}
-            />
-            <Card
+            {data.slice(start, end).map((el, index) => {
+              return (
+                <Card
+                  photo={el.image}
+                  heading={el.heading}
+                  avatar={el.avatar}
+                  key={index}
+                  text={el.text}
+                  index={index}
+                />
+              );
+            })}
+
+            {/* <Card
               photo={img2}
               heading="Podcast Content Strategy"
               text="Expectation versus reality"
@@ -63,7 +88,7 @@ const Blog = () => {
               heading="How To Reach More Audience From YourPodcast"
               text="Tips & Tricks"
               avatar={avatar}
-            />
+            /> */}
           </div>
         </div>
       </main>
