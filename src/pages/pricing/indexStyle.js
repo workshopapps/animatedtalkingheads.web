@@ -77,10 +77,9 @@ export const SecondParagraph = styled.p`
   width: 100%;
   height: 30px;
 
-  top: 21px;
   text-align: center;
   margin-top: 21px;
-  margin-bottom: 42px;
+  margin-bottom: 3.7rem;
 
   font-family: 'Mulish';
   font-style: normal;
@@ -96,6 +95,7 @@ export const SecondParagraph = styled.p`
 `;
 
 export const FirstMobileParagraph = styled.div`
+  display: none;
   @media only screen and (max-width: 600px) {
     width: 100%;
 
