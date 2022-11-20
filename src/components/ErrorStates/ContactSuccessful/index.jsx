@@ -9,8 +9,8 @@ const index = () => {
     return <Layout>
         <div className=' flex align-middle justify-center py-10 flex-col md:flex-row md:px-3'>
             <div>{Contact}</div>
-            <h2 className=' pt-2 font-semibold'>Oops! Sorry we can’t find the page <br></br>you are looking for..</h2>
-            <h5 className=' pt-2 font-light'>The page you are looking for doesn’t exist, or it has been moved</h5>
+            <h2 className=' pt-2 font-semibold'>Thank you for getting in touch!</h2>
+            <h5 className=' pt-2 font-light'>We read every message and typically respond within 24hrs</h5>
 
             <div className={`hidden md:flex pt-3 px-3`}>
                 <Link to="/home">
