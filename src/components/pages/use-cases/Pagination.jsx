@@ -16,41 +16,38 @@ const Pagination = ({rows, current, total, link}) => {
     pages.push(i + 1)
   }
 
-
   return (
-    <div className='hidden md:flex h-full basis-full justify-between '>    
+    <div className='flex h-full basis-full justify-between '>    
 
         <button 
-            onClick={() => navigate(`${link}?page=${current - 1}`)} 
-            className={`${styles.navigation} ${current <= 1 ? "hidden": ""} flex items-center`}> 
-            <img className="m-5" height={"16px"} width="7px" src={arrowBack} alt="Arrow Back" />
-            <p className="hidden md:block">Back</p> 
+          onClick={() => navigate(`${link}/${current - 1}`)} 
+          className={`${styles.navigation} ${current <= 1 ? "hidden": ""} flex md:items-center`}> 
+          <img className="m-5" height={"16px"} width="7px" src={arrowBack} alt="Arrow Back" />
+          <p className="hidden md:block">Back</p> 
         </button>
 
-        <div className={`flex md:grow md:justify-center`}>
+        <div className={`flex grow justify-center`}>
 
-            {
-                pages.map((page, index) => {
-                    console.log(current == page)
-                    return (
-                        <Link key={index}
-                            to={`${link}?page=${page}`} 
-                            className={`${styles.page} block mx-2 ${current == page ? `${styles.active}` : ""} `}>
-                                {page}
-                        </Link>
-                    )
-                })
-            }
-            
-    
-
+          {
+            pages.map((page, index) => {
+                console.log(current == page)
+                return (
+                  <Link key={index}
+                    to={`${link}/${page}`} 
+                    className={`${styles.page} flex mx-2 ${current == page ? `${styles.active}` : ""} `}>
+                      {page}
+                  </Link>
+                )
+            })
+          }
+        
         </div>
 
         <button 
-            onClick={() => navigate(`${link}?page=${current + 1}`)} 
-            className={`${styles.navigation} ${current >= pageCount ? "hidden": ""} flex items-center`}> 
-        <p className="md:ml-5 hidden md:block">Next</p> 
-        <img className="m-8" height={"16px"} width="7px" src={arrowForward} alt="Arrow Back" />
+          onClick={() => navigate(`${link}/${current + 1}`)} 
+          className={`${styles.navigation} ${current >= pageCount ? "hidden": ""} flex items-center`}> 
+          <p className="md:ml-5 hidden md:block">Next</p> 
+          <img className="m-8" height={"16px"} width="7px" src={arrowForward} alt="Arrow Back" />
         </button>
 
     </div>
