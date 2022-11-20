@@ -34,20 +34,18 @@ import { routes } from './libs/links';
 import UseCaseArticle from './pages/use-cases/article';
 import Scenery from './pages/scenery/Scenery';
 import Press from './pages/press';
+import BlogContent from './pages/blogs/BlogContent';
 import Avatars from './pages/avatar';
 
 function App() {
-
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
-    })
-
-  }, [pathname])
-
+    });
+  }, [pathname]);
 
   return (
     <Provider store={store}>
@@ -55,7 +53,8 @@ function App() {
         <Route path={routes.home} element={<Home />} />
         <Route path={routes.docs} element={<Docs />} />
         <Route path={routes.about} element={<About />} />
-        <Route path={routes.blog} element={<Blog />} />
+        <Route exact path={routes.blog} element={<Blog />} />
+        <Route path={`${routes.blogContent}/:id`} element={<BlogContent />} />
         <Route path={routes.careers} element={<Careers />} />
         <Route path={routes.community} element={<Communities />} />
         <Route path={routes.customizeAudio} element={<CustomizeAudio />} />
@@ -88,7 +87,6 @@ function App() {
         <Route path={routes.privacyInformation} element={<PrivacyInformation />} />
 
         <Route path={routes.scenery} element={<Scenery />} />
-
       </Routes>
     </Provider>
   );
