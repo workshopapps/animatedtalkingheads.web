@@ -275,7 +275,14 @@ No link(s) should appear on any Website that may be interpreted as libelous, obs
     id: 10,
     contentTitle: `10. Privacy Policy`,
 
-    content: `To learn about how we use, collect and protect your personal information, please read our Privacy Policy`
+    content: (
+      <p>
+        To learn about how we use, collect and protect your personal information, please read our{' '}
+        <a href="https://voxclips.hng.tech/privacy-policy" className="text-blue-400 px-1">
+          Privacy Policy
+        </a>
+      </p>
+    )
   },
   {
     id: 11,
@@ -342,7 +349,7 @@ No link(s) should appear on any Website that may be interpreted as libelous, obs
     contentTitle: `15. Contact`,
 
     content: (
-      <p>
+      <p className="">
         If you have any questions about these Terms, please contact us through our{' '}
         <a href="https://voxclips.hng.tech/contact" className="text-blue-400">
           Contact Page
@@ -360,7 +367,7 @@ const Build = (props) => {
       <h2 className="font-bold md:leading-10 md:text-[28] text-2xl text-[#292d32] mb-4 ">
         {contentTitle}
       </h2>
-      <p className="text-base leading-10 font-medium md:text-xl mb-12 text-[#292d32]  ">
+      <p className="text-base leading-10 font-medium md:text-xl pb-12 text-[#292d32]  ">
         {content}
       </p>
     </div>
