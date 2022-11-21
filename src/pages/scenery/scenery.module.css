@@ -30,20 +30,22 @@
 
 .figureContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .figure {
   width: 100%;
-  padding: 20px 10px;
+  padding: 20px 0px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .figCaption {
   padding: 10px 0 10px 0;
+  width: 100%;
 }
 .image {
   border-radius: 8px;
@@ -96,6 +98,7 @@
   font-size: 20px;
   line-height: 25px;
   color: #1c4cb6;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 601px) {
@@ -125,6 +128,7 @@
 
   .figureContainer {
     align-items: flex-start;
+    justify-content: space-between;
   }
   .figure {
     width: 400px;
