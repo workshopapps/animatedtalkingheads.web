@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom"
 import styles from "./styles.module.css"
-import newsImg2 from "../Images/news-image2.png"
-import newsImg3 from "../Images/news-image3.png"
-import newsImg4 from "../Images/news-image4.png"
-import newsImg5 from "../Images/news-image5.png"
-import newsImg6 from "../Images/news-image6.png"
-import newsImg7 from "../Images/news-image7.png"
-import calendar from "../Images/calendar-icon.png"
+import newsImg2 from "../assets/news-image2.png"
+import newsImg3 from "../assets/news-image3.png"
+import newsImg4 from "../assets/news-image4.png"
+import newsImg5 from "../assets/news-image5.png"
+import newsImg6 from "../assets/news-image6.png"
+import newsImg7 from "../assets/news-image7.png"
+import calendar from "../assets/calendar-icon.png"
 
 export default function NewsCard() {
     return (
@@ -36,7 +37,7 @@ const News1 = () => {
                     Some two lines blurb could go here about the press release
                 </p>
 
-                <a href="#">Read now</a>
+                <Link to={'news-page'}>Read now</Link>
             </div>
         </div>
     )

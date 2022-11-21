@@ -39,6 +39,8 @@ import Scenery from './pages/scenery/Scenery';
 import Press from './pages/press';
 import BlogContent from './pages/blogs/BlogContent';
 import Avatars from './pages/avatar';
+import PressNewsPage from './pages/press/news-page';
+import Watchnow from './pages/press/watch-now';
 
 function App() {
   const { pathname } = useLocation();
@@ -80,10 +82,12 @@ function App() {
         <Route path={routes.getStarted} element={<GetStarted />} />
         <Route path={routes.checkout} element={<Checkout />} />
         <Route path={routes.exploreBackground} element={<></>} />
-        <Route path={routes.press} element={<Press />} />
         <Route path={routes.avatars} element={<Avatars />} />
-        <Route path={routes.press} element={<Press />} />
         <Route path={routes.api} element={<ApiPage />} />
+        <Route path={routes.press} element={<Press />} />
+        <Route path={routes.pressNewsPage} element={<PressNewsPage />} />
+        <Route path={routes.pressWatchnow} element={<Watchnow />} />
+
 
         {/* privacy-policy nested routes */}
         <Route path={routes.privacyAbout} element={<PrivacyAbout />} />
