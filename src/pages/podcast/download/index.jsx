@@ -66,6 +66,11 @@ const DownloadPodcast = () => {
       setIsPaused(!isPaused)
   }
 
+  //Download video Func
+  // const downloadVideo = () => {
+  //   window.location.href = {video}
+  // }
+
   return <Layout>
     <section className='download-video-section'>
       <div className='download-video'>
@@ -153,7 +158,7 @@ const DownloadPodcast = () => {
                     checked={videoQuality === "4k"} />
                 </div>
               </fieldset>
-              <button style={{opacity : isChecked ? '100%':'40%'}} className='button'>Download Now</button>
+              <a href={isChecked ? video : ''} download={isChecked ? video : ''}><button disabled={isChecked ? false : true} value="download" style={{opacity : isChecked ? '100%':'40%'}} className='button'>Download Now</button></a>
               <div className="video-share-container">
                 <h3>or</h3>
                 <div className='video-share'>
