@@ -1,13 +1,10 @@
-import { useState } from "react";
 import people from "../assets/Rectangle 240.png"
 import ToggleSwitch from "./ToggleSwitch";
 
 const Accessibility = () => {
-    const [accessibilityState] = useState(false);
-    console.log(accessibilityState);
     return (
         <section>
-            <header className="flex gap-2 mb-6 mt-6">
+            <header className="flex gap-2 mb-6 mt-8 md:mt-0">
                 <img src={people} alt="people"/>
                 <p className="text-[#2563EB] h-8 text-2xl">Accessibility</p>
             </header>
@@ -16,7 +13,7 @@ const Accessibility = () => {
                     <p className="text-md">Caption</p>
                     <div className="flex justify-between">
                         <p className="text-xs">Live caption</p>
-                        <ToggleSwitch toggledState={accessibilityState}/>
+                        <ToggleSwitch toggledState={false}/>
                     </div>
                 </div>
                 <div className="border-b border-b-[#D9D9D9] pb-4">
@@ -28,7 +25,7 @@ const Accessibility = () => {
                         </select>
                     </div>
                     <div className="flex justify-end">
-                        <button type="button" className="bg-[#2563EB] px-3 w-20 h-8 rounded-md text-white">Save</button>
+                        <button type="button" className="bg-[#2563EB] px-3 w-20 h-6 rounded-md text-sm text-white">Save</button>
                     </div>
                 </div>
             </div>

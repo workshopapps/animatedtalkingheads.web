@@ -1,71 +1,69 @@
 .bg {
-    background: #F9FAFB;
+  background: #f9fafb;
 }
 
 .heading {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 50px;
-    color: #292D32;
-    margin-top: 40px;
-    margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  color: #292d32;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .paragraph {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 154%;
-    text-align: justify;
-    opacity: 0.9;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 154%;
+  text-align: justify;
+  opacity: 0.9;
 }
 
 .paragraph > * {
-    margin-bottom: 0.8em;
-    margin-top:  0.8em;
+  margin-bottom: 0.8em;
+  margin-top: 0.8em;
 }
 
 .paragraph li {
-    list-style-type: circle;
+    list-style-type: disc;
     text-indent: 0.4em;
     margin-left: 1.6em;
 }
 
 .back {
-    width: 121px;
-    height: 72px;
-    border: 1px solid #BDBDBD;
-    border-radius: 6px;
-    margin-right: 20px;
+  width: 121px;
+  height: 72px;
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
+  margin-right: 20px;
 }
 
 .image {
-    background: rgba(33, 88, 210, 0.1);
-    border-radius: 8px;
-    object-fit: cover
+  background: rgba(33, 88, 210, 0.1);
+  border-radius: 8px;
+  object-fit: cover;
 }
 
-@media screen and  (max-width: 756px) {
+@media screen and (max-width: 756px) {
 
-    .image {
-        width: 100%;
-        height: calc(100vw - 1em);
-        object-fit: cover;
-    }
+  .heading {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
 
-    .heading {
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 30px;
-    }
+  .image {
+    width: 100%;
+  }
 
-    .paragraph {
-        font-size: 16px;
-        line-height: 20px;
-        text-align: justify;
-    }
+  .paragraph {
+    font-size: 16px;
+    line-height: 20px;
+    text-align: justify;
+  }
 
-    .back {
-        width: 64px;
-        height: 50px;
-    }
+  .back {
+    width: 64px;
+    height: 50px;
+  }
 }

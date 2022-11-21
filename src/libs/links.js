@@ -1,8 +1,11 @@
 export const routes = {
   home: '/',
   about: '/about',
-  customizeAudio: '/customize-audio',
   blog: '/blog',
+  customizeAudio: '/customize-audio',
+
+  blogContent: '/blog/content',
+
   docs: '/fe-docs',
   useCases: '/use-cases',
   careers: '/careers',
@@ -12,6 +15,8 @@ export const routes = {
   helperCenter: '/help-center',
   faqs: '/faqs',
   pricing: '/pricing',
+  getStarted: '/getstarted',
+  checkout: '/checkout',
   privacy: '/privacy-policy',
 
   privacyAbout: '/privacy-policy/about',
@@ -33,13 +38,15 @@ export const routes = {
   exploreBackground: '/explore-background',
   avatars: '/avatars',
   exploreAvatar: '/explore-avatar',
-  api: '/api-page'
+  api: '/api-page',
+  pressNewsPage: '/press/news-page',
+  pressWatchnow: '/press/watch-now'
 };
 
 export const links = [
   { name: 'Home', link: routes.home },
   { name: 'About Us', link: routes.about },
-  { name: 'Use cases', link: routes.useCases },
+  { name: 'Use cases', link: `${routes.useCases}/1` },
   { name: 'Contact', link: routes.contact },
   { name: 'How it work', link: routes.howItWorks },
   { name: 'Avatars', link: routes.avatars }

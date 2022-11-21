@@ -1,0 +1,1159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About Test should render and match snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="nav"
+    >
+      <div
+        class="h-full flex justify-between items-center px-3 lg:px-20"
+      >
+        <div
+          class="flex"
+        >
+          <a
+            href="/"
+          >
+            <img
+              alt="home"
+              src="header-logo.png"
+            />
+          </a>
+        </div>
+        <div
+          class="links hidden md:flex md:grow justify-between"
+        >
+          <a
+            class="active block"
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            class=" block"
+            href="/about"
+          >
+            About Us
+          </a>
+          <a
+            class=" block"
+            href="/use-cases/1"
+          >
+            Use cases
+          </a>
+          <a
+            class=" block"
+            href="/contact"
+          >
+            Contact
+          </a>
+          <a
+            class=" block"
+            href="/how-it-works"
+          >
+            How it work
+          </a>
+          <a
+            class=" block"
+            href="/avatars"
+          >
+            Avatars
+          </a>
+        </div>
+        <div
+          class="hidden md:flex"
+        >
+          <a
+            href="/podcast/upload"
+          >
+            <button
+              class="button false primary"
+              type="button"
+            >
+              <p
+                class="btn_text"
+              >
+                Create Video
+              </p>
+            </button>
+          </a>
+        </div>
+        <button
+          class="md:hidden hover:border-0"
+        >
+          <img
+            alt="home"
+            src="menu-icon.png"
+          />
+        </button>
+      </div>
+      <div
+        class="menu hidden px-3 py-10 md:hidden"
+      >
+        <div
+          class="links"
+        >
+          <a
+            class="block"
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            class="block"
+            href="/about"
+          >
+            About Us
+          </a>
+          <a
+            class="block"
+            href="/use-cases/1"
+          >
+            Use cases
+          </a>
+          <a
+            class="block"
+            href="/contact"
+          >
+            Contact
+          </a>
+          <a
+            class="block"
+            href="/how-it-works"
+          >
+            How it work
+          </a>
+          <a
+            class="block"
+            href="/avatars"
+          >
+            Avatars
+          </a>
+        </div>
+        <div
+          class="line"
+        >
+           
+        </div>
+        <div
+          class="links2"
+        >
+          <a
+            class="block"
+            href="/"
+          >
+            Support
+          </a>
+          <a
+            class="block"
+            href="/settings"
+          >
+            Settings
+          </a>
+          <a
+            class="block"
+            href="/community"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          class="line"
+        >
+           
+        </div>
+        <div
+          class="flex w-full justify-center h-28 items-center"
+        >
+          <a
+            class="createVideo"
+            href="/podcast/upload"
+          >
+            <button>
+               Create Video 
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="navDummy"
+    />
+    <main>
+      <div
+        class=" container mx-auto"
+      >
+        <section
+          class=" flex flex-col justify-center items-center gap-2 px-4  py-7"
+        >
+          <h3
+            class=" text-xl text-center text-pri-600"
+          >
+            How Does It Work?
+          </h3>
+          <h1
+            class=" text-3xl lg:text-5xl text-center md:px-40  lg:px-52"
+          >
+            Three simple steps to create AI podcast videos
+          </h1>
+          <p
+            class=" text-center text-xl md:px-28 pt-10 pb-8"
+          >
+            Voxclips allows podcasters to select and customise chararcters based on the number of speakers in the recorded audio. Backgrounds are added to created a colorful and captivating environment for viewers. Convert your audio podcasts to eyecatching videos in few clicks.
+          </p>
+          <button
+            class=" text-base flex gap-3 items-center bg-pri-600 px-6 py-3 rounded-md text-white cursor-pointer"
+          >
+            Watch Tutorial Video
+            <img
+              alt="arrow-down-icon"
+              src="arrow-down.svg"
+            />
+          </button>
+        </section>
+        <section
+          class=" flex flex-col gap-8 py-6"
+        >
+          <div
+            class=" md:flex-row flex flex-col  justify-between px-3 md:px-8 py-3 md:py-6 items-center gap-5"
+          >
+            <div
+              class=" w-full"
+            >
+              <h5
+                class=" py-4 text-xl text-pri-600"
+              >
+                step 1
+              </h5>
+              <div
+                class=" flex gap-3 items-start"
+              >
+                <img
+                  alt=""
+                  src="document-download.svg"
+                />
+                <div
+                  class=" flex flex-col gap-3"
+                >
+                  <h3
+                    class=" text-2xl md:text-3xl"
+                  >
+                    Upload your audio podcast
+                  </h3>
+                  <p
+                    class=" text-xl"
+                  >
+                    Get started and upload a sound fille of your podcast from any device.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class=" w-full"
+            >
+              <img
+                alt=""
+                class=" w-full"
+                src="Image.svg"
+              />
+            </div>
+          </div>
+          <div
+            class="  md:flex-row-reverse flex flex-col  justify-between px-3 md:px-8 py-3 md:py-6 items-center gap-5"
+          >
+            <div
+              class=" w-full"
+            >
+              <h5
+                class=" py-4 text-xl text-pri-600"
+              >
+                step 2
+              </h5>
+              <div
+                class=" flex gap-3 items-start"
+              >
+                <img
+                  alt=""
+                  src="arrow-up.svg"
+                />
+                <div
+                  class=" flex flex-col gap-3"
+                >
+                  <h3
+                    class=" text-2xl md:text-3xl"
+                  >
+                    Customise your character and select a background
+                  </h3>
+                  <p
+                    class=" text-xl"
+                  >
+                    Select a character from our extensive library and modify it to your taste. Select an eye catching backdrop image and include subtitles.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class=" w-full"
+            >
+              <img
+                alt=""
+                class=" w-full"
+                src="Group 817.svg"
+              />
+            </div>
+          </div>
+          <div
+            class=" md:flex-row flex flex-col  justify-between px-3 md:px-8 py-3 md:py-6 items-center gap-5"
+          >
+            <div
+              class=" w-full"
+            >
+              <h5
+                class=" py-4 text-xl text-pri-600"
+              >
+                step 3
+              </h5>
+              <div
+                class=" flex gap-3 items-start"
+              >
+                <img
+                  alt=""
+                  src="document-upload.svg"
+                />
+                <div
+                  class=" flex flex-col gap-3"
+                >
+                  <h3
+                    class=" text-2xl md:text-3xl"
+                  >
+                    Convert audio podcast to video and download.
+                  </h3>
+                  <p
+                    class=" text-xl"
+                  >
+                    After Voxclips has generated your video podcast for you, download and enjoy. You now have a fascinating podcast video that viewers can watch.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class=" w-full"
+            >
+              <img
+                alt=""
+                class=" w-full"
+                src="Group 828.svg"
+              />
+            </div>
+          </div>
+        </section>
+        <section
+          class=" flex flex-col justify-center items-center py-5 px-4"
+        >
+          <h3
+            class=" text-xl text-center text-pri-600"
+          >
+            UPLOAD, CUSTOMISE, DOWNLOAD
+          </h3>
+          <p
+            class=" pb-7 pt-2 text-2xl md:text-4xl text-center"
+          >
+            Video Tutorial on how to create videos for your podcasts using Voxclips
+          </p>
+          <img
+            alt=""
+            class=" w-full md:max-w-md lg:max-w-2xl xl:max-w-3xl cursor-pointer"
+            src="Frame 34667.svg"
+          />
+        </section>
+      </div>
+      <section
+        class="flex flex-col items-center gap-6 bg-sec-1100 px-3 md:px-11 py-7 relative mt-9"
+      >
+        <h2
+          class=" text-3xl md:text-5xl text-center md:px-20 "
+        >
+          Create your own 
+          <span
+            class=" text-pri-600"
+          >
+            Video Podcast
+          </span>
+        </h2>
+        <p
+          class=" text-center text-xl md:px-20"
+        >
+          Select your characters, choose your background, sync your podcast audio with your AI video generated from us, download, share and enjoy!
+        </p>
+        <button
+          class=" text-base flex gap-3 items-center bg-pri-600 px-6 py-3 rounded-md text-white cursor-pointer"
+        >
+          Get started with Voxclips
+        </button>
+        <div
+          class="md:visible invisible blueLeftPattern"
+        />
+        <div
+          class=" blueRightPattern md:visible invisible"
+        />
+        <div
+          class=" lightLeftPattern md:visible invisible"
+        />
+        <div
+          class=" md:visible invisible lightRightPattern"
+        />
+      </section>
+    </main>
+    <footer
+      class="footer h-full md:py-16  pb-4 md:pb-8 px-3 lg:px-20 w-full"
+    >
+      <div
+        class="flex flex-col md:flex-row "
+      >
+        <div
+          class="flex mt-20 md:mt-0 h-24 md:basis-3/12"
+        >
+          <a
+            href="/"
+          >
+             
+            <img
+              alt="home"
+              src="footer-logo.png"
+            />
+          </a>
+        </div>
+        <div
+          class="grid grid-cols-2  md:flex md:flex-row md:basis-full xl:basis-full md:justify-between"
+        >
+          <div
+            class="md:basis-3/12"
+          >
+            <a
+              class="block"
+              href="/how-it-works"
+            >
+               How it Works 
+            </a>
+            <a
+              class="block"
+              href="/use-cases"
+            >
+               Use Case 
+            </a>
+            <a
+              class="block"
+              href="/about"
+            >
+               About 
+            </a>
+            <a
+              class="block"
+              href="/avatars"
+            >
+               Avatars 
+            </a>
+            <a
+              class="block"
+              href="/explore-avatar"
+            >
+               Custom Avatars 
+            </a>
+            <a
+              class="block"
+              href="/avatar/scenery"
+            >
+               Explore Background 
+            </a>
+            <a
+              class="block"
+              href="/blog"
+            >
+               Blog 
+            </a>
+          </div>
+          <div
+            class="md:basis-3/12"
+          >
+            <a
+              class="block"
+              href="/"
+            >
+               Customer Support 
+            </a>
+            <a
+              class="block"
+              href="/community"
+            >
+               Community 
+            </a>
+            <a
+              class="block"
+              href="/careers"
+            >
+               Careers 
+            </a>
+            <a
+              class="block"
+              href="/press"
+            >
+               Press 
+            </a>
+            <a
+              class="block"
+              href="/faqs"
+            >
+               FAQ 
+            </a>
+            <a
+              class="block"
+              href="/contact"
+            >
+               Contact Us 
+            </a>
+            <a
+              class="block"
+              href="/api-page"
+            >
+               APIs 
+            </a>
+          </div>
+          <div
+            class="basis-full md:basis-3/12"
+          >
+            <a
+              class="block"
+              href="/pricing"
+            >
+               Pricing 
+            </a>
+            <a
+              class="block"
+              href="/terms-of-service"
+            >
+               Terms of Service 
+            </a>
+            <a
+              class="block"
+              href="/terms-and-conditions"
+            >
+               Terms and Conditions 
+            </a>
+            <a
+              class="block"
+              href="/privacy-policy"
+            >
+               Privacy Policy 
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="md:relative md:flex w-full md:justify-end"
+      >
+        <div
+          class="lang mt-24 flex items-center px-2"
+        >
+          <button>
+            <img
+              alt="globe"
+              src="globe.png"
+            />
+          </button>
+          <select>
+            <option>
+              English
+            </option>
+            <option>
+              French
+            </option>
+            <option>
+              Spanish
+            </option>
+          </select>
+        </div>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`How-It-Works Test should render and match snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="nav"
+    >
+      <div
+        class="h-full flex justify-between items-center px-3 lg:px-20"
+      >
+        <div
+          class="flex"
+        >
+          <a
+            href="/"
+          >
+            <img
+              alt="home"
+              src="header-logo.png"
+            />
+          </a>
+        </div>
+        <div
+          class="links hidden md:flex md:grow justify-between"
+        >
+          <a
+            class="active block"
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            class=" block"
+            href="/about"
+          >
+            About Us
+          </a>
+          <a
+            class=" block"
+            href="/use-cases/1"
+          >
+            Use cases
+          </a>
+          <a
+            class=" block"
+            href="/contact"
+          >
+            Contact
+          </a>
+          <a
+            class=" block"
+            href="/how-it-works"
+          >
+            How it work
+          </a>
+          <a
+            class=" block"
+            href="/avatars"
+          >
+            Avatars
+          </a>
+        </div>
+        <div
+          class="hidden md:flex"
+        >
+          <a
+            href="/podcast/upload"
+          >
+            <button
+              class="button false primary"
+              type="button"
+            >
+              <p
+                class="btn_text"
+              >
+                Create Video
+              </p>
+            </button>
+          </a>
+        </div>
+        <button
+          class="md:hidden hover:border-0"
+        >
+          <img
+            alt="home"
+            src="menu-icon.png"
+          />
+        </button>
+      </div>
+      <div
+        class="menu hidden px-3 py-10 md:hidden"
+      >
+        <div
+          class="links"
+        >
+          <a
+            class="block"
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            class="block"
+            href="/about"
+          >
+            About Us
+          </a>
+          <a
+            class="block"
+            href="/use-cases/1"
+          >
+            Use cases
+          </a>
+          <a
+            class="block"
+            href="/contact"
+          >
+            Contact
+          </a>
+          <a
+            class="block"
+            href="/how-it-works"
+          >
+            How it work
+          </a>
+          <a
+            class="block"
+            href="/avatars"
+          >
+            Avatars
+          </a>
+        </div>
+        <div
+          class="line"
+        >
+           
+        </div>
+        <div
+          class="links2"
+        >
+          <a
+            class="block"
+            href="/"
+          >
+            Support
+          </a>
+          <a
+            class="block"
+            href="/settings"
+          >
+            Settings
+          </a>
+          <a
+            class="block"
+            href="/community"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          class="line"
+        >
+           
+        </div>
+        <div
+          class="flex w-full justify-center h-28 items-center"
+        >
+          <a
+            class="createVideo"
+            href="/podcast/upload"
+          >
+            <button>
+               Create Video 
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="navDummy"
+    />
+    <main>
+      <div
+        class=" container mx-auto"
+      >
+        <section
+          class=" flex flex-col justify-center items-center gap-2 px-4  py-7"
+        >
+          <h3
+            class=" text-xl text-center text-pri-600"
+          >
+            How Does It Work?
+          </h3>
+          <h1
+            class=" text-3xl lg:text-5xl text-center md:px-40  lg:px-52"
+          >
+            Three simple steps to create AI podcast videos
+          </h1>
+          <p
+            class=" text-center text-xl md:px-28 pt-10 pb-8"
+          >
+            Voxclips allows podcasters to select and customise chararcters based on the number of speakers in the recorded audio. Backgrounds are added to created a colorful and captivating environment for viewers. Convert your audio podcasts to eyecatching videos in few clicks.
+          </p>
+          <button
+            class=" text-base flex gap-3 items-center bg-pri-600 px-6 py-3 rounded-md text-white cursor-pointer"
+          >
+            Watch Tutorial Video
+            <img
+              alt="arrow-down-icon"
+              src="arrow-down.svg"
+            />
+          </button>
+        </section>
+        <section
+          class=" flex flex-col gap-8 py-6"
+        >
+          <div
+            class=" md:flex-row flex flex-col  justify-between px-3 md:px-8 py-3 md:py-6 items-center gap-5"
+          >
+            <div
+              class=" w-full"
+            >
+              <h5
+                class=" py-4 text-xl text-pri-600"
+              >
+                step 1
+              </h5>
+              <div
+                class=" flex gap-3 items-start"
+              >
+                <img
+                  alt=""
+                  src="document-download.svg"
+                />
+                <div
+                  class=" flex flex-col gap-3"
+                >
+                  <h3
+                    class=" text-2xl md:text-3xl"
+                  >
+                    Upload your audio podcast
+                  </h3>
+                  <p
+                    class=" text-xl"
+                  >
+                    Get started and upload a sound fille of your podcast from any device.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class=" w-full"
+            >
+              <img
+                alt=""
+                class=" w-full"
+                src="Image.svg"
+              />
+            </div>
+          </div>
+          <div
+            class="  md:flex-row-reverse flex flex-col  justify-between px-3 md:px-8 py-3 md:py-6 items-center gap-5"
+          >
+            <div
+              class=" w-full"
+            >
+              <h5
+                class=" py-4 text-xl text-pri-600"
+              >
+                step 2
+              </h5>
+              <div
+                class=" flex gap-3 items-start"
+              >
+                <img
+                  alt=""
+                  src="arrow-up.svg"
+                />
+                <div
+                  class=" flex flex-col gap-3"
+                >
+                  <h3
+                    class=" text-2xl md:text-3xl"
+                  >
+                    Customise your character and select a background
+                  </h3>
+                  <p
+                    class=" text-xl"
+                  >
+                    Select a character from our extensive library and modify it to your taste. Select an eye catching backdrop image and include subtitles.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class=" w-full"
+            >
+              <img
+                alt=""
+                class=" w-full"
+                src="Group 817.svg"
+              />
+            </div>
+          </div>
+          <div
+            class=" md:flex-row flex flex-col  justify-between px-3 md:px-8 py-3 md:py-6 items-center gap-5"
+          >
+            <div
+              class=" w-full"
+            >
+              <h5
+                class=" py-4 text-xl text-pri-600"
+              >
+                step 3
+              </h5>
+              <div
+                class=" flex gap-3 items-start"
+              >
+                <img
+                  alt=""
+                  src="document-upload.svg"
+                />
+                <div
+                  class=" flex flex-col gap-3"
+                >
+                  <h3
+                    class=" text-2xl md:text-3xl"
+                  >
+                    Convert audio podcast to video and download.
+                  </h3>
+                  <p
+                    class=" text-xl"
+                  >
+                    After Voxclips has generated your video podcast for you, download and enjoy. You now have a fascinating podcast video that viewers can watch.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class=" w-full"
+            >
+              <img
+                alt=""
+                class=" w-full"
+                src="Group 828.svg"
+              />
+            </div>
+          </div>
+        </section>
+        <section
+          class=" flex flex-col justify-center items-center py-5 px-4"
+        >
+          <h3
+            class=" text-xl text-center text-pri-600"
+          >
+            UPLOAD, CUSTOMISE, DOWNLOAD
+          </h3>
+          <p
+            class=" pb-7 pt-2 text-2xl md:text-4xl text-center"
+          >
+            Video Tutorial on how to create videos for your podcasts using Voxclips
+          </p>
+          <img
+            alt=""
+            class=" w-full md:max-w-md lg:max-w-2xl xl:max-w-3xl cursor-pointer"
+            src="Frame 34667.svg"
+          />
+        </section>
+      </div>
+      <section
+        class="flex flex-col items-center gap-6 bg-sec-1100 px-3 md:px-11 py-7 relative mt-9"
+      >
+        <h2
+          class=" text-3xl md:text-5xl text-center md:px-20 "
+        >
+          Create your own 
+          <span
+            class=" text-pri-600"
+          >
+            Video Podcast
+          </span>
+        </h2>
+        <p
+          class=" text-center text-xl md:px-20"
+        >
+          Select your characters, choose your background, sync your podcast audio with your AI video generated from us, download, share and enjoy!
+        </p>
+        <button
+          class=" text-base flex gap-3 items-center bg-pri-600 px-6 py-3 rounded-md text-white cursor-pointer"
+        >
+          Get started with Voxclips
+        </button>
+        <div
+          class="md:visible invisible blueLeftPattern"
+        />
+        <div
+          class=" blueRightPattern md:visible invisible"
+        />
+        <div
+          class=" lightLeftPattern md:visible invisible"
+        />
+        <div
+          class=" md:visible invisible lightRightPattern"
+        />
+      </section>
+    </main>
+    <footer
+      class="footer h-full md:py-16  pb-4 md:pb-8 px-3 lg:px-20 w-full"
+    >
+      <div
+        class="flex flex-col md:flex-row "
+      >
+        <div
+          class="flex mt-20 md:mt-0 h-24 md:basis-3/12"
+        >
+          <a
+            href="/"
+          >
+             
+            <img
+              alt="home"
+              src="footer-logo.png"
+            />
+          </a>
+        </div>
+        <div
+          class="grid grid-cols-2  md:flex md:flex-row md:basis-full xl:basis-full md:justify-between"
+        >
+          <div
+            class="md:basis-3/12"
+          >
+            <a
+              class="block"
+              href="/how-it-works"
+            >
+               How it Works 
+            </a>
+            <a
+              class="block"
+              href="/use-cases"
+            >
+               Use Case 
+            </a>
+            <a
+              class="block"
+              href="/about"
+            >
+               About 
+            </a>
+            <a
+              class="block"
+              href="/avatars"
+            >
+               Avatars 
+            </a>
+            <a
+              class="block"
+              href="/explore-avatar"
+            >
+               Custom Avatars 
+            </a>
+            <a
+              class="block"
+              href="/avatar/scenery"
+            >
+               Explore Background 
+            </a>
+            <a
+              class="block"
+              href="/blog"
+            >
+               Blog 
+            </a>
+          </div>
+          <div
+            class="md:basis-3/12"
+          >
+            <a
+              class="block"
+              href="/"
+            >
+               Customer Support 
+            </a>
+            <a
+              class="block"
+              href="/community"
+            >
+               Community 
+            </a>
+            <a
+              class="block"
+              href="/careers"
+            >
+               Careers 
+            </a>
+            <a
+              class="block"
+              href="/press"
+            >
+               Press 
+            </a>
+            <a
+              class="block"
+              href="/faqs"
+            >
+               FAQ 
+            </a>
+            <a
+              class="block"
+              href="/contact"
+            >
+               Contact Us 
+            </a>
+            <a
+              class="block"
+              href="/api-page"
+            >
+               APIs 
+            </a>
+          </div>
+          <div
+            class="basis-full md:basis-3/12"
+          >
+            <a
+              class="block"
+              href="/pricing"
+            >
+               Pricing 
+            </a>
+            <a
+              class="block"
+              href="/terms-of-service"
+            >
+               Terms of Service 
+            </a>
+            <a
+              class="block"
+              href="/terms-and-conditions"
+            >
+               Terms and Conditions 
+            </a>
+            <a
+              class="block"
+              href="/privacy-policy"
+            >
+               Privacy Policy 
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="md:relative md:flex w-full md:justify-end"
+      >
+        <div
+          class="lang mt-24 flex items-center px-2"
+        >
+          <button>
+            <img
+              alt="globe"
+              src="globe.png"
+            />
+          </button>
+          <select>
+            <option>
+              English
+            </option>
+            <option>
+              French
+            </option>
+            <option>
+              Spanish
+            </option>
+          </select>
+        </div>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

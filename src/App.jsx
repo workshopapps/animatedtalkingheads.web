@@ -10,6 +10,9 @@ import Careers from './pages/careers';
 import Communities from './pages/communities';
 import Faqs from './pages/faqs';
 import HelpCenter from './pages/help-center';
+import Pricing from './pages/pricing';
+import GetStarted from './pages/pricing-getstarted';
+import Checkout from './pages/pricing-checkout';
 import TermsAndCondition from './pages/terms-and-conditions';
 import TermsOfService from './pages/terms-of-service';
 import PrivacyPolicy from './pages/privacy-policy';
@@ -34,20 +37,20 @@ import { routes } from './libs/links';
 import UseCaseArticle from './pages/use-cases/article';
 import Scenery from './pages/scenery/Scenery';
 import Press from './pages/press';
+import BlogContent from './pages/blogs/BlogContent';
 import Avatars from './pages/avatar';
+import PressNewsPage from './pages/press/news-page';
+import Watchnow from './pages/press/watch-now';
 
 function App() {
-
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
-    })
-
-  }, [pathname])
-
+    });
+  }, [pathname]);
 
   return (
     <Provider store={store}>
@@ -55,14 +58,15 @@ function App() {
         <Route path={routes.home} element={<Home />} />
         <Route path={routes.docs} element={<Docs />} />
         <Route path={routes.about} element={<About />} />
-        <Route path={routes.blog} element={<Blog />} />
+        <Route exact path={routes.blog} element={<Blog />} />
+        <Route path={`${routes.blogContent}/:id`} element={<BlogContent />} />
         <Route path={routes.careers} element={<Careers />} />
         <Route path={routes.community} element={<Communities />} />
         <Route path={routes.customizeAudio} element={<CustomizeAudio />} />
         <Route path={routes.exploreAvatar} element={<ExploreAvatar />} />
         <Route path={routes.contact} element={<Contact />} />
-        <Route exact path={routes.useCases} element={<UseCases />} />
-        <Route path={`${routes.useCaseArticle}/:id`} element={<UseCaseArticle />} />
+        <Route exact path={`${routes.useCases}/:page`} element={<UseCases />} />
+        <Route exact path={`${routes.useCaseArticle}/:id`} element={<UseCaseArticle />} />
         <Route path={routes.howItWorks} element={<HowItWorks />} />
         <Route path={routes.faqs} element={<Faqs />} />
         <Route path={routes.helperCenter} element={<HelpCenter />} />
@@ -74,11 +78,16 @@ function App() {
         <Route path={routes.podcastCustomize} element={<Customization />} />
         <Route path={routes.podcastDownload} element={<DownloadPodcast />} />
         <Route path={routes.podcastCharacters} element={<Characters />} />
+        <Route path={routes.pricing} element={<Pricing />} />
+        <Route path={routes.getStarted} element={<GetStarted />} />
+        <Route path={routes.checkout} element={<Checkout />} />
         <Route path={routes.exploreBackground} element={<></>} />
-        <Route path={routes.press} element={<Press />} />
         <Route path={routes.avatars} element={<Avatars />} />
-        <Route path={routes.press} element={<Press />} />
         <Route path={routes.api} element={<ApiPage />} />
+        <Route path={routes.press} element={<Press />} />
+        <Route path={routes.pressNewsPage} element={<PressNewsPage />} />
+        <Route path={routes.pressWatchnow} element={<Watchnow />} />
+
 
         {/* privacy-policy nested routes */}
         <Route path={routes.privacyAbout} element={<PrivacyAbout />} />
@@ -88,7 +97,6 @@ function App() {
         <Route path={routes.privacyInformation} element={<PrivacyInformation />} />
 
         <Route path={routes.scenery} element={<Scenery />} />
-
       </Routes>
     </Provider>
   );
