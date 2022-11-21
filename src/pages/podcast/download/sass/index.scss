@@ -1,0 +1,210 @@
+section.download-video-section {
+  // display: inline-flex;
+  margin-top: 3rem;
+
+  .download-video {
+    width: 93%;
+    max-width: 1512px;
+    margin: 0 auto;
+
+    & > h1.page-title {
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    .page-content {
+      display: flex;
+      margin-top: 2.5rem;
+      border: 2px solid red;
+
+      & > .desktop-lhs {
+        flex: 4;
+      }
+
+      .desktop-lhs {
+        border-radius: 10px;
+
+        .video-container {
+          border-radius: 10px;
+          background-color: black;
+
+          &.fullscreen{
+            width: initial;
+            max-width: 100%;
+          }
+
+          & > video {
+            border-radius: 10px;
+          }
+
+          width: 90%;
+          max-width: 864px;
+          height: auto;
+          border-radius: 10px;
+          position: relative;
+
+          &:hover .video-controls-container,
+          &.paused .video-controls-container,
+          &:focus-within .video-controls-container {
+            opacity: 1;
+          }
+
+          &.paused .pause-icon {
+            display: none;
+          }
+
+          &:not(.paused) .play-icon {
+            display: none;
+          }
+
+          .video-controls-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            opacity: 0;
+            transition: opacity 150ms ease-in-out;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 0px 0px 10px 10px;
+
+            .controls {
+              display: flex;
+              gap: 0.5rem;
+              padding: 0.7rem 1.5rem;
+              -webkit-align-content: flex-end;
+              align-content: flex-end;
+
+              button {
+                padding: 0;
+                height: 48px;
+                // width: 48px;
+                border: 2px solid greenyellow;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                opacity: 0.85;
+                transition: opacity 150ms ease-in-out;
+
+                &:hover {
+                  opacity: 1;
+                }
+
+                &:nth-child(4) {
+                  margin-left: auto;
+                }
+              }
+            }
+          }
+
+          iframe {
+            width: 100%;
+            border-radius: 10px;
+          }
+
+          &.theater {
+            max-width: initial !important;
+            width: 100% !important;
+          }
+        }
+      }      
+
+      .desktop-rhs {
+        border: 2px solid red;
+        .video-share-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          place-items: center;
+          & > h3 {
+            text-align: center;
+            text-transform: uppercase;
+            margin: 1rem 0;
+          }
+          .video-share {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .video-share__icons {
+              display: flex;
+              gap: 0.6rem;
+            }
+          }
+        }
+
+        .video-settings {
+          & > h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+          }
+
+          & > p {
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.5rem;
+          }
+        }
+
+        fieldset.video-settings-quality-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+          gap: 1rem;
+          margin: 1.5rem 0;
+
+          .video-settings-quality {
+            display: flex;
+            border: 2px solid blue;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+
+            & > input[type='radio'] {
+              cursor: pointer;
+              border-radius: 50%;
+              appearance: none;
+              -webkit-appearance: none;
+              outline: 1px solid rgba(0, 0, 0, 0.2);
+              width: 16px;
+              height: 16px;
+              transform: translateY(5px);
+
+              &:focus-visible {
+                outline-offset: 0;
+              }
+
+              &:checked {
+                background-color: #1877f2;
+                border-width: 0.2rem;
+              }
+            }
+
+            & > label {
+              display: flex;
+              margin-right: auto;
+              cursor: pointer;
+
+              & > svg {
+                margin-right: 0.5rem;
+              }
+            }
+          }
+        }
+
+        button.button {
+          width: 100%;
+          background-color: #2563eb;
+          color: #ffffff;
+          // opacity: 40%;
+          padding: 1.5em 0;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+.hide{
+    display: none;
+}

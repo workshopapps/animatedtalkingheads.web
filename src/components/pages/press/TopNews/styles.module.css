@@ -1,0 +1,144 @@
+.topnews_section {
+  margin: 3rem 5rem;
+}
+
+.topnews_section .menu {
+  margin: 32px 0;
+}
+
+.topnews_section .menu a {
+  text-decoration: none;
+  margin-right: 56px;
+  font-weight: 500;
+  font-size: 20px;
+  color: #292d32;
+}
+
+.topnews_section .menu a.active {
+  color: #2563eb;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #2563eb;
+}
+.topnews {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+}
+
+.topnews_image {
+  width: 58%;
+}
+
+.topnews_image > img {
+  width: 100%;
+}
+
+.topnews_text {
+  width: 40%;
+}
+
+.topnews_text .date {
+  font-weight: 500;
+  font-size: 16px;
+  color: #737479;
+}
+
+.topnews_text h3 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: -0.01em;
+  color: #292d32;
+  margin-top: 12px;
+}
+
+.topnews_text p {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #737479;
+  margin: 10px 0 28px;
+}
+
+.topnews_text .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100px;
+  height: 48px;
+  background: #2563eb;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+  .topnews_section {
+    margin: 2rem 1rem;
+  }
+
+  .topnews_section .menu {
+    margin: 20px 0;
+  }
+
+  .topnews_section .menu a {
+    margin-right: 40px;
+    font-size: 14px;
+  }
+
+  .topnews_section .menu a.active {
+    color: #2563eb;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #2563eb;
+  }
+  .topnews {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .topnews_image {
+    width: 60%;
+  }
+
+  .topnews_image > img {
+    height: 138px;
+  }
+
+  .topnews_text {
+    width: 38%;
+  }
+
+  .topnews_ext .date {
+    font-size: 8px;
+  }
+
+  .topnews_text h3 {
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 2px;
+  }
+
+  .topnews_text p {
+    font-size: 8px;
+    line-height: 10px;
+    margin: 4px 0 8px;
+  }
+
+  .topnews_text .btn {
+    width: 55px;
+    height: 26px;
+    background: #2563eb;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 8px;
+    color: #ffffff;
+  }
+}
