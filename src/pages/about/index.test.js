@@ -3,10 +3,6 @@ import { render } from '@testing-library/react';
 import About from './';
 import { MemoryRouter } from 'react-router-dom';
 
-// it('renders layout', () => {
-
-// });
-
 describe('About Test', () => {
   test('Renders About', () => {
     render(<About />, { wrapper: MemoryRouter });
