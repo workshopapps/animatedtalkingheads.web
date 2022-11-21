@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import css from "./ToggleSwitch.module.css";
+import css from "../ToggleSwitch.module.css";
 
 const ToggleSwitch = ({ toggledState }) => {
   const [isToggled, setIsToggled] = useState(toggledState);
