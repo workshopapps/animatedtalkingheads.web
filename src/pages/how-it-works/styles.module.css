@@ -1,0 +1,47 @@
+.blueLeftPattern {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 80px;
+  background-image: url(/src/assets/how-it-works/Rectangle\ 234.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.blueRightPattern {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-image: url(/src/assets/how-it-works/Rectangle\ 234.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+}
+
+.lightLeftPattern {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background-image: url(/src/assets/how-it-works/Rectangle\ 235.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* transform: rotate(180deg); */
+}
+
+.lightRightPattern {
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-image: url(/src/assets/how-it-works/Rectangle\ 235.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+}
