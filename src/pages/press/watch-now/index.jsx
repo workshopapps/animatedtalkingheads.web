@@ -1,4 +1,5 @@
-import styles from "./styles.module.css"
+import { Link } from "react-router-dom"
+import styles from "./styles.module.scss"
 // Images
 import VideoImg from "../../../components/pages/press/assets/video2x.png"
 import calendar from "../../../components/pages/press/assets/calendar-icon.png"
@@ -9,6 +10,9 @@ export default function Watchnow() {
     return (
         <Layout>
             <div className={styles.watchnow}>
+                <div className={styles.breadcrumb}>
+                    <Link to={'/press'} className={styles.breadcrumb}>Press</Link> {`>`} <span>Voxclips 1 year anniversary with team bonding</span>
+                </div>
                 <img src={VideoImg} alt="" />
 
                 <span className={styles.date}>

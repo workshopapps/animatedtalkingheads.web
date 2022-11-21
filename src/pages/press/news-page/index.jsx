@@ -1,4 +1,5 @@
-import styles from "./styles.module.css"
+import { Link } from "react-router-dom"
+import styles from "./styles.module.scss"
 // Images
 import NewsImg2 from "../../../components/pages/press/assets/news-image2x.png"
 import calendar from "../../../components/pages/press/assets/calendar-icon.png"
@@ -9,6 +10,10 @@ export default function PressNewsPage() {
     return (
         <Layout>
             <div className={styles.newspage}>
+                <div className={styles.breadcrumb}>
+                    <Link to={'/press'} className={styles.breadcrumb}>Press</Link> {`>`} <span>Voxclips 1 year anniversary with team bonding</span>
+                </div>
+                
                 <img src={NewsImg2} alt="" />
 
                 <span className={styles.date}>
