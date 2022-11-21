@@ -1,10 +1,6 @@
 import React from 'react';
 import Features from './features/Features';
-<<<<<<< HEAD
-import './future.module.scss';
-=======
 import styles from './future.module.scss';
->>>>>>> d71b736b05fa612d93a314c47a3db4e03f742c0b
 
 export default function Future() {
   return (
