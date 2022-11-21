@@ -19,7 +19,7 @@ const ApiPage = () => {
     <>
       <ApiNav />
       <main className="flex flex-col items-left py-2 px-10 gap-4 items-center lg:py-20">
-        <section className=" flex flex-col lg:gap-0">
+        <section className=" flex flex-col sm:gap-11 lg:20">
           <div className="py-5 items-center flex flex-col justify-center gap:5  lg:gap-64 md:flex-row md:justify-between ">
             <div className="flex text-center flex-col gap-7 lg:gap-5 md:justify-left max-w-[500px] md:text-left">
               <div className="  md:text-left flex flex-col ">
@@ -254,7 +254,7 @@ const ApiPage = () => {
         </section>
         <section className="h-[400px] flex flex-col p-20 gap-8 justify-center">
           <div className="flex flex-col items-center md:max-w-[450px] text-center">
-            <h2 className=" font-semibold  text-xl sm:text-3xl">
+            <h2 className=" font-medium  text-xl sm:text-3xl">
               What will you create with the worlds most powerful avatar creation and podcast site?
             </h2>
           </div>
