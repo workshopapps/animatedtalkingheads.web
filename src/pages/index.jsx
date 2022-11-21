@@ -257,7 +257,7 @@ const Home = () => {
               Transform your audio podcast contents to amazing videos of form of talking heads
             </h3>
           </article>
-          <article className="md:flex items-center justify-around px-6">
+          <article className="md:flex md:gap-12 items-center justify-around px-6 md:px-10">
             <article className="mb-4 w-80 md:w-[50%] mx-auto md-w-1/2 md:mx-0">
               <p className="font-normal text-white text-sm md:text-2xl mb-6 md:mb-8">
                 Voxclip is the #1 rated Animated Video creation platform. Thousands of podcasters
@@ -273,7 +273,7 @@ const Home = () => {
                 NO signup required
               </p>
             </article>
-            <div className="w-[277px] md:w-[50%]  md:h-[356px] mx-auto md:mx-0  ">
+            <div className="w-[277px] md:w-[50%]  md:h-[50%] mx-auto md:mx-0  ">
               <img src={AvatarMeet} alt="" className="object-contain w-full h-full" />
             </div>
           </article>
