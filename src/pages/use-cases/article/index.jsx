@@ -41,15 +41,14 @@ const UseCaseArticle = () => {
 
           <div className={`mt-10 flex justify-between`}>
             <button onClick={() => navigate(-1)} className={`${styles.back} flex items-center`}>
-
               <img
-                className="m-5"
+                className="mx-6 md:m-5"
                 height={'16px'}
                 width="7px"
                 src={arrowBack}
                 alt="Arrow Back"
-              />{' '}
-              <p className="hidden md:block">Back</p>{' '}
+              />
+              <p className="hidden md:block">Back</p>
             </button>
             <Button label={'Get Started'}></Button>
           </div>

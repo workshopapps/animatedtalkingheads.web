@@ -46,9 +46,15 @@
 
 @media screen and (max-width: 756px) {
 
-    .image {
-        width: 100%;
-    }
+  .heading {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .image {
+    width: 100%;
+  }
 
   .paragraph {
     font-size: 16px;

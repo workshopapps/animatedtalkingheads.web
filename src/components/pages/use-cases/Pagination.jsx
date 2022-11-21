@@ -21,8 +21,8 @@ const Pagination = ({rows, current, total, link}) => {
 
         <button 
           onClick={() => navigate(`${link}/${current - 1}`)} 
-          className={`${styles.navigation} ${current <= 1 ? "hidden": ""} flex md:items-center`}> 
-          <img className="m-5" height={"16px"} width="7px" src={arrowBack} alt="Arrow Back" />
+          className={`${styles.navigation} ${current <= 1 ? "hidden": ""} flex justify-center md:justify-start items-center`}> 
+          <img className="md:m-5" height={"16px"} width="7px" src={arrowBack} alt="Arrow Back" />
           <p className="hidden md:block">Back</p> 
         </button>
 
@@ -45,9 +45,9 @@ const Pagination = ({rows, current, total, link}) => {
 
         <button 
           onClick={() => navigate(`${link}/${current + 1}`)} 
-          className={`${styles.navigation} ${current >= pageCount ? "hidden": ""} flex items-center`}> 
+          className={`${styles.navigation} ${current >= pageCount ? "hidden": ""} flex justify-center md:justify-start items-center`}> 
           <p className="md:ml-5 hidden md:block">Next</p> 
-          <img className="m-8" height={"16px"} width="7px" src={arrowForward} alt="Arrow Back" />
+          <img className="md:m-8" height={"16px"} width="7px" src={arrowForward} alt="Arrow Back" />
         </button>
 
     </div>
