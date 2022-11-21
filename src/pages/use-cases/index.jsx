@@ -35,11 +35,13 @@ const UseCases = () => {
             { 
               data.slice(start, end).map((data, index) => {
 
+                const page = index + start
+
                 if (index % 2 === 0) {
                   return (
                     <React.Fragment key={index} style={{background: "blue"}}>
                       <div className="flex justify-center"><img src={data.image}  alt="image" /> </div>
-                      <Description alignLeft={false} heading={data.title} index={index}> {data.description} </Description>
+                      <Description alignLeft={false} heading={data.title} index={page}> {data.description} </Description>
                     </React.Fragment>
                   )
                 }
@@ -47,7 +49,7 @@ const UseCases = () => {
                 return (
                   <React.Fragment key={index} className="hidden md:flex">
                     <div className="flex md:hidden justify-center"><img src={data.image}  alt="image" /> </div>
-                    <Description alignLeft={true} heading={data.title} index={index}> {data.description} </Description>
+                    <Description alignLeft={true} heading={data.title} index={page}> {data.description} </Description>
                     <div className="hidden md:flex fjustify-center"><img src={data.image}  alt="image" /> </div>
                   </React.Fragment>
                 )
@@ -58,7 +60,7 @@ const UseCases = () => {
 
           </div>
 
-          <div className="my-14">
+          <div className="py-14 md:py-24">
             <Pagination rows={4} current={Number(page)} link={routes.useCases} total={data.length}/>
           </div>
 
