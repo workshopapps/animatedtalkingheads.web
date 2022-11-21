@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'
+
 import { Pagination, Navigation } from 'swiper'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
@@ -289,7 +290,7 @@ jj
 
                       modules={[Pagination, Navigation]}
 
-                      loopFillGroupWithBlank={true}
+                      
                       navigation={true}
                       slidesPerView={4.5}
                       spaceBetween={40}
@@ -325,7 +326,7 @@ jj
                       loopFillGroupWithBlank={true}
                       navigation={true}
                       slidesPerView={4.5}
-                      spaceBetween={40} about_team_slide
+                      spaceBetween={40} 
                       slidesPerGroup={1}
                       loop={true}>
 
@@ -357,7 +358,7 @@ jj
                       loopFillGroupWithBlank={true}
                       navigation={true}
                       slidesPerView={4.5}
-                      spaceBetween={40} about_team_slide
+                      spaceBetween={40}
                       slidesPerGroup={1}
                       loop={true}>
 
