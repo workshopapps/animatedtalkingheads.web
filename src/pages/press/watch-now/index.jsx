@@ -19,10 +19,10 @@ export default function Watchnow() {
                     <img src={calendar} alt="" /> Nov 16, 2022
                 </span>
 
-                <h2>Voxclips 1 year anniversary with team bonding</h2>
+                <h2>How This Company is Making Podcasts Way Interesting</h2>
 
                 <p>
-                    Voxclips celebrates it's first anniversary today, November 16, 2022. The team bonding was done as a picnic outdoor theme. Some staffs brought along with them their favourite dishes to share. Three famous employees received accolades for their great work in the organisation during it's inaugural festivites.
+                Voxclips is a unique web based site which helps Podcasters to enhance their recorded audio series to be engaging, interesting and time spending.
                 </p><br />
             </div>
         </Layout>
