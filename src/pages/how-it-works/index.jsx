@@ -8,7 +8,7 @@ import documentDownloadIcon from '../../assets/how-it-works/icons/document-uploa
 import uploadArrowUp from '../../assets/how-it-works/icons/arrow-up.svg';
 import videoThumbnailImg from '../../assets/how-it-works/Frame 34667.svg';
 
-import './styles.css';
+import styles from './styles.module.css';
 
 const items = [
   {
@@ -115,10 +115,10 @@ const HowItWorks = () => {
             Get started with Voxclips
           </button>
 
-          <div className={`md:visible invisible blue-left-pattern`}></div>
-          <div className={` blue-right-pattern md:visible invisible`}></div>
-          <div className={` light-left-pattern md:visible invisible`}></div>
-          <div className={` md:visible invisible light-right-pattern`}></div>
+          <div className={`md:visible invisible ${styles.blueLeftPattern}`}></div>
+          <div className={` ${styles.blueRightPattern} md:visible invisible`}></div>
+          <div className={` ${styles.lightLeftPattern} md:visible invisible`}></div>
+          <div className={` md:visible invisible ${styles.lightRightPattern}`}></div>
         </section>
       </main>
     </Layout>
