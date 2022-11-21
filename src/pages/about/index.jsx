@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'
+
 import { Pagination, Navigation } from 'swiper'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
@@ -314,6 +315,9 @@ const About = () => {
                               "--swiper-navigation-size": "25px",
                             }}
 
+
+                      
+     
                             modules={[Pagination, Navigation]}
 
                             loopFillGroupWithBlank={true}
@@ -343,18 +347,20 @@ const About = () => {
                         <p id='third_slider'>Design</p>
                         <div className="about_team_slider" id='third_slider'>
 
+
+                      loopFillGroupWithBlank={true}
+                      navigation={true}
+                      slidesPerView={4.5}
+                      spaceBetween={40} 
+                      slidesPerGroup={1}
+                      loop={true}>
+
                           <Swiper
                             style={{
                               "--swiper-navigation-size": "25px",
                             }}
                             modules={[Pagination, Navigation]}
 
-                            loopFillGroupWithBlank={true}
-                            navigation={true}
-                            slidesPerView={4.5}
-                            spaceBetween={40} about_team_slide
-                            slidesPerGroup={1}
-                            loop={true}>
 
 
                             {Design.map((slide) => (
@@ -387,6 +393,15 @@ const About = () => {
                             spaceBetween={40} about_team_slide
                             slidesPerGroup={1}
                             loop={true}>
+
+
+                      loopFillGroupWithBlank={true}
+                      navigation={true}
+                      slidesPerView={4.5}
+                      spaceBetween={40}
+                      slidesPerGroup={1}
+                      loop={true}>
+
 
 
                             {Marketing.map((slide) => (
