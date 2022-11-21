@@ -38,7 +38,9 @@ export const routes = {
   exploreBackground: '/explore-background',
   avatars: '/avatars',
   exploreAvatar: '/explore-avatar',
-  api: '/api-page'
+  api: '/api-page',
+  pressNewsPage: '/press/news-page',
+  pressWatchnow: '/press/watch-now'
 };
 
 export const links = [

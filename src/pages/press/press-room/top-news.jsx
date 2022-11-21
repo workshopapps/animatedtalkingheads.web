@@ -1,6 +1,10 @@
-import styles from "./styles.module.css"
-import newsImg1 from "../Images/news-image1.png"
-export default function TopNews() {
+import { Link } from "react-router-dom"
+import styles from "./top-news.module.scss"
+import newsImg1 from "../../../components/pages/press/assets/news-image1.png"
+import calendar from "../../../components/pages/press/assets/calendar-icon.png"
+
+
+const TopNews = () => {
     return (
         <div className={styles.topnews_section}>
             <div className={styles.menu}>
@@ -9,9 +13,12 @@ export default function TopNews() {
             </div>
 
             <div className={styles.topnews}>
-                <div className={styles.topnews_image}><img src={newsImg1} alt="showing mic" /></div>
+                <div className={styles.topnews_image}>
+                    <img src={newsImg1} alt="showing mic" />
+                </div>
                 <div className={styles.topnews_text}>
                     <span className={styles.date}>
+                        <img src={calendar} alt="" />
                         Nov 12, 2022
                     </span>
 
@@ -21,12 +28,14 @@ export default function TopNews() {
                         When you sign up for our premium plan, you can take advantage of great features, get access to all the amazing 2D characters and customizing tools, and enjoy ad-free podcast.
                     </p>
 
-                    <div className={styles.btn}>
+                    <Link to={'#'} className={styles.btn}>
                         Read now
-                    </div>
+                    </Link>
                 </div>
             </div>
 
         </div>
     )
 }
+
+export default TopNews;

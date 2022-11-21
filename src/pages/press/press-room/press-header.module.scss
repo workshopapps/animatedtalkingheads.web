@@ -3,7 +3,7 @@
 }
 .press_header .header_img {
   background: #000;
-  background: url(../Images/press-header.png);
+  background: url(../../../components/pages/press/assets/press-header.png); 
   background-size: cover;
   height: 430px;
 }
@@ -93,7 +93,7 @@
 /* Tablet Screen */
 @media screen and (max-width: 768px) {
   .press_header .header_img {
-    background: url(../Images/press-header.png);
+    background: url(../../../components/pages/press/assets/press-header.png);
     background-size: contain;
     height: 430px;
     background-repeat: no-repeat;
@@ -145,7 +145,7 @@
     height: 360px;
   }
   .press_header .header_img {
-    background: url(../Images/press-header-mob.png);
+    background: url(../../../components/pages/press/assets/press-header-mob.png);
     background-size: cover;
     height: 190px;
     background-repeat: no-repeat;
