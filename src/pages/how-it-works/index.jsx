@@ -48,7 +48,7 @@ const HowItWorks = () => {
         <div className=" container mx-auto">
           <section className=" flex flex-col justify-center items-center gap-2 px-4  py-7">
             <h3 className=" text-xl text-center text-pri-600">How Does It Work?</h3>
-            <h1 className=" text-3xl lg:text-5xl text-center md:px-40  lg:px-52">
+            <h1 className=" text-3xl lg:text-5xl text-center md:px-40  lg:px-52 font-semibold">
               Three simple steps to create AI podcast videos
             </h1>
             <p className=" text-center text-xl md:px-28 pt-10 pb-8">
@@ -76,7 +76,7 @@ const HowItWorks = () => {
                   <div className=" flex gap-3 items-start">
                     <img src={item.icon} alt="" />
                     <div className=" flex flex-col gap-3">
-                      <h3 className=" text-2xl md:text-3xl">{item.heading}</h3>
+                      <h3 className=" text-2xl md:text-3xl font-medium">{item.heading}</h3>
                       <p className=" text-xl">{item.description}</p>
                     </div>
                   </div>
@@ -90,7 +90,9 @@ const HowItWorks = () => {
           </section>
 
           <section className=" flex flex-col justify-center items-center py-5 px-4">
-            <h3 className=" text-xl text-center text-pri-600">UPLOAD, CUSTOMISE, DOWNLOAD</h3>
+            <h3 className=" text-xl text-center text-pri-600 font-medium">
+              UPLOAD, CUSTOMISE, DOWNLOAD
+            </h3>
             <p className=" pb-7 pt-2 text-2xl md:text-4xl text-center">
               Video Tutorial on how to create videos for your podcasts using Voxclips
             </p>
@@ -104,7 +106,7 @@ const HowItWorks = () => {
 
         <section
           className={`flex flex-col items-center gap-6 bg-sec-1100 px-3 md:px-11 py-7 relative mt-9`}>
-          <h2 className=" text-3xl md:text-5xl text-center md:px-20 ">
+          <h2 className=" text-3xl md:text-5xl text-center md:px-20  font-medium">
             Create your own <span className=" text-pri-600">Video Podcast</span>
           </h2>
           <p className=" text-center text-xl md:px-20">
