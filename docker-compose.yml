@@ -1,8 +1,26 @@
-version: '3'
+version: "3.2"
 services:
-  client:
+  backend:
+    restart: always
+    container_name:  voxclips-backend
+    image: tamunoseimiebi/voxclips-api:latest
+    ports:
+      - "4000:4000"
+    networks:
+      - hng-devops
+
+  frontend:
+    restart: always
+    container_name: voxclips-frontend
     stdin_open: true
     build:
       context: .
     ports:
       - "3000:3000"
+    networks:
+      - hng-devops
+
+networks:
+  hng-devops:
+    driver: bridge
+
