@@ -10,7 +10,9 @@ function Card(props) {
       className={styles.link}
       style={{ display: 'block' }}>
       <div className={styles.card}>
-        <img src={props.photo} alt="" className={styles.card__img} />
+        <div className={styles.grid__img}>
+          <img src={props.photo} alt="" className={styles.card__img} />
+        </div>
         <h2 className={styles.card__heading} style={{ margin: '1rem 0' }}>
           {props.heading}
         </h2>

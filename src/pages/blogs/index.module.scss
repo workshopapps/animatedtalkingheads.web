@@ -31,6 +31,7 @@
     max-width: 120rem;
     gap: 5rem;
     padding: 2.4rem 4.8rem;
+    margin: 0 auto;
 
     @media (max-width: 54rem) {
       flex-direction: column;
@@ -52,13 +53,17 @@
   }
 
   &__grid {
-    display: grid;
-    max-width: 80rem;
-    margin: 0 auto;
+    // display: grid;
+    // max-width: 80rem;
+    // margin: 0 auto;
 
-    // grid-template-columns: repeat(auto-fit, 25rem);
-    grid-template-columns: repeat(2, 30rem);
-    grid-gap: 2rem;
+    // // grid-template-columns: repeat(auto-fit, 25rem);
+    // grid-template-columns: repeat(2, 30rem);
+    // grid-gap: 2rem;
+    // padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
     @media (max-width: 54em) {
       max-width: 40rem;
@@ -134,3 +139,8 @@
   cursor: pointer;
   padding: 10px;
 }
+
+// .grid__img img {
+//   width: 50%;
+//   object-fit: cover;
+// }
