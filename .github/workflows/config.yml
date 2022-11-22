@@ -13,4 +13,4 @@ jobs:
       - name: install packages
       - run: yarn install
       - name: build application
-      - run: yarn build
+      - run: yarn start
