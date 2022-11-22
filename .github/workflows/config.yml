@@ -11,6 +11,6 @@ jobs:
         with:
           node-version: '19.1.0'
       - name: install packages
-      - run: yarn install
+        run: yarn install
       - name: build application
-      - run: yarn build
+        run: yarn build
