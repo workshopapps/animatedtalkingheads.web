@@ -1,5 +1,7 @@
 name: workflow
-on: [push]
+on:
+  push:
+    branches: [ "dev" ]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
