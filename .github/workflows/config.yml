@@ -14,6 +14,3 @@ jobs:
       - run: yarn install
       - name: build application
       - run: yarn build
-  # Run your CI script before build docker image
-     # - uses: arvindr226/alpine-ssh
-      # - run: ssh -oStrictHostKeyChecking=no -v $USER@$IP "cd animatedtalkingheads.web/ && bash deploy.sh"
