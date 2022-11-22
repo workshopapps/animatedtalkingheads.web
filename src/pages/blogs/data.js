@@ -63,7 +63,7 @@ export const blogs = [
           {' '}
           They're popular because they allow people to listen to someone's voice as if they were
           having an in-person conversation with them—and for some things, that's even better than
-          reading a blog post or watching a video.{' '}
+          reading a blog post or watching a videos.{' '}
         </p>
 
         <p>

@@ -1,21 +1,10 @@
 .blog {
-  &__heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    h2 {
-      color: #2158d2;
-      font-weight: 600;
-      font-size: 1.5rem;
-    }
+  &__container {
+    max-width: 80%;
+    margin: 2rem auto;
   }
   &__header {
-    // border: 1px solid #90a0c2;
-    // padding: 4.8rem 0 9.6rem 0;
-    // background-color: red;
-    padding: 2.4rem 4.8rem;
-
+    margin-bottom: 1rem;
     h1 {
       font-size: 2rem;
       color: #2158d2;
@@ -23,99 +12,138 @@
     p {
       font-size: 1rem;
     }
-    // margin: 2rem;
   }
 
   &__main {
     display: flex;
-    max-width: 120rem;
-    gap: 5rem;
-    padding: 2.4rem 4.8rem;
-    margin: 0 auto;
+    align-items: flex-start;
+    gap: 3rem;
 
     @media (max-width: 54rem) {
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
-    // background-color: red;
   }
 
-  &__sidebar {
-    // background-color: purple;
-    border: 1px solid #90a0c2;
-    flex: 20rem;
-    height: 20rem;
-  }
-  &__content {
-    flex: 80rem;
+  &__form {
     display: flex;
-    flex-direction: column;
-    // align-items: flex-start;
+    input {
+      font-family: inherit;
+      border: none;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+
+  &__content {
+    // display: flex;
   }
 
   &__grid {
-    // display: grid;
-    // max-width: 80rem;
-    // margin: 0 auto;
-
-    // // grid-template-columns: repeat(auto-fit, 25rem);
-    // grid-template-columns: repeat(2, 30rem);
-    // grid-gap: 2rem;
-    // padding: 0 2rem;
     display: flex;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-wrap: wrap;
 
-    @media (max-width: 54em) {
-      max-width: 40rem;
-
-      grid-template-columns: 30rem;
-    }
-    // justify-content: center;
-    // background-color: yellow;
-  }
-
-  &__thumbnail {
-    display: grid;
-
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-}
-
-.container {
-  max-width: 120rem;
-  margin: 0 auto;
-}
-
-.card__img {
-  width: 100%;
-}
-
-.card__heading {
-  color: #374151;
-  font-size: 24px;
-  width: 75%;
-}
-
-.link a:hover {
-  color: #374151;
-}
-
-.form {
-  display: flex;
-  input {
-    font-family: inherit;
-    // padding: 1.2rem;
-    // background-color: #90a0c2;
-    border: none;
-
-    &:focus {
-      border: none;
-      outline: none;
+    @media (max-width: 54rem) {
+      // flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
+
+// .blog {
+//   &__heading {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+
+//     h2 {
+//       color: #2158d2;
+//       font-weight: 600;
+//       font-size: 1.5rem;
+//     }
+//   }
+//   &__header {
+//     padding: 2.4rem 4.8rem;
+
+//   }
+
+//   &__main {
+//     display: flex;
+//     max-width: 120rem;
+//     gap: 5rem;
+//     padding: 2.4rem 4.8rem;
+//     margin: 0 auto;
+
+//     // background-color: red;
+//   }
+
+//   &__sidebar {
+//     // background-color: purple;
+//     border: 1px solid #90a0c2;
+//     flex: 20rem;
+//     height: 20rem;
+//   }
+//   &__content {
+//     flex: 80rem;
+//     display: flex;
+//     flex-direction: column;
+//     // align-items: flex-start;
+//   }
+
+//   &__grid {
+//     // display: grid;
+//     // max-width: 80rem;
+//     // margin: 0 auto;
+
+//     // // grid-template-columns: repeat(auto-fit, 25rem);
+//     // grid-template-columns: repeat(2, 30rem);
+//     // grid-gap: 2rem;
+//     // padding: 0 2rem;
+//     display: flex;
+//     justify-content: center;
+//     flex-wrap: wrap;
+
+//     @media (max-width: 54em) {
+//       max-width: 40rem;
+
+//       grid-template-columns: 30rem;
+//     }
+//   }
+
+//   &__thumbnail {
+//     display: grid;
+
+//     display: flex;
+//     align-items: center;
+//     gap: 1rem;
+//   }
+// }
+
+// .container {
+//   max-width: 120rem;
+//   margin: 0 auto;
+// }
+
+// .card__img {
+//   width: 100%;
+// }
+
+// .card__heading {
+//   color: #374151;
+//   font-size: 24px;
+//   width: 75%;
+// }
+
+// .link a:hover {
+//   color: #374151;
+// }
 
 .p,
 .ul {
@@ -134,13 +162,13 @@
   // background-color: #2158d2;
 }
 
-.ul li:hover {
-  background-color: #90a0c2;
-  cursor: pointer;
-  padding: 10px;
-}
-
-// .grid__img img {
-//   width: 50%;
-//   object-fit: cover;
+// .ul li:hover {
+//   background-color: #90a0c2;
+//   cursor: pointer;
+//   padding: 10px;
 // }
+
+// // .grid__img img {
+// //   width: 50%;
+// //   object-fit: cover;
+// // }
