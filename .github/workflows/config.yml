@@ -15,16 +15,16 @@ jobs:
       - name: build application
         run: yarn build
         
-  deploy:
+
+  build:
     needs: run-tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: deploy to server
-        run: |
-           
-           echo "${{ secrets.KEY }}" > id_rsa
-           sudo chmod 600 id_rsa
-           ssh -i id_rsa -p ${{ secrets.PORT }} -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.HOST }} '
-           ls -la' 
-  
+    - name: deploy to server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: ls -la
