@@ -14,7 +14,6 @@ exports[`NavBar Test should render and match snapshot 1`] = `
         <a
           href="/"
         >
-           
           <img
             alt="home"
             src="header-logo.png"
@@ -22,57 +21,159 @@ exports[`NavBar Test should render and match snapshot 1`] = `
         </a>
       </div>
       <div
-        class="links hidden md:flex justify-between basis-3/5"
+        class="links hidden md:flex md:grow justify-between"
       >
         <a
-          class="block"
+          class="active block"
           href="/"
         >
-           Home 
+          Home
         </a>
         <a
-          class="block"
+          class=" block"
           href="/about"
         >
-           About Us 
+          About Us
         </a>
         <a
-          class="block"
-          href="/use-cases"
+          class=" block"
+          href="/use-cases/1"
         >
-           Use cases 
+          Use cases
         </a>
         <a
-          class="block"
+          class=" block"
           href="/contact"
         >
-           Contact 
+          Contact
         </a>
         <a
-          class="block"
+          class=" block"
           href="/how-it-works"
         >
-           How it work 
+          How it work
+        </a>
+        <a
+          class=" block"
+          href="/avatars"
+        >
+          Avatars
         </a>
       </div>
       <div
-        class="create hidden md:flex"
+        class="hidden md:flex"
       >
         <a
-          class="btn px-10 py-3"
           href="/podcast/upload"
         >
-          Create Video
+          <button
+            class="button false primary"
+            type="button"
+          >
+            <p
+              class="btn_text"
+            >
+              Create Video
+            </p>
+          </button>
         </a>
       </div>
       <button
-        class="md:hidden"
+        class="md:hidden hover:border-0"
       >
         <img
           alt="home"
           src="menu-icon.png"
         />
       </button>
+    </div>
+    <div
+      class="menu hidden px-3 py-10 md:hidden"
+    >
+      <div
+        class="links"
+      >
+        <a
+          class="block"
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          class="block"
+          href="/about"
+        >
+          About Us
+        </a>
+        <a
+          class="block"
+          href="/use-cases/1"
+        >
+          Use cases
+        </a>
+        <a
+          class="block"
+          href="/contact"
+        >
+          Contact
+        </a>
+        <a
+          class="block"
+          href="/how-it-works"
+        >
+          How it work
+        </a>
+        <a
+          class="block"
+          href="/avatars"
+        >
+          Avatars
+        </a>
+      </div>
+      <div
+        class="line"
+      >
+         
+      </div>
+      <div
+        class="links2"
+      >
+        <a
+          class="block"
+          href="/"
+        >
+          Support
+        </a>
+        <a
+          class="block"
+          href="/settings"
+        >
+          Settings
+        </a>
+        <a
+          class="block"
+          href="/community"
+        >
+          Community
+        </a>
+      </div>
+      <div
+        class="line"
+      >
+         
+      </div>
+      <div
+        class="flex w-full justify-center h-28 items-center"
+      >
+        <a
+          class="createVideo"
+          href="/podcast/upload"
+        >
+          <button>
+             Create Video 
+          </button>
+        </a>
+      </div>
     </div>
   </div>
 </DocumentFragment>

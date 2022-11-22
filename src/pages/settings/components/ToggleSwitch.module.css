@@ -1,0 +1,43 @@
+.toggleswitch {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 16px;
+}
+
+.input {
+  display: none;
+}
+
+.input:checked + .switch::before {
+  transform: translateX(17px);
+  background-color: white;
+}
+
+.input:checked + .switch {
+  background-color: #2563eb;
+}
+
+.switch {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 25px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: background-color 0.2s ease;
+}
+
+.switch::before {
+  position: absolute;
+  content: '';
+  left: 1px;
+  top: 1px;
+  width: 14px;
+  height: 14px;
+  background-color: #aaa;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
