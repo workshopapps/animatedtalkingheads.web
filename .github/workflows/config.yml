@@ -2,19 +2,8 @@ on:
   push:
     branches: [ "dev" ]
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-  build:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-  deploy:
-    needs: build
+  
+  run-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -25,3 +14,17 @@ jobs:
         run: yarn install
       - name: build application
         run: yarn build
+        
+  deploy:
+    needs: run-tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: deploy to server
+        run: |
+           
+           echo "${{ secrets.KEY }}" > id_rsa
+           sudo chmod 600 id_rsa
+           ssh -i id_rsa -p ${{ secrets.PORT }} -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.HOST }} '
+           ls -la
+  
