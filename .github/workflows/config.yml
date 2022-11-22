@@ -15,8 +15,8 @@ jobs:
   test:
     needs: build
     runs-on: ubuntu-latest
-    steps:
-      - run: ./test_server.sh
+    #steps:
+    #  - run: ./test_server.sh
   deploy:
     runs-on: ubuntu-latest
     steps:
