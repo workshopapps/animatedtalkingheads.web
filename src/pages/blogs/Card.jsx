@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './index.module.scss';
+import styles from './card.module.scss';
+// import styles from './index.module.scss';
 import { Link } from 'react-router-dom';
 import { routes } from '../../libs/links.js';
 

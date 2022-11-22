@@ -25,73 +25,50 @@ const Blog = () => {
 
   return (
     <Layout>
-      <div className={styles.blog__header}>
-        <h1>Our Blog</h1>
-        <p>All about audio, animations, podcasting and more!</p>
+      <div className={styles.blog__container}>
+        <div className={styles.blog__header}>
+          <h1>Our Blog</h1>
+          <p>All about audio, animations, podcasting and more!</p>
+        </div>
+        <main className={styles.blog__main}>
+          <div className={styles.blog__sidebar}>
+            <div className={styles.blog__form}>
+              <SearchWhite />
+              <input type="text" />
+            </div>
+            <p className={styles.p}>Blog categories</p>
+            <ul className={styles.ul}>
+              <li>View all</li>
+              <li>Podcasts</li>
+              <li>Animations</li>
+              <li>Marketing</li>
+              <li>Video creation</li>
+              <li>Research</li>
+              <li>Social Media</li>
+            </ul>
+          </div>
+          <div className={styles.blog__content}>
+            <div className={styles.blog__heading}>
+              <h2>Latest Post</h2>
+              <Search />
+            </div>
+            <div className={styles.blog__grid}>
+              {data.slice(start, end).map((el, index) => {
+                return (
+                  <Card
+                    photo={el.image}
+                    heading={el.heading}
+                    avatar={el.avatar}
+                    key={index}
+                    text={el.text}
+                    index={index}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </main>
       </div>
-      <main className={styles.blog__main}>
-        <div className={styles.blog__sidebar}>
-          <div className={styles.form}>
-            <SearchWhite />
-            <input type="text" />
-          </div>
-          <p className={styles.p}>Blog categories</p>
-          <ul className={styles.ul}>
-            <li>View all</li>
-            <li>Podcasts</li>
-            <li>Animations</li>
-            <li>Marketing</li>
-            <li>Video creation</li>
-            <li>Research</li>
-            <li>Social Media</li>
-          </ul>
-        </div>
-        <div className={styles.blog__content}>
-          <div className={styles.blog__heading}>
-            <h2>Latest Post</h2>
-            <Search />
-          </div>
-          <div className={styles.blog__grid}>
-            {data.slice(start, end).map((el, index) => {
-              return (
-                <Card
-                  photo={el.image}
-                  heading={el.heading}
-                  avatar={el.avatar}
-                  key={index}
-                  text={el.text}
-                  index={index}
-                />
-              );
-            })}
-
-            {/* <Card
-              photo={img2}
-              heading="Podcast Content Strategy"
-              text="Expectation versus reality"
-              avatar={avatar}
-            />
-            <Card
-              photo={img3}
-              heading="Animated Podcast"
-              text="Today animation is becoming a popular way to add life and personality to video production"
-              avatar={avatar}
-            />
-            <Card
-              photo={img4}
-              heading="How we solved The Cringy AI Voice"
-              text="Ever Cringed after hearing the AI voice"
-              avatar={avatar}
-            />
-            <Card
-              photo={img5}
-              heading="How To Reach More Audience From YourPodcast"
-              text="Tips & Tricks"
-              avatar={avatar}
-            /> */}
-          </div>
-        </div>
-      </main>
     </Layout>
   );
 };
