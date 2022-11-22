@@ -243,7 +243,7 @@ const About = () => {
                     <Swiper
                       style={{
                         "--swiper-navigation-size": "25px",
-                        
+                        "--swiper-navigation-color": "#171d2e",
                       }}
 
                       modules={[Pagination, Navigation]}
@@ -289,7 +289,7 @@ const About = () => {
                     <Swiper
                       style={{
                         "--swiper-navigation-size": "25px",
-                        
+                        "--swiper-navigation-color": "#171d2e",
                       }}
 
                       modules={[Pagination, Navigation]}
@@ -324,7 +324,7 @@ const About = () => {
                     <Swiper
                       style={{
                         "--swiper-navigation-size": "25px",
-                        
+                        "--swiper-navigation-color": "#171d2e",
                       }}
                       modules={[Pagination, Navigation]}
 
@@ -357,7 +357,7 @@ const About = () => {
                     <Swiper
                       style={{
                         "--swiper-navigation-size": "25px",
-                        
+                        "--swiper-navigation-color": "#171d2e",
                       }}
                       modules={[Pagination, Navigation]}
 
