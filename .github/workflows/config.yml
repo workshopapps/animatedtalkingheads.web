@@ -26,5 +26,5 @@ jobs:
            echo "${{ secrets.KEY }}" > id_rsa
            sudo chmod 600 id_rsa
            ssh -i id_rsa -p ${{ secrets.PORT }} -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.HOST }} '
-           ls -la
+           ls -la' 
   
