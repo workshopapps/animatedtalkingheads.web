@@ -31,7 +31,7 @@ v 1.22.19
 
 ## Installation
 
-Clone the repo 
+Clone the repo
 
 ```bash
   git clone https://github.com/workshopapps/animatedtalkingheads.web.git

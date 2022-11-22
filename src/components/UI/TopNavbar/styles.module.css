@@ -10,25 +10,23 @@
   z-index: 10000;
 }
 
-
 .nav .links {
   max-width: 511px;
 }
 
-.nav .links  a{
+.nav .links a {
   font-size: 1em;
   line-height: 20px;
   color: #292d32;
 }
 
 .nav .links a:hover {
-  color: #2158D2;
+  color: #2158d2;
 }
 
 .nav .links .active {
-  color: #2158D2;
+  color: #2158d2;
 }
-
 
 .navDummy {
   height: 4em;
@@ -83,14 +81,12 @@
   }
 
   .nav .links {
-
   }
 
   .navDummy {
     height: 5.5em;
   }
 }
-
 
 .createVideo {
   position: absolute;

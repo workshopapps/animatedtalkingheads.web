@@ -81,9 +81,9 @@
   color: #737479;
   padding-bottom: 20px;
   max-width: 352px;
-  white-space: nowrap; 
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
 }
 
 .ellipsis {

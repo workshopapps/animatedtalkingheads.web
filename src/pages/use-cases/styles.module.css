@@ -35,26 +35,24 @@
   margin-top: 40px;
 }
 
-@media screen and  (max-width: 756px) {
-    .heroBg {
-        height: 129px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 28px;
-        line-height: 35px;
-        color: #FFFFFF;
-    }
-    
+@media screen and (max-width: 756px) {
+  .heroBg {
+    height: 129px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 35px;
+    color: #ffffff;
+  }
 }
 
-@media screen and  (max-width: 756px) {
-    .heroBg {
-        height: 129px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 28px;
-        line-height: 35px;
-        color: #FFFFFF;
-    }
-    
+@media screen and (max-width: 756px) {
+  .heroBg {
+    height: 129px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 35px;
+    color: #ffffff;
+  }
 }

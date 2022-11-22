@@ -25,9 +25,9 @@
 }
 
 .paragraph li {
-    list-style-type: disc;
-    text-indent: 0.4em;
-    margin-left: 1.6em;
+  list-style-type: disc;
+  text-indent: 0.4em;
+  margin-left: 1.6em;
 }
 
 .back {
@@ -45,7 +45,6 @@
 }
 
 @media screen and (max-width: 756px) {
-
   .heading {
     font-weight: 600;
     font-size: 24px;

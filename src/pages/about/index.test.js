@@ -13,4 +13,3 @@ describe('About Test', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 });
-
