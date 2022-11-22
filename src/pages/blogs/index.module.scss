@@ -11,9 +11,6 @@
     }
   }
   &__header {
-    // border: 1px solid #90a0c2;
-    // padding: 4.8rem 0 9.6rem 0;
-    // background-color: red;
     padding: 2.4rem 4.8rem;
 
     h1 {
@@ -23,7 +20,6 @@
     p {
       font-size: 1rem;
     }
-    // margin: 2rem;
   }
 
   &__main {
@@ -70,8 +66,6 @@
 
       grid-template-columns: 30rem;
     }
-    // justify-content: center;
-    // background-color: yellow;
   }
 
   &__thumbnail {
