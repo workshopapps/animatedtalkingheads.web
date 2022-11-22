@@ -24,7 +24,7 @@ import { useState } from 'react';
 
 const CustomizeAudio = ({ speakets }) => {
     const [currentScene, setCurrentScene] = useState(0)
-    const [showModal, setShowModal] = useState(true)
+    const [showModal, setShowModal] = useState(false)
 
 
     const sceneAray = [bg1, bg2, bg3, bg4, bg5]
@@ -55,7 +55,7 @@ const CustomizeAudio = ({ speakets }) => {
             {showModal && <CustomiseCharacterModal closeModal={() => setShowModal(!showModal)} />}
             <div className="headers flex justify-between items-center">
                 <div role={'button'} onClick={() => setShowModal(!showModal)} className="text middle space-x-3">
-                    <BiEditAlt className={'text-blue-700'} />
+                    <BiEditAlt className={'text-blue-700 text-xl'} />
                     <Text w={'md'} type={'text4'} cap className={'text-blue-700'}>
                         Customise Character
                     </Text>

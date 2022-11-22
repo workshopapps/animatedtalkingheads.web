@@ -46,8 +46,8 @@ const CustomiseCharacterModal = ({ closeModal }) => {
 
     return (
         <div className="modal_layer centered">
-            <div className="card_white md:w-[60%] h-auto relative bg-white rounded-xl p-11">
-                <button onClick={closeModal} className="icon absolute top-1 right-1">
+            <div className="card_white md:w-[60%] h-auto relative bg-white rounded-xl slide-up p-11">
+                <button onClick={closeModal} className="icon absolute top-3 right-3">
                     <img src={close} alt="" width={'38px'} height={'38px'} />
 
                 </button>
@@ -119,9 +119,8 @@ const CustomiseCharacterModal = ({ closeModal }) => {
 
 
                         <div className="button centered">
-                            <Button>
-                                done
-                            </Button>
+                            <Button label={'done'} />
+
                         </div>
                     </div>
                 </div>
