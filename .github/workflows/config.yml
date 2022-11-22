@@ -10,5 +10,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '19.1.0'
+      - name: install packages
       - run: yarn install
-      - run: yarn start
+      - name: build application
+      - run: yarn build
+      - uses: arvindr226/alpine-ssh
+      - run: ssh -oStrictHostKeyChecking=no -v $USER@$IP "cd animatedtalkingheads.web/ && bash deploy.sh"
