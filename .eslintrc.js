@@ -23,6 +23,7 @@ module.exports = {
     'react/prop-types': 0,
     'arrow-body-style': 'off',
     'prefer-arrow-callback': 'off',
-    'react/no-unescaped-entities': 0
+    'react/no-unescaped-entities': 0,
+    'no-unused-vars': 'warn'
   }
 };

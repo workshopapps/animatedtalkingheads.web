@@ -1,0 +1,28 @@
+.customize-audio {
+  // border: 1px solid red;
+
+  .sceneBackground {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .modal_layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.616);
+  }
+
+  .tab {
+    height: 80px;
+    width: 80px;
+    @apply rounded-xl justify-between p-2 h-full flex flex-col items-center;
+  }
+
+  .text {
+    @apply text-xs font-bold capitalize;
+  }
+}
