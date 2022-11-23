@@ -14,36 +14,7 @@ import { Text } from '../../../components/UI/Text';
 import styles from '../upload/index.module.scss';
 import { Link } from 'react-router-dom';
 import { useDropzone } from 'react-dropzone';
-
-// const audio_type=[".3ga",".8svx",".aac",".ac3",.aif
-// .aiff
-// .alac
-// .amr
-// .ape
-// .au
-// .dss
-// .flac
-// .flv
-// .m4a
-// .m4b
-// .m4p
-// .m4r
-// .mp3
-// .mpga
-// .ogg, .oga, .mogg
-// .opus
-// .qcp
-// .tta
-// .voc
-// .wav
-// .wma
-// .wv
-// .webm
-// .MTS, .M2TS, .TS
-// .mov
-// .mp2
-// .mp4, .m4p (with DRM), .m4v
-// .mxf]
+import { audio_formats } from './audio';
 
 const UploadPodcast = () => {
   const [audio, setAudio] = useState(null);
@@ -58,12 +29,14 @@ const UploadPodcast = () => {
 
   const onDrop = useCallback((acceptedFiles) => {
     setAudio(acceptedFiles[0]);
+    console.log(acceptedFiles[0]);
     setName(acceptedFiles[0].name);
   }, []);
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   const uploadFile = () => {
-    if (audio.type !== 'audio/mpeg') {
+    const audioFormat = audio_formats.find((x) => 'audio/' + x === audio.type);
+    if (!audioFormat) {
       setError('Only audio files are supported');
     } else if (audio) {
       setLoading({ ...loading, isDisabled: true });
