@@ -70,7 +70,7 @@ const CustomizeAudio = () => {
   return (
     <Layout>
       <div className={`customize-audio lg:px-20`}>
-        <div className="breadcrumbs p-3  w-full flex items-center text-sec-500 capitalize space-x-3">
+        <div className="breadcrumbs p-3 space-x-1  w-full flex items-center text-sec-500 capitalize md:space-x-3">
           <Text w={'md'} type={'text4'} cap>
             home
           </Text>
@@ -88,8 +88,9 @@ const CustomizeAudio = () => {
           </Text>
         </div>
 
-        <main className="content w-[80%]  mx-auto flex my-11  flex-col items-center">
-          <div className="info text-center  w-[350px] space-y-11">
+        <main className="content w-full md:w-[80%]  mx-auto flex my-11 p-2 flex-col items-center">
+          {/* pafe info */}
+          <div className="info text-center  w-[350px] space-y-6 md:space-y-11 ">
             <Text w={'md'} type={'header2'} cap>
               Customise Video
             </Text>
@@ -98,7 +99,7 @@ const CustomizeAudio = () => {
               How many speakers are in your podcasts
             </Text>
 
-            <div className="character-select mx-auto flex justify-center ">
+            <div className="speaker-select mx-auto flex justify-center">
               <div className="middle ">
                 <div role={'button'} onClick={() => SpeakersCountHandler('minus')} className="p-3 centered">
                   <AiOutlineMinus />
@@ -120,14 +121,17 @@ const CustomizeAudio = () => {
               </div>
             </div>
           </div>
+          {/* pafe info */}
 
-          <div className="customization-center w-full space-y-3">
+
+          <div className="customization-center  my-4 w-full space-y-3">
             <Text w={'md'} type={'text4'} cap className={'text-[#666666]'}>
               Video Selection Preview
             </Text>
 
             <VideoScene speakets={numberOfSpeakers} />
           </div>
+
 
 
           {/* current podcast's audio player widget */}

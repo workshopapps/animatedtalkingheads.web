@@ -4,7 +4,7 @@ import { Text } from '../../../components/UI/Text';
 import speakerOne from '../../../assets/images/headOne.png';
 // import audioWidget from '../../assets/images/audioWidget.png';
 // import timestamp from '../../assets/images/timeStamp.png';
-import speakerTwo from '../../../assets/images/headerTwo.png';
+import speakerTwo from '../../../assets/avatars/avatars-side/side8.png';
 // import user from '../../assets/icons/user.svg';
 import '../customize-audio.scss';
 import bg1 from '../../../assets/images/scenery/background1.png';
@@ -32,7 +32,7 @@ const CustomizeAudio = ({ speakets }) => {
 
 
     function changeScene(mode) {
-        // select a random scene from scene array
+
         switch (mode) {
             case 'next':
                 if (currentScene < sceneAray.length - 1) {
@@ -50,11 +50,15 @@ const CustomizeAudio = ({ speakets }) => {
     }
 
     return (
-        <div className="scene_wrapper w-full space-y-4 border rounded-xl p-[20px]  px-[55px]">
+        <div className="scene_wrapper w-full space-y-4 border rounded-xl p-4 md:p-[20px]  md:px-[55px]">
 
             {showModal && <CustomiseCharacterModal closeModal={() => setShowModal(!showModal)} />}
-            <div className="headers flex justify-between items-center">
-                <div role={'button'} onClick={() => setShowModal(!showModal)} className="text middle space-x-3">
+
+
+            {/* action panel */}
+            <div className="headers flex  justify-center md:justify-between items-center">
+
+                <div role={'button'} onClick={() => setShowModal(!showModal)} className="video-action-panel   hidden md:flex   md:middle space-x-3">
                     <BiEditAlt className={'text-blue-700 text-xl'} />
                     <Text w={'md'} type={'text4'} cap className={'text-blue-700'}>
                         Customise Character
@@ -77,20 +81,28 @@ const CustomizeAudio = ({ speakets }) => {
                 </div>
             </div>
 
-            <div className="scene w-full border    h-[450px] relative">
+            <div className="scene w-full border h-[250px]  md:h-[450px] relative">
                 <div
                     style={{ backgroundImage: `url(${sceneAray[currentScene]})` }}
                     className={`bg-image w-full h-full relative sceneBackground`}>
-                    <div className="speakers_container absolute bottom-14 left-0 mt-6   middle justify-between w-full">
-                        <div className="speaker_one_head">
+                    <div className="speakers_container absolute bottom-16 md:bottom-[70px] left-0 mt-6   middle justify-between w-full">
+                        <div className="speaker_one_head  w-[120px] md:w-full centered">
                             <img src={speakerOne} alt="" />
                         </div>
 
-                        {speakets === 2 && <div className="speaker_two_head">
+                        {speakets === 2 && <div className="speaker_two_head w-[120px] md:w-full  centered">
                             <img src={speakerTwo} alt="" />
                         </div>}
                     </div>
                 </div>
+            </div>
+
+
+            <div role={'button'} onClick={() => setShowModal(!showModal)} className="video-action-panel justify-center md:hidden  middle space-x-3">
+                <BiEditAlt className={'text-blue-700 text-xl'} />
+                <Text w={'md'} type={'text4'} cap className={'text-blue-700'}>
+                    Customise Character
+                </Text>
             </div>
         </div>
     );
