@@ -5,22 +5,24 @@ import globe from './../../../assets/icons/globe.png';
 import { routes } from '../../../libs/links';
 
 const links1 = [
+  { name: 'How it Works', link: routes.howItWorks },
+  { name: 'Use Case', link: routes.useCases },
+  { name: 'About', link: routes.about },
+  { name: 'Avatars', link: routes.avatars },
 
-  { name: "How it Works", link: routes.howItWorks},
-  { name: "Use Case", link: `${routes.useCases}/1`},
-  { name: "About", link: routes.about},
-  { name: "Avatars", link: routes.avatars},
- 
-  { name: "Custom Avatars", link: "/explore-avatar" },
+  { name: 'How it Works', link: routes.howItWorks },
+  { name: 'Use Case', link: routes.useCases },
+  { name: 'About', link: routes.about },
+  { name: 'Avatars', link: routes.avatars },
 
-  { name: "Explore Background", link: routes.scenery },
-  { name: "Blog", link: routes.blog },
-]
+  { name: 'Custom Avatars', link: '/explore-avatar' },
 
-
+  { name: 'Explore Background', link: routes.scenery },
+  { name: 'Blog', link: routes.blog }
+];
 
 const links2 = [
-  { name: 'Customer Support', link: '/' },
+  { name: 'Customer Support', link: routes.helperCenter },
   { name: 'Community', link: routes.community },
   { name: 'Careers', link: routes.careers },
   { name: 'Press', link: routes.press },
