@@ -125,7 +125,7 @@ const CustomizeAudio = () => {
 
 
           <div className="customization-center  my-4 w-full space-y-3">
-            <Text w={'md'} type={'text4'} cap className={'text-[#666666]'}>
+            <Text w={'md'} type={'text4'} cap className={'text-[#666666] text-center md:text-left'}>
               Video Selection Preview
             </Text>
 
@@ -136,7 +136,7 @@ const CustomizeAudio = () => {
 
           {/* current podcast's audio player widget */}
           <div className="customization-center-audio w-full my-6 space-y-3">
-            <Text w={'md'} type={'text4'} cap className={'text-[#666666]'}>
+            <Text w={'md'} type={'text4'} cap className={'text-[#666666] text-center md:text-left'}>
               Audio Podcast.mp3
             </Text>
 
