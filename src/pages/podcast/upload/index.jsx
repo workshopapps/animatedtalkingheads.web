@@ -15,6 +15,7 @@ import styles from '../upload/index.module.scss';
 import { Link } from 'react-router-dom';
 import { useDropzone } from 'react-dropzone';
 import { audio_formats } from './audio';
+import { addPodcast } from '../../../store/actions/cartAction';
 
 const UploadPodcast = () => {
   const [audio, setAudio] = useState(null);
@@ -58,6 +59,7 @@ const UploadPodcast = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        uploadPodcast(data);
         setUpload(false);
         setUploaded(true);
       })
@@ -69,6 +71,10 @@ const UploadPodcast = () => {
         setLoading({ ...loading, isDisabled: false });
         console.log(err.message);
       });
+  };
+
+  const uploadPodcast = (data) => {
+    addPodcast(data);
   };
 
   return (
