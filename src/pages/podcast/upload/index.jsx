@@ -15,6 +15,36 @@ import styles from '../upload/index.module.scss';
 import { Link } from 'react-router-dom';
 import { useDropzone } from 'react-dropzone';
 
+// const audio_type=[".3ga",".8svx",".aac",".ac3",.aif
+// .aiff
+// .alac
+// .amr
+// .ape
+// .au
+// .dss
+// .flac
+// .flv
+// .m4a
+// .m4b
+// .m4p
+// .m4r
+// .mp3
+// .mpga
+// .ogg, .oga, .mogg
+// .opus
+// .qcp
+// .tta
+// .voc
+// .wav
+// .wma
+// .wv
+// .webm
+// .MTS, .M2TS, .TS
+// .mov
+// .mp2
+// .mp4, .m4p (with DRM), .m4v
+// .mxf]
+
 const UploadPodcast = () => {
   const [audio, setAudio] = useState(null);
   const [name, setName] = useState(null);
@@ -163,7 +193,7 @@ const UploadPodcast = () => {
           </div>
         </div>
         {uploaded ? (
-          <Link to="/podcast/customize">
+          <Link to="/customize-audio">
             <div className="my-10 justify-center flex">
               <Button label="Start Creating" />
             </div>
