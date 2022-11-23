@@ -15,7 +15,7 @@ const HowWeUseInformation = () => {
           />
           <div className="p-[16px] lg:pt-[24px] lg:px-[32px] bg-white rounded-md rounded-br-none rounded-bl-none">
             <Text className={"!text-base lg:!text-2xl !font-normal  pb-[20px]"}>
-              At Voxclips, accessible from www.Voxclips.com, one of our main priorities is the
+              At Voxclips, accessible from voxclips.hng.tech, one of our main priorities is the
               privacy of our visitors. This Privacy Policy document contains types of information
               that is collected and recorded by Debpay and how we use it.
             </Text>

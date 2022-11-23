@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Layout from '../../components/UI/Layout'
 import BackgroundLayout from './props.jsx'
 import backgroundStyles from './scenery.module.css'
 import { ReactComponent as LocationIcon } from '../../assets/images/scenery/Vector.svg'
-import { Link } from 'react-router-dom'
 
 
 const Scenery = () => {
+  const [click, setClick] = useState(false)
+
+  const handleClick = (index) => () => {
+      setClick(state => ({
+        ...state, // <-- copy previous state
+        [index]: !state[index] // <-- update value by id
+      }));
+  };
 
   return (
     <Layout>
@@ -33,9 +40,9 @@ const Scenery = () => {
 
                       <p className={backgroundStyles.location}> <LocationIcon /> {val.location}</p>
 
-                      <p className={backgroundStyles.description}>{val.description}</p>
+                      <p key={val.id} className={`${backgroundStyles.description} ${click[val.id] ? backgroundStyles.ellipsis : ''}`}>{val.description}</p>
 
-                      <Link className={backgroundStyles.expand}>Expand</Link>
+                      <p className={backgroundStyles.expand} onClick={handleClick(val.id)}>{click[val.id] ? 'Collapse' : 'Expand'}</p>
                     </figcaption>
 
                 </figure>

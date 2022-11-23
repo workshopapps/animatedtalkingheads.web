@@ -10,7 +10,12 @@ const links1 = [
   { name: 'About', link: routes.about },
   { name: 'Avatars', link: routes.avatars },
 
-  { name: 'Custom Avatars', link: routes.exploreAvatar },
+  { name: 'How it Works', link: routes.howItWorks },
+  { name: 'Use Case', link: routes.useCases },
+  { name: 'About', link: routes.about },
+  { name: 'Avatars', link: routes.avatars },
+
+  { name: 'Custom Avatars', link: '/explore-avatar' },
 
   { name: 'Explore Background', link: routes.scenery },
   { name: 'Blog', link: routes.blog }

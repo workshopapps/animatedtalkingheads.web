@@ -92,13 +92,13 @@ const CustomizeAudio = () => {
           </Text>
         </div>
 
-        <main className="my-4 w-full grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mt-11">
+        <main className="my-4 w-full grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 mt-11">
           {
 
             avatarArary.map((item, index) => (
-              <div key={index} className="avatar_card py-3 text-center flex flex-col justify-between bg-blue-100 rounded-xl p-4 space-y-3 items-center">
+              <div key={index} className="avatar_card py-3 text-center flex flex-col justify-between  rounded-xl p-4 space-y-3 items-center">
                 <div className="image">
-                  <img src={item.img} alt="" className='w-[95%] h-[95%] md:w-full md:h-full mx-auto' />
+                  <img src={item.img} alt="" className='w-[90%] h-[90%] md:w-full md:h-full mx-auto' />
                 </div>
 
                 <div className="info">
