@@ -9,6 +9,7 @@ import uploadArrowUp from '../../assets/how-it-works/icons/arrow-up.svg';
 import videoThumbnailImg from '../../assets/how-it-works/Frame 34667.svg';
 
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 const items = [
   {
@@ -111,9 +112,11 @@ const HowItWorks = () => {
             Select your characters, choose your background, sync your podcast audio with your AI
             video generated from us, download, share and enjoy!
           </p>
-          <button className=" text-base flex gap-3 items-center bg-pri-600 px-6 py-3 rounded-md text-white cursor-pointer">
-            Get started with Voxclips
-          </button>
+          <Link to="/podcast/upload">
+            <button className=" text-base flex gap-3 items-center bg-pri-600 px-6 py-3 rounded-md text-white cursor-pointer">
+              Get started with Voxclips
+            </button>
+          </Link>
 
           <div className={`md:visible invisible blue-left-pattern`}></div>
           <div className={` blue-right-pattern md:visible invisible`}></div>
