@@ -16,12 +16,8 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 // import { BiEditAlt } from 'react-icons/bi';
 // import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { Button } from '../../components/UI/Button';
-// import mp3 from '../../assets/audios/audio.mp3'
 // import ReactAudioPlayer from 'react-audio-player';
-import { TiMediaPlay } from 'react-icons/ti'
-// import { FaPause } from 'react-icons/fa'
-import rewind from '../../assets/icons/customize-audio/rewind.svg'
-import ffw from '../../assets/icons/customize-audio/ffw.svg'
+import AudioWidget from './components/AudioWidget'
 
 
 
@@ -135,62 +131,7 @@ const CustomizeAudio = () => {
 
 
           {/* current podcast's audio player widget */}
-          <div className="customization-center-audio w-full my-6 space-y-3">
-            <Text w={'md'} type={'text4'} cap className={'text-[#666666] text-center md:text-left'}>
-              Audio Podcast.mp3
-            </Text>
-
-            <div className="audio_widget_wrapper rounded-lg w-full h-auto  border">
-              {/* <img src={audioWidget} alt="" /> */}
-              {/* <div className="button flex">
-                </div> */}
-              {/* <Button label={'play'} />
-                <Button label={'stop'}  /> */}
-              <div className="audio-player w-full  space-y-2 p-4">
-
-                <div className="progress-bar-wrapper relative w-full h-[6px] bg-[#E5E5E5] rounded-lg">
-                  <div className="progress-bar-indicator h-full absolute top-0 left-0 w-[20%] bg-blue-500"></div>
-                </div>
-
-                <div className="controls middle justify-between">
-                  <div className="start">
-                    <p className="start-time">
-                      0:00
-                    </p>
-                  </div>
-                  <div className="controls flex items-center space-x-3 ">
-
-                    <button className="rewind ">
-                      <img src={rewind} alt="" />
-                    </button>
-
-                    <button className="rewind ">
-                      <TiMediaPlay className='text-3xl' />
-
-
-                    </button>
-
-                    <button className="rewind">
-                      <img src={ffw} alt="" />
-                    </button>
-                  </div>
-                  <div className="end">
-                    <p className="end-time">
-                      3:00
-                    </p>
-                  </div>
-                </div>
-
-
-              </div>
-              {/* <ReactAudioPlayer
-                src={mp3}
-
-                controls
-                style={{ width: "100%" }}
-              /> */}
-            </div>
-          </div>
+        <AudioWidget/>
           {/* current podcast's audio player widget  end*/}
 
 
