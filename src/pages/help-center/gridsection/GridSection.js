@@ -19,15 +19,13 @@ const GridSection = () => {
 
 const GridBox = (props) => {
   return (
-    <>
-      <div className={styles.grid_inner}>
-        <img className={styles.icon} src={props.icon} alt="icon" />
-        <div className={styles.details}>
-          <p className={styles.link}>{props.link}</p>
-          <p className={styles.post}>{props.posts}</p>
-        </div>
+    <div className={styles.grid_inner}>
+      <img className={styles.icon} src={props.icon} alt="icon" />
+      <div className={styles.details}>
+        <p className={styles.link}>{props.link}</p>
+        <p className={styles.post}>{props.posts}</p>
       </div>
-    </>
+    </div>
   );
 };
 
