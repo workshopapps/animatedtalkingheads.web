@@ -58,7 +58,7 @@ const CustomiseCharacterModal = ({ closeModal }) => {
                 </button>
 
 
-                <div className="br overflow-y-scroll  h-[450px]">
+                <div className=" overflow-y-scroll  h-[450px]">
 
                     <HeadCustomCenter currentSpeaker={1} />
                     <HeadCustomCenter currentSpeaker={2} />
