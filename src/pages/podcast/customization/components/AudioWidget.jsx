@@ -1,16 +1,16 @@
-import { Text } from '../../../components/UI/Text';
+import { Text } from '../../../../components/UI/Text';
 import '../customize-audio.scss';
-import bg1 from '../../../assets/images/scenery/background1.png';
-import bg2 from '../../../assets/images/scenery/background2.png';
-import bg3 from '../../../assets/images/scenery/background3.png';
-import bg4 from '../../../assets/images/scenery/background4.png';
-import bg5 from '../../../assets/images/scenery/background5.png';
+import bg1 from '../../../../assets/images/scenery/background1.png';
+import bg2 from '../../../../assets/images/scenery/background2.png';
+import bg3 from '../../../../assets/images/scenery/background3.png';
+import bg4 from '../../../../assets/images/scenery/background4.png';
+import bg5 from '../../../../assets/images/scenery/background5.png';
 import { TiMediaPlay } from 'react-icons/ti'
 import { BsPauseFill } from 'react-icons/bs'
 import React, { useState, useEffect, useRef } from 'react';
-import { ReactComponent as Rewinder } from '../../../assets/icons/customize-audio/rewind.svg';
-import { ReactComponent as Ffwd } from '../../../assets/icons/customize-audio/ffw.svg';
-import mp3 from '../../../assets/audios/audio.mp3'
+import { ReactComponent as Rewinder } from '../../../../assets/icons/customize-audio/rewind.svg';
+import { ReactComponent as Ffwd } from '../../../../assets/icons/customize-audio/ffw.svg';
+import mp3 from '../../../../assets/audios/audio.mp3'
 
 
 const audioElement = new Audio(mp3);
@@ -24,7 +24,7 @@ const CustomizeAudio = () => {
     const sceneAray = [bg1, bg2, bg3, bg4, bg5]
     console.log(sceneAray.length);
     const { duration } = audioRef.current;
-console.log(duration);
+    console.log(duration);
     //   useEffects
     useEffect(() => {
         if (isPlaying) {
@@ -67,14 +67,14 @@ console.log(duration);
         setTrackProgress(audioRef.current.currentTime);
     }
 
-      const Rewinds = () => {
+    const Rewinds = () => {
         // Clear any timers already running
         clearInterval(intervalRef.current);
         audioRef.current.currentTime = audioRef.current.currentTime - 10;
         setTrackProgress(audioRef.current.currentTime);
     }
 
-     const FfwdTo = () => {
+    const FfwdTo = () => {
         // Clear any timers already running
         clearInterval(intervalRef.current);
         audioRef.current.currentTime = audioRef.current.currentTime + 10;
@@ -122,10 +122,10 @@ console.log(duration);
 function AudioContols({
     isPlaying,
     onPlayPauseClick,
-rewinder,
-FfwdTo,
-currentTime,
-duration
+    rewinder,
+    FfwdTo,
+    currentTime,
+    duration
 }) {
     return (
         <div className="controls middle justify-between">
