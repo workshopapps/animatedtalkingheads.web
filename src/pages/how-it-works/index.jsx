@@ -58,19 +58,18 @@ const HowItWorks = () => {
               in few clicks.
             </p>
 
-            <button className=" text-base flex gap-3 items-center bg-pri-600 px-6 py-3 rounded-md text-white cursor-pointer">
+            {/* <button className=" text-base flex gap-3 items-center bg-pri-600 px-6 py-3 rounded-md text-white cursor-pointer">
               Watch Tutorial Video
               <img src={arrowDownIcon} alt="arrow-down-icon" />
-            </button>
+            </button> */}
           </section>
 
           <section className=" flex flex-col gap-8 py-6">
             {items.map((item) => (
               <div
                 key={item.id}
-                className={` ${
-                  item.id === 2 ? ' md:flex-row-reverse' : 'md:flex-row'
-                } flex flex-col  justify-between px-3 md:px-8 py-3 md:py-6 items-center gap-5`}>
+                className={` ${item.id === 2 ? ' md:flex-row-reverse' : 'md:flex-row'
+                  } flex flex-col  justify-between px-3 md:px-8 py-3 md:py-6 items-center gap-5`}>
                 <div className=" w-full">
                   <h5 className=" py-4 text-xl text-pri-600">{item.step}</h5>
                   <div className=" flex gap-3 items-start">
@@ -89,7 +88,7 @@ const HowItWorks = () => {
             ))}
           </section>
 
-          <section className=" flex flex-col justify-center items-center py-5 px-4">
+          {/* <section className=" flex flex-col justify-center items-center py-5 px-4">
             <h3 className=" text-xl text-center text-pri-600 font-medium">
               UPLOAD, CUSTOMISE, DOWNLOAD
             </h3>
@@ -101,7 +100,7 @@ const HowItWorks = () => {
               src={videoThumbnailImg}
               alt=""
             />
-          </section>
+          </section> */}
         </div>
 
         <section
