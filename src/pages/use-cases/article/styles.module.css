@@ -25,17 +25,9 @@
 }
 
 .paragraph li {
-  list-style-type: disc;
+  list-style-type: circle;
   text-indent: 0.4em;
   margin-left: 1.6em;
-}
-
-.back {
-  width: 121px;
-  height: 72px;
-  border: 1px solid #bdbdbd;
-  border-radius: 6px;
-  margin-right: 20px;
 }
 
 .image {
@@ -45,24 +37,21 @@
 }
 
 @media screen and (max-width: 756px) {
+  .image {
+    width: 100%;
+    height: calc(100vw - 1em);
+    object-fit: cover;
+  }
+
   .heading {
     font-weight: 600;
     font-size: 24px;
-    margin-bottom: 16px;
-  }
-
-  .image {
-    width: 100%;
+    line-height: 30px;
   }
 
   .paragraph {
     font-size: 16px;
     line-height: 20px;
     text-align: justify;
-  }
-
-  .back {
-    width: 64px;
-    height: 50px;
   }
 }

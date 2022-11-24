@@ -1,10 +1,10 @@
 import Layout from '../../../components/UI/Layout';
 import microphone from '../../../assets/icons/upload_podcast/microphone-podcast_upload.svg';
 import musicnote from '../../../assets/icons/upload_podcast/musicnote.svg';
-import google from '../../../assets/icons/upload_podcast/google-drive.svg';
-import dropbox from '../../../assets/icons/upload_podcast/dropbox.svg';
-import one_drive from '../../../assets/icons/upload_podcast/one-drive.svg';
-import link from '../../../assets/icons/upload_podcast/bx_link.svg';
+// import google from '../../../assets/icons/upload_podcast/google-drive.svg';
+// import dropbox from '../../../assets/icons/upload_podcast/dropbox.svg';
+// import one_drive from '../../../assets/icons/upload_podcast/one-drive.svg';
+// import link from '../../../assets/icons/upload_podcast/bx_link.svg';
 import music from '../../../assets/icons/upload_podcast/music.svg';
 import correct from '../../../assets/icons/upload_podcast/correct.svg';
 import { Button } from '../../../components/UI/Button';
@@ -14,36 +14,8 @@ import { Text } from '../../../components/UI/Text';
 import styles from '../upload/index.module.scss';
 import { Link } from 'react-router-dom';
 import { useDropzone } from 'react-dropzone';
-
-// const audio_type=[".3ga",".8svx",".aac",".ac3",.aif
-// .aiff
-// .alac
-// .amr
-// .ape
-// .au
-// .dss
-// .flac
-// .flv
-// .m4a
-// .m4b
-// .m4p
-// .m4r
-// .mp3
-// .mpga
-// .ogg, .oga, .mogg
-// .opus
-// .qcp
-// .tta
-// .voc
-// .wav
-// .wma
-// .wv
-// .webm
-// .MTS, .M2TS, .TS
-// .mov
-// .mp2
-// .mp4, .m4p (with DRM), .m4v
-// .mxf]
+import { audio_formats } from './audio';
+import { addPodcast } from '../../../store/actions/cartAction';
 
 const UploadPodcast = () => {
   const [audio, setAudio] = useState(null);
@@ -58,12 +30,14 @@ const UploadPodcast = () => {
 
   const onDrop = useCallback((acceptedFiles) => {
     setAudio(acceptedFiles[0]);
+    console.log(acceptedFiles[0]);
     setName(acceptedFiles[0].name);
   }, []);
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   const uploadFile = () => {
-    if (audio.type !== 'audio/mpeg') {
+    const audioFormat = audio_formats.find((x) => 'audio/' + x === audio.type);
+    if (!audioFormat) {
       setError('Only audio files are supported');
     } else if (audio) {
       setLoading({ ...loading, isDisabled: true });
@@ -85,6 +59,7 @@ const UploadPodcast = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        uploadPodcast(data);
         setUpload(false);
         setUploaded(true);
       })
@@ -96,6 +71,10 @@ const UploadPodcast = () => {
         setLoading({ ...loading, isDisabled: false });
         console.log(err.message);
       });
+  };
+
+  const uploadPodcast = (data) => {
+    addPodcast(data);
   };
 
   return (
@@ -172,7 +151,7 @@ const UploadPodcast = () => {
           {error && <p className="text-red-700">{error}</p>}
         </div>
 
-        <div className="-[3px] border-green-50 my-5">
+        {/* <div className="-[3px] border-green-50 my-5">
           <div className="flex mx-auto  justify-center  text-[12px] font-bold gap-3 gap-y-2">
             <div className="flex gap-1 md:gap-2 items-center cursor-pointer">
               <img src={link} alt="google-drive" className="w-[16px] max-w-[25px]" />
@@ -191,7 +170,7 @@ const UploadPodcast = () => {
               <p>One Drive</p>
             </div>
           </div>
-        </div>
+        </div> */}
         {uploaded ? (
           <Link to="/customize-audio">
             <div className="my-10 justify-center flex">

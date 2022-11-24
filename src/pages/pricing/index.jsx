@@ -2,26 +2,6 @@ import Layout from '../../components/UI/Layout';
 import Card from './card';
 import tick from '../../assets/icons/tick-box.svg';
 
-import {
-  CardSection,
-  FirstMobileParagraph,
-  FirstSection,
-  Header,
-  LastSection,
-  Line,
-  LoopDiv,
-  LoopImg,
-  MainWrapper,
-  NumberSpan,
-  Paragraph,
-  QuestionHeader,
-  SecondParagraph,
-  SubAnswer,
-  SubQuestion,
-  VeryLastSection
-} from './indexStyle';
-import { Email } from './cardStyle';
-
 const Pricing = () => {
   const offers = [
     [
@@ -59,31 +39,25 @@ const Pricing = () => {
 
   return (
     <Layout>
-      <MainWrapper>
-        <FirstSection>
-          <Header>Voxclips Pricing</Header>
-          <Paragraph>
+      <main>
+        <div>
+          <p>Voxclips Pricing</p>
+          <p> Ready to scale your Audio Content by transforming it into amazing animated videos?</p>
+          <p>
             {' '}
-            Ready to scale your Audio Content by transforming it into amazing animated videos?
-          </Paragraph>
-          <SecondParagraph>
+            Voxclips is trusted by <span>2,384+</span> content creators, podcasters and personal
+            brands.
+          </p>
+          <p>Try the Free Plan and then Go Pro to enjoy more exciting features</p>
+          <p>
             {' '}
-            Voxclips is trusted by <NumberSpan>2,384+</NumberSpan> content creators, podcasters and
-            personal brands.
-          </SecondParagraph>
-          <Paragraph>Try the Free Plan and then Go Pro to enjoy more exciting features</Paragraph>
-          <FirstMobileParagraph>
-            {' '}
-            Trusted by <NumberSpan>2,000</NumberSpan> content creators, podcasters and personal
-            brands
-          </FirstMobileParagraph>
+            Trusted by <span>2,000</span> content creators, podcasters and personal brands
+          </p>
 
-          <FirstMobileParagraph>
-            Pick the right plan for you and then Go Pro to enjoy more exciting features.
-          </FirstMobileParagraph>
-        </FirstSection>
+          <p>Pick the right plan for you and then Go Pro to enjoy more exciting features.</p>
+        </div>
 
-        <CardSection>
+        <div>
           <Card
             title="Forever Plan"
             tier="free"
@@ -92,13 +66,13 @@ const Pricing = () => {
             slogan="Start creating videos on the go">
             {offers[0].map((value, index) => (
               <div key={index}>
-                <LoopDiv key={index}>
-                  <LoopImg src={tick} alt="tick" />
+                <div key={index}>
+                  <img src={tick} alt="tick" />
                   <div className="text">{value}</div>
-                </LoopDiv>
-                <Line>
+                </div>
+                <>
                   <hr></hr>
-                </Line>
+                </>
               </div>
             ))}
           </Card>
@@ -110,14 +84,14 @@ const Pricing = () => {
             slogan="Access to creative possibilities">
             {offers[1].map((value, index) => (
               <>
-                <LoopDiv key={index}>
-                  <LoopImg src={tick} alt="tick" />
+                <div key={index}>
+                  <img src={tick} alt="tick" />
                   <div className="text">{value}</div>
-                </LoopDiv>
+                </div>
 
-                <Line>
+                <>
                   <hr></hr>
-                </Line>
+                </>
               </>
             ))}
           </Card>
@@ -129,46 +103,46 @@ const Pricing = () => {
             slogan="A world of limitless possibilities">
             {offers[2].map((value, index) => (
               <>
-                <LoopDiv key={index}>
-                  <LoopImg src={tick} alt="tick" />
+                <div key={index}>
+                  <img src={tick} alt="tick" />
                   <div className="text">{value}</div>
-                </LoopDiv>
-                <Line>
+                </div>
+                <>
                   <hr></hr>
-                </Line>
+                </>
               </>
             ))}
           </Card>
-        </CardSection>
-        <LastSection>
-          <QuestionHeader> FAQ</QuestionHeader>
+        </div>
+        <div>
+          <p> FAQ</p>
           <div>
-            <SubQuestion> Will there be a free plan forever?</SubQuestion>
-            <SubAnswer>
+            <p> Will there be a free plan forever?</p>
+            <p>
               Yes! We plan to make the free tier a forever benefit. We want you to be able to enjoy
               as many features as possible. Start getting creative!
-            </SubAnswer>
+            </p>
           </div>
           <div>
-            <SubQuestion>Why should I get the Podcaster Plan?</SubQuestion>
-            <SubAnswer>
+            <p>Why should I get the Podcaster Plan?</p>
+            <p>
               The Podcaster Plan has more features that affords you the opportunity to explore more
               exciting features from Voxclips.
-            </SubAnswer>
+            </p>
           </div>
           <div>
-            <SubQuestion>Why should I get the Content Creator Plan?</SubQuestion>
-            <SubAnswer>
+            <p>Why should I get the Content Creator Plan?</p>
+            <p>
               When you want to make the best of Voxclips, the Content Creator Plan is perfect if
               you. Opportunities are limitless for you.
-            </SubAnswer>
+            </p>
           </div>
-        </LastSection>
-        <VeryLastSection>
+        </div>
+        <div>
           {' '}
-          Please send us feedback on our plans and pricing: <Email> help@voxclips.com</Email>
-        </VeryLastSection>
-      </MainWrapper>
+          Please send us feedback on our plans and pricing: <span> help@voxclips.com</span>
+        </div>
+      </main>
     </Layout>
   );
 };
