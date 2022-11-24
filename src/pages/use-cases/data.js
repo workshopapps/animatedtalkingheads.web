@@ -52,8 +52,11 @@ export const data = [
     description: (
       <>
         Native language tutors can create talking heads videos on Voxclips for their podcasts and
-        upload on social media. ⦁ Create engaging cartoon videos of heads talking. ⦁ Add captions to
-        your...
+        upload on social media.
+        <ul className="ml-5">
+          <li> Create engaging cartoon videos of heads talking.</li>
+          <li>Add captions to your...</li>
+        </ul>
       </>
     ),
     image: laptop

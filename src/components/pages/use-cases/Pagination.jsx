@@ -29,7 +29,9 @@ const Pagination = ({ rows, current, total, link }) => {
             <Link
               key={index}
               to={`${link}?page=${page}`}
-              className={`${styles.page} block ${current == page ? `${styles.active}` : ''} `}>
+              className={`${styles.page} px-7 py-5 block ${
+                current == page ? `${styles.active}` : ''
+              } `}>
               {page}
             </Link>
           );
