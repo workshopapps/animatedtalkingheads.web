@@ -1,73 +1,54 @@
-import styles from "./styles.module.css";
+import styles from './styles.module.css';
 import Layout from '../../components/UI/Layout';
-import Description from "../../components/pages/use-cases/Description";
-import { data } from "./data";
-import React from "react";
-import Pagination from "../../components/pages/use-cases/Pagination";
-import { routes } from "../../libs/links";
-import { useSearchParams } from "react-router-dom";
-
-
+import Description from '../../components/pages/use-cases/Description';
+import { data } from './data';
+import React from 'react';
+import Pagination from '../../components/pages/use-cases/Pagination';
+import { routes } from '../../libs/links';
+import { useSearchParams } from 'react-router-dom';
 
 const rows = 4;
 
 const UseCases = () => {
-
-  const [searchParams] = useSearchParams()
-  let page = Number(searchParams.get("page"))
+  const [searchParams] = useSearchParams();
+  let page = Number(searchParams.get('page'));
   page = page === 0 ? 1 : page;
-  const start =  (page - 1) * rows;
-  const count = start + rows
-  const end = count > data.length ? data.length : count
+  const start = (page - 1) * rows;
+  const count = start + rows;
+  const end = count > data.length ? data.length : count;
 
   return (
     <Layout>
-      <div className={styles.bg}>
-
+      <div className="bg-[#f9fafb] pb-5">
         <div className={`${styles.heroBg} flex justify-center items-center`}>
           <p>Use Cases</p>
         </div>
-
-        <div className="px-5 py-20 md:p-10 lg:p-24 md:px-36 lg:px-40 xl:px-48">
-
-          <div  className="grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-y-60 py-20 gap-y-16">
-
-            { 
-              data.slice(start, end).map((data, index) => {
-
-                if (index % 2 === 0) {
-                  return (
-                    <React.Fragment key={index}>
-                      <div><img src={data.image}  alt="image" /> </div>
-                      <Description heading={data.title} index={index}> {data.description} </Description>
-                    </React.Fragment>
-                  )
-                }
-
-                return (
-                  <React.Fragment key={index} className="hidden md:flex">
-                    <div className="flex md:hidden"><img src={data.image}  alt="image" /> </div>
-                    <Description heading={data.title} index={index}> {data.description} </Description>
-                    <div className="hidden md:flex"><img src={data.image}  alt="image" /> </div>
-                  </React.Fragment>
-                )
-
-              })
-
-            }
-
+        <section className="mx-auto w-[90%] max-w-[1440px] my-20">
+          {data.slice(start, end).map((data, index) => (
+            <div
+              key={index}
+              className={`md:flex my-10 gap-20 py-10 items-center ${
+                index % 2 === 0 && 'md:flex-row-reverse'
+              }`}>
+              <div className="md:w-[45%]">
+                <div className="md:max-w-[80%] mx-auto">
+                  <img src={data.image} alt="image" />
+                </div>
+              </div>
+              <div className="md:w-[45%]">
+                <Description heading={data.title} index={index}>
+                  {data.description}
+                </Description>
+              </div>
+            </div>
+          ))}
+          <div>
+            <Pagination rows={4} current={page} link={routes.useCases} total={data.length} />
           </div>
-
-          <Pagination rows={4} current={page} link={routes.useCases} total={data.length}/>
-
-        </div>
-
+        </section>
       </div>
-
     </Layout>
   );
 };
 
 export default UseCases;
-
-
