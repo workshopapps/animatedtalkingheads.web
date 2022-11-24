@@ -1,10 +1,10 @@
 import Layout from '../../../components/UI/Layout';
 import microphone from '../../../assets/icons/upload_podcast/microphone-podcast_upload.svg';
 import musicnote from '../../../assets/icons/upload_podcast/musicnote.svg';
-import google from '../../../assets/icons/upload_podcast/google-drive.svg';
-import dropbox from '../../../assets/icons/upload_podcast/dropbox.svg';
-import one_drive from '../../../assets/icons/upload_podcast/one-drive.svg';
-import link from '../../../assets/icons/upload_podcast/bx_link.svg';
+// import google from '../../../assets/icons/upload_podcast/google-drive.svg';
+// import dropbox from '../../../assets/icons/upload_podcast/dropbox.svg';
+// import one_drive from '../../../assets/icons/upload_podcast/one-drive.svg';
+// import link from '../../../assets/icons/upload_podcast/bx_link.svg';
 import music from '../../../assets/icons/upload_podcast/music.svg';
 import correct from '../../../assets/icons/upload_podcast/correct.svg';
 import { Button } from '../../../components/UI/Button';
@@ -151,7 +151,7 @@ const UploadPodcast = () => {
           {error && <p className="text-red-700">{error}</p>}
         </div>
 
-        <div className="-[3px] border-green-50 my-5">
+        {/* <div className="-[3px] border-green-50 my-5">
           <div className="flex mx-auto  justify-center  text-[12px] font-bold gap-3 gap-y-2">
             <div className="flex gap-1 md:gap-2 items-center cursor-pointer">
               <img src={link} alt="google-drive" className="w-[16px] max-w-[25px]" />
@@ -170,7 +170,7 @@ const UploadPodcast = () => {
               <p>One Drive</p>
             </div>
           </div>
-        </div>
+        </div> */}
         {uploaded ? (
           <Link to="/customize-audio">
             <div className="my-10 justify-center flex">
