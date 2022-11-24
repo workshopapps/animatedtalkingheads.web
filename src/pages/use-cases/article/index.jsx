@@ -7,23 +7,10 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { blogs } from '../data';
 
 const UseCaseArticle = () => {
-  const [width, setWidth] = React.useState(100000);
-
   const { id } = useParams();
   const navigate = useNavigate();
 
   const page = blogs[id];
-
-  React.useEffect(() => {
-    function handleResize() {
-      setWidth(window.innerWidth);
-    }
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
     <Layout>

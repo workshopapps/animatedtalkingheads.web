@@ -1,16 +1,9 @@
-import mic from '../../assets/icons/use-cases/mic.png';
-import headphone from '../../assets/icons/use-cases/headphone.png';
-import talk from '../../assets/icons/use-cases/talk-show.png';
-import tables from '../../assets/icons/use-cases/tables.png';
-import laptop from '../../assets/icons/use-cases/laptop.png';
-import cartoon from '../../assets/icons/use-cases/cartoon.png';
-
-import micLG from '../../assets/icons/use-cases/mic-lg.png';
-import headphoneLG from '../../assets/icons/use-cases/headphone-lg.png';
-import talkLG from '../../assets/icons/use-cases/talk-show-lg.png';
-import tablesLG from '../../assets/icons/use-cases/tables-lg.png';
-import laptopLG from '../../assets/icons/use-cases/laptop-lg.png';
-import cartoonLG from '../../assets/icons/use-cases/cartoon-lg.png';
+import mic from '../../assets/icons/use-cases/mic.svg';
+import headphone from '../../assets/icons/use-cases/headphone.svg';
+import talk from '../../assets/icons/use-cases/talk.svg';
+import tables from '../../assets/icons/use-cases/tables.svg';
+import laptop from '../../assets/icons/use-cases/laptop.svg';
+import cartoon from '../../assets/icons/use-cases/cartoon.svg';
 
 export const data = [
   {
@@ -120,7 +113,7 @@ export const blogs = [
         </p>
       </>
     ),
-    image: micLG
+    image: mic
   },
   {
     title: 'Increase Organic Podcast Listeners',
@@ -163,7 +156,7 @@ export const blogs = [
         </ul>
       </>
     ),
-    image: headphoneLG
+    image: headphone
   },
   {
     title: 'Make your Interview Podcasts fun',
@@ -226,7 +219,7 @@ export const blogs = [
         </p>
       </>
     ),
-    image: talkLG
+    image: talk
   },
   {
     title: 'Debates and Round-table Talks',
@@ -261,7 +254,7 @@ export const blogs = [
         </p>
       </>
     ),
-    image: tablesLG
+    image: tables
   },
   {
     title: 'Language Tutoring',
@@ -279,7 +272,7 @@ export const blogs = [
         listeners to watch and practice, and learn the language you're teaching.
       </>
     ),
-    image: laptopLG
+    image: laptop
   },
   {
     title: 'Cartoon Avatars',
@@ -308,6 +301,6 @@ export const blogs = [
         </p>
       </>
     ),
-    image: cartoonLG
+    image: cartoon
   }
 ];

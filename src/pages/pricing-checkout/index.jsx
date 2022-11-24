@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import TopNavbar from '../../components/UI/TopNavbar';
-import { CheckoutWrapper } from './checkoutStyle';
 import smsIcon from '../../assets/icons/sms.svg';
 import cardIcon from '../../assets/icons/card.svg';
-import { Button } from '../pricing-getstarted/getStartedStyle';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 const index = () => {
@@ -30,8 +28,8 @@ const index = () => {
   };
 
   return (
-    <CheckoutWrapper>
-      <TopNavbar />
+    <TopNavbar>
+      <div />
       <div className="checkout-page-wrapper">
         <div className="checkout-page">
           <div className="checkout-header">
@@ -98,14 +96,12 @@ const index = () => {
             </div>
 
             <div className="form-group">
-              <Button width="20rem" className="submitBtn" bgColor="#1877f2">
-                Confirm and Pay
-              </Button>
+              <button>Confirm and Pay</button>
             </div>
           </form>
         </div>
       </div>
-    </CheckoutWrapper>
+    </TopNavbar>
   );
 };
 

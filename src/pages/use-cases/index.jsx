@@ -5,7 +5,7 @@ import { data } from './data';
 import React from 'react';
 import Pagination from '../../components/pages/use-cases/Pagination';
 import { routes } from '../../libs/links';
-import { useParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 const rows = 4;
 

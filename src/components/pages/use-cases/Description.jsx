@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import readmore from '../../../assets/icons/use-cases/read_more.svg';
 import { routes } from '../../../libs/links';
+import styles from './styles.module.css';
 
 const Description = ({ children, heading, index }) => {
   return (
