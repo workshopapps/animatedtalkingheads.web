@@ -40,20 +40,22 @@
   color: #171d2e;
 }
 
-ul li {
-  list-style: none;
-}
-
-ul {
+.list {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2.5rem;
 }
 
-ul li:nth-child(2),
-ul li:nth-child(3),
-ul li:nth-child(4) {
+.list {
+  & li {
+    list-style: none;
+  }
+}
+
+.list li:nth-child(2),
+.list li:nth-child(3),
+.list li:nth-child(4) {
   color: #2563eb;
 }
 
