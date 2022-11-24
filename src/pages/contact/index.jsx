@@ -5,9 +5,11 @@ import { Text } from '../../components/UI/Text';
 import { Header1 } from '../../components/UI/Text/text.stories';
 import cleanup from '../../assets/icons/contact/cleanup.svg';
 import { Link } from 'react-router-dom';
+import styles from './index.module.scss';
 
 const Contact = () => {
   const [submitted, setSubmittted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [emessage, setEMessage] = useState(false);
   const [email, setEmail] = useState('');
@@ -26,7 +28,13 @@ const Contact = () => {
     }
     if (message === '') {
       setEMessage(true);
-    } else setSubmittted(true);
+    } else {
+      setLoading(true);
+      setTimeout(() => {
+        setSubmittted(true);
+        setLoading(false);
+      }, 2000);
+    }
   };
 
   const updateMessage = (e) => {
@@ -92,6 +100,16 @@ const Contact = () => {
                 />
               </div>
               {emessage && <p className="text-red-600 text-xs">this field is required</p>}
+              {loading && (
+                <div className="text-center mt-2">
+                  <div className={styles.ring}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              )}
               <div className="flex justify-center mt-5">
                 <Button label="submit" type="submit" />
               </div>
