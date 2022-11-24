@@ -11,6 +11,7 @@ import Cherem from './images/Frame 61.png'
 import Ifeoluwa from './images/Frame 47.png'
 import Shobola from './images/Frame 48.png'
 import Idris from './images/Frame 49.png'
+import Joshua from './images/Frame 100.png'
 import Chimidindu from './images/Frame 50.png'
 import AbdulMalik from './images/Frame 51.png'
 import Dickson from './images/Frame 110.png'
@@ -113,6 +114,11 @@ export const Engineering = [{
 {
     name: 'Idris Ife',
     image: Idris,
+    role: 'Front End Developer',
+},
+{
+    name: 'Joshua Evuetapha',
+    image: Joshua,
     role: 'Front End Developer',
 },
 {
