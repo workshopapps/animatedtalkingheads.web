@@ -2,21 +2,21 @@
 import '../customize-audio.scss';
 // import bg1 from '../../../assets/images/scenery/background1.png';
 // import bg2 from '../../../assets/images/scenery/background2.png';
-import face from '../../../assets/icons/customize-audio/Face.svg';
-import tone from '../../../assets/icons/customize-audio/tone.svg';
-import hair from '../../../assets/icons/customize-audio/Hair.svg';
-import ran from '../../../assets/icons/customize-audio/repeat.svg';
-import rotate from '../../../assets/icons/customize-audio/rotate-left.svg';
-import head from '../../../assets/avatars/avatars-front/Avatars-03.png';
-import headWhite from '../../../assets/avatars/avatars-front/Avatars-02.png';
-import head4 from '../../../assets/avatars/avatars-front/Avatars-04.png';
-import head5 from '../../../assets/avatars/avatars-front/Avatars-05.png';
-import close from '../../../assets/icons/close-circle.svg';
+import face from '../../../../assets/icons/customize-audio/Face.svg';
+import tone from '../../../../assets/icons/customize-audio/tone.svg';
+import hair from '../../../../assets/icons/customize-audio/Hair.svg';
+import ran from '../../../../assets/icons/customize-audio/repeat.svg';
+import rotate from '../../../../assets/icons/customize-audio/rotate-left.svg';
+import head from '../../../../assets/avatars/avatars-front/Avatars-03.png';
+import headWhite from '../../../../assets/avatars/avatars-front/Avatars-02.png';
+import head4 from '../../../../assets/avatars/avatars-front/Avatars-04.png';
+import head5 from '../../../../assets/avatars/avatars-front/Avatars-05.png';
+import close from '../../../../assets/icons/close-circle.svg';
 // import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 
 import { useState } from 'react';
 // import { Text } from '../../../components/UI/Text';
-import { Button } from '../../../components/UI/Button';
+import { Button } from '../../../../components/UI/Button';
 import { useNavigate } from 'react-router-dom';
 
 

@@ -2,7 +2,7 @@ export const routes = {
   home: '/',
   about: '/about',
   blog: '/blog',
-  customizeAudio: '/customize-audio',
+  customizeAudio: '/podcast/customize',
 
   blogContent: '/blog/content',
 
