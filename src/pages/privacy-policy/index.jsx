@@ -20,15 +20,15 @@ const PrivacyPolicy = () => {
                 <LinkComponent text={'2. How we use your information'} href={'how-we-use-information'} />
                 <LinkComponent text={'3. How to contact us'} href={'/contact'} />
                 <LinkComponent text={'4. Cookies'} href={'cookies'} />
-                <LinkComponent text={'5. information we collect about you'} href={'information'} />
+                <LinkComponent text={'5. Information we collect about you'} href={'information'} />
                 <LinkComponent text={'6. Changes to policy'} href={'changes-to-policy'} />
               </ul>
               <div className="p-[16px] lg:pt-[24px] lg:px-[32px] bg-white rounded-md rounded-br-none rounded-bl-none">
                 <Text className={'!text-base lg:!text-2xl !font-normal'}>
-                  Privacy Policy for Podstar (Suggested Web Name)
+                  Privacy Policy for voxclips
                 </Text>
                 <Text className={'!text-base lg:!text-2xl !font-normal mb-[15px] '}>
-                  Thank you for visiting the Podcast.com website. You arrived at this Privacy Policy
+                  Thank you for visiting the voxclips.hng.tech website. You arrived at this Privacy Policy
                   page from one of the above sites, referred to herein as “this website”. This
                   Privacy Policy is subject to changes by Team Clutch (hereinafter “Team/Company”)
                   at any time and at our discretion without notice by updating this posting. We
@@ -42,7 +42,7 @@ const PrivacyPolicy = () => {
                 </Text>
                 <Text className={'!text-base lg:!text-2xl !font-normal  pb-[20px]'}>
                   We only ask for personal information, like names, addresses, phone numbers, email
-                  addresses, and sometimes credit card information when we truly need it to provide
+                  addresses, when we truly need it to provide
                   a service to you. We collect it by fair and lawful means, with your knowledge and
                   consent. We will only use your personal information for the following purposes: To
                   deliver the products and/or services to you that you have requested; Validate your

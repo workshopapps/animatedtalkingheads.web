@@ -5,16 +5,14 @@ import { routes } from '../../../libs/links';
 
 const Description = ({ children, heading, index }) => {
   return (
-    <div className="grid gap-5 justify-center mt-5">
-      <h2 className="font-bold text-2xl md:text-4xl"> {heading}</h2>
-      <p className="text-base  lg:text-xl">{children}</p>
-      <Link to={`${routes.useCaseArticle}/${index}`}>
-        <div className="flex gap-3 text-base lg:text-xl text-blue-600 hover:gap-5 duration-300 items-center">
-          <p>Read more</p>
-          <div>
-            <img src={readmore} />
-          </div>
-        </div>
+    <div className="flex flex-col h-full justify-center ">
+      <h2 className={styles.heading}> {heading}</h2>
+
+      <p className={styles.paragraph}>{children}</p>
+
+      <Link to={`${routes.useCaseArticle}/${index}`} className={styles.readmore}>
+        {' '}
+        <img src={readmore} />
       </Link>
     </div>
   );
@@ -23,7 +21,8 @@ const Description = ({ children, heading, index }) => {
 Description.propTypes = {
   children: PropTypes.element,
   heading: PropTypes.string,
-  index: PropTypes.number
+  index: PropTypes.number,
+  alignLeft: PropTypes.bool
 };
 
 export default Description;

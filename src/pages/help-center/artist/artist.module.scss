@@ -1,0 +1,102 @@
+@import '../colorhelpers.module.scss';
+
+.artistsection {
+  padding: 5rem 2rem 10rem 2rem;
+  background-color: #f5f5f5;
+}
+
+p.heading {
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 3rem;
+  color: #292d32;
+}
+
+.artist {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 2rem;
+  column-gap: 5rem;
+}
+
+//ArtistBox
+
+.artist_flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding-right: 2rem;
+  border-radius: 8px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.file {
+  display: inline-block;
+}
+
+.dark_box {
+  background-color: #a2a2a5;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.top_text {
+  padding-bottom: 2rem;
+  color: #737479;
+}
+
+.bottom_text {
+  font-weight: 600;
+}
+
+@media (max-width: 47.938em) {
+  .artist {
+    grid-template-columns: 1fr;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .artist {
+    width: 100%;
+  }
+}
+
+@media (max-width: 34.375em) {
+  .top_text {
+    padding-bottom: 0;
+  }
+  .bottom_text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 29.313em) {
+  .bottom_text {
+    font-size: 0.8rem;
+  }
+  .file {
+    width: 2rem;
+  }
+}
+
+@media (max-width: 23.5em) {
+  .top_text {
+    font-size: 0.8rem;
+  }
+
+  .bottom_text {
+    font-size: 0.6rem;
+  }
+  .file {
+    width: 2rem;
+  }
+}

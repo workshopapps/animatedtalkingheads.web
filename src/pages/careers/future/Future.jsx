@@ -1,12 +1,12 @@
 import React from 'react';
 import Features from './features/Features';
-import './future.modules.scss';
+import styles from './future.module.scss';
 
 export default function Future() {
   return (
-    <section className="careers__future">
-      <h3 className="careers__secondary-heading">Get to know your future team</h3>
-      <div className="careers__future-features">
+    <section className={styles.careers__future}>
+      <h3 className={styles.careers__secondary_heading}>Get to know your future team</h3>
+      <div className={styles.careers__future_features}>
         <Features
           title="Engineering"
           subTitle="Front and back end developers"
@@ -15,7 +15,7 @@ export default function Future() {
         <Features
           title="Product Management"
           subTitle="Coordinators"
-          text="Oversees, develop and help improve our company products. You’d need excellent managment skills and strong technical background."
+          text="Oversee develop and help improve our company products. You’d need excellent managment skills and strong technical background."
         />
         <Features
           title="Product Design"

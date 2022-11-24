@@ -16,6 +16,8 @@
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.2",
+    "serve": "^14.1.2",
+    "styled-components": "^5.3.6",
     "swiper": "^8.4.4",
     "web-vitals": "^2.1.4"
   },
@@ -90,7 +92,6 @@
     "webpack": "^5.75.0"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
     "*.{js,css,md,html,json}": "prettier --cache --write"
   }
 }
