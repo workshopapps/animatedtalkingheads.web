@@ -1,10 +1,6 @@
 import Layout from '../../../components/UI/Layout';
 import microphone from '../../../assets/icons/upload_podcast/microphone-podcast_upload.svg';
 import musicnote from '../../../assets/icons/upload_podcast/musicnote.svg';
-// import google from '../../../assets/icons/upload_podcast/google-drive.svg';
-// import dropbox from '../../../assets/icons/upload_podcast/dropbox.svg';
-// import one_drive from '../../../assets/icons/upload_podcast/one-drive.svg';
-// import link from '../../../assets/icons/upload_podcast/bx_link.svg';
 import music from '../../../assets/icons/upload_podcast/music.svg';
 import correct from '../../../assets/icons/upload_podcast/correct.svg';
 import { Button } from '../../../components/UI/Button';
@@ -172,7 +168,7 @@ const UploadPodcast = () => {
           </div>
         </div> */}
         {uploaded ? (
-          <Link to="/customize-audio">
+          <Link to="/podcast/customize">
             <div className="my-10 justify-center flex">
               <Button label="Start Creating" />
             </div>
