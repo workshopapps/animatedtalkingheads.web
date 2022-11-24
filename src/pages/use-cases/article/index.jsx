@@ -3,7 +3,7 @@ import Layout from '../../../components/UI/Layout';
 import React from 'react';
 import arrowBack from '../../../assets/icons/use-cases/arrowBack.svg';
 import { Button } from '../../../components/UI/Button';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { blogs } from '../data';
 
 const UseCaseArticle = () => {
@@ -32,9 +32,7 @@ const UseCaseArticle = () => {
               <img className="m-5" src={arrowBack} alt="Arrow Back" />
               <p className="hidden md:block">Back</p>
             </button>
-            <Link to="/podcast/upload">
-              <Button label={'Get Started'}></Button>
-            </Link>
+            <Button label={'Get Started'}></Button>
           </div>
         </div>
       </div>
