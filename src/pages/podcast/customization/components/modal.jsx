@@ -97,7 +97,7 @@ function HeadCustomCenter({ currentSpeaker }) {
             </div>
 
             <div className="customize_section p-6 w-full  md:w-[80%] border space-y-6">
-                <div className="tools centered">
+                {/* <div className="tools centered">
                     <div className="border rounded-xl h-[80px] middle ">
                         <div className="tab hover:bg-blue-500 hover:text-white bg-blue-500  ">
                             <img src={face} alt="" />
@@ -112,7 +112,7 @@ function HeadCustomCenter({ currentSpeaker }) {
                             <h1 className="text ">hair</h1>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className="heads flex ">
                     {
                         headArray.map((item, index) => (

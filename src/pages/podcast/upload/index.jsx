@@ -115,9 +115,8 @@ const UploadPodcast = () => {
 
         <div
           {...getRootProps()}
-          className={` cursor-pointer  my-5 py-10 border-[3px] bg-[#FFFFFF] rounded-lg border-dashed border-opacity-20 w-[90%] mx-auto ${
-            error && 'border-red-600 opacity-100'
-          }`}>
+          className={` cursor-pointer  my-5 py-10 border-[3px] bg-[#FFFFFF] rounded-lg border-dashed border-opacity-20 w-[90%] mx-auto ${error && 'border-red-600 opacity-100'
+            }`}>
           <div className="flex justify-center">
             {uploaded ? (
               <img src={correct} alt="microphone podcast" className="w-[30px] md:w-[50px]" />
@@ -172,7 +171,7 @@ const UploadPodcast = () => {
           {error && <p className="text-red-700">{error}</p>}
         </div>
 
-        <div className="-[3px] border-green-50 my-5">
+        {/* <div className="-[3px] border-green-50 my-5">
           <div className="flex mx-auto  justify-center  text-[12px] font-bold gap-3 gap-y-2">
             <div className="flex gap-1 md:gap-2 items-center cursor-pointer">
               <img src={link} alt="google-drive" className="w-[16px] max-w-[25px]" />
@@ -191,7 +190,7 @@ const UploadPodcast = () => {
               <p>One Drive</p>
             </div>
           </div>
-        </div>
+        </div> */}
         {uploaded ? (
           <Link to="/customize-audio">
             <div className="my-10 justify-center flex">

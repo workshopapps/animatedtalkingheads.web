@@ -135,7 +135,7 @@ const CustomizeAudio = () => {
           {/* current podcast's audio player widget  end*/}
 
 
-          <div className="customization-center-timestamp w-full my-6 space-y-3">
+          {/* <div className="customization-center-timestamp w-full my-6 space-y-3">
             <div className="header middle space-x-3">
               <img src={toggle} alt="" />
               <Text w={'md'} type={'text4'} cap className={'text-[#666666]'}>
@@ -146,7 +146,7 @@ const CustomizeAudio = () => {
             <div className="audio_widget_wrapper w-full  border">
               <img src={timestamp} alt="" />
             </div>
-          </div>
+          </div> */}
         </main>
 
         <div className="centered w-full my-[5%]">
