@@ -23,10 +23,13 @@ const Header = () => {
                                 Voxclips is a unique web based site which helps Podcasters to enhance their recorded audio series with 2D talking head characters to be engaging, interesting and time spending.
                             </p>
 
-                            <Link to={'watch-now'} className={styles.btn}>
-                                <img src={video} alt="video-icon" />
-                                Watch now
-                            </Link>
+                            <div className="flex justify-center">
+                                <Link to={'watch-now'} className={styles.btn}>
+                                    <img src={video} alt="video-icon" />
+                                    Watch now
+                                </Link>
+                            </div>
+
                         </div>
                     </div>
                 </div>

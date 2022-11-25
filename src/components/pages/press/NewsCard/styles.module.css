@@ -10,7 +10,8 @@
   display: flex;
   flex-shrink: 1;
   flex-direction: column;
-  width: 376px;
+  max-width: 376px;
+  width: 100%;
 }
 
 .newscard_image img {
@@ -90,7 +91,9 @@
   }
 
   .newscard_text .date {
-    font-size: 10px;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 10px;
   }
 
   .newscard_text .date img {

@@ -16,22 +16,29 @@ const TopNews = () => {
                 <div className={styles.topnews_image}>
                     <img src={newsImg1} alt="showing mic" />
                 </div>
-                <div className={styles.topnews_text}>
-                    <span className={styles.date}>
-                        <img src={calendar} alt="" />
-                        Nov 12, 2022
-                    </span>
+                <div className={`${styles.topnews_text} flex items-end`}>
 
-                    <h3>Go Pro to get more features</h3>
+                    <div>
 
-                    <p>
-                        When you sign up for our premium plan, you can take advantage of great features, get access to all the amazing 2D characters and customizing tools, and enjoy ad-free podcast.
-                    </p>
+                        <span className={styles.date}>
+                            <img src={calendar} alt="" />
+                            Nov 12, 2022 
+                        </span>
 
-                    <Link to={'#'} className={styles.btn}>
-                        Read now
-                    </Link>
+                        <h3>Go Pro to get more features</h3>
+
+                        <p>
+                            When you sign up for our premium plan, you can take advantage of great features, get access to all the amazing 2D characters and customizing tools, and enjoy ad-free podcast.
+                        </p>
+
+                        <Link to={'#'} className={styles.btn}>
+                            Read now
+                        </Link>
+
+                    </div>
+
                 </div>
+
             </div>
 
         </div>
