@@ -4,6 +4,7 @@ import smsIcon from '../../assets/icons/sms.svg';
 import cardIcon from '../../assets/icons/card.svg';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import styles from './checkout.module.css';
 const index = () => {
   const plan = [
     {
@@ -28,21 +29,24 @@ const index = () => {
   };
 
   return (
-    <TopNavbar>
-      <div />
-      <div className="checkout-page-wrapper">
-        <div className="checkout-page">
-          <div className="checkout-header">
-            <h1>CHECKOUT</h1>
-            <Link to="/pricing" className="closeBtn">
-              <AiOutlineClose />
+    <div className={styles.checkout_wrapper}>
+      <TopNavbar />
+      <div className={styles.checkout_page_wrapper}>
+        <div className={`${styles.checkout_page} mt-20`}>
+          <div className="bg-pri-600 items-center grid grid-cols-3 p-5 text-white">
+            <h1 className="col-start-2 text-center font-medium text-xl lg:text-2xl ">CHECKOUT</h1>
+
+            <Link to="/pricing" className=" ml-auto">
+              <AiOutlineClose color="white" />
             </Link>
           </div>
-          <form className="checkout-form">
-            <div className="form-group">
-              <div className="label"> Your Plan</div>
-              <div className="selctWrapper">
-                <select onChange={selectHandler}>
+          <form className="mx-auto w-[90%] mt-10">
+            <div className={styles.form_group}>
+              <div className={styles.label}> Your Plan</div>
+              <div className="">
+                <select
+                  onChange={selectHandler}
+                  className="w-full border border-[#8f9092] p-5 rounded-md">
                   {plan.map((value, index) => (
                     <option value={index} key={index}>
                       {value.plan}
@@ -52,15 +56,15 @@ const index = () => {
               </div>
             </div>
 
-            <div className="form-group">
+            <div className={`${styles.form_group} mt-10`}>
               {/* first input */}
               <div>
-                <div className="label">Your Billing Cycle</div>
-                <div className="radio-wrapper">
-                  <div className="radio-content">
-                    <input type="radio" className="billing-radio" name="billing" />
-                    <span>
-                      Billed yearly <small style={{ color: '#1877F2' }}>SAVE 20%</small>
+                <div className={styles.label}>Your Billing Cycle</div>
+                <div className={styles.radio_wrapper}>
+                  <div className={styles.radio_content}>
+                    <input type="radio" className={styles.billing_radio} name="billing" />
+                    <span className="lg:ml-5">
+                      Billed yearly <small className="text-pri-600 lg:ml-10 ">SAVE 20%</small>
                     </span>
                   </div>
                   <span>{planner.billingCircle?.yearly}</span>
@@ -69,39 +73,43 @@ const index = () => {
 
               {/* second input */}
               <div>
-                <div className="radio-wrapper">
-                  <div className="radio-content">
-                    <input type="radio" className="billing-radio" name="billing" />
-                    <span>Billed monthly</span>
+                <div className={styles.radio_wrapper}>
+                  <div className={styles.radio_content}>
+                    <input type="radio" className={styles.billing_radio} name="billing" />
+                    <span className="lg:ml-5">Billed monthly</span>
                   </div>
                   <span>{planner.billingCircle.monthly}</span>
                 </div>
               </div>
             </div>
 
-            <div className="form-group">
-              <div className="label"> Your payment method</div>
-              <div className="inputWrapper">
-                <img className="icon" src={smsIcon} alt="sms" />
-                <input type="email" placeholder="Email" />
+            <div className={`${styles.form_group} mt-10`}>
+              <div className={styles.label}> Your payment method</div>
+              <div className=" border border-[#8f9092] px-2 md:px-5 py-3 items-center flex gap-5 rounded-md mb-5">
+                <img className={styles.icon} src={smsIcon} alt="sms" />
+                <input type="email" placeholder="Email" className="outline-none" />
               </div>
             </div>
 
-            <div className="form-group">
-              <div className="inputWrapper">
-                <img className="icon" src={cardIcon} alt="sms" />
-                <input type="email" placeholder="Card number" />
+            <div className={styles.form_group}>
+              <div className={styles.inputWrapper}>
+                <img className={styles.icon} src={cardIcon} alt="sms" />
+                <input type="email" placeholder="Card number" className="outline-none" />
                 <span>MM/YY CVC</span>
               </div>
             </div>
 
-            <div className="form-group">
-              <button>Confirm and Pay</button>
+            <div className="lg:w-[60%] w-full mx-auto mt-5">
+              <Link to="/">
+                <button className="w-full py-4  text-white text-center rounded-lg bg-pri-600">
+                  Confirm and Pay
+                </button>
+              </Link>
             </div>
           </form>
         </div>
       </div>
-    </TopNavbar>
+    </div>
   );
 };
 
