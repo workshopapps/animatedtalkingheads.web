@@ -1,0 +1,105 @@
+.checkout_page_wrapper {
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../assets/icons/price_bg_two.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.checkout_page {
+  width: 70rem;
+  min-height: 796px;
+  background-color: #fff;
+}
+
+.form_group {
+  width: 100%;
+}
+.label {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+@media (min-width: 768px) {
+  .label {
+    font-size: 24px;
+  }
+}
+
+.radio_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #8f9092;
+  height: 57px;
+  padding: 0 3% 0 2%;
+  margin-bottom: 2%;
+}
+.radio_content {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
+  gap: 4px;
+}
+/* START CUSTOM RADIO BTN */
+
+.billing_radio {
+  width: 24px;
+  height: 24px;
+  transform: scale(1);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+.billing_radio:after {
+  border-radius: 15px;
+  display: inline-block;
+}
+
+.billing_radio:checked:after {
+  width: 12px;
+  height: 12px;
+  border-radius: 15px;
+  top: -0.5px;
+  left: 5.6px;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #1877f2;
+  content: '';
+}
+
+.selctWrapper {
+  padding: 0 3% 0 2%;
+  border: 1px solid #8f9092;
+  border-radius: 10px;
+}
+.select {
+  width: 100%;
+  height: 57px;
+  outline: none;
+}
+
+.inputWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #8f9092;
+  height: 57px;
+  padding: 0 3% 0 2%;
+  margin-bottom: 2%;
+}
+.icon {
+  width: 32px;
+}
+
+.input {
+  width: 100%;
+  outline: none;
+  margin-left: 1%;
+  flex-grow: 1;
+}

@@ -1,0 +1,33 @@
+.get_started {
+  min-height: 100vh;
+  background-image: url('../../assets/icons/price_bg_one.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mainInner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 10% 0;
+}
+.innerSecion {
+  background-color: #fff;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  padding: 10% 5%;
+  margin: 5% auto;
+  gap: 1rem;
+}
+@media (max-width: 768px) {
+  .innerSecion {
+    margin: 10% auto;
+    gap: 1rem;
+  }
+}
+.logo {
+  max-width: 76px;
+}
