@@ -17,7 +17,6 @@ jobs:
         
 
   build:
-    needs: run-tests
     runs-on: ubuntu-latest
     steps:
     - name: deploy to server
