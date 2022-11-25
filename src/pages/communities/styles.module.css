@@ -1,114 +1,103 @@
-.CommunityPageContainer {
-  color: #292d32;
+.background {
+  background: #f4f4f4;
 }
 
-.CommunityPageContainer > main,
-.CommunityPageContainer > ul,
-.CommunityPageContainer > .CommunityPageSubscribeHeader,
-.CommunityPageContainer > .CommunityPageSubscribeInfoContainer,
-.CommunityPageContainer > .CommunityPageLink {
-  padding-inline: 114px;
+.background2 {
+  background: rgba(230, 234, 238, 0.3);
 }
 
-.CommunityPageContainer > .CommunityPageUpcomingEventsBanner {
-  margin-inline: 114px;
-  width: calc(100% - (114px * 2));
-}
-
-.CommunityPageContainer main {
-  text-align: center;
-  margin-bottom: 140px;
-}
-
-.CommunityPageContainer main h1 {
+.headerText {
   font-weight: 700;
   font-size: 40px;
   line-height: 50px;
-  margin-top: 68px;
-  margin-bottom: 21px;
+  color: #292d32;
+  text-align: center;
 }
 
-.CommunityPageContainer main h2 {
+.subHeaderText {
+  font-family: 'Mulish';
+  font-style: normal;
   font-weight: 500;
   font-size: 32px;
   line-height: 40px;
-  margin-bottom: 55px;
-}
-
-.CommunityPageContainer main p {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 37px;
-  padding-right: 90px;
-}
-
-.CommunityPageContainer ul {
-  list-style: none;
-}
-
-.CommunityPageContainer > ul:first-of-type {
-  display: flex;
-  flex-direction: column;
-  gap: 65px;
-  margin-bottom: 120px;
-}
-
-.CommunityWhyChooseVox {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 84px;
-}
-
-.CommunityWhyChooseVox > div > p:first-of-type {
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 50px;
-}
-
-.CommunityWhyChooseVox > div > p:last-of-type {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 37px;
-}
-
-.reverse {
-  flex-direction: row-reverse;
-}
-
-.CommunityPageSubscribeHeader {
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 50px;
+  color: #292d32;
   text-align: center;
-  margin-bottom: 32px;
 }
 
-.CommunityPageSubscribeInfoContainer {
+.welcomeText {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 154%;
+  color: #292d32;
+  margin-top: 10px;
+}
+
+.story > div {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.story h3 {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 50px;
+  color: #292d32;
+  margin-top: 28px;
+}
+
+.story p {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 154%;
+  color: #292d32;
+  margin-top: 12px;
+}
+
+.newsletterHeading {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 50px;
+  color: #292d32;
+  text-align: center;
+}
+
+.subcribe {
   display: flex;
   width: 100%;
   gap: 6px;
+  margin-top: 32px;
   margin-bottom: 54px;
 }
 
-.CommunityPageSubscribeInfoContainer input {
-  flex: 1;
-  padding-left: 97px;
+.subcribe input {
+  text-indent: 97px;
   border: 1px solid #b0b0b0;
   border-radius: 10px 0px 0px 10px;
   outline: none;
+  flex-grow: 1;
+  background: #f4f4f4;
 }
 
-.CommunityPageSubscribeInfoContainer button {
+.subcribe input::placeholder {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.subcribe button {
   padding: 8px 8px 8px 14px;
   background: #2563eb;
   color: white;
   border-radius: 0px 10px 10px 0px;
   width: 202px;
   height: 56px;
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
 }
 
-.CommunityPageUpcomingEventsBanner {
+.eventsBanner {
   font-weight: 700;
   font-size: 48px;
   line-height: 60px;
@@ -123,88 +112,144 @@
   align-items: center;
 }
 
-.CommunityPageUpcomingEvents {
+.events {
   margin-top: 54px;
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   gap: 54px;
+  align-items: flex-start;
 }
 
-.CommunityPageUpcomingEventsListItem {
+.eventsListItem {
   display: flex;
   gap: 54px;
+  width: 100%;
+  padding-left: 0.5em;
 }
 
-.CommunityPageUpcomingEventsListItem > div {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.CommunityPageUpcomingEventsListItem > div > div > p:first-of-type {
+.eventsListDate {
   font-weight: 400;
-  font-size: 22px;
-  line-height: 37px;
+  font-size: 24px;
+  line-height: 154%;
   color: #2563eb;
 }
 
-.CommunityPageUpcomingEventsListItem > div > div > p:last-of-type {
+.eventsListTitle {
   font-weight: 500;
-  font-size: 30px;
+  font-size: 32px;
   line-height: 40px;
+  color: #292d32;
 }
 
-.CommunityPageUpcomingEventsListItem > div > button {
+.eventsListItem button {
   width: 123px;
   height: 56px;
   background: #2563eb;
-  padding: 18.5px 35.5px;
   border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
 }
 
-.CommunityPageLink {
-  margin-bottom: 25px;
+.viewAll {
   font-weight: 400;
-  font-size: 20px;
-  line-height: 37px;
+  font-size: 24px;
+  line-height: 154%;
   color: #2563eb;
-  text-align: right;
 }
 
-.CommunityPageLink:hover {
-  cursor: pointer;
-}
-
-.CommunityPageHeaderBanner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 54px 163px 63px 144px;
-  background: rgba(230, 234, 238, 0.3);
-}
-
-.CommunityPageHeaderBanner p:first-of-type {
+.annoucement h5 {
+  font-style: normal;
   font-weight: 500;
   font-size: 40px;
   line-height: 50px;
+  color: #292d32;
 }
 
-.CommunityPageHeaderBanner p:last-of-type {
-  padding-top: 26px;
+.annoucement p {
   font-weight: 400;
   font-size: 24px;
-  line-height: 37px;
+  line-height: 154%;
   color: #737479;
 }
 
-.CommunityPageAnnouncements {
-  display: flex;
-  flex-direction: column;
-  gap: 54px;
-  list-style: none;
-  margin-bottom: 54px;
+.lineHR {
+  margin-top: 21px;
+  display: block;
+  height: 0px;
+  border: 1px solid #cdcbcb;
+  transform: rotate(-0.04deg);
+}
+
+.annoucement2 {
+  padding: 22px 0px;
+  border-bottom: 1px solid #cdcbcb;
+}
+
+.annoucement2 h4 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 154%;
+  color: #2563eb;
+}
+
+.annoucement2 img {
+  width: 121px;
+  height: 99.22px;
+}
+
+.annoucement2 p {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.annoucement2 h6 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #737479;
+}
+
+.featureRequest {
+  padding: 24px 40px;
+  border-bottom: 1px solid #cdcbcb;
+}
+
+.featureRequest h4 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 154%;
+  color: #2563eb;
+}
+
+.featureRequestImgBg {
+  width: 100px;
+  height: 100px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.featureRequest img {
+  width: 30px;
+  height: 53px;
+}
+
+.featureRequest p {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.featureRequest h6 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #737479;
 }
 
 .CommunityPageAnnouncementsListItem {
@@ -237,270 +282,243 @@
   color: #737479;
 }
 
-.CommunityPageFeatureRequests {
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-  margin-bottom: 188px;
-  font-weight: 500;
-}
-
-.CommunityPageFeatureRequests > .CommunityPageAnnouncementsListItem > div > p:first-of-type {
-  font-size: 32px;
-  line-height: 40px;
-  color: #2563eb;
-}
-
-.CommunityPageFeatureRequests
-  > .CommunityPageAnnouncementsListItem
-  > div
-  > .CommunityPageAnnouncementsListItemText,
-.CommunityPageFeatureRequests > .CommunityPageAnnouncementsListItem > div > p:last-of-type {
-  font-size: 20px;
-  line-height: 25px;
-  color: #737479;
-}
-
-@media all and (min-width: 768px) and (max-width: 1024px) {
-  .CommunityWhyChooseVox img {
-    max-width: 60%;
-  }
-
-  .CommunityWhyChooseVox > div > p:first-of-type {
-    font-size: 36px;
-  }
-
-  .CommunityWhyChooseVox > div > p:last-of-type {
-    font-size: 22px;
-  }
-}
-
-@media all and (min-width: 480px) and (max-width: 768px) {
-  .CommunityWhyChooseVox {
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 18px;
-    text-align: center;
-  }
-}
-
-@media all and (max-width: 480px) {
-  .CommunityPageContainer > main,
-  .CommunityPageContainer > ul,
-  .CommunityPageContainer > .CommunityPageSubscribeHeader,
-  .CommunityPageContainer > .CommunityPageSubscribeInfoContainer,
-  .CommunityPageContainer > .CommunityPageLink {
-    padding-inline: 16px;
-  }
-
-  .CommunityPageContainer > .CommunityPageUpcomingEventsBanner {
-    margin-inline: 16px;
-    width: calc(100% - (16px * 2));
-  }
-
-  .CommunityPageContainer main h1 {
+@media all and (max-width: 756px) {
+  .headerText {
     font-weight: 600;
     font-size: 26px;
     line-height: 33px;
-    margin-top: 50px;
-    margin-bottom: 85px;
-  }
-
-  .CommunityPageContainer main h2 {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 30px;
-    margin-bottom: 27px;
-  }
-
-  .CommunityPageContainer main p {
-    padding-right: 16px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    margin-bottom: 43px;
-  }
-
-  .CommunityPageContainer ul {
-    flex-direction: column;
-  }
-
-  .CommunityPageContainer > ul:first-of-type {
-    gap: 10px;
-    margin-bottom: 28px;
-  }
-
-  .CommunityWhyChooseVox {
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 24px;
     text-align: center;
   }
 
-  .CommunityWhyChooseVox > div > p:first-of-type {
+  .subHeaderText {
+    height: 30px;
     font-weight: 600;
     font-size: 24px;
     line-height: 30px;
+    color: #292d32;
+    text-align: center;
+    margin-top: 85px;
   }
 
-  .CommunityWhyChooseVox > div > p:last-of-type {
+  .welcomeText {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
+    text-align: center;
+    margin-top: 20px;
   }
 
-  .CommunityPageSubscribeHeader {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .CommunityPageSubscribeInfoContainer {
-    display: flex;
-    width: 100%;
-    gap: 0;
-    margin-bottom: 54px;
-  }
-
-  .CommunityPageSubscribeInfoContainer input {
-    padding-left: 16px;
-    width: 70%;
-    border-radius: 5px 0px 0px 5px;
-  }
-
-  .CommunityPageSubscribeInfoContainer button {
-    padding: 6px;
-    border-radius: 0px 5px 5px 0px;
-    width: 30%;
-    height: 33px;
-  }
-
-  .CommunityPageUpcomingEventsBanner {
+  .eventsBanner {
     font-size: 24px;
     line-height: 30px;
     background-size: cover;
-    width: 398px;
+    width: 100%;
     height: 95px;
     border-radius: 5px;
     margin-bottom: 24px;
   }
 
-  .CommunityPageUpcomingEvents {
+  .events {
     margin-bottom: 8px;
     gap: 24px;
+    display: flex;
+    justify-content: flex-start;
   }
 
-  .CommunityPageUpcomingEventsListItem {
+  .eventsListDate {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .eventsListTitle {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #292d32;
+  }
+
+  .eventsListItem {
     display: flex;
     gap: 24px;
+    width: 100%;
+    padding-left: 0.5em;
   }
 
-  .CommunityPageUpcomingEventsListItem img {
+  .eventsListItem img {
     max-width: 110px;
     max-height: 113px;
   }
 
-  .CommunityPageUpcomingEventsListItem > div {
-    gap: 12px;
+  .eventsListItem > div {
+    gap: 0px;
   }
 
-  .CommunityPageUpcomingEventsListItem > div > div > p:first-of-type {
+  .eventsListItem button {
+    width: 92px;
+    height: 34px;
+    background: #2563eb;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .eventsListItem > div > div > p:first-of-type {
     font-weight: 500;
     font-size: 18px;
     line-height: 23px;
   }
 
-  .CommunityPageUpcomingEventsListItem > div > div > p:last-of-type {
+  .eventsListItem > div > div > p:last-of-type {
     font-size: 12px;
     line-height: 16px;
   }
 
-  .CommunityPageUpcomingEventsListItem > div > button {
+  .eventsListItem > div > button {
     width: 85px;
     height: 32px;
     padding: 9.5px 18px;
   }
 
-  .CommunityPageLink {
-    margin-bottom: 24px;
-    font-size: 16px !important;
-    line-height: 20px;
+  .featureRequest {
+    padding: 24px 10px;
+    border-bottom: 1px solid #cdcbcb;
   }
 
-  .CommunityPageHeaderBanner {
-    padding-top: 6px;
-    padding-inline: 18px;
-    padding-bottom: 12px;
-    margin-bottom: 25px;
+  .featureRequest h4 {
+    font-weight: 20px;
+    line-height: 25px;
   }
 
-  .CommunityPageHeaderBanner:last-of-type {
-    margin-top: 18px;
+  .featureRequestImgBg {
+    width: 50px;
+    height: 50px;
+    background: #ffffff;
+    border-radius: 50%;
   }
 
-  .CommunityPageHeaderBanner p:first-of-type {
+  .featureRequest img {
+    width: 30px;
+    height: 53px;
+  }
+
+  .featureRequest p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+  }
+
+  .featureRequest h6 {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #737479;
+  }
+
+  .annoucement h5 {
     font-weight: 600;
     font-size: 24px;
     line-height: 30px;
   }
 
-  .CommunityPageHeaderBanner p:last-of-type {
-    padding-top: 11px;
+  .annoucement p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #737479;
+  }
+
+  .annoucement2 h4 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .annoucement2 img {
+    width: 60.98px;
+    height: 50px;
+  }
+
+  .annoucement2 p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+  }
+
+  .annoucement2 h6 {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #737479;
+  }
+
+  .story > div {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .story h3 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    color: #292d32;
+    margin-top: 28px;
+    text-align: center;
+  }
+
+  .story p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 24px;
+  }
+
+  .viewAll {
+    font-weight: 500;
     font-size: 16px;
     line-height: 20px;
   }
 
-  .CommunityPageAnnouncements {
-    gap: 25px;
-    margin-bottom: 8px;
-  }
-
-  .CommunityPageAnnouncementsListItem {
-    align-items: center;
-    gap: 7.02px;
-    padding-left: 0;
-    padding-bottom: 21px;
-  }
-
-  .CommunityPageAnnouncementsListItem img {
-    align-self: flex-start;
-    max-width: 60.98px;
-    max-height: 50px;
-  }
-
-  .CommunityPageAnnouncementsListItem > div > p:first-of-type {
+  .newsletterHeading {
     font-weight: 500;
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
   }
 
-  .CommunityPageAnnouncements .CommunityPageListItemText {
+  .subcribe {
+    display: flex;
+    width: 100%;
+    gap: 0px;
+    margin-top: 32px;
+    margin-bottom: 54px;
+  }
+
+  .subcribe button {
+    padding: 8px 8px 8px 14px;
+    width: 127px;
+    height: 33px;
+    border-radius: 0px 5px 5px 0px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .subcribe input {
+    text-indent: 20px;
+    border: 1px solid #b0b0b0;
+    border-radius: 10px 0px 0px 10px;
+    outline: none;
+  }
+
+  .subcribe input::placeholder {
     font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-  }
-
-  .CommunityPageAnnouncementsListItem > div > p:last-of-type {
-    font-weight: 400;
     font-size: 12px;
-    line-height: 15px;
-  }
-
-  .CommunityPageFeatureRequests {
-    gap: 24px;
-    margin-bottom: 100px;
-  }
-
-  .CommunityPageFeatureRequests > .CommunityPageAnnouncementsListItem > div > p:first-of-type {
-    font-size: 18px;
-    line-height: 25px;
-  }
-
-  .CommunityPageFeatureRequests
-    > .CommunityPageAnnouncementsListItem
-    > div
-    > .CommunityPageListItemText,
-  .CommunityPageFeatureRequests > .CommunityPageAnnouncementsListItem > div > p:last-of-type {
-    font-size: 12px !important;
     line-height: 15px;
   }
 }

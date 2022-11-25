@@ -27,6 +27,16 @@
   }
 
   .audio-player {
+    input[type=range] {
+      height: 5px;
+      appearance: none;
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      background: #E5E5E5;
+      transition: background 0.2s ease;
+      cursor: pointer;
+    }
 
     .progress-bar-indicator::after {
       content: "";

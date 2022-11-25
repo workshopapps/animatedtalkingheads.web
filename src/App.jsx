@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Home from './pages';
 import About from './pages/about';
-import CustomizeAudio from './pages/customize-audio';
+import CustomizeAudio from './pages/podcast/customization';
 import Docs from './pages/FEdocs';
 import Blog from './pages/blogs';
 import Careers from './pages/careers';

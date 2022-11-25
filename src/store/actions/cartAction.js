@@ -1,4 +1,4 @@
-import { ADD_ITEM, DELETE_ITEM } from '../actionsTypes/actionTypes';
+import { ADD_ITEM, ADD_PODCAST_ITEM, DELETE_ITEM } from '../actionsTypes/actionTypes';
 
 const addItem = () => ({
   type: ADD_ITEM,
@@ -10,4 +10,8 @@ const deleteItem = () => ({
   payload: 'delete Item payload'
 });
 
-export { addItem, deleteItem };
+const addPodcast = (data) => ({
+  type: ADD_PODCAST_ITEM,
+  payload: data
+});
+export { addItem, deleteItem, addPodcast };

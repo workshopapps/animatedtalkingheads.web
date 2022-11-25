@@ -1,10 +1,6 @@
-.bg {
-  background: #f9fafb;
-}
-
 .heroBg {
   width: 100%;
-  height: 216px;
+  padding: 4rem 0;
   background: #2158d2;
   font-weight: 600;
   font-size: 48px;
@@ -33,17 +29,6 @@
   width: 176px;
   height: 43px;
   margin-top: 40px;
-}
-
-@media screen and (max-width: 756px) {
-  .heroBg {
-    height: 129px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 35px;
-    color: #ffffff;
-  }
 }
 
 @media screen and (max-width: 756px) {
