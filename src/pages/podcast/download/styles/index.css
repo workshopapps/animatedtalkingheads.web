@@ -57,6 +57,52 @@ section.download-video-section .download-video .page-content .desktop-lhs .video
   background: rgba(0, 0, 0, 0.4);
   border-radius: 0px 0px 10px 10px;
 }
+section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .timeline-container {
+  height: 8px;
+  margin-inline: 0.5rem;
+  border-radius: 60px;
+  display: flex;
+  cursor: pointer;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .timeline-container:hover .timeline {
+  height: 100%;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .timeline-container .timeline {
+  margin: auto 0;
+  width: 100%;
+  border-radius: 60px;
+  background-color: #E4E4E5;
+  height: 0px;
+  transition: height 150ms ease-in-out;
+  position: relative;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .timeline-container .timeline .thumb-indicator {
+  --scale: 1;
+  position: absolute;
+  transform: translateX(-50%) scale(var(--scale));
+  height: 200%;
+  top: -50%;
+  left: calc(var(--progress-position) * 100%);
+  background-color: red;
+  aspect-ratio: 1/1;
+  z-index: 400;
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .timeline-container .timeline::before {
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  bottom: 0;
+  right: calc(100% - var(--preview -position) * 100%);
+}
+section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .timeline-container .timeline::after {
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  bottom: 0;
+  right: calc(100% - var(--progress-position) * 100%);
+}
 section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .controls {
   display: flex;
   gap: 0.5rem;
