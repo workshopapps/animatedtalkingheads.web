@@ -211,18 +211,13 @@ const About = () => {
                         "--swiper-navigation-size": "25px",
                         "--swiper-navigation-color": "#171d2e",
                       }}
-
                       modules={[Pagination, Navigation]}
-
                       loopFillGroupWithBlank={true}
                       navigation={true}
-                      slidesPerView={4.5}
-                      spaceBetween={40}
-
+                      slidesPerView={4}
+                      spaceBetween={1}
                       slidesPerGroup={1}
                       loop={true}>
-
-
                       {Management.map((slide) => (
                         <SwiperSlide className={style.aboutTeamSlide} key={slide.name} >
                           <img src={slide.image} alt="" />
@@ -245,18 +240,13 @@ const About = () => {
                         "--swiper-navigation-size": "25px",
                         "--swiper-navigation-color": "#171d2e",
                       }}
-
                       modules={[Pagination, Navigation]}
-
                       loopFillGroupWithBlank={true}
                       navigation={true}
                       slidesPerView={1}
                       spaceBetween={40}
-
                       slidesPerGroup={1}
                       loop={true}>
-
-
                       {Management.map((slide) => (
                         <SwiperSlide className={style.aboutTeamSlide} key={slide.name} >
                           <img src={slide.image} alt="" />
@@ -291,18 +281,13 @@ const About = () => {
                         "--swiper-navigation-size": "25px",
                         "--swiper-navigation-color": "#171d2e",
                       }}
-
                       modules={[Pagination, Navigation]}
-
                       loopFillGroupWithBlank={true}
                       navigation={true}
-                      slidesPerView={4.5}
+                      slidesPerView={4}
                       spaceBetween={40}
-
                       slidesPerGroup={1}
                       loop={true}>
-
-
                       {Engineering.map((slide) => (
                         <SwiperSlide className={style.aboutTeamSlide} key={slide.name} >
                           <img src={slide.image} alt="" />
@@ -327,15 +312,13 @@ const About = () => {
                         "--swiper-navigation-color": "#171d2e",
                       }}
                       modules={[Pagination, Navigation]}
-
                       loopFillGroupWithBlank={true}
                       navigation={true}
-                      slidesPerView={4.5}
-                      spaceBetween={40} 
+                      slidesPerView={4}
+                      spaceBetween={1} 
+                      spaceAround={1}
                       slidesPerGroup={1}
                       loop={true}>
-
-
                       {Design.map((slide) => (
                         <SwiperSlide className={style.aboutTeamSlide} key={slide.name} >
                           <img src={slide.image} alt="" />
@@ -363,8 +346,8 @@ const About = () => {
 
                       loopFillGroupWithBlank={true}
                       navigation={true}
-                      slidesPerView={4.5}
-                      spaceBetween={40}
+                      slidesPerView={4}
+                      spaceBetween={1}
                       slidesPerGroup={1}
                       loop={true}>
 
