@@ -68,6 +68,59 @@ section.download-video-section {
             background: rgba(0, 0, 0, 0.4);
             border-radius: 0px 0px 10px 10px;
 
+            .timeline-container{
+              height: 8px;
+              margin-inline: .5rem;
+              border-radius: 60px;
+              // background-color: #E4E4E5;
+              display: flex;
+              cursor: pointer;
+
+              &:hover .timeline{
+                height: 100%;
+              }
+
+              .timeline{
+                margin: auto 0;
+                width: 100%;
+                border-radius: 60px;
+                background-color: #E4E4E5;
+                height: 0px;
+                transition: height 150ms ease-in-out;
+                position: relative;
+
+                .thumb-indicator{
+                  --scale: 1;
+                  position: absolute;
+                  transform:  translateX(-50%) scale(var(--scale));
+                  height: 200%;
+                  top: -50%;
+                  left: calc(var(--progress-position) * 100%);
+                  background-color: red;
+                  aspect-ratio: 1/1;
+                  z-index: 400;
+                }
+
+                &::before{
+                  content: '';
+                  left: 0;
+                  top: 0;
+                  position: absolute;
+                  bottom: 0;
+                  right: calc(100% - var(--preview -position) * 100%);
+                }
+
+                &::after{
+                  content: '';
+                  left: 0;
+                  top: 0;
+                  position: absolute;
+                  bottom: 0;
+                  right: calc(100% - var(--progress-position) * 100%);
+                }
+              }
+            }
+
             .controls {
               display: flex;
               gap: 0.5rem;

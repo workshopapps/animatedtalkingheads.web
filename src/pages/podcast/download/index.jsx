@@ -1,5 +1,5 @@
 import Layout from '../../../components/UI/Layout';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import '../download/styles/index.css'
 import video from './assets/video.mp4'
 // import '../../../components/UI/Button/button.module.scss'
@@ -71,6 +71,26 @@ const DownloadPodcast = () => {
   //   window.location.href = {video}
   // }
 
+  // PlayBack Speed
+
+  const [playbackRate, setPlaybackRate] = useState(1);
+
+  useEffect(() => {
+    videoRef.current.playbackRate = playbackRate;
+ }, [playbackRate]);
+
+  const fastForward = () => {
+    if(playbackRate <= 5){
+      setPlaybackRate(prevPlayBackRate => prevPlayBackRate + 5);
+    }
+  }
+
+  const backForward = () => {
+    if(playbackRate >= 5){
+      setPlaybackRate(prevPlayBackRate => prevPlayBackRate - 5)
+    }
+  }
+
   return <Layout>
     <section className='download-video-section'>
       <div className='download-video'>
@@ -80,14 +100,18 @@ const DownloadPodcast = () => {
               <div className={containerToggleClass()}>
                 {/* <iframe width="560" height="315" src="https://player.vimeo.com/video/499958263?h=06b4122553" title="VoxClips video player" allowFullScreen></iframe> */}
                 <div className='video-controls-container'>
-                   <div className='timeline-container'></div>
+                   <div className='timeline-container'>
+                    <div className='timeline'>
+                      <div className='thumb-indicator'></div>
+                    </div>
+                   </div>
                    <div className='controls'>
-                    <button className='rewind-button'><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><path stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21.54 27.918v-5.34l-1.5 1.67M22.02 16.47 24 14"/><path stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16.91 19.799c-1.11 1.48-1.8 3.31-1.8 5.31a8.89 8.89 0 0 0 8.89 8.89 8.89 8.89 0 0 0 8.89-8.89 8.89 8.89 0 0 0-8.89-8.89c-.68 0-1.34.09-1.98.24"/><path stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M26 22.578c1.1 0 2 .9 2 2v1.35c0 1.1-.9 2-2 2s-2-.9-2-2v-1.35a2 2 0 0 1 2-2Z"/></svg></button>
+                    <button onClick={backForward}  className='rewind-button'><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><path stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21.54 27.918v-5.34l-1.5 1.67M22.02 16.47 24 14"/><path stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16.91 19.799c-1.11 1.48-1.8 3.31-1.8 5.31a8.89 8.89 0 0 0 8.89 8.89 8.89 8.89 0 0 0 8.89-8.89 8.89 8.89 0 0 0-8.89-8.89c-.68 0-1.34.09-1.98.24"/><path stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M26 22.578c1.1 0 2 .9 2 2v1.35c0 1.1-.9 2-2 2s-2-.9-2-2v-1.35a2 2 0 0 1 2-2Z"/></svg></button>
                     <button onClick={togglePlay} className='play-pause-button'>
                       <svg className='pause-icon' xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><path fill="#fff" d="M22.65 31.11V16.89c0-1.35-.57-1.89-2.01-1.89h-3.63c-1.44 0-2.01.54-2.01 1.89v14.22c0 1.35.57 1.89 2.01 1.89h3.63c1.44 0 2.01-.54 2.01-1.89ZM33.002 31.11V16.89c0-1.35-.57-1.89-2.01-1.89h-3.63c-1.43 0-2.01.54-2.01 1.89v14.22c0 1.35.57 1.89 2.01 1.89h3.63c1.44 0 2.01-.54 2.01-1.89Z"/></svg>
                       <svg className='play-icon' xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><path fill="#fff" d="M15 18.134v11.734c0 2.403 2.86 3.912 5.143 2.71l5.572-2.93 5.573-2.944c2.283-1.201 2.283-4.205 0-5.407l-5.573-2.943-5.572-2.93C17.86 14.222 15 15.718 15 18.134Z"/></svg>
                     </button>
-                    <button className='rewind-button'><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><path stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M25.98 16.47 24 14M31.09 19.799c1.11 1.48 1.8 3.31 1.8 5.31a8.89 8.89 0 0 1-8.89 8.89 8.89 8.89 0 0 1-8.89-8.89 8.89 8.89 0 0 1 8.89-8.89c.68 0 1.34.09 1.98.24"/><path stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21.54 27.918v-5.34l-1.5 1.67M26 22.578c1.1 0 2 .9 2 2v1.35c0 1.1-.9 2-2 2s-2-.9-2-2v-1.35a2 2 0 0 1 2-2Z"/></svg></button>
+                    <button onClick={fastForward} className='forward-button'><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><path stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M25.98 16.47 24 14M31.09 19.799c1.11 1.48 1.8 3.31 1.8 5.31a8.89 8.89 0 0 1-8.89 8.89 8.89 8.89 0 0 1-8.89-8.89 8.89 8.89 0 0 1 8.89-8.89c.68 0 1.34.09 1.98.24"/><path stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21.54 27.918v-5.34l-1.5 1.67M26 22.578c1.1 0 2 .9 2 2v1.35c0 1.1-.9 2-2 2s-2-.9-2-2v-1.35a2 2 0 0 1 2-2Z"/></svg></button>
                     <button className='subtitle-button'><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><path fill="#fff" d="M28.19 14h-8.38C16.17 14 14 16.17 14 19.81v8.37c0 3.65 2.17 5.82 5.81 5.82h8.37c3.64 0 5.81-2.17 5.81-5.81v-8.38C34 16.17 31.83 14 28.19 14ZM18.5 24.57h2.77c.41 0 .75.34.75.75s-.34.75-.75.75H18.5c-.41 0-.75-.34-.75-.75s.34-.75.75-.75Zm6.47 5.26H18.5c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h6.47a.749.749 0 1 1 0 1.5Zm4.53 0h-1.85c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h1.85c.41 0 .75.34.75.75s-.34.75-.75.75Zm0-3.76h-5.53c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h5.53c.41 0 .75.34.75.75s-.34.75-.75.75Z"/></svg></button>
                     <button onClick={toggleFullScreen} className='full-screen-button'><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><path fill="#fff" d="M18 17.25a.75.75 0 0 0-.75.75v2.421a1.125 1.125 0 1 1-2.25 0V18a3 3 0 0 1 3-3h2.421a1.125 1.125 0 1 1 0 2.25H18Zm8.454-1.125A1.125 1.125 0 0 1 27.579 15H30a3 3 0 0 1 3 3v2.421a1.125 1.125 0 1 1-2.25 0V18a.75.75 0 0 0-.75-.75h-2.421a1.125 1.125 0 0 1-1.125-1.125ZM16.125 26.454a1.125 1.125 0 0 1 1.125 1.125V30a.75.75 0 0 0 .75.75h2.421a1.125 1.125 0 1 1 0 2.25H18a3 3 0 0 1-3-3v-2.421a1.125 1.125 0 0 1 1.125-1.125Zm15.75 0A1.125 1.125 0 0 1 33 27.579V30a3 3 0 0 1-3 3h-2.421a1.125 1.125 0 1 1 0-2.25H30a.75.75 0 0 0 .75-.75v-2.421a1.125 1.125 0 0 1 1.125-1.125Z"/></svg></button>
                    </div>
