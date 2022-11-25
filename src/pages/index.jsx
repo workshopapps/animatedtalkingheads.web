@@ -113,9 +113,11 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="mb-10 w-[10.785rem] pt-16 md:pt-0 mx-auto">
-            <Button label={'get started'} />
-          </div>
+          <Link to="/podcast/upload">
+            <div className="mb-10 max-w-[11.785rem] pt-16 md:pt-0 mx-auto">
+              <Button label={'get started'} />
+            </div>
+          </Link>
         </div>
       </section>
       <section className="bg-[#fbfbfb] ">
@@ -163,7 +165,9 @@ const Home = () => {
             <h3 className="font-bold md:text-[32px] text-base mb-3 md:mb-8 w-44 md:w-[365px] md:leading-[50px]  text-sec">
               Conveniently download your output on different video qualities
             </h3>
-            <Button label={"Let's Go"} />
+            <Link to="/podcast/upload">
+              <Button label={"Let's Go"} />
+            </Link>
           </article>
           <div>
             <div className="flex justify-between-items-center  md:gap-10 gap-[10px] mb-[10px] md:mb-10 ">

@@ -58,14 +58,15 @@ const HowItWorks = () => {
               captivating environment for viewers. Convert your audio podcasts to eyecatching videos
               in few clicks.
             </p>
-
-            <button className=" text-base flex gap-3 items-center bg-pri-600 px-6 py-3 rounded-md text-white cursor-pointer">
-              Watch Tutorial Video
-              <img src={arrowDownIcon} alt="arrow-down-icon" />
-            </button>
+            <a href="#watch_video" className="transition">
+              <button className=" text-base flex gap-3 items-center bg-pri-600 px-6 py-3 rounded-md text-white cursor-pointer">
+                Watch Tutorial Video
+                <img src={arrowDownIcon} alt="arrow-down-icon" />
+              </button>
+            </a>
           </section>
 
-          <section className=" flex flex-col gap-8 py-6">
+          <section id="watch_video" className=" flex flex-col gap-8 py-6">
             {items.map((item) => (
               <div
                 key={item.id}
