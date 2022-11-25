@@ -6,7 +6,7 @@ import downloadIllustration from '../../assets/how-it-works/Group 828.svg';
 import documentUploadIcon from '../../assets/how-it-works/icons/document-download.svg';
 import documentDownloadIcon from '../../assets/how-it-works/icons/document-upload.svg';
 import uploadArrowUp from '../../assets/how-it-works/icons/arrow-up.svg';
-import videoThumbnailImg from '../../assets/how-it-works/Frame 34667.svg';
+// import videoThumbnailImg from '../../assets/how-it-works/Frame 34667.svg';
 
 import styles from './styles.module.css';
 import { Link } from 'react-router-dom';
@@ -58,14 +58,15 @@ const HowItWorks = () => {
               captivating environment for viewers. Convert your audio podcasts to eyecatching videos
               in few clicks.
             </p>
-
-            <button className=" text-base flex gap-3 items-center bg-pri-600 px-6 py-3 rounded-md text-white cursor-pointer">
-              Watch Tutorial Video
-              <img src={arrowDownIcon} alt="arrow-down-icon" />
-            </button>
+            <a href="#watch_video" className="transition">
+              <button className=" text-base flex gap-3 items-center bg-pri-600 px-6 py-3 rounded-md text-white cursor-pointer">
+                Watch Tutorial Video
+                <img src={arrowDownIcon} alt="arrow-down-icon" />
+              </button>
+            </a>
           </section>
 
-          <section className=" flex flex-col gap-8 py-6">
+          <section id="watch_video" className=" flex flex-col gap-8 py-6">
             {items.map((item) => (
               <div
                 key={item.id}
@@ -90,7 +91,7 @@ const HowItWorks = () => {
             ))}
           </section>
 
-          <section className=" flex flex-col justify-center items-center py-5 px-4">
+          {/* <section className=" flex flex-col justify-center items-center py-5 px-4">
             <h3 className=" text-xl text-center text-pri-600 font-medium">
               UPLOAD, CUSTOMISE, DOWNLOAD
             </h3>
@@ -102,7 +103,7 @@ const HowItWorks = () => {
               src={videoThumbnailImg}
               alt=""
             />
-          </section>
+          </section> */}
         </div>
 
         <section
