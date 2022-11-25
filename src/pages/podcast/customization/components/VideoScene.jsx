@@ -1,25 +1,20 @@
 import { Text } from '../../../../components/UI/Text';
-// import caretRight from '../../assets/icons/carretRight.svg';
-// import toggle from '../../assets/icons/toggle.svg';
-// import speakerOne from '../../../../assets/images/headOne.png';
+
 import speakerTwo from '../../../../assets/images/headerTwo.png';
-// import audioWidget from '../../assets/images/audioWidget.png';
-// import timestamp from '../../assets/images/timeStamp.png';
-// import speakerTwo from '../../../assets/avatars/avatars-side/side8.png';
-// import user from '../../assets/icons/user.svg';
-import '../customize-audio.scss';
+
 import bg1 from '../../../../assets/images/scenery/background1.png';
 import bg2 from '../../../../assets/images/scenery/background2.png';
 import bg3 from '../../../../assets/images/scenery/background3.png';
 import bg4 from '../../../../assets/images/scenery/background4.png';
 import bg5 from '../../../../assets/images/scenery/background5.png';
-// import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
+
 import { BiEditAlt } from 'react-icons/bi';
 import CustomiseCharacterModal from './modal';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { useState } from 'react';
-// import { Button } from '../../components/UI/Button';
+
 import store from '../../../../store/store.js';
+// import { setAvatar, setBackgound } from '../../../../store/actions/customizeVideoActions';
 
 const CustomizeAudio = ({ speakets }) => {
   const [currentScene, setCurrentScene] = useState(0);
@@ -32,6 +27,7 @@ const CustomizeAudio = ({ speakets }) => {
     switch (mode) {
       case 'next':
         if (currentScene < sceneAray.length - 1) {
+          // setBackgound()
           return setCurrentScene(currentScene + 1);
         } else return;
 

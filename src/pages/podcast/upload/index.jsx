@@ -1,6 +1,10 @@
 import Layout from '../../../components/UI/Layout';
 import microphone from '../../../assets/icons/upload_podcast/microphone-podcast_upload.svg';
 import musicnote from '../../../assets/icons/upload_podcast/musicnote.svg';
+// import google from '../../../assets/icons/upload_podcast/google-drive.svg';
+// import dropbox from '../../../assets/icons/upload_podcast/dropbox.svg';
+// import one_drive from '../../../assets/icons/upload_podcast/one-drive.svg';
+// import link from '../../../assets/icons/upload_podcast/bx_link.svg';
 import music from '../../../assets/icons/upload_podcast/music.svg';
 import correct from '../../../assets/icons/upload_podcast/correct.svg';
 import { Button } from '../../../components/UI/Button';
@@ -11,9 +15,11 @@ import styles from '../upload/index.module.scss';
 import { Link } from 'react-router-dom';
 import { useDropzone } from 'react-dropzone';
 import { audio_formats } from './audio';
-import { addPodcast } from '../../../store/actions/cartAction';
+import store from '../../../store/store';
 
 const UploadPodcast = () => {
+  console.log(store.getState());
+
   const [audio, setAudio] = useState(null);
   const [name, setName] = useState(null);
   const [upload, setUpload] = useState(false);
@@ -55,7 +61,7 @@ const UploadPodcast = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        uploadPodcast(data);
+        store.dispatch({ type: 'ADD_PODCAST_ITEM', payload: data });
         setUpload(false);
         setUploaded(true);
       })
@@ -67,10 +73,6 @@ const UploadPodcast = () => {
         setLoading({ ...loading, isDisabled: false });
         console.log(err.message);
       });
-  };
-
-  const uploadPodcast = (data) => {
-    addPodcast(data);
   };
 
   return (

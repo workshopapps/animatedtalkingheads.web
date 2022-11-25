@@ -2,55 +2,27 @@ import React, { useState } from 'react';
 import Layout from '../../../components/UI/Layout';
 import { Text } from '../../../components/UI/Text';
 import caretRight from '../../../assets/icons/carretRight.svg';
-// import toggle from '../../../assets/icons/toggle.svg';
+
 import { Link } from 'react-router-dom';
-// import sceneBg from '../../assets/images/sceneBg.png';
-// import speakerOne from '../../assets/images/headOne.png';
-// import audioWidget from '../../assets/images/audioWidget.png';
-// import timestamp from '../../../assets/images/timeStamp.png';
-// import speakerTwo from '../../assets/images/headerTwo.png';
+
 import user from '../../../assets/icons/user.svg';
 import './customize-audio.scss';
 import VideoScene from './components/VideoScene';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-// import { BiEditAlt } from 'react-icons/bi';
-// import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+
 import { Button } from '../../../components/UI/Button';
-// import ReactAudioPlayer from 'react-audio-player';
+
 import AudioWidget from './components/AudioWidget';
 
-import store from '../../../store/store.js';
-// import { setAvatar, setBg } from '../../../store/actions/customizeVideoActions';
+// import store from '../../../store/store.js';
+import { setAvatar } from '../../../store/actions/customizeVideoActions';
 
 const CustomizeAudio = () => {
   const [numberOfSpeakers, setNumbers] = useState(1);
-  // const [isPlaying, setIsplaying] = useState(false)
-
-  // const audioElement = new Audio(mp3);
-
-  // function playHandler() {
-
-  //   console.log("isplaying: ", isPlaying);
-  //   if (isPlaying) {
-  //     audioElement.pause()
-  //     setIsplaying(!isPlaying)
-  //   } else {
-  //     audioElement.play()
-  //     setIsplaying(!isPlaying)
-
-  //   }
-  // }
-
-  // ./uploads/podcasts/637fe8e8ddc92960e1891345/637fe8e8ddc92960e1891345-1669327081098-kina.mp3
-
-  console.log(store.getState());
 
   function setAV() {
     console.log('ca;;ing');
-    store.dispatch({ type: 'ADD_AVATAR', payload: 'eojifo jpo pf h uiandfiun' });
-    // setAvatar('fojofj pgiu isfnvisnfivnuisdfnviusfndbd')
-    // setBg('fojofj pgiu isfnvisnfivnuisdfnviusfndbd')
-    // console.log(store.getState().customizeVideoReducer);
+    setAvatar('now i am in the store');
   }
 
   function SpeakersCountHandler(mode) {
@@ -66,6 +38,28 @@ const CustomizeAudio = () => {
         } else return;
     }
   }
+
+  // render video from api
+  // const RenderVideo = async () => {
+  //   const videoObject = {
+  //     head_file_path: store.getState().customizeVideoReducer.avatarType,
+  //     scene_file_path: store.getState().customizeVideoReducer.backgroundType,
+  //     id: store.getState().cartReducer.podcast_audio.user_id
+  //   };
+
+  //   await fetch('https://api.voxlips.hng.tech/', {
+  //     method: 'POST',
+  //     mode: 'cors',
+  //     body: videoObject
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data, 'from video object upload');
+  //     })
+  //     .catch((err) => {
+  //       console.log(err.message, 'error from video object');
+  //     });
+  // };
 
   return (
     <Layout>
@@ -141,18 +135,7 @@ const CustomizeAudio = () => {
           <AudioWidget />
           {/* current podcast's audio player widget  end*/}
 
-          <div className="customization-center-timestamp w-full my-6 space-y-3">
-            {/* <div className="header middle space-x-3">
-              <img src={toggle} alt="" />
-              <Text w={'md'} type={'text4'} cap className={'text-[#666666]'}>
-                Time Stamp (Who is speaking?)
-              </Text>
-            </div> */}
-            {/* 
-            <div className="audio_widget_wrapper w-full  border">
-              <img src={timestamp} alt="" />
-            </div> */}
-          </div>
+          <div className="customization-center-timestamp w-full my-6 space-y-3"></div>
         </main>
 
         <div className="centered w-full my-[5%]">

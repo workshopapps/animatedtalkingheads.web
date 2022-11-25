@@ -5,8 +5,8 @@ import Card from './Card';
 // import { routes } from "../../libs/links";
 import { data } from './data';
 import { useSearchParams } from 'react-router-dom';
-import { ReactComponent as Search } from './assets/search-blue.svg';
-import { ReactComponent as SearchWhite } from './assets/search-white.svg';
+// import { ReactComponent as Search } from './assets/search-blue.svg';
+// import { ReactComponent as SearchWhite } from './assets/search-white.svg';
 
 const rows = 5;
 const Blog = () => {
@@ -39,7 +39,7 @@ const Blog = () => {
           <p>All about audio, animations, podcasting and more!</p>
         </div>
         <main className={styles.blog__main}>
-          <div className={styles.blog__sidebar}>
+          {/* <div className={styles.blog__sidebar}>
             <div className={styles.blog__form}>
               <SearchWhite />
               <input type="text" />
@@ -54,11 +54,11 @@ const Blog = () => {
               <li>Research</li>
               <li>Social Media</li>
             </ul>
-          </div>
+          </div> */}
+
           <div className={styles.blog__content}>
             <div className={styles.blog__heading}>
               <h2>Latest Post</h2>
-              <Search />
             </div>
             <div className={styles.blog__grid}>
               {data.slice(start, end).map((el, index) => {
