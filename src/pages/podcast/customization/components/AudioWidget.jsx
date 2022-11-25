@@ -1,30 +1,52 @@
 import { Text } from '../../../../components/UI/Text';
 import '../customize-audio.scss';
-import bg1 from '../../../../assets/images/scenery/background1.png';
-import bg2 from '../../../../assets/images/scenery/background2.png';
-import bg3 from '../../../../assets/images/scenery/background3.png';
-import bg4 from '../../../../assets/images/scenery/background4.png';
-import bg5 from '../../../../assets/images/scenery/background5.png';
+// import bg1 from '../../../../assets/images/scenery/background1.png';
+// import bg2 from '../../../../assets/images/scenery/background2.png';
+// import bg3 from '../../../../assets/images/scenery/background3.png';
+// import bg4 from '../../../../assets/images/scenery/background4.png';
+// import bg5 from '../../../../assets/images/scenery/background5.png';
 import { TiMediaPlay } from 'react-icons/ti';
 import { BsPauseFill } from 'react-icons/bs';
 import React, { useState, useEffect, useRef } from 'react';
 import { ReactComponent as Rewinder } from '../../../../assets/icons/customize-audio/rewind.svg';
 import { ReactComponent as Ffwd } from '../../../../assets/icons/customize-audio/ffw.svg';
 // import mp3 from '../../../../assets/audios/audio.mp3'
-
-const audioElement = new Audio();
+import store from '../../../../store/store';
+// const audioElement = new Audio(
+//   'https://api.voxlips.hng.tech/uploads/podcasts/63808d4d4bc8c564bd5130a2/63808d4d4bc8c564bd5130a2-1669369165753-kina.mp3'
+// );
 
 const CustomizeAudio = () => {
   const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  // const [podcast, setPocast] = useState('');
+
+  // console.log(podcast, 'before audio element is create');
+
+  // console.log(podcast, 'form file', audioElement);
+  const getAudioFromStore = () => {
+    // If not already playing, start
+    const audioPath = store.getState().cartReducer.podcast_audio.file_path;
+    if (audioPath) {
+      // contact audiopath with base url
+      let baseUrl = 'https://api.voxlips.hng.tech';
+      const userPodcast = baseUrl.concat(audioPath.slice(1));
+      return userPodcast;
+    }
+  };
+
+  const audioElement = new Audio(getAudioFromStore());
+
   // Refs
   const audioRef = useRef(audioElement);
   const intervalRef = useRef();
-  const sceneAray = [bg1, bg2, bg3, bg4, bg5];
-  console.log(sceneAray.length);
+  // const sceneAray = [bg1, bg2, bg3, bg4, bg5];
+  // console.log(sceneAray.length);
   const { duration } = audioRef.current;
-  console.log(duration);
+  // console.log(duration);
+
   //   useEffects
+
   useEffect(() => {
     if (isPlaying) {
       audioRef.current.play();
