@@ -227,8 +227,8 @@ const About = () => {
                         modules={[Pagination, Navigation]}
                         loopFillGroupWithBlank={true}
                         navigation={true}
-                        slidesPerView={4.5}
-                        spaceBetween={40}
+                        slidesPerView={4}
+                        spaceBetween={1}
                         slidesPerGroup={1}
                         loop={true}>
                         {Management.map((slide) => (
@@ -253,7 +253,7 @@ const About = () => {
                         loopFillGroupWithBlank={true}
                         navigation={true}
                         slidesPerView={1}
-                        spaceBetween={40}
+                        spaceBetween={1}
                         slidesPerGroup={1}
                         loop={true}>
                         {Management.map((slide) => (
@@ -280,7 +280,7 @@ const About = () => {
                         modules={[Pagination, Navigation]}
                         loopFillGroupWithBlank={true}
                         navigation={true}
-                        slidesPerView={4.5}
+                        slidesPerView={4}
                         spaceBetween={40}
                         slidesPerGroup={1}
                         loop={true}>
@@ -306,7 +306,7 @@ const About = () => {
                         modules={[Pagination, Navigation]}
                         loopFillGroupWithBlank={true}
                         navigation={true}
-                        slidesPerView={4.5}
+                        slidesPerView={4}
                         spaceBetween={40}
                         slidesPerGroup={1}
                         loop={true}>
@@ -332,8 +332,8 @@ const About = () => {
                         modules={[Pagination, Navigation]}
                         loopFillGroupWithBlank={true}
                         navigation={true}
-                        slidesPerView={4.5}
-                        spaceBetween={40}
+                        slidesPerView={4}
+                        spaceBetween={1}
                         slidesPerGroup={1}
                         loop={true}>
                         {Marketing.map((slide) => (
