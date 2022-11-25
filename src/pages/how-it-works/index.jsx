@@ -6,7 +6,7 @@ import downloadIllustration from '../../assets/how-it-works/Group 828.svg';
 import documentUploadIcon from '../../assets/how-it-works/icons/document-download.svg';
 import documentDownloadIcon from '../../assets/how-it-works/icons/document-upload.svg';
 import uploadArrowUp from '../../assets/how-it-works/icons/arrow-up.svg';
-import videoThumbnailImg from '../../assets/how-it-works/Frame 34667.svg';
+// import videoThumbnailImg from '../../assets/how-it-works/Frame 34667.svg';
 
 import styles from './styles.module.css';
 import { Link } from 'react-router-dom';
@@ -91,7 +91,7 @@ const HowItWorks = () => {
             ))}
           </section>
 
-          <section className=" flex flex-col justify-center items-center py-5 px-4">
+          {/* <section className=" flex flex-col justify-center items-center py-5 px-4">
             <h3 className=" text-xl text-center text-pri-600 font-medium">
               UPLOAD, CUSTOMISE, DOWNLOAD
             </h3>
@@ -103,7 +103,7 @@ const HowItWorks = () => {
               src={videoThumbnailImg}
               alt=""
             />
-          </section>
+          </section> */}
         </div>
 
         <section
