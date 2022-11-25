@@ -1,5 +1,5 @@
 import Layout from '../components/UI/Layout';
-import ChatIcon from '../assets/icons/chat-icon.svg';
+// import ChatIcon from '../assets/icons/chat-icon.svg';
 import './styles/index.css'
 // import { Button } from '../components/UI/Button';
 import { Link } from 'react-router-dom';
@@ -12,14 +12,14 @@ import heroAnimation from '../assets/animations/VoxClipHeroLottie.json'
 
 const Home = () => {
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true, 
-    animationData: heroAnimation   ,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
-  };
+  // const defaultOptions = {
+  //   loop: true,
+  //   autoplay: true, 
+  //   animationData: heroAnimation   ,
+  //   rendererSettings: {
+  //     preserveAspectRatio: 'xMidYMid slice'
+  //   }
+  // };
 
   return (
     <Layout>
