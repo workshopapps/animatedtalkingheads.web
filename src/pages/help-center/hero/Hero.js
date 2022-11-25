@@ -1,5 +1,4 @@
 import React from 'react';
-// import search from '../images/search.png';
 import styles from './hero.module.scss';
 import search from '../images/search.png';
 
@@ -20,11 +19,11 @@ const Hero = () => {
           />
         </div>
 
-        <ul className={styles.keyords}>
-          <li className={styles.keyword}>Popular Keywords:</li>
-          <li className={styles.keyword}>security</li>
-          <li className={styles.keyword}>export</li>
-          <li className={styles.keyword}>how to</li>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>Popular Keywords:</li>
+          <li className={styles.listItem}>security</li>
+          <li className={styles.listItem}>export</li>
+          <li className={styles.listItem}>how to</li>
         </ul>
       </section>
     </>

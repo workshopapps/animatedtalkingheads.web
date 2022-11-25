@@ -1,5 +1,5 @@
 .background {
-  background: #F4F4F4;
+  background: #f4f4f4;
 }
 
 .background2 {
@@ -10,7 +10,7 @@
   font-weight: 700;
   font-size: 40px;
   line-height: 50px;
-  color: #292D32;
+  color: #292d32;
   text-align: center;
 }
 
@@ -20,7 +20,7 @@
   font-weight: 500;
   font-size: 32px;
   line-height: 40px;
-  color: #292D32;
+  color: #292d32;
   text-align: center;
 }
 
@@ -28,7 +28,7 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 154%;
-  color: #292D32;
+  color: #292d32;
   margin-top: 10px;
 }
 
@@ -41,7 +41,7 @@
   font-weight: 500;
   font-size: 40px;
   line-height: 50px;
-  color: #292D32;
+  color: #292d32;
   margin-top: 28px;
 }
 
@@ -49,16 +49,15 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 154%;
-  color: #292D32;
+  color: #292d32;
   margin-top: 12px;
 }
-
 
 .newsletterHeading {
   font-weight: 500;
   font-size: 40px;
   line-height: 50px;
-  color: #292D32;
+  color: #292d32;
   text-align: center;
 }
 
@@ -69,14 +68,14 @@
   margin-top: 32px;
   margin-bottom: 54px;
 }
-  
+
 .subcribe input {
   text-indent: 97px;
   border: 1px solid #b0b0b0;
   border-radius: 10px 0px 0px 10px;
   outline: none;
   flex-grow: 1;
-  background: #F4F4F4;
+  background: #f4f4f4;
 }
 
 .subcribe input::placeholder {
@@ -84,7 +83,7 @@
   font-size: 16px;
   line-height: 20px;
 }
-  
+
 .subcribe button {
   padding: 8px 8px 8px 14px;
   background: #2563eb;
@@ -97,7 +96,6 @@
   font-size: 16px;
   line-height: 19px;
 }
-
 
 .eventsBanner {
   font-weight: 700;
@@ -113,7 +111,7 @@
   justify-content: center;
   align-items: center;
 }
-  
+
 .events {
   margin-top: 54px;
   margin-bottom: 30px;
@@ -122,7 +120,7 @@
   gap: 54px;
   align-items: flex-start;
 }
-  
+
 .eventsListItem {
   display: flex;
   gap: 54px;
@@ -134,20 +132,20 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 154%;
-  color: #2563EB;
+  color: #2563eb;
 }
 
 .eventsListTitle {
   font-weight: 500;
   font-size: 32px;
   line-height: 40px;
-  color: #292D32;
+  color: #292d32;
 }
 
 .eventsListItem button {
   width: 123px;
   height: 56px;
-  background: #2563EB;
+  background: #2563eb;
   border-radius: 8px;
   color: white;
   font-weight: 600;
@@ -159,7 +157,7 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 154%;
-  color: #2563EB;
+  color: #2563eb;
 }
 
 .annoucement h5 {
@@ -167,7 +165,7 @@
   font-weight: 500;
   font-size: 40px;
   line-height: 50px;
-  color: #292D32;
+  color: #292d32;
 }
 
 .annoucement p {
@@ -177,25 +175,24 @@
   color: #737479;
 }
 
-
 .lineHR {
   margin-top: 21px;
   display: block;
   height: 0px;
-  border: 1px solid #CDCBCB;
+  border: 1px solid #cdcbcb;
   transform: rotate(-0.04deg);
 }
 
 .annoucement2 {
   padding: 22px 0px;
-  border-bottom: 1px solid #CDCBCB;
+  border-bottom: 1px solid #cdcbcb;
 }
 
-.annoucement2 h4{
+.annoucement2 h4 {
   font-weight: 600;
   font-size: 24px;
   line-height: 154%;
-  color: #2563EB;
+  color: #2563eb;
 }
 
 .annoucement2 img {
@@ -219,20 +216,20 @@
 
 .featureRequest {
   padding: 24px 40px;
-  border-bottom: 1px solid #CDCBCB;
+  border-bottom: 1px solid #cdcbcb;
 }
 
-.featureRequest h4{
+.featureRequest h4 {
   font-weight: 600;
   font-size: 24px;
   line-height: 154%;
-  color: #2563EB;
+  color: #2563eb;
 }
 
 .featureRequestImgBg {
   width: 100px;
   height: 100px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 50%;
 }
 
@@ -285,7 +282,6 @@
   color: #737479;
 }
 
-
 @media all and (max-width: 756px) {
   .headerText {
     font-weight: 600;
@@ -299,7 +295,7 @@
     font-weight: 600;
     font-size: 24px;
     line-height: 30px;
-    color: #292D32;
+    color: #292d32;
     text-align: center;
     margin-top: 85px;
   }
@@ -339,7 +335,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
-    color: #292D32;
+    color: #292d32;
   }
 
   .eventsListItem {
@@ -361,7 +357,7 @@
   .eventsListItem button {
     width: 92px;
     height: 34px;
-    background: #2563EB;
+    background: #2563eb;
     border-radius: 8px;
     color: white;
     font-weight: 500;
@@ -385,36 +381,36 @@
     height: 32px;
     padding: 9.5px 18px;
   }
-  
+
   .featureRequest {
     padding: 24px 10px;
-    border-bottom: 1px solid #CDCBCB;
+    border-bottom: 1px solid #cdcbcb;
   }
-  
-  .featureRequest h4{
+
+  .featureRequest h4 {
     font-weight: 20px;
     line-height: 25px;
   }
-  
+
   .featureRequestImgBg {
     width: 50px;
     height: 50px;
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 50%;
   }
-  
+
   .featureRequest img {
     width: 30px;
     height: 53px;
   }
-  
+
   .featureRequest p {
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
     color: #000000;
   }
-  
+
   .featureRequest h6 {
     font-weight: 500;
     font-size: 12px;
@@ -427,7 +423,7 @@
     font-size: 24px;
     line-height: 30px;
   }
-  
+
   .annoucement p {
     font-weight: 400;
     font-size: 16px;
@@ -435,46 +431,45 @@
     color: #737479;
   }
 
-  .annoucement2 h4{
+  .annoucement2 h4 {
     font-weight: 500;
     font-size: 20px;
     line-height: 25px;
   }
-  
+
   .annoucement2 img {
     width: 60.98px;
     height: 50px;
   }
-  
+
   .annoucement2 p {
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
     color: #000000;
   }
-  
+
   .annoucement2 h6 {
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
     color: #737479;
   }
-  
 
   .story > div {
     margin-top: 60px;
     margin-bottom: 60px;
   }
-  
+
   .story h3 {
     font-weight: 600;
     font-size: 24px;
     line-height: 30px;
-    color: #292D32;
+    color: #292d32;
     margin-top: 28px;
     text-align: center;
   }
-  
+
   .story p {
     font-weight: 500;
     font-size: 16px;
@@ -482,7 +477,6 @@
     text-align: center;
     margin-top: 24px;
   }
-
 
   .viewAll {
     font-weight: 500;
@@ -527,6 +521,4 @@
     font-size: 12px;
     line-height: 15px;
   }
-
 }
-  

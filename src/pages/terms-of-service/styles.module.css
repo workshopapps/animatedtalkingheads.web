@@ -1,6 +1,3 @@
-.tosContainer {
-}
-
 .tosHeader {
   padding-left: 100px;
   padding-right: 100px;
@@ -51,6 +48,7 @@
 .contentNav {
   flex-basis: 31%;
   padding-top: 32px;
+  text-align: left;
 }
 
 .contentBody {
@@ -75,7 +73,8 @@
   margin-top: 16px;
 }
 
-a {
+/* .contentNav a:link,
+.contentNav a:visited {
   font-family: 'Mulish';
   font-style: normal;
   font-weight: 500;
@@ -83,36 +82,55 @@ a {
   line-height: 25px;
   color: #0a0c14;
   text-decoration: none;
+  transition: all 0.3s ease-in;
 }
 
-a :hover {
+.contentNav a:hover {
   color: #2563eb;
+  cursor: pointer;
 }
 
-a :active {
+.contentNav a:active {
   color: #2563eb;
   font-weight: 700;
-}
+} */
 
 .contentNav ul {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 1.2rem;
 }
 
-li {
+.contentNav ul li {
   list-style-type: disc;
+  transition: all 0.3s ease-in;
+}
+
+.contentNav ul li:hover,
+.contentNav ul li:active {
+  color: #2563eb;
+  cursor: pointer;
 }
 
 .contentBodyUnit li {
   margin-left: 1.5rem;
 }
 
+.disclaimerList ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.disclaimerList ul li {
+  list-style-type: disc;
+}
+
 /* unique styles for mobile */
 
 @media (max-width: 788px) {
-  .tosContainer {
-  }
   .tosHeader {
     padding-left: 16px;
     padding-right: 16px;

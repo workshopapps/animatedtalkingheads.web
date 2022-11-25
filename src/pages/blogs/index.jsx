@@ -1,3 +1,4 @@
+// import { useState } from 'react';
 import Layout from '../../components/UI/Layout';
 import styles from './index.module.scss';
 import Card from './Card';
@@ -9,6 +10,13 @@ import { ReactComponent as SearchWhite } from './assets/search-white.svg';
 
 const rows = 5;
 const Blog = () => {
+  // const [counts, setCount] = useState(0);
+  // const navigate = useNavigate();
+
+  // const handleClick = () => {
+  //   setCount(counts + 1);
+  //   navigate(`/blog/content/${counts}`);
+  // };
   const [searchParams] = useSearchParams();
   let page = Number(searchParams.get('page'));
   page = page === 0 ? 1 : page;
@@ -69,6 +77,7 @@ const Blog = () => {
           </div>
         </main>
       </div>
+      {/* <button onClick={handleClick}>Next</button> */}
     </Layout>
   );
 };
