@@ -4,16 +4,15 @@
 // import { routes } from '../../libs/links';
 // // import { scroller, Element } from 'react-scroll';
 
-// const TermsOfService = () => {
-//   const scrollToElement = (element) => {
-//     scroller,
-//       scrollTo(element, {
-//         duration: 1500,
-//         delay: 100,
-//         smooth: true,
-//         offset: -150
-//       });
-//   };
+const TermsOfService = () => {
+  const scrollToElement = (element) => {
+    scroller.scrollTo(element, {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+      offset: -150
+    });
+  };
 
 //   return (
 //     <Layout>
