@@ -30,3 +30,4 @@ jobs:
         script: | 
           cd animatedtalkingheads.web
           ./deploy.sh
+
