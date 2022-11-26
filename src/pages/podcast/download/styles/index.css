@@ -30,46 +30,20 @@ section.download-video-section .download-video .page-content .desktop-lhs .video
   border-radius: 10px;
   position: relative;
 }
-section.download-video-section
-  .download-video
-  .page-content
-  .desktop-lhs
-  .video-container.fullscreen {
+section.download-video-section .download-video .page-content .desktop-lhs .video-container.fullscreen {
   width: initial;
   max-width: 100%;
 }
 section.download-video-section .download-video .page-content .desktop-lhs .video-container > video {
   border-radius: 10px;
 }
-section.download-video-section
-  .download-video
-  .page-content
-  .desktop-lhs
-  .video-container:hover
-  .video-controls-container,
-section.download-video-section
-  .download-video
-  .page-content
-  .desktop-lhs
-  .video-container.paused
-  .video-controls-container,
-section.download-video-section
-  .download-video
-  .page-content
-  .desktop-lhs
-  .video-container:focus-within
-  .video-controls-container {
+section.download-video-section .download-video .page-content .desktop-lhs .video-container:hover .video-controls-container, section.download-video-section .download-video .page-content .desktop-lhs .video-container.paused .video-controls-container, section.download-video-section .download-video .page-content .desktop-lhs .video-container:focus-within .video-controls-container {
   opacity: 1;
 }
 section.download-video-section .download-video .page-content .desktop-lhs .video-container.paused .pause-icon {
   display: none;
 }
-section.download-video-section
-  .download-video
-  .page-content
-  .desktop-lhs
-  .video-container:not(.paused)
-  .play-icon {
+section.download-video-section .download-video .page-content .desktop-lhs .video-container:not(.paused) .play-icon {
   display: none;
 }
 section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container {
