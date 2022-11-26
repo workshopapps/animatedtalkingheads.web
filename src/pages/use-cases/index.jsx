@@ -11,7 +11,7 @@ const rows = 4;
 
 const UseCases = () => {
   let { page } = useParams();
-  page = page === 0 ? 1 : page;
+  page = page === 0 ? 1 : Number(page);
   const start = (page - 1) * rows;
   const count = start + rows;
   const end = count > data.length ? data.length : count;
