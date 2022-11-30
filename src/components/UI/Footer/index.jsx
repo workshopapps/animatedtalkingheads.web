@@ -6,7 +6,7 @@ import { routes } from '../../../libs/links';
 
 const links1 = [
   { name: 'How it Works', link: routes.howItWorks },
-  { name: 'Use Case', link: `${routes.useCases}` },
+  { name: 'Use Cases', link: '/use-cases/1' },
   { name: 'About', link: routes.about },
   { name: 'Avatars', link: routes.avatars },
 

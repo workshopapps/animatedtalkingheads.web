@@ -6,7 +6,7 @@ import arrowBack from '../../../assets/icons/use-cases/arrowBack.svg';
 const Pagination = ({ rows, current, total, link }) => {
   const pageCount = Math.ceil(total / rows);
   const pages = [];
-
+  console.log(current, pageCount);
   const navigate = useNavigate();
 
   for (let i = 0; i < pageCount; i++) {

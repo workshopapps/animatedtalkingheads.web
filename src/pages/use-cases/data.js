@@ -7,6 +7,7 @@ import mic from '../../assets/icons/use-cases/mic.svg';
 
 export const data = [
   {
+    id: 1,
     title: 'Explainer Videos',
     description: `Voxclips is a speech-to-video platform that 
             exists to help podcasters create animated talking 
@@ -16,6 +17,7 @@ export const data = [
     image: mic
   },
   {
+    id: 2,
     title: 'Increase Organic Podcast Listeners',
     description: (
       <>
@@ -30,6 +32,7 @@ export const data = [
     image: headphone
   },
   {
+    id: 3,
     title: 'Make your Interview Podcasts fun',
     description: `Do you host a podcast where you feature 
                 different personalities to talk on your show?
@@ -39,6 +42,7 @@ export const data = [
     image: talk
   },
   {
+    id: 4,
     title: 'Debates and Round-table Talks',
     description: `People watch debates. Not listen to them.
             People watch the interactions. Not imagine them.
@@ -48,24 +52,27 @@ export const data = [
     image: tables
   },
   {
+    id: 5,
     title: 'Language Tutoring',
     description: (
-      <>
+      <ul>
         Native language tutors can create talking heads videos on Voxclips for their podcasts and
-        upload on social media. ⦁ Create engaging cartoon videos of heads talking. ⦁ Add captions to
-        your...
-      </>
+        upload on social media.
+        <li> Create engaging cartoon videos of heads talking.</li>
+        <li> Add captions to your...</li>
+      </ul>
     ),
     image: laptop
   },
   {
+    id: 6,
     title: 'Cartoon Avatars',
     description: (
-      <>
+      <p>
         Customize your avatars to suit your style. Edit the colour, face, gender, hair colour, and
         whatever you like on your avatars. We have more than 10 presets for you to select your
         avatar from. Select up to two speakers for your...
-      </>
+      </p>
     ),
     image: cartoon
   }
@@ -73,6 +80,7 @@ export const data = [
 
 export const blogs = [
   {
+    id: 1,
     title: 'Explainer Videos',
     description: (
       <>
@@ -107,6 +115,7 @@ export const blogs = [
     image: mic
   },
   {
+    id: 2,
     title: 'Increase Organic Podcast Listeners',
     description: (
       <>
@@ -145,6 +154,7 @@ export const blogs = [
     image: headphone
   },
   {
+    id: 3,
     title: 'Make your Interview Podcasts fun',
     description: (
       <>
@@ -193,6 +203,7 @@ export const blogs = [
     image: talk
   },
   {
+    id: 4,
     title: 'Debates and Round-table Talks',
     description: (
       <>
@@ -221,24 +232,44 @@ export const blogs = [
     image: tables
   },
   {
+    id: 5,
     title: 'Language Tutoring',
     description: (
-      <>
+      <p>
         Native language tutors can create talking heads videos on Voxclips for their podcasts and
-        upload on social media. ⦁ Create engaging cartoon videos of heads talking. ⦁ Add captions to
-        your video. ⦁ Teach your viewers how to spell words in their native languages while also
-        learning to pronounce. You can now make your language tutoring content easily understandable
-        with animated videos your viewers will love, and captions to help them learn better. Do This
-        in 5 Easy Steps ⦁ On the Voxclips homepage, go to the "Upload Page." ⦁ Select the podcast
-        episode to upload. Do this by uploading a file from your device, Dropbox, or other Cloud
-        storage locations. ⦁ Customize your avatars/character to be used in the video. Select hair
-        type, colour, etc. ⦁ Generate captions for your videos. ⦁ Download and share for your
-        listeners to watch and practice, and learn the language you're teaching.
-      </>
+        upload on social media.
+        <ul>
+          <li> Create engaging cartoon videos of heads talking.</li>
+          <li> Add captions to our video.</li>
+          <li>
+            Teach your viewers how to spell words in their native languages while also learning to
+            pronounce.
+          </li>
+          You can now make your language tutoring content easily understandable with animated videos
+          your viewers will love, and captions to help them learn better. Do This in 5 Easy Steps
+          <ul>
+            <li> On the Voxclips homepage, go to the "Upload Page." </li>
+            <li>Select the podcast episode to upload.</li>
+            <li>
+              Do this by uploading a file from your device, Dropbox, or other Cloud storage
+              locations.
+            </li>
+            <li>
+              Customize your avatars/character to be used in the video. Select hair type, colour,
+              etc.
+            </li>
+            <li>
+              Generate captions for your videos. ⦁ Download and share for your listeners to watch
+              and practice, and learn the language you're teaching.
+            </li>
+          </ul>
+        </ul>
+      </p>
     ),
     image: laptop
   },
   {
+    id: 6,
     title: 'Cartoon Avatars',
     description: (
       <>
