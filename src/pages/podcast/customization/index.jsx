@@ -66,19 +66,26 @@ const CustomizeAudio = () => {
       <div className={`customize-audio lg:px-20`}>
         <div className="breadcrumbs p-3 space-x-1  w-full flex items-center text-sec-500 capitalize md:space-x-3">
           <Text w={'md'} type={'text4'} cap>
-            home
+            <Link to="/">
+              Home
+            </Link>
           </Text>
+
           <div className="icon">
             <img src={caretRight} alt="" />
           </div>
           <Text w={'md'} type={'text4'} cap>
-            upload
+            <Link to="/podcast/upload">
+              Upload
+            </Link>
           </Text>
           <div className="icon">
             <img src={caretRight} alt="" />
           </div>
           <Text w={'md'} type={'text4'} cap className={'text-blue-700'}>
-            customize upload
+            <Link to="/podcast/customize">
+              Cutomize Upload
+            </Link>
           </Text>
         </div>
 
