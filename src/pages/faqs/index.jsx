@@ -103,7 +103,7 @@ const Faqs = () => {
               />
             </div>
             <Link to={routes.contact}>
-              <Button label={'Get In Touch'} />
+              <Button label={'Get In Touch'}>Get in Touch</Button>
             </Link>
           </div>
         </section>

@@ -13,6 +13,8 @@ const Pagination = ({ rows, current, total, link }) => {
     pages.push(i + 1);
   }
 
+  console.log(pages, pageCount, current);
+
   return (
     <div className="flex h-full basis-full justify-between ">
       <button

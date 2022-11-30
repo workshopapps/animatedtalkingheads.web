@@ -140,7 +140,7 @@ const CustomizeAudio = () => {
 
         <div className="centered w-full my-[5%]">
           <Link to={'/podcast/download'}>
-            <Button label={'render video'} />
+            <Button label={'render video'}>Render video</Button>
           </Link>
         </div>
       </div>

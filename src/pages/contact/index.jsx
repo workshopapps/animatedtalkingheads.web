@@ -111,7 +111,9 @@ const Contact = () => {
                 </div>
               )}
               <div className="flex justify-center mt-5">
-                <Button label="submit" type="submit" />
+                <Button label="submit" type="submit">
+                  Submit
+                </Button>
               </div>
             </form>
           </div>
