@@ -35,8 +35,7 @@ const UploadPodcast = () => {
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   const uploadFile = () => {
-    const audioFormat = audio_formats.find((x) => 'audio/' + x === audio.type);
-    if (!audioFormat) {
+    if (!audio.type.includes('audio')) {
       setError('Only audio files are supported');
     } else if (audio) {
       setLoading({ ...loading, isDisabled: true });
