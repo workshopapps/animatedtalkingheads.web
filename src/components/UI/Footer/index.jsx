@@ -7,7 +7,7 @@ import { routes } from '../../../libs/links';
 const links1 = [
   { name: 'How it Works', link: routes.howItWorks },
   { name: 'Use Cases', link: '/use-cases/1' },
-  { name: 'About', link: routes.about },
+  { name: 'About Us', link: routes.about },
   { name: 'Avatars', link: routes.avatars },
 
   { name: 'Custom Avatars', link: '/explore-avatar' },
