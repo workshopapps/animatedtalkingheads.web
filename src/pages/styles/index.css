@@ -8,7 +8,6 @@ section.home-section .home .hero-container {
   display: flex;
   color: #ffffff;
   align-items: center;
-  height: calc(100vh - 100px);
   overflow: hidden;
 }
 section.home-section .home .hero-container .desktop-lhs .hero-text {
