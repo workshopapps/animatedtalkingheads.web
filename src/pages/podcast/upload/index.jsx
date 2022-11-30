@@ -11,7 +11,6 @@ import { Text } from '../../../components/UI/Text';
 import styles from '../upload/index.module.scss';
 import { Link } from 'react-router-dom';
 import { useDropzone } from 'react-dropzone';
-import { audio_formats } from './data';
 import store from '../../../store/store';
 
 const UploadPodcast = () => {
