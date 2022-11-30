@@ -25,6 +25,8 @@
 .ring div:nth-child(3) {
   animation-delay: -0.15s;
 }
+
+
 @keyframes ring {
   0% {
     transform: rotate(0deg);
@@ -32,4 +34,136 @@
   100% {
     transform: rotate(360deg);
   }
+
+}
+
+.input {
+  background: #FEFEFE;
+  border: 1px solid rgba(68, 68, 68, 0.2);
+  border-radius: 10px;
+  border: 1px solid #6B7280;
+}
+
+.input:focus {
+  border: 1px solid #7b99fb;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 2px #D1E9FF;
+}
+
+.error {
+  border: 1px solid #FB7F7B;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 2px #ffe1e0;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background:  #FBFBFB;
+}
+
+.heading {
+  font-style: normal;
+  font-weight: 500;
+  line-height: 50px;
+  color: #292D32;
+}
+
+.subHeading {
+  line-height: 25px;
+  color: #737479;
+}
+
+
+.textArea {
+  resize: none;
+}
+
+.container input::placeholder{
+  font-size: 20px;
+}
+
+.textArea::placeholder{
+  font-size: 20px;
+}
+
+
+@media screen and (max-width: 1440px) {
+
+  .heading {
+    margin-top: 0.1em;
+    font-size: 36px;
+  }
+
+  .container {
+    margin-top: 1.2em;
+    padding-left: 8em;
+    padding-right: 8em;
+  }
+
+  .input {
+    height: 2.4em;
+  }
+
+  .textArea {
+    height: 240px;
+  }
+
+  .subHeading {
+    font-size: 18px;
+  }
+
+}
+
+@media screen and (max-width: 1025px) {
+
+  .heading {
+    margin-top: 0.1em;
+    font-size: 36px;
+  }
+
+  .container {
+    margin-top: 1.2em;
+    padding-left: 4em;
+    padding-right: 4em;
+  }
+
+  .input {
+    height: 2.4em;
+  }
+
+  .textArea {
+    height: 240px;
+  }
+
+}
+
+
+@media screen and (max-width: 764px) {
+
+  .heading {
+    margin-top: 0.1em;
+    font-size: 28px;
+  }
+
+  .input {
+    height: 57px;
+  }
+
+  .textArea {
+    height: 182px;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .container {
+    margin-top: 1.2em;
+    padding-left: 0;
+    padding-right: 0em;
+  }
+
 }
