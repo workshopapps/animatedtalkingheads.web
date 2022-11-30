@@ -43,11 +43,29 @@
       width: 20px;
       height: 20px;
       border-radius: 100%;
+
+ 
       background-color: #2563EB;
       position: absolute;
       right: -10px;
       top: -6.8px;
     }
 
+  }
+
+        // @apply ;
+  .scene_wrapper{
+
+ 
+    @apply w-full space-y-4 border rounded-xl p-4;
+
+
+    .headers{
+    @apply flex justify-center md:justify-between items-center;
+    }
+
+    .rsis-image{
+      background-position: center;
+    }
   }
 }

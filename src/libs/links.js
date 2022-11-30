@@ -48,8 +48,8 @@ export const links = [
   { name: 'About Us', link: routes.about },
   { name: 'Use cases', link: `${routes.useCases}/1` },
   { name: 'Contact', link: routes.contact },
-  { name: 'How it work', link: routes.howItWorks },
-  { name: 'Avatars', link: routes.avatars }
+  { name: 'How it work', link: routes.howItWorks }
+  // { name: 'Avatars', link: routes.avatars }
 ];
 
 export const navLinks = [

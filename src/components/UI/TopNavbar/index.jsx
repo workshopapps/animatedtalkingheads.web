@@ -6,6 +6,7 @@ import headerLogo from './../../../assets/icons/header-logo.png';
 import menuIcon from './../../../assets/icons/menu-icon.png';
 import closeIcon from './../../../assets/icons/close.png';
 import { links, routes } from '../../../libs/links';
+import { BiChevronDown } from 'react-icons/bi';
 
 const miniLinks = [
   { name: 'Support', link: '#' },
@@ -15,13 +16,12 @@ const miniLinks = [
 
 const TopNavbar = () => {
   const [show, setShow] = React.useState(false);
-  const location = useLocation()
-  const pathname = location.pathname.split("/")[1]
+  const location = useLocation();
+  const pathname = location.pathname.split('/')[1];
 
   const close = () => {
     setShow(false);
   };
-
 
   return (
     <div className={styles.nav}>
@@ -31,12 +31,32 @@ const TopNavbar = () => {
             <img src={headerLogo} alt="home" />
           </Link>
         </div>
-        <div className={`${styles.links} hidden md:flex md:grow justify-between`}>
+        <div className={`${styles.links} hidden items-center  md:flex md:grow justify-between`}>
           {links.map((link, index) => (
-            <Link className={`${`/${pathname}` === link.link ? `${styles.active}` : ""} block`} key={index} to={link.link}>
+            <Link
+              className={`${`/${pathname}` === link.link ? `${styles.active}` : ''} block`}
+              key={index}
+              to={link.link}>
               {link.name}
             </Link>
           ))}
+
+          <div className={`${styles.dropdown} px-1 space-x-3 relative middle `}>
+            <h1 className={`block`}>Avatars</h1>
+
+            <BiChevronDown />
+
+            <div
+              className={`${styles.dropdown_list} slide-up border w-[150px] space-y-3 rounded-md shadow-xl p-3 absolute left-0 top-6 bg-white`}>
+              <Link className={`block w-full`} to={'/avatars'}>
+                Avatars
+              </Link>
+
+              <Link className={` block w-full`} to={'/explore-avatar'}>
+                Explore Avatars
+              </Link>
+            </div>
+          </div>
         </div>
         <div className={`hidden md:flex`}>
           <Link to={routes.podcastUpload}>
