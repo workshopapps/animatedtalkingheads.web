@@ -53,7 +53,7 @@ const Contact = () => {
         {!submitted ? (
           <div>
             <div className="text-center w-[80%] mx-auto grid my-5">
-              <p className="md:text-[48px] font-[500] text-[28px]">Get in Touch With Us</p>
+              <p className="md:text-[48px] font-[500] ">Get in Touch With Us</p>
               <p className="mt-3 font-medium text-[16px] md:text-xl text-sec-500 ">
                 Kindly fill the form and we will get back to you
               </p>
@@ -69,9 +69,8 @@ const Contact = () => {
                     onChange={updateName}
                     type="text"
                     placeholder="Enter your full name"
-                    className={`border w-full p-3 md:p-4 bg-white rounded-[10px] text-sec-500 outline-none px-5 ${
-                      !efull_name ? 'border-[#6B7280]' : 'border-red-600'
-                    }`}
+                    className={`border w-full p-3 md:p-4 bg-white rounded-[10px] text-sec-500 outline-none px-5 ${!efull_name ? 'border-[#6B7280]' : 'border-red-600'
+                      }`}
                   />
                   {efull_name && <p className="text-red-600 text-xs">this field is required</p>}
                 </div>
@@ -82,9 +81,8 @@ const Contact = () => {
                     onChange={updateEmail}
                     type="email"
                     placeholder="Enter your Email Address"
-                    className={`border w-full p-3 md:p-4 bg-white rounded-[10px] text-sec-500 outline-none px-5 ${
-                      !eemail ? 'border-[#6B7280]' : 'border-red-600'
-                    }`}
+                    className={`border w-full p-3 md:p-4 bg-white rounded-[10px] text-sec-500 outline-none px-5 ${!eemail ? 'border-[#6B7280]' : 'border-red-600'
+                      }`}
                   />
                   {eemail && <p className="text-red-600 text-xs">this field is required</p>}
                 </div>
@@ -92,9 +90,8 @@ const Contact = () => {
                 <textarea
                   value={message}
                   onChange={updateMessage}
-                  className={`md:col-span-2 border p-4 bg-white rounded-[10px] text-sec-500 outline-none px-5 ${
-                    !emessage ? 'border-[#6B7280]' : 'border-red-600'
-                  }`}
+                  className={`md:col-span-2 border p-4 bg-white rounded-[10px] text-sec-500 outline-none px-5 ${!emessage ? 'border-[#6B7280]' : 'border-red-600'
+                    }`}
                   placeholder="Type in your message"
                   rows="10"
                 />
@@ -118,7 +115,7 @@ const Contact = () => {
         ) : (
           <div className="">
             <div className="flex justify-center">
-              <img src={cleanup} alt="cleanup sucessfull" />
+              <img src={cleanup} alt="cleanup successfully" />
             </div>
             <div className="text-center mt-10">
               <Header1 label="Thank you for Getting in Touch" w="semibold" />
