@@ -47,7 +47,6 @@ export const links = [
   { name: 'Home', link: routes.home },
   { name: 'About Us', link: routes.about },
   { name: 'Use cases', link: `${routes.useCases}/1` },
-  { name: 'Contact', link: routes.contact },
   { name: 'How it work', link: routes.howItWorks },
   { name: 'Avatars', link: routes.avatars }
 ];
