@@ -33,7 +33,7 @@ const Home = () => {
                 </p>
               </div>
               <div className="hero-btns ">
-                <Link to="/podcast/upload">
+                <Link style={{ color: 'white' }} to="/podcast/upload">
                   <button className="btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
                       <path

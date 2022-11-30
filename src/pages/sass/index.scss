@@ -13,6 +13,7 @@ section.home-section{
             // justify-content: space-between;
             align-items: center;
             height: calc(100vh - 100px);
+            overflow: hidden;
             // & > * {
             //     flex: 1;
             // }
@@ -74,7 +75,12 @@ section.home-section{
             .desktop-rhs{
                 // border: 2px solid red;
                 margin-left: 6.25rem;
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;  /* Firefox */
 
+                &::-webkit-scrollbar{
+                    display: none;
+                }
 
                 .lottie{
                     width: 120%;
