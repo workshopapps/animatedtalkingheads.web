@@ -5,11 +5,14 @@ import './globalStyle/index.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Container from './components/UI/container';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
-    <App />
+    <Container>
+      <App />
+    </Container>
   </Router>
 );
 
