@@ -1,14 +1,13 @@
 section.home-section .home {
-  background: #171D2E;
+  background: #171d2e;
 }
 section.home-section .home .hero-container {
   width: 93%;
   max-width: 1512px;
   margin: 0 auto;
   display: flex;
-  color: #FFFFFF;
+  color: #ffffff;
   align-items: center;
-  height: calc(100vh - 100px);
   overflow: hidden;
 }
 section.home-section .home .hero-container .desktop-lhs .hero-text {
@@ -31,7 +30,7 @@ section.home-section .home .hero-container .desktop-lhs .hero-btns {
 section.home-section .home .hero-container .desktop-lhs .hero-btns button.btn {
   display: flex;
   padding: 1em 1.125em;
-  background: #2563EB;
+  background: #2563eb;
   border-radius: 8px;
   white-space: nowrap;
   align-items: center;
@@ -47,7 +46,7 @@ section.home-section .home .hero-container .desktop-lhs .hero-btns .watch-btn {
 }
 section.home-section .home .hero-container .desktop-lhs .hero-btns .watch-btn button.btn {
   margin-right: 0.625rem;
-  background: #EB9025;
+  background: #eb9025;
 }
 section.home-section .home .hero-container .desktop-lhs .hero-btns .watch-btn button.btn > svg {
   margin: 0;
