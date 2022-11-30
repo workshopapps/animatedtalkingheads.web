@@ -74,8 +74,9 @@ const Home = () => {
                       />
                     </svg>
                   </button>
-                  <h4>Watch Sample</h4>
+                  <h4>How it works</h4>
                 </div>
+              </Link>
               </div>
             </div>
             <div className="desktop-rhs">
