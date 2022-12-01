@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
-import footerLogo from './../../../assets/icons/footer-logo.png';
+import footerLogo from './../../../assets/icons/footer_logo.svg';
 import globe from './../../../assets/icons/globe.png';
 import { routes } from '../../../libs/links';
 
