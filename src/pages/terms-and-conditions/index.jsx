@@ -11,7 +11,7 @@ const termsContent = [
           Welcome to Voxclips! These terms and conditions outline the rules and regulations for the
           use of Mechanic Team Clutch HNG9 Website, located at
         </p>
-        <a href="https://voxclips.hng.tech" className="text-blue-400 px-1">
+        <a href="https://voxclips.hng.tech" className="text-pri-700 px-1">
           https://voxclips.hng.tech
         </a>
         by accessing this Website, we assume you accept these terms and conditions. Do not continue
@@ -278,7 +278,7 @@ No link(s) should appear on any Website that may be interpreted as libelous, obs
     content: (
       <p>
         To learn about how we use, collect and protect your personal information, please read our{' '}
-        <a href="https://voxclips.hng.tech/privacy-policy" className="text-blue-400 px-1">
+        <a href="https://voxclips.hng.tech/privacy-policy" className="text-pri-700 px-1">
           Privacy Policy
         </a>
       </p>
@@ -351,7 +351,7 @@ No link(s) should appear on any Website that may be interpreted as libelous, obs
     content: (
       <p className="">
         If you have any questions about these Terms, please contact us through our{' '}
-        <a href="https://voxclips.hng.tech/contact" className="text-blue-400">
+        <a href="https://voxclips.hng.tech/contact" className="text-pri-700">
           Contact Page
         </a>
       </p>
@@ -377,7 +377,7 @@ const Build = (props) => {
 const TermsAndCondition = () => {
   return (
     <Layout>
-      <section className="bg-sec-1000 w-full grid justify-center items-center h-[135px] md:h-[216px] ">
+      <section className="bg-pri-700 w-full grid justify-center items-center h-[135px] md:h-[216px] ">
         <h1 className="font-bold text-2xl md:text-5xl text-[#f4f4f4] ">Terms and Conditions</h1>
       </section>
       <section className="bg-[#fbfbfb] px-6 pt-7 md:pt-14 md:px-56">
