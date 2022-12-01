@@ -137,7 +137,7 @@ const Home = () => {
           </div>
           <div className="mb-10 w-[10.785rem] pt-16 md:pt-0 mx-auto">
             <Link to="/podcast/upload">
-              <Button label={'get started'} />
+              <Button label={'get started'}>Get Started</Button>
             </Link>
           </div>
         </div>
@@ -188,7 +188,7 @@ const Home = () => {
               Conveniently download your output on different video qualities
             </h3>
             <Link to="/podcast/upload">
-              <Button label={'get started'} />
+              <Button label={'get started'}>Get Started</Button>
             </Link>
           </div>
           <div>

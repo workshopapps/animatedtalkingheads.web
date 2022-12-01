@@ -119,7 +119,7 @@ const Contact = () => {
                   </div>
                 )}
                 <div className="flex justify-center mt-5">
-                  <Button label="submit" type="submit" />
+                  <Button type="submit">Submit</Button>
                 </div>
               </form>
             </div>
@@ -139,7 +139,7 @@ const Contact = () => {
               </div>
               <div className="flex justify-center mt-10">
                 <Link to="/">
-                  <Button label="Go back Home" />
+                  <Button label={'get started'}>Go back Home</Button>
                 </Link>
               </div>
             </div>
