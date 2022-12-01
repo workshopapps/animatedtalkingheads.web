@@ -147,12 +147,14 @@ const UploadPodcast = () => {
         {uploaded ? (
           <Link to="/podcast/customize">
             <div className="my-10 justify-center flex">
-              <Button label="Start Creating" />
+              <Button label="Start Creating">Upload Link</Button>
             </div>
           </Link>
         ) : (
           <div className="my-10 justify-center flex ">
-            <Button {...loading} onClick={uploadFile} />
+            <Button {...loading} onClick={uploadFile}>
+              Upload Now
+            </Button>
           </div>
         )}
       </div>

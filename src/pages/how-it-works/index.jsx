@@ -6,10 +6,12 @@ import downloadIllustration from '../../assets/how-it-works/Group 828.svg';
 import documentUploadIcon from '../../assets/how-it-works/icons/document-download.svg';
 import documentDownloadIcon from '../../assets/how-it-works/icons/document-upload.svg';
 import uploadArrowUp from '../../assets/how-it-works/icons/arrow-up.svg';
+
 // import videoThumbnailImg from '../../assets/how-it-works/Frame 34667.svg';
 
 import styles from './styles.module.css';
 import { Link } from 'react-router-dom';
+import { Button } from '../../components/UI/Button';
 
 const items = [
   {
@@ -59,10 +61,17 @@ const HowItWorks = () => {
               in few clicks.
             </p>
             <a href="#watch_video" className="transition">
-              <button className=" text-base flex gap-3 items-center bg-pri-600 px-6 py-3 rounded-md text-white cursor-pointer">
-                Watch Tutorial Video
-                <img src={arrowDownIcon} alt="arrow-down-icon" />
-              </button>
+              <Button>
+                <div
+                  style={{
+                    display: 'flex'
+                  }}>
+                  <span>Watch Tutorial Video</span>
+                  <span>
+                    <img src={arrowDownIcon} alt="arrow-down-icon" />
+                  </span>
+                </div>
+              </Button>
             </a>
           </section>
 
@@ -116,9 +125,9 @@ const HowItWorks = () => {
             video generated from us, download, share and enjoy!
           </p>
           <Link to="/podcast/upload">
-            <button className=" text-base flex gap-3 items-center bg-pri-600 px-6 py-3 rounded-md text-white cursor-pointer">
+            <Button className=" text-base flex gap-3 items-center bg-pri-600 px-6 py-3 rounded-md text-white cursor-pointer">
               Get started with Voxclips
-            </button>
+            </Button>
           </Link>
 
           <div className={`md:visible invisible ${styles.blueLeftPattern}`}></div>

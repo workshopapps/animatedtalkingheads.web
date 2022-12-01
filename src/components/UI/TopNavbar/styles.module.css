@@ -101,6 +101,18 @@
   align-items: center;
 }
 
+.dropdown {
+  position: relative;
+}
+
+.dropdown .dropdown_list {
+  display: none;
+}
+
+.dropdown:hover .dropdown_list {
+  display: block;
+}
+
 @media screen and (max-width: 756px) {
   a:hover {
     color: #292d32;

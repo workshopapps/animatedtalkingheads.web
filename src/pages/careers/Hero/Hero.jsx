@@ -4,8 +4,19 @@ import Ethics from './ethics/Ethics';
 import hero from '../Images/Hero-img.png';
 import equal from '../Images/equality-icon.svg';
 import diverse from '../Images/Diversity-icon.svg';
+import { scroller } from 'react-scroll';
+import { Button } from '../../../components/UI/Button';
 
 export default function Hero() {
+  const scrollToElement = (element) => {
+    scroller.scrollTo(element, {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+      offset: -150
+    });
+  };
+
   return (
     <section className={styles.careers}>
       <div className={styles.careers__hero_card}>
@@ -15,7 +26,7 @@ export default function Hero() {
             At Voxclips we believe that a cross-disciplinary team is what it takes to build a
             wholesome and delightful product experience and we would love you to join us
           </p>
-          <button className={styles.careers__hero_btn}>See open roles</button>
+          <Button onClick={() => scrollToElement('roles')}>See open roles</Button>
         </div>
       </div>
       <div className={styles.careers__hero}>
@@ -45,5 +56,3 @@ export default function Hero() {
     </section>
   );
 }
-
-// https://www.figma.com/file/qHtCsg2m7VGBr5anu3R98U/Talking-Head-Project-Design-System-(Copy)?node-id=1347%3A16012&t=mgCUr2RCzN50kaPK-0

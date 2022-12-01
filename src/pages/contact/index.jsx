@@ -85,7 +85,7 @@ const Contact = () => {
                       }`}
 
       <div>
-      <div className={`${styles.background}`}> </div>
+        <div className={`${styles.background}`}> </div>
         <div className={`${styles.container} mx-auto max-w-[1400px] w-[90%] my-10 lg:my-20`}>
           {!submitted ? (
             <div>
@@ -107,10 +107,12 @@ const Contact = () => {
                       type="text"
                       placeholder="Enter your full name"
                       className={`${styles.input} border w-full p-3 md:p-4 outline-none px-5 ${
-                        efull_name ? `${styles.error}` : ""
+                        efull_name ? `${styles.error}` : ''
                       }`}
                     />
-                    {efull_name && <p className="text-red-600 mt-2 text-xs">This field is required</p>}
+                    {efull_name && (
+                      <p className="text-red-600 mt-2 text-xs">This field is required</p>
+                    )}
                   </div>
 
                   <div>
@@ -119,8 +121,10 @@ const Contact = () => {
                       onChange={updateEmail}
                       type="email"
                       placeholder="Enter your email address"
-                      className={`${styles.input} border w-full p-3 md:p-4 rounded-[10px] outline-none px-5 ${
-                        eemail ? `${styles.error}` : ""
+                      className={`${
+                        styles.input
+                      } border w-full p-3 md:p-4 rounded-[10px] outline-none px-5 ${
+                        eemail ? `${styles.error}` : ''
                       }`}
                     />
                     {eemail && <p className="text-red-600 mt-2 text-xs">This field is required</p>}
@@ -129,8 +133,10 @@ const Contact = () => {
                   <textarea
                     value={message}
                     onChange={updateMessage}
-                    className={`${styles.input} ${styles.textArea} md:col-span-2 border p-4 rounded-[10px]  outline-none px-5 ${
-                      emessage ? `${styles.error}` : ""
+                    className={`${styles.input} ${
+                      styles.textArea
+                    } md:col-span-2 border p-4 rounded-[10px]  outline-none px-5 ${
+                      emessage ? `${styles.error}` : ''
                     }`}
                     placeholder="Type in your message"
                     rows="10"
@@ -170,8 +176,9 @@ const Contact = () => {
                   </div>
                 )}
                 <div className="flex justify-center mt-5">
-                  <Button label="submit" type="submit" />
+                  <Button type="submit">Submit</Button>
                 </div>
+
               )}
               <div className="flex justify-center mt-5">
                 <Button label="submit" type="submit" />
@@ -211,7 +218,7 @@ const Contact = () => {
               </div>
               <div className="flex justify-center mt-10">
                 <Link to="/">
-                  <Button label="Go back Home" />
+                  <Button label={'get started'}>Go back Home</Button>
                 </Link>
               </div>
             </div>

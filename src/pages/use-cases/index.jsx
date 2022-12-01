@@ -42,7 +42,12 @@ const UseCases = () => {
             </div>
           ))}
           <div>
-            <Pagination rows={4} current={page} link={routes.useCases} total={data.length} />
+            <Pagination
+              rows={4}
+              current={Number(page)}
+              link={routes.useCases}
+              total={data.length}
+            />
           </div>
         </section>
       </div>
