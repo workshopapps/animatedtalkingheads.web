@@ -172,6 +172,7 @@ const Contact = () => {
                       <div></div>
                       <div></div>
                     </div>
+
                   </div>
                 )}
                 <div className="flex justify-center mt-5">
@@ -199,6 +200,7 @@ const Contact = () => {
               />
 
               </form>
+
             </div>
           ) : (
             <div className="">
