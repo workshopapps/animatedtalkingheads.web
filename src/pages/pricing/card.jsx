@@ -13,7 +13,7 @@ const Card = ({ title, slogan, buttonLabel, tier, currency, children }) => {
         <p className=" text-xl lg:text-2xl"> {slogan}</p>
         <Link to="/getStarted">
           <div className="mt-5 flex justify-center">
-            <Button label={buttonLabel} />
+            <Button label={buttonLabel}>{buttonLabel}</Button>
           </div>
         </Link>
       </div>

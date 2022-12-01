@@ -15,6 +15,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Engineering, Management, Design, Marketing } from './team-data/teamData.jsx';
 import style from './css/about.module.css';
+import { Button } from '../../components/UI/Button';
 
 const About = () => {
   useEffect(() => {
@@ -360,7 +361,7 @@ const About = () => {
                   Let’s build the future of podcasting <br /> together
                 </h3>
                 <Link to="/podcast/upload">
-                  <button>Try for free now</button>
+                  <Button>Try for free now</Button>
                 </Link>
               </div>
             </div>

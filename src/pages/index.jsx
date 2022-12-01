@@ -5,12 +5,14 @@ import './styles/index.css';
 import { Link } from 'react-router-dom';
 // import { useState } from 'react';
 import Lottie from 'lottie-react';
+import { Button } from '../components/UI/Button';
 import heroAnimation from '../assets/animations/VoxClipHeroLottie.json';
+// import heroAnimation from '../assets/animations/VoxClipHeroLottie.json';
 import Quotes from '../assets/icons/quotes.svg';
 import MarkImg from '../assets/images/mark-essien.png';
 import LavyImg from '../assets/images/lavy-engine.png';
 import NonsoImg from '../assets/images/Nonso.png';
-import { Button } from '../components/UI/Button';
+// import { Button } from '../components/UI/Button';
 
 // import ChatBox from '../components/ChatBox';
 
@@ -135,7 +137,7 @@ const Home = () => {
           </div>
           <div className="mb-10 w-[10.785rem] pt-16 md:pt-0 mx-auto">
             <Link to="/podcast/upload">
-              <Button label={'get started'} />
+              <Button label={'get started'}>Get Started</Button>
             </Link>
           </div>
         </div>
@@ -186,7 +188,7 @@ const Home = () => {
               Conveniently download your output on different video qualities
             </h3>
             <Link to="/podcast/upload">
-              <Button label={'get started'} />
+              <Button label={'get started'}>Get Started</Button>
             </Link>
           </div>
           <div>
