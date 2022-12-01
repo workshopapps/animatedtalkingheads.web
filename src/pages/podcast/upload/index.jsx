@@ -5,7 +5,7 @@ import musicnote from '../../../assets/icons/upload_podcast/musicnote.svg';
 import music from '../../../assets/icons/upload_podcast/music.svg';
 import correct from '../../../assets/icons/upload_podcast/correct.svg';
 import { Button } from '../../../components/UI/Button';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Text } from '../../../components/UI/Text';
 import styles from '../upload/index.module.scss';
@@ -14,8 +14,6 @@ import { useDropzone } from 'react-dropzone';
 import store from '../../../store/store';
 
 const UploadPodcast = () => {
-  console.log(store.getState());
-
   const [audio, setAudio] = useState(null);
   const [name, setName] = useState(null);
   const [upload, setUpload] = useState(false);
@@ -28,22 +26,24 @@ const UploadPodcast = () => {
 
   const onDrop = useCallback((acceptedFiles) => {
     setAudio(acceptedFiles[0]);
-    console.log(acceptedFiles[0]);
     setName(acceptedFiles[0].name);
   }, []);
+
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
-  const uploadFile = () => {
-    if (!audio.type.includes('audio')) {
-      setError('Only audio files are supported');
-    } else if (audio) {
-      setLoading({ ...loading, isDisabled: true });
-      setUpload(true);
-      uploadFunction();
+  useEffect(() => {
+    if (audio) {
+      if (!audio.type.includes('audio')) {
+        setError('Only audio files are supported');
+      } else if (audio) {
+        setLoading({ ...loading, isDisabled: true });
+        setUpload(true);
+        uploadToServer();
+      }
     }
-  };
+  }, [name, audio]);
 
-  const uploadFunction = () => {
+  const uploadToServer = () => {
     setError(false);
     const data = new FormData();
     data.append('podcast', audio);
@@ -55,7 +55,6 @@ const UploadPodcast = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         store.dispatch({ type: 'ADD_PODCAST_ITEM', payload: data });
         setUpload(false);
         setUploaded(true);
@@ -66,7 +65,6 @@ const UploadPodcast = () => {
         setAudio(false);
         setUploaded(false);
         setLoading({ ...loading, isDisabled: false });
-        console.log(err.message);
       });
   };
 
@@ -135,7 +133,7 @@ const UploadPodcast = () => {
                 <p>
                   or{' '}
                   <span className="text-pri-600 cursor-pointer">
-                    {audio ? 'change file' : 'browse'}
+                    {error ? 'change file' : 'browse'}
                   </span>
                 </p>
               </div>
@@ -151,11 +149,7 @@ const UploadPodcast = () => {
             </div>
           </Link>
         ) : (
-          <div className="my-10 justify-center flex ">
-            <Button {...loading} onClick={uploadFile}>
-              Upload Now
-            </Button>
-          </div>
+          <div className=" h-[115px]"></div>
         )}
       </div>
     </Layout>
