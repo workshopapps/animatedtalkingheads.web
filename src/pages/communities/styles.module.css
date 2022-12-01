@@ -67,6 +67,7 @@
   gap: 6px;
   margin-top: 32px;
   margin-bottom: 54px;
+  
 }
 
 .subcribe input {
@@ -95,6 +96,7 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
+    font-family: 'Mulish', sans-serif;
 }
 
 .eventsBanner {
