@@ -12,15 +12,15 @@ const links1 = [
 
   // { name: 'Custom Avatars', link: '/explore-avatar' },
 
-  { name: 'Explore Background', link: routes.scenery },
-  { name: 'Blog', link: routes.blog }
+  { name: 'Explore Background', link: routes.scenery }
+  // { name: 'Blog', link: routes.blog }
 ];
 
 const links2 = [
-  { name: 'Customer Support', link: routes.helperCenter },
-  { name: 'Community', link: routes.community },
-  { name: 'Careers', link: routes.careers },
-  { name: 'Press', link: routes.press },
+  // { name: 'Customer Support', link: routes.helperCenter },
+  // { name: 'Community', link: routes.community },
+  // { name: 'Careers', link: routes.careers },
+  // { name: 'Press', link: routes.press },
   { name: 'FAQ', link: routes.faqs },
   { name: 'Contact Us', link: routes.contact },
   { name: 'APIs', link: routes.api }
