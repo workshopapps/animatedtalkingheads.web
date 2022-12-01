@@ -29,5 +29,3 @@ pipeline {
 		
     }
 }
-
-//test auto deploy
