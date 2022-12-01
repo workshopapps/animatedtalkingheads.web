@@ -1,13 +1,13 @@
 import { Text } from '../../../../components/UI/Text';
 
-import speakerTwo from '../../../../assets/images/headerTwo.png';
+// import speakerTwo from '../../../../assets/images/headerTwo.png';
 
 import bg1 from '../../../../assets/images/scenery/background1.png';
 import bg2 from '../../../../assets/images/scenery/background2.png';
 import bg3 from '../../../../assets/images/scenery/background3.png';
 import bg4 from '../../../../assets/images/scenery/background4.png';
 import bg5 from '../../../../assets/images/scenery/background5.png';
-
+import SimpleImageSlider from 'react-simple-image-slider';
 import { BiEditAlt } from 'react-icons/bi';
 import CustomiseCharacterModal from './modal';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
@@ -41,11 +41,11 @@ const CustomizeAudio = ({ speakets }) => {
   const currentHead = store.getState().customizeVideoReducer.currentAvatar;
 
   return (
-    <div className="scene_wrapper w-full space-y-4 border rounded-xl p-4 md:p-[20px]  md:px-[55px]">
+    <div className="scene_wrapper md:p-[20px]  md:px-[55px]">
       {showModal && <CustomiseCharacterModal closeModal={() => setShowModal(!showModal)} />}
 
       {/* action panel */}
-      <div className="headers flex  justify-center md:justify-between items-center">
+      <div className="headers">
         <div
           role={'button'}
           onClick={() => setShowModal(!showModal)}
@@ -79,17 +79,37 @@ const CustomizeAudio = ({ speakets }) => {
       </div>
 
       <div className="scene w-full border h-[250px]  md:h-[450px] relative">
+        {/* <div
+          style={{ backgroundImage: `url(${sceneAray[currentScene]})` }}
+          className={`bg-image w-full h-full relative sceneBackground`}>
+       
+        </div> */}
+
         <div
           style={{ backgroundImage: `url(${sceneAray[currentScene]})` }}
           className={`bg-image w-full h-full relative sceneBackground`}>
+          <SimpleImageSlider
+            width={'100%'}
+            height={'100%'}
+            images={sceneAray}
+            showBullets={true}
+            style={{
+              backgroundPosition: 'center',
+              border: '1px solid red'
+            }}
+            onClickBullets={(idx) => console.log(idx)}
+            // showNavs={true}
+            navStyle={2}
+            onClickNav={(toRight) => console.log(toRight)}
+          />
           <div className="speakers_container   absolute bottom-20 md:bottom-[70px] left-0 mt-6   middle justify-between w-full">
-            <div className="speaker_one_head mx-auto w-[120px] md:w-full centered">
-              <img src={currentHead} alt="" />
+            <div className="speaker_one_head mx-auto w-[180px] md:w-full centered">
+              <img src={currentHead} alt="" width={'150px'} height={'150px'} />
             </div>
 
             {speakets === 2 && (
-              <div className="speaker_two_head w-[120px] md:w-full  centered">
-                <img src={speakerTwo} alt="" />
+              <div className="speaker_two_head w-[180px] md:w-full  centered">
+                <img src={currentHead} alt="" width={'150px'} height={'150px'} />
               </div>
             )}
           </div>

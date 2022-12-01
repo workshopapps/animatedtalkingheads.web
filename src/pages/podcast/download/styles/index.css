@@ -61,7 +61,12 @@ section.download-video-section
   .video-controls-container {
   opacity: 1;
 }
-section.download-video-section .download-video .page-content .desktop-lhs .video-container.paused .pause-icon {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-lhs
+  .video-container.paused
+  .pause-icon {
   display: none;
 }
 section.download-video-section
@@ -72,7 +77,12 @@ section.download-video-section
   .play-icon {
   display: none;
 }
-section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-lhs
+  .video-container
+  .video-controls-container {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -83,26 +93,54 @@ section.download-video-section .download-video .page-content .desktop-lhs .video
   background: rgba(0, 0, 0, 0.4);
   border-radius: 0px 0px 10px 10px;
 }
-section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .timeline-container {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-lhs
+  .video-container
+  .video-controls-container
+  .timeline-container {
   height: 8px;
   margin-inline: 0.5rem;
   border-radius: 60px;
   display: flex;
   cursor: pointer;
 }
-section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .timeline-container:hover .timeline {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-lhs
+  .video-container
+  .video-controls-container
+  .timeline-container:hover
+  .timeline {
   height: 100%;
 }
-section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .timeline-container .timeline {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-lhs
+  .video-container
+  .video-controls-container
+  .timeline-container
+  .timeline {
   margin: auto 0;
   width: 100%;
   border-radius: 60px;
-  background-color: #E4E4E5;
+  background-color: #e4e4e5;
   height: 0px;
   transition: height 150ms ease-in-out;
   position: relative;
 }
-section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .timeline-container .timeline .thumb-indicator {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-lhs
+  .video-container
+  .video-controls-container
+  .timeline-container
+  .timeline
+  .thumb-indicator {
   --scale: 1;
   position: absolute;
   transform: translateX(-50%) scale(var(--scale));
@@ -113,30 +151,57 @@ section.download-video-section .download-video .page-content .desktop-lhs .video
   aspect-ratio: 1/1;
   z-index: 400;
 }
-section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .timeline-container .timeline::before {
-  content: "";
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-lhs
+  .video-container
+  .video-controls-container
+  .timeline-container
+  .timeline::before {
+  content: '';
   left: 0;
   top: 0;
   position: absolute;
   bottom: 0;
   right: calc(100% - var(--preview -position) * 100%);
 }
-section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .timeline-container .timeline::after {
-  content: "";
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-lhs
+  .video-container
+  .video-controls-container
+  .timeline-container
+  .timeline::after {
+  content: '';
   left: 0;
   top: 0;
   position: absolute;
   bottom: 0;
   right: calc(100% - var(--progress-position) * 100%);
 }
-section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .controls {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-lhs
+  .video-container
+  .video-controls-container
+  .controls {
   display: flex;
   gap: 0.5rem;
   padding: 0.7rem 1.5rem;
   -webkit-align-content: flex-end;
   align-content: flex-end;
 }
-section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .controls button {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-lhs
+  .video-container
+  .video-controls-container
+  .controls
+  button {
   padding: 0;
   height: 48px;
   display: flex;
@@ -145,10 +210,24 @@ section.download-video-section .download-video .page-content .desktop-lhs .video
   opacity: 0.85;
   transition: opacity 150ms ease-in-out;
 }
-section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .controls button:hover {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-lhs
+  .video-container
+  .video-controls-container
+  .controls
+  button:hover {
   opacity: 1;
 }
-section.download-video-section .download-video .page-content .desktop-lhs .video-container .video-controls-container .controls button:nth-child(4) {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-lhs
+  .video-container
+  .video-controls-container
+  .controls
+  button:nth-child(4) {
   margin-left: auto;
 }
 section.download-video-section .download-video .page-content .desktop-lhs .video-container iframe {
@@ -165,17 +244,33 @@ section.download-video-section .download-video .page-content .desktop-rhs .video
   justify-content: center;
   place-items: center;
 }
-section.download-video-section .download-video .page-content .desktop-rhs .video-share-container > h3 {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-rhs
+  .video-share-container
+  > h3 {
   text-align: center;
   text-transform: uppercase;
   margin: 1rem 0;
 }
-section.download-video-section .download-video .page-content .desktop-rhs .video-share-container .video-share {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-rhs
+  .video-share-container
+  .video-share {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-section.download-video-section .download-video .page-content .desktop-rhs .video-share-container .video-share .video-share__icons {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-rhs
+  .video-share-container
+  .video-share
+  .video-share__icons {
   display: flex;
   gap: 0.6rem;
 }
@@ -189,13 +284,22 @@ section.download-video-section .download-video .page-content .desktop-rhs .video
   font-size: 1rem;
   line-height: 1.5rem;
 }
-section.download-video-section .download-video .page-content .desktop-rhs fieldset.video-settings-quality-container {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-rhs
+  fieldset.video-settings-quality-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin: 1.5rem 0;
 }
-section.download-video-section .download-video .page-content .desktop-rhs fieldset.video-settings-quality-container .video-settings-quality {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-rhs
+  fieldset.video-settings-quality-container
+  .video-settings-quality {
   display: flex;
   border: 2px solid blue;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -203,7 +307,13 @@ section.download-video-section .download-video .page-content .desktop-rhs fields
   padding: 1rem 1.5rem;
   cursor: pointer;
 }
-section.download-video-section .download-video .page-content .desktop-rhs fieldset.video-settings-quality-container .video-settings-quality > input[type=radio] {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-rhs
+  fieldset.video-settings-quality-container
+  .video-settings-quality
+  > input[type='radio'] {
   cursor: pointer;
   border-radius: 50%;
   appearance: none;
@@ -213,21 +323,46 @@ section.download-video-section .download-video .page-content .desktop-rhs fields
   height: 16px;
   transform: translateY(5px);
 }
-section.download-video-section .download-video .page-content .desktop-rhs fieldset.video-settings-quality-container .video-settings-quality > input[type=radio]:focus-visible {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-rhs
+  fieldset.video-settings-quality-container
+  .video-settings-quality
+  > input[type='radio']:focus-visible {
   outline-offset: 0;
 }
-section.download-video-section .download-video .page-content .desktop-rhs fieldset.video-settings-quality-container .video-settings-quality > input[type=radio]:checked {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-rhs
+  fieldset.video-settings-quality-container
+  .video-settings-quality
+  > input[type='radio']:checked {
   background-color: #1877f2;
   border-width: 0.9rem;
   border: 3px solid white;
-  outline: 1px solid #2158D2;
+  outline: 1px solid #2158d2;
 }
-section.download-video-section .download-video .page-content .desktop-rhs fieldset.video-settings-quality-container .video-settings-quality > label {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-rhs
+  fieldset.video-settings-quality-container
+  .video-settings-quality
+  > label {
   display: flex;
   margin-right: auto;
   cursor: pointer;
 }
-section.download-video-section .download-video .page-content .desktop-rhs fieldset.video-settings-quality-container .video-settings-quality > label > svg {
+section.download-video-section
+  .download-video
+  .page-content
+  .desktop-rhs
+  fieldset.video-settings-quality-container
+  .video-settings-quality
+  > label
+  > svg {
   margin-right: 0.5rem;
 }
 section.download-video-section .download-video .page-content .desktop-rhs button.button {
