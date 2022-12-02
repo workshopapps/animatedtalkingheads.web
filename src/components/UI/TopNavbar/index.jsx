@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '../Button';
 import styles from './styles.module.css';
-import headerLogo from './../../../assets/icons/header-logo.png';
+import headerLogo from './../../../assets/icons/header_logo.svg';
 import menuIcon from './../../../assets/icons/menu-icon.png';
 import closeIcon from './../../../assets/icons/close.png';
 import { links, routes } from '../../../libs/links';
