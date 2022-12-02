@@ -63,65 +63,70 @@ const Contact = () => {
                   Our customer support are available to attend to you 24/7
                 </p>
               </div>
-              <form className={`${styles.form} mt-10`} onSubmit={onSubmitForm}>
-                <div className="grid md:grid-cols-2 gap-5 md:gap-3 xl:gap-7 text-[16px] md:text-[20px]">
-                  <div>
-                    <input
-                      value={full_name}
-                      onChange={updateName}
-                      type="text"
-                      placeholder="Enter your full name"
-                      className={`${styles.input} border w-full p-3 md:p-4 outline-none px-5 ${
-                        efull_name ? `${styles.error}` : ''
-                      }`}
-                    />
-                    {efull_name && (
-                      <p className="text-red-600 mt-2 text-xs">This field is required</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <input
-                      value={email}
-                      onChange={updateEmail}
-                      type="email"
-                      placeholder="Enter your email address"
-                      className={`${
-                        styles.input
-                      } border w-full p-3 md:p-4 rounded-[10px] outline-none px-5 ${
-                        eemail ? `${styles.error}` : ''
-                      }`}
-                    />
-                    {eemail && <p className="text-red-600 mt-2 text-xs">This field is required</p>}
-                  </div>
-
-                  <textarea
-                    value={message}
-                    onChange={updateMessage}
-                    className={`${styles.input} ${
-                      styles.textArea
-                    } md:col-span-2 border p-4 rounded-[10px]  outline-none px-5 ${
-                      emessage ? `${styles.error}` : ''
-                    }`}
-                    placeholder="Type in your message"
-                    rows="10"
-                  />
-                </div>
-                {emessage && <p className="text-red-600  text-xs mt-2">This field is required</p>}
-                {loading && (
-                  <div className="text-center mt-2">
-                    <div className={styles.ring}>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
+              <div className='flex justify-center'>
+                <form className={`${styles.form} mt-2 md:mt-10`} onSubmit={onSubmitForm}>
+                  <div className="flex flex-col text-[16px] md:text-[20px]">
+                    <div>
+                      <label>Name</label>
+                      <input
+                        value={full_name}
+                        onChange={updateName}
+                        type="text"
+                        placeholder="Enter your Name"
+                        className={`${styles.input} border w-full outline-none p-6 ${
+                          efull_name ? `${styles.error}` : ''
+                        }`}
+                      />
+                      {efull_name && (
+                        <p className="text-red-600 mt-2 text-xs">This field is required</p>
+                      )}
                     </div>
+
+                    <div>
+                      <label>Email</label>
+                      <input
+                        value={email}
+                        onChange={updateEmail}
+                        type="email"
+                        placeholder="Enter your email address"
+                        className={`${
+                          styles.input
+                        } border w-full outline-none p-6 ${
+                          eemail ? `${styles.error}` : ''
+                        }`}
+                      />
+                      {eemail && <p className="text-red-600 mt-2 text-xs">This field is required</p>}
+                    </div>
+
+                    <label>Message</label>
+                    <textarea
+                      value={message}
+                      onChange={updateMessage}
+                      className={`${styles.input} ${
+                        styles.textArea
+                      } md:col-span-2 border p-4 rounded-[10px]  outline-none px-5 ${
+                        emessage ? `${styles.error}` : ''
+                      }`}
+                      placeholder="Type in your message"
+                      rows="10"
+                    />
                   </div>
-                )}
-                <div className="flex justify-center mt-5">
-                  <Button type="submit">Submit</Button>
-                </div>
-              </form>
+                  {emessage && <p className="text-red-600  text-xs mt-2">This field is required</p>}
+                  {loading && (
+                    <div className="text-center mt-2">
+                      <div className={styles.ring}>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                    </div>
+                  )}
+                  <div className="flex justify-center mt-5">
+                    <button className={styles.submit}>Submit</button>
+                  </div>
+                </form>
+              </div>
             </div>
           ) : (
             <div className="">
