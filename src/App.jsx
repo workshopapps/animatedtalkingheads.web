@@ -25,6 +25,8 @@ import UploadPodcast from './pages/podcast/upload';
 import Customization from './pages/podcast/customization';
 import ExploreAvatar from './pages/explore-avatar';
 import ApiPage from './pages/api-page';
+import SignUp from './pages/sign-up';
+import SignIn from './pages/sign-in';
 
 import store from './store/store';
 import DownloadPodcast from './pages/podcast/download';
@@ -87,7 +89,8 @@ function App() {
         <Route path={routes.press} element={<Press />} />
         <Route path={routes.pressNewsPage} element={<PressNewsPage />} />
         <Route path={routes.pressWatchnow} element={<Watchnow />} />
-
+        <Route path={routes.signUp} element={<SignUp/>} />
+        <Route path={routes.signIn} element={<SignIn />} />
 
         {/* privacy-policy nested routes */}
         <Route path={routes.privacyAbout} element={<PrivacyAbout />} />

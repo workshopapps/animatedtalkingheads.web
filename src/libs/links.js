@@ -40,7 +40,9 @@ export const routes = {
   exploreAvatar: '/explore-avatar',
   api: '/api-page',
   pressNewsPage: '/press/news-page',
-  pressWatchnow: '/press/watch-now'
+  pressWatchnow: '/press/watch-now',
+  signUp: '/sign-up',
+  signIn: 'sign-in',
 };
 
 export const links = [
