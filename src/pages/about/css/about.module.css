@@ -11,23 +11,12 @@
 /* hero */
 
 .aboutHero {
-  background: rgb(7, 7, 22);
-  position: relative !important;
+  background-color: rgb(7, 7, 22);
   display: grid;
-  height: fit-content;
-}
-
-.aboutHeroImage {
-  background-image: url(../images/Herp-image.webp);
-  height: 65vh;
-  width: 100%;
-  background-position: center;
-  background-size: cover;
-  opacity: 0.8;
+  padding: 3rem;
 }
 
 .aboutHeroText {
-  position: absolute;
   text-align: center;
   top: 30%;
   width: 100%;
@@ -39,74 +28,30 @@
   font-size: 48px;
 }
 
-/* hero */
-
-/* about_main_content */
-
-/* about_main_content */
-
-/* about_mission */
-
-.aboutMission {
-  display: grid;
-}
-
-.aboutMissionSection1 {
-  position: absolute;
-  top: 65%;
-  width: 50%;
-  justify-self: center;
-  text-align: center;
-  background-color: #ffffff;
-  padding: 20px;
-}
-
-.aboutMissionSection1 h3 {
-  color: #292d32;
-  font-family: 'Mulish', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-}
-
-.aboutMissionSection1 p {
-  color: #292d32;
-  font-family: 'Mulish', sans-serif;
-  font-weight: 600;
-  font-size: 25px;
-}
-
-.aboutMissionSection2 {
-  display: grid;
-  align-items: center;
-  justify-self: center;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 180px;
-}
-
-.missionGrid {
-  width: 75%;
-  display: grid;
-  justify-self: center;
-}
-
-.missionGridBox {
+.aboutSection {
   display: flex;
-  padding: 7px 0px;
+  flex-direction: column;
+  gap: 2rem;
+
+  text-align: center;
+  padding: 2rem 10rem;
 }
 
-.missionGridBox img {
-  margin-right: 5px;
+.contentHeading {
+  font-size: 1.2rem;
 }
 
-/* about_mission */
-
-/* about_values */
+.contentTheme {
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+}
 
 .aboutValues {
   display: grid;
-  padding: 100px 0px;
+  padding: 50px 0px;
   background-color: #171d2e;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 .aboutValuesHeading {
@@ -119,25 +64,20 @@
 .aboutValuesHeading h3 {
   font-family: 'Mulish', sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
-.aboutValuesHeading h2 {
-  font-size: 30px;
+.ValuesText {
   font-family: 'Mulish', sans-serif;
-}
-
-.aboutValuesHeading p {
-  font-family: 'Mulish', sans-serif;
-  font-size: 15px;
-  margin-top: 20px;
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
 
 .valuesGridSection {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 88%;
-  justify-self: center;
+  /* width: 88%; */
+  justify-content: center;
   margin-top: 50px;
 }
 
@@ -147,10 +87,14 @@
   margin: 20px 0px;
   width: 88%;
   justify-self: center;
+  text-align: center;
 }
 
 .valuesGrid img {
   height: 40px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
 }
 
 .valuesGrid h3 {
@@ -168,21 +112,14 @@
 
 /* about_story */
 
-.aboutStory {
-  display: grid;
-  margin-top: 100px;
-}
-
-.aboutStorySection {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  align-items: center;
+/* .aboutStorySection {
+  text-align: center;
 }
 
 .storyGrid {
   width: 75%;
   justify-self: center;
-}
+} 
 
 .storyGrid h3 {
   font-weight: 500;
@@ -205,52 +142,25 @@
   font-size: 16px;
   margin: 10px 0px;
 }
+*/
 
 /* about_story */
 
 /* about_team */
 
-.aboutTeam {
-  display: grid;
+.meetSection {
   background-color: #171d2e;
-  padding: 100px 0px;
   color: #ffffff;
-  margin-top: 100px;
+  text-align: center;
 }
 
-.aboutTeamSection1 {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  align-items: center;
-}
-
-.teamGrid {
-  width: 75%;
-  justify-self: center;
-}
-
-.teamGrid h3 {
-  font-weight: 500;
-  font-size: 14px;
-  margin: 10px 0px;
-  font-family: 'Mulish', sans-serif;
-}
-
-.teamGrid p {
-  font-family: 'Mulish', sans-serif;
-  font-weight: 600;
-  font-size: 25px;
-}
-
-.teamGrid h5 {
-  font-family: 'Mulish', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  margin: 10px 0px;
+.meetContent {
+  padding: 2rem 12rem;
 }
 
 .aboutTeamSection2 {
   width: 85%;
+  margin: 0 auto;
   justify-self: center;
   display: grid;
   position: relative;
