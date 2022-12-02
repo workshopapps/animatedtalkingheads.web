@@ -1,12 +1,15 @@
 import Layout from '../../components/UI/Layout';
 import '../sign-up/styles/index.css'
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { data } from 'autoprefixer';
+import { navigate } from '@storybook/addon-links';
 
 const SignUp = () => {
     // const[eye,setEye]=useState(true);
     const[password,setPassword]=useState("password");
     const[type,setType]=useState(false);
+    const navigate = useNavigate()
 
     const Eye=()=>{
         if(password=="password"){
@@ -39,12 +42,26 @@ const SignUp = () => {
     
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log(formData.email)
-        console.log(formData.password)
-        console.log(formData.confirmPassword)
+        const data = { email: formData.email, password: formData.password }
     }
+
+    fetch('https://example.com/signUp', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('success:', data);
+            navigate("/sign-in")
+        })
+        .catch((error) => {
+            console.log('Error:', error);
+        });
     
   return (
     <Layout>
