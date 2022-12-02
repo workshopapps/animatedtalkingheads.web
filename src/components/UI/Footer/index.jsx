@@ -28,9 +28,10 @@ const links2 = [
 
 const links3 = [
   { name: 'Pricing', link: routes.pricing },
+  { name: 'Terms of Use', link: routes.termsUse },
   { name: 'Terms of Service', link: routes.termsService },
-  { name: 'Terms and Conditions', link: routes.termsCondition },
-  { name: 'Privacy Policy', link: routes.privacy }
+  // { name: 'Terms and Conditions', link: routes.termsCondition },
+  // { name: 'Privacy Policy', link: routes.privacy }
 ];
 
 const Footer = () => {
