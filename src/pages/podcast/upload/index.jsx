@@ -49,18 +49,18 @@ const UploadPodcast = () => {
     setError(false);
     const formData = new FormData();
     formData.append('podcast', audio);
-    let percent = 0;
+    let uploadStatus = 0;
     const url = 'https://api.voxlips.hng.tech/podcasts/upload/';
 
     const config = {
       onUploadProgress: (progressEvent) => {
         const { loaded, total } = progressEvent;
         console.log(loaded, total);
-        percent = Math.floor((loaded * 100) / total);
-        console.log(`${loaded}kb of ${total}kb | ${percent}%`);
+        uploadStatus = Math.floor((loaded * 100) / total);
+        console.log(`${loaded}kb of ${total}kb | ${uploadStatus}%`);
 
-        if (percent <= 100) {
-          setPercentage(percent);
+        if (uploadStatus <= 100) {
+          setPercentage(uploadStatus);
         }
       },
       mode: 'cors',
@@ -73,7 +73,7 @@ const UploadPodcast = () => {
       const resp = await axios.post(url, formData, config);
       const data = await resp.data;
       store.dispatch({ type: 'ADD_PODCAST_ITEM', payload: data });
-      setPercentage(percent, () => {
+      setPercentage(uploadStatus, () => {
         setTimeout(() => {
           setPercentage(0);
         }, 1000);
@@ -108,7 +108,7 @@ const UploadPodcast = () => {
 
         <div
           {...getRootProps()}
-          className={` w-[80%]  sm:w-[70%] md:w-[60%] lg:w-[65%] cursor-pointer  my-5 py-10 border-[3px] bg-[#FFFFFF] rounded-lg border-dashed border-opacity-20 mx-auto ${
+          className={` w-[80%]  sm:w-[70%] md:w-[60%] lg:w-[70%] cursor-pointer  my-5 py-3 border-[3px] bg-[#FFFFFF] rounded-lg border-dashed border-opacity-20 mx-auto ${
             error && 'border-red-600 opacity-100'
           }`}>
           <div className="flex justify-center">
@@ -132,7 +132,7 @@ const UploadPodcast = () => {
               {!upload ? (
                 <div></div>
               ) : (
-                <div className="flex flex-col justify-center gap-5 mb-10">
+                <div className="flex flex-col justify-center gap-5">
                   <Text label="Your file is uploading" type="text2" w="sm" />
                   {percentage > 0 && (
                     <div className=" flex justify-center">
@@ -141,8 +141,7 @@ const UploadPodcast = () => {
                         trailWidth={5}
                         strokeWidth={5}
                         strokeColor="#2563eb"
-                        className=" w-[60px] lg:w-[80px]"
-                        gapPosition="right"
+                        className=" w-[60px] lg:w-[70px]"
                       />
                     </div>
                   )}
