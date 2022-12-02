@@ -4,6 +4,7 @@ import AVATAR_IMAGES from './avatar.data';
 import SIDE_IMAGES from './avatar-side.data';
 
 import avatarStyles from './avatar.module.css';
+import { Button } from '../../components/UI/Button';
 
 const Avatars = () => {
   const [avatars] = useState(AVATAR_IMAGES);
@@ -49,7 +50,7 @@ const Avatars = () => {
               </div>
             ))}
           </div>
-          <button className={avatarStyles.btn}> Meet the Avatars</button>
+          <Button> Meet the Avatars</Button>
           <a href="/avatar/scenery" className={avatarStyles.scenery}>
             Explore our Various Environments and Scenery &gt;&gt;
           </a>

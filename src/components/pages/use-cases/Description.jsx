@@ -8,7 +8,7 @@ const Description = ({ children, heading, index }) => {
     <div className="grid gap-5 justify-center mt-5">
       <h2 className="font-bold text-2xl md:text-4xl"> {heading}</h2>
       <p className="text-base  lg:text-xl">{children}</p>
-      <Link to={`${routes.useCaseArticle}/${index}`}>
+      <Link to={`${routes.useCaseArticle}/${index - 1}`}>
         <div className="flex gap-3 text-base lg:text-xl text-blue-600 hover:gap-5 duration-300 items-center">
           <p>Read more</p>
           <div>

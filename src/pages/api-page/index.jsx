@@ -16,14 +16,14 @@ import { FiSmile } from 'react-icons/fi';
 import { CiMicrophoneOn } from 'react-icons/ci';
 import { BsGlobe } from 'react-icons/bs';
 import { BiUserCircle } from 'react-icons/bi';
-import styles from "./styles.module.css";
+import styles from './styles.module.css';
 
 const ApiPage = () => {
   return (
     <>
       <ApiNav />
-      <main className='overflow-x-hidden'>
-        <div className='flex flex-col items-left py-2 px-10 gap-4 items-center lg:py-20'>
+      <main className="overflow-x-hidden">
+        <div className="flex flex-col items-left py-2 px-10 gap-4 items-center lg:py-20">
           <section className=" flex flex-col sm:gap-11 lg:20">
             <div className="py-5 items-center lg:gap-x-20 flex flex-col justify-center md:basis-3/5 lg:flex-row lg:justify-between ">
               <div className="flex text-center flex-col gap-7 lg:gap-5 lg:justify-left lg:text-left lg:basis-3/5">
@@ -46,9 +46,7 @@ const ApiPage = () => {
                 </div>
               </div>
 
-            
-              <img className='lg:w-[500px] xl:w-[600px] 2xl:w-full' src={codeImg} alt="api-img" />
-                   
+              <img className="lg:w-[500px] xl:w-[600px] 2xl:w-full" src={codeImg} alt="api-img" />
 
               <div className="flex flex-col items-center gap-4 md:hidden">
                 <Button label="Register" />
@@ -57,7 +55,7 @@ const ApiPage = () => {
             </div>
             <div className="flex flex-wrap justify-around py-6">
               <div className="flex gap-2">
-                <div className='mt-2'>
+                <div className="mt-2">
                   <BsGlobe size={30} className="text-blue-500" />
                 </div>
                 <div className="flex flex-col">
@@ -66,7 +64,7 @@ const ApiPage = () => {
                 </div>
               </div>
               <div className="flex  gap-2">
-                <div className='mt-2'>
+                <div className="mt-2">
                   <BiUserCircle size={30} className="text-blue-500" />
                 </div>
                 <div className="flex flex-col">
@@ -75,7 +73,7 @@ const ApiPage = () => {
                 </div>
               </div>
               <div className="flex ">
-                <div className='mt-2'>
+                <div className="mt-2">
                   <CiMicrophoneOn size={40} className="text-blue-500" />
                 </div>
                 <div className="flex flex-col">
@@ -89,22 +87,21 @@ const ApiPage = () => {
 
         <div className={styles.images}></div>
 
-        <div className='flex flex-col items-left py-2 px-10 gap-4 items-center lg:py-20'>
-          
+        <div className="flex flex-col items-left py-2 px-10 gap-4 items-center lg:py-20">
           <section className="text-center sm:text-left flex flex-col gap-2 lg:py-14">
             <div className="flex flex-col gap-14 lg:flex-row  py-5 lg:py-10">
               <div className="flex flex-col gap-5 md:basis-3/5 md:text-left">
                 <div className="md:mt-12 md:text-left flex flex-col ">
-                  <Text type={'header2'} w={'bold'} >
+                  <Text type={'header2'} w={'bold'}>
                     Simple Combination
                   </Text>
                 </div>
                 <div className="flex flex-col md:flex-col gap-11 text-left">
                   <div className="py-2 text-center sm:text-left">
                     <Text type={'text3'} w={'md'}>
-                      The Voxclips APIs is a modern PYTHON API that surfaces all of the info you will
-                      need to build any avatar or podcast for your users. It’s so simple and easy to
-                      use that we even run Voxclips.com on it!
+                      The Voxclips APIs is a modern PYTHON API that surfaces all of the info you
+                      will need to build any avatar or podcast for your users. It’s so simple and
+                      easy to use that we even run Voxclips.com on it!
                     </Text>
                   </div>
                   <div className="gap-4 flex justify-center sm:justify-start">
@@ -120,15 +117,13 @@ const ApiPage = () => {
                   </div>
                   <div className=" sm:flex gap-4">
                     <FaPython size={30} />
-                    <img style={{width: "30px"}} src={diamond} alt="diamond" />
+                    <img style={{ width: '30px' }} src={diamond} alt="diamond" />
                     <SiJavascript size={30} className="text-yellow-400" />
                   </div>
                 </div>
               </div>
 
-          
-              <img className='lg:w-[500px] xl:w-[600px] 2xl:w-full' src={codeImg} alt='api-img' />
-              
+              <img className="lg:w-[500px] xl:w-[600px] 2xl:w-full" src={codeImg} alt="api-img" />
 
               <div className=" flex flex-col sm:hidden gap-2">
                 <div>
@@ -196,7 +191,7 @@ const ApiPage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-7 max-w-[1200px]">
               <div className="bg-white rounded-lg py-8 px-4">
-                <div className='flex items-center' alt="mobile">
+                <div className="flex items-center" alt="mobile">
                   <p className={`${styles.api_content} max-w-[400px] text-left`}>
                     <h3 className={`${styles.heading} max-w-[150px] md:max-w-[250px] text-left`}>
                       Mobile SDKs
@@ -206,11 +201,10 @@ const ApiPage = () => {
                   </p>
 
                   <img className={styles.apiImg} src={mobile} alt="mobile" />
-
                 </div>
               </div>
               <div className="bg-white rounded-lg py-8 px-4">
-                <div className='flex items-center'>
+                <div className="flex items-center">
                   <p className={`${styles.api_content} max-w-[400px] text-left`}>
                     <h3 className={`${styles.heading} text-left`}>
                       Dynamically responsive products
@@ -218,31 +212,31 @@ const ApiPage = () => {
                     Every avatar returned by the API can be manupulated to dynamically adjust the
                     dimensions, edit and the quality of the image in real time.
                   </p>
-                  <img className={styles.apiImg}  src={desktop} alt="desktop" />
+                  <img className={styles.apiImg} src={desktop} alt="desktop" />
                 </div>
               </div>
               <div className=" bg-white rounded-lg py-8 px-4">
-                <div className='flex items-center'>
+                <div className="flex items-center">
                   <p className={`${styles.api_content} max-w-[400px] text-left`}>
                     <h3 className={`${styles.heading} max-w-[150px] md:max-w-[250px] text-left`}>
                       Libraries in your language
                     </h3>
-                    We maintan official libraries in JaveScript, PHP and Ruby. Our community have also
-                    built popular libraries in Python, Swift and more.
+                    We maintan official libraries in JaveScript, PHP and Ruby. Our community have
+                    also built popular libraries in Python, Swift and more.
                   </p>
-                  <img className={styles.apiImg}  src={desktop} alt="desktop" />
+                  <img className={styles.apiImg} src={desktop} alt="desktop" />
                 </div>
               </div>
               <div className=" bg-white rounded-lg py-8 px-4">
-                <div className='flex items-center'>
+                <div className="flex items-center">
                   <p className={`${styles.api_content} max-w-[400px] text-left`}>
                     <h3 className={`${styles.heading} max-w-[150px] md:max-w-[250px] text-left`}>
                       Customize your own product
                     </h3>
-                    We try to maintain the idea that the product is yours and you can do what ever you
-                    want with your avatara and podcasts
+                    We try to maintain the idea that the product is yours and you can do what ever
+                    you want with your avatara and podcasts
                   </p>
-                  <img className={styles.apiImg}  src={workshop} alt="workshop" />
+                  <img className={styles.apiImg} src={workshop} alt="workshop" />
                 </div>
               </div>
             </div>
@@ -254,7 +248,7 @@ const ApiPage = () => {
               </p>
             </div>
             <div className="flex flex-col items-center">
-              <button className={styles.btn}>Register as a Developer</button>
+              <Button>Register as a Developer</Button>
             </div>
           </section>
         </div>

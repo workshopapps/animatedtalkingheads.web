@@ -33,7 +33,7 @@ const UseCaseArticle = () => {
               <p className="hidden md:block">Back</p>
             </button>
             <Link to="/podcast/upload">
-              <Button label={'Get Started'}></Button>
+              <Button label={'Get Started'}>Get Started</Button>
             </Link>
           </div>
         </div>

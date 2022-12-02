@@ -11,7 +11,7 @@
 }
 
 .nav .links {
-  max-width: 511px;
+  max-width: 420px;
 }
 
 .nav .links a {
@@ -20,7 +20,8 @@
   color: #292d32;
 }
 
-.nav .links a:hover {
+.nav .links a:hover,
+.nav .link a:active {
   color: #2158d2;
 }
 
@@ -99,6 +100,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown .dropdown_list {
+  display: none;
+}
+
+.dropdown:hover .dropdown_list {
+  display: block;
 }
 
 @media screen and (max-width: 756px) {

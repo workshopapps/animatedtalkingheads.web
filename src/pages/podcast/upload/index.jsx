@@ -1,25 +1,19 @@
 import Layout from '../../../components/UI/Layout';
 import microphone from '../../../assets/icons/upload_podcast/microphone-podcast_upload.svg';
 import musicnote from '../../../assets/icons/upload_podcast/musicnote.svg';
-// import google from '../../../assets/icons/upload_podcast/google-drive.svg';
-// import dropbox from '../../../assets/icons/upload_podcast/dropbox.svg';
-// import one_drive from '../../../assets/icons/upload_podcast/one-drive.svg';
-// import link from '../../../assets/icons/upload_podcast/bx_link.svg';
+
 import music from '../../../assets/icons/upload_podcast/music.svg';
 import correct from '../../../assets/icons/upload_podcast/correct.svg';
 import { Button } from '../../../components/UI/Button';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Text } from '../../../components/UI/Text';
 import styles from '../upload/index.module.scss';
 import { Link } from 'react-router-dom';
 import { useDropzone } from 'react-dropzone';
-import { audio_formats } from './audio';
 import store from '../../../store/store';
 
 const UploadPodcast = () => {
-  console.log(store.getState());
-
   const [audio, setAudio] = useState(null);
   const [name, setName] = useState(null);
   const [upload, setUpload] = useState(false);
@@ -32,23 +26,24 @@ const UploadPodcast = () => {
 
   const onDrop = useCallback((acceptedFiles) => {
     setAudio(acceptedFiles[0]);
-    console.log(acceptedFiles[0]);
     setName(acceptedFiles[0].name);
   }, []);
+
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
-  const uploadFile = () => {
-    const audioFormat = audio_formats.find((x) => 'audio/' + x === audio.type);
-    if (!audioFormat) {
-      setError('Only audio files are supported');
-    } else if (audio) {
-      setLoading({ ...loading, isDisabled: true });
-      setUpload(true);
-      uploadFunction();
+  useEffect(() => {
+    if (audio) {
+      if (!audio.type.includes('audio')) {
+        setError('Only audio files are supported');
+      } else if (audio) {
+        setLoading({ ...loading, isDisabled: true });
+        setUpload(true);
+        uploadToServer();
+      }
     }
-  };
+  }, [name, audio]);
 
-  const uploadFunction = () => {
+  const uploadToServer = () => {
     setError(false);
     const data = new FormData();
     data.append('podcast', audio);
@@ -60,7 +55,6 @@ const UploadPodcast = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         store.dispatch({ type: 'ADD_PODCAST_ITEM', payload: data });
         setUpload(false);
         setUploaded(true);
@@ -71,7 +65,6 @@ const UploadPodcast = () => {
         setAudio(false);
         setUploaded(false);
         setLoading({ ...loading, isDisabled: false });
-        console.log(err.message);
       });
   };
 
@@ -140,7 +133,7 @@ const UploadPodcast = () => {
                 <p>
                   or{' '}
                   <span className="text-pri-600 cursor-pointer">
-                    {audio ? 'change file' : 'browse'}
+                    {error ? 'change file' : 'browse'}
                   </span>
                 </p>
               </div>
@@ -149,36 +142,14 @@ const UploadPodcast = () => {
           {error && <p className="text-red-700">{error}</p>}
         </div>
 
-        {/* <div className="-[3px] border-green-50 my-5">
-          <div className="flex mx-auto  justify-center  text-[12px] font-bold gap-3 gap-y-2">
-            <div className="flex gap-1 md:gap-2 items-center cursor-pointer">
-              <img src={link} alt="google-drive" className="w-[16px] max-w-[25px]" />
-              <p data-testid="url">Url</p>
-            </div>
-            <div className="flex gap-1 md:gap-2 items-center cursor-pointer">
-              <img src={google} alt="google-drive" className="w-[16px] max-w-[25px]" />
-              <p>Google Drive</p>
-            </div>
-            <div className="flex gap-1 md:gap-2 items-center cursor-pointer">
-              <img src={dropbox} alt="google-drive" className="w-[16px] max-w-[25px]" />
-              <p>Dropbox</p>
-            </div>
-            <div className="flex gap-1 md:gap-2 items-center cursor-pointer">
-              <img src={one_drive} alt="google-drive" className="max-w-[25px]" />
-              <p>One Drive</p>
-            </div>
-          </div>
-        </div> */}
         {uploaded ? (
           <Link to="/podcast/customize">
             <div className="my-10 justify-center flex">
-              <Button label="Start Creating" />
+              <Button label="Start Creating">Upload Link</Button>
             </div>
           </Link>
         ) : (
-          <div className="my-10 justify-center flex ">
-            <Button {...loading} onClick={uploadFile} />
-          </div>
+          <div className=" h-[115px]"></div>
         )}
       </div>
     </Layout>
