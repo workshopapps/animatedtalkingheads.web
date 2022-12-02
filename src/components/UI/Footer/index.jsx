@@ -89,7 +89,7 @@ const Footer = () => {
 
           <p className="text-base">Connect With Us</p>
           <div className="flex gap-3 items-center">
-            <a to="https://www.facebook.com/Hnginternship/">
+            <a href="https://www.facebook.com/Hnginternship/">
               <img src={facebook} alt="facebook" />
             </a>
             <a href="https://twitter.com/hnginternship">
