@@ -164,7 +164,7 @@ section.download-video-section
   top: 0;
   position: absolute;
   bottom: 0;
-  right: calc(100% - var(--preview -position) * 100%);
+  right: calc(100% - var(--preview-position) * 100%);
 }
 section.download-video-section
   .download-video
