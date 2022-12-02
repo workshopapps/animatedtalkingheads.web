@@ -1,45 +1,46 @@
-import avatar1 from '../../assets/avatars/set-2/avatar-1-1.png';
-import avatar2 from '../../assets/avatars/set-2/avatar-1-2.png';
-import avatar3 from '../../assets/avatars/set-2/avatar-1-3.png';
-import avatar4 from '../../assets/avatars/set-2/avatar-1-4.png';
-import avatar5 from '../../assets/avatars/set-2/avatar-2-1.png';
-import avatar6 from '../../assets/avatars/set-2/avatar-2-2.png';
-import avatar7 from '../../assets/avatars/set-2/avatar-2-3.png';
-import avatar8 from '../../assets/avatars/set-2/avatar-2-4.png';
-import avatar9 from '../../assets/avatars/set-2/avatar-3-1.png';
-import avatar10 from '../../assets/avatars/set-2/avatar-3-2.png';
-import avatar11 from '../../assets/avatars/set-2/avatar-3-3.png';
-import avatar12 from '../../assets/avatars/set-2/avatar-3-4.png';
-import avatar13 from '../../assets/avatars/set-2/avatar-4-1.png';
-import avatar14 from '../../assets/avatars/set-2/avatar-4-2.png';
-import avatar15 from '../../assets/avatars/set-2/avatar-4-3.png';
-import avatar16 from '../../assets/avatars/set-2/avatar-5-1.png';
-import avatar17 from '../../assets/avatars/set-2/avatar-5-2.png';
-import avatar18 from '../../assets/avatars/set-2/avatar-5-3.png';
-import avatar19 from '../../assets/avatars/set-2/avatar-6-1.png';
-import avatar20 from '../../assets/avatars/set-2/avatar-6-2.png';
-import avatar21 from '../../assets/avatars/set-2/avatar-6-3.png';
-import avatar22 from '../../assets/avatars/set-2/avatar-7-1.png';
-import avatar23 from '../../assets/avatars/set-2/avatar-7-2.png';
-import avatar24 from '../../assets/avatars/set-2/avatar-7-3.png';
-import avatar25 from '../../assets/avatars/set-2/avatar-8-1.png';
-import avatar26 from '../../assets/avatars/set-2/avatar-8-2.png';
-import avatar27 from '../../assets/avatars/set-2/avatar-8-3.png';
-import avatar28 from '../../assets/avatars/set-2/avatar-8-4.png';
-import avatar29 from '../../assets/avatars/set-2/avatar-9-1.png';
-import avatar30 from '../../assets/avatars/set-2/avatar-9-2.png';
-import avatar31 from '../../assets/avatars/set-2/avatar-9-3.png';
-import avatar32 from '../../assets/avatars/set-2/avatar-9-4.png';
-import avatar33 from '../../assets/avatars/set-2/avatar-10-1.png';
-import avatar34 from '../../assets/avatars/set-2/avatar-10-2.png';
-import avatar35 from '../../assets/avatars/set-2/avatar-10-3.png';
-import avatar36 from '../../assets/avatars/set-2/avatar-10-4.png';
-import avatar37 from '../../assets/avatars/set-2/avatar-11-1.png';
-import avatar38 from '../../assets/avatars/set-2/avatar-11-2.png';
-import avatar39 from '../../assets/avatars/set-2/avatar-11-3.png';
-import avatar40 from '../../assets/avatars/set-2/avatar-11-4.png';
-import avatar41 from '../../assets/avatars/set-2/avatar-12-1.png';
-import avatar42 from '../../assets/avatars/set-2/avatar-12-2.png';
+import avatar1 from '../../assets/avatars/set-2/Avatars-01.png';
+import avatar2 from '../../assets/avatars/set-2/Avatars-02.png';
+import avatar3 from '../../assets/avatars/set-2/Avatars-03.png';
+import avatar4 from '../../assets/avatars/set-2/Avatars-04.png';
+import avatar5 from '../../assets/avatars/set-2/Avatars-05.png';
+import avatar6 from '../../assets/avatars/set-2/Avatars-06.png';
+import avatar7 from '../../assets/avatars/set-2/Avatars-07.png';
+import avatar8 from '../../assets/avatars/set-2/Avatars-08.png';
+import avatar9 from '../../assets/avatars/set-2/Avatars-09.png';
+import avatar10 from '../../assets/avatars/set-2/Avatars-10.png';
+import avatar11 from '../../assets/avatars/set-2/Avatars-11.png';
+import avatar12 from '../../assets/avatars/set-2/Avatars-12.png';
+import avatar13 from '../../assets/avatars/set-2/Avatars-13.png';
+import avatar14 from '../../assets/avatars/set-2/Avatars-14.png';
+import avatar15 from '../../assets/avatars/set-2/Avatars-15.png';
+import avatar16 from '../../assets/avatars/set-2/Avatars-16.png';
+import avatar17 from '../../assets/avatars/set-2/Avatars-17.png';
+import avatar18 from '../../assets/avatars/set-2/Avatars-18.png';
+import avatar19 from '../../assets/avatars/set-2/Avatars-19.png';
+import avatar20 from '../../assets/avatars/set-2/Avatars-20.png';
+import avatar21 from '../../assets/avatars/set-2/Avatars-21.png';
+import avatar22 from '../../assets/avatars/set-2/Avatars-22.png';
+import avatar23 from '../../assets/avatars/set-2/Avatars-23.png';
+import avatar24 from '../../assets/avatars/set-2/Avatars-24.png';
+import avatar25 from '../../assets/avatars/set-2/Avatars-25.png';
+import avatar26 from '../../assets/avatars/set-2/Avatars-26.png';
+import avatar27 from '../../assets/avatars/set-2/Avatars-27.png';
+import avatar28 from '../../assets/avatars/set-2/Avatars-28.png';
+import avatar29 from '../../assets/avatars/set-2/Avatars-29.png';
+import avatar30 from '../../assets/avatars/set-2/Avatars-30.png';
+import avatar31 from '../../assets/avatars/set-2/Avatars-31.png';
+import avatar32 from '../../assets/avatars/set-2/Avatars-32.png';
+import avatar33 from '../../assets/avatars/set-2/Avatars-33.png';
+import avatar34 from '../../assets/avatars/set-2/Avatars-34.png';
+import avatar35 from '../../assets/avatars/set-2/Avatars-35.png';
+import avatar36 from '../../assets/avatars/set-2/Avatars-36.png';
+import avatar37 from '../../assets/avatars/set-2/Avatars-37.png';
+import avatar38 from '../../assets/avatars/set-2/Avatars-38.png';
+import avatar39 from '../../assets/avatars/set-2/Avatars-39.png';
+import avatar40 from '../../assets/avatars/set-2/Avatars-40.png';
+import avatar41 from '../../assets/avatars/set-2/Avatars-41.png';
+import avatar42 from '../../assets/avatars/set-2/Avatars-42.png';
+import avatar43 from '../../assets/avatars/set-2/Avatars-43.png';
 
 
 const AVATAR_SET_2 = [
@@ -211,6 +212,11 @@ const AVATAR_SET_2 = [
     id: 42,
     image: avatar42
   },
+  {
+    id: 43,
+    image: avatar43
+  },
+  
 ];
 
 

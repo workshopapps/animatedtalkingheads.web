@@ -1,3 +1,73 @@
+.blueLeftPattern {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 80px;
+  background-image: url(/src/assets/how-it-works/Rectangle\ 234.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.blueRightPattern {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-image: url(/src/assets/how-it-works/Rectangle\ 234.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+}
+
+.lightLeftPattern {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background-image: url(/src/assets/how-it-works/Rectangle\ 235.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* transform: rotate(180deg); */
+}
+
+.lightRightPattern {
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-image: url(/src/assets/how-it-works/Rectangle\ 235.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+}
+
+
+.get_started {
+  background: #2158D2;
+  border-radius: 8px;
+  width: 234px;
+  color: white;
+  height: 54px;
+
+}
+
+.get_started:enabled {
+  background: #2158D2;
+}
+
+.get_started:hover {
+  background: #1C4CB6;
+}
+
+.get_started:disabled {
+  background: #2563EB;
+}
+
 .top_bg {
   display: flex;
   height: 180px;
@@ -114,16 +184,22 @@
 }
 
 .last_link {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 30px;
+  font-weight: 400px;
+  font-size: 18px;
+  line-height: 23px;
   text-align: center;
   text-decoration-line: underline;
-  /* Black - Text */
   color: #292D32;
   margin-top: 2em;
   margin-bottom: 2em;
 }
+
+
+.last {
+  border: none;
+  padding-bottom: 0px;
+}
+
 
 @media only screen and (min-width: 768px) {
   .header {
@@ -211,4 +287,36 @@
     margin-top: 84.69px;
     margin-bottom: 220px;
   }
+
+  .last_link {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+}
+
+
+@media screen and (max-width: 768px) {
+  .top_bg {
+    height: 80px;
+  }
+  
+  .top_bg h1 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .heading {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+  }
+  
+  .info {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    max-width: 230px;
+  }
+
 }
