@@ -1,4 +1,7 @@
 pipeline {
+	environment {
+        	CI = 'false'
+    	}
 	agent any
 	
 	tools {nodejs "nodejs"}
@@ -11,7 +14,6 @@ pipeline {
                 sh " rm -rf animatedtalkingheads.web"
 			    sh "git clone https://github.com/workshopapps/animatedtalkingheads.web.git"
                 dir('animatedtalkingheads.web') {
-			sh "export CI=false"
                    
                     sh "npm install"
                     sh "npm run build"
