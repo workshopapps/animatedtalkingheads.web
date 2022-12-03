@@ -8,7 +8,7 @@ const SignUp = () => {
     const navigate = useNavigate()
     const [error, setError] = useState('')
 
-    const { createUser, user } = UserAuth()   
+    const { createUser } = UserAuth()   
 
   const [formData, setFormData] = useState({
     email: '',
