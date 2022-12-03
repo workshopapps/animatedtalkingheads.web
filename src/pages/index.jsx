@@ -5,7 +5,7 @@ import './styles/index.css';
 import { Link } from 'react-router-dom';
 // import { useState } from 'react';
 import Lottie from 'lottie-react';
-import { Button } from '../components/UI/Button';
+// import { Button } from '../components/UI/Button';
 import heroAnimation from '../assets/animations/VoxClipHeroLottie.json';
 // import heroAnimation from '../assets/animations/VoxClipHeroLottie.json';
 import Quotes from '../assets/icons/quotes.svg';
@@ -135,11 +135,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="mb-10 w-[10.785rem] pt-16 md:pt-0 mx-auto">
-            <Link to="/podcast/upload">
-              <Button label={'get started'}>Get Started</Button>
-            </Link>
-          </div>
+          <div className="mb-10 w-[10.785rem] pt-16 md:pt-0 mx-auto"></div>
         </div>
       </section>
       <section className="bg-[#fbfbfb]  container mx-auto">
@@ -187,9 +183,6 @@ const Home = () => {
             <h3 className="font-bold md:text-[32px] text-base mb-3 md:mb-8 w-44 md:w-[365px] md:leading-[50px]  text-sec">
               Conveniently download your output on different video qualities
             </h3>
-            <Link to="/podcast/upload">
-              <Button label={'get started'}>Get Started</Button>
-            </Link>
           </div>
           <div>
             <div className="flex justify-between-items-center  md:gap-10 gap-[10px] mb-[10px] md:mb-10 ">

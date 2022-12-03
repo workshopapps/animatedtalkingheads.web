@@ -1,6 +1,6 @@
 import Layout from '../../components/UI/Layout';
 import Card from './card';
-import tick from '../../assets/icons/tick-box.svg';
+import tick from '../../assets/icons/tick.svg';
 import styles from './index.module.css';
 
 const Pricing = () => {
@@ -25,11 +25,11 @@ const Pricing = () => {
       'Priority support'
     ],
     [
-      'Access to 100+ custom and customizable avatars',
-      'Edit and move avatars in different parts of the video',
+      'Access to 100+ custom avatars',
+      'Edit and move avatars in videos',
       'Add emotions to your avatar',
-      'Access to 200+ custom and customizable backgrounds',
-      'Connect and collaborate with other creator on Voxclips',
+      'Access to 200+ custom backgrounds',
+      'Connect and collaborate with others',
       'Custom watermark and caption videos',
       'Priority export queue',
       'Save your brand templates',
@@ -40,27 +40,21 @@ const Pricing = () => {
 
   return (
     <Layout>
+      <div className="flex justify-center items-center bg-sec-600 p-10 text-white">
+        <p className="font-semibold text-3xl lg:text-5xl ">Pricing</p>
+      </div>
       <div className="max-w-[1440px] mx-auto w-[90%]">
         <div className="my-10">
           <div className="flex flex-col gap-5 lg:gap-10 text-center">
-            <p className="font-semibold text-3xl lg:text-5xl">Voxclips Pricing</p>
-            <p className="lg:text-3xl text-base hidden md:block">
+            <p className="lg:text-2xl text-lg ">
               Ready to scale your Audio Content by transforming it into amazing animated videos?
             </p>
-            <p className="lg:text-2xl text-base hidden md:block">
+            <p className="lg:text-base text-sm  ">
               Voxclips is trusted by <span className="text-pri-600">2,384+</span> content creators,
               podcasters and personal brands.
             </p>
-            <p className="lg:text-3xl text-base hidden md:block">
+            <p className="lg:text-2xl text-lg ">
               Try the Free Plan and then Go Pro to enjoy more exciting features
-            </p>
-            <div className="lg:text-2xl text-base md:hidden block">
-              Trusted by <span className="text-pri-600">2,000</span> content creators, podcasters
-              and personal brands
-            </div>
-
-            <p className="lg:text-3xl text-base md:hidden block">
-              Pick the right plan for you and then Go Pro to enjoy more exciting features.
             </p>
           </div>
 
@@ -69,10 +63,11 @@ const Pricing = () => {
               title="Forever Plan"
               tier="free"
               currency="$0"
+              buttonLink="/podcast/upload"
               buttonLabel={'Get Started'}
               slogan="Start creating videos on the go">
               {offers[0].map((value, index) => (
-                <div key={index}>
+                <div key={index} className="w-[90%] mx-auto">
                   <div className={`${styles.loop_div} `} key={index}>
                     <img className={styles.loop_img} src={tick} alt="tick" />
                     <div className="text">{value}</div>
@@ -85,6 +80,7 @@ const Pricing = () => {
             </Card>
             <Card
               title="Podcaster Plan"
+              buttonLink="/getStarted"
               tier="Billed yearly or $9.99 billed monthly"
               currency="$8.50/mo"
               buttonLabel={'Go Pro'}
@@ -103,9 +99,10 @@ const Pricing = () => {
               ))}
             </Card>
             <Card
-              title="Forever Plan"
+              title="Content Cretor Plan"
               tier="Billed yearly or $23.99 billed monthly"
-              currency="$0"
+              currency="$18.99/mo"
+              buttonLink="/getStarted"
               buttonLabel={'Go Pro'}
               slogan="A world of limitless possibilities">
               {offers[2].map((value, index) => (

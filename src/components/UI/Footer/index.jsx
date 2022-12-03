@@ -48,7 +48,7 @@ v
 const Footer = () => {
   return (
     <footer className="bg-sec-600 text-white text-base ">
-      <div className="grid grid-cols-2  lg:grid-cols-5 gap-y-5 py-10 w-[90%] mx-auto max-w-[1440px]">
+      <div className="grid grid-cols-2  lg:grid-cols-5 gap-y-5 gap-x-5 lg:gap-x-0 py-10 w-[90%] mx-auto max-w-[1440px]">
         <div className=" mb-10 lg:mb-0">
           <Link to="/">
             <img src={footerLogo} alt="home" />
