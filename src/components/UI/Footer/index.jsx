@@ -5,6 +5,7 @@ import globe from './../../../assets/icons/white_globe.svg';
 import twitter from './../../../assets/icons/twitter.svg';
 import facebook from './../../../assets/icons/facebook.svg';
 import { routes } from '../../../libs/links';
+import ReactTooltip from "react-tooltip";
 
 const links1 = [
   { name: 'How it Works', link: routes.howItWorks },
@@ -41,7 +42,7 @@ const links3 = [
   { name: 'Contact Us', link: routes.contact }
 
   // { name: 'Pricing', link: routes.pricing },
-v
+
   // { name: 'Terms and Conditions', link: routes.termsCondition },
   // { name: 'Privacy Policy', link: routes.privacy }
 ];
@@ -81,9 +82,13 @@ const Footer = () => {
         </div>
         <div className="grid gap-3 col-start-1 lg:col-start-5 mt-10 lg:mt-0 ">
           <div className={`${styles.lang}  flex items-center gap-1 `}>
-            <button>
+            <button data-tip data-for="registerTip">
               <img src={globe} alt="globe" />
             </button>
+
+            <ReactTooltip id="registerTip" place="top" effect="solid" >
+              Select preferred language
+            </ReactTooltip>
 
             <select className="">
               <option>English</option>
