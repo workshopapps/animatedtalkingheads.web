@@ -1,12 +1,11 @@
-
-.nav{
+.nav {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
 }
 .term li:active {
-  border-bottom: 3px solid #2158D2;
+  border-bottom: 3px solid #2158d2;
 }
 
 .contentNav ul {

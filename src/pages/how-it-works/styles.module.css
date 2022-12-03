@@ -1,6 +1,6 @@
 .head_bg {
   height: 180px;
-  background: #171D2E;
+  background: #171d2e;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,7 @@
   font-weight: 700;
   font-size: 48px;
   line-height: 60px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .heading2 {
@@ -25,7 +25,7 @@
   font-size: 36px;
   line-height: 45px;
   text-align: center;
-  color: #292D32;
+  color: #292d32;
   max-width: 588px;
 }
 
@@ -34,7 +34,7 @@
   font-size: 24px;
   line-height: 30px;
   text-align: center;
-  color: #292D32;
+  color: #292d32;
   max-width: 826px;
   margin-top: 24px;
 }
@@ -87,15 +87,12 @@
   transform: rotate(180deg);
 }
 
-
-
 @media screen and (max-width: 764px) {
-
   .head_bg {
     height: 90px;
-    background: #171D2E;
+    background: #171d2e;
   }
-  
+
   .head_bg h1 {
     font-size: 24px;
     line-height: 30px;
@@ -109,7 +106,7 @@
     font-size: 18px;
     line-height: 23px;
     text-align: center;
-    color: #292D32;
+    color: #292d32;
     max-width: 300px;
   }
 
@@ -119,7 +116,6 @@
     font-size: 14px;
     line-height: 18px;
     text-align: center;
-    color: #292D32;
+    color: #292d32;
   }
-
 }

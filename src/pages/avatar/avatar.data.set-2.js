@@ -42,7 +42,6 @@ import avatar41 from '../../assets/avatars/set-2/Avatars-41.png';
 import avatar42 from '../../assets/avatars/set-2/Avatars-42.png';
 import avatar43 from '../../assets/avatars/set-2/Avatars-43.png';
 
-
 const AVATAR_SET_2 = [
   {
     id: 1,
@@ -215,9 +214,7 @@ const AVATAR_SET_2 = [
   {
     id: 43,
     image: avatar43
-  },
-  
+  }
 ];
-
 
 export default AVATAR_SET_2;
