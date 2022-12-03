@@ -137,5 +137,4 @@ const AVATAR_SET_1 = [
   }
 ];
 
-
 export default AVATAR_SET_1;

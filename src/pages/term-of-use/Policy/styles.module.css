@@ -1,0 +1,101 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+.term li:active {
+  border-bottom: 3px solid #2158d2;
+}
+
+.contentNav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.contentNav ul li {
+  list-style-type: disc;
+  transition: all 0.3s ease-in;
+}
+
+.contentNav ul li:hover,
+.contentNav ul li:active {
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.contentBodyUnit li {
+  margin-left: 1.5rem;
+}
+
+.disclaimerList ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.disclaimerList ul li {
+  list-style-type: disc;
+}
+
+/* unique styles for mobile */
+
+@media (max-width: 788px) {
+  .tosHeader {
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 640px;
+    /* background: url('../../assets/icons/termsofservice/bgImageMobile.png'); */
+  }
+
+  .headerHeading {
+    line-height: 64px;
+    font-size: 60px;
+  }
+
+  .headerP {
+    font-size: 20px;
+  }
+
+  .contentSection {
+    display: flex;
+    font-size: 16px;
+    padding-top: 1rem;
+    padding-bottom: 250px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .contentNav {
+    display: none;
+  }
+
+  .contentBody {
+    flex-basis: 100%;
+  }
+
+  .contentBody h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin-top: 16px;
+  }
+
+  .contentBody p {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 16px;
+  }
+
+  a {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    color: #0a0c14;
+    text-decoration: none;
+  }
+}

@@ -47,7 +47,7 @@ const TopNavbar = () => {
           <div className={`${styles.dropdown} px-1 space-x-3 relative middle `}>
             <h1
               className={
-                pathname === 'avatars' || pathname === 'explore-avatar' ? `${styles.active}` : ''
+                pathname === routes.avatars || pathname === routes.scenery ? `${styles.active}` : ''
               }>
               Avatars
             </h1>
@@ -56,12 +56,12 @@ const TopNavbar = () => {
 
             <div
               className={`${styles.dropdown_list} slide-up border w-[150px] space-y-3 rounded-md shadow-xl p-3 absolute left-0 top-6 bg-white`}>
-              <Link className={`block w-full`} to={'/avatars'}>
+              <Link className={`block w-full`} to={routes.avatars}>
                 Avatars
               </Link>
 
-              <Link className={` block w-full`} to={'/explore-avatar'}>
-                Explore Avatars
+              <Link className={` block w-full`} to={routes.scenery}>
+                Explore scenery
               </Link>
             </div>
           </div>

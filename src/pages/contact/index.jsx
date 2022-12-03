@@ -51,6 +51,7 @@ const Contact = () => {
     <Layout>
       <div>
         <div className={`${styles.background}`}> </div>
+        <div className={styles.top_bg}><h1>Contact Us</h1></div>
         <div className={`${styles.container} mx-auto max-w-[1400px] w-[90%] my-10 lg:my-20`}>
           {!submitted ? (
             <div>

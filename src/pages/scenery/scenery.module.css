@@ -1,3 +1,19 @@
+.top_bg {
+  display: flex;
+  height: 180px;
+  width: 100%;
+  background: #171D2E;
+  justify-content: center;
+  align-items: center;
+}
+
+.top_bg h1 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+  color: #FFFFFF;
+}
+
 .backgroundContainer {
   display: flex;
   justify-content: center;
@@ -71,6 +87,7 @@
   display: flex;
   align-items: center;
   gap: 3px;
+
 }
 
 .description {
@@ -79,25 +96,27 @@
   font-size: 16px;
   line-height: 20px;
   color: #737479;
-  padding-bottom: 20px;
   max-width: 352px;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .ellipsis {
+  display: block;
   white-space: unset;
   overflow: unset;
   text-overflow: unset;
 }
 
 .expand {
+  padding-top: 20px;
   font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 25px;
-  color: #1c4cb6;
+  font-size: 16px;
+  line-height: 20px;
+  color: #2158D2;
   cursor: pointer;
 }
 
@@ -147,4 +166,22 @@
   .figCaption {
     padding: 10px 0 10px 0;
   }
+}
+
+
+@media screen and (max-width: 768px) {
+  .top_bg {
+    height: 80px;
+  }
+  
+  .top_bg h1 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+
+  .backgroundContainer {
+    padding-top: 30px;
+  }
+
 }

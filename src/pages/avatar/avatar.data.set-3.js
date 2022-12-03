@@ -13,7 +13,6 @@ import avatar12 from '../../assets/avatars/set-3/Avatars-12.png';
 import avatar13 from '../../assets/avatars/set-3/Avatars-13.png';
 import avatar14 from '../../assets/avatars/set-3/Avatars-14.png';
 
-
 const AVATAR_SET_3 = [
   {
     id: 1,
@@ -72,6 +71,5 @@ const AVATAR_SET_3 = [
     image: avatar14
   }
 ];
-
 
 export default AVATAR_SET_3;
