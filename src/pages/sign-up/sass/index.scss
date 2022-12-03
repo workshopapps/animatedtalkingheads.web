@@ -73,17 +73,23 @@ section.sign-up-section {
     .optional-sign-up {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0.5rem;
       width: 100%;
       margin: 0 auto;
       // margin-top: 3.75rem;
       margin-bottom: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(122px, auto));
+      gap: 0.5rem;
 
       button.third-auth {
         display: flex;
         padding: 1rem;
         border: 1px solid #bdbdbd;
         border-radius: 8px;
+        white-space: nowrap;
+        margin: 0 auto;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
 
         & > svg {
           margin-right: 0.5rem;
@@ -105,7 +111,6 @@ section.sign-up-section {
       .input-text {
         width: 100%;
         margin-bottom: 1.25rem;
-        border: 2px solid yellow;
         display: flex;
         align-items: center;
         border: 1px solid #bdbdbd;
@@ -128,6 +133,159 @@ section.sign-up-section {
         border-radius: 8px;
         color: white;
         margin-top: 0.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 965px) {
+  section.sign-up-section{
+    .sign-up{
+      padding: 3.75rem 4.8rem;
+
+      .optional-sign-up {
+        & > button:nth-child(3) {
+          grid-column-start: -3;
+          grid-column-end: -5;
+          grid-row-start: 2;
+          grid-row-end: 3;
+          // transform: translateY(-75px);
+      }
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  section.sign-up-section{
+    .sign-up{
+      & > h1 {
+        font-size: 2rem !important;
+      }
+
+      & > p {
+        font-size: 1.2rem;
+      }
+
+      & > p.page-par {
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+      }
+      .optional-sign-up {
+        display: flex;
+        flex-direction: column;
+      }
+
+      & > p.login-par {
+        font-size: 1rem !important;
+        white-space: nowrap !important;
+  
+        & > a {
+          color: #2158D2;
+          font-size: 1rem !important;
+          // display: block !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  section.sign-up-section{
+    padding: 4.25rem 0;
+
+    .sign-up{
+      padding: 1.75rem 3.625rem;
+      padding-bottom: 4rem;
+
+      & > h1 {
+        font-size: 1.5rem !important;
+      }
+      
+      & > p {
+        font-size: 1rem;
+      }
+
+      & > p.page-par {
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+      }
+
+      & > p.optional-par {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      form.form{
+        .input-text {
+          padding: 0.75rem 0.5rem;
+          font-size: 1rem;
+        }
+
+        & > p.login-par {
+          font-size: 1rem;
+          white-space: nowrap !important;
+    
+          & > a {
+            color: #2158D2;
+            font-size: 1rem !important;
+            display: block !important;
+          }
+        }
+      }
+    }
+  }  
+}
+
+@media screen and (max-width: 500px) {
+  section.sign-up-section{
+    padding: 0 0 !important;
+
+    .sign-up{
+      padding: 1.75rem 2.625rem;
+      padding-bottom: 4rem;
+      max-width: 100%;
+      border-radius: 0;
+      border: none;
+
+      & > h1 {
+        font-size: 1.5rem !important;
+      }
+      
+      & > p {
+        font-size: 1rem;
+      }
+
+      & > p.page-par {
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+      }
+
+      & > p.optional-par {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      form.form{
+        .input-text {
+          padding: 1rem 0.5rem;
+          font-size: 1rem;
+        }
+        .optional-sign-in {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      & > p.login-par {
+        font-size: 1rem;
+        white-space: nowrap !important;
+  
+        & > a {
+          color: #2158D2;
+          font-size: 1rem !important;
+          display: block !important;
+        }
       }
     }
   }
