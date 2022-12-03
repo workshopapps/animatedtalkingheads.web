@@ -1,10 +1,10 @@
-
-.nav{
+.nav {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
 }
+
 .term {
   font-size: 25px;
   border-bottom: 3px solid #2158D2;
@@ -18,6 +18,10 @@
 
 .term li {
  list-style-type: none;
+
+.term li:active {
+  border-bottom: 3px solid #2158d2;
+
 }
 
 .contentNav ul {

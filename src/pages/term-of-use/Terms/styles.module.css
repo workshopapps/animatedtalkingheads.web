@@ -1,10 +1,10 @@
-
-.nav{
+.nav {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
 }
+
 
 .term {
   font-size: 25px;
@@ -15,6 +15,10 @@
   font-size: 25px;
   color: rgba(41, 45, 50, 0.5);
  
+
+.term li:active {
+  border-bottom: 3px solid #2158d2;
+
 }
 .term li {
  list-style-type: none;

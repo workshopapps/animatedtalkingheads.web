@@ -27,9 +27,9 @@ export const routes = {
 
   termsCondition: '/terms-and-conditions',
   termsService: '/terms-of-service',
-    termsUse: '/terms-of-use/term',
-     term: '/terms-of-use/term',
-          policy: '/terms-of-use/policy',
+  termsUse: '/terms-of-use/term',
+  term: '/terms-of-use/term',
+  policy: '/terms-of-use/policy',
   settings: '/settings',
   podcastUpload: '/podcast/upload',
   podcastCustomize: '/podcast/customize',
@@ -43,7 +43,9 @@ export const routes = {
   exploreAvatar: '/explore-avatar',
   api: '/api-page',
   pressNewsPage: '/press/news-page',
-  pressWatchnow: '/press/watch-now'
+  pressWatchnow: '/press/watch-now',
+  signUp: '/sign-up',
+  signIn: 'sign-in'
 };
 
 export const links = [
