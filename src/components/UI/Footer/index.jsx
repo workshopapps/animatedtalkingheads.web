@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 import footerLogo from './../../../assets/icons/footer_logo.svg';
+import settings from './../../../assets/icons/settings.svg';
 import globe from './../../../assets/icons/white_globe.svg';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { routes } from '../../../libs/links';
+import ReactTooltip from "react-tooltip";
 
 const links1 = [
   { name: 'How it Works', link: routes.howItWorks },
@@ -48,13 +50,28 @@ const links3 = [
 const Footer = () => {
   return (
     <footer className="bg-sec-600 text-white text-base ">
-      <div className="grid grid-cols-2  lg:grid-cols-5 gap-y-5 py-10 w-[90%] mx-auto max-w-[1440px]">
-        <div className=" mb-10 lg:mb-0">
+      <div className="grid grid-cols-2  lg:grid-cols-5 gap-y-5 gap-x-5 lg:gap-x-0 py-10 w-[90%] mx-auto max-w-[1440px]">
+        <div className=" mb-10 lg:mb-0 flex flex-col justify-between">
           <Link to="/">
             <img src={footerLogo} alt="home" />
           </Link>
+          <div className="hidden lg:block">
+            <Link to="/settings">
+              <div className="flex gap-3 ">
+                <img src={settings} alt="settings" />
+                <p>Settings</p>
+              </div>
+            </Link>
+          </div>{' '}
         </div>
-
+        <div className="lg:hidden col-start-2">
+          <Link to="/settings">
+            <div className="flex gap-3 ">
+              <img src={settings} alt="settings" />
+              <p>Settings</p>
+            </div>
+          </Link>
+        </div>
         <div className="col-start-1 lg:col-start-2 grid gap-3 lg:gap-5 text-white">
           {links1.map((link, index) => (
             <Link className="" key={index} to={link.link}>
@@ -104,8 +121,11 @@ const Footer = () => {
           </div>
           <div className={`${styles.lang} hidden lg:flex items-center gap-1 `}>
             <button>
-              <img src={globe} alt="globe" />
+              <img src={globe} alt="globe" data-tip data-for="register" />
             </button>
+            <ReactTooltip id="register" place="bottom" effect="solid" >
+              Select a language
+            </ReactTooltip>
 
             <select className="">
               <option>English</option>

@@ -12,30 +12,32 @@ const UseCases = () => {
             Use Cases
           </p>
         </div>
-        <section className="mx-auto w-[90%] max-w-[1440px] my-5">
-          {data.map((data) => (
-            <div
-              key={data.id}
-              className={`md:flex my-10 justify-between items-center ${
-                data.id % 2 === 0 && 'md:flex-row-reverse'
-              }`}>
-              <div className="md:w-[47%]">
-                <div className="w-full">
-                  <img
-                    src={data.image}
-                    alt="image"
-                    className="max-h-[500px] w-full object-cover rounded-lg"
-                  />
+        <div className=" max-w-[1440px] mx-auto">
+          <section className="mx-auto w-[90%] lg:w-[75%] my-5">
+            {data.map((data) => (
+              <div
+                key={data.id}
+                className={`md:flex my-24 justify-between items-center gap-10 ${
+                  data.id % 2 === 0 && 'md:flex-row-reverse'
+                }`}>
+                <div className="md:w-[47%]">
+                  <div className="w-full">
+                    <img
+                      src={data.image}
+                      alt="image"
+                      className="max-h:[300px] md:max-h-[400px] w-full object-cover rounded-lg"
+                    />
+                  </div>
+                </div>
+                <div className="md:w-[47%]">
+                  <Description heading={data.title} index={data.id}>
+                    {data.description}
+                  </Description>
                 </div>
               </div>
-              <div className="md:w-[47%]">
-                <Description heading={data.title} index={data.id}>
-                  {data.description}
-                </Description>
-              </div>
-            </div>
-          ))}
-        </section>
+            ))}
+          </section>
+        </div>
       </div>
     </Layout>
   );

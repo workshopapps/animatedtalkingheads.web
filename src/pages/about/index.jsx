@@ -1,6 +1,6 @@
 import Layout from '../../components/UI/Layout';
 // import './css/index.css';
-import tick_circle from './images/tick-circle.png';
+// import tick_circle from './images/tick-circle.png';
 import like from './images/like.png';
 import people from './images/people.png';
 import lamp_charge from './images/lamp-charge.png';
@@ -29,80 +29,65 @@ const About = () => {
         <div className={style.aboutChild}>
           {/* hero section */}
           <div className={style.aboutHero}>
-            <div className={style.aboutHeroImage}></div>
-
             <div className={style.aboutHeroText}>
               <h3>About Us</h3>
             </div>
-
-            <div className={style.aboutMissionSection1}>
-              <h3>OUR MISSION</h3>
-              <p>
+          </div>
+          {/* hero section */}
+          <section className={style.aboutSection}>
+            <div className={style.aboutContent}>
+              <h3 className={style.contentHeading}>THE GOAL</h3>
+              <div className={style.contentTheme}>
+                We are helping newbie podcasters beat the odds and get discovered organically
+              </div>
+              <p className={style.contentText}>
+                if you've ever hosted a podcast before then you'd surely attest to the fact tht
+                growing a podcast's discoverability organically is hard. And we mean incredibly
+                difficult.
+              </p>
+              <p className={style.contentText}>
+                When it comes to podcast marketing, your options are limited. the best shot most
+                indie podcasters get at marketing is talking abot their shows whenever they get the
+                chance to.
+              </p>
+              <p className={style.contentText}>
+                As a result, newbie creators who create great content for their listeners struggle
+                to grow and reach more people.
+              </p>
+              <p className={style.contentText}>
+                This is why Voxclips was created. We've identified the problem in the marketing
+                strategies of most newbie creators. Instead of creating videos of you talking in a
+                studio for more than an hour, why don't you try something different?
+              </p>
+            </div>
+            <div className={style.aboutContent}>
+              <h3 className={style.contentHeading}>OUR MISSION</h3>
+              <div className={style.contentTheme}>
                 Voxclips is the product of an ideation-to-implementation project that was created to
                 provide a solution for podcasters who struggle to make any waves doing what they
                 love
+              </div>
+              <p className={style.contentText}>
+                Our mission is to redefine how Nigerians interact with podcast titles. We have
+                identified podcasts as a great tool for education, so that is why we have created a
+                platform that enables podcasters to get creative with how they market their titles.
+              </p>
+              <p className={style.contentText}>
+                Our ultimate goal is to get more people listening to amazing podcast titles that
+                they will find educational, informative, and worthwhile.
+              </p>
+              <p className={style.contentText}>
+                We are giving every podcaster a chance to own their marketing game.
               </p>
             </div>
-          </div>
-          {/* hero section */}
+          </section>
 
-          <div className={style.aboutMainContent}>
-            {/* mission */}
-            <div className={style.aboutMission}>
-              <div className={style.aboutMissionSection2}>
-                <div className={style.missionGrid}>
-                  <div className={style.missionGridBox}>
-                    <p>
-                      Our mission is to redefine how Nigerians interact with podcast titles. We have
-                      identified podcasts as a great tool for education, so that is why we have
-                      created a platform that enables podcasters to get creative with how they
-                      market their titles.
-                    </p>
-                  </div>
-
-                  <div className={style.missionGridBox}>
-                    <p>
-                      Our ultimate goal is to get more people listening to amazing podcast titles
-                      that they will find educational, informative, and worthwhile.
-                    </p>
-                  </div>
-
-                  <div className={style.missionGridBox}>
-                    <p>We are giving every podcaster a chance to own their marketing game.</p>
-                  </div>
-                </div>
-
-                <div className={style.missionGrid}>
-                  <div className={style.missionGridBox}>
-                    <img src={tick_circle} alt="" />
-                    <p>Audio to animated video</p>
-                  </div>
-
-                  <div className={style.missionGridBox}>
-                    <img src={tick_circle} alt="" />
-                    <p>Variety of characters available</p>
-                  </div>
-
-                  <div className={style.missionGridBox}>
-                    <img src={tick_circle} alt="" />
-                    <p>Variety of scenes available</p>
-                  </div>
-
-                  <div className={style.missionGridBox}>
-                    <img src={tick_circle} alt="" />
-                    <p>Sync video and audio</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* mission */}
-
+          <section className={style.aboutMainContent}>
             {/* values section */}
             <div className={style.aboutValues}>
               <div className={style.aboutValuesHeading}>
-                <h3>OUR VALUES</h3>
-                <h2>Voxclips users should have podcasting superpowers</h2>
-                <p>
+                <h3>VALUES</h3>
+                <p className={style.valuesText}>
                   Our internal and external values as a company are summarised in our CLUTCH
                   acronym; these are our fundamental guiding principles in interacting with our
                   project, and the people who we have provided a solution for.
@@ -166,52 +151,38 @@ const About = () => {
 
             {/* story section */}
 
-            <div className={style.aboutStory}>
-              <div className={style.aboutStorySection}>
-                <div className={style.storyGrid}>
-                  <h3>OUR STORY</h3>
-                  <p>
-                    Voxclips was developed by team Clutch—a team of skilled learners who were part
-                    of the HNG internship (9th cohort), under the guidance of the renowned
-                    technopreneur, Mark Essien.
-                  </p>
+            <section className={style.aboutSection}>
+              <div className={style.aboutContent}>
+                <h3 className={style.contentHeading}>OUR STORY</h3>
+                <div className={style.contentTheme}>
+                  Voxclips was developed by team Clutch—a team of skilled learners who were part of
+                  the HNG internship (9th cohort), under the guidance of the renowned technopreneur,
+                  Mark Essien.
                 </div>
-
-                <div className={style.storyGrid}>
-                  <h5>
-                    The problem that Voxclips is solving is one that we have identified to be an
-                    itch-on-the-back problem for creatives with great content who struggle to thrive
-                    in the podcast industry.
-                  </h5>
-                  <h5>
-                    {' '}
-                    We were provided an incubation platform by the HNG organising team where we
-                    prioritised learning, and worked together as a team in an agile framework that
-                    not only saw us scaling different tasks, but also working to help one another
-                    become better.
-                  </h5>
-                </div>
+                <p className={style.contentText}>
+                  The problem that Voxclips is solving is one that we have identified to be an
+                  itch-on-the-back problem for creatives with great content who struggle to thrive
+                  in the podcast industry.
+                </p>
+                <p className={style.contentText}>
+                  We were provided an incubation platform by the HNG organising team where we
+                  prioritised learning, and worked together as a team in an agile framework that not
+                  only saw us scaling different tasks, but also working to help one another become
+                  better.
+                </p>
               </div>
-            </div>
+            </section>
 
             {/* story section */}
 
             {/* team section */}
 
-            <div className={style.aboutTeam}>
-              <div className={style.aboutTeamSection1}>
-                <div className={style.teamGrid}>
-                  <h3>MEET THE TEAM</h3>
-                  <p>
-                    Working at Voxclip means surrounding yourself with smart passionate people,
-                    striving to build the best podcasting tool in the world.
-                  </p>
-                </div>
-                <div className={style.teamGrid}>
-                  <h5>
-                    At Voxclip we value trust, teamwork, and bringing engament and visibilty to help
-                    podcasters create visual content out of their audio recordings.
-                  </h5>
+            <section className={style.meetSection}>
+              <div className={style.meetContent}>
+                <h3 className={style.contentHeading}>MEET THE TEAM</h3>
+                <div className={style.contentTheme}>
+                  Voxclip was developed by a team of motivated managers, developers, designers and
+                  marketers coming together to solve a problem in the creative industry.
                 </div>
               </div>
 
@@ -349,7 +320,7 @@ const About = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
 
             {/* team section */}
 
@@ -357,9 +328,13 @@ const About = () => {
 
             <div className={style.aboutBuild}>
               <div className={style.aboutBuildBox}>
-                <h3>
-                  Let’s build the future of podcasting <br /> together
-                </h3>
+                <h3>Try Viral for a Change</h3>
+                <p className={style.buildBoxContent}>
+                  With Voxclips you can create brilliant cartoon videos of talking heads that your
+                  audience will love. <br /> We are commited to giving creators a chance to
+                  creatively market their content across multiple streams, create a following from
+                  these sources, organically grow and monetize their content.
+                </p>
                 <Link to="/podcast/upload">
                   <Button>Try for free now</Button>
                 </Link>
@@ -367,7 +342,7 @@ const About = () => {
             </div>
 
             {/* build section */}
-          </div>
+          </section>
         </div>
       </div>
       {/* about page wrapper */}
