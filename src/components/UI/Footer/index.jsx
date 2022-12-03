@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 import footerLogo from './../../../assets/icons/footer_logo.svg';
+import settings from './../../../assets/icons/settings.svg';
 import globe from './../../../assets/icons/white_globe.svg';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { routes } from '../../../libs/links';
@@ -49,12 +50,27 @@ const Footer = () => {
   return (
     <footer className="bg-sec-600 text-white text-base ">
       <div className="grid grid-cols-2  lg:grid-cols-5 gap-y-5 gap-x-5 lg:gap-x-0 py-10 w-[90%] mx-auto max-w-[1440px]">
-        <div className=" mb-10 lg:mb-0">
+        <div className=" mb-10 lg:mb-0 flex flex-col justify-between">
           <Link to="/">
             <img src={footerLogo} alt="home" />
           </Link>
+          <div className="hidden lg:block">
+            <Link to="/settings">
+              <div className="flex gap-3 ">
+                <img src={settings} alt="settings" />
+                <p>Settings</p>
+              </div>
+            </Link>
+          </div>{' '}
         </div>
-
+        <div className="lg:hidden col-start-2">
+          <Link to="/settings">
+            <div className="flex gap-3 ">
+              <img src={settings} alt="settings" />
+              <p>Settings</p>
+            </div>
+          </Link>
+        </div>
         <div className="col-start-1 lg:col-start-2 grid gap-3 lg:gap-5 text-white">
           {links1.map((link, index) => (
             <Link className="" key={index} to={link.link}>
