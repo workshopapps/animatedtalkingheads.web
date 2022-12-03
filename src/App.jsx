@@ -25,6 +25,9 @@ import UploadPodcast from './pages/podcast/upload';
 import Customization from './pages/podcast/customization';
 import ExploreAvatar from './pages/explore-avatar';
 import ApiPage from './pages/api-page';
+import SignUp from './pages/sign-up';
+import SignIn from './pages/sign-in';
+import { AuthContextProvider } from './context/AuthContext';
 
 import store from './store/store';
 import DownloadPodcast from './pages/podcast/download';
@@ -41,6 +44,8 @@ import BlogContent from './pages/blogs/BlogContent';
 import Avatars from './pages/avatar';
 import PressNewsPage from './pages/press/news-page';
 import Watchnow from './pages/press/watch-now';
+import Term from './pages/term-of-use/Terms';
+import Policy from './pages/term-of-use/Policy';
 
 function App() {
   const { pathname } = useLocation();
@@ -54,6 +59,8 @@ function App() {
 
   return (
     <Provider store={store}>
+      <AuthContextProvider>
+         
       <Routes>
         <Route path={routes.home} element={<Home />} />
         <Route path={routes.docs} element={<Docs />} />
@@ -73,6 +80,8 @@ function App() {
         <Route path={routes.privacy} element={<PrivacyPolicy />} />
         <Route path={routes.termsCondition} element={<TermsAndCondition />} />
         <Route path={routes.termsService} element={<TermsOfService />} />
+        <Route path={routes.term} element={<Term />} />
+        <Route path={routes.policy} element={<Policy />} />
         <Route path={routes.settings} element={<Setting />} />
         <Route path={routes.podcastUpload} element={<UploadPodcast />} />
         <Route path={routes.podcastCustomize} element={<Customization />} />
@@ -87,7 +96,8 @@ function App() {
         <Route path={routes.press} element={<Press />} />
         <Route path={routes.pressNewsPage} element={<PressNewsPage />} />
         <Route path={routes.pressWatchnow} element={<Watchnow />} />
-
+        <Route path={routes.signUp} element={<SignUp/>} />
+        <Route path={routes.signIn} element={<SignIn />} />
 
         {/* privacy-policy nested routes */}
         <Route path={routes.privacyAbout} element={<PrivacyAbout />} />
@@ -98,6 +108,7 @@ function App() {
 
         <Route path={routes.scenery} element={<Scenery />} />
       </Routes>
+      </AuthContextProvider>
     </Provider>
   );
 }

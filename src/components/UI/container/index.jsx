@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Container = ({ children }) => {
-  return <div className="max-w-[1532px]">{children}</div>;
+  return <div className="">{children}</div>;
 };
 
 Container.propTypes = {

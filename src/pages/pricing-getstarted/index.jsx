@@ -19,7 +19,7 @@ const GetStarted = () => {
               Finish upgrading your plan or enjoy our free plan
             </p>
             <div className="mt-10 w-[80%] md:w-[50%] mx-auto grid gap-5">
-              <Link to="/checkout">
+              <Link to="/podcast/upload">
                 <button className="w-full py-4  text-white text-center rounded-lg bg-pri-600">
                   Use Forever Plan
                 </button>

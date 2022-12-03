@@ -104,7 +104,7 @@
 }
 
 .valuesGrid p {
-  font-size: 14px;
+  font-size: 15px;
   font-family: 'Mulish', sans-serif;
 }
 
@@ -123,7 +123,7 @@
 
 .storyGrid h3 {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
   margin: 10px 0px;
   font-family: 'Mulish', sans-serif;
 }
@@ -132,14 +132,14 @@
   color: #292d32;
   font-family: 'Mulish', sans-serif;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 15px;
 }
 
 .storyGrid h5 {
   color: #292d32;
   font-family: 'Mulish', sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 15px;
   margin: 10px 0px;
 }
 */
@@ -276,7 +276,7 @@
 .aboutBuildBox h3 {
   font-family: 'Mulish', sans-serif;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 45px;
 }
 
 .aboutBuildBox button {
