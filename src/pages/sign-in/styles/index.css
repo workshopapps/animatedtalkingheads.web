@@ -137,6 +137,8 @@ section.sign-in-section .sign-in form.form > button.sign-in-btn {
 @media screen and (max-width: 965px) {
   section.sign-in-section .sign-in {
     padding: 3.75rem 4.8rem;
+    border-radius: 0;
+    border: none;
   }
   section.sign-in-section .sign-in form.form > p.forgot-password > a {
     font-size: 1rem !important;
