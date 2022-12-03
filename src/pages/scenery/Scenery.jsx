@@ -37,7 +37,7 @@ const Scenery = () => {
 
             <h2 className='font-semibold text-2xl text-center md:text-4xl text-[#252525]'>  Explore Our Environment at VoxClips </h2>
 
-            <h3 className='mt-2  mb-8 md:mb-24 font-normal text-center text-base text-[#292D32]'>  
+            <h3 className='mt-4 md:mt-6 mb-8 md:mb-24 font-normal text-center text-base md:text-2xl text-[#292D32]'>  
               Visit our studios and  know how and when to use them
             </h3>
 
