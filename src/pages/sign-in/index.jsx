@@ -101,14 +101,14 @@ const SignIn = () => {
                 <p className='third-auth-name'>Google</p>
             </button>
 
-            <button className='third-auth google'>
+            <button className='third-auth apple'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#000" d="M16.741 12.455c-.007-1.31.586-2.3 1.786-3.029-.671-.96-1.686-1.49-3.025-1.593-1.268-.1-2.654.74-3.162.74-.535 0-1.764-.704-2.729-.704C7.618 7.9 5.5 9.459 5.5 12.627c0 .935.171 1.902.514 2.9.458 1.311 2.108 4.526 3.83 4.472.9-.021 1.536-.64 2.707-.64 1.136 0 1.726.64 2.73.64 1.735-.025 3.228-2.947 3.664-4.261-2.329-1.097-2.204-3.215-2.204-3.283ZM14.72 6.59c.975-1.158.885-2.211.857-2.59-.861.05-1.858.586-2.426 1.247-.625.707-.993 1.582-.914 2.568.932.071 1.782-.407 2.482-1.225Z"/></svg>
-                <p className='third-auth-name'>Google</p>
+                <p className='third-auth-name'>Apple ID</p>
             </button>
 
-            <button className='third-auth google'>
+            <button className='third-auth facebook'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#1877F2" d="M20.055 12.027A8.027 8.027 0 0 0 12.027 4a8.029 8.029 0 0 0-1.254 15.957v-5.61H8.735v-2.32h2.038V10.26c0-2.012 1.198-3.123 3.032-3.123.878 0 1.797.156 1.797.156v1.976h-1.013c-.997 0-1.307.62-1.307 1.254v1.505h2.226l-.356 2.32h-1.87v5.61a8.029 8.029 0 0 0 6.773-7.93Z"/><path fill="#fff" d="m15.152 14.348.355-2.32h-2.226v-1.506c0-.635.31-1.254 1.308-1.254H15.6V7.293s-.918-.157-1.796-.157c-1.835 0-3.032 1.111-3.032 3.123v1.768H8.734v2.32h2.039v5.61a8.086 8.086 0 0 0 2.508 0v-5.61h1.87Z"/></svg>
-                <p className='third-auth-name'>Google</p>
+                <p className='third-auth-name'>Facebook</p>
             </button>
           </div>
           <p className='login-par'> Don’t have a Voxclips account? <Link to="/sign-up"> Sign Up </Link></p>
