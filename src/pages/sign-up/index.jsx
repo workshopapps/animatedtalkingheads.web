@@ -2,27 +2,14 @@ import Layout from '../../components/UI/Layout';
 import '../sign-up/styles/index.css'
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { data } from 'autoprefixer';
-import { navigate } from '@storybook/addon-links';
+import { UserAuth  } from '../../context/AuthContext';
 
 const SignUp = () => {
-    // const[eye,setEye]=useState(true);
     const[password,setPassword]=useState("password");
-    const[type,setType]=useState(false);
     const navigate = useNavigate()
+    const [error, setError] = useState('')
 
-    const Eye=()=>{
-        if(password=="password"){
-            setPassword("text");
-            // setEye(false);
-            setType(true);
-        }
-        else{
-            setPassword("password");
-            // setEye(true);
-            setType(false);
-        }
-    }
+    const { createUser } = UserAuth()    
 
   const [formData, setFormData] = useState({
     email: '',
@@ -43,25 +30,33 @@ const SignUp = () => {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        const data = { email: formData.email, password: formData.password }
-    }
+      e.preventDefault();
+      setError('');
+      console.log(error)
+      try {
+        await createUser(formData?.email, formData?.password);
+        navigate('/podcast/upload')
+      } catch (e) {
+        setError(e.message);
+        console.log(e.message);
+      }
+    };
 
-    fetch('https://example.com/signUp', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log('success:', data);
-            navigate("/sign-in")
-        })
-        .catch((error) => {
-            console.log('Error:', error);
-        });
+    // fetch('https://example.com/signUp', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(data),
+    // })
+    //     .then((response) => response.json())
+    //     .then((data) => {
+    //         console.log('success:', data);
+    //         navigate("/sign-in")
+    //     })
+    //     .catch((error) => {
+    //         console.log('Error:', error);
+    //     });
     
   return (
     <Layout>

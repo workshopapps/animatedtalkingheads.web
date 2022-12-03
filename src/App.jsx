@@ -27,6 +27,7 @@ import ExploreAvatar from './pages/explore-avatar';
 import ApiPage from './pages/api-page';
 import SignUp from './pages/sign-up';
 import SignIn from './pages/sign-in';
+import { AuthContextProvider } from './context/AuthContext';
 
 import store from './store/store';
 import DownloadPodcast from './pages/podcast/download';
@@ -56,6 +57,8 @@ function App() {
 
   return (
     <Provider store={store}>
+      <AuthContextProvider>
+         
       <Routes>
         <Route path={routes.home} element={<Home />} />
         <Route path={routes.docs} element={<Docs />} />
@@ -101,6 +104,7 @@ function App() {
 
         <Route path={routes.scenery} element={<Scenery />} />
       </Routes>
+      </AuthContextProvider>
     </Provider>
   );
 }
