@@ -30,12 +30,17 @@ const links2 = [
 ];
 
 const links3 = [
+
+  { name: 'Pricing', link: routes.pricing },
+  { name: 'Terms of Use', link: routes.termsUse },
+  { name: 'Terms of Service', link: routes.termsService },
+
   { name: 'Terms of Service', link: routes.termsService },
   { name: 'APIs', link: routes.api },
   { name: 'Contact Us', link: routes.contact }
 
   // { name: 'Pricing', link: routes.pricing },
-
+v
   // { name: 'Terms and Conditions', link: routes.termsCondition },
   // { name: 'Privacy Policy', link: routes.privacy }
 ];

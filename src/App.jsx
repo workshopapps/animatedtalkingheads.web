@@ -41,6 +41,8 @@ import BlogContent from './pages/blogs/BlogContent';
 import Avatars from './pages/avatar';
 import PressNewsPage from './pages/press/news-page';
 import Watchnow from './pages/press/watch-now';
+import Term from './pages/term-of-use/Terms';
+import Policy from './pages/term-of-use/Policy';
 
 function App() {
   const { pathname } = useLocation();
@@ -73,6 +75,8 @@ function App() {
         <Route path={routes.privacy} element={<PrivacyPolicy />} />
         <Route path={routes.termsCondition} element={<TermsAndCondition />} />
         <Route path={routes.termsService} element={<TermsOfService />} />
+        <Route path={routes.term} element={<Term />} />
+        <Route path={routes.policy} element={<Policy />} />
         <Route path={routes.settings} element={<Setting />} />
         <Route path={routes.podcastUpload} element={<UploadPodcast />} />
         <Route path={routes.podcastCustomize} element={<Customization />} />
