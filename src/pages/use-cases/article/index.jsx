@@ -1,8 +1,7 @@
 import styles from './styles.module.css';
 import Layout from '../../../components/UI/Layout';
 import React from 'react';
-import arrowBack from '../../../assets/icons/use-cases/arrowBack.svg';
-import { Button } from '../../../components/UI/Button';
+
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { blogs } from '../data';
 
@@ -28,12 +27,13 @@ const UseCaseArticle = () => {
           <div className={`mt-10 flex justify-between`}>
             <button
               onClick={() => navigate(-1)}
-              className=" flex items-center border border-[#bdbdbd] rounded-md md:px-4">
-              <img className="m-5" src={arrowBack} alt="Arrow Back" />
-              <p className="hidden md:block">Back</p>
+              className=" text-blue-600  border rounded-lg border-blue-600 px-4 py-2 md:px-7 md:py-3 w-[150px]">
+              <p>Back</p>
             </button>
             <Link to="/podcast/upload">
-              <Button label={'Get Started'}>Get Started</Button>
+              <button className=" text-white bg-blue-600  border rounded-lg hover:opacity-80 px-4 py-2 md:px-7 md:py-4">
+                Get Started
+              </button>
             </Link>
           </div>
         </div>
