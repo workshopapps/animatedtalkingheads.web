@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 import footerLogo from './../../../assets/icons/footer_logo.svg';
 import globe from './../../../assets/icons/white_globe.svg';
-import twitter from './../../../assets/icons/twitter.svg';
-import facebook from './../../../assets/icons/facebook.svg';
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { routes } from '../../../libs/links';
 
 const links1 = [
@@ -51,15 +50,21 @@ const Footer = () => {
           </Link>
         </div>
 
-        <div className="col-start-1 lg:col-start-2 grid gap-3 text-white">
+        <div className="col-start-1 lg:col-start-2 grid gap-3 lg:gap-5 text-white">
           {links1.map((link, index) => (
             <Link className="" key={index} to={link.link}>
               {link.name}
             </Link>
           ))}
+          <div className="lg:hidden">
+            <Link to={routes.about}>About</Link>
+          </div>
+          <div className="lg:hidden">
+            <Link to={routes.faqs}>FAQs</Link>
+          </div>
         </div>
 
-        <div className=" grid gap-3 col-start-1 lg:col-start-3  ">
+        <div className="hidden lg:grid gap-3 col-start-1 lg:col-start-3 lg:gap-5 ">
           {links2.map((link, index) => (
             <Link className="block" key={index} to={link.link}>
               {link.name}
@@ -67,15 +72,32 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className=" grid gap-3 row-start-2 lg:row-start-1 col-start-2 lg:col-start-4 ">
+        <div className=" grid gap-3 lg:gap-5  row-start-2 lg:row-start-1 col-start-2 lg:col-start-4 ">
+          <div className="lg:hidden">
+            <Link to={routes.pricing}>Pricing</Link>
+          </div>
+
           {links3.map((link, index) => (
             <Link className="block" key={index} to={link.link}>
               {link.name}
             </Link>
           ))}
+          <div className="lg:hidden">{''}</div>
         </div>
-        <div className="grid gap-3 col-start-1 lg:col-start-5 mt-10 lg:mt-0 ">
-          <div className={`${styles.lang}  flex items-center gap-1 `}>
+        <div className="grid gap-3 lg:gap-5 col-start-1 lg:col-start-5 mt-10 lg:mt-0 ">
+          <p className="text-base">Connect With Us</p>
+          <div className="flex gap-5 items-center">
+            <a href="https://www.facebook.com/Hnginternship/">
+              <FaFacebookF size="20" />
+            </a>
+            <a href="https://twitter.com/hnginternship">
+              <FaTwitter size="20" />
+            </a>
+            <a href="https://www.instagram.com/hnginternship/">
+              <FaInstagram size="20" />
+            </a>
+          </div>
+          <div className={`${styles.lang} hidden lg:flex items-center gap-1 `}>
             <button>
               <img src={globe} alt="globe" />
             </button>
@@ -86,16 +108,17 @@ const Footer = () => {
               <option>Spanish</option>
             </select>
           </div>
+        </div>
+        <div className={`${styles.lang} lg:hidden flex items-center gap-1 `}>
+          <button>
+            <img src={globe} alt="globe" />
+          </button>
 
-          <p className="text-base">Connect With Us</p>
-          <div className="flex gap-3 items-center">
-            <a href="https://www.facebook.com/Hnginternship/">
-              <img src={facebook} alt="facebook" />
-            </a>
-            <a href="https://twitter.com/hnginternship">
-              <img src={twitter} alt="twitter" />
-            </a>
-          </div>
+          <select className="">
+            <option>English</option>
+            <option>French</option>
+            <option>Spanish</option>
+          </select>
         </div>
       </div>
     </footer>

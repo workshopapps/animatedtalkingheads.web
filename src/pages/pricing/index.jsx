@@ -121,35 +121,8 @@ const Pricing = () => {
               ))}
             </Card>
           </div>
-          <div className="mt-20  ">
-            <p className="font-semibold text-3xl lg:text-5xl text-center my-10 "> FAQ</p>
-            <div className="grid gap-7 lg:gap-10">
-              <div>
-                <div className="lg:text-2xl text-xl"> Will there be a free plan forever?</div>
-                <div className="lg:text-xl text-base mt-2">
-                  Yes! We plan to make the free tier a forever benefit. We want you to be able to
-                  enjoy as many features as possible. Start getting creative!
-                </div>
-              </div>
-              <div>
-                <div className="lg:text-2xl text-xl">Why should I get the Podcaster Plan?</div>
-                <div className="lg:text-xl text-base mt-2">
-                  The Podcaster Plan has more features that affords you the opportunity to explore
-                  more exciting features from Voxclips.
-                </div>
-              </div>
-              <div>
-                <div className="lg:text-2xl text-xl">
-                  Why should I get the Content Creator Plan?
-                </div>
-                <div className="lg:text-xl text-base mt-2">
-                  When you want to make the best of Voxclips, the Content Creator Plan is perfect if
-                  you. Opportunities are limitless for you.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="mx-auto w-[80%]">
+
+          <div className="mx-auto w-[80%] mt-10">
             <p className="md:text-center mt-10 lg:text-base text-sm">
               Please send us feedback on our plans and pricing:{' '}
               <span className="text-pri-700"> help@voxclips.com</span>

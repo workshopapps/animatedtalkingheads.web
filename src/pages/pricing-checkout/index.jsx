@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import TopNavbar from '../../components/UI/TopNavbar';
 import smsIcon from '../../assets/icons/sms.svg';
-import cardIcon from '../../assets/icons/card.svg';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import styles from './checkout.module.css';
@@ -23,11 +22,18 @@ const index = () => {
     }
   ];
   const [planner, setPlanner] = useState(plan[0]);
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [amount, setAmount] = useState('');
 
   const selectHandler = (e) => {
     setPlanner(plan[e.target.value]);
   };
 
+  const submitForm = (e) => {
+    e.preventDefault();
+    console.log(name, amount, email);
+  };
   return (
     <div className={styles.checkout_wrapper}>
       <TopNavbar />
@@ -62,7 +68,13 @@ const index = () => {
                 <div className={styles.label}>Your Billing Cycle</div>
                 <div className={styles.radio_wrapper}>
                   <div className={styles.radio_content}>
-                    <input type="radio" className={styles.billing_radio} name="billing" />
+                    <input
+                      type="radio"
+                      value={planner.billingCircle?.yearly}
+                      className={styles.billing_radio}
+                      name="billing"
+                      onChange={(e) => setAmount(e.target.checked)}
+                    />
                     <span className="lg:ml-5">
                       Billed yearly <small className="text-pri-600 lg:ml-10 ">SAVE 20%</small>
                     </span>
@@ -75,7 +87,12 @@ const index = () => {
               <div>
                 <div className={styles.radio_wrapper}>
                   <div className={styles.radio_content}>
-                    <input type="radio" className={styles.billing_radio} name="billing" />
+                    <input
+                      type="radio"
+                      value={planner.billingCircle.monthly}
+                      className={styles.billing_radio}
+                      name="billing"
+                    />
                     <span className="lg:ml-5">Billed monthly</span>
                   </div>
                   <span>{planner.billingCircle.monthly}</span>
@@ -84,27 +101,34 @@ const index = () => {
             </div>
 
             <div className={`${styles.form_group} mt-10`}>
-              <div className={styles.label}> Your payment method</div>
+              <div className={styles.label}>Enter Your Details</div>{' '}
+              <div className=" border border-[#8f9092] px-2 md:px-5 py-3 items-center flex gap-5 rounded-md mb-5">
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Full Name"
+                  className="outline-none"
+                />
+              </div>
               <div className=" border border-[#8f9092] px-2 md:px-5 py-3 items-center flex gap-5 rounded-md mb-5">
                 <img className={styles.icon} src={smsIcon} alt="sms" />
-                <input type="email" placeholder="Email" className="outline-none" />
-              </div>
-            </div>
-
-            <div className={styles.form_group}>
-              <div className={styles.inputWrapper}>
-                <img className={styles.icon} src={cardIcon} alt="sms" />
-                <input type="email" placeholder="Card number" className="outline-none" />
-                <span>MM/YY CVC</span>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email"
+                  className="outline-none"
+                />
               </div>
             </div>
 
             <div className="lg:w-[60%] w-full mx-auto mt-5">
-              <Link to="/">
-                <button className="w-full py-4  text-white text-center rounded-lg bg-pri-600">
-                  Confirm and Pay
-                </button>
-              </Link>
+              <button
+                onClick={submitForm}
+                className="w-full py-4  text-white text-center rounded-lg bg-pri-600">
+                Proceed to Pay
+              </button>
             </div>
           </form>
         </div>
