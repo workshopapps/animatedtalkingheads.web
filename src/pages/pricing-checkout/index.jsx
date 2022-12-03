@@ -3,6 +3,7 @@ import TopNavbar from '../../components/UI/TopNavbar';
 import smsIcon from '../../assets/icons/sms.svg';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import { FiUser } from 'react-icons/fi';
 import styles from './checkout.module.css';
 const index = () => {
   const plan = [
@@ -10,7 +11,12 @@ const index = () => {
       plan: 'Podcaster Plan',
       billingCircle: {
         yearly: '$102.00/ year',
+
         monthly: '$9.99/ mo'
+      },
+      price: {
+        yearly: 102.0,
+        monthly: 9.99
       }
     },
     {
@@ -18,35 +24,78 @@ const index = () => {
       billingCircle: {
         yearly: '$227.00/ year',
         monthly: '$18.99/ mo'
+      },
+      price: {
+        yearly: 227.0,
+        monthly: 18.99
       }
     }
   ];
   const [planner, setPlanner] = useState(plan[0]);
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
+  const [nameError, setNameError] = useState(false);
+  const [amountError, setAmountError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
   const [amount, setAmount] = useState('');
 
   const selectHandler = (e) => {
     setPlanner(plan[e.target.value]);
   };
-
+  const onOptionChange = (e) => {
+    setAmount(e.target.value);
+  };
   const submitForm = (e) => {
     e.preventDefault();
-    console.log(name, amount, email);
+    errorCheck();
+    if (!amountError && !nameError && !emailError) {
+      // const data = {
+      //   fname: name,
+      //   amount: amount,
+      //   email: email
+      // };
+      // fetch('https://api.voxclips.hng.tech/paystack/pay', {
+      //   method: 'POST',
+      //   // mode: 'no-cors',
+      //   headers: {
+      //     'Access-Control-Allow-Origin': '*',
+      //     'Content-Type': 'application/json',
+      //     'Access-Control-Allow-Methods': 'POST,PATCH,OPTIONS'
+      //   },
+
+      //   body: JSON.stringify(data)
+      // })
+      //   .then((res) => res.json())
+      //   .then((response) => console.log(response))
+      //   .catch((err) => console.log(err));
+      console.log(name, amount, email);
+    }
   };
+  const errorCheck = () => {
+    if (name === '') {
+      setNameError(true);
+    }
+    if (amount === '') {
+      setAmountError(true);
+    }
+    if (email === '') {
+      setEmailError(true);
+    }
+  };
+
   return (
     <div className={styles.checkout_wrapper}>
       <TopNavbar />
       <div className={styles.checkout_page_wrapper}>
         <div className={`${styles.checkout_page} mt-20`}>
-          <div className="bg-pri-600 items-center grid grid-cols-3 p-5 text-white">
-            <h1 className="col-start-2 text-center font-medium text-xl lg:text-2xl ">CHECKOUT</h1>
+          <div className="bg-sec-600 items-center grid grid-cols-3 p-5 lg:py-10 text-white">
+            <h1 className="col-start-2 text-center font-medium text-2xl lg:text-4xl ">Check Out</h1>
 
             <Link to="/pricing" className=" ml-auto">
-              <AiOutlineClose color="white" />
+              <AiOutlineClose color="white" size="30" />
             </Link>
           </div>
-          <form className="mx-auto w-[90%] mt-10">
+          <form className="mx-auto w-[90%] lg:w-[70%] mt-10">
             <div className={styles.form_group}>
               <div className={styles.label}> Your Plan</div>
               <div className="">
@@ -62,7 +111,7 @@ const index = () => {
               </div>
             </div>
 
-            <div className={`${styles.form_group} mt-10`}>
+            <div className={`${styles.form_group} my-10`}>
               {/* first input */}
               <div>
                 <div className={styles.label}>Your Billing Cycle</div>
@@ -70,10 +119,11 @@ const index = () => {
                   <div className={styles.radio_content}>
                     <input
                       type="radio"
-                      value={planner.billingCircle?.yearly}
+                      value={planner.price?.yearly}
                       className={styles.billing_radio}
                       name="billing"
-                      onChange={(e) => setAmount(e.target.checked)}
+                      // checked={billing === planner.billingCircle?.yearly}
+                      onChange={onOptionChange}
                     />
                     <span className="lg:ml-5">
                       Billed yearly <small className="text-pri-600 lg:ml-10 ">SAVE 20%</small>
@@ -89,41 +139,51 @@ const index = () => {
                   <div className={styles.radio_content}>
                     <input
                       type="radio"
-                      value={planner.billingCircle.monthly}
+                      value={planner.price?.monthly}
                       className={styles.billing_radio}
                       name="billing"
+                      // checked={'billing' === planner.billingCircle?.yearly}
+                      onChange={onOptionChange}
                     />
                     <span className="lg:ml-5">Billed monthly</span>
                   </div>
                   <span>{planner.billingCircle.monthly}</span>
                 </div>
               </div>
+              <p className="text-red-600">{amountError && 'pick a plan'}</p>
             </div>
 
             <div className={`${styles.form_group} mt-10`}>
               <div className={styles.label}>Enter Your Details</div>{' '}
-              <div className=" border border-[#8f9092] px-2 md:px-5 py-3 items-center flex gap-5 rounded-md mb-5">
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Full Name"
-                  className="outline-none"
-                />
+              <div className="mb-5">
+                <div className=" border border-[#8f9092] px-2 md:px-5 py-3 items-center flex gap-5 rounded-md">
+                  <FiUser size="25" color="#8f9092" />
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Full Name"
+                    className="outline-none"
+                  />
+                </div>
+                <p className="text-red-600 text-sm">{nameError && 'Enter your full name'}</p>
               </div>
-              <div className=" border border-[#8f9092] px-2 md:px-5 py-3 items-center flex gap-5 rounded-md mb-5">
-                <img className={styles.icon} src={smsIcon} alt="sms" />
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Email"
-                  className="outline-none"
-                />
-              </div>
+              <div className="mb-5">
+                <div className=" border border-[#8f9092] px-2 md:px-5 py-3 items-center flex gap-5 rounded-md ">
+                  <img className={styles.icon} src={smsIcon} alt="sms" />
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email"
+                    className="outline-none"
+                  />
+                </div>
+                <p className="text-red-600 text-sm">{emailError && 'Enter your email address'}</p>
+              </div>{' '}
             </div>
 
-            <div className="lg:w-[60%] w-full mx-auto mt-5">
+            <div className="lg:w-[60%] w-full mx-auto mt-5 mb-20">
               <button
                 onClick={submitForm}
                 className="w-full py-4  text-white text-center rounded-lg bg-pri-600">
