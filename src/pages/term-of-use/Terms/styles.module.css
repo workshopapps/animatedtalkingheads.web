@@ -6,10 +6,20 @@
   align-items: center;
 }
 
-
-.term li:active {
+.term {
+  font-size: 25px;
   border-bottom: 3px solid #2158D2;
+ 
 }
+.term_te {
+  font-size: 25px;
+  color: rgba(41, 45, 50, 0.5);
+ 
+}
+.term li {
+ list-style-type: none;
+}
+
 .contentNav ul {
   display: flex;
   flex-direction: column;

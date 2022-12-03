@@ -41,7 +41,7 @@ const links3 = [
   { name: 'Contact Us', link: routes.contact }
 
   // { name: 'Pricing', link: routes.pricing },
-v
+
   // { name: 'Terms and Conditions', link: routes.termsCondition },
   // { name: 'Privacy Policy', link: routes.privacy }
 ];
