@@ -82,11 +82,11 @@ const Footer = () => {
         </div>
         <div className="grid gap-3 col-start-1 lg:col-start-5 mt-10 lg:mt-0 ">
           <div className={`${styles.lang}  flex items-center gap-1 `}>
-            <button data-tip data-for="registerTip">
+            <button data-tip data-for="language">
               <img src={globe} alt="globe" />
             </button>
 
-            <ReactTooltip id="registerTip" place="top" effect="solid" >
+            <ReactTooltip id="language" place="top" effect="solid" >
               Select preferred language
             </ReactTooltip>
 
