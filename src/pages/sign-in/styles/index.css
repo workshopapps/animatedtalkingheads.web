@@ -1,0 +1,266 @@
+*:focus {
+  outline: none;
+}
+
+section.sign-in-section {
+  display: flex;
+  background-color: #f5f5f5;
+  padding: 4.25rem 0;
+}
+section.sign-in-section .sign-in {
+  display: flex;
+  flex-direction: column;
+  padding: 3.75rem 9.625rem;
+  max-width: 74%;
+  margin: 0 auto;
+  background-color: #fefefe;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+}
+section.sign-in-section .sign-in > h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+}
+section.sign-in-section .sign-in > p {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400 !important;
+  max-width: 29rem;
+}
+section.sign-in-section .sign-in > p.page-par {
+  margin-top: 1.5rem;
+  margin-bottom: 2.75rem;
+}
+section.sign-in-section .sign-in > p.optional-par {
+  margin: 2.75rem 0;
+  position: relative;
+  font-weight: 400;
+}
+section.sign-in-section .sign-in > p.optional-par::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 20%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: #BDBDBD;
+}
+section.sign-in-section .sign-in > p.optional-par::after {
+  content: " ";
+  height: 1px;
+  width: 20%;
+  background: #BDBDBD;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+section.sign-in-section .sign-in > p.login-par {
+  font-size: 1rem;
+  white-space: nowrap !important;
+}
+section.sign-in-section .sign-in > p.login-par > a {
+  color: #2158D2;
+  font-size: 1rem !important;
+}
+section.sign-in-section .sign-in .optional-sign-in {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(122px, auto));
+  gap: 0.5rem;
+}
+section.sign-in-section .sign-in .optional-sign-in > * {
+  flex: 1;
+}
+section.sign-in-section .sign-in .optional-sign-in button.third-auth {
+  display: flex;
+  padding: 1rem;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  white-space: nowrap;
+  margin: 0 auto;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+section.sign-in-section .sign-in .optional-sign-in button.third-auth > svg {
+  margin-right: 0.5rem;
+}
+section.sign-in-section .sign-in form.form {
+  display: flex;
+  flex-direction: column;
+}
+section.sign-in-section .sign-in form.form > label.input-label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+section.sign-in-section .sign-in form.form .input-text {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  padding: 1.125rem 1.5rem;
+}
+section.sign-in-section .sign-in form.form .input-text:not(.last) {
+  margin-bottom: 1.25rem;
+}
+section.sign-in-section .sign-in form.form .input-text > input {
+  width: 100%;
+  background: none;
+}
+section.sign-in-section .sign-in form.form .input-text > svg {
+  cursor: pointer;
+}
+section.sign-in-section .sign-in form.form > p.forgot-password {
+  text-align: center;
+  margin: 2.5rem 0;
+  font-size: 1rem !important;
+}
+section.sign-in-section .sign-in form.form > p.forgot-password > a {
+  color: #2158D2;
+}
+section.sign-in-section .sign-in form.form > button.sign-in-btn {
+  padding: 1.125rem 0;
+  background-color: #2158d2;
+  border-radius: 8px;
+  color: white;
+}
+
+@media screen and (max-width: 965px) {
+  section.sign-in-section .sign-in {
+    padding: 3.75rem 4.8rem;
+  }
+  section.sign-in-section .sign-in form.form > p.forgot-password > a {
+    font-size: 1rem !important;
+    font-weight: 500;
+  }
+  section.sign-in-section .sign-in .optional-sign-in > button:nth-child(3) {
+    grid-column-start: -3;
+    grid-column-end: -5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+}
+@media screen and (max-width: 800px) {
+  section.sign-in-section .sign-in > h1 {
+    font-size: 2rem !important;
+  }
+  section.sign-in-section .sign-in > p {
+    font-size: 1.2rem;
+  }
+  section.sign-in-section .sign-in > p.page-par {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  section.sign-in-section .sign-in form.form > p.forgot-password > a {
+    font-size: 1rem !important;
+    font-weight: 500;
+  }
+  section.sign-in-section .sign-in .optional-sign-in {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 640px) {
+  section.sign-in-section {
+    padding: 4.25rem 0;
+  }
+  section.sign-in-section .sign-in {
+    padding: 1.75rem 3.625rem;
+    padding-bottom: 4rem;
+  }
+  section.sign-in-section .sign-in > h1 {
+    font-size: 1.5rem !important;
+  }
+  section.sign-in-section .sign-in > p {
+    font-size: 1rem;
+  }
+  section.sign-in-section .sign-in > p.page-par {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  section.sign-in-section .sign-in > p.optional-par {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  section.sign-in-section .sign-in form.form .input-text {
+    padding: 0.75rem 0.5rem;
+    font-size: 1rem;
+  }
+  section.sign-in-section .sign-in form.form > p.forgot-password {
+    font-size: 0.95rem !important;
+    margin-top: 1.85rem;
+    margin-bottom: 1.5rem;
+  }
+  section.sign-in-section .sign-in form.form > p.forgot-password > a {
+    font-size: 0.95rem !important;
+    font-weight: 200;
+    display: inline;
+  }
+  section.sign-in-section .sign-in .optional-sign-in {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 500px) {
+  section.sign-in-section {
+    padding: 0 0 !important;
+  }
+  section.sign-in-section .sign-in {
+    padding: 1.75rem 2.625rem;
+    padding-bottom: 4rem;
+    max-width: 100%;
+    border-radius: 0;
+    border: none;
+  }
+  section.sign-in-section .sign-in > h1 {
+    font-size: 1.5rem !important;
+  }
+  section.sign-in-section .sign-in > p {
+    font-size: 1rem;
+  }
+  section.sign-in-section .sign-in > p.page-par {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  section.sign-in-section .sign-in > p.optional-par {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  section.sign-in-section .sign-in form.form .input-text {
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+  }
+  section.sign-in-section .sign-in form.form > p.forgot-password {
+    font-size: 1rem !important;
+    margin-top: 1.85rem;
+    margin-bottom: 1.5rem;
+  }
+  section.sign-in-section .sign-in form.form > p.forgot-password > a {
+    font-size: 1rem !important;
+    font-weight: 200;
+    display: inline;
+  }
+  section.sign-in-section .sign-in > p.login-par {
+    font-size: 1rem;
+    white-space: nowrap !important;
+  }
+  section.sign-in-section .sign-in > p.login-par > a {
+    color: #2158D2;
+    display: block !important;
+  }
+  section.sign-in-section .sign-in .optional-sign-in {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
