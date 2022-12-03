@@ -34,7 +34,7 @@ const SignIn = () => {
         try {
           await signIn(formData?.email, formData?.password)
           navigate('/podcast/upload')
-            alert(`${user && user.email} Welcome back to Voxclips!`)
+            {user && (alert(`${user && user.email} Welcome back to Voxclips!`))}
           
         } catch (e) {
           setError(e.message)

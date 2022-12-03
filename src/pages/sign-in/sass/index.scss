@@ -166,8 +166,6 @@ section.sign-in-section {
 
     .sign-in{
       padding: 3.75rem 4.8rem;
-      border-radius: 0;
-      border: none;
 
       form.form{
 
@@ -265,14 +263,14 @@ section.sign-in-section {
         }
 
         & > p.forgot-password{
-          font-size: 1rem !important;
+          font-size: 0.95rem !important;
           margin-top: 1.85rem;
           margin-bottom: 1.5rem;
 
           & > a {
-          font-size: 1rem !important;
+          font-size: 0.95rem !important;
           font-weight: 200;
-          display: block;
+          display: inline;
             
           }
         }
@@ -295,6 +293,8 @@ section.sign-in-section {
       padding: 1.75rem 2.625rem;
       padding-bottom: 4rem;
       max-width: 100%;
+      border-radius: 0;
+      border: none;
 
       & > h1 {
         font-size: 1.5rem !important;
@@ -329,7 +329,7 @@ section.sign-in-section {
           & > a {
           font-size: 1rem !important;
           font-weight: 200;
-          display: block;
+          display: inline;
             
           }
         }

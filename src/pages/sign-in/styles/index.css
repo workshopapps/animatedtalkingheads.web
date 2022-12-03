@@ -137,8 +137,6 @@ section.sign-in-section .sign-in form.form > button.sign-in-btn {
 @media screen and (max-width: 965px) {
   section.sign-in-section .sign-in {
     padding: 3.75rem 4.8rem;
-    border-radius: 0;
-    border: none;
   }
   section.sign-in-section .sign-in form.form > p.forgot-password > a {
     font-size: 1rem !important;
@@ -198,14 +196,14 @@ section.sign-in-section .sign-in form.form > button.sign-in-btn {
     font-size: 1rem;
   }
   section.sign-in-section .sign-in form.form > p.forgot-password {
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
     margin-top: 1.85rem;
     margin-bottom: 1.5rem;
   }
   section.sign-in-section .sign-in form.form > p.forgot-password > a {
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
     font-weight: 200;
-    display: block;
+    display: inline;
   }
   section.sign-in-section .sign-in .optional-sign-in {
     display: flex;
@@ -220,6 +218,8 @@ section.sign-in-section .sign-in form.form > button.sign-in-btn {
     padding: 1.75rem 2.625rem;
     padding-bottom: 4rem;
     max-width: 100%;
+    border-radius: 0;
+    border: none;
   }
   section.sign-in-section .sign-in > h1 {
     font-size: 1.5rem !important;
@@ -247,7 +247,7 @@ section.sign-in-section .sign-in form.form > button.sign-in-btn {
   section.sign-in-section .sign-in form.form > p.forgot-password > a {
     font-size: 1rem !important;
     font-weight: 200;
-    display: block;
+    display: inline;
   }
   section.sign-in-section .sign-in > p.login-par {
     font-size: 1rem;
