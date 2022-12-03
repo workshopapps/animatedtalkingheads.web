@@ -5,7 +5,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth  } from '../../context/AuthContext';
 
 const SignUp = () => {
-    const[password,setPassword]=useState("password");
     const navigate = useNavigate()
     const [error, setError] = useState('')
 
@@ -36,7 +35,7 @@ const SignUp = () => {
       try {
         await createUser(formData?.email, formData?.password);
         navigate('/podcast/upload')
-        alert(`Thank you for signing up ${user && user.email}`)
+        alert(`Thank you for signing up`)
       } catch (e) {
         setError(e.message);
         console.log(e.message);
