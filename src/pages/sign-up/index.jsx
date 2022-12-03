@@ -9,7 +9,7 @@ const SignUp = () => {
     const navigate = useNavigate()
     const [error, setError] = useState('')
 
-    const { createUser } = UserAuth()    
+    const { createUser, user } = UserAuth()   
 
   const [formData, setFormData] = useState({
     email: '',
@@ -36,6 +36,7 @@ const SignUp = () => {
       try {
         await createUser(formData?.email, formData?.password);
         navigate('/podcast/upload')
+        alert(`Thank you for signing up ${user && user.email}`)
       } catch (e) {
         setError(e.message);
         console.log(e.message);

@@ -1,0 +1,143 @@
+*:focus {
+    outline: none;
+}
+section.sign-in-section {
+  display: flex;
+  background-color: #f5f5f5;
+  padding: 4.25rem 0;
+
+  .sign-in {
+    display: flex;
+    flex-direction: column;
+    padding: 3.75rem 9.625rem;
+    max-width: 74%;
+    margin: 0 auto;
+    background-color: #fefefe;
+    border: 1px solid #bdbdbd;
+    border-radius: 8px;
+
+    & > h1 {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    & > p {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 400 !important;
+      max-width: 29rem;
+    }
+
+    & > p.page-par {
+      margin-top: 1.5rem;
+      margin-bottom: 2.75rem;
+    }
+
+    & > p.optional-par {
+      margin: 2.75rem 0;
+      position: relative;
+      font-weight: 400;
+
+      &::before{
+        content: "";
+        display: block;
+        height: 1px;
+        width: 20%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        background: #BDBDBD;
+      }
+
+      &::after{
+        content:" ";
+        height: 1px;
+        width: 20%;
+        background: #BDBDBD;
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+      }
+    }
+
+    & > p.login-par {
+      font-size: 1rem;
+
+      & > a {
+        color: #2158D2;
+      }
+    }
+
+    .optional-sign-in {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      width: 100%;
+      margin: 0 auto;
+      // margin-top: 3.75rem;
+      margin-bottom: 1.25rem;
+
+      button.third-auth {
+        display: flex;
+        padding: 1rem;
+        border: 1px solid #bdbdbd;
+        border-radius: 8px;
+
+        & > svg {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    form.form {
+      display: flex;
+      flex-direction: column;
+
+      & > label.input-label {
+        display: block;
+        font-weight: 500;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .input-text {
+        width: 100%;
+        border: 2px solid yellow;
+        display: flex;
+        align-items: center;
+        border: 1px solid #bdbdbd;
+        border-radius: 4px;   
+        padding: 1.125rem 1.5rem;
+
+        &:not(.last){
+        margin-bottom: 1.25rem;
+
+        }
+
+        & > input {
+          width: 100%;
+          background: none;
+        }
+
+        & > svg{
+            cursor: pointer;
+        }
+      }
+
+      & > p.forgot-password{
+        text-align: center;
+        margin: 2.5rem 0;
+      }
+
+      & > button.sign-in-btn {
+        padding: 1.125rem 0;
+        background-color: #2158d2;
+        border-radius: 8px;
+        color: white;
+        // margin-top: 0.5rem;
+      }
+    }
+  }
+}
