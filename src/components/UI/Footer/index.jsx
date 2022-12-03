@@ -5,6 +5,7 @@ import settings from './../../../assets/icons/settings.svg';
 import globe from './../../../assets/icons/white_globe.svg';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { routes } from '../../../libs/links';
+import ReactTooltip from "react-tooltip";
 
 const links1 = [
   { name: 'How it Works', link: routes.howItWorks },
@@ -120,8 +121,11 @@ const Footer = () => {
           </div>
           <div className={`${styles.lang} hidden lg:flex items-center gap-1 `}>
             <button>
-              <img src={globe} alt="globe" />
+              <img src={globe} alt="globe" data-tip data-for="register" />
             </button>
+            <ReactTooltip id="register" place="bottom" effect="solid" >
+              Select a language
+            </ReactTooltip>
 
             <select className="">
               <option>English</option>
