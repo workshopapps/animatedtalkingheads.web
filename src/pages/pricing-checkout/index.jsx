@@ -5,6 +5,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { FiUser } from 'react-icons/fi';
 import styles from './checkout.module.css';
+import axios from 'axios';
 const index = () => {
   const plan = [
     {
@@ -31,6 +32,7 @@ const index = () => {
       }
     }
   ];
+  const url = 'https://api.voxclips.hng.tech/paystack/pay';
   const [planner, setPlanner] = useState(plan[0]);
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -49,25 +51,13 @@ const index = () => {
     e.preventDefault();
     errorCheck();
     if (!amountError && !nameError && !emailError) {
-      // const data = {
-      //   fname: name,
-      //   amount: amount,
-      //   email: email
-      // };
-      // fetch('https://api.voxclips.hng.tech/paystack/pay', {
-      //   method: 'POST',
-      //   // mode: 'no-cors',
-      //   headers: {
-      //     'Access-Control-Allow-Origin': '*',
-      //     'Content-Type': 'application/json',
-      //     'Access-Control-Allow-Methods': 'POST,PATCH,OPTIONS'
-      //   },
+      const data = {
+        full_name: name,
+        amount: amount,
+        email: email
+      };
+      axios.post(url, data).then((res) => console.log(res));
 
-      //   body: JSON.stringify(data)
-      // })
-      //   .then((res) => res.json())
-      //   .then((response) => console.log(response))
-      //   .catch((err) => console.log(err));
       console.log(name, amount, email);
     }
   };
@@ -88,11 +78,15 @@ const index = () => {
       <TopNavbar />
       <div className={styles.checkout_page_wrapper}>
         <div className={`${styles.checkout_page} mt-20`}>
-          <div className="bg-sec-600 items-center grid grid-cols-3 p-5 lg:py-10 text-white">
+          <div className="bg-sec-600 items-center p-5 lg:py-10 text-white">
             <h1 className="col-start-2 text-center font-medium text-2xl lg:text-4xl ">Check Out</h1>
-
+          </div>
+          <div className="flex flex-end m-5">
             <Link to="/pricing" className=" ml-auto">
-              <AiOutlineClose color="white" size="30" />
+              <div className="flex gap-1 items-center text-pri-700">
+                <p>Close</p>
+                <AiOutlineClose color="blue" className="border rounded-full  border-pri-700" />
+              </div>
             </Link>
           </div>
           <form className="mx-auto w-[90%] lg:w-[70%] mt-10">
