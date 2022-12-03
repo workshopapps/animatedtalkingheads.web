@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '../Button';
 import styles from './styles.module.css';
-import headerLogo from './../../../assets/icons/header-logo.png';
+import headerLogo from './../../../assets/icons/header_logo.svg';
 import menuIcon from './../../../assets/icons/menu-icon.png';
 import closeIcon from './../../../assets/icons/close.png';
 import { links, routes } from '../../../libs/links';
@@ -18,7 +18,6 @@ const TopNavbar = () => {
   const [show, setShow] = React.useState(false);
   const location = useLocation();
   const pathname = location.pathname.split('/')[1];
-
   const close = () => {
     setShow(false);
   };
@@ -34,7 +33,11 @@ const TopNavbar = () => {
         <div className={`${styles.links} hidden items-center  md:flex md:grow justify-between`}>
           {links.map((link, index) => (
             <Link
-              className={`${`/${pathname}` === link.link ? `${styles.active}` : ''} block`}
+              className={`${
+                `/${pathname}` === link.link || `/${pathname}/1` === link.link
+                  ? `${styles.active}`
+                  : ''
+              } block`}
               key={index}
               to={link.link}>
               {link.name}
@@ -42,7 +45,12 @@ const TopNavbar = () => {
           ))}
 
           <div className={`${styles.dropdown} px-1 space-x-3 relative middle `}>
-            <h1 className={`block`}>Avatars</h1>
+            <h1
+              className={
+                pathname === 'avatars' || pathname === 'explore-avatar' ? `${styles.active}` : ''
+              }>
+              Avatars
+            </h1>
 
             <BiChevronDown />
 

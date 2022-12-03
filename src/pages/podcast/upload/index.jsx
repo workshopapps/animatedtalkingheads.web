@@ -5,22 +5,22 @@ import musicnote from '../../../assets/icons/upload_podcast/musicnote.svg';
 import music from '../../../assets/icons/upload_podcast/music.svg';
 import correct from '../../../assets/icons/upload_podcast/correct.svg';
 import { Button } from '../../../components/UI/Button';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Text } from '../../../components/UI/Text';
-import styles from '../upload/index.module.scss';
 import { Link } from 'react-router-dom';
 import { useDropzone } from 'react-dropzone';
 import store from '../../../store/store';
+import axios from 'axios';
+import { Circle } from 'rc-progress';
 
 const UploadPodcast = () => {
-  console.log(store.getState());
-
   const [audio, setAudio] = useState(null);
   const [name, setName] = useState(null);
   const [upload, setUpload] = useState(false);
   const [error, setError] = useState(null);
   const [uploaded, setUploaded] = useState(false);
+  const [percentage, setPercentage] = useState(0);
   const [loading, setLoading] = useState({
     label: 'Upload',
     isDisabled: false
@@ -28,53 +28,74 @@ const UploadPodcast = () => {
 
   const onDrop = useCallback((acceptedFiles) => {
     setAudio(acceptedFiles[0]);
-    console.log(acceptedFiles[0]);
     setName(acceptedFiles[0].name);
   }, []);
+
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
-  const uploadFile = () => {
-    if (!audio.type.includes('audio')) {
-      setError('Only audio files are supported');
-    } else if (audio) {
-      setLoading({ ...loading, isDisabled: true });
-      setUpload(true);
-      uploadFunction();
+  useEffect(() => {
+    if (audio) {
+      if (!audio.type.includes('audio')) {
+        setError('Only audio files are supported');
+      } else if (audio) {
+        setLoading({ ...loading, isDisabled: true });
+        setUpload(true);
+        uploadToServer();
+      }
     }
-  };
+  }, [name, audio]);
 
-  const uploadFunction = () => {
+  const uploadToServer = async () => {
     setError(false);
-    const data = new FormData();
-    data.append('podcast', audio);
+    const formData = new FormData();
+    formData.append('podcast', audio);
+    let uploadStatus = 0;
+    const url = 'https://api.voxlips.hng.tech/podcasts/upload/';
 
-    fetch('https://api.voxlips.hng.tech/podcasts/upload/', {
-      method: 'POST',
+    const config = {
+      onUploadProgress: (progressEvent) => {
+        const { loaded, total } = progressEvent;
+        console.log(loaded, total);
+        uploadStatus = Math.floor((loaded * 100) / total);
+        console.log(`${loaded}kb of ${total}kb | ${uploadStatus}%`);
+
+        if (uploadStatus <= 100) {
+          setPercentage(uploadStatus);
+        }
+      },
       mode: 'cors',
-      body: data
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        store.dispatch({ type: 'ADD_PODCAST_ITEM', payload: data });
-        setUpload(false);
-        setUploaded(true);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setUpload(false);
-        setAudio(false);
-        setUploaded(false);
-        setLoading({ ...loading, isDisabled: false });
-        console.log(err.message);
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    };
+
+    try {
+      const resp = await axios.post(url, formData, config);
+      const data = await resp.data;
+      store.dispatch({ type: 'ADD_PODCAST_ITEM', payload: data });
+      setPercentage(uploadStatus, () => {
+        setTimeout(() => {
+          setPercentage(0);
+        }, 1000);
       });
+      setUpload(false);
+      setUploaded(true);
+    } catch (error) {
+      setError(error.message);
+      setUpload(false);
+      setAudio(false);
+      setUploaded(false);
+      setLoading({ ...loading, isDisabled: false });
+    }
   };
 
   return (
     <Layout>
-      <div className="text-center max-w-[1440px] w-[90%] mx-auto mt-10 ">
-        <Text label="Upload Audio" w="semibold" type="text1" data-testid="header" />
-        <div className="opacity-60 my-5 border rounded-lg bg-[#EFF3F6] border-opacity-20 text-center py-5 px-2 grid gap-3">
+      <div className="text-center max-w-[1440px] mx-auto   flex flex-col justify-center">
+        <div className="bg-[#171D2E] text-[#FFFFFF] py-6 mt-0">
+          <Text label="Upload Audio" w="semibold" type="text1" data-testid="header" />
+        </div>
+        <div className="opacity-60 my-5 w-[90%] border rounded-lg bg-[#EFF3F6] border-opacity-20 text-center py-5 px-2  gap-3 flex flex-col mx-auto">
           <Text label="Over 0.5MB, up to 500MB, 2 Hours max." type="text4" w="sm" />
           <div className="flex gap-1 justify-center items-center">
             <span>
@@ -87,14 +108,22 @@ const UploadPodcast = () => {
 
         <div
           {...getRootProps()}
-          className={` cursor-pointer  my-5 py-10 border-[3px] bg-[#FFFFFF] rounded-lg border-dashed border-opacity-20 w-[90%] mx-auto ${
+          className={` w-[80%]  sm:w-[70%] md:w-[60%] lg:w-[70%] cursor-pointer  my-5 py-3 border-[3px] bg-[#FFFFFF] rounded-lg border-dashed border-opacity-20 mx-auto ${
             error && 'border-red-600 opacity-100'
           }`}>
           <div className="flex justify-center">
             {uploaded ? (
-              <img src={correct} alt="microphone podcast" className="w-[30px] md:w-[50px]" />
+              <div>
+                <img
+                  src={correct}
+                  alt="microphone podcast"
+                  className="w-[30px] md:w-[50px] text-[#2563eb]"
+                />
+              </div>
             ) : (
-              <img src={microphone} alt="microphone podcast" className="w-[30px] md:w-[100px]" />
+              <div>
+                <img src={microphone} alt="microphone podcast" className="w-[30px] md:w-[100px]" />
+              </div>
             )}
           </div>
 
@@ -103,26 +132,31 @@ const UploadPodcast = () => {
               {!upload ? (
                 <div></div>
               ) : (
-                <div>
+                <div className="flex flex-col justify-center gap-5">
                   <Text label="Your file is uploading" type="text2" w="sm" />
-                  <div className={styles.ring}>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
+                  {percentage > 0 && (
+                    <div className=" flex justify-center">
+                      <Circle
+                        percent={percentage}
+                        trailWidth={5}
+                        strokeWidth={5}
+                        strokeColor="#2563eb"
+                        className=" w-[60px] lg:w-[70px]"
+                      />
+                    </div>
+                  )}
                 </div>
               )}
             </div>
           )}
 
           {uploaded && (
-            <div className="flex justify-center mt-5">
+            <div className="flex justify-center mt-11 gap-5 ">
               <img src={music} alt="microphone podcast" className="w-[20px] md:w-[30px]" />
             </div>
           )}
-          <div className=" justify-center gap-2 items-center mb-20">
-            <div className="">
+          <div className="flex flex-col justify-center gap-3 items-center mb-20">
+            <div className=" mt-10">
               {name ? (
                 <Text label={name} type="text4" w="sm" />
               ) : (
@@ -134,7 +168,7 @@ const UploadPodcast = () => {
               <div>
                 <p>
                   or{' '}
-                  <span className="text-pri-600 cursor-pointer">
+                  <span className=" text-[#2563eb] cursor-pointer">
                     {audio ? 'change file' : 'browse'}
                   </span>
                 </p>
@@ -143,19 +177,14 @@ const UploadPodcast = () => {
           </div>
           {error && <p className="text-red-700">{error}</p>}
         </div>
-
         {uploaded ? (
           <Link to="/podcast/customize">
-            <div className="my-10 justify-center flex">
-              <Button label="Start Creating">Upload Link</Button>
+            <div className="my-5 justify-center flex">
+              <Button label="Start Creating"> Start Creating</Button>
             </div>
           </Link>
         ) : (
-          <div className="my-10 justify-center flex ">
-            <Button {...loading} onClick={uploadFile}>
-              Upload Now
-            </Button>
-          </div>
+          <div className="h-[115px]"></div>
         )}
       </div>
     </Layout>
