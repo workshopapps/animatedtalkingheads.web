@@ -13,7 +13,7 @@
 .aboutHero {
   background-color: rgb(7, 7, 22);
   display: grid;
-  padding: 3rem;
+  padding: 2rem;
 }
 
 .aboutHeroText {
@@ -256,14 +256,21 @@
 /* about_build */
 
 .aboutBuild {
-  margin: 100px 0px;
-  display: grid;
+  background-image: url(../images/background-image.JPG);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left top, right bottom;
+  text-align: center;
+  padding: 3rem;
+  width: 100%;
 }
 
 .aboutBuildBox {
-  text-align: center;
-  width: 95%;
-  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10rem;
+  gap: 2rem;
 }
 
 .aboutBuildBox h3 {
@@ -288,45 +295,16 @@
 
 /* about_build */
 
-@media screen and (max-width: 768px) {
-  .aboutHeroImage {
-    background-position: left;
-    height: 35vh;
-  }
-
-  .aboutHeroText h3 {
-    font-size: 28px;
-  }
-
-  .aboutMissionSection1 {
-    top: 70%;
-  }
-
-  .aboutMissionSection1 {
-    width: 70%;
-  }
-
-  .aboutMissionSection1 p {
-    font-size: 20px;
-  }
-
-  .aboutMissionSection2 {
-    grid-template-columns: 1fr;
-    margin-top: 200px;
-  }
-
-  .missionGrid {
-    margin: 20px 0px;
-    justify-content: center;
-    text-align: center;
-    display: grid;
+@media screen and (max-width: 540px) {
+  .aboutSection {
+    padding: 2rem 4rem;
   }
 
   .aboutValuesHeading {
     width: 70%;
   }
 
-  .aboutValuesHeading h2 {
+  .aboutValuesHeading h3 {
     font-size: 25px;
   }
 
@@ -338,38 +316,16 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .aboutStory {
-    margin-top: 50px;
+  .meetContent {
+    padding: 2rem 4rem;
   }
 
-  .aboutStorySection {
-    grid-template-columns: 1fr;
-    text-align: center;
+  .aboutBuild {
+    background-image: none;
   }
 
-  .storyGrid {
-    margin: 10px 0px;
-  }
-
-  .storyGrid p {
-    font-size: 20px;
-  }
-
-  .abouTeam {
-    padding-top: 50px;
-  }
-
-  .aboutTeamSection1 {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .teamGrid {
-    margin: 10px 0px;
-  }
-
-  .teamGrid p {
-    font-size: 20px;
+  .aboutBuildBox {
+    padding: 0 2rem;
   }
 
   .aboutBuildBox h3 {
