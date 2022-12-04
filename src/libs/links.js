@@ -3,6 +3,7 @@ export const routes = {
   about: '/about',
   blog: '/blog',
   customizeAudio: '/podcast/customize',
+  ForgotPassword: '/forgot-password',
 
   blogContent: '/blog/content',
 
