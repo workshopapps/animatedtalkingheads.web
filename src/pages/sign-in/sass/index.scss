@@ -1,12 +1,12 @@
 *:focus {
     outline: none;
 }
-section.sign-up-section {
+section.sign-in-section {
   display: flex;
   background-color: #f5f5f5;
   padding: 4.25rem 0;
 
-  .sign-up {
+  .sign-in {
     display: flex;
     flex-direction: column;
     padding: 3.75rem 9.625rem;
@@ -15,6 +15,7 @@ section.sign-up-section {
     background-color: #fefefe;
     border: 1px solid #bdbdbd;
     border-radius: 8px;
+    
 
     & > h1 {
       text-align: center;
@@ -26,7 +27,7 @@ section.sign-up-section {
       text-align: center;
       font-size: 1.5rem;
       font-weight: 400 !important;
-      max-width: 24rem;
+      max-width: 29rem;
     }
 
     & > p.page-par {
@@ -64,13 +65,16 @@ section.sign-up-section {
 
     & > p.login-par {
       font-size: 1rem;
+      white-space: nowrap !important;
 
       & > a {
         color: #2158D2;
+        font-size: 1rem !important;
+
       }
     }
 
-    .optional-sign-up {
+    .optional-sign-in {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       width: 100%;
@@ -79,6 +83,10 @@ section.sign-up-section {
       margin-bottom: 1.25rem;
       grid-template-columns: repeat(auto-fit, minmax(122px, auto));
       gap: 0.5rem;
+
+      & > * {
+        flex: 1;
+      }
 
       button.third-auth {
         display: flex;
@@ -110,12 +118,16 @@ section.sign-up-section {
 
       .input-text {
         width: 100%;
-        margin-bottom: 1.25rem;
         display: flex;
         align-items: center;
         border: 1px solid #bdbdbd;
         border-radius: 4px;   
         padding: 1.125rem 1.5rem;
+
+        &:not(.last){
+        margin-bottom: 1.25rem;
+
+        }
 
         & > input {
           width: 100%;
@@ -127,23 +139,48 @@ section.sign-up-section {
         }
       }
 
-      & > button.sign-up-btn {
+      & > p.forgot-password{
+        text-align: center;
+        margin: 2.5rem 0;
+        font-size: 1rem !important;
+
+        & > a{
+          color: #2158D2;
+        }
+      }
+
+      & > button.sign-in-btn {
         padding: 1.125rem 0;
         background-color: #2158d2;
         border-radius: 8px;
         color: white;
-        margin-top: 0.5rem;
+        // margin-top: 0.5rem;
       }
     }
   }
 }
 
+
 @media screen and (max-width: 965px) {
-  section.sign-up-section{
-    .sign-up{
+  section.sign-in-section{
+
+    .sign-in{
       padding: 3.75rem 4.8rem;
 
-      .optional-sign-up {
+      form.form{
+
+        & > p.forgot-password{
+
+          & > a {
+          font-size: 1rem !important;
+          font-weight: 500;
+            
+          }
+        }
+
+      }
+
+      .optional-sign-in {
         & > button:nth-child(3) {
           grid-column-start: -3;
           grid-column-end: -5;
@@ -152,18 +189,18 @@ section.sign-up-section {
           // transform: translateY(-75px);
       }
       }
-
     }
   }
 }
 
 @media screen and (max-width: 800px) {
-  section.sign-up-section{
-    .sign-up{
+  section.sign-in-section{
+    .sign-in{
+
       & > h1 {
         font-size: 2rem !important;
       }
-
+      
       & > p {
         font-size: 1.2rem;
       }
@@ -172,30 +209,31 @@ section.sign-up-section {
         margin-top: 0.5rem;
         margin-bottom: 2rem;
       }
-      .optional-sign-up {
+
+      form.form{
+
+        & > p.forgot-password{
+
+          & > a {
+          font-size: 1rem !important;
+          font-weight: 500;
+            
+          }
+        }
+      }
+      .optional-sign-in {
         display: flex;
         flex-direction: column;
-      }
-
-      & > p.login-par {
-        font-size: 1rem !important;
-        white-space: nowrap !important;
-  
-        & > a {
-          color: #2158D2;
-          font-size: 1rem !important;
-          // display: block !important;
-        }
       }
     }
   }
 }
 
 @media screen and (max-width: 640px) {
-  section.sign-up-section{
-    padding: 4.25rem 0;
+  section.sign-in-section{
+  padding: 4.25rem 0;
 
-    .sign-up{
+    .sign-in{
       padding: 1.75rem 3.625rem;
       padding-bottom: 4rem;
 
@@ -218,31 +256,40 @@ section.sign-up-section {
       }
 
       form.form{
+
         .input-text {
           padding: 0.75rem 0.5rem;
           font-size: 1rem;
         }
 
-        & > p.login-par {
-          font-size: 1rem;
-          white-space: nowrap !important;
-    
+        & > p.forgot-password{
+          font-size: 0.95rem !important;
+          margin-top: 1.85rem;
+          margin-bottom: 1.5rem;
+
           & > a {
-            color: #2158D2;
-            font-size: 1rem !important;
-            display: block !important;
+          font-size: 0.95rem !important;
+          font-weight: 200;
+          display: inline;
+            
           }
         }
       }
+      .optional-sign-in {
+        display: flex;
+        flex-direction: column;
+      }
     }
-  }  
+  }
 }
 
-@media screen and (max-width: 500px) {
-  section.sign-up-section{
-    padding: 0 0 !important;
 
-    .sign-up{
+
+@media screen and (max-width: 500px) {
+  section.sign-in-section{
+  padding: 0 0 !important;
+
+    .sign-in{
       padding: 1.75rem 2.625rem;
       padding-bottom: 4rem;
       max-width: 100%;
@@ -268,25 +315,42 @@ section.sign-up-section {
       }
 
       form.form{
+
         .input-text {
           padding: 1rem 0.5rem;
           font-size: 1rem;
         }
-        .optional-sign-in {
-          display: flex;
-          flex-direction: column;
+
+        & > p.forgot-password{
+          font-size: 1rem !important;
+          margin-top: 1.85rem;
+          margin-bottom: 1.5rem;
+
+          & > a {
+          font-size: 1rem !important;
+          font-weight: 200;
+          display: inline;
+            
+          }
         }
+
       }
+
       & > p.login-par {
         font-size: 1rem;
         white-space: nowrap !important;
   
         & > a {
           color: #2158D2;
-          font-size: 1rem !important;
           display: block !important;
         }
+      }
+      .optional-sign-in {
+        display: flex;
+        flex-direction: column;
       }
     }
   }
 }
+
+
