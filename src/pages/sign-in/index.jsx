@@ -8,7 +8,6 @@ const SignIn = () => {
     // const[password,setPassword]=useState("password");
     const navigate = useNavigate()
     const [error, setError] = useState('')
-
     const { signIn, user, googleSignIn, facebookSignIn } = UserAuth()   
 
   const [formData, setFormData] = useState({
@@ -33,39 +32,41 @@ const SignIn = () => {
         setError('')
         try {
           await signIn(formData?.email, formData?.password)
-          navigate('/podcast/upload')
-            {user && (alert(`${user && user.email} Welcome back to Voxclips!`))}
-          
+          navigate('/')
+          alert('You are now signed in')
         } catch (e) {
           setError(e.message)
           console.log(error)
           console.log(e.message)
+          alert('Incorrect login details')
         }
       };
 
       const handleGoogleSignIn = async () => {
         try {
           await googleSignIn();
+          navigate('/')
+          alert('You are now signed in')
         } catch (error) {
           console.log(error);
         }
       }
-
+ 
       const handleFacebookSignIn = async () => {
          try {
           await facebookSignIn();
-         } catch (error) {
+          navigate('/')
+         } catch (error) { 
           console.log(error)
          }
       }
-
+      
       useEffect(() => {
-        if (user != null || user != undefined ) {
-          navigate('/');
-          alert(`You're already signed in!`)
-
+        if(user != null) {
+          navigate('/')
         }
-      }, [user]);
+        
+      }, [user ]);
 
     // fetch('https://example.com/signUp', {
     //     method: 'POST',
