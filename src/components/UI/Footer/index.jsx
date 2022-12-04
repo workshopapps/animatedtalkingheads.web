@@ -36,7 +36,7 @@ const links3 = [
   // { name: 'Terms of Use', link: routes.termsUse },
   // { name: 'Terms of Service', link: routes.termsService },
 
-  { name: 'Terms of Service', link: routes.termsService },
+  { name: 'Terms of Use', link: routes.termsUse },
   { name: 'APIs', link: routes.api },
   { name: 'Contact Us', link: routes.contact }
 

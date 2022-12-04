@@ -7,7 +7,39 @@
   background-size: cover;
   min-height: 100vh;
 }
+.form_select {
+  position: relative;
+}
+.form_select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.form_select:after {
+  content: '>';
+  font: 35px 'Consolas', monospace;
+  color: black;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 11px;
+  /*Adjust for position however you want*/
 
+  top: 18px;
+  padding: 0 0 2px;
+  /*left line */
+
+  position: absolute;
+  pointer-events: none;
+}
+
+.form_select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Add some styling */
+}
 .checkout_page {
   width: 70%;
   background-color: #fff;
