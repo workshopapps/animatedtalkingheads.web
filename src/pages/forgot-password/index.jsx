@@ -1,5 +1,6 @@
 import Layout from '../../components/UI/Layout';
 import './fogot-password.scss';
+import {Link} from  'react-router-dom'
 // import axios from 'axios';
 import { useState } from 'react';
 
@@ -74,7 +75,7 @@ const ForgotPassword = () => {
 
           <div className="w-full centered">
             <h1 className="text-link">
-              Back to <span className="text-pri-700">Log In</span>
+              Back to <Link to="/sign-in"><span className="text-pri-700">Log In</span></Link>
             </h1>
           </div>
         </div>
