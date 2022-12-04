@@ -32,7 +32,7 @@ const SignIn = () => {
         setError('')
         try {
           await signIn(formData?.email, formData?.password)
-          navigate('/podcast/upload')
+          navigate('/')
           alert('You are now signed in')
         } catch (e) {
           setError(e.message)
@@ -46,6 +46,7 @@ const SignIn = () => {
         try {
           await googleSignIn();
           navigate('/')
+          alert('You are now signed in')
         } catch (error) {
           console.log(error);
         }

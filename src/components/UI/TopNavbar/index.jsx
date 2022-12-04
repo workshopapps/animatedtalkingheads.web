@@ -52,6 +52,7 @@ const TopNavbar = () => {
           <Link to="/">
             <img src={headerLogo} alt="home" />
           </Link>
+          
         </div>
         <div className={`${styles.links} hidden items-center  md:flex md:grow justify-between`}>
           {links.map((link, index) => (
@@ -127,15 +128,38 @@ const TopNavbar = () => {
         <div className={`${styles.line}`}> </div>
 
         <div className={`${styles.links2}`}>
+
+
           {miniLinks.map((link, index) => (
             <Link onClick={close} className="block" key={index} to={link.link}>
               {link.name}
             </Link>
           ))}
+
         </div>
+
         <div className={`${styles.line}`}> </div>
 
+        <div> 
+        {user ? (
+            <button
+              style={{ color: '#2563EB', alignSelf: 'center', marginRight: '1.875rem' }}
+              onClick={handleSignOut}>
+              {' '}
+              Sign out{' '}
+              {/* {user?.displayName} */}
+            </button>
+          ) : (
+            <Link
+              to={routes.signIn}
+              style={{ color: '#2563EB', alignSelf: 'center', marginRight: '1.875rem', display : signInPath ? 'none' : 'inline' }}>
+              Sign In
+            </Link>
+          )}
+        </div>
+
         <div className="flex w-full justify-center h-28 items-center">
+          
           <Link onClick={close} className={styles.createVideo} to={routes.podcastUpload}>
             <button> Create Video </button>
           </Link>

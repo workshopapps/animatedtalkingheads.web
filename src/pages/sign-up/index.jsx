@@ -40,6 +40,7 @@ const SignUp = () => {
       } catch (e) {
         setError(e.message);
         console.log(e.message);
+        alert("An error occurred 😞, please try again or login")
       }
     };
 
@@ -62,7 +63,7 @@ const SignUp = () => {
     useEffect(() => {
       if (user != null || user != undefined ) {
         navigate('/');
-        alert(`Thank you for signing up!`)
+        alert(`Welcome to Voxclips!`)
       }
     }, [user]);
 
