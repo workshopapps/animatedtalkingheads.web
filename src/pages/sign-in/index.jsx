@@ -8,7 +8,6 @@ const SignIn = () => {
     // const[password,setPassword]=useState("password");
     const navigate = useNavigate()
     const [error, setError] = useState('')
-
     const { signIn, user, googleSignIn, facebookSignIn } = UserAuth()   
 
   const [formData, setFormData] = useState({
@@ -34,12 +33,12 @@ const SignIn = () => {
         try {
           await signIn(formData?.email, formData?.password)
           navigate('/podcast/upload')
-            {user && (alert(`${user && user.email} Welcome back to Voxclips!`))}
-          
+          alert('You are now signed in')
         } catch (e) {
           setError(e.message)
           console.log(error)
           console.log(e.message)
+          alert('Incorrect login details')
         }
       };
 
@@ -47,7 +46,6 @@ const SignIn = () => {
         try {
           await googleSignIn();
           navigate('/')
-
         } catch (error) {
           console.log(error);
         }

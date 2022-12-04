@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Button } from '../Button';
 import styles from './styles.module.css';
@@ -19,6 +19,7 @@ const miniLinks = [
 const TopNavbar = () => {
   const [show, setShow] = React.useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const pathname = location.pathname.split('/')[1];
   const { user, logOut } = UserAuth();
   const close = () => {
@@ -31,7 +32,6 @@ const TopNavbar = () => {
   // console.log(location.pathname)
   useEffect(() => {
     if (location.pathname == '/sign-in') {
-      console.log('on the path');
       setSignInPath(true);
     }
   }, [signInPath]);
@@ -39,6 +39,8 @@ const TopNavbar = () => {
   const handleSignOut = async () => {
     try {
       await logOut();
+      alert('You have signed out!')
+      navigate('/sign-in')
     } catch (error) {
       console.log(error);
     }
@@ -95,6 +97,7 @@ const TopNavbar = () => {
               onClick={handleSignOut}>
               {' '}
               Sign out{' '}
+              {/* {user?.displayName} */}
             </button>
           ) : (
             <Link
