@@ -61,7 +61,7 @@ const SignUp = () => {
 
     useEffect(() => {
       if (user != null || user != undefined ) {
-        navigate('/podcast/upload');
+        navigate('/');
         alert(`Thank you for signing up!`)
       }
     }, [user]);
@@ -140,7 +140,7 @@ const SignUp = () => {
 
             <button className='third-auth apple'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#000" d="M16.741 12.455c-.007-1.31.586-2.3 1.786-3.029-.671-.96-1.686-1.49-3.025-1.593-1.268-.1-2.654.74-3.162.74-.535 0-1.764-.704-2.729-.704C7.618 7.9 5.5 9.459 5.5 12.627c0 .935.171 1.902.514 2.9.458 1.311 2.108 4.526 3.83 4.472.9-.021 1.536-.64 2.707-.64 1.136 0 1.726.64 2.73.64 1.735-.025 3.228-2.947 3.664-4.261-2.329-1.097-2.204-3.215-2.204-3.283ZM14.72 6.59c.975-1.158.885-2.211.857-2.59-.861.05-1.858.586-2.426 1.247-.625.707-.993 1.582-.914 2.568.932.071 1.782-.407 2.482-1.225Z"/></svg>
-                <p className='third-auth-name'>Google</p>
+                <p className='third-auth-name'>Apple ID</p>
             </button>
 
             <button onClick={handleFacebookSignIn} className='third-auth facebook'>

@@ -46,26 +46,28 @@ const SignIn = () => {
       const handleGoogleSignIn = async () => {
         try {
           await googleSignIn();
+          navigate('/')
+
         } catch (error) {
           console.log(error);
         }
       }
-
+ 
       const handleFacebookSignIn = async () => {
          try {
           await facebookSignIn();
-         } catch (error) {
+          navigate('/')
+         } catch (error) { 
           console.log(error)
          }
       }
-
+      
       useEffect(() => {
-        if (user != null || user != undefined ) {
-          navigate('/');
-          alert(`You're already signed in!`)
-
+        if(user != null) {
+          navigate('/')
         }
-      }, [user]);
+        
+      }, [user ]);
 
     // fetch('https://example.com/signUp', {
     //     method: 'POST',
