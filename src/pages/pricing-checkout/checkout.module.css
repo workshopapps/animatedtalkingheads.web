@@ -17,7 +17,7 @@
 }
 .form_select:after {
   content: '>';
-  font: 35px 'Consolas', monospace;
+  font: 25px 'Consolas', monospace;
   color: black;
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -40,6 +40,7 @@
   appearance: none;
   /* Add some styling */
 }
+
 .checkout_page {
   width: 70%;
   background-color: #fff;
@@ -56,6 +57,10 @@
 @media (min-width: 768px) {
   .label {
     font-size: 24px;
+  }
+  .form_select:after {
+    content: '>';
+    font: 35px;
   }
 }
 
@@ -98,7 +103,7 @@
   top: -0.5px;
   left: 5.6px;
   position: relative;
-  background-color: #fff;
+  background-color: #1877f2;
   border: 1px solid #1877f2;
   content: '';
 }
