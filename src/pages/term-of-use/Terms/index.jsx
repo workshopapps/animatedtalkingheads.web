@@ -37,7 +37,7 @@ const Policy = () => {
 
                     </div>
 
-                    <div>
+                    <div className={styles.term_te}>
                         <Link to="/terms-of-use/policy">
                             Privacy Policy
                         </Link>

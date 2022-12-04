@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { FiUser } from 'react-icons/fi';
 import styles from './checkout.module.css';
 import axios from 'axios';
+
 const index = () => {
   const plan = [
     {
@@ -92,10 +93,10 @@ const index = () => {
           <form className="mx-auto w-[90%] lg:w-[70%] mt-10">
             <div className={styles.form_group}>
               <div className={styles.label}> Your Plan</div>
-              <div className="">
+              <div className={styles.form_select}>
                 <select
                   onChange={selectHandler}
-                  className="w-full border border-[#8f9092] p-5 rounded-md">
+                  className="w-full  border border-[#8f9092] p-5 rounded-md">
                   {plan.map((value, index) => (
                     <option value={index} key={index}>
                       {value.plan}

@@ -35,6 +35,14 @@ section.home-section .home .hero-container .desktop-lhs .hero-btns button.btn {
   white-space: nowrap;
   align-items: center;
 }
+section.home-section .home .hero-container .desktop-lhs .hero-btns button.btn2 {
+  display: flex;
+  padding: 1em 1.125em;
+
+  border-radius: 8px;
+  white-space: nowrap;
+  align-items: center;
+}
 section.home-section .home .hero-container .desktop-lhs .hero-btns button.btn > svg {
   margin-right: 0.75rem;
 }
@@ -42,11 +50,13 @@ section.home-section .home .hero-container .desktop-lhs .hero-btns .watch-btn {
   display: flex;
   align-items: center;
   margin-left: 0.625rem;
+  padding-right: 0.625rem;
   white-space: nowrap;
+  border: 1px solid white;
+  border-radius: 8px;
 }
 section.home-section .home .hero-container .desktop-lhs .hero-btns .watch-btn button.btn {
   margin-right: 0.625rem;
-  background: #eb9025;
 }
 section.home-section .home .hero-container .desktop-lhs .hero-btns .watch-btn button.btn > svg {
   margin: 0;

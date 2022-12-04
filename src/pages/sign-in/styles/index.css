@@ -38,20 +38,20 @@ section.sign-in-section .sign-in > p.optional-par {
   font-weight: 400;
 }
 section.sign-in-section .sign-in > p.optional-par::before {
-  content: "";
+  content: '';
   display: block;
   height: 1px;
   width: 20%;
   position: absolute;
   top: 50%;
   left: 0;
-  background: #BDBDBD;
+  background: #bdbdbd;
 }
 section.sign-in-section .sign-in > p.optional-par::after {
-  content: " ";
+  content: ' ';
   height: 1px;
   width: 20%;
-  background: #BDBDBD;
+  background: #bdbdbd;
   display: block;
   position: absolute;
   top: 50%;
@@ -62,7 +62,7 @@ section.sign-in-section .sign-in > p.login-par {
   white-space: nowrap !important;
 }
 section.sign-in-section .sign-in > p.login-par > a {
-  color: #2158D2;
+  color: #2158d2;
   font-size: 1rem !important;
 }
 section.sign-in-section .sign-in .optional-sign-in {
@@ -125,7 +125,7 @@ section.sign-in-section .sign-in form.form > p.forgot-password {
   font-size: 1rem !important;
 }
 section.sign-in-section .sign-in form.form > p.forgot-password > a {
-  color: #2158D2;
+  color: #2158d2;
 }
 section.sign-in-section .sign-in form.form > button.sign-in-btn {
   padding: 1.125rem 0;
@@ -254,7 +254,7 @@ section.sign-in-section .sign-in form.form > button.sign-in-btn {
     white-space: nowrap !important;
   }
   section.sign-in-section .sign-in > p.login-par > a {
-    color: #2158D2;
+    color: #2158d2;
     display: block !important;
   }
   section.sign-in-section .sign-in .optional-sign-in {
