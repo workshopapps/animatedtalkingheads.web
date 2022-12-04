@@ -52,7 +52,7 @@ const UploadPodcast = () => {
     let uploadStatus = 0;
 
     // This is a temporary upload endpoint
-    const url = 'http://167.172.58.43/upload_files';
+    const url = 'https://upload-api-sample.herokuapp.com/upload_files';
 
     const config = {
       onUploadProgress: (progressEvent) => {
