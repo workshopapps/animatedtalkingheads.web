@@ -10,10 +10,12 @@
 
 .modal {
   position: fixed;
-  top: 30vh;
-  left: 60%;
+  /* position: absolute; */
+  top: 40%;
+  left: 25%;
   width: 50%;
   background-color: white;
+  transform: translate(-60%, -75%);
   /* border-radius: 14px; */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 30;
@@ -24,10 +26,11 @@
 }
 
 @media (min-width: 768px) {
-  .modal {
-    /* width: 40rem; */
+  /* .modal {
+    width: 40rem;
+
     left: calc(50% - 20rem);
-  }
+  } */
 }
 
 @keyframes slide-down {

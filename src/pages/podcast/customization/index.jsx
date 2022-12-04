@@ -41,7 +41,7 @@ const CustomizeAudio = () => {
     const timer = setInterval(() => {
       setProgress((oldProgress) => {
         if (oldProgress === 100) {
-          return 0;
+          return 100;
         }
         const diff = Math.random() * 10;
         return Math.min(oldProgress + diff, 100);
@@ -180,9 +180,12 @@ const CustomizeAudio = () => {
       </div>
       {modalOpen && (
         <Modal onClose={hideModal}>
-          <h5>Your video is rendering...</h5>
-          <div className={styles.progressBar}>
-            <LinearProgress variant="determinate" value={progress} />
+          <div className={styles.progressBarBox}>
+            <h5>Your video is rendering...</h5>
+            <div className={styles.progressBar}>
+              <LinearProgress color="success" variant="determinate" value={progress} />
+            </div>
+            <button onClick={hideModal}>Cancel</button>
           </div>
         </Modal>
       )}
