@@ -1,0 +1,238 @@
+*:focus {
+  outline: none;
+}
+
+section.sign-up-section {
+  display: flex;
+  background-color: #f5f5f5;
+  padding: 4.25rem 0;
+}
+section.sign-up-section .sign-up {
+  display: flex;
+  flex-direction: column;
+  padding: 3.75rem 9.625rem;
+  max-width: 74%;
+  margin: 0 auto;
+  background-color: #fefefe;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+}
+section.sign-up-section .sign-up > h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+}
+section.sign-up-section .sign-up > p {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400 !important;
+  max-width: 24rem;
+}
+section.sign-up-section .sign-up > p.page-par {
+  margin-top: 1.5rem;
+  margin-bottom: 2.75rem;
+}
+section.sign-up-section .sign-up > p.optional-par {
+  margin: 2.75rem 0;
+  position: relative;
+  font-weight: 400;
+}
+section.sign-up-section .sign-up > p.optional-par::before {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 20%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: #bdbdbd;
+}
+section.sign-up-section .sign-up > p.optional-par::after {
+  content: ' ';
+  height: 1px;
+  width: 20%;
+  background: #bdbdbd;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+section.sign-up-section .sign-up > p.login-par {
+  font-size: 1rem;
+}
+section.sign-up-section .sign-up > p.login-par > a {
+  color: #2158d2;
+}
+section.sign-up-section .sign-up .optional-sign-up {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(122px, auto));
+  gap: 0.5rem;
+}
+section.sign-up-section .sign-up .optional-sign-up button.third-auth {
+  display: flex;
+  padding: 1rem;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  white-space: nowrap;
+  margin: 0 auto;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+section.sign-up-section .sign-up .optional-sign-up button.third-auth > svg {
+  margin-right: 0.5rem;
+}
+section.sign-up-section .sign-up form.form {
+  display: flex;
+  flex-direction: column;
+}
+section.sign-up-section .sign-up form.form > label.input-label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+section.sign-up-section .sign-up form.form .input-text {
+  width: 100%;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  padding: 1.125rem 1.5rem;
+}
+section.sign-up-section .sign-up form.form .input-text > input {
+  width: 100%;
+  background: none;
+}
+section.sign-up-section .sign-up form.form .input-text > svg {
+  cursor: pointer;
+}
+section.sign-up-section .sign-up form.form > button.sign-up-btn {
+  padding: 1.125rem 0;
+  background-color: #2158d2;
+  border-radius: 8px;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 965px) {
+  section.sign-up-section .sign-up {
+    padding: 3.75rem 4.8rem;
+  }
+  section.sign-up-section .sign-up .optional-sign-up > button:nth-child(3) {
+    grid-column-start: -3;
+    grid-column-end: -5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+}
+@media screen and (max-width: 800px) {
+  section.sign-up-section .sign-up > h1 {
+    font-size: 2rem !important;
+  }
+  section.sign-up-section .sign-up > p {
+    font-size: 1.2rem;
+  }
+  section.sign-up-section .sign-up > p.page-par {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  section.sign-up-section .sign-up .optional-sign-up {
+    display: flex;
+    flex-direction: column;
+  }
+  section.sign-up-section .sign-up > p.login-par {
+    font-size: 1rem !important;
+    white-space: nowrap !important;
+  }
+  section.sign-up-section .sign-up > p.login-par > a {
+    color: #2158d2;
+    font-size: 1rem !important;
+  }
+}
+@media screen and (max-width: 640px) {
+  section.sign-up-section {
+    padding: 4.25rem 0;
+  }
+  section.sign-up-section .sign-up {
+    padding: 1.75rem 3.625rem;
+    padding-bottom: 4rem;
+  }
+  section.sign-up-section .sign-up > h1 {
+    font-size: 1.5rem !important;
+  }
+  section.sign-up-section .sign-up > p {
+    font-size: 1rem;
+  }
+  section.sign-up-section .sign-up > p.page-par {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  section.sign-up-section .sign-up > p.optional-par {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  section.sign-up-section .sign-up form.form .input-text {
+    padding: 0.75rem 0.5rem;
+    font-size: 1rem;
+  }
+  section.sign-up-section .sign-up form.form > p.login-par {
+    font-size: 1rem;
+    white-space: nowrap !important;
+  }
+  section.sign-up-section .sign-up form.form > p.login-par > a {
+    color: #2158d2;
+    font-size: 1rem !important;
+    display: block !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  section.sign-up-section {
+    padding: 0 0 !important;
+  }
+  section.sign-up-section .sign-up {
+    padding: 1.75rem 2.625rem;
+    padding-bottom: 4rem;
+    max-width: 100%;
+    border-radius: 0;
+    border: none;
+  }
+  section.sign-up-section .sign-up > h1 {
+    font-size: 1.5rem !important;
+  }
+  section.sign-up-section .sign-up > p {
+    font-size: 1rem;
+  }
+  section.sign-up-section .sign-up > p.page-par {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  section.sign-up-section .sign-up > p.optional-par {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  section.sign-up-section .sign-up form.form .input-text {
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+  }
+  section.sign-up-section .sign-up form.form .optional-sign-in {
+    display: flex;
+    flex-direction: column;
+  }
+  section.sign-up-section .sign-up > p.login-par {
+    font-size: 1rem;
+    white-space: nowrap !important;
+  }
+  section.sign-up-section .sign-up > p.login-par > a {
+    color: #2158d2;
+    font-size: 1rem !important;
+    display: block !important;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

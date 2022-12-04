@@ -3,6 +3,7 @@ export const routes = {
   about: '/about',
   blog: '/blog',
   customizeAudio: '/podcast/customize',
+  ForgotPassword: '/forgot-password',
 
   blogContent: '/blog/content',
 
@@ -27,6 +28,9 @@ export const routes = {
 
   termsCondition: '/terms-and-conditions',
   termsService: '/terms-of-service',
+  termsUse: '/terms-of-use/term',
+  term: '/terms-of-use/term',
+  policy: '/terms-of-use/policy',
   settings: '/settings',
   podcastUpload: '/podcast/upload',
   podcastCustomize: '/podcast/customize',
@@ -40,14 +44,16 @@ export const routes = {
   exploreAvatar: '/explore-avatar',
   api: '/api-page',
   pressNewsPage: '/press/news-page',
-  pressWatchnow: '/press/watch-now'
+  pressWatchnow: '/press/watch-now',
+  signUp: '/sign-up',
+  signIn: '/sign-in'
 };
 
 export const links = [
   { name: 'Home', link: routes.home },
   { name: 'Use cases', link: `${routes.useCases}/1` },
   { name: 'Contact', link: routes.contact },
-  { name: 'How it work', link: routes.howItWorks }
+  { name: 'How it works', link: routes.howItWorks }
   // { name: 'Avatars', link: routes.avatars }
 ];
 

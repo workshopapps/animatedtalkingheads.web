@@ -328,9 +328,13 @@ const About = () => {
 
             <div className={style.aboutBuild}>
               <div className={style.aboutBuildBox}>
-                <h3>
-                  Let’s build the future of podcasting <br /> together
-                </h3>
+                <h3>Try Viral for a Change</h3>
+                <p className={style.buildBoxContent}>
+                  With Voxclips you can create brilliant cartoon videos of talking heads that your
+                  audience will love. <br /> We are commited to giving creators a chance to
+                  creatively market their content across multiple streams, create a following from
+                  these sources, organically grow and monetize their content.
+                </p>
                 <Link to="/podcast/upload">
                   <Button>Try for free now</Button>
                 </Link>

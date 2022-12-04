@@ -1,3 +1,19 @@
+.top_bg {
+  display: flex;
+  height: 180px;
+  width: 100%;
+  background: #171D2E;
+  justify-content: center;
+  align-items: center;
+}
+
+.top_bg h1 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+  color: #FFFFFF;
+}
+
 .ring {
   display: inline-block;
   position: relative;
@@ -37,11 +53,27 @@
 
 }
 
+.form {
+  max-width: 640px;
+  width: 100%;
+}
+
+.form label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4F4F4F;
+  margin-bottom: 0.4em;
+}
+
 .input {
-  background: #FEFEFE;
-  border: 1px solid rgba(68, 68, 68, 0.2);
-  border-radius: 10px;
-  border: 1px solid #6B7280;
+  border-radius: 4px;
+  border: 1px solid #E0E0E0;
+  background:  #FBFBFB;
+  margin-bottom: 8px;
+  height: 55px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .input:focus {
@@ -69,6 +101,7 @@
   font-weight: 500;
   line-height: 50px;
   color: #292D32;
+  font-size: 44px;
 }
 
 .subHeading {
@@ -79,16 +112,45 @@
 
 .textArea {
   resize: none;
+  height: 268px;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
 }
 
 .container input::placeholder{
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4F4F4F;
 }
 
 .textArea::placeholder{
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4F4F4F;
 }
 
+
+.submit {
+  background: #2158D2;
+  border-radius: 8px;
+  width: 100%;
+  color: white;
+  height: 54px;
+}
+
+.submit:enabled {
+  background: #2158D2;
+}
+
+.submit:hover {
+  background: #1C4CB6;
+}
+
+.submit:disabled {
+  background: #2563EB;
+}
 
 @media screen and (max-width: 1440px) {
 
@@ -164,6 +226,24 @@
     margin-top: 1.2em;
     padding-left: 0;
     padding-right: 0em;
+  }
+
+  .subHeading {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #737479;
+  }
+
+
+  .top_bg {
+    height: 80px;
+  }
+
+  .top_bg h1 {
+    font-size: 24px;
+    line-height: 30px;
   }
 
 }
