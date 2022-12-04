@@ -5,7 +5,7 @@ import settings from './../../../assets/icons/settings.svg';
 import globe from './../../../assets/icons/white_globe.svg';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { routes } from '../../../libs/links';
-import ReactTooltip from "react-tooltip";
+import ReactTooltip from 'react-tooltip';
 
 const links1 = [
   { name: 'How it Works', link: routes.howItWorks },
@@ -32,12 +32,11 @@ const links2 = [
 ];
 
 const links3 = [
+  // { name: 'Pricing', link: routes.pricing },
+  // { name: 'Terms of Use', link: routes.termsUse },
+  // { name: 'Terms of Service', link: routes.termsService },
 
-  { name: 'Pricing', link: routes.pricing },
   { name: 'Terms of Use', link: routes.termsUse },
-  { name: 'Terms of Service', link: routes.termsService },
-
-  { name: 'Terms of Service', link: routes.termsService },
   { name: 'APIs', link: routes.api },
   { name: 'Contact Us', link: routes.contact }
 
@@ -49,7 +48,7 @@ const links3 = [
 
 const Footer = () => {
   return (
-    <footer className="bg-sec-600 text-white text-base ">
+    <footer className="bg-sec-600 text-white text-sm md:text-base ">
       <div className="grid grid-cols-2  lg:grid-cols-5 gap-y-5 gap-x-5 lg:gap-x-0 py-10 w-[90%] mx-auto max-w-[1440px]">
         <div className=" mb-10 lg:mb-0 flex flex-col justify-between">
           <Link to="/">
@@ -123,7 +122,7 @@ const Footer = () => {
             <button>
               <img src={globe} alt="globe" data-tip data-for="register" />
             </button>
-            <ReactTooltip id="register" place="bottom" effect="solid" >
+            <ReactTooltip id="register" place="bottom" effect="solid">
               Select a language
             </ReactTooltip>
 
