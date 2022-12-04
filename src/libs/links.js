@@ -46,7 +46,7 @@ export const routes = {
   pressNewsPage: '/press/news-page',
   pressWatchnow: '/press/watch-now',
   signUp: '/sign-up',
-  signIn: 'sign-in'
+  signIn: '/sign-in'
 };
 
 export const links = [
