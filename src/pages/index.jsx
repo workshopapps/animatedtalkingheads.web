@@ -18,7 +18,7 @@ import StartCreating from '../components/pages/landing/StartCreating';
 // import { Button } from '../components/UI/Button';
 
 // import ChatBox from '../components/ChatBox';
-import ReactTooltip from "react-tooltip";
+import ReactTooltip from 'react-tooltip';
 
 const Home = () => {
   // const defaultOptions = {
@@ -65,14 +65,14 @@ const Home = () => {
                       </svg>
                       Upload audio
                     </button>
-                    <ReactTooltip id="registerTip" place="bottom" effect="solid" >
+                    <ReactTooltip id="registerTip" place="bottom" effect="solid">
                       Upload a audio
                     </ReactTooltip>
                   </div>
                 </Link>
                 <Link style={{ color: 'white' }} to="/how-it-works">
                   <div className="watch-btn">
-                    <button className="btn">
+                    <button className="btn2">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
                         <path
                           stroke="#fff"

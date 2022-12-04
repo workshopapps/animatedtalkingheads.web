@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { FiUser } from 'react-icons/fi';
 import styles from './checkout.module.css';
 import axios from 'axios';
-import { BiChevronDown } from 'react-icons/bi';
+
 const index = () => {
   const plan = [
     {
