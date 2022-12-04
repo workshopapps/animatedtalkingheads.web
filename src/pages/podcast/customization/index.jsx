@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import Layout from '../../../components/UI/Layout';
 import { Text } from '../../../components/UI/Text';
+import { Modal } from '../../../components/UI/Modal/Modal';
 import caretRight from '../../../assets/icons/carretRight.svg';
+import styles from './styles.module.scss';
 
 import { Link } from 'react-router-dom';
 
@@ -16,9 +18,40 @@ import AudioWidget from './components/AudioWidget';
 
 // import store from '../../../store/store.js';
 import { setAvatar } from '../../../store/actions/customizeVideoActions';
+import LinearProgress from '@mui/material/LinearProgress';
 
 const CustomizeAudio = () => {
   const [numberOfSpeakers, setNumbers] = useState(1);
+  // MODAL
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const showModal = () => {
+    setModalOpen(true);
+  };
+
+  const hideModal = () => {
+    setModalOpen(false);
+  };
+  // MODAL
+
+  // PROGRESS BAR
+  const [progress, setProgress] = useState(0);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress((oldProgress) => {
+        if (oldProgress === 100) {
+          return 0;
+        }
+        const diff = Math.random() * 10;
+        return Math.min(oldProgress + diff, 100);
+      });
+    }, 500);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
 
   function setAV() {
     console.log('ca;;ing');
@@ -66,26 +99,20 @@ const CustomizeAudio = () => {
       <div className={`customize-audio lg:px-20`}>
         <div className="breadcrumbs p-3 space-x-1  w-full flex items-center text-sec-500 capitalize md:space-x-3">
           <Text w={'md'} type={'text4'} cap>
-            <Link to="/">
-              Home
-            </Link>
+            <Link to="/">Home</Link>
           </Text>
 
           <div className="icon">
             <img src={caretRight} alt="" />
           </div>
           <Text w={'md'} type={'text4'} cap>
-            <Link to="/podcast/upload">
-              Upload
-            </Link>
+            <Link to="/podcast/upload">Upload</Link>
           </Text>
           <div className="icon">
             <img src={caretRight} alt="" />
           </div>
           <Text w={'md'} type={'text4'} cap className={'text-blue-700'}>
-            <Link to="/podcast/customize">
-              Cutomize Upload
-            </Link>
+            <Link to="/podcast/customize">Cutomize Upload</Link>
           </Text>
         </div>
 
@@ -146,11 +173,22 @@ const CustomizeAudio = () => {
         </main>
 
         <div className="centered w-full my-[5%]">
-          <Link to={'/podcast/download'}>
-            <Button label={'render video'}>Render video</Button>
-          </Link>
+          <Button label={'render video'} onClick={showModal}>
+            Render video
+          </Button>
         </div>
       </div>
+      {modalOpen && (
+        <Modal onClose={hideModal}>
+          <div className={styles.progressBarBox}>
+            <h5>Your video is rendering...</h5>
+            <div className={styles.progressBar}>
+              <LinearProgress color="success" variant="determinate" value={progress} />
+            </div>
+            <button onClick={hideModal}>Cancel</button>
+          </div>
+        </Modal>
+      )}
     </Layout>
   );
 };
