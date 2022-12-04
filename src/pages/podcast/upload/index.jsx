@@ -50,7 +50,9 @@ const UploadPodcast = () => {
     const formData = new FormData();
     formData.append('podcast', audio);
     let uploadStatus = 0;
-    const url = 'https://api.voxlips.hng.tech/podcasts/upload/';
+
+    // This is a temporary upload endpoint
+    const url = 'http://167.172.58.43/upload_files';
 
     const config = {
       onUploadProgress: (progressEvent) => {
