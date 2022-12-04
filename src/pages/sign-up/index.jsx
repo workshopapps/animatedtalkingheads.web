@@ -1,6 +1,6 @@
 import Layout from '../../components/UI/Layout';
 import '../sign-up/styles/index.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../../context/AuthContext';
 
@@ -8,7 +8,7 @@ const SignUp = () => {
   const navigate = useNavigate();
   const [error, setError] = useState('');
 
-  const { createUser, user } = UserAuth();
+  const { user, googleSignIn, facebookSignIn, createUser } = UserAuth();
 
   const [formData, setFormData] = useState({
     email: '',
@@ -40,6 +40,45 @@ const SignUp = () => {
       console.log(e.message);
     }
   };
+
+  // fetch('https://example.com/signUp', {
+  //     method: 'POST',
+  //     headers: {
+  //         'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(data),
+  // })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //         console.log('success:', data);
+  //         navigate("/sign-in")
+  //     })
+  //     .catch((error) => {
+  //         console.log('Error:', error);
+  //     });
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleFacebookSignIn = async () => {
+    try {
+      await facebookSignIn();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (user != null || user != undefined) {
+      navigate('/podcast/upload');
+      alert(`Thank you for signing up!`);
+    }
+  }, [user]);
 
   // fetch('https://example.com/signUp', {
   //     method: 'POST',
@@ -144,7 +183,7 @@ const SignUp = () => {
           </form>
           <p className="optional-par"> Or Sign Up With </p>
           <div className="optional-sign-up">
-            <button className="third-auth google">
+            <button onClick={handleGoogleSignIn} className="third-auth google">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
                 <path
                   fill="#EA4335"
@@ -166,7 +205,7 @@ const SignUp = () => {
               <p className="third-auth-name">Google</p>
             </button>
 
-            <button className="third-auth google">
+            <button className="third-auth apple">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
                 <path
                   fill="#000"
@@ -176,7 +215,7 @@ const SignUp = () => {
               <p className="third-auth-name">Google</p>
             </button>
 
-            <button className="third-auth google">
+            <button onClick={handleFacebookSignIn} className="third-auth facebook">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
                 <path
                   fill="#1877F2"
@@ -187,7 +226,7 @@ const SignUp = () => {
                   d="m15.152 14.348.355-2.32h-2.226v-1.506c0-.635.31-1.254 1.308-1.254H15.6V7.293s-.918-.157-1.796-.157c-1.835 0-3.032 1.111-3.032 3.123v1.768H8.734v2.32h2.039v5.61a8.086 8.086 0 0 0 2.508 0v-5.61h1.87Z"
                 />
               </svg>
-              <p className="third-auth-name">Google</p>
+              <p className="third-auth-name">Facebook</p>
             </button>
           </div>
           <p className="login-par">
