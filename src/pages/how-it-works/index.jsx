@@ -6,7 +6,7 @@ import documentUploadIcon from '../../assets/how-it-works/icons/document-upload.
 import documentDownloadIcon from '../../assets/how-it-works/icons/document-download.svg';
 import uploadArrowUp from '../../assets/how-it-works/icons/arrow-up.svg';
 import upload from '../../assets/how-it-works/upload.svg';
-import videoThumbnailImg from '../../assets/how-it-works/how it works.svg';
+//import videoThumbnailImg from '../../assets/how-it-works/how it works.svg';
 
 import styles from './styles.module.css';
 import { Link } from 'react-router-dom';
@@ -104,17 +104,17 @@ const HowItWorks = () => {
 
           <section className=" flex flex-col justify-center items-center py-5 px-4">
             
-            <h3 className="max-w-[900px] text-xl md:text-4xl text-center text-[#292D32] font-medium">
+            {/* <h3 className="max-w-[900px] text-xl md:text-4xl text-center text-[#292D32] font-medium">
               Video Tutorial on how to create
               videos for your podcasts using Voxclips
-            </h3>
+            </h3> */}
 
-
+{/* 
             <img
               className="mt-10 w-full md:max-w-md lg:max-w-2xl xl:max-w-3xl cursor-pointer"
               src={videoThumbnailImg}
               alt=""
-            />
+            /> */}
           </section>
 
         </div>

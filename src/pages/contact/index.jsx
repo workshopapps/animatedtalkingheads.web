@@ -6,6 +6,8 @@ import { Header1 } from '../../components/UI/Text/text.stories';
 import cleanup from '../../assets/icons/contact/cleanup.svg';
 import { Link } from 'react-router-dom';
 import styles from './index.module.scss';
+import errors from './index.module.css';
+import axios from 'axios';
 
 const Contact = () => {
   const [submitted, setSubmittted] = useState(false);
@@ -16,8 +18,21 @@ const Contact = () => {
   const [eemail, setEEmail] = useState(false);
   const [full_name, setFullName] = useState('');
   const [efull_name, setEFullName] = useState('');
+  const [error, setError] = useState(false)
 
-  const onSubmitForm = (e) => {
+  const reset = () => {
+    setSubmittted(false)
+    setLoading(false)
+    setMessage('')
+    setEMessage(false)
+    setEmail('')
+    setEEmail(false)
+    setFullName('')
+    setEFullName(false)
+    setError(false)
+  }
+
+  const onSubmitForm = async(e) => {
     e.preventDefault();
 
     if (full_name === '') {
@@ -28,13 +43,25 @@ const Contact = () => {
     }
     if (message === '') {
       setEMessage(true);
-    } else {
-      setLoading(true);
-      setTimeout(() => {
-        setSubmittted(true);
-        setLoading(false);
-      }, 2000);
     }
+
+    if(full_name != '' && email != '' && message != '') {
+      setLoading(true)
+
+      try {
+      
+        const res = await axios.post('https://jee-contact.netlify.app/api/contact', {email, name: full_name, message})
+
+        if (res.data.success) setSubmittted(true)
+
+      } catch (e) {
+        setError(true)
+      }
+
+      setLoading(false)
+
+    }
+
   };
 
   const updateMessage = (e) => {
@@ -46,6 +73,9 @@ const Contact = () => {
   const updateName = (e) => {
     setFullName(e.target.value);
   };
+
+
+
 
   return (
     <Layout>
@@ -67,6 +97,7 @@ const Contact = () => {
               <div className='flex justify-center'>
                 <form className={`${styles.form} mt-2 md:mt-10`} onSubmit={onSubmitForm}>
                   <div className="flex flex-col text-[16px] md:text-[20px]">
+                    <div className={`${errors.error} ${error ? 'block' : 'hidden'}`}>Error Sending your request</div>
                     <div>
                       <label>Name</label>
                       <input
@@ -143,10 +174,21 @@ const Contact = () => {
                   className="mt-5 opacity-80"
                 />
               </div>
-              <div className="flex justify-center mt-10">
-                <Link to="/">
-                  <Button label={'get started'}>Go back Home</Button>
+              <div className="flex flex-col items-center md:flex-row gap-4 md:gap-8 justify-center mt-10">
+                <Link to="/" className='w-full md:w-auto'>
+                  <button
+                    onClick={reset}
+                    className="bg-[#2158D2] w-full h-12 hover:border-none hover:bg-[##2563EB] rounded-lg md:h-[40px] text-[#FFFFFF] md:w-[140px] border-[#2158D2]" 
+                    >
+                    Go back Home
+                  </button>
                 </Link>
+                <button
+                  onClick={reset}
+                  className="bg-[inherit] w-full h-12 hover:border-none hover:bg-[#FFFFFF] rounded-lg md:h-[40px] text-[#2158D2] border-[1px] md:w-[140px] border-[#2158D2]" 
+                  >
+                  Contact us
+                </button>
               </div>
             </div>
           )}
