@@ -16,6 +16,13 @@ section.sign-up-section {
     border: 1px solid #bdbdbd;
     border-radius: 8px;
 
+    .render-progress-container{
+      margin-bottom: 2.75rem;
+      & > svg {
+        margin-left: auto;
+      }
+    }
+
     & > h1 {
       text-align: center;
       font-size: 3rem;
