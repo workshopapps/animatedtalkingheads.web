@@ -6,6 +6,8 @@ import { Header1 } from '../../components/UI/Text/text.stories';
 import cleanup from '../../assets/icons/contact/cleanup.svg';
 import { Link } from 'react-router-dom';
 import styles from './index.module.scss';
+import errors from './index.module.css';
+import axios from 'axios';
 
 const Contact = () => {
   const [submitted, setSubmittted] = useState(false);
@@ -16,8 +18,9 @@ const Contact = () => {
   const [eemail, setEEmail] = useState(false);
   const [full_name, setFullName] = useState('');
   const [efull_name, setEFullName] = useState('');
+  const [error, setError] = useState(false)
 
-  const onSubmitForm = (e) => {
+  const onSubmitForm = async(e) => {
     e.preventDefault();
 
     if (full_name === '') {
@@ -28,13 +31,25 @@ const Contact = () => {
     }
     if (message === '') {
       setEMessage(true);
-    } else {
-      setLoading(true);
-      setTimeout(() => {
-        setSubmittted(true);
-        setLoading(false);
-      }, 2000);
     }
+
+    if(full_name != '' && email != '' && message != '') {
+      setLoading(true)
+
+      try {
+      
+        const res = await axios.post('https://jee-contact.netlify.app/api/contact', {email, name: full_name, message})
+
+        if (res.data.success) setSubmittted(true)
+
+      } catch (e) {
+        setError(true)
+      }
+
+      setLoading(false)
+
+    }
+
   };
 
   const updateMessage = (e) => {
@@ -46,6 +61,9 @@ const Contact = () => {
   const updateName = (e) => {
     setFullName(e.target.value);
   };
+
+
+
 
   return (
     <Layout>
@@ -67,6 +85,7 @@ const Contact = () => {
               <div className='flex justify-center'>
                 <form className={`${styles.form} mt-2 md:mt-10`} onSubmit={onSubmitForm}>
                   <div className="flex flex-col text-[16px] md:text-[20px]">
+                    <div className={`${errors.error} ${error ? 'block' : 'hidden'}`}>Error Sending your request</div>
                     <div>
                       <label>Name</label>
                       <input
