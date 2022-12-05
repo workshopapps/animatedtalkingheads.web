@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 import headerLogo from './../../../assets/icons/header_logo.svg';
 import menuIcon from './../../../assets/icons/menu-icon.png';
 import closeIcon from './../../../assets/icons/close.png';
-import { links, routes } from '../../../libs/links';
+import { links, linksMobile, routes } from '../../../libs/links';
 import { BiChevronDown } from 'react-icons/bi';
 import { UserAuth } from '../../../context/AuthContext';
 
@@ -122,7 +122,7 @@ const TopNavbar = () => {
 
       <div className={`${styles.menu} ${show ? '' : 'hidden'} px-3 py-10 md:hidden`}>
         <div className={`${styles.links}`}>
-          {links.map((link, index) => (
+          {linksMobile.map((link, index) => (
             <Link onClick={close} className="block" key={index} to={link.link}>
               {link.name}
             </Link>

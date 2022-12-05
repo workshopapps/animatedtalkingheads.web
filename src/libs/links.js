@@ -53,11 +53,15 @@ export const links = [
   { name: 'Home', link: routes.home },
   { name: 'How it works', link: routes.howItWorks },
   { name: 'Use cases', link: `${routes.useCases}/1` }
-  // { name: 'Contact', link: routes.contact }
-
-  // { name: 'Avatars', link: routes.avatars }
 ];
 
+export const linksMobile = [
+  { name: 'Home', link: routes.home },
+  { name: 'How it works', link: routes.howItWorks },
+  { name: 'Use cases', link: `${routes.useCases}/1` },
+  { name: 'Avatars', link: routes.avatars },
+  { name: 'Contact us', link: routes.contact }
+];
 export const navLinks = [
   { name: 'Documentation', link: '/api/documentation' },
   { name: 'Database', link: '/api/database' },
