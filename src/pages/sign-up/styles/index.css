@@ -17,6 +17,12 @@ section.sign-up-section .sign-up {
   border: 1px solid #bdbdbd;
   border-radius: 8px;
 }
+section.sign-up-section .sign-up .render-progress-container {
+  margin-bottom: 2.75rem;
+}
+section.sign-up-section .sign-up .render-progress-container > svg {
+  margin-left: auto;
+}
 section.sign-up-section .sign-up > h1 {
   text-align: center;
   font-size: 3rem;
@@ -38,20 +44,20 @@ section.sign-up-section .sign-up > p.optional-par {
   font-weight: 400;
 }
 section.sign-up-section .sign-up > p.optional-par::before {
-  content: '';
+  content: "";
   display: block;
   height: 1px;
   width: 20%;
   position: absolute;
   top: 50%;
   left: 0;
-  background: #bdbdbd;
+  background: #BDBDBD;
 }
 section.sign-up-section .sign-up > p.optional-par::after {
-  content: ' ';
+  content: " ";
   height: 1px;
   width: 20%;
-  background: #bdbdbd;
+  background: #BDBDBD;
   display: block;
   position: absolute;
   top: 50%;
@@ -61,7 +67,7 @@ section.sign-up-section .sign-up > p.login-par {
   font-size: 1rem;
 }
 section.sign-up-section .sign-up > p.login-par > a {
-  color: #2158d2;
+  color: #2158D2;
 }
 section.sign-up-section .sign-up .optional-sign-up {
   display: grid;
@@ -151,7 +157,7 @@ section.sign-up-section .sign-up form.form > button.sign-up-btn {
     white-space: nowrap !important;
   }
   section.sign-up-section .sign-up > p.login-par > a {
-    color: #2158d2;
+    color: #2158D2;
     font-size: 1rem !important;
   }
 }
@@ -186,7 +192,7 @@ section.sign-up-section .sign-up form.form > button.sign-up-btn {
     white-space: nowrap !important;
   }
   section.sign-up-section .sign-up form.form > p.login-par > a {
-    color: #2158d2;
+    color: #2158D2;
     font-size: 1rem !important;
     display: block !important;
   }
@@ -229,7 +235,7 @@ section.sign-up-section .sign-up form.form > button.sign-up-btn {
     white-space: nowrap !important;
   }
   section.sign-up-section .sign-up > p.login-par > a {
-    color: #2158d2;
+    color: #2158D2;
     font-size: 1rem !important;
     display: block !important;
   }
