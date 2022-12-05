@@ -9,6 +9,7 @@ const SignIn = () => {
     const navigate = useNavigate()
     const [error, setError] = useState('')
     const { signIn, user, googleSignIn, facebookSignIn } = UserAuth()   
+    const [passwordVisible, setPasswordVisible] = useState(false)
 
   const [formData, setFormData] = useState({
     email: '',
@@ -25,6 +26,10 @@ const SignIn = () => {
     }
     });
     
+    }
+
+    const handlePasswordVisibility = () => {
+      setPasswordVisible(prevPasswordVisible => !prevPasswordVisible)
     }
 
     const handleSubmit = async (e) => {
@@ -108,14 +113,18 @@ const SignIn = () => {
             <label className="input-label" htmlFor="password">Password</label>
             <div className='input-text last'>
                 <input
-                  type="password"
+                  type={passwordVisible ? "text" : "password"}
                   placeholder="Enter your password"
                   name="password"
                   value={formData.password}
                   onChange={inputEvent}
                   required
                 />
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15.58 12c0 1.98-1.6 3.58-3.58 3.58S8.42 13.98 8.42 12s1.6-3.58 3.58-3.58 3.58 1.6 3.58 3.58Z"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 20.27c3.53 0 6.82-2.08 9.11-5.68.9-1.41.9-3.78 0-5.19-2.29-3.6-5.58-5.68-9.11-5.68-3.53 0-6.82 2.08-9.11 5.68-.9 1.41-.9 3.78 0 5.19 2.29 3.6 5.58 5.68 9.11 5.68Z"/></svg>
+                <button onClick={handlePasswordVisibility}> 
+                {passwordVisible ? <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m14.53 9.47-5.06 5.06a3.576 3.576 0 1 1 5.06-5.06Z"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.82 5.77C16.07 4.45 14.07 3.73 12 3.73c-3.53 0-6.82 2.08-9.11 5.68-.9 1.41-.9 3.78 0 5.19.79 1.24 1.71 2.31 2.71 3.17M8.42 19.53c1.14.48 2.35.74 3.58.74 3.53 0 6.82-2.08 9.11-5.68.9-1.41.9-3.78 0-5.19-.33-.52-.69-1.01-1.06-1.47"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15.51 12.7a3.565 3.565 0 0 1-2.82 2.82M9.47 14.53 2 22M22 2l-7.47 7.47"/></svg>
+                : <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15.58 12c0 1.98-1.6 3.58-3.58 3.58S8.42 13.98 8.42 12s1.6-3.58 3.58-3.58 3.58 1.6 3.58 3.58Z"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 20.27c3.53 0 6.82-2.08 9.11-5.68.9-1.41.9-3.78 0-5.19-2.29-3.6-5.58-5.68-9.11-5.68-3.53 0-6.82 2.08-9.11 5.68-.9 1.41-.9 3.78 0 5.19 2.29 3.6 5.58 5.68 9.11 5.68Z"/></svg>}
+            
+                </button>
             </div>
             <p className='forgot-password'> Having trouble Login In? <Link to="/forgot-password"> Forgot Password </Link></p>
             <button className='sign-in-btn'>Sign In</button>
