@@ -7,25 +7,22 @@ import { Link } from 'react-router-dom';
 import { routes } from '../../libs/links';
 import AVATAR_SET_3 from './avatar.data.set-3';
 import AVATAR_SET_4 from './avatar.data.set-4';
-
+import PageTitle from '../../components/UI/page-title';
 
 const Avatars = () => {
-
   return (
     <Layout>
       <div>
+        <PageTitle title="Avatar library" />
 
-        <div className={avatarStyles.top_bg}><h1>Avatar library</h1></div>
-       
         <h2 className={avatarStyles.heading}> Explore Our Avatars at VoxClips </h2>
-        
-        <div className='flex justify-center mt-4'><p className={avatarStyles.info}>Meet our avatars and know how and when to use them</p></div>
-   
 
-        <div className='flex justify-center'>
+        <div className="flex justify-center mt-4">
+          <p className={avatarStyles.info}>Meet our avatars and know how and when to use them</p>
+        </div>
 
-          <div className='px-4 md:px-40 max-w-[1532px]'>
-
+        <div className="flex justify-center">
+          <div className="px-4 md:px-40 max-w-[1532px]">
             <div className={avatarStyles.section}>
               <div className={`${avatarStyles.avatars} ${avatarStyles.front}`}>
                 {AVATAR_SET_1.map(({ id, image }) => (
@@ -66,25 +63,23 @@ const Avatars = () => {
               </div>
             </div>
 
-            <div className='flex justify-center'>
-              <Link to={routes.scenery} className={avatarStyles.last_link}> Explore various environments and scenery {'>>'} </Link>
+            <div className="flex justify-center">
+              <Link to={routes.scenery} className={avatarStyles.last_link}>
+                {' '}
+                Explore various environments and scenery {'>>'}{' '}
+              </Link>
             </div>
-
           </div>
-
         </div>
 
         <section
           className={`h-[354px] bg-white flex flex-col items-center justify-center gap-6 px-3 md:px-11 py-7 relative mt-9`}>
-          
           <h2 className="text-[#292D32] text-xl md:text-4xl text-center md:px-20  font-medium">
             Let's Start Creating
           </h2>
 
           <Link to={routes.podcastUpload}>
-            <button className={avatarStyles.get_started}>
-              Get started 
-            </button>
+            <button className={avatarStyles.get_started}>Get started</button>
           </Link>
 
           <div className={`${avatarStyles.blueLeftPattern}`}></div>
@@ -92,7 +87,6 @@ const Avatars = () => {
           <div className={` ${avatarStyles.lightLeftPattern}`}></div>
           <div className={` ${avatarStyles.lightRightPattern}`}></div>
         </section>
-        
       </div>
     </Layout>
   );
