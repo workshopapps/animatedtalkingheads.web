@@ -2,6 +2,7 @@ import Layout from '../../components/UI/Layout';
 import Card from './card';
 import tick from '../../assets/icons/tick.svg';
 import styles from './index.module.css';
+import PageTitle from '../../components/UI/page-title';
 
 const Pricing = () => {
   const offers = [
@@ -40,9 +41,7 @@ const Pricing = () => {
 
   return (
     <Layout>
-      <div className="flex justify-center items-center bg-sec-600 p-10 text-white">
-        <p className="font-semibold text-3xl lg:text-5xl ">Pricing</p>
-      </div>
+      <PageTitle title="Pricing" />
       <div className="max-w-[1440px] mx-auto w-[90%]">
         <div className="my-10">
           <div className="flex flex-col gap-5 lg:gap-10 text-center">

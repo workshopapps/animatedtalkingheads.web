@@ -13,6 +13,7 @@ import { useDropzone } from 'react-dropzone';
 import store from '../../../store/store';
 import axios from 'axios';
 import { Circle } from 'rc-progress';
+import PageTitle from '../../../components/UI/page-title';
 
 const UploadPodcast = () => {
   const [audio, setAudio] = useState(null);
@@ -94,9 +95,7 @@ const UploadPodcast = () => {
   return (
     <Layout>
       <div className="text-center max-w-[1440px] mx-auto   flex flex-col justify-center">
-        <div className="bg-[#171D2E] text-[#FFFFFF] py-6 mt-0">
-          <Text label="Upload Audio" w="semibold" type="text1" data-testid="header" />
-        </div>
+        <PageTitle title="Upload audio" />
         <div className="opacity-60 my-5 w-[90%] border rounded-lg bg-[#EFF3F6] border-opacity-20 text-center py-5 px-2  gap-3 flex flex-col mx-auto">
           <Text label="Over 0.5MB, up to 500MB, 2 Hours max." type="text4" w="sm" />
           <div className="flex gap-1 justify-center items-center">

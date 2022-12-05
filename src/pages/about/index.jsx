@@ -16,6 +16,7 @@ import 'swiper/css/navigation';
 import { Engineering, Management, Design, Marketing } from './team-data/teamData.jsx';
 import style from './css/about.module.css';
 import { Button } from '../../components/UI/Button';
+import PageTitle from '../../components/UI/page-title';
 
 const About = () => {
   useEffect(() => {
@@ -28,11 +29,7 @@ const About = () => {
       <div className={style.about}>
         <div className={style.aboutChild}>
           {/* hero section */}
-          <div className={style.aboutHero}>
-            <div className={style.aboutHeroText}>
-              <h3>About Us</h3>
-            </div>
-          </div>
+          <PageTitle title="About us" />
           {/* hero section */}
           <section className={style.aboutSection}>
             <div className={style.aboutContent}>
