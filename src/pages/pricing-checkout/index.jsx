@@ -17,8 +17,8 @@ const index = () => {
         monthly: '$9.99/ mo'
       },
       price: {
-        yearly: 102.0,
-        monthly: 9.99
+        yearly: 102,
+        monthly: 10
       }
     },
     {
@@ -28,8 +28,8 @@ const index = () => {
         monthly: '$18.99/ mo'
       },
       price: {
-        yearly: 227.0,
-        monthly: 18.99
+        yearly: 227,
+        monthly: 19
       }
     }
   ];
@@ -57,7 +57,12 @@ const index = () => {
         amount: amount,
         email: email
       };
-      axios.post(url, data).then((res) => console.log(res));
+      axios.post(url, data).then((res) => {
+        if (res.status === 200) {
+          window.location.replace(res.data.link);
+        }
+        console.log(res);
+      });
 
       console.log(name, amount, email);
     }
