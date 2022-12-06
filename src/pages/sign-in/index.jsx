@@ -37,8 +37,8 @@ const SignIn = () => {
         setError('')
         try {
           await signIn(formData?.email, formData?.password)
-          navigate('/')
-          alert('You are now signed in')
+          // navigate('/')
+          // alert('You are now signed in')
         } catch (e) {
           setError(e.message)
           console.log(error)
@@ -50,8 +50,8 @@ const SignIn = () => {
       const handleGoogleSignIn = async () => {
         try {
           await googleSignIn();
-          navigate('/')
-          alert('You are now signed in')
+          // navigate('/')
+          // alert('You are now signed in')
         } catch (error) {
           console.log(error);
         }
@@ -69,6 +69,7 @@ const SignIn = () => {
       useEffect(() => {
         if(user != null) {
           navigate('/')
+          alert("You are now signed in")
         }
         
       }, [user ]);
