@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../../../components/UI/Layout';
 import { Text } from '../../../components/UI/Text';
 import { Modal } from '../../../components/UI/Modal/Modal';
 import caretRight from '../../../assets/icons/carretRight.svg';
 import styles from './styles.module.scss';
+import SignUp from '../../sign-up';
 
 import { Link } from 'react-router-dom';
 
@@ -15,8 +16,9 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { Button } from '../../../components/UI/Button';
 
 import AudioWidget from './components/AudioWidget';
+import axios from 'axios';
 
-// import store from '../../../store/store.js';
+import store from '../../../store/store.js';
 import { setAvatar } from '../../../store/actions/customizeVideoActions';
 import LinearProgress from '@mui/material/LinearProgress';
 
@@ -24,6 +26,7 @@ const CustomizeAudio = () => {
   const [numberOfSpeakers, setNumbers] = useState(1);
   // MODAL
   const [modalOpen, setModalOpen] = useState(false);
+  const [myData, setMyData] = useState([]);
 
   const showModal = () => {
     setModalOpen(true);
@@ -73,7 +76,7 @@ const CustomizeAudio = () => {
   }
 
   // render video from api
-  // const RenderVideo = async () => {
+  // const renderVideo = async () => {
   //   const videoObject = {
   //     head_file_path: store.getState().customizeVideoReducer.avatarType,
   //     scene_file_path: store.getState().customizeVideoReducer.backgroundType,
@@ -94,6 +97,62 @@ const CustomizeAudio = () => {
   //     });
   // };
 
+  // console.log(store.getState());
+
+  // let myHeaders = new Headers();
+  // myHeaders.append('user_id', '5099803df3f4948bd2f98391');
+
+  // let requestOptions = {
+  //   method: 'POST',
+  //   headers: myHeaders
+  // };
+
+  // // fetch("localhost:4000/podcasts/63896e7646adc4d5f24b4b97/generate-video", requestOptions)
+  // //   .then(response => response.text())
+  // //   .then(result => console.log(result))
+  // //   .catch(error => console.log('error', error));
+
+  // const renderVideo = async () => {
+  //   try {
+  //     const res = await axios(
+  //       'https://api.voxlips.hng.tech/podcasts/63896e7646adc4d5f24b4b97/generate-video',
+  //       {
+  //         headers: {
+  //           user_id: '5099803df3f4948bd2f98391'
+  //         }
+  //       }
+  //     );
+  //     console.log(res);
+  //     setMyData(res);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   renderVideo();
+  // }, []);
+  useEffect(() => {
+    let config = {
+      method: 'post',
+      url: 'https://api.voxlips.hng.tech/podcasts/63896e7646adc4d5f24b4b97/generate-video',
+      headers: {
+        user_id: '5099803df3f4948bd2f98391'
+      }
+    };
+
+    axios(config)
+      .then(function (response) {
+        const res = JSON.stringify(response.data);
+        console.log(res, 23323233333333);
+        setMyData(res);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
+
+  // console.log(myData, 'Fromm data fetching');
   return (
     <Layout>
       <div className={`customize-audio lg:px-20`}>
@@ -185,6 +244,7 @@ const CustomizeAudio = () => {
             <div className={styles.progressBar}>
               <LinearProgress color="success" variant="determinate" value={progress} />
             </div>
+
             <button onClick={hideModal}>Cancel</button>
           </div>
         </Modal>
