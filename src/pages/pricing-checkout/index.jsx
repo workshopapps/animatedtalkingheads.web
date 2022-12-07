@@ -41,6 +41,7 @@ const index = () => {
   const [amountError, setAmountError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [amount, setAmount] = useState('');
+  const [error, setError] = useState('');
 
   const selectHandler = (e) => {
     setPlanner(plan[e.target.value]);
@@ -50,7 +51,13 @@ const index = () => {
   };
   const submitForm = (e) => {
     e.preventDefault();
-    errorCheck();
+    if (name === '') {
+      setNameError(true);
+    } else if (amount === '') {
+      setAmountError(true);
+    } else if (email === '') {
+      setEmailError(true);
+    }
     if (!amountError && !nameError && !emailError) {
       const data = {
         full_name: name,
@@ -58,24 +65,14 @@ const index = () => {
         email: email
       };
       axios.post(url, data).then((res) => {
-        if (res.status === 200) {
+        if (res.data.link) {
           window.location.replace(res.data.link);
+        } else {
+          setError(res);
         }
-        console.log(res);
       });
 
       console.log(name, amount, email);
-    }
-  };
-  const errorCheck = () => {
-    if (name === '') {
-      setNameError(true);
-    }
-    if (amount === '') {
-      setAmountError(true);
-    }
-    if (email === '') {
-      setEmailError(true);
     }
   };
 
@@ -118,6 +115,7 @@ const index = () => {
                 <div className={styles.radio_wrapper}>
                   <div className={styles.radio_content}>
                     <input
+                      required
                       type="radio"
                       value={planner.price?.yearly}
                       className={styles.billing_radio}
@@ -138,6 +136,7 @@ const index = () => {
                 <div className={styles.radio_wrapper}>
                   <div className={styles.radio_content}>
                     <input
+                      required
                       type="radio"
                       value={planner.price?.monthly}
                       className={styles.billing_radio}
@@ -164,6 +163,7 @@ const index = () => {
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Full Name"
                     className="outline-none"
+                    required
                   />
                 </div>
                 <p className="text-red-600 text-sm">{nameError && 'Enter your full name'}</p>
@@ -177,12 +177,13 @@ const index = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email"
                     className="outline-none"
+                    required
                   />
                 </div>
                 <p className="text-red-600 text-sm">{emailError && 'Enter your email address'}</p>
               </div>{' '}
             </div>
-
+            <p className="text-red-600 text-sm">{error && error}</p>
             <div className="lg:w-[60%] w-full mx-auto mt-5 mb-20">
               <button
                 onClick={submitForm}
