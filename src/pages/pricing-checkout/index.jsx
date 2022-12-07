@@ -74,8 +74,11 @@ const index = () => {
             setError(res);
           }
         })
-        .then((res) => console.log(res));
-
+        .then((res) => console.log(res))
+        .catch((err) => {
+          console.log(err);
+          setError(err);
+        });
       console.log(name, amount, email);
     }
   };
