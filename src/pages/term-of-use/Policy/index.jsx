@@ -39,7 +39,7 @@ const Policy = () => {
           </div>
         </div>
 
-        <div className="p-[16px] lg:pt-[24px] lg:px-[96px] bg-white rounded-md rounded-br-none rounded-bl-none">
+        <div className={styles.word}>
           <Text className={'!text-base  lg:!text-xl !font-normal mb-7'}>
             Updated on November 16th, 2022
           </Text>
