@@ -77,7 +77,7 @@ const index = () => {
         .then((res) => console.log(res))
         .catch((err) => {
           console.log(err);
-          setError(err);
+          setError('There was an error with your request');
         });
       console.log(name, amount, email);
     }
