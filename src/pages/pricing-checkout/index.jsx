@@ -68,22 +68,17 @@ const index = () => {
         .post(url, data)
 
         .then((res) => {
-          console.log(res.json());
           if (res.data.link) {
             window.location.replace(res.data.link);
           } else {
             setError(res);
           }
-          (res) => {
-            return res.json();
-          };
         })
         .then((res) => console.log(res))
-        .catch(function (error) {
+        .catch((err) => {
+          console.log(err);
           setError('There was an error with your request');
-          console.log(error.toJSON());
         });
-
       console.log(name, amount, email);
     }
   };
