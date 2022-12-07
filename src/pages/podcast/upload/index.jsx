@@ -53,14 +53,13 @@ const UploadPodcast = () => {
     let uploadStatus = 0;
 
     // This is a temporary upload endpoint
-    const url = 'https://upload-api-sample.herokuapp.com/upload_files';
+    // const url = 'https://upload-api-sample.herokuapp.com/upload_files';
+    const url = 'https://api.voxclips.hng.tech/podcasts/upload';
 
     const config = {
       onUploadProgress: (progressEvent) => {
         const { loaded, total } = progressEvent;
-        console.log(loaded, total);
         uploadStatus = Math.floor((loaded * 100) / total);
-        console.log(`${loaded}kb of ${total}kb | ${uploadStatus}%`);
 
         if (uploadStatus <= 100) {
           setPercentage(uploadStatus);

@@ -1,6 +1,8 @@
 .background {
-  background-color: red;
-}
-.red {
-  background-color: red;
+  background: url('../../../assets/icons/background.svg');
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
