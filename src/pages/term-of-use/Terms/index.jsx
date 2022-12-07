@@ -28,7 +28,7 @@ const Policy = () => {
         <div className={styles.nav}>
           <div className={styles.term}>
             <li>
-              <Link to="/terms-of-use/term" activeClassName="active">
+              <Link to="/terms-of-use/term" className="pt-[16px]]" activeClassName="active">
                 Terms and Conditions
               </Link>
             </li>
@@ -39,8 +39,8 @@ const Policy = () => {
           </div>
         </div>
 
-        <div className="p-[16px] lg:pt-[24px] lg:px-[96px] bg-white rounded-md rounded-br-none rounded-bl-none">
-          <Text className={'!text-base  lg:!text-xl !font-normal mb-7'}>
+        <div className={styles.word}>
+          <Text className={'!text-base  lg:!text-xl !font-normal mb-7 pt-5'}>
             Updated on November 16th, 2022
           </Text>
           <Text className={'!text-base lg:!text-xl !font-normal mb-[15px] '}>
