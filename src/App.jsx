@@ -26,6 +26,8 @@ import Customization from './pages/podcast/customization';
 import ExploreAvatar from './pages/explore-avatar';
 import ApiPage from './pages/api-page';
 import SignUp from './pages/sign-up';
+import SignIn from './pages/sign-in';
+
 import ForgotPassword from './pages/forgot-password';
 import { AuthContextProvider } from './context/AuthContext';
 
@@ -96,6 +98,7 @@ function App() {
           <Route path={routes.pressNewsPage} element={<PressNewsPage />} />
           <Route path={routes.pressWatchnow} element={<Watchnow />} />
           <Route path={routes.signUp} element={<SignUp />} />
+          <Route path={routes.signIn} element={<SignIn />} />
           <Route path={routes.ForgotPassword} element={<ForgotPassword />} />
 
           {/* privacy-policy nested routes */}

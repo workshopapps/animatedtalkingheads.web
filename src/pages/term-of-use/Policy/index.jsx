@@ -3,6 +3,7 @@ import styles from '../Policy/styles.module.css';
 import { Link } from 'react-router-dom';
 import Box from '../../term-of-use/Box';
 import { Text } from '../../../components/UI/Text';
+import PageTitle from '../../../components/UI/page-title';
 //import { Text } from '../../components/UI/Text';
 // import { routes } from '../../libs/links';
 // import { scroller, Element } from 'react-scroll';
@@ -19,8 +20,8 @@ const Policy = () => {
 
   return (
     <Layout>
-      <section className="bg-sec w-full grid justify-center items-center h-[135px] md:h-[216px] mb-20">
-        <h1 className="font-bold text-2xl md:text-5xl text-[#f4f4f4] ">Terms of Use</h1>
+      <section className="mb-20">
+        <PageTitle title="Terms of Use" />
       </section>
 
       <section>
@@ -38,7 +39,7 @@ const Policy = () => {
           </div>
         </div>
 
-        <div className="p-[16px] lg:pt-[24px] lg:px-[96px] bg-white rounded-md rounded-br-none rounded-bl-none">
+        <div className={styles.word}>
           <Text className={'!text-base  lg:!text-xl !font-normal mb-7'}>
             Updated on November 16th, 2022
           </Text>
