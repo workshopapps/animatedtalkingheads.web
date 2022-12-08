@@ -64,14 +64,21 @@ const index = () => {
         amount: amount,
         email: email
       };
-      axios.post(url, data).then((res) => {
-        if (res.data.link) {
-          window.location.replace(res.data.link);
-        } else {
-          setError(res);
-        }
-      });
+      axios
+        .post(url, data)
 
+        .then((res) => {
+          if (res.data.link) {
+            window.location.replace(res.data.link);
+          } else {
+            setError(res);
+          }
+        })
+        .then((res) => console.log(res))
+        .catch((err) => {
+          console.log(err);
+          setError('There was an error with your request');
+        });
       console.log(name, amount, email);
     }
   };

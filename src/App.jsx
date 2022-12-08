@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Home from './pages';
 import About from './pages/about';
 import CustomizeAudio from './pages/podcast/customization';
@@ -111,6 +114,7 @@ function App() {
           <Route path={routes.scenery} element={<Scenery />} />
         </Routes>
       </AuthContextProvider>
+      <ToastContainer />
     </Provider>
   );
 }

@@ -1,13 +1,12 @@
 import '../sign-up/styles/index.css'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth  } from '../../context/AuthContext';
+import {  toast } from 'react-toastify';
 
 const SignUpSection = (props) => {
     const navigate = useNavigate()
-    const [error, setError] = useState('')
-
-    const {user, googleSignIn, facebookSignIn, createUser } = UserAuth()   
+    const {googleSignIn, facebookSignIn} = UserAuth()   
     const [passwordVisible, setPasswordVisible] = useState(false)
     const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false)
 
@@ -20,14 +19,13 @@ const SignUpSection = (props) => {
 
   const inputEvent=(event)=>{
     const name=event.target.name;
-    const value=event.target.value;
+    const value=event.target.value; 
     setFormData((lastValue)=>{
     return{
     ...lastValue,
     [name]:value
     }
     });
-    
     }
 
     const handlePasswordVisibility = () => {
@@ -40,17 +38,72 @@ const SignUpSection = (props) => {
     
     const handleSubmit = async (e) => {
       e.preventDefault();
-      setError('');
-      console.log(error)
-      try {
-        await createUser(formData?.email, formData?.password);
-        navigate('/podcast/upload')
-        alert(`Thank you for signing up`)
-      } catch (e) {
-        setError(e.message);
-        console.log(e.message);
-        alert("An error occurred 😞, please try again or login")
+
+      if(!formData.email || !formData.password || !formData.confirmPassword){
+        toast.error('Fields cannot be empty', {
+          position: toast.POSITION.BOTTOM_RIGHT
+        })
+        return;
       }
+
+      if(formData.password != formData.confirmPassword){
+            toast.error('Password mismatch', {
+              position: toast.POSITION.BOTTOM_RIGHT
+            })
+            return;
+      }
+
+      if(formData.password < 6){
+          toast.error('Password mismatch')
+          return;
+      }
+
+      // if(userToken != ''){
+      //   toast.warning("You're already signed up!", {
+      //     position: toast.POSITION.BOTTOM_RIGHT
+      //   })
+      //   return;
+      // }
+
+      fetch('https://api.voxclips.hng.tech/auth/signup', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    })
+        .then(res => {
+            if(res.ok){
+              toast.info('Creating user profile', {
+                position: toast.POSITION.BOTTOM_RIGHT,
+                autoClose: 1000
+              });  
+              return res.json()
+            } else {
+              toast.error('An error occured, please try again', {
+                position: toast.POSITION.BOTTOM_RIGHT
+              })
+              return;
+            }
+        })
+        .then(() => {
+          setTimeout(() => {
+            toast.success('Sign up successful', {
+              position: toast.POSITION.BOTTOM_RIGHT
+            })
+          }, 2000);
+            navigate('/sign-in')
+            // setUserToken(data.user)
+            // localStorage.setItem("token", userToken)
+            // console.log(userToken)
+            return;
+        })
+        .catch((error) => {
+          toast.error(error, {
+            position: toast.POSITION.BOTTOM_RIGHT
+          })
+            return;
+        });
     };
 
     const handleGoogleSignIn = async () => {
@@ -69,29 +122,23 @@ const SignUpSection = (props) => {
        }
     }
 
-    useEffect(() => {
-      if (user != null || user != undefined ) {
-        navigate('/');
-        alert(`Welcome to Voxclips!`)
-      }
-    }, [user]);
-
-    // fetch('https://example.com/signUp', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(data),
-    // })
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //         console.log('success:', data);
-    //         navigate("/sign-in")
+    //   useEffect(() => {
+    //   if (userToken != '') {
+    //     toast.warning('You are already signed up', {
+    //       position: toast.POSITION.BOTTOM_RIGHT
     //     })
-    //     .catch((error) => {
-    //         console.log('Error:', error);
-    //     });
-    
+    //     navigate('/sign-in');
+    //     return;
+    //   }
+    // }, []);
+
+    // useEffect(() => {
+    //   if (user != null) {
+    //     // navigate('/');
+    //     alert(`Welcome to Voxclips!`)
+    //   }
+    // }, [user]);
+
   return (
         <div className="sign-up">
             {props.title && <div className='render-progress-container'>
@@ -114,7 +161,6 @@ const SignUpSection = (props) => {
                   name="email"
                   value={formData.email}
                   onChange={inputEvent}
-                  required
                 />
             </div>
 
@@ -126,7 +172,7 @@ const SignUpSection = (props) => {
                   name="password"
                   value={formData.password}
                   onChange={inputEvent}
-                  required
+                  
                 />
               <button onClick={handlePasswordVisibility}> 
                 {passwordVisible ? <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m14.53 9.47-5.06 5.06a3.576 3.576 0 1 1 5.06-5.06Z"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.82 5.77C16.07 4.45 14.07 3.73 12 3.73c-3.53 0-6.82 2.08-9.11 5.68-.9 1.41-.9 3.78 0 5.19.79 1.24 1.71 2.31 2.71 3.17M8.42 19.53c1.14.48 2.35.74 3.58.74 3.53 0 6.82-2.08 9.11-5.68.9-1.41.9-3.78 0-5.19-.33-.52-.69-1.01-1.06-1.47"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15.51 12.7a3.565 3.565 0 0 1-2.82 2.82M9.47 14.53 2 22M22 2l-7.47 7.47"/></svg>
@@ -142,7 +188,7 @@ const SignUpSection = (props) => {
                   name="confirmPassword"
                   value={formData.confirmPassword}
                   onChange={inputEvent}
-                  required
+                  
                 />
               <button onClick={handleConfirmPasswordVisibility}> 
                 {confirmPasswordVisible ? <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m14.53 9.47-5.06 5.06a3.576 3.576 0 1 1 5.06-5.06Z"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.82 5.77C16.07 4.45 14.07 3.73 12 3.73c-3.53 0-6.82 2.08-9.11 5.68-.9 1.41-.9 3.78 0 5.19.79 1.24 1.71 2.31 2.71 3.17M8.42 19.53c1.14.48 2.35.74 3.58.74 3.53 0 6.82-2.08 9.11-5.68.9-1.41.9-3.78 0-5.19-.33-.52-.69-1.01-1.06-1.47"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15.51 12.7a3.565 3.565 0 0 1-2.82 2.82M9.47 14.53 2 22M22 2l-7.47 7.47"/></svg>

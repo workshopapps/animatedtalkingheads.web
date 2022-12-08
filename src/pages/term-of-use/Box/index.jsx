@@ -11,8 +11,8 @@ const Box = ({ question, answer }) => {
     <>
       <div
         className={`${active && "!bg-[#D9D9D9]"
-          } bg-[#fbfbfb] flex max-w-[1288px] mx-auto mb-[32px] justify-between items-center border-b py-[22px] px-[16px] lg:py-[28px] lg:pl-[56px] lg:pr-[32px]`}>
-        <p className="text-base lg:text-[32px]">{question}</p>
+          } bg-[#fbfbfb] flex max-w-[1288px]  mx-auto justify-between items-center border-b py-[22px] px-[16px] lg:py-[28px] lg:pl-[56px] lg:pr-[32px]`}>
+        <p className="text-base lg:text-2xl">{question}</p>
         {active ? (
           <ArrowUpIcon onClick={() => changeBox(false)} />
         ) : (

@@ -4,7 +4,7 @@ import { Text } from '../../../components/UI/Text';
 import { Modal } from '../../../components/UI/Modal/Modal';
 import caretRight from '../../../assets/icons/carretRight.svg';
 import styles from './styles.module.scss';
-import SignUpSection from '../../sign-up/SignUp';
+// import SignUpSection from '../../sign-up/SignUp';
 
 import { Link } from 'react-router-dom';
 
@@ -226,9 +226,7 @@ const CustomizeAudio = () => {
             </div>
             <button onClick={hideModal}>Cancel</button>
           </div>
-          <div className={styles.signUpBox}>
-            <SignUpSection />
-          </div>
+          <div className={styles.signUpBox}>{/* <SignUpSection /> */}</div>
         </Modal>
       )}
     </Layout>
