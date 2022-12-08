@@ -67,7 +67,7 @@ const TopNavbar = () => {
             <img src={headerLogo} alt="home" />
           </Link>
         </div>
-        <div className={`${styles.links} hidden items-center  md:flex md:grow justify-between`}>
+        <div className={`${styles.links} hidden items-center  lg:flex lg:grow justify-between`}>
           {links.map((link, index) => (
             <Link
               className={`${
@@ -105,12 +105,12 @@ const TopNavbar = () => {
           </div>
           <Link to={routes.contact}>Contact us</Link>
         </div>
-        <div className={`hidden md:flex`}>
+        <div className={`hidden lg:flex`}>
           {/* { user && (<Link onClick={handleSignOut} to={routes.signIn} style={{ color: '#2563EB', alignSelf: 'center', marginRight:'1.875rem' }} > Sign out</Link>)} */}
           {user ? (
             <button
             className="hover:border-sec-600 focus:bg-white  hover:text-sec-600 text-blue-600  border rounded-lg border-blue-600 px-4 py-2 md:px-7"
-              style={{alignSelf: 'center', marginRight: '1.875rem' }}
+              style={{alignSelf: 'center' }}
               onClick={handleSignOut}>
               Sign out {/* {user?.displayName} */}
             </button>
@@ -130,7 +130,7 @@ const TopNavbar = () => {
           </Link>
         </div>
 
-        <div className='md:hidden'>
+        <div className='lg:hidden'>
           <Hamburger size={28} toggled={show} toggle={() => setShow(!show)} />
         </div>
 
@@ -138,7 +138,7 @@ const TopNavbar = () => {
 
 
       <motion.div
-        className={`${styles.menu} px-3 py-10 md:hidden`}
+        className={`${styles.menu} ${show ? "show" : 'hidden'} px-3 py-10 lg:hidden`}
         animate={show ? "enter" : "exit"}
         variants={menuAnimate}>
         <div className={``}>
