@@ -5,7 +5,7 @@ import {
   signOut,
   GoogleAuthProvider,
   signInWithPopup,
-  FacebookAuthProvider,
+  FacebookAuthProvider
 } from 'firebase/auth';
 
 import { auth } from '../firebase-config';
@@ -14,6 +14,7 @@ const UserContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  //  setUser(localStorage.getItem('token') ? localStorage.getItem('token') : null);
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -31,19 +32,18 @@ export const AuthContextProvider = ({ children }) => {
 
   const facebookSignIn = () => {
     const provider = new FacebookAuthProvider();
-    signInWithPopup(auth, provider)
-  }
+    signInWithPopup(auth, provider);
+  };
 
   const logOut = () => {
     return signOut(auth);
   };
-  
 
   // useEffect(() => {
   //   // const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
   //   //   // console.log(currentUser);
-  //   //   setUser(currentUser); 
-  //   // });  
+  //   //   setUser(currentUser);
+  //   // });
   //   // return () => {
   //   //   unsubscribe();
   //   // };
@@ -52,12 +52,12 @@ export const AuthContextProvider = ({ children }) => {
   // }, []);
 
   useEffect(() => {
-    setUser(localStorage.getItem('token'))
+    setUser(localStorage.getItem('token'));
   }, []);
-  
 
   return (
-    <UserContext.Provider value={{ createUser, user, logOut, signIn, googleSignIn, facebookSignIn, setUser  }}>
+    <UserContext.Provider
+      value={{ createUser, user, logOut, signIn, googleSignIn, facebookSignIn, setUser }}>
       {children}
     </UserContext.Provider>
   );
