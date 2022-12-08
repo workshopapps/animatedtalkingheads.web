@@ -43,7 +43,7 @@ const TopNavbar = () => {
       setTimeout(() => {
         localStorage.removeItem('token');
         setUserToken('')
-      }, 5000);
+      }, 1000);
       toast.success("Sign out successful!", {
         position: toast.POSITION.BOTTOM_RIGHT
       })

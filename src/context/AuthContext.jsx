@@ -14,7 +14,6 @@ const UserContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
-  const [userToken, setUserToken] = useState('')
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -54,7 +53,7 @@ export const AuthContextProvider = ({ children }) => {
   
 
   return (
-    <UserContext.Provider value={{ createUser, user, logOut, signIn, googleSignIn, facebookSignIn, userToken, setUserToken,setUser  }}>
+    <UserContext.Provider value={{ createUser, user, logOut, signIn, googleSignIn, facebookSignIn, setUser  }}>
       {children}
     </UserContext.Provider>
   );

@@ -1,15 +1,17 @@
 import Layout from '../../components/UI/Layout';
 import '../sign-in/styles/index.css'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth  } from '../../context/AuthContext';
 import {  toast } from 'react-toastify';
+// const [userToken, setUserToken] = useState('')
+
 
 const SignIn = () => {
     // const[password,setPassword]=useState("password");
     const navigate = useNavigate()
-    const [error, setError] = useState('')
-    const {googleSignIn, facebookSignIn, userToken, setUserToken} = UserAuth()   
+    // const [error, setError] = useState('')
+    const {googleSignIn, facebookSignIn} = UserAuth()   
     const [passwordVisible, setPasswordVisible] = useState(false)
 
   const [formData, setFormData] = useState({
@@ -26,7 +28,6 @@ const SignIn = () => {
     [name]:value
     }
     });
-    
     }
 
     const handlePasswordVisibility = () => {
@@ -48,12 +49,12 @@ const SignIn = () => {
             return;
         }
   
-        if(userToken != ''){
-          toast.warning("You're already signed in!", {
-            position: toast.POSITION.BOTTOM_RIGHT
-          })
-          return;
-        }
+        // if(userToken != ''){
+        //   toast.warning("You're already signed in!", {
+        //     position: toast.POSITION.BOTTOM_RIGHT
+        //   })
+        //   return;
+        // }
 
         fetch('https://api.voxclips.hng.tech/auth/login', {
         method: 'POST',
@@ -84,8 +85,9 @@ const SignIn = () => {
                 })
               }, 2000);
               console.log(data)
-              setUserToken(data.user)
-              localStorage.setItem("token", userToken)
+              const token = data.user;
+              // setUserToken(data.user)
+              localStorage.setItem("token", token)
               navigate('/')
             }
             return;

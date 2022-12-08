@@ -1,5 +1,5 @@
 import '../sign-up/styles/index.css'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth  } from '../../context/AuthContext';
 import {  toast } from 'react-toastify';
@@ -86,7 +86,7 @@ const SignUpSection = (props) => {
               return;
             }
         })
-        .then((data) => {
+        .then(() => {
           setTimeout(() => {
             toast.success('Sign up successful', {
               position: toast.POSITION.BOTTOM_RIGHT
