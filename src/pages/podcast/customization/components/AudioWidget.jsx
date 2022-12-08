@@ -31,7 +31,8 @@ const CustomizeAudio = () => {
       // contact audiopath with base url
       // let baseUrl = 'https://api.voxlips.hng.tech';
       // const userPodcast = baseUrl.concat(audioPath.slice(1));
-      return audioPath;
+      const audio_url = store.getState().cartReducer.podcast_audio.file_url;
+      return audio_url;
     }
   };
 

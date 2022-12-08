@@ -21,21 +21,22 @@ const CustomizeAudio = ({ speakets }) => {
   const [showModal, setShowModal] = useState(false);
 
   const sceneAray = [bg1, bg2, bg3, bg4, bg5];
+  // console.log(sceneAray.length);
 
-  // function changeScene(mode) {
-  //   switch (mode) {
-  //     case 'next':
-  //       if (currentScene < sceneAray.length - 1) {
-  //         // setBackgound()
-  //         return setCurrentScene(currentScene + 1);
-  //       } else return;
+  function changeScene(mode) {
+    switch (mode) {
+      case 'next':
+        if (currentScene < sceneAray.length - 1) {
+          // setBackgound()
+          return setCurrentScene(currentScene + 1);
+        } else return;
 
-  //     case 'prev':
-  //       if (currentScene > 1) {
-  //         return setCurrentScene(currentScene - 1);
-  //       } else return;
-  //   }
-  // }
+      case 'prev':
+        if (currentScene > 1) {
+          return setCurrentScene(currentScene - 1);
+        } else return;
+    }
+  }
 
   const currentHead = store.getState().customizeVideoReducer.currentAvatar;
 

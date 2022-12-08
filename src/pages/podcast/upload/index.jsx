@@ -83,6 +83,7 @@ const UploadPodcast = () => {
       });
       setUpload(false);
       setUploaded(true);
+      console.log(store.getState());
     } catch (error) {
       setError(error.message);
       setUpload(false);
