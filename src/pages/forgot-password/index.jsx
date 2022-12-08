@@ -6,10 +6,16 @@ import { Link } from 'react-router-dom';
 
 const ForgotPassword = () => {
   const [userEmail, setUserEmail] = useState('');
+  const [errMsg, setErrMsg] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
   const [isLoading, seIsLoading] = useState(false);
 
   async function subMithandler(e) {
     e.preventDefault();
+
+    if (userEmail.length === 0) {
+      return setErrMsg('You need to provide an email');
+    }
 
     seIsLoading(true);
     console.log(userEmail);
@@ -23,12 +29,29 @@ const ForgotPassword = () => {
 
     try {
       seIsLoading(true);
-      const resp = await axios.get(url, userEmail, config);
-      console.log(resp);
+      const { data } = await axios.post(
+        url,
+        {
+          email: userEmail
+        },
+        config
+      );
+
+      if (data) {
+        setErrMsg('');
+        // console.log(data);
+
+        setSuccessMsg(data.msg);
+
+        seIsLoading(false);
+      }
+
       seIsLoading(false);
-      window.alert('password reset link sent, check your email');
+
+      // window.alert('password reset link sent, check your email');
     } catch (error) {
-      console.log(error);
+      setErrMsg(error.message);
+      seIsLoading(false);
     }
     // setTimeout(() => {
     //   window.alert('password reset link sent, check your email');
@@ -76,7 +99,17 @@ const ForgotPassword = () => {
               className="submit_button disabled:cursor-none bg-pri-700 h-[50px] centered rounded-md w-full py-4 px-6 text-white">
               {isLoading ? <span className="spinner-roller m-4"></span> : ' Send Reset Link'}
             </button>
-            <div className="text-red-400 flex text-center">there was an erro here</div>
+            {errMsg.length !== 0 && (
+              <div className="text-red-400  text-center w-full">
+                <h1 className="">{errMsg}</h1>
+              </div>
+            )}
+
+            {successMsg.length !== 0 && (
+              <div className="text-green-500  text-center w-full">
+                <h1 className="">{successMsg}</h1>
+              </div>
+            )}
           </form>
 
           <div className="w-full centered">

@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import styles from './styles.module.css';
+// import styles from './styles.module.css';
 import footerLogo from './../../../assets/icons/footer_logo.svg';
 import settings from './../../../assets/icons/settings.svg';
-import globe from './../../../assets/icons/white_globe.svg';
+// import globe from './../../../assets/icons/white_globe.svg';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { routes } from '../../../libs/links';
-import ReactTooltip from 'react-tooltip';
+// import ReactTooltip from 'react-tooltip';
 
 const links1 = [
   { name: 'How it Works', link: routes.howItWorks },
@@ -118,7 +118,7 @@ const Footer = () => {
               <FaInstagram size="20" />
             </a>
           </div>
-          <div className={`${styles.lang} hidden lg:flex items-center gap-1 `}>
+          {/* <div className={`${styles.lang} hidden lg:flex items-center gap-1 `}>
             <button>
               <img src={globe} alt="globe" data-tip data-for="register" />
             </button>
@@ -131,9 +131,9 @@ const Footer = () => {
               <option>French</option>
               <option>Spanish</option>
             </select>
-          </div>
+          </div> */}
         </div>
-        <div className={`${styles.lang} lg:hidden flex items-center gap-1 `}>
+        {/* <div className={`${styles.lang} lg:hidden flex items-center gap-1 `}>
           <button>
             <img src={globe} alt="globe" />
           </button>
@@ -143,7 +143,7 @@ const Footer = () => {
             <option>French</option>
             <option>Spanish</option>
           </select>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
