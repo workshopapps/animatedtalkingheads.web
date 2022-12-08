@@ -9,6 +9,7 @@ import closeIcon from './../../../assets/icons/close.png';
 import { links, linksMobile, routes } from '../../../libs/links';
 import { BiChevronDown } from 'react-icons/bi';
 import { UserAuth } from '../../../context/AuthContext';
+import {  toast } from 'react-toastify';
 
 const miniLinks = [
   { name: 'Support', link: '#' },
@@ -21,7 +22,7 @@ const TopNavbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const pathname = location.pathname.split('/')[1];
-  const { user, logOut } = UserAuth();
+  const { user, logOut, setUserToken, userToken } = UserAuth();
   const close = () => {
     setShow(false);
   };
@@ -39,7 +40,13 @@ const TopNavbar = () => {
   const handleSignOut = async () => {
     try {
       await logOut();
-      alert('You have signed out!');
+      setTimeout(() => {
+        localStorage.removeItem('token');
+        setUserToken('')
+      }, 5000);
+      toast.success("Sign out successful!", {
+        position: toast.POSITION.BOTTOM_RIGHT
+      })
       navigate('/sign-in');
     } catch (error) {
       console.log(error);
@@ -142,7 +149,7 @@ const TopNavbar = () => {
         <div className={`${styles.line}`}> </div>
 
         <div>
-          {user ? (
+          {userToken != '' ? (
             <button
               style={{ color: '#2563EB', alignSelf: 'center', marginRight: '1.875rem' }}
               onClick={handleSignOut}>

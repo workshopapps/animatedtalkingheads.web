@@ -6,7 +6,6 @@ import {
   onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
-  // signInWithRedirect,
   FacebookAuthProvider,
 } from 'firebase/auth';
 
@@ -16,6 +15,7 @@ const UserContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
+  const [userToken, setUserToken] = useState('')
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -39,19 +39,23 @@ export const AuthContextProvider = ({ children }) => {
   const logOut = () => {
     return signOut(auth);
   };
+  
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      // console.log(currentUser);
-      setUser(currentUser); 
-    });  
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+  // useEffect(() => {
+  //   // const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+  //   //   // console.log(currentUser);
+  //   //   setUser(currentUser); 
+  //   // });  
+  //   // return () => {
+  //   //   unsubscribe();
+  //   // };
+  //   localStorage.setItem("token", userToken)
+
+  // }, []);
+  
 
   return (
-    <UserContext.Provider value={{ createUser, user, logOut, signIn, googleSignIn, facebookSignIn  }}>
+    <UserContext.Provider value={{ createUser, user, logOut, signIn, googleSignIn, facebookSignIn, userToken, setUserToken  }}>
       {children}
     </UserContext.Provider>
   );
