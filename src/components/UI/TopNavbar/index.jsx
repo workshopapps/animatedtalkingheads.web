@@ -10,6 +10,7 @@ import { BiChevronDown } from 'react-icons/bi';
 import { UserAuth } from '../../../context/AuthContext';
 import { motion } from "framer-motion";
 import { menuAnimate } from './animation';
+import {  toast } from 'react-toastify';
 
 
 // const miniLinks = [
@@ -23,12 +24,13 @@ const TopNavbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const pathname = location.pathname.split('/')[1];
-  const { user, logOut } = UserAuth();
+  const { user, logOut, setUserToken, setUser } = UserAuth();
   const close = () => {
     setShow(false);
   };
 
   const [signInPath, setSignInPath] = useState(false);
+
 
   // const currentPath = '/sign-in'
   // console.log(location.pathname)
@@ -41,12 +43,21 @@ const TopNavbar = () => {
   const handleSignOut = async () => {
     try {
       await logOut();
-      alert('You have signed out!');
+      setTimeout(() => {
+        localStorage.removeItem('token');
+        setUserToken('')
+        
+      }, 1000);
+      toast.success("Sign out successful!", {
+        position: toast.POSITION.BOTTOM_RIGHT
+      })
+      setUser(null)
       navigate('/sign-in');
     } catch (error) {
       console.log(error);
     }
   };
+
 
   return (
     <div className={styles.nav}>

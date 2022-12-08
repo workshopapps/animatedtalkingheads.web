@@ -1,14 +1,17 @@
 import Layout from '../../components/UI/Layout';
 import '../sign-in/styles/index.css'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth  } from '../../context/AuthContext';
+import {  toast } from 'react-toastify';
+// const [userToken, setUserToken] = useState('')
+
 
 const SignIn = () => {
     // const[password,setPassword]=useState("password");
     const navigate = useNavigate()
-    const [error, setError] = useState('')
-    const { signIn, user, googleSignIn, facebookSignIn } = UserAuth()   
+    // const [error, setError] = useState('')
+    const {googleSignIn, facebookSignIn, setUser} = UserAuth()   
     const [passwordVisible, setPasswordVisible] = useState(false)
 
   const [formData, setFormData] = useState({
@@ -25,7 +28,6 @@ const SignIn = () => {
     [name]:value
     }
     });
-    
     }
 
     const handlePasswordVisibility = () => {
@@ -34,17 +36,72 @@ const SignIn = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError('')
-        try {
-          await signIn(formData?.email, formData?.password)
-          // navigate('/')
-          // alert('You are now signed in')
-        } catch (e) {
-          setError(e.message)
-          console.log(error)
-          console.log(e.message)
-          alert('Incorrect login details')
+        
+        if(!formData.email || !formData.password){
+          toast.error('Fields cannot be empty', {
+            position: toast.POSITION.BOTTOM_RIGHT
+          })
+          return;
         }
+
+        if(formData.password < 6){
+            toast.error('Password mismatch')
+            return;
+        }
+  
+        // if(userToken != ''){
+        //   toast.warning("You're already signed in!", {
+        //     position: toast.POSITION.BOTTOM_RIGHT
+        //   })
+        //   return;
+        // }
+
+        fetch('https://api.voxclips.hng.tech/auth/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    })
+        .then(res => {
+          if(res.ok){
+            toast.info('Signing in', {
+              position: toast.POSITION.BOTTOM_RIGHT,
+              autoClose: 1000
+            });  
+            return res.json()
+          } else {
+            toast.error('Something went wrong, please try again', {
+              position: toast.POSITION.BOTTOM_RIGHT
+            })
+            return;
+          }
+        })
+        .then((data) => {
+            if(data){
+              setTimeout(() => {
+                toast.success('Sign in successful', {
+                  position: toast.POSITION.BOTTOM_RIGHT
+                })
+              }, 2000);
+              console.log(data)
+              const token = data.user;
+              // setUserToken(data.user)
+              localStorage.setItem("token", token)
+              setUser(token)
+              navigate('/')
+            }
+            return;
+        })
+        .catch((error) => {
+          if(error){
+          toast.error(error, {
+            position: toast.POSITION.BOTTOM_RIGHT
+          })
+            return;
+          }
+         
+        });
       };
 
       const handleGoogleSignIn = async () => {
@@ -66,13 +123,13 @@ const SignIn = () => {
          }
       }
       
-      useEffect(() => {
-        if(user != null) {
-          navigate('/')
-          alert("You are now signed in")
-        }
+      // useEffect(() => {
+      //   if(user != null) {
+      //     navigate('/')
+      //     alert("You are now signed in")
+      //   }
         
-      }, [user ]);
+      // }, [user ]);
 
     // fetch('https://example.com/signUp', {
     //     method: 'POST',
@@ -107,7 +164,6 @@ const SignIn = () => {
                   name="email"
                   value={formData.email}
                   onChange={inputEvent}
-                  required
                 />
             </div>
 
@@ -119,7 +175,6 @@ const SignIn = () => {
                   name="password"
                   value={formData.password}
                   onChange={inputEvent}
-                  required
                 />
                 <button onClick={handlePasswordVisibility}> 
                 {passwordVisible ? <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m14.53 9.47-5.06 5.06a3.576 3.576 0 1 1 5.06-5.06Z"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.82 5.77C16.07 4.45 14.07 3.73 12 3.73c-3.53 0-6.82 2.08-9.11 5.68-.9 1.41-.9 3.78 0 5.19.79 1.24 1.71 2.31 2.71 3.17M8.42 19.53c1.14.48 2.35.74 3.58.74 3.53 0 6.82-2.08 9.11-5.68.9-1.41.9-3.78 0-5.19-.33-.52-.69-1.01-1.06-1.47"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15.51 12.7a3.565 3.565 0 0 1-2.82 2.82M9.47 14.53 2 22M22 2l-7.47 7.47"/></svg>
