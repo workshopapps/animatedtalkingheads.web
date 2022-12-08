@@ -11,15 +11,15 @@
 .modal {
   position: fixed;
   /* position: absolute; */
-  top: 40%;
+  top: 20%;
   left: 25%;
   width: 50%;
   background-color: white;
-  transform: translate(-60%, -75%);
+  transform: translate(-80%, -75%);
   /* border-radius: 14px; */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 30;
-  height: 10rem;
+  height: fit-content;
   padding: 2rem;
   animation: slide-down 300ms ease-out forwards;
   text-align: center;

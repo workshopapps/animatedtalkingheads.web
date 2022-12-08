@@ -1,0 +1,24 @@
+.ChatSection {
+  padding: 2rem 5rem;
+  background-color: #fff;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.TextBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info_question {
+  color: #2563eb;
+}
+
+.info_text {
+  font-size: 0.8rem;
+}

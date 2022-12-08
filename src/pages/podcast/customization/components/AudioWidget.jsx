@@ -29,9 +29,10 @@ const CustomizeAudio = () => {
     const audioPath = store.getState().cartReducer.podcast_audio.file_path;
     if (audioPath) {
       // contact audiopath with base url
-      let baseUrl = 'https://api.voxlips.hng.tech';
-      const userPodcast = baseUrl.concat(audioPath.slice(1));
-      return userPodcast;
+      // let baseUrl = 'https://api.voxlips.hng.tech';
+      // const userPodcast = baseUrl.concat(audioPath.slice(1));
+      const audio_url = store.getState().cartReducer.podcast_audio.file_url;
+      return audio_url;
     }
   };
 
