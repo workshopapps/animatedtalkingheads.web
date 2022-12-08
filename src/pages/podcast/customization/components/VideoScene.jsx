@@ -21,7 +21,6 @@ const CustomizeAudio = ({ speakets }) => {
   const [showModal, setShowModal] = useState(false);
 
   const sceneAray = [bg1, bg2, bg3, bg4, bg5];
-  console.log(sceneAray.length);
 
   // function changeScene(mode) {
   //   switch (mode) {
