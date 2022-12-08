@@ -11,7 +11,7 @@ const SignIn = () => {
     // const[password,setPassword]=useState("password");
     const navigate = useNavigate()
     // const [error, setError] = useState('')
-    const {googleSignIn, facebookSignIn} = UserAuth()   
+    const {googleSignIn, facebookSignIn, setUser} = UserAuth()   
     const [passwordVisible, setPasswordVisible] = useState(false)
 
   const [formData, setFormData] = useState({
@@ -88,6 +88,7 @@ const SignIn = () => {
               const token = data.user;
               // setUserToken(data.user)
               localStorage.setItem("token", token)
+              setUser(token)
               navigate('/')
             }
             return;

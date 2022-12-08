@@ -1,11 +1,11 @@
 import Layout from '../../components/UI/Layout';
-import customizeCharacterIllustration from '../../assets/how-it-works/customize.svg';
-import customizeTwo from '../../assets/how-it-works/customize2.svg';
-import convert from '../../assets/how-it-works/convert.svg';
+import customizeCharacterIllustration from '../../assets/how-it-works/customize.png';
+import customizeTwo from '../../assets/how-it-works/customize2.png';
+import convert from '../../assets/how-it-works/convert.png';
 import documentUploadIcon from '../../assets/how-it-works/icons/document-upload.svg';
 import documentDownloadIcon from '../../assets/how-it-works/icons/document-download.svg';
 import uploadArrowUp from '../../assets/how-it-works/icons/arrow-up.svg';
-import upload from '../../assets/how-it-works/upload.svg';
+import upload from '../../assets/how-it-works/upload.png';
 //import videoThumbnailImg from '../../assets/how-it-works/how it works.svg';
 
 import styles from './styles.module.css';
