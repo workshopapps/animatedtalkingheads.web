@@ -10,33 +10,33 @@ import bg5 from '../../../../assets/images/scenery/background5.png';
 import SimpleImageSlider from 'react-simple-image-slider';
 import { BiEditAlt } from 'react-icons/bi';
 import CustomiseCharacterModal from './modal';
-import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+// import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { useState } from 'react';
 
 import store from '../../../../store/store.js';
 // import { setAvatar, setBackgound } from '../../../../store/actions/customizeVideoActions';
 
 const CustomizeAudio = ({ speakets }) => {
-  const [currentScene, setCurrentScene] = useState(0);
+  const [currentScene] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
   const sceneAray = [bg1, bg2, bg3, bg4, bg5];
   console.log(sceneAray.length);
 
-  function changeScene(mode) {
-    switch (mode) {
-      case 'next':
-        if (currentScene < sceneAray.length - 1) {
-          // setBackgound()
-          return setCurrentScene(currentScene + 1);
-        } else return;
+  // function changeScene(mode) {
+  //   switch (mode) {
+  //     case 'next':
+  //       if (currentScene < sceneAray.length - 1) {
+  //         // setBackgound()
+  //         return setCurrentScene(currentScene + 1);
+  //       } else return;
 
-      case 'prev':
-        if (currentScene > 1) {
-          return setCurrentScene(currentScene - 1);
-        } else return;
-    }
-  }
+  //     case 'prev':
+  //       if (currentScene > 1) {
+  //         return setCurrentScene(currentScene - 1);
+  //       } else return;
+  //   }
+  // }
 
   const currentHead = store.getState().customizeVideoReducer.currentAvatar;
 
@@ -56,7 +56,7 @@ const CustomizeAudio = ({ speakets }) => {
           </Text>
         </div>
 
-        <div className="text middle space-x-3">
+        {/* <div className="text middle space-x-3">
           <Text w={'md'} type={'text4'} cap>
             Background {currentScene + 1}/{sceneAray.length}
           </Text>
@@ -75,7 +75,7 @@ const CustomizeAudio = ({ speakets }) => {
               <BsChevronRight className={'text-xl'} />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="scene w-full border h-[250px]  md:h-[450px] relative">
@@ -92,13 +92,12 @@ const CustomizeAudio = ({ speakets }) => {
             width={'100%'}
             height={'100%'}
             images={sceneAray}
-            showBullets={true}
+            // showBullets={true}
             style={{
-              backgroundPosition: 'center',
-              border: '1px solid red'
+              backgroundPosition: 'center'
             }}
             onClickBullets={(idx) => console.log(idx)}
-            // showNavs={true}
+            showNavs={true}
             navStyle={2}
             onClickNav={(toRight) => console.log(toRight)}
           />
