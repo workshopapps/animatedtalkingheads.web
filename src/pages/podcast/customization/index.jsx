@@ -150,7 +150,7 @@ const CustomizeAudio = () => {
             <img src={caretRight} alt="" />
           </div>
           <Text w={'md'} type={'text4'} cap className={'text-blue-700'}>
-            <Link to="/podcast/customize">Cutomize Upload</Link>
+            <Link to="/podcast/customize">customize Upload</Link>
           </Text>
         </div>
 
