@@ -1,9 +1,8 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
   FacebookAuthProvider,
@@ -55,7 +54,7 @@ export const AuthContextProvider = ({ children }) => {
   
 
   return (
-    <UserContext.Provider value={{ createUser, user, logOut, signIn, googleSignIn, facebookSignIn, userToken, setUserToken  }}>
+    <UserContext.Provider value={{ createUser, user, logOut, signIn, googleSignIn, facebookSignIn, userToken, setUserToken,setUser  }}>
       {children}
     </UserContext.Provider>
   );
