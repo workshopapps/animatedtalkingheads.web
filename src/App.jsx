@@ -3,6 +3,8 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// import { GoogleOAuthProvider } from '@react-oauth/google'; 
+import { Auth0Provider } from "@auth0/auth0-react";
 
 import Home from './pages';
 import About from './pages/about';
@@ -65,6 +67,7 @@ function App() {
 
   return (
     <Provider store={store}>
+      <GoogleOAuthProvider clientId="242770028639-lnmal90ggd16l96p9dghm5g4tife0q80.apps.googleusercontent.com"> 
       <AuthContextProvider>
         <Routes>
           <Route path={routes.home} element={<Home />} />
@@ -118,6 +121,7 @@ function App() {
         </Routes>
       </AuthContextProvider>
       <ToastContainer />
+      </GoogleOAuthProvider>
     </Provider>
   );
 }

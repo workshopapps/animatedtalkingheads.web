@@ -1,10 +1,12 @@
 import Layout from '../../components/UI/Layout';
 import '../sign-in/styles/index.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../../context/AuthContext';
 import { toast } from 'react-toastify';
-// const [userToken, setUserToken] = useState('')
+import { useGoogleLogin } from '@react-oauth/google';
+import axios from 'axios';
+import { Google  }
 
 const SignIn = () => {
   // const[password,setPassword]=useState("password");
@@ -16,7 +18,7 @@ const SignIn = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
-  });
+  }); 
 
   const inputEvent = (event) => {
     const name = event.target.name;
@@ -102,15 +104,47 @@ const SignIn = () => {
       });
   };
 
-  const handleGoogleSignIn = async () => {
-    try {
-      await googleSignIn();
-      // navigate('/')
-      // alert('You are now signed in')
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const handleGoogleSignIn = useGoogleLogin({
+    
+    onSuccess: async response => {
+      try{
+      const res  = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
+        headers: {
+          "Authorization": `Bearer ${response.access_token}`
+        }
+      })
+      console.log(res.data)
+      const user = res.data;
+      await fetch("/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      })
+        .then((res) => {
+          if(res.ok) {
+            toast.info('Signing in', {
+              position: toast.POSITION.BOTTOM_RIGHT,
+              autoClose: 1000
+            });
+            return res.json();
+          } else {
+            toast.error('Something went wrong, please try again', {
+              position: toast.POSITION.BOTTOM_RIGHT
+            });
+            return;
+          }
+        })  
+      ;
+
+    } catch(err){
+      console.log(err)
+  }
+
+}
+
+  })
 
   const handleFacebookSignIn = async () => {
     try {
