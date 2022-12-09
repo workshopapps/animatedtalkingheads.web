@@ -28,7 +28,7 @@ const UploadPodcast = () => {
   });
 
   const onDrop = useCallback((acceptedFiles) => {
-    const fileName = acceptedFiles[0].name;
+    // const fileName = acceptedFiles[0].name;
     setAudio(acceptedFiles[0]);
     setName(acceptedFiles[0].name);
   }, []);
