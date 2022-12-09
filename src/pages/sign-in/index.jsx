@@ -4,19 +4,20 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../../context/AuthContext';
 import { toast } from 'react-toastify';
-// const [userToken, setUserToken] = useState('')
+import { useGoogleLogin } from '@react-oauth/google';
+import axios from 'axios';
 
 const SignIn = () => {
   // const[password,setPassword]=useState("password");
   const navigate = useNavigate();
   // const [error, setError] = useState('')
-  const { googleSignIn, facebookSignIn, setUser } = UserAuth();
+  const { setUser } = UserAuth();
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const [formData, setFormData] = useState({
     email: '',
     password: ''
-  });
+  }); 
 
   const inputEvent = (event) => {
     const name = event.target.name;
@@ -88,7 +89,7 @@ const SignIn = () => {
           // setUserToken(data.user)
           localStorage.setItem('token', token);
           setUser(token);
-          navigate(-1);
+          navigate('/');
         }
         return;
       })
@@ -102,23 +103,68 @@ const SignIn = () => {
       });
   };
 
-  const handleGoogleSignIn = async () => {
-    try {
-      await googleSignIn();
-      // navigate('/')
-      // alert('You are now signed in')
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const handleGoogleSignIn = useGoogleLogin({
+    
+    onSuccess: async response => {
+      try{
+      const res  = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
+        headers: {
+          "Authorization": `Bearer ${response.access_token}`
+        }
+      })
+      // console.log(res.data)
+      const user = res.data;
+      await fetch("/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      })
+        .then((res) => {
+          if(res.ok) {
+            toast.info('Signing in', {
+              position: toast.POSITION.BOTTOM_RIGHT,
+              autoClose: 1000
+            });
+            return res.json();
+          } else {
+            toast.error('An error occurred, please sign in with your email and password', {
+              position: toast.POSITION.BOTTOM_RIGHT
+            });
+            return;
+          }
+        });
+    } catch(err){
+      console.log(err)
+  }
+
+}
+
+  })
 
   const handleFacebookSignIn = async () => {
-    try {
-      await facebookSignIn();
-      navigate('/');
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   await facebookSignIn();
+    //   navigate('/');
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    toast.error('Please sign in with your email and password', {
+      position: toast.POSITION.BOTTOM_RIGHT
+    });
+  };
+
+  const handleAppleSignIn = async () => {
+    // try {
+    //   await facebookSignIn();
+    //   navigate('/');
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    toast.error('Please sign in with your email and password', {
+      position: toast.POSITION.BOTTOM_RIGHT
+    });
   };
 
   // useEffect(() => {
@@ -253,7 +299,7 @@ const SignIn = () => {
               <p className="third-auth-name">Google</p>
             </button>
 
-            <button className="third-auth apple">
+            <button onClick={handleAppleSignIn} className="third-auth apple">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
                 <path
                   fill="#000"

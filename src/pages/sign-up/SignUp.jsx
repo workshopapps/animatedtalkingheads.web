@@ -1,12 +1,14 @@
 import '../sign-up/styles/index.css'
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { UserAuth  } from '../../context/AuthContext';
+// import { UserAuth  } from '../../context/AuthContext';
 import {  toast } from 'react-toastify';
+import { useGoogleLogin } from '@react-oauth/google';
+import axios from 'axios';
 
 const SignUpSection = (props) => {
     const navigate = useNavigate()
-    const {googleSignIn, facebookSignIn} = UserAuth()   
+    // const {googleSignIn, facebookSignIn} = UserAuth()   
     const [passwordVisible, setPasswordVisible] = useState(false)
     const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false)
 
@@ -106,21 +108,69 @@ const SignUpSection = (props) => {
         });
     };
 
-    const handleGoogleSignIn = async () => {
-      try {
-        await googleSignIn();
-      } catch (error) {
-        console.log(error);
-      }
+    const handleGoogleSignIn = useGoogleLogin({
+    
+      onSuccess: async response => {
+        try{
+        const res  = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
+          headers: {
+            "Authorization": `Bearer ${response.access_token}`
+          }
+        })
+        // console.log(res.data)
+        const user = res.data;
+        await fetch("/api/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(user),
+        })
+          .then((res) => {
+            if(res.ok) {
+              toast.info('Signing in', {
+                position: toast.POSITION.BOTTOM_RIGHT,
+                autoClose: 1000
+              });
+              return res.json();
+            } else {
+              toast.error('An error occurred, please sign in with your email and password', {
+                position: toast.POSITION.BOTTOM_RIGHT
+              });
+              return;
+            }
+          });
+      } catch(err){
+        console.log(err)
     }
-
+  
+  }
+  
+    })
+  
     const handleFacebookSignIn = async () => {
-       try {
-        await facebookSignIn();
-       } catch (error) {
-        console.log(error)
-       }
-    }
+      // try {
+      //   await facebookSignIn();
+      //   navigate('/');
+      // } catch (error) {
+      //   console.log(error);
+      // }
+      toast.error('Please sign in with your email and password', {
+        position: toast.POSITION.BOTTOM_RIGHT
+      });
+    };
+  
+    const handleAppleSignIn = async () => {
+      // try {
+      //   await facebookSignIn();
+      //   navigate('/');
+      // } catch (error) {
+      //   console.log(error);
+      // }
+      toast.error('Please sign in with your email and password', {
+        position: toast.POSITION.BOTTOM_RIGHT
+      });
+    };
 
     //   useEffect(() => {
     //   if (userToken != '') {
@@ -205,7 +255,7 @@ const SignUpSection = (props) => {
                 <p className='third-auth-name'>Google</p>
             </button>
 
-            <button className='third-auth apple'>
+            <button onClick={handleAppleSignIn} className='third-auth apple'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#000" d="M16.741 12.455c-.007-1.31.586-2.3 1.786-3.029-.671-.96-1.686-1.49-3.025-1.593-1.268-.1-2.654.74-3.162.74-.535 0-1.764-.704-2.729-.704C7.618 7.9 5.5 9.459 5.5 12.627c0 .935.171 1.902.514 2.9.458 1.311 2.108 4.526 3.83 4.472.9-.021 1.536-.64 2.707-.64 1.136 0 1.726.64 2.73.64 1.735-.025 3.228-2.947 3.664-4.261-2.329-1.097-2.204-3.215-2.204-3.283ZM14.72 6.59c.975-1.158.885-2.211.857-2.59-.861.05-1.858.586-2.426 1.247-.625.707-.993 1.582-.914 2.568.932.071 1.782-.407 2.482-1.225Z"/></svg>
                 <p className='third-auth-name'>Apple ID</p>
             </button>
