@@ -49,13 +49,13 @@ const Contact = () => {
       setLoading(true);
 
       try {
-        const res = await axios.post('https://jee-contact.netlify.app/api/contact', {
+        await axios.post('https://api.voxclips.hng.tech/contact', {
           email,
           name: full_name,
           message
         });
 
-        if (res.data.success) setSubmittted(true);
+        setSubmittted(true);
       } catch (e) {
         setError(true);
       }
@@ -139,18 +139,20 @@ const Contact = () => {
                     />
                   </div>
                   {emessage && <p className="text-red-600  text-xs mt-2">This field is required</p>}
-                  {loading && (
-                    <div className="text-center mt-2">
-                      <div className={styles.ring}>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                      </div>
-                    </div>
-                  )}
                   <div className="flex justify-center mt-5">
-                    <button className={styles.submit}>Submit</button>
+                    <button disabled={loading} className={styles.submit}>
+                      {loading ? (
+                        <div className="text-center mt-2">
+                          <div className={styles.ring}>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                          </div>
+                        </div>
+                        ) : "Submit"
+                      }
+                    </button>
                   </div>
                 </form>
               </div>
