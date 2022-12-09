@@ -1,14 +1,14 @@
 import '../sign-up/styles/index.css'
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { UserAuth  } from '../../context/AuthContext';
+// import { UserAuth  } from '../../context/AuthContext';
 import {  toast } from 'react-toastify';
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 
 const SignUpSection = (props) => {
     const navigate = useNavigate()
-    const {googleSignIn, facebookSignIn} = UserAuth()   
+    // const {googleSignIn, facebookSignIn} = UserAuth()   
     const [passwordVisible, setPasswordVisible] = useState(false)
     const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false)
 
