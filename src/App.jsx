@@ -3,8 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { GoogleOAuthProvider } from '@react-oauth/google'; 
-import { Auth0Provider } from "@auth0/auth0-react";
+import { GoogleOAuthProvider } from '@react-oauth/google'; 
 
 import Home from './pages';
 import About from './pages/about';

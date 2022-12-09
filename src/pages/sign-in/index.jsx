@@ -6,13 +6,12 @@ import { UserAuth } from '../../context/AuthContext';
 import { toast } from 'react-toastify';
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
-import { Google  }
 
 const SignIn = () => {
   // const[password,setPassword]=useState("password");
   const navigate = useNavigate();
   // const [error, setError] = useState('')
-  const { googleSignIn, facebookSignIn, setUser } = UserAuth();
+  const { facebookSignIn, setUser } = UserAuth();
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -90,7 +89,7 @@ const SignIn = () => {
           // setUserToken(data.user)
           localStorage.setItem('token', token);
           setUser(token);
-          navigate(-1);
+          navigate('/');
         }
         return;
       })
@@ -113,7 +112,7 @@ const SignIn = () => {
           "Authorization": `Bearer ${response.access_token}`
         }
       })
-      console.log(res.data)
+      // console.log(res.data)
       const user = res.data;
       await fetch("/api/users", {
         method: "POST",
@@ -130,14 +129,12 @@ const SignIn = () => {
             });
             return res.json();
           } else {
-            toast.error('Something went wrong, please try again', {
+            toast.error('An error occurred, please sign in with your email and password', {
               position: toast.POSITION.BOTTOM_RIGHT
             });
             return;
           }
-        })  
-      ;
-
+        });
     } catch(err){
       console.log(err)
   }
@@ -147,12 +144,27 @@ const SignIn = () => {
   })
 
   const handleFacebookSignIn = async () => {
-    try {
-      await facebookSignIn();
-      navigate('/');
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   await facebookSignIn();
+    //   navigate('/');
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    toast.error('Please sign in with your email and password', {
+      position: toast.POSITION.BOTTOM_RIGHT
+    });
+  };
+
+  const handleAppleSignIn = async () => {
+    // try {
+    //   await facebookSignIn();
+    //   navigate('/');
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    toast.error('Please sign in with your email and password', {
+      position: toast.POSITION.BOTTOM_RIGHT
+    });
   };
 
   // useEffect(() => {
@@ -287,7 +299,7 @@ const SignIn = () => {
               <p className="third-auth-name">Google</p>
             </button>
 
-            <button className="third-auth apple">
+            <button onClick={handleAppleSignIn} className="third-auth apple">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
                 <path
                   fill="#000"
