@@ -4,7 +4,6 @@
   flex-direction: row;
   align-items: center;
   padding: 10px 100px;
-
 }
 
 .term {
@@ -15,8 +14,7 @@
   font-size: 25px;
   color: rgba(41, 45, 50, 0.5);
 }
-.word{
-
+.word {
   padding: 0 260px;
 }
 

@@ -4,6 +4,7 @@ import { Text } from '../../../components/UI/Text';
 import { Modal } from '../../../components/UI/Modal/Modal';
 import caretRight from '../../../assets/icons/carretRight.svg';
 import styles from './styles.module.scss';
+// import SignUpSection from '../../sign-up/SignUp';
 
 import { Link } from 'react-router-dom';
 
@@ -16,14 +17,17 @@ import { Button } from '../../../components/UI/Button';
 
 import AudioWidget from './components/AudioWidget';
 
-// import store from '../../../store/store.js';
+import store from '../../../store/store.js';
 import { setAvatar } from '../../../store/actions/customizeVideoActions';
 import LinearProgress from '@mui/material/LinearProgress';
+import axios from 'axios';
+// import { useMutation, useQuery } from '@tanstack/react-query';
 
 const CustomizeAudio = () => {
   const [numberOfSpeakers, setNumbers] = useState(1);
   // MODAL
   const [modalOpen, setModalOpen] = useState(false);
+  const [error, setError] = useState(false);
 
   const showModal = () => {
     setModalOpen(true);
@@ -93,6 +97,40 @@ const CustomizeAudio = () => {
   //       console.log(err.message, 'error from video object');
   //     });
   // };
+
+  // generate from api
+  const get_status = () => {
+    if (store.getState().cartReducer.podcast_audio.user_id) {
+      const base_url = 'https://api.voxclips.hng.tech/podcasts/';
+      console.log(store.getState().cartReducer.podcast_audio);
+      const user_id = store.getState().cartReducer.podcast_audio.user_id;
+      const podcast_id = store.getState().cartReducer.podcast_audio.id;
+      const url = `${base_url}${podcast_id}/generate-video`;
+      const headers = { user_id: user_id };
+      const data = {
+        audio_path: store.getState().cartReducer.podcast_audio.file_path,
+        audio_url: store.getState().cartReducer.podcast_audio.file_url,
+        bg_path: '02'
+      };
+      console.log(data, user_id, podcast_id, url);
+      axios
+        .post(url, data, { headers: headers })
+        .then((data) => {
+          console.log(data.data.status);
+          if (data.data.status === 'PENDING') {
+            showModal();
+            console.log(data.data);
+            store.dispatch({ type: 'ADD_PODCAST_VIDEO', payload: data.data });
+          } else {
+            hideModal();
+          }
+          // data.data.status === 'PENDING' ? console.log(data.data) : hideModal();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else setError('Please upload an audio file');
+  };
 
   return (
     <Layout>
@@ -172,8 +210,9 @@ const CustomizeAudio = () => {
           <div className="customization-center-timestamp w-full my-6 space-y-3"></div>
         </main>
 
+        {error && <p className="text-red-600 text-center">{error}</p>}
         <div className="centered w-full my-[5%]">
-          <Button label={'render video'} onClick={showModal}>
+          <Button label={'render video'} onClick={get_status}>
             Render video
           </Button>
         </div>
@@ -187,6 +226,7 @@ const CustomizeAudio = () => {
             </div>
             <button onClick={hideModal}>Cancel</button>
           </div>
+          <div className={styles.signUpBox}>{/* <SignUpSection /> */}</div>
         </Modal>
       )}
     </Layout>

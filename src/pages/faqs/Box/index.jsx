@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { ArrowDownIcon, ArrowUpIcon } from "../../../assets/svg";
+import { useState } from 'react';
+import { ArrowDownIcon, ArrowUpIcon } from '../../../assets/svg';
+import styles from './box.module.scss';
 
 const Box = ({ question, answer }) => {
   const [active, setActive] = useState(false);
@@ -9,21 +10,15 @@ const Box = ({ question, answer }) => {
   }
   return (
     <>
-      <div
-        className={`${active && "!bg-[#D9D9D9]"
-          } bg-[#fbfbfb] flex max-w-[1288px] mx-auto mb-[32px] justify-between items-center border py-[22px] px-[16px] lg:py-[28px] lg:pl-[56px] lg:pr-[32px]`}>
-        <p className="text-base lg:text-[32px]">{question}</p>
+      <div className={styles.box}>
+        <p className={styles.question}>{question}</p>
         {active ? (
-          <ArrowUpIcon onClick={() => changeBox(false)} />
+          <ArrowUpIcon onClick={() => changeBox(false)} style={{ width: '0.8rem' }} />
         ) : (
-          <ArrowDownIcon onClick={() => changeBox(true)} />
+          <ArrowDownIcon onClick={() => changeBox(true)} style={{ width: '0.8rem' }} />
         )}
       </div>
-      {active && (
-        <p className="pt-[16px] pb-[32px]  pl-[16px] lg:pl-[56px] max-w-[1288px] mx-auto ">
-          {answer}
-        </p>
-      )}
+      {active && <p className={styles.answer}>{answer}</p>}
     </>
   );
 };

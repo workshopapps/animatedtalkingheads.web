@@ -71,7 +71,7 @@ const Home = () => {
                   </div>
                 </Link>
                 <Link style={{ color: 'white' }} to="/how-it-works">
-                  <div className="watch-btn">
+                  <div className>
                     <button className="btn2">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
                         <path
@@ -90,8 +90,8 @@ const Home = () => {
                           d="M8.74 12.23v-1.67c0-2.08 1.47-2.93 3.27-1.89l1.45.84 1.45.84c1.8 1.04 1.8 2.74 0 3.78l-1.45.84-1.45.84c-1.8 1.04-3.27.19-3.27-1.89v-1.69Z"
                         />
                       </svg>
+                      How it works
                     </button>
-                    <h4>How it works</h4>
                   </div>
                 </Link>
               </div>
@@ -104,8 +104,8 @@ const Home = () => {
           </div>
         </div>
       </section>{' '}
-      <section className="bg-[#F5F5F5] container mx-auto">
-        <div className="pt-[60px] ">
+      <section className="bg-[#F5F5F5] ">
+        <div className="pt-[60px] container mx-auto">
           <h3 className="text-center text-xl pb-12 md:pb-32 md:text-[40px] text-[#292d32]  ">
             4 Simple clicks gets you there
           </h3>
@@ -146,13 +146,13 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="bg-sec-700 text-white mx-auto pb-5">
-        <div>
+      <section className="bg-sec-700 text-white pb-5 ">
+        <div className="container mx-auto w-[90%] ">
           <h3 className="text-[292d32] pt-20  text-center font-bold text-xl pb-10 md:pb-[72px] md:text-[40px]">
             What people are saying
           </h3>
-          <div className="grid md:grid-cols-3 flex-wrap gap-12 justify-around pb-[40px] md:px-6">
-            <div className=" px-8 bg-white w-[261px] mx-auto md:w-[378px]  mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
+          <div className="grid md:grid-cols-3  gap-12 justify-around pb-[40px] md:px-6">
+            <div className=" px-8 bg-white mx-auto  mb-12 md:mb-0 md:px-8 md:h-60 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
               <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
                 <img src={MarkImg} alt="Mark Essien" className="w-full h-full" />
               </div>
@@ -161,20 +161,20 @@ const Home = () => {
                 Voxclips is the ideal app for intriguing my listeners. It has helped me gain more
                 views and engagements and I love it
               </p>
-              <h5 className="text-center pb-6 text-[11px] md:text-base ">Mark Essien</h5>
+              <h4 className="text-center pb-6 text-[11px] md:text-base text-black">Mark Essien</h4>
             </div>
-            <div className=" px-8 bg-white md:w-[378px]  w-[261px] mx-auto mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
+            <div className=" px-8 bg-white   mx-auto mb-12 md:mb-0 md:px-8 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
               <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
                 <img src={LavyImg} alt="Mark Essien" className="w-full h-full" />
               </div>
               <img src={Quotes} alt="" className="pt-[34px] md:pt-12 mx-auto" />
-              <p className="text-center text-black opacity-60 text-xs md:text-base w-48 mx-auto mb-2 italic">
+              <p className="text-center text-black opacity-60 text-xs md:text-base mx-auto mb-2 italic">
                 I stumbled on this app by accident and to be honest, this has been the best mistake
                 of my life
               </p>
-              <h5 className="text-center pb-6 text-[11px] md:text-base ">Lavy Engine</h5>
+              <h4 className="text-center pb-6 text-[11px] md:text-base text-black">Lavy Engine</h4>
             </div>
-            <div className=" px-8 bg-white w-[261px] md:w-[378px]  mx-auto mb-12 md:mb-0 md:px-8 md:h-52 h-36 grid items-center relative rounded-lg md:rounded-2xl md:pb-0">
+            <div className=" px-8 bg-white   mx-auto mb-12 md:mb-0 md:px-8  grid items-center relative rounded-lg md:rounded-2xl md:pb-0">
               <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
                 <img src={NonsoImg} alt="Mark Essien" className="w-full h-full" />
               </div>
@@ -182,7 +182,7 @@ const Home = () => {
               <p className="text-center text-black opacity-60 text-xs md:text-base italic">
                 Simple, Straightforward and works Nahh. To good to be true
               </p>
-              <h5 className="text-center pb-6 text-[11px] md:text-base ">Nonso</h5>
+              <h4 className="text-center pb-6 text-[11px] md:text-base text-black ">Nonso</h4>
             </div>
           </div>
         </div>

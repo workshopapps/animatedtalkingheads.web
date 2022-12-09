@@ -1,13 +1,14 @@
 import '../sign-up/styles/index.css'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { UserAuth  } from '../../context/AuthContext';
+// import { UserAuth  } from '../../context/AuthContext';
+import {  toast } from 'react-toastify';
+import { useGoogleLogin } from '@react-oauth/google';
+import axios from 'axios';
 
 const SignUpSection = (props) => {
     const navigate = useNavigate()
-    const [error, setError] = useState('')
-
-    const {user, googleSignIn, facebookSignIn, createUser } = UserAuth()   
+    // const {googleSignIn, facebookSignIn} = UserAuth()   
     const [passwordVisible, setPasswordVisible] = useState(false)
     const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false)
 
@@ -20,14 +21,13 @@ const SignUpSection = (props) => {
 
   const inputEvent=(event)=>{
     const name=event.target.name;
-    const value=event.target.value;
+    const value=event.target.value; 
     setFormData((lastValue)=>{
     return{
     ...lastValue,
     [name]:value
     }
     });
-    
     }
 
     const handlePasswordVisibility = () => {
@@ -40,58 +40,155 @@ const SignUpSection = (props) => {
     
     const handleSubmit = async (e) => {
       e.preventDefault();
-      setError('');
-      console.log(error)
-      try {
-        await createUser(formData?.email, formData?.password);
-        navigate('/podcast/upload')
-        alert(`Thank you for signing up`)
-      } catch (e) {
-        setError(e.message);
-        console.log(e.message);
-        alert("An error occurred 😞, please try again or login")
+
+      if(!formData.email || !formData.password || !formData.confirmPassword){
+        toast.error('Fields cannot be empty', {
+          position: toast.POSITION.BOTTOM_RIGHT
+        })
+        return;
       }
+
+      if(formData.password != formData.confirmPassword){
+            toast.error('Password mismatch', {
+              position: toast.POSITION.BOTTOM_RIGHT
+            })
+            return;
+      }
+
+      if(formData.password < 6){
+          toast.error('Password mismatch')
+          return;
+      }
+
+      // if(userToken != ''){
+      //   toast.warning("You're already signed up!", {
+      //     position: toast.POSITION.BOTTOM_RIGHT
+      //   })
+      //   return;
+      // }
+
+      fetch('https://api.voxclips.hng.tech/auth/signup', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    })
+        .then(res => {
+            if(res.ok){
+              toast.info('Creating user profile', {
+                position: toast.POSITION.BOTTOM_RIGHT,
+                autoClose: 1000
+              });  
+              return res.json()
+            } else {
+              toast.error('An error occured, please try again', {
+                position: toast.POSITION.BOTTOM_RIGHT
+              })
+              return;
+            }
+        })
+        .then(() => {
+          setTimeout(() => {
+            toast.success('Sign up successful', {
+              position: toast.POSITION.BOTTOM_RIGHT
+            })
+          }, 2000);
+            navigate('/sign-in')
+            // setUserToken(data.user)
+            // localStorage.setItem("token", userToken)
+            // console.log(userToken)
+            return;
+        })
+        .catch((error) => {
+          toast.error(error, {
+            position: toast.POSITION.BOTTOM_RIGHT
+          })
+            return;
+        });
     };
 
-    const handleGoogleSignIn = async () => {
-      try {
-        await googleSignIn();
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    const handleFacebookSignIn = async () => {
-       try {
-        await facebookSignIn();
-       } catch (error) {
-        console.log(error)
-       }
-    }
-
-    useEffect(() => {
-      if (user != null || user != undefined ) {
-        navigate('/');
-        alert(`Welcome to Voxclips!`)
-      }
-    }, [user]);
-
-    // fetch('https://example.com/signUp', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(data),
-    // })
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //         console.log('success:', data);
-    //         navigate("/sign-in")
-    //     })
-    //     .catch((error) => {
-    //         console.log('Error:', error);
-    //     });
+    const handleGoogleSignIn = useGoogleLogin({
     
+      onSuccess: async response => {
+        try{
+        const res  = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
+          headers: {
+            "Authorization": `Bearer ${response.access_token}`
+          }
+        })
+        // console.log(res.data)
+        const user = res.data;
+        await fetch("/api/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(user),
+        })
+          .then((res) => {
+            if(res.ok) {
+              toast.info('Signing in', {
+                position: toast.POSITION.BOTTOM_RIGHT,
+                autoClose: 1000
+              });
+              return res.json();
+            } else {
+              toast.error('An error occurred, please sign in with your email and password', {
+                position: toast.POSITION.BOTTOM_RIGHT
+              });
+              return;
+            }
+          });
+      } catch(err){
+        console.log(err)
+    }
+  
+  }
+  
+    })
+  
+    const handleFacebookSignIn = async () => {
+      // try {
+      //   await facebookSignIn();
+      //   navigate('/');
+      // } catch (error) {
+      //   console.log(error);
+      // }
+      toast.error('Please sign in with your email and password', {
+        position: toast.POSITION.BOTTOM_RIGHT
+      });
+    };
+  
+    const handleAppleSignIn = async () => {
+      // try {
+      //   await facebookSignIn();
+      //   navigate('/');
+      // } catch (error) {
+      //   console.log(error);
+      // }
+      toast.error('Please sign in with your email and password', {
+        position: toast.POSITION.BOTTOM_RIGHT
+      });
+    };
+
+    //   useEffect(() => {
+    //   if (userToken != '') {
+    //     toast.warning('You are already signed up', {
+    //       position: toast.POSITION.BOTTOM_RIGHT
+    //     })
+    //     navigate('/sign-in');
+    //     return;
+    //   }
+    // }, []);
+
+    // useEffect(() => {
+    //   if (user != null) {
+    //     // navigate('/');
+    //     alert(`Welcome to Voxclips!`)
+    //   }
+    // }, [user]);
+
   return (
         <div className="sign-up">
             {props.title && <div className='render-progress-container'>
@@ -114,7 +211,6 @@ const SignUpSection = (props) => {
                   name="email"
                   value={formData.email}
                   onChange={inputEvent}
-                  required
                 />
             </div>
 
@@ -126,7 +222,7 @@ const SignUpSection = (props) => {
                   name="password"
                   value={formData.password}
                   onChange={inputEvent}
-                  required
+                  
                 />
               <button onClick={handlePasswordVisibility}> 
                 {passwordVisible ? <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m14.53 9.47-5.06 5.06a3.576 3.576 0 1 1 5.06-5.06Z"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.82 5.77C16.07 4.45 14.07 3.73 12 3.73c-3.53 0-6.82 2.08-9.11 5.68-.9 1.41-.9 3.78 0 5.19.79 1.24 1.71 2.31 2.71 3.17M8.42 19.53c1.14.48 2.35.74 3.58.74 3.53 0 6.82-2.08 9.11-5.68.9-1.41.9-3.78 0-5.19-.33-.52-.69-1.01-1.06-1.47"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15.51 12.7a3.565 3.565 0 0 1-2.82 2.82M9.47 14.53 2 22M22 2l-7.47 7.47"/></svg>
@@ -142,7 +238,7 @@ const SignUpSection = (props) => {
                   name="confirmPassword"
                   value={formData.confirmPassword}
                   onChange={inputEvent}
-                  required
+                  
                 />
               <button onClick={handleConfirmPasswordVisibility}> 
                 {confirmPasswordVisible ? <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m14.53 9.47-5.06 5.06a3.576 3.576 0 1 1 5.06-5.06Z"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.82 5.77C16.07 4.45 14.07 3.73 12 3.73c-3.53 0-6.82 2.08-9.11 5.68-.9 1.41-.9 3.78 0 5.19.79 1.24 1.71 2.31 2.71 3.17M8.42 19.53c1.14.48 2.35.74 3.58.74 3.53 0 6.82-2.08 9.11-5.68.9-1.41.9-3.78 0-5.19-.33-.52-.69-1.01-1.06-1.47"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15.51 12.7a3.565 3.565 0 0 1-2.82 2.82M9.47 14.53 2 22M22 2l-7.47 7.47"/></svg>
@@ -159,7 +255,7 @@ const SignUpSection = (props) => {
                 <p className='third-auth-name'>Google</p>
             </button>
 
-            <button className='third-auth apple'>
+            <button onClick={handleAppleSignIn} className='third-auth apple'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#000" d="M16.741 12.455c-.007-1.31.586-2.3 1.786-3.029-.671-.96-1.686-1.49-3.025-1.593-1.268-.1-2.654.74-3.162.74-.535 0-1.764-.704-2.729-.704C7.618 7.9 5.5 9.459 5.5 12.627c0 .935.171 1.902.514 2.9.458 1.311 2.108 4.526 3.83 4.472.9-.021 1.536-.64 2.707-.64 1.136 0 1.726.64 2.73.64 1.735-.025 3.228-2.947 3.664-4.261-2.329-1.097-2.204-3.215-2.204-3.283ZM14.72 6.59c.975-1.158.885-2.211.857-2.59-.861.05-1.858.586-2.426 1.247-.625.707-.993 1.582-.914 2.568.932.071 1.782-.407 2.482-1.225Z"/></svg>
                 <p className='third-auth-name'>Apple ID</p>
             </button>

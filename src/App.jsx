@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { GoogleOAuthProvider } from '@react-oauth/google'; 
+
 import Home from './pages';
 import About from './pages/about';
 import CustomizeAudio from './pages/podcast/customization';
@@ -53,6 +57,7 @@ import PressNewsPage from './pages/press/news-page';
 import Watchnow from './pages/press/watch-now';
 import Term from './pages/term-of-use/Terms';
 import Policy from './pages/term-of-use/Policy';
+import PrivateRoute from './components/pages/PrivateRoute/PrivateRoute';
 
 function App() {
   const { pathname } = useLocation();
@@ -66,6 +71,7 @@ function App() {
 
   return (
     <Provider store={store}>
+      <GoogleOAuthProvider clientId="242770028639-lnmal90ggd16l96p9dghm5g4tife0q80.apps.googleusercontent.com"> 
       <AuthContextProvider>
         <Routes>
           <Route path={routes.home} element={<Home />} />
@@ -100,7 +106,9 @@ function App() {
           <Route path={routes.podcastCharacters} element={<Characters />} />
           <Route path={routes.pricing} element={<Pricing />} />
           <Route path={routes.getStarted} element={<GetStarted />} />
-          <Route path={routes.checkout} element={<Checkout />} />
+          <Route element={<PrivateRoute />}>
+            <Route path={routes.checkout} element={<Checkout />} />
+          </Route>
           <Route path={routes.exploreBackground} element={<></>} />
           <Route path={routes.avatars} element={<Avatars />} />
           <Route path={routes.api} element={<ApiPage />} />
@@ -121,6 +129,8 @@ function App() {
           <Route path={routes.scenery} element={<Scenery />} />
         </Routes>
       </AuthContextProvider>
+      <ToastContainer />
+      </GoogleOAuthProvider>
     </Provider>
   );
 }

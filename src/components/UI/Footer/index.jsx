@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import styles from './styles.module.css';
+// import styles from './styles.module.css';
 import footerLogo from './../../../assets/icons/footer_logo.svg';
 import settings from './../../../assets/icons/settings.svg';
-import globe from './../../../assets/icons/white_globe.svg';
+// import globe from './../../../assets/icons/white_globe.svg';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { routes } from '../../../libs/links';
-import ReactTooltip from 'react-tooltip';
+// import ReactTooltip from 'react-tooltip';
 
 const links1 = [
   { name: 'How it Works', link: routes.howItWorks },
@@ -67,27 +67,27 @@ const Footer = () => {
           <Link to="/settings">
             <div className="flex gap-3 ">
               <img src={settings} alt="settings" />
-              <p>Settings</p>
+              <p className="text-white">Settings</p>
             </div>
           </Link>
         </div>
         <div className="col-start-1 lg:col-start-2 grid gap-3 lg:gap-5 text-white">
           {links1.map((link, index) => (
-            <Link className="" key={index} to={link.link}>
+            <Link className="text-white" key={index} to={link.link}>
               {link.name}
             </Link>
           ))}
           <div className="lg:hidden">
-            <Link to={routes.about}>About</Link>
+            <Link className="text-white" to={routes.about}>About</Link>
           </div>
           <div className="lg:hidden">
-            <Link to={routes.faqs}>FAQs</Link>
+            <Link className="text-white" to={routes.faqs}>FAQs</Link>
           </div>
         </div>
 
         <div className="hidden lg:grid gap-3 col-start-1 lg:col-start-3 lg:gap-5 ">
           {links2.map((link, index) => (
-            <Link className="block" key={index} to={link.link}>
+            <Link className="block text-white" key={index} to={link.link}>
               {link.name}
             </Link>
           ))}
@@ -95,11 +95,11 @@ const Footer = () => {
 
         <div className=" grid gap-3 lg:gap-5  row-start-2 lg:row-start-1 col-start-2 lg:col-start-4 ">
           <div className="lg:hidden">
-            <Link to={routes.pricing}>Pricing</Link>
+            <Link className="text-white" to={routes.pricing}>Pricing</Link>
           </div>
 
           {links3.map((link, index) => (
-            <Link className="block" key={index} to={link.link}>
+            <Link className="block text-white" key={index} to={link.link}>
               {link.name}
             </Link>
           ))}
@@ -109,16 +109,16 @@ const Footer = () => {
           <p className="text-base">Connect With Us</p>
           <div className="flex gap-5 items-center">
             <a href="https://www.facebook.com/Hnginternship/">
-              <FaFacebookF size="20" />
+              <FaFacebookF size="20" style={{color: "white"}} />
             </a>
-            <a href="https://twitter.com/hnginternship">
+            <a href="https://twitter.com/hnginternship" style={{color: "white"}}>
               <FaTwitter size="20" />
             </a>
-            <a href="https://www.instagram.com/hnginternship/">
+            <a href="https://www.instagram.com/hnginternship/" style={{color: "white"}}>
               <FaInstagram size="20" />
             </a>
           </div>
-          <div className={`${styles.lang} hidden lg:flex items-center gap-1 `}>
+          {/* <div className={`${styles.lang} hidden lg:flex items-center gap-1 `}>
             <button>
               <img src={globe} alt="globe" data-tip data-for="register" />
             </button>
@@ -131,9 +131,9 @@ const Footer = () => {
               <option>French</option>
               <option>Spanish</option>
             </select>
-          </div>
+          </div> */}
         </div>
-        <div className={`${styles.lang} lg:hidden flex items-center gap-1 `}>
+        {/* <div className={`${styles.lang} lg:hidden flex items-center gap-1 `}>
           <button>
             <img src={globe} alt="globe" />
           </button>
@@ -143,7 +143,7 @@ const Footer = () => {
             <option>French</option>
             <option>Spanish</option>
           </select>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

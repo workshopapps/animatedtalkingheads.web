@@ -28,6 +28,7 @@ const UploadPodcast = () => {
   });
 
   const onDrop = useCallback((acceptedFiles) => {
+    // const fileName = acceptedFiles[0].name;
     setAudio(acceptedFiles[0]);
     setName(acceptedFiles[0].name);
   }, []);
@@ -82,6 +83,7 @@ const UploadPodcast = () => {
       });
       setUpload(false);
       setUploaded(true);
+      console.log(store.getState());
     } catch (error) {
       setError(error.message);
       setUpload(false);
