@@ -1,6 +1,6 @@
 import Layout from '../../components/UI/Layout';
 import '../sign-in/styles/index.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../../context/AuthContext';
 import { toast } from 'react-toastify';
@@ -11,7 +11,7 @@ const SignIn = () => {
   // const[password,setPassword]=useState("password");
   const navigate = useNavigate();
   // const [error, setError] = useState('')
-  const { facebookSignIn, setUser } = UserAuth();
+  const { setUser } = UserAuth();
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const [formData, setFormData] = useState({
