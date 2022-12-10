@@ -1,6 +1,4 @@
-import { Text } from '../../../../components/UI/Text';
 import '../customize-audio.scss';
-import React, { useState, useEffect, useRef } from 'react';
 import store from '../../../../store/store';
 
 const CustomizeAudio = () => {

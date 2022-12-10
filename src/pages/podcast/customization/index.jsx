@@ -104,13 +104,6 @@ const CustomizeAudio = () => {
   };
 
   const handleClick = async () => {
-    // .then((data) => {
-    //   if (data.data.status === 'PENDING') {
-    //     setStatus(true);
-    //     showModal();
-    //     store.dispatch({ type: 'ADD_PODCAST_VIDEO', payload: data.data });
-    //   } else {
-    //     hideModal();
     try {
       showModal();
       const response = await postData();
@@ -130,27 +123,6 @@ const CustomizeAudio = () => {
       }
     });
   };
-
-  // const getStatus = () => {
-  //   const podcastID = store.getState().cartReducer.podcast_audio._id;
-  //   const url = `https://api.voxclips.hng.tech/animated-videos/ ${podcastID}`;
-
-  //   return axios
-  //     .get(url, {
-  //       headers: {
-  //         Authorization: `Bearer ${bearerToken}`
-  //       }
-  //     })
-  //     .then((data) => {
-  //       if (data.data.status === 'COMPLETED' || data.data.status === 'ERROR') {
-  //         setStatus(false);
-  //       }
-  //       console.log('SUB request', data.data.status);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
 
   const isConclusiveData = (response) => {
     const conclusiveStatuses = ['COMPLETED', 'ERROR'];
