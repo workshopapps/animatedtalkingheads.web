@@ -38,7 +38,12 @@ import { AuthContextProvider } from './context/AuthContext';
 import store from './store/store';
 import DownloadPodcast from './pages/podcast/download';
 import Characters from './pages/podcast/characters';
-import Setting from './pages/settings';
+import Setting from './pages/settings/components/Appearance';
+import SettingsAppearance from "./pages/settings/components/Appearance";
+import SettingsIntegration from "./pages/settings/components/IntegrationAndApps";
+import SettingsCommunity from "./pages/settings/components/Community";
+import SettingsVoxclips from "./pages/settings/components/VoxClips";
+import SettingsAccessibility from "./pages/settings/components/Accessibility";
 import Contact from './pages/contact';
 import UseCases from './pages/use-cases';
 import HowItWorks from './pages/how-it-works';
@@ -89,7 +94,12 @@ function App() {
           <Route path={routes.termsService} element={<TermsOfService />} />
           <Route path={routes.term} element={<Term />} />
           <Route path={routes.policy} element={<Policy />} />
-          <Route path={routes.settings} element={<Setting />} />
+          <Route path={routes.settingsAppearance} element={<SettingsAppearance />} />
+          <Route path={routes.settingsAppearance} element={<SettingsAppearance />} />
+          <Route path={routes.settingsIntegration} element={<SettingsIntegration />} />
+          <Route path={routes.settingsCommunity} element={<SettingsCommunity />} />
+          <Route path={routes.settingsVoxclips} element={<SettingsVoxclips />} />
+          <Route path={routes.settingsAccessibility} element={<SettingsAccessibility />} />
           <Route path={routes.podcastUpload} element={<UploadPodcast />} />
           <Route path={routes.podcastCustomize} element={<Customization />} />
           <Route path={routes.podcastDownload} element={<DownloadPodcast />} />
