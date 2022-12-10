@@ -57,6 +57,8 @@ const UploadPodcast = () => {
     // const url = 'https://upload-api-sample.herokuapp.com/upload_files';
     const url = 'https://api.voxclips.hng.tech/podcasts/upload';
 
+    const bearerToken = localStorage.getItem('token');
+
     const config = {
       onUploadProgress: (progressEvent) => {
         const { loaded, total } = progressEvent;
@@ -68,7 +70,8 @@ const UploadPodcast = () => {
       },
       mode: 'cors',
       headers: {
-        'Content-Type': 'multipart/form-data'
+        'Content-Type': 'multipart/form-data',
+        Authorization: `Bearer ${bearerToken}`
       }
     };
 
@@ -83,7 +86,6 @@ const UploadPodcast = () => {
       });
       setUpload(false);
       setUploaded(true);
-      console.log(store.getState());
     } catch (error) {
       setError(error.message);
       setUpload(false);

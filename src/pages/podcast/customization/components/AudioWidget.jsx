@@ -21,9 +21,6 @@ const CustomizeAudio = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   // const [podcast, setPocast] = useState('');
 
-  // console.log(podcast, 'before audio element is create');
-
-  // console.log(podcast, 'form file', audioElement);
   const getAudioFromStore = () => {
     // If not already playing, start
     const audioPath = store.getState().cartReducer.podcast_audio.file_url;
@@ -42,10 +39,26 @@ const CustomizeAudio = () => {
   const audioRef = useRef(audioElement);
   const intervalRef = useRef();
   // const sceneAray = [bg1, bg2, bg3, bg4, bg5];
-  // console.log(sceneAray.length);
-  const { duration } = audioRef.current;
-  // console.log(duration);
 
+  const { duration } = audioRef.current;
+
+  let endTime;
+  if (duration) {
+    const endTimeHrs = Math.floor(duration / 60);
+    const endTimeMinutes = duration % 60;
+    endTime = endTimeHrs + ':' + Math.floor(endTimeMinutes);
+  }
+
+  const currentAudioTime = audioRef?.current.currentTime;
+  // console.log(currentAudioTime);
+  let startTime;
+  // console.log(startTime);
+  if (currentAudioTime) {
+    const startTimeHrs = Math.floor(currentAudioTime / 60);
+    const startTimeMinutes = duration % 60;
+    console.log(startTimeMinutes);
+    startTime = startTimeHrs + ':' + Math.floor(startTimeMinutes);
+  }
   //   useEffects
 
   useEffect(() => {
@@ -130,8 +143,8 @@ const CustomizeAudio = () => {
           />
 
           <AudioContols
-            duration={duration}
-            currentTime={audioRef?.current.currentTime}
+            duration={endTime}
+            currentTime={startTime}
             rewinder={Rewinds}
             FfwdTo={FfwdTo}
             isPlaying={isPlaying}
@@ -147,7 +160,7 @@ function AudioContols({ isPlaying, onPlayPauseClick, rewinder, FfwdTo, currentTi
   return (
     <div className="controls middle justify-between">
       <div className="start">
-        <p className="start-time">{(!isNaN(currentTime) && Math.floor(currentTime)) || `0:00`}</p>
+        <p className="start-time">{currentTime || `0:00`}</p>
       </div>
       <div className="controls flex items-center space-x-3 ">
         <button onClick={rewinder} className="rewind ">
@@ -165,7 +178,7 @@ function AudioContols({ isPlaying, onPlayPauseClick, rewinder, FfwdTo, currentTi
         </button>
       </div>
       <div className="end">
-        <p className="end-time">{(duration && Math.floor(duration)) || '3:00'}</p>
+        <p className="end-time">{duration || '3:00'}</p>
       </div>
     </div>
   );
