@@ -6,3 +6,4 @@ export const ADD_PODCAST_VIDEO = 'ADD_PODCAST_VIDEO';
 // customize video
 export const ADD_AVATAR = 'ADD_AVATAR';
 export const ADD_BG = 'ADD_BG';
+export const SET_CURRENT_AVATAR = 'SET_CURRENT_AVATAR'; 

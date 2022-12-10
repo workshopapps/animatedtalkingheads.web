@@ -202,7 +202,7 @@ const CustomizeAudio = () => {
                 Video Selection Preview
               </Text>
 
-              <VideoScene speakets={numberOfSpeakers} />
+              <VideoScene speakers={numberOfSpeakers} />
             </div>
 
             {/* current podcast's audio player widget */}

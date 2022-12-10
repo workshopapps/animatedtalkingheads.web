@@ -16,7 +16,7 @@ import { useState } from 'react';
 import store from '../../../../store/store.js';
 // import { setAvatar, setBackgound } from '../../../../store/actions/customizeVideoActions';
 
-const CustomizeAudio = ({ speakets }) => {
+const CustomizeAudio = ({ speakers }) => {
   const [currentScene] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
@@ -40,9 +40,10 @@ const CustomizeAudio = ({ speakets }) => {
 
   const currentHead = store.getState().customizeVideoReducer.currentAvatar;
 
+
   return (
     <div className="scene_wrapper md:p-[20px]  md:px-[55px]">
-      {showModal && <CustomiseCharacterModal closeModal={() => setShowModal(!showModal)} />}
+      {showModal && <CustomiseCharacterModal speakers={speakers} closeModal={() => setShowModal(!showModal)} />}
 
       {/* action panel */}
       <div className="headers">
@@ -103,12 +104,12 @@ const CustomizeAudio = ({ speakets }) => {
           />
           <div className="speakers_container   absolute bottom-20 md:bottom-[70px] left-0 mt-6   middle justify-between w-full">
             <div className="speaker_one_head mx-auto w-[180px] md:w-full centered">
-              <img src={currentHead} alt="" width={'150px'} height={'150px'} />
+              <img src={currentHead[0]} alt="" width={'150px'} height={'150px'} />
             </div>
 
-            {speakets === 2 && (
+            {speakers === 2 && (
               <div className="speaker_two_head w-[180px] md:w-full  centered">
-                <img src={currentHead} alt="" width={'150px'} height={'150px'} />
+                <img src={currentHead[1]} alt="" width={'150px'} height={'150px'} />
               </div>
             )}
           </div>

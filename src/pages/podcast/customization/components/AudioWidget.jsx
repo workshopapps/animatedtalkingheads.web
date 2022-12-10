@@ -1,5 +1,5 @@
 import { Text } from '../../../../components/UI/Text';
-import '../customize-audio.scss';
+//import '../customize-audio.scss';
 // import bg1 from '../../../../assets/images/scenery/background1.png';
 // import bg2 from '../../../../assets/images/scenery/background2.png';
 // import bg3 from '../../../../assets/images/scenery/background3.png';

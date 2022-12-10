@@ -1,80 +1,64 @@
-import AVATAR_LISTS from '../../../../assets/avatars/avatar-list.js';
-import '../customize-audio.scss';
-// import bg1 from '../../../assets/images/scenery/background1.png';
-// import bg2 from '../../../assets/images/scenery/background2.png';
-import face from '../../../../assets/icons/customize-audio/Face.svg';
-// import tone from '../../../../assets/icons/customize-audio/tone.svg';
-// import hair from '../../../../assets/icons/customize-audio/Hair.svg';
 import ran from '../../../../assets/icons/customize-audio/repeat.svg';
 import rotate from '../../../../assets/icons/customize-audio/rotate-left.svg';
-import head from '../../../../assets/avatars/avatars-front/Avatars-03.png';
-import headWhite from '../../../../assets/avatars/avatars-front/Avatars-02.png';
-import head4 from '../../../../assets/avatars/avatars-front/Avatars-04.png';
-import head5 from '../../../../assets/avatars/avatars-front/Avatars-05.png';
 import close from '../../../../assets/icons/close-circle.svg';
-// import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import store from '../../../../store/store.js';
-
 import { useState } from 'react';
-// import { Text } from '../../../components/UI/Text';
 import { Button } from '../../../../components/UI/Button';
-import { useNavigate } from 'react-router-dom';
+import AVATAR_SET_1 from '../../../avatar/avatar.data.set-1.js';
+import AVATAR_SET_2 from '../../../avatar/avatar.data.set-2.js';
+import AVATAR_SET_3 from '../../../avatar/avatar.data.set-3.js';
 
-const CustomiseCharacterModal = ({ closeModal }) => {
-  // const [currentScene, setCurrentScene] = useState(0)
 
-  // console.log(sceneAray.length);
+const CustomiseCharacterModal = ({ closeModal, speakers }) => {
 
-  // function changeScene(mode) {
-  //     // select a random scene from scene array
-  //     switch (mode) {
-  //         case 'next':
-  //             if (currentScene < sceneAray.length - 1) {
-  //                 return setCurrentScene(currentScene + 1)
-  //             } else return
-
-  //         case 'prev':
-  //             if (currentScene > 1) {
-  //                 return setCurrentScene(currentScene - 1)
-  //             } else return
-  //     }
-
-  // }
 
   return (
     <div className="modal_layer centered p-4">
       {/*  */}
-      <div className="card_white w-full md:w-[60%] h-auto relative bg-white rounded-xl slide-up p-4 pt-14 md:p-11">
+      <div className="card_white w-full md:w-[80%] h-auto relative bg-white rounded-xl slide-up p-4 pt-14 md:p-11">
+        
         <button onClick={closeModal} className="icon absolute top-3 right-3">
           <img src={close} alt="" width={'38px'} height={'38px'} />
         </button>
 
-        <div className="overflow-y-scroll  h-[450px]">
-          <HeadCustomCenter closeModal={closeModal} currentSpeaker={1} />
+        <div className="overflow-none h-[90%]">
+          <HeadCustomCenter closeModal={closeModal} speakers={speakers}  />
           {/* <HeadCustomCenter currentSpeaker={2} /> */}
         </div>
+      
       </div>
+    
     </div>
   );
 };
 
-function HeadCustomCenter({ currentSpeaker, closeModal }) {
-  const [headd, setHead] = useState(head);
-  const navigate = useNavigate();
+function HeadCustomCenter({ closeModal, speakers }) {
 
-  //   const currentHead = store.getState().customizeVideoReducer.currentAvatar;
+  const currentHeads = store.getState().customizeVideoReducer.currentAvatar;
+  
+  const [currentSpeaker, setCurrentSpeaker] = useState(0);
+  const [head, setHead] = useState(currentHeads[currentSpeaker]);
 
-  function setCurrentHead(head) {
-    store.dispatch({ type: 'SET_CURRENT_AVATAR', payload: head });
+
+  function setCurrentHeads() {
+    const newHead = [...currentHeads]
+    newHead[currentSpeaker] = head
+    store.dispatch({ type: 'SET_CURRENT_AVATAR', payload: newHead });
     setHead(head);
+    closeModal()
+  }
+
+  function selectSpeaker () {
+    setCurrentSpeaker(currentSpeaker === 0 ? 1 : 0)
+    setHead(currentHeads[currentSpeaker === 0 ? 1 : 0])
   }
 
 
   return (
-    <div className="head-customization-center  w-full p-4 flex flex-col md:flex-row">
+    <div className="head-customization-center  w-full p-4 flex flex-col md:flex-row overscroll-none">
       <div className="head_section text-center p-6  md:w-[40%] border flex  flex-col justify-between">
         <div className="dropdown_box flex justify-end">
-          <div role={'button'} onClick={() => navigate('/avatars')} className="middle space-x-2">
+          {/* <div role={'button'} onClick={() => navigate('/avatars')} className="middle space-x-2">
             <h1 className={'text-blue-500 text-sm'}>View all characters</h1>
             <svg
               width="21"
@@ -91,34 +75,36 @@ function HeadCustomCenter({ currentSpeaker, closeModal }) {
                 strokeLinejoin="round"
               />
             </svg>
-          </div>
+          </div> */}
         </div>
 
         <div className="image  centered ">
-          <img src={headd} alt="" />
+          <img src={head} alt="" />
         </div>
 
-        <h1 className="">speaker {currentSpeaker}</h1>
+        <h1 className="">speaker {currentSpeaker + 1}</h1>
+        { speakers > 1 && <Button onClick={selectSpeaker}>Change Speaker</Button> }
       </div>
 
       <div className="customize_section p-6 w-full  md:w-[80%] border space-y-6">
-        <div className="tools centered">
+        
+        {/* <div className="tools centered">
           <div className="border rounded-xl h-[80px] middle ">
             <div className="tab hover:bg-blue-500 hover:text-white bg-blue-500  ">
               <img src={face} alt="" />
               <h1 className="text text-white">face</h1>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="md:w-[350px] p-3  overflow-x-scroll mx-auto">
-          <div className="heads flex w-[999px]">
-            {AVATAR_LISTS.map((item, index) => (
+        <div className="md:w-full p-3 mx-auto">
+          <div className="heads overflow-y-auto h-[300px]">
+            {[...AVATAR_SET_1, ...AVATAR_SET_2, ...AVATAR_SET_3].map((item, index) => (
               <button
-                onClick={() => setCurrentHead(item)}
+                onClick={() => setHead(item.image)}
                 key={index}
-                className="heades border border-transparent  hover:border-blue-500">
-                <img src={item} alt="" />
+                className="inline heades border border-transparent  hover:border-blue-500">
+                <img className='inline w-20' src={item.image} alt="" width={"100px"} height={"100px"} />
               </button>
             ))}
           </div>
@@ -126,19 +112,19 @@ function HeadCustomCenter({ currentSpeaker, closeModal }) {
 
         <div className="action centered">
           <div className=" space-x-6 middle">
-            <div className="random middle space-x-2">
+            <div className="random middle space-x-2 cursor-pointer">
               <img src={ran} alt="" />
               <h1 className="font-semibold text-blue-500">Random</h1>
             </div>
 
-            <div className="reset middle space-x-2">
+            <div className="reset middle space-x-2 cursor-pointer">
               <img src={rotate} alt="" />
               <h1 className="font-semibold text-blue-500">Reset</h1>
             </div>
           </div>
         </div>
         <div className="button centered">
-          <Button onClick={closeModal} label={'done'} />
+          <Button onClick={setCurrentHeads}> Done  </Button>
         </div>
       </div>
     </div>
