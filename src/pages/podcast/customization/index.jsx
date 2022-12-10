@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { useMutation, useQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import Layout from '../../../components/UI/Layout';
 import { Text } from '../../../components/UI/Text';
 import { Modal } from '../../../components/UI/Modal/Modal';
 import caretRight from '../../../assets/icons/carretRight.svg';
 import styles from './styles.module.scss';
-
-// import SignUpSection from '../../sign-up/SignUp';
 
 import { Link } from 'react-router-dom';
 
@@ -24,7 +22,6 @@ import { setAvatar } from '../../../store/actions/customizeVideoActions';
 import axios from 'axios';
 import AuthWrapper from '../../../components/UI/Auth/AuthWrapper';
 import PropagateLoader from 'react-spinners/PropagateLoader';
-// import { useMutation, useQuery } from '@tanstack/react-query';
 
 const CustomizeAudio = () => {
   const [numberOfSpeakers, setNumbers] = useState(1);
