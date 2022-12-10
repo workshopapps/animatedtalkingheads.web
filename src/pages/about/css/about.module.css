@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 
-.about {
-  display: grid;
-}
-/* .about_child{
-    width: 88%;
-    justify-self: center;
-} */
 
 /* hero */
 
@@ -32,7 +25,6 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-
   text-align: center;
   padding: 3rem 15rem;
 }
@@ -43,7 +35,10 @@
 
 .contentTheme {
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 36px;
+  line-height: 45px;
+  text-align: center;
+  color: #292D32;
   padding-bottom: 1rem;
 }
 
@@ -51,7 +46,6 @@
   display: grid;
   padding: 50px 0px;
   background-color: #171d2e;
-  /* margin-top: 50px; */
 }
 
 .aboutValuesHeading {
@@ -68,9 +62,12 @@
 }
 
 .ValuesText {
-  font-family: 'Mulish', sans-serif;
-  font-size: 1.5rem;
-  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 45px;
+  text-align: center;
+  color: #FFFFFF;
+  max-width: 882px;
 }
 
 .valuesGridSection {
@@ -108,44 +105,6 @@
   font-size: 15px;
   font-family: 'Mulish', sans-serif;
 }
-
-/* about_values */
-
-/* about_story */
-
-/* .aboutStorySection {
-  text-align: center;
-}
-
-.storyGrid {
-  width: 75%;
-  justify-self: center;
-} 
-
-.storyGrid h3 {
-  font-weight: 500;
-  font-size: 15px;
-  margin: 10px 0px;
-  font-family: 'Mulish', sans-serif;
-}
-
-.storyGrid p {
-  color: #292d32;
-  font-family: 'Mulish', sans-serif;
-  font-weight: 600;
-  font-size: 15px;
-}
-
-.storyGrid h5 {
-  color: #292d32;
-  font-family: 'Mulish', sans-serif;
-  font-weight: 500;
-  font-size: 15px;
-  margin: 10px 0px;
-}
-*/
-
-/* about_story */
 
 /* about_team */
 
@@ -262,7 +221,7 @@
   background-repeat: no-repeat;
   background-position: left top, right bottom;
   text-align: center;
-  padding: 3rem;
+  padding: 3rem 0rem;
   width: 100%;
 }
 
@@ -270,7 +229,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 10rem;
+  padding: 0 1rem;
   gap: 2rem;
 }
 
@@ -326,7 +285,7 @@
   }
 
   .aboutBuildBox {
-    padding: 0 2rem;
+    padding: 0 0rem;
   }
 
   .aboutBuildBox h3 {
@@ -370,4 +329,52 @@
   .aboutMissionSection2 {
     margin-top: 300px;
   }
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.aboutContent p {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #292D32;
+  margin-bottom: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .contentHeading {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .contentTheme {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .aboutSection {
+    gap: 2rem;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+
+  .aboutContent p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  .valuesGridSection {
+    padding: 0 10px;
+  }
+
 }
