@@ -21,6 +21,7 @@ import store from '../../../store/store.js';
 import { setAvatar } from '../../../store/actions/customizeVideoActions';
 import LinearProgress from '@mui/material/LinearProgress';
 import axios from 'axios';
+import AuthWrapper from '../../../components/UI/Auth/AuthWrapper';
 // import { useMutation, useQuery } from '@tanstack/react-query';
 
 const CustomizeAudio = () => {
@@ -134,101 +135,103 @@ const CustomizeAudio = () => {
 
   return (
     <Layout>
-      <div className={`customize-audio lg:px-20`}>
-        <div className="breadcrumbs p-3 space-x-1  w-full flex items-center text-sec-500 capitalize md:space-x-3">
-          <Text w={'md'} type={'text4'} cap>
-            <Link to="/">Home</Link>
-          </Text>
-
-          <div className="icon">
-            <img src={caretRight} alt="" />
-          </div>
-          <Text w={'md'} type={'text4'} cap>
-            <Link to="/podcast/upload">Upload</Link>
-          </Text>
-          <div className="icon">
-            <img src={caretRight} alt="" />
-          </div>
-          <Text w={'md'} type={'text4'} cap className={'text-blue-700'}>
-            <Link to="/podcast/customize">customize Upload</Link>
-          </Text>
-        </div>
-
-        <main className="content w-full md:w-[80%]  mx-auto flex my-11 p-2 flex-col items-center">
-          {/* pafe info */}
-          <div className="info text-center  w-[350px] space-y-6 md:space-y-11 ">
-            <Text w={'md'} type={'header2'} cap>
-              Customise Video
+      <AuthWrapper>
+        <div className={`customize-audio lg:px-20`}>
+          <div className="breadcrumbs p-3 space-x-1  w-full flex items-center text-sec-500 capitalize md:space-x-3">
+            <Text w={'md'} type={'text4'} cap>
+              <Link to="/">Home</Link>
             </Text>
 
-            <Text w={'md'} type={'text4'} cap className={'text-sec-400'}>
-              How many speakers are in your podcasts
+            <div className="icon">
+              <img src={caretRight} alt="" />
+            </div>
+            <Text w={'md'} type={'text4'} cap>
+              <Link to="/podcast/upload">Upload</Link>
             </Text>
+            <div className="icon">
+              <img src={caretRight} alt="" />
+            </div>
+            <Text w={'md'} type={'text4'} cap className={'text-blue-700'}>
+              <Link to="/podcast/customize">customize Upload</Link>
+            </Text>
+          </div>
 
-            <div className="speaker-select mx-auto flex justify-center">
-              <div className="middle ">
-                <div
-                  role={'button'}
-                  onClick={() => SpeakersCountHandler('minus')}
-                  className="p-3 centered">
-                  <AiOutlineMinus />
-                </div>
-                <div
-                  onClick={setAV}
-                  className="p-3 middle space-x-3  px-6 border rounded-xl centered">
-                  {Array(numberOfSpeakers)
-                    .fill(1)
-                    .map((item, index) => (
-                      <div key={index} className="icon">
-                        <img src={user} alt="" />
-                      </div>
-                    ))}
-                </div>
-                <div
-                  role={'button'}
-                  onClick={() => SpeakersCountHandler('add')}
-                  className="p-3 centered">
-                  <AiOutlinePlus className={'text-blue-800'} />
+          <main className="content w-full md:w-[80%]  mx-auto flex my-11 p-2 flex-col items-center">
+            {/* pafe info */}
+            <div className="info text-center  w-[350px] space-y-6 md:space-y-11 ">
+              <Text w={'md'} type={'header2'} cap>
+                Customise Video
+              </Text>
+
+              <Text w={'md'} type={'text4'} cap className={'text-sec-400'}>
+                How many speakers are in your podcasts
+              </Text>
+
+              <div className="speaker-select mx-auto flex justify-center">
+                <div className="middle ">
+                  <div
+                    role={'button'}
+                    onClick={() => SpeakersCountHandler('minus')}
+                    className="p-3 centered">
+                    <AiOutlineMinus />
+                  </div>
+                  <div
+                    onClick={setAV}
+                    className="p-3 middle space-x-3  px-6 border rounded-xl centered">
+                    {Array(numberOfSpeakers)
+                      .fill(1)
+                      .map((item, index) => (
+                        <div key={index} className="icon">
+                          <img src={user} alt="" />
+                        </div>
+                      ))}
+                  </div>
+                  <div
+                    role={'button'}
+                    onClick={() => SpeakersCountHandler('add')}
+                    className="p-3 centered">
+                    <AiOutlinePlus className={'text-blue-800'} />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          {/* pafe info */}
+            {/* pafe info */}
 
-          <div className="customization-center  my-4 w-full space-y-3">
-            <Text w={'md'} type={'text4'} cap className={'text-[#666666] text-center md:text-left'}>
-              Video Selection Preview
-            </Text>
+            <div className="customization-center  my-4 w-full space-y-3">
+              <Text w={'md'} type={'text4'} cap className={'text-[#666666] text-center md:text-left'}>
+                Video Selection Preview
+              </Text>
 
-            <VideoScene speakets={numberOfSpeakers} />
-          </div>
-
-          {/* current podcast's audio player widget */}
-          <AudioWidget />
-          {/* current podcast's audio player widget  end*/}
-
-          <div className="customization-center-timestamp w-full my-6 space-y-3"></div>
-        </main>
-
-        {error && <p className="text-red-600 text-center">{error}</p>}
-        <div className="centered w-full my-[5%]">
-          <Button label={'render video'} onClick={get_status}>
-            Render video
-          </Button>
-        </div>
-      </div>
-      {modalOpen && (
-        <Modal onClose={hideModal}>
-          <div className={styles.progressBarBox}>
-            <h5>Your video is rendering...</h5>
-            <div className={styles.progressBar}>
-              <LinearProgress color="success" variant="determinate" value={progress} />
+              <VideoScene speakets={numberOfSpeakers} />
             </div>
-            <button onClick={hideModal}>Cancel</button>
+
+            {/* current podcast's audio player widget */}
+            <AudioWidget />
+            {/* current podcast's audio player widget  end*/}
+
+            <div className="customization-center-timestamp w-full my-6 space-y-3"></div>
+          </main>
+
+          {error && <p className="text-red-600 text-center">{error}</p>}
+          <div className="centered w-full my-[5%]">
+            <Button label={'render video'} onClick={get_status}>
+              Render video
+            </Button>
           </div>
-          <div className={styles.signUpBox}>{/* <SignUpSection /> */}</div>
-        </Modal>
-      )}
+        </div>
+        {modalOpen && (
+          <Modal onClose={hideModal}>
+            <div className={styles.progressBarBox}>
+              <h5>Your video is rendering...</h5>
+              <div className={styles.progressBar}>
+                <LinearProgress color="success" variant="determinate" value={progress} />
+              </div>
+              <button onClick={hideModal}>Cancel</button>
+            </div>
+            <div className={styles.signUpBox}>{/* <SignUpSection /> */}</div>
+          </Modal>
+        )}
+      </AuthWrapper>
     </Layout>
   );
 };

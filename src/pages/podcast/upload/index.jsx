@@ -14,6 +14,7 @@ import store from '../../../store/store';
 import axios from 'axios';
 import { Circle } from 'rc-progress';
 import PageTitle from '../../../components/UI/page-title';
+import AuthWrapper from '../../../components/UI/Auth/AuthWrapper';
 
 const UploadPodcast = () => {
   const [audio, setAudio] = useState(null);
@@ -97,100 +98,102 @@ const UploadPodcast = () => {
 
   return (
     <Layout>
-      <div className="text-center max-w-[1440px] mx-auto   flex flex-col justify-center">
-        <PageTitle title="Upload audio" />
-        <div className="opacity-60 my-5 w-[90%] border rounded-lg bg-[#EFF3F6] border-opacity-20 text-center py-5 px-2  gap-3 flex flex-col mx-auto">
-          <Text label="Over 0.5MB, up to 500MB, 2 Hours max." type="text4" w="sm" />
-          <div className="flex gap-1 justify-center items-center">
-            <span>
-              <img src={musicnote} alt="musicnote" className="max-w-[15px]" />
-            </span>
+      <AuthWrapper>
+        <div className="text-center max-w-[1440px] mx-auto   flex flex-col justify-center">
+          <PageTitle title="Upload audio" />
+          <div className="opacity-60 my-5 w-[90%] border rounded-lg bg-[#EFF3F6] border-opacity-20 text-center py-5 px-2  gap-3 flex flex-col mx-auto">
+            <Text label="Over 0.5MB, up to 500MB, 2 Hours max." type="text4" w="sm" />
+            <div className="flex gap-1 justify-center items-center">
+              <span>
+                <img src={musicnote} alt="musicnote" className="max-w-[15px]" />
+              </span>
 
-            <Text label="File Format: mp3, wav or m4a" type="text4" w="sm" />
-          </div>
-        </div>
-
-        <div
-          {...getRootProps()}
-          className={` w-[80%]  sm:w-[70%] md:w-[60%] lg:w-[70%] cursor-pointer  my-5 py-3 border-[3px] bg-[#FFFFFF] rounded-lg border-dashed border-opacity-20 mx-auto ${
-            error && 'border-red-600 opacity-100'
-          }`}>
-          <div className="flex justify-center">
-            {uploaded ? (
-              <div>
-                <img
-                  src={correct}
-                  alt="microphone podcast"
-                  className="w-[30px] md:w-[50px] text-[#2563eb]"
-                />
-              </div>
-            ) : (
-              <div>
-                <img src={microphone} alt="microphone podcast" className="w-[30px] md:w-[100px]" />
-              </div>
-            )}
+              <Text label="File Format: mp3, wav or m4a" type="text4" w="sm" />
+            </div>
           </div>
 
-          {!uploaded && (
-            <div>
-              {!upload ? (
-                <div></div>
+          <div
+            {...getRootProps()}
+            className={` w-[80%]  sm:w-[70%] md:w-[60%] lg:w-[70%] cursor-pointer  my-5 py-3 border-[3px] bg-[#FFFFFF] rounded-lg border-dashed border-opacity-20 mx-auto ${
+              error && 'border-red-600 opacity-100'
+            }`}>
+            <div className="flex justify-center">
+              {uploaded ? (
+                <div>
+                  <img
+                    src={correct}
+                    alt="microphone podcast"
+                    className="w-[30px] md:w-[50px] text-[#2563eb]"
+                  />
+                </div>
               ) : (
-                <div className="flex flex-col justify-center gap-5">
-                  <Text label="Your file is uploading" type="text2" w="sm" />
-                  {percentage > 0 && (
-                    <div className=" flex justify-center">
-                      <Circle
-                        percent={percentage}
-                        trailWidth={5}
-                        strokeWidth={5}
-                        strokeColor="#2563eb"
-                        className=" w-[60px] lg:w-[70px]"
-                      />
-                    </div>
-                  )}
+                <div>
+                  <img src={microphone} alt="microphone podcast" className="w-[30px] md:w-[100px]" />
                 </div>
               )}
             </div>
-          )}
 
-          {uploaded && (
-            <div className="flex justify-center mt-11 gap-5 ">
-              <img src={music} alt="microphone podcast" className="w-[20px] md:w-[30px]" />
-            </div>
-          )}
-          <div className="flex flex-col justify-center gap-3 items-center mb-20">
-            <div className=" mt-10">
-              {name ? (
-                <Text label={name} type="text4" w="sm" />
-              ) : (
-                <Text label="Drag and Drop Podcast Audio" type="text2" w="sm" />
-              )}
-            </div>
-            <div>
-              <input {...getInputProps({ id: 'mine', accept: 'audio/*' })} />
+            {!uploaded && (
               <div>
-                <p>
-                  or{' '}
-                  <span className=" text-[#2563eb] cursor-pointer">
-                    {audio ? 'change file' : 'browse'}
-                  </span>
-                </p>
+                {!upload ? (
+                  <div></div>
+                ) : (
+                  <div className="flex flex-col justify-center gap-5">
+                    <Text label="Your file is uploading" type="text2" w="sm" />
+                    {percentage > 0 && (
+                      <div className=" flex justify-center">
+                        <Circle
+                          percent={percentage}
+                          trailWidth={5}
+                          strokeWidth={5}
+                          strokeColor="#2563eb"
+                          className=" w-[60px] lg:w-[70px]"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {uploaded && (
+              <div className="flex justify-center mt-11 gap-5 ">
+                <img src={music} alt="microphone podcast" className="w-[20px] md:w-[30px]" />
+              </div>
+            )}
+            <div className="flex flex-col justify-center gap-3 items-center mb-20">
+              <div className=" mt-10">
+                {name ? (
+                  <Text label={name} type="text4" w="sm" />
+                ) : (
+                  <Text label="Drag and Drop Podcast Audio" type="text2" w="sm" />
+                )}
+              </div>
+              <div>
+                <input {...getInputProps({ id: 'mine', accept: 'audio/*' })} />
+                <div>
+                  <p>
+                    or{' '}
+                    <span className=" text-[#2563eb] cursor-pointer">
+                      {audio ? 'change file' : 'browse'}
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
+            {error && <p className="text-red-700">{error}</p>}
           </div>
-          {error && <p className="text-red-700">{error}</p>}
+          {uploaded ? (
+            <Link to="/podcast/customize">
+              <div className="my-5 justify-center flex">
+                <Button label="Start Creating"> Start Creating</Button>
+              </div>
+            </Link>
+          ) : (
+            <div className="h-[115px]"></div>
+          )}
         </div>
-        {uploaded ? (
-          <Link to="/podcast/customize">
-            <div className="my-5 justify-center flex">
-              <Button label="Start Creating"> Start Creating</Button>
-            </div>
-          </Link>
-        ) : (
-          <div className="h-[115px]"></div>
-        )}
-      </div>
+      </AuthWrapper>
     </Layout>
   );
 };

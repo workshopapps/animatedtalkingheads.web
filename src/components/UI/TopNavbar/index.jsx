@@ -110,7 +110,10 @@ const TopNavbar = () => {
           {user ? (
             <button
             className="hover:border-sec-600 focus:bg-white  hover:text-sec-600 text-blue-600  border rounded-lg border-blue-600 px-4 py-2 md:px-7"
-              style={{alignSelf: 'center' }}
+              style={{
+                alignSelf: 'center',
+                marginRight: '1rem' 
+              }}
               onClick={handleSignOut}>
               Sign out {/* {user?.displayName} */}
             </button>
@@ -120,7 +123,7 @@ const TopNavbar = () => {
               className="hover:border-sec-600 focus:bg-white  hover:text-sec-600 text-blue-600  border rounded-lg border-blue-600 px-4 py-2 md:px-7"
               style={{
                 alignSelf: 'center',
-                marginRight: '1.875rem'
+                marginRight: '1rem'
               }}>
               Sign In
             </Link>
