@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 // import { UserAuth  } from '../../context/AuthContext';
 import {  toast } from 'react-toastify';
-import { useGoogleLogin } from '@react-oauth/google';
-import axios from 'axios';
+// import { useGoogleLogin } from '@react-oauth/google';
+// import axios from 'axios';
 
 const SignUpSection = (props) => {
     const navigate = useNavigate()
@@ -108,69 +108,69 @@ const SignUpSection = (props) => {
         });
     };
 
-    const handleGoogleSignIn = useGoogleLogin({
+  //   const handleGoogleSignIn = useGoogleLogin({
     
-      onSuccess: async response => {
-        try{
-        const res  = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
-          headers: {
-            "Authorization": `Bearer ${response.access_token}`
-          }
-        })
-        // console.log(res.data)
-        const user = res.data;
-        await fetch("/api/users", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(user),
-        })
-          .then((res) => {
-            if(res.ok) {
-              toast.info('Signing in', {
-                position: toast.POSITION.BOTTOM_RIGHT,
-                autoClose: 1000
-              });
-              return res.json();
-            } else {
-              toast.error('An error occurred, please sign in with your email and password', {
-                position: toast.POSITION.BOTTOM_RIGHT
-              });
-              return;
-            }
-          });
-      } catch(err){
-        console.log(err)
-    }
+  //     onSuccess: async response => {
+  //       try{
+  //       const res  = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
+  //         headers: {
+  //           "Authorization": `Bearer ${response.access_token}`
+  //         }
+  //       })
+  //       // console.log(res.data)
+  //       const user = res.data;
+  //       await fetch("/api/users", {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(user),
+  //       })
+  //         .then((res) => {
+  //           if(res.ok) {
+  //             toast.info('Signing in', {
+  //               position: toast.POSITION.BOTTOM_RIGHT,
+  //               autoClose: 1000
+  //             });
+  //             return res.json();
+  //           } else {
+  //             toast.error('An error occurred, please sign in with your email and password', {
+  //               position: toast.POSITION.BOTTOM_RIGHT
+  //             });
+  //             return;
+  //           }
+  //         });
+  //     } catch(err){
+  //       console.log(err)
+  //   }
   
-  }
+  // }
   
-    })
+  //   })
   
-    const handleFacebookSignIn = async () => {
-      // try {
-      //   await facebookSignIn();
-      //   navigate('/');
-      // } catch (error) {
-      //   console.log(error);
-      // }
-      toast.error('Please sign in with your email and password', {
-        position: toast.POSITION.BOTTOM_RIGHT
-      });
-    };
+    // const handleFacebookSignIn = async () => {
+    //   // try {
+    //   //   await facebookSignIn();
+    //   //   navigate('/');
+    //   // } catch (error) {
+    //   //   console.log(error);
+    //   // }
+    //   toast.error('Please sign in with your email and password', {
+    //     position: toast.POSITION.BOTTOM_RIGHT
+    //   });
+    // };
   
-    const handleAppleSignIn = async () => {
-      // try {
-      //   await facebookSignIn();
-      //   navigate('/');
-      // } catch (error) {
-      //   console.log(error);
-      // }
-      toast.error('Please sign in with your email and password', {
-        position: toast.POSITION.BOTTOM_RIGHT
-      });
-    };
+    // const handleAppleSignIn = async () => {
+    //   // try {
+    //   //   await facebookSignIn();
+    //   //   navigate('/');
+    //   // } catch (error) {
+    //   //   console.log(error);
+    //   // }
+    //   toast.error('Please sign in with your email and password', {
+    //     position: toast.POSITION.BOTTOM_RIGHT
+    //   });
+    // };
 
     //   useEffect(() => {
     //   if (userToken != '') {
@@ -246,10 +246,10 @@ const SignUpSection = (props) => {
                 </button>
             </div>
 
-            <button className='sign-up-btn'>Sign Up</button>
+            <button style={{marginBottom: '2rem'}} className='sign-up-btn'>Sign Up</button>
           </form>
-          <p className='optional-par'> Or Sign Up With </p>
-          <div className='optional-sign-up'>
+          {/* <p className='optional-par'> Or Sign Up With </p> */}
+          {/* <div className='optional-sign-up'>
             <button onClick={handleGoogleSignIn} className='third-auth google'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#EA4335" d="M12.16 7.093c1.503 0 2.516.65 3.094 1.191L17.51 6.08C16.125 4.791 14.321 4 12.161 4a7.994 7.994 0 0 0-7.147 4.409L7.6 10.418c.65-1.93 2.445-3.325 4.56-3.325Z"/><path fill="#4285F4" d="M19.84 12.178c0-.658-.053-1.138-.169-1.636h-7.51v2.969h4.408c-.089.738-.569 1.849-1.635 2.595l2.524 1.956c1.511-1.396 2.382-3.449 2.382-5.885Z"/><path fill="#FBBC05" d="M7.609 13.582A4.925 4.925 0 0 1 7.342 12c0-.551.098-1.085.258-1.582l-2.587-2.01A8.007 8.007 0 0 0 4.16 12c0 1.289.311 2.507.853 3.59l2.596-2.008Z"/><path fill="#34A853" d="M12.161 20c2.16 0 3.973-.711 5.298-1.938l-2.524-1.956c-.676.472-1.583.8-2.774.8-2.115 0-3.91-1.395-4.55-3.324l-2.588 2.009C6.34 18.204 9.033 20 12.161 20Z"/></svg>
                 <p className='third-auth-name'>Google</p>
@@ -264,7 +264,7 @@ const SignUpSection = (props) => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#1877F2" d="M20.055 12.027A8.027 8.027 0 0 0 12.027 4a8.029 8.029 0 0 0-1.254 15.957v-5.61H8.735v-2.32h2.038V10.26c0-2.012 1.198-3.123 3.032-3.123.878 0 1.797.156 1.797.156v1.976h-1.013c-.997 0-1.307.62-1.307 1.254v1.505h2.226l-.356 2.32h-1.87v5.61a8.029 8.029 0 0 0 6.773-7.93Z"/><path fill="#fff" d="m15.152 14.348.355-2.32h-2.226v-1.506c0-.635.31-1.254 1.308-1.254H15.6V7.293s-.918-.157-1.796-.157c-1.835 0-3.032 1.111-3.032 3.123v1.768H8.734v2.32h2.039v5.61a8.086 8.086 0 0 0 2.508 0v-5.61h1.87Z"/></svg>
                 <p className='third-auth-name'>Facebook</p>
             </button>
-          </div>
+          </div> */}
           <p className='login-par'> Already have a Voxclips account? <Link to="/sign-in"> Log In </Link></p>
         </div>
   );
