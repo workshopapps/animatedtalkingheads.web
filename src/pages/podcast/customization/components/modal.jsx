@@ -1,3 +1,4 @@
+import AVATAR_LISTS from '../../../../assets/avatars/avatar-list.js';
 import '../customize-audio.scss';
 // import bg1 from '../../../assets/images/scenery/background1.png';
 // import bg2 from '../../../assets/images/scenery/background2.png';
@@ -68,24 +69,6 @@ function HeadCustomCenter({ currentSpeaker, closeModal }) {
     setHead(head);
   }
 
-  const headArray = [
-    head,
-    headWhite,
-    head4,
-    head5,
-    head,
-    headWhite,
-    head4,
-    head5,
-    head,
-    headWhite,
-    head4,
-    head5,
-    head,
-    headWhite,
-    head4,
-    head5
-  ];
 
   return (
     <div className="head-customization-center  w-full p-4 flex flex-col md:flex-row">
@@ -130,7 +113,7 @@ function HeadCustomCenter({ currentSpeaker, closeModal }) {
 
         <div className="md:w-[350px] p-3  overflow-x-scroll mx-auto">
           <div className="heads flex w-[999px]">
-            {headArray.map((item, index) => (
+            {AVATAR_LISTS.map((item, index) => (
               <button
                 onClick={() => setCurrentHead(item)}
                 key={index}
@@ -154,7 +137,6 @@ function HeadCustomCenter({ currentSpeaker, closeModal }) {
             </div>
           </div>
         </div>
-
         <div className="button centered">
           <Button onClick={closeModal} label={'done'} />
         </div>
