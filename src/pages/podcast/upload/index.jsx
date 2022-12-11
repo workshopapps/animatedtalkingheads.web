@@ -69,7 +69,6 @@ const UploadPodcast = () => {
           setPercentage(uploadStatus);
         }
       },
-      mode: 'cors',
       headers: {
         'Content-Type': 'multipart/form-data',
         Authorization: `Bearer ${bearerToken}`
