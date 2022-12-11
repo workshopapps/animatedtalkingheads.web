@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import Layout from '../../../components/UI/Layout';
 import { Text } from '../../../components/UI/Text';
@@ -6,7 +6,7 @@ import { Modal } from '../../../components/UI/Modal/Modal';
 import caretRight from '../../../assets/icons/carretRight.svg';
 import styles from './styles.module.scss';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import user from '../../../assets/icons/user.svg';
 import './customize-audio.scss';
@@ -27,8 +27,16 @@ const CustomizeAudio = () => {
   const [numberOfSpeakers, setNumbers] = useState(1);
   // MODAL
   const [modalOpen, setModalOpen] = useState(false);
-  const [error,] = useState(false);
-  //const [status, setStatus] = useState(false);
+  const [error] = useState(false);
+  const [status, setStatus] = useState('');
+  // const [firstRender, setFirstRender] = useState(true);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (status === 'COMPLETED') return navigate('/podcast/download');
+    console.log(status);
+  }, [status]);
 
   const showModal = () => {
     setModalOpen(true);
@@ -105,6 +113,7 @@ const CustomizeAudio = () => {
       showModal();
       const response = await postData();
       store.dispatch({ type: 'ADD_PODCAST_VIDEO', payload: response.data });
+      setStatus(response.data.status);
     } catch (err) {
       console.log({ err });
     }
@@ -118,7 +127,7 @@ const CustomizeAudio = () => {
       headers: {
         Authorization: `Bearer ${bearerToken}`
       }
-    });
+    }).then;
   };
 
   const isConclusiveData = (response) => {
