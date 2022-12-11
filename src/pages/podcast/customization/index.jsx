@@ -113,7 +113,7 @@ const CustomizeAudio = () => {
       showModal();
       const response = await postData();
       store.dispatch({ type: 'ADD_PODCAST_VIDEO', payload: response.data });
-      setStatus(response.data.status);
+      setStatus(response.data?.status);
     } catch (err) {
       console.log({ err });
     }
@@ -132,7 +132,7 @@ const CustomizeAudio = () => {
 
   const isConclusiveData = (response) => {
     const conclusiveStatuses = ['COMPLETED', 'ERROR'];
-    return response && conclusiveStatuses.includes(response.data.status);
+    return response && conclusiveStatuses.includes(response.data?.status);
   };
 
   // const stopPolling = () => {
