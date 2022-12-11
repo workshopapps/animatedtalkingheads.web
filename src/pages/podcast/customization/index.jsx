@@ -27,8 +27,8 @@ const CustomizeAudio = () => {
   const [numberOfSpeakers, setNumbers] = useState(1);
   // MODAL
   const [modalOpen, setModalOpen] = useState(false);
-  const [error, setError] = useState(false);
-  const [status, setStatus] = useState(false);
+  const [error,] = useState(false);
+  //const [status, setStatus] = useState(false);
 
   const showModal = () => {
     setModalOpen(true);
@@ -131,7 +131,7 @@ const CustomizeAudio = () => {
   //   return false;
   // };
 
-  const { isLoading, data, isError, isFetching } = useQuery(['podcast'], getStatus, {
+  useQuery(['podcast'], getStatus, {
     refetchInterval: (response) => {
       return isConclusiveData(response) ? false : 10000;
     }
@@ -211,7 +211,7 @@ const CustomizeAudio = () => {
                 Video Selection Preview
               </Text>
 
-              <VideoScene speakets={numberOfSpeakers} />
+              <VideoScene speakers={numberOfSpeakers} />
             </div>
 
             {/* current podcast's audio player widget */}

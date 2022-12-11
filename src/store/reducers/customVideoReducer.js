@@ -5,7 +5,7 @@ const initialState = {
   numberOfSpeakers: 0,
   avatarType: '',
   backgroundType: '',
-  currentAvatar: head
+  currentAvatar: [head, head]
 };
 
 const customizeVideoReducer = (state = initialState, { type, payload } = {}) => {
