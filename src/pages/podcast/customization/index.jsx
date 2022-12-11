@@ -5,23 +5,19 @@ import { Text } from '../../../components/UI/Text';
 import { Modal } from '../../../components/UI/Modal/Modal';
 import caretRight from '../../../assets/icons/carretRight.svg';
 import styles from './styles.module.scss';
-
 import { Link } from 'react-router-dom';
-
 import user from '../../../assets/icons/user.svg';
 import './customize-audio.scss';
 import VideoScene from './components/VideoScene';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-
 import { Button } from '../../../components/UI/Button';
-
 import AudioWidget from './components/AudioWidget';
-
 import store from '../../../store/store.js';
 import { setAvatar } from '../../../store/actions/customizeVideoActions';
 import axios from 'axios';
 import AuthWrapper from '../../../components/UI/Auth/AuthWrapper';
 import PropagateLoader from 'react-spinners/PropagateLoader';
+
 
 const CustomizeAudio = () => {
   const [numberOfSpeakers, setNumbers] = useState(1);
@@ -29,6 +25,11 @@ const CustomizeAudio = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [error,] = useState(false);
   //const [status, setStatus] = useState(false);
+
+  const currentBackground = store.getState().customizeVideoReducer.currentBackground;
+
+  console.log("-----: ", currentBackground)
+
 
   const showModal = () => {
     setModalOpen(true);
@@ -85,13 +86,12 @@ const CustomizeAudio = () => {
   const podcast_id = store.getState().cartReducer.podcast_audio._id;
 
   const postData = async () => {
-    //console.log()
     const base_url = 'https://api.voxclips.hng.tech/podcasts/';
     const url = `${base_url}${podcast_id}/generate-video`;
     console.log({ url });
     const headers = { Authorization: `Bearer ${bearerToken}` };
     const data = {
-      bg_path: '01',
+      bg_path: currentBackground.id,
       avater: {
         a: '03',
         b: '01'
