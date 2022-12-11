@@ -56,7 +56,7 @@ const UploadPodcast = () => {
 
     // This is a temporary upload endpoint
     // const url = 'https://upload-api-sample.herokuapp.com/upload_files';
-    const url = 'https://api.voxclips.hng.tech/podcasts/upload';
+    const url = 'https://api.voxclips.hng.tech/podcasts/uploa';
 
     const bearerToken = localStorage.getItem('token');
 
@@ -87,7 +87,8 @@ const UploadPodcast = () => {
       setUpload(false);
       setUploaded(true);
     } catch (error) {
-      setError(error.message);
+      // setError(error.message)
+      setError("We couldn't upload your podcast. Please try again.");
       setUpload(false);
       setAudio(false);
       setUploaded(false);
@@ -127,7 +128,11 @@ const UploadPodcast = () => {
                 </div>
               ) : (
                 <div>
-                  <img src={microphone} alt="microphone podcast" className="w-[30px] md:w-[100px]" />
+                  <img
+                    src={microphone}
+                    alt="microphone podcast"
+                    className="w-[30px] md:w-[100px]"
+                  />
                 </div>
               )}
             </div>
