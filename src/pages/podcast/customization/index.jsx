@@ -133,22 +133,34 @@ const CustomizeAudio = () => {
     });
   };
 
-  const isConclusiveData = (response) => {
-    const conclusiveStatuses = ['COMPLETED', 'ERROR'];
-    return response && conclusiveStatuses.includes(response.data?.status);
+  const onPollingRequestSuccess = (response) => {
+    const ERROR = 'ERROR';
+    const COMPLETED = 'COMPLETED';
+
+    if (response?.data?.status === ERROR) {
+      setPollingInterval(false);
+      setStatus('ERROR');
+    }
+
+    if (response?.data?.status === COMPLETED) {
+      setPollingInterval(false);
+      navigate('/podcast/download');
+    }
   };
 
-  // const stopPolling = () => {
-  //   setStatus(false);
-  //   return false;
-  // };
-
-  useQuery(['podcast'], getStatus, {
-    refetchInterval: (response) => {
-      return isConclusiveData(response) ? false : 10000;
-    }
-    //(response) => (isConclusiveData(response) ? stopPolling() : 100000)
+  useQuery('get-podcast-status', getStatus, {
+    refetchInterval: pollInterval,
+    onSuccess: onPollingRequestSuccess
   });
+  const handleClose = () => {
+    hideModal();
+    setStatus('');
+  };
+  const handleCancel = () => {
+    hideModal();
+    setPollingInterval(false);
+    setStatus('');
+  };
 
   return (
     <Layout>
