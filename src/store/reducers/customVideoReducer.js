@@ -1,11 +1,17 @@
-import { ADD_AVATAR, ADD_BG } from '../actionsTypes/actionTypes';
-import head from '../../assets/avatars/avatars-front/Avatars-03.png';
+import {
+  ADD_AVATAR,
+  ADD_BG,
+  SET_CURRENT_AVATAR,
+  SET_CURRENT_BACKGROUND
+} from '../actionsTypes/actionTypes';
+import { avatars, scenes } from '../../pages/podcast/customization/data';
 
 const initialState = {
   numberOfSpeakers: 0,
   avatarType: '',
   backgroundType: '',
-  currentAvatar: [head, head]
+  currentAvatar: [avatars[0], avatars[3], avatars[2]],
+  currentBackground: scenes[0]
 };
 
 const customizeVideoReducer = (state = initialState, { type, payload } = {}) => {
@@ -22,10 +28,15 @@ const customizeVideoReducer = (state = initialState, { type, payload } = {}) => 
         backgroundType: payload
       };
 
-    case 'SET_CURRENT_AVATAR':
+    case SET_CURRENT_AVATAR:
       return {
         ...state,
         currentAvatar: payload
+      };
+    case SET_CURRENT_BACKGROUND:
+      return {
+        ...state,
+        currentBackground: payload
       };
     default:
       return state;
