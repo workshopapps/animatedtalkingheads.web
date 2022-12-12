@@ -29,14 +29,11 @@ const CustomizeAudio = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [error] = useState(false);
   const [status, setStatus] = useState('');
+  const [pollInterval, setPollingInterval] = useState(false);
+  const [podcastVideoId, setPodcastVideoId] = useState('');
   // const [firstRender, setFirstRender] = useState(true);
 
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (status === 'COMPLETED') return navigate('/podcast/download');
-    console.log(status);
-  }, [status]);
 
   const showModal = () => {
     setModalOpen(true);
@@ -92,11 +89,10 @@ const CustomizeAudio = () => {
   const bearerToken = localStorage.getItem('token');
   const podcast_id = store.getState().cartReducer.podcast_audio._id;
 
-  const postData = async () => {
-    //console.log()
+  const postData = () => {
     const base_url = 'https://api.voxclips.hng.tech/podcasts/';
     const url = `${base_url}${podcast_id}/generate-video`;
-    console.log({ url });
+
     const headers = { Authorization: `Bearer ${bearerToken}` };
     const data = {
       bg_path: '01',
@@ -105,8 +101,18 @@ const CustomizeAudio = () => {
         b: '01'
       }
     };
-    return await axios.post(url, data, { headers: headers });
+    return axios.post(url, data, { headers: headers });
   };
+
+  const { refetch } = useQuery('render-video', postData, {
+    enabled: false,
+    onSuccess: (response) => {
+      console.log(response.data);
+      store.dispatch({ type: 'ADD_PODCAST_VIDEO', payload: response.data });
+      setPodcastVideoId(response.data._id);
+      setPollingInterval(10000);
+    }
+  });
 
   const handleClick = async () => {
     try {
