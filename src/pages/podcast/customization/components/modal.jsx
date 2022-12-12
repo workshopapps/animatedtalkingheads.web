@@ -4,9 +4,8 @@ import close from '../../../../assets/icons/close-circle.svg';
 import store from '../../../../store/store.js';
 import { useState } from 'react';
 import { Button } from '../../../../components/UI/Button';
-import AVATAR_SET_1 from '../../../avatar/avatar.data.set-1.js';
-import AVATAR_SET_2 from '../../../avatar/avatar.data.set-2.js';
-import AVATAR_SET_3 from '../../../avatar/avatar.data.set-3.js';
+import { avatars } from '../data';
+import { SET_CURRENT_AVATAR } from '../../../../store/actionsTypes/actionTypes';
 
 
 const CustomiseCharacterModal = ({ closeModal, speakers }) => {
@@ -14,7 +13,7 @@ const CustomiseCharacterModal = ({ closeModal, speakers }) => {
 
   return (
     <div className="modal_layer centered p-4">
-      {/*  */}
+
       <div className="card_white w-full md:w-[80%] h-auto relative bg-white rounded-xl slide-up p-4 pt-14 md:p-11">
         
         <button onClick={closeModal} className="icon absolute top-3 right-3">
@@ -23,7 +22,6 @@ const CustomiseCharacterModal = ({ closeModal, speakers }) => {
 
         <div className="overflow-none h-[90%]">
           <HeadCustomCenter closeModal={closeModal} speakers={speakers}  />
-          {/* <HeadCustomCenter currentSpeaker={2} /> */}
         </div>
       
       </div>
@@ -43,7 +41,7 @@ function HeadCustomCenter({ closeModal, speakers }) {
   function setCurrentHeads() {
     const newHead = [...currentHeads]
     newHead[currentSpeaker] = head
-    store.dispatch({ type: 'SET_CURRENT_AVATAR', payload: newHead });
+    store.dispatch({ type: SET_CURRENT_AVATAR, payload: newHead });
     setHead(head);
     closeModal()
   }
@@ -79,7 +77,7 @@ function HeadCustomCenter({ closeModal, speakers }) {
         </div>
 
         <div className="image  centered ">
-          <img src={head} alt="" />
+          <img src={head.image} alt="" />
         </div>
 
         <h1 className="">speaker {currentSpeaker + 1}</h1>
@@ -97,13 +95,13 @@ function HeadCustomCenter({ closeModal, speakers }) {
           </div>
         </div> */}
 
-        <div className="md:w-full p-3 mx-auto">
-          <div className="heads overflow-y-auto h-[300px]">
-            {[...AVATAR_SET_1, ...AVATAR_SET_2, ...AVATAR_SET_3].map((item, index) => (
+        <div className="md:w-full h-[200px] p-3  flex flex-col items-center">
+          <div className="heads">
+            {avatars.map((item, index) => (
               <button
-                onClick={() => setHead(item.image)}
+                onClick={() => setHead(item)}
                 key={index}
-                className="inline heades border border-transparent  hover:border-blue-500">
+                className="inline heades border border-transparent hover:border-blue-500">
                 <img className='inline w-20' src={item.image} alt="" width={"100px"} height={"100px"} />
               </button>
             ))}

@@ -5,23 +5,20 @@ import { Text } from '../../../components/UI/Text';
 import { Modal } from '../../../components/UI/Modal/Modal';
 import caretRight from '../../../assets/icons/carretRight.svg';
 import styles from './styles.module.scss';
-
 import { Link, useNavigate } from 'react-router-dom';
-
 import user from '../../../assets/icons/user.svg';
 import './customize-audio.scss';
 import VideoScene from './components/VideoScene';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-
 import { Button } from '../../../components/UI/Button';
-
 import AudioWidget from './components/AudioWidget';
-
 import store from '../../../store/store.js';
 import { setAvatar } from '../../../store/actions/customizeVideoActions';
 import axios from 'axios';
 import AuthWrapper from '../../../components/UI/Auth/AuthWrapper';
 import PropagateLoader from 'react-spinners/PropagateLoader';
+import { formatId } from './data';
+
 
 const CustomizeAudio = () => {
   const [numberOfSpeakers, setNumbers] = useState(1);
@@ -37,6 +34,9 @@ const CustomizeAudio = () => {
     if (status === 'COMPLETED') return navigate('/podcast/download');
     console.log(status);
   }, [status]);
+
+  const currentAvatar = store.getState().customizeVideoReducer.currentAvatar;
+  const currentBackground = store.getState().customizeVideoReducer.currentBackground;
 
   const showModal = () => {
     setModalOpen(true);
@@ -65,44 +65,20 @@ const CustomizeAudio = () => {
     }
   }
 
-  // render video from api
-  // const RenderVideo = async () => {
-  //   const videoObject = {
-  //     head_file_path: store.getState().customizeVideoReducer.avatarType,
-  //     scene_file_path: store.getState().customizeVideoReducer.backgroundType,
-  //     id: store.getState().cartReducer.podcast_audio.user_id
-  //   };
-
-  //   await fetch('https://api.voxlips.hng.tech/', {
-  //     method: 'POST',
-  //     mode: 'cors',
-  //     body: videoObject
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data, 'from video object upload');
-  //     })
-  //     .catch((err) => {
-  //       console.log(err.message, 'error from video object');
-  //     });
-  // };
-
-  // generate from api
 
   const bearerToken = localStorage.getItem('token');
   const podcast_id = store.getState().cartReducer.podcast_audio._id;
 
   const postData = async () => {
-    //console.log()
     const base_url = 'https://api.voxclips.hng.tech/podcasts/';
     const url = `${base_url}${podcast_id}/generate-video`;
-    console.log({ url });
     const headers = { Authorization: `Bearer ${bearerToken}` };
     const data = {
-      bg_path: '01',
+      bg_path: currentBackground.id,
       avater: {
-        a: '03',
-        b: '01'
+        A: formatId(currentAvatar[0].id, 0),
+        B: numberOfSpeakers > 1 ? formatId(currentAvatar[1].id, 1) : undefined,
+        C: numberOfSpeakers > 2 ? formatId(currentAvatar[2].id, 2) : undefined,
       }
     };
     return await axios.post(url, data, { headers: headers });
