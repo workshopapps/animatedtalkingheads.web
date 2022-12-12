@@ -116,24 +116,21 @@ const CustomizeAudio = () => {
 
   const handleClick = async () => {
     try {
+      refetch();
       showModal();
-      const response = await postData();
-      store.dispatch({ type: 'ADD_PODCAST_VIDEO', payload: response.data });
-      setStatus(response.data?.status);
     } catch (err) {
       console.log({ err });
     }
   };
 
-  const getStatus = async () => {
-    const podcastID = store.getState().cartReducer.podcast_video._id;
-    const url = `https://api.voxclips.hng.tech/animated-videos/${podcastID}`;
+  const getStatus = () => {
+    const url = `https://api.voxclips.hng.tech/animated-videos/${podcastVideoId}`;
 
-    return await axios.get(url, {
+    return axios.get(url, {
       headers: {
         Authorization: `Bearer ${bearerToken}`
       }
-    }).then;
+    });
   };
 
   const isConclusiveData = (response) => {
