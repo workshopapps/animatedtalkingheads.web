@@ -19,7 +19,6 @@ import AuthWrapper from '../../../components/UI/Auth/AuthWrapper';
 import PropagateLoader from 'react-spinners/PropagateLoader';
 import { formatId } from './data';
 
-
 const CustomizeAudio = () => {
   const [numberOfSpeakers, setNumbers] = useState(1);
   // MODAL
@@ -67,7 +66,6 @@ const CustomizeAudio = () => {
     }
   }
 
-
   const bearerToken = localStorage.getItem('token');
   const podcast_id = store.getState().cartReducer.podcast_audio._id;
 
@@ -81,7 +79,7 @@ const CustomizeAudio = () => {
       avater: {
         A: formatId(currentAvatar[0].id, 0),
         B: numberOfSpeakers > 1 ? formatId(currentAvatar[1].id, 1) : undefined,
-        C: numberOfSpeakers > 2 ? formatId(currentAvatar[2].id, 2) : undefined,
+        C: numberOfSpeakers > 2 ? formatId(currentAvatar[2].id, 2) : undefined
       }
     };
     return axios.post(url, data, { headers: headers });
@@ -131,7 +129,7 @@ const CustomizeAudio = () => {
     }
   };
 
-  useQuery('get-podcast-status', getStatus, {
+  useQuery(['get-podcast-status'], getStatus, {
     refetchInterval: pollInterval,
     onSuccess: onPollingRequestSuccess
   });
