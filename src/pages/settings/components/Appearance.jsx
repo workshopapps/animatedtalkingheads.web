@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { ReactComponent as Brush } from "../assets/brush.svg"
 import Proptypes from "prop-types";
 import Layout from "../../../components/UI/Layout";
 import SettingsNav from "../../../components/UI/SettingsNav";

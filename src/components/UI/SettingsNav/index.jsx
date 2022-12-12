@@ -1,15 +1,12 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-
-import { Button } from '../Button';
+import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 import { ReactComponent as Brush } from "../../../assets/brush.svg"
 import { ReactComponent as Cube } from "../../../assets/3dcube.svg";
 import { ReactComponent as People } from "../../../assets/people.svg";
 import { ReactComponent as Tag2 } from "../../../assets/tag-2.svg";
 import people from "../../../assets/Rectangle 240.png"
-import Layout from '../Layout';
-import PageTitle from '../../../components/UI/page-title';
+
 
 const SettingsNav = () => {
   return (
