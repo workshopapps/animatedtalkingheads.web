@@ -95,13 +95,13 @@ function HeadCustomCenter({ closeModal, speakers }) {
           </div>
         </div> */}
 
-        <div className="md:w-full h-[300px] p-3  flex flex-col items-center">
+        <div className="md:w-full h-[200px] p-3  flex flex-col items-center">
           <div className="heads">
             {avatars.map((item, index) => (
               <button
                 onClick={() => setHead(item)}
                 key={index}
-                className="inline heades border border-transparent  hover:border-blue-500">
+                className="inline heades border border-transparent hover:border-blue-500">
                 <img className='inline w-20' src={item.image} alt="" width={"100px"} height={"100px"} />
               </button>
             ))}

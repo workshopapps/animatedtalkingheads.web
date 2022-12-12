@@ -17,6 +17,7 @@ import { setAvatar } from '../../../store/actions/customizeVideoActions';
 import axios from 'axios';
 import AuthWrapper from '../../../components/UI/Auth/AuthWrapper';
 import PropagateLoader from 'react-spinners/PropagateLoader';
+import { formatId } from './data';
 
 
 const CustomizeAudio = () => {
@@ -26,10 +27,8 @@ const CustomizeAudio = () => {
   const [error,] = useState(false);
   //const [status, setStatus] = useState(false);
 
+  const currentAvatar = store.getState().customizeVideoReducer.currentAvatar;
   const currentBackground = store.getState().customizeVideoReducer.currentBackground;
-
-  console.log("-----: ", currentBackground)
-
 
   const showModal = () => {
     setModalOpen(true);
@@ -58,29 +57,6 @@ const CustomizeAudio = () => {
     }
   }
 
-  // render video from api
-  // const RenderVideo = async () => {
-  //   const videoObject = {
-  //     head_file_path: store.getState().customizeVideoReducer.avatarType,
-  //     scene_file_path: store.getState().customizeVideoReducer.backgroundType,
-  //     id: store.getState().cartReducer.podcast_audio.user_id
-  //   };
-
-  //   await fetch('https://api.voxlips.hng.tech/', {
-  //     method: 'POST',
-  //     mode: 'cors',
-  //     body: videoObject
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data, 'from video object upload');
-  //     })
-  //     .catch((err) => {
-  //       console.log(err.message, 'error from video object');
-  //     });
-  // };
-
-  // generate from api
 
   const bearerToken = localStorage.getItem('token');
   const podcast_id = store.getState().cartReducer.podcast_audio._id;
@@ -88,13 +64,13 @@ const CustomizeAudio = () => {
   const postData = async () => {
     const base_url = 'https://api.voxclips.hng.tech/podcasts/';
     const url = `${base_url}${podcast_id}/generate-video`;
-    console.log({ url });
     const headers = { Authorization: `Bearer ${bearerToken}` };
     const data = {
       bg_path: currentBackground.id,
       avater: {
-        a: '03',
-        b: '01'
+        A: formatId(currentAvatar[0].id, 0),
+        B: numberOfSpeakers > 1 ? formatId(currentAvatar[1].id, 1) : undefined,
+        C: numberOfSpeakers > 2 ? formatId(currentAvatar[2].id, 2) : undefined,
       }
     };
     return await axios.post(url, data, { headers: headers });
