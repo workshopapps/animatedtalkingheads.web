@@ -254,19 +254,34 @@ const CustomizeAudio = () => {
         </div>
         {modalOpen && (
           <Modal onClose={hideModal}>
-            <div className={styles.progressBarBox}>
-              <h5>Your video is rendering...</h5>
-
-              <div className={styles.progressBar}>
-                <PropagateLoader color="hsla(214, 98%, 47%, 1)" />
-                <p className="text-[12px] pt-12">
-                  This may take a while. You will get an email notification when it is done
-                  rendering.
-                </p>
+            {status === 'ERROR' ? (
+              <div className=" py-7 flex flex-col gap-10">
+                <div className=" flex flex-col gap-5">
+                  {' '}
+                  <h1 className=" text-[22px] text-[red]"> Something went wrong!</h1>
+                  <p> We could not render your video at the moment. Please try again</p>
+                </div>
+                <div>
+                  {' '}
+                  <button onClick={handleClose}>Close</button>
+                </div>
               </div>
-              <button onClick={hideModal}>Cancel</button>
-            </div>
-            <div className={styles.signUpBox}>{/* <SignUpSection /> */}</div>
+            ) : (
+              <div className={styles.progressBarBox}>
+                <h5>Your video is rendering...</h5>
+
+                <div className={styles.progressBar}>
+                  <PropagateLoader color="hsla(214, 98%, 47%, 1)" />
+                  <p className="text-[12px] pt-12">
+                    This may take a while. You will get an email notification when it is done
+                    rendering.
+                  </p>
+                </div>
+                <button onClick={handleCancel} className=" hover:text-[hsla(214, 98%, 47%, 1)]">
+                  Cancel
+                </button>
+              </div>
+            )}
           </Modal>
         )}
       </AuthWrapper>
