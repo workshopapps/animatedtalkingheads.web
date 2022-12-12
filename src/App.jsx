@@ -37,6 +37,7 @@ import { AuthContextProvider } from './context/AuthContext';
 
 import store from './store/store';
 import DownloadPodcast from './pages/podcast/download';
+import AnimatedPodcast from './pages/podcast/animated-podcast';
 import Characters from './pages/podcast/characters';
 import Setting from './pages/settings/components/Appearance';
 import SettingsAppearance from "./pages/settings/components/Appearance";
@@ -103,6 +104,7 @@ function App() {
           <Route path={routes.podcastUpload} element={<UploadPodcast />} />
           <Route path={routes.podcastCustomize} element={<Customization />} />
           <Route path={routes.podcastDownload} element={<DownloadPodcast />} />
+          <Route path={routes.animatedPodcast} element={<AnimatedPodcast/>} />
           <Route path={routes.podcastCharacters} element={<Characters />} />
           <Route path={routes.pricing} element={<Pricing />} />
           <Route path={routes.getStarted} element={<GetStarted />} />

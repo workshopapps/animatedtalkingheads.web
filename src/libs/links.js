@@ -40,6 +40,7 @@ export const routes = {
   podcastUpload: '/podcast/upload',
   podcastCustomize: '/podcast/customize',
   podcastDownload: '/podcast/download',
+  animatedPodcast: '/podcast/animated-podcast',
   podcastCharacters: '/podcast/characters',
   useCaseArticle: '/use-cases/article',
   press: '/press',

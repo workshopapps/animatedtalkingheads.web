@@ -1,0 +1,16 @@
+section.animated-podcast-section{
+    border: 2px solid red;
+    .animated-podcast{
+        .input-text{
+            display: flex;
+            padding: 0.75em 1.5em;
+            border: 1px solid #BDBDBD;
+            border-radius: 4px;
+
+            & > svg{
+                margin-right: 1rem;
+                
+            }
+        }
+    }
+}
