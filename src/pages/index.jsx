@@ -19,6 +19,9 @@ import StartCreating from '../components/pages/landing/StartCreating';
 
 // import ChatBox from '../components/ChatBox';
 import ReactTooltip from 'react-tooltip';
+// import NavSign from '../components/UI/NavSign';
+
+
 
 const Home = () => {
   // const defaultOptions = {
@@ -32,12 +35,15 @@ const Home = () => {
 
   return (
     <Layout>
+
       <section className="home-section ">
         <div className="home ">
           <div className="hero-container ">
             <div className="desktop-lhs">
               <div className="hero-text">
-                <h1 className="hero-heading">Heads that talk, On your podcast.</h1>
+                <h1 className="hero-heading">
+                  Heads that talk,<br></br> On your podcast.
+                </h1>
                 <p className="hero-par">
                   Turn audio podcasts into a video with our various characters customizable to your
                   liking.
@@ -225,6 +231,7 @@ const Home = () => {
       <Freestyle />
       <Transform />
       <StartCreating />
+
     </Layout>
   );
 };

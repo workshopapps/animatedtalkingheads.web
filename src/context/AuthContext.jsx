@@ -13,7 +13,9 @@ import { auth } from '../firebase-config';
 const UserContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(
+    localStorage.getItem('token') ? localStorage.getItem('token') : null
+  );
   //  setUser(localStorage.getItem('token') ? localStorage.getItem('token') : null);
 
   const createUser = (email, password) => {

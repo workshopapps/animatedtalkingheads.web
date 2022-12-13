@@ -109,12 +109,12 @@ const Footer = () => {
           <p className="text-base">Connect With Us</p>
           <div className="flex gap-5 items-center">
             <a href="https://www.facebook.com/Hnginternship/">
-              <FaFacebookF size="20" style={{color: "white"}} />
+              <FaFacebookF size="20" style={{ color: "white" }} />
             </a>
-            <a href="https://twitter.com/hnginternship" style={{color: "white"}}>
+            <a href="https://twitter.com/hnginternship" style={{ color: "white" }}>
               <FaTwitter size="20" />
             </a>
-            <a href="https://www.instagram.com/hnginternship/" style={{color: "white"}}>
+            <a href="https://www.instagram.com/hnginternship/" style={{ color: "white" }}>
               <FaInstagram size="20" />
             </a>
           </div>

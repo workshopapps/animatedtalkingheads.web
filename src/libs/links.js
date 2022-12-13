@@ -33,10 +33,10 @@ export const routes = {
   policy: '/terms-of-use/policy',
   settings: '/settings-appearance',
   settingsAppearance: '/settings-appearance',
-    settingsIntegration: '/settings-integration',
-      settingsCommunity: '/settings-community',
-        settingsVoxclips: '/settings-voxclips',
-          settingsAccessibility: '/settings-accessibility',
+  settingsIntegration: '/settings-integration',
+  settingsCommunity: '/settings-community',
+  settingsVoxclips: '/settings-voxclips',
+  settingsAccessibility: '/settings-accessibility',
   podcastUpload: '/podcast/upload',
   podcastCustomize: '/podcast/customize',
   podcastDownload: '/podcast/download',
@@ -52,7 +52,9 @@ export const routes = {
   pressNewsPage: '/press/news-page',
   pressWatchnow: '/press/watch-now',
   signUp: '/sign-up',
-  signIn: '/sign-in'
+  signIn: '/sign-in',
+  dashboard_progress: '/in-progress',
+  dashboard_audios: '/uploads'
 };
 
 export const links = [

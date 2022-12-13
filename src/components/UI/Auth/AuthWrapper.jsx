@@ -15,6 +15,8 @@ const AuthWrapper = ({children}) => {
         if (!user && !firstRender) return navigate("/sign-in");   
     }, [user]);
 
+    console.log(!user)
+
     useEffect(() => {
         setFirstRender(false)
     }, [])
