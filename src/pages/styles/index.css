@@ -2,16 +2,21 @@ section.home-section .home {
   background: #171d2e;
 }
 section.home-section .home .hero-container {
-  width: 93%;
-  max-width: 1512px;
+  width: 90%;
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   color: #ffffff;
   align-items: center;
   overflow: hidden;
+  justify-content: space-around;
+}
+section.home-section .home .hero-container .desktop-lhs,
+section.home-section .home .hero-container .desktop-rhs {
+  width: 47%;
 }
 section.home-section .home .hero-container .desktop-lhs .hero-text {
-  max-width: 25rem;
+  /* max-width: 25rem; */
   margin-bottom: 3rem;
 }
 section.home-section .home .hero-container .desktop-lhs .hero-text > h1 {
@@ -64,7 +69,7 @@ section.home-section .home .hero-container .desktop-lhs .hero-btns .watch-btn bu
   margin: 0;
 }
 section.home-section .home .hero-container .desktop-rhs {
-  margin-left: 6.25rem;
+  /* margin-left: 6.25rem; */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
@@ -81,6 +86,10 @@ section.home-section .home .hero-container .desktop-rhs .lottie {
     text-align: center;
     align-items: center;
     height: auto;
+  }
+  section.home-section .home .hero-container .desktop-lhs,
+  section.home-section .home .hero-container .desktop-rhs {
+    width: 100%;
   }
   section.home-section .home .hero-container .desktop-lhs {
     display: flex;
@@ -125,7 +134,8 @@ section.home-section .home .hero-container .desktop-rhs .lottie {
   section.home-section .home .hero-container .desktop-lhs .hero-btns {
     width: 100%;
   }
-  section.home-section .home .hero-container .desktop-lhs .hero-btns button.btn {
+  section.home-section .home .hero-container .desktop-lhs .hero-btns button.btn,
+  section.home-section .home .hero-container .desktop-lhs .hero-btns button.btn2 {
     font-size: 0.8rem;
     align-items: center;
   }

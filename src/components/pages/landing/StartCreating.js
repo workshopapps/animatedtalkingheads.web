@@ -13,7 +13,7 @@ const StartCreating = () => {
             Let's start creating!!
           </p>
           <div className="flex justify-center mx-auto">
-            <Link to="/podcast/upload">
+            <Link to="/generated-videos">
               <Button label="Getting Started">Getting Started</Button>
             </Link>
           </div>

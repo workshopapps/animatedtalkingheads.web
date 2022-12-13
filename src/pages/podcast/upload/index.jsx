@@ -15,8 +15,10 @@ import axios from 'axios';
 import { Circle } from 'rc-progress';
 import PageTitle from '../../../components/UI/page-title';
 import AuthWrapper from '../../../components/UI/Auth/AuthWrapper';
+import { UserAuth } from '../../../context/AuthContext';
 
 const UploadPodcast = () => {
+  const { user } = UserAuth();
   const [audio, setAudio] = useState(null);
   const [name, setName] = useState(null);
   const [upload, setUpload] = useState(false);
@@ -58,8 +60,6 @@ const UploadPodcast = () => {
     // const url = 'https://upload-api-sample.herokuapp.com/upload_files';
     const url = 'https://api.voxclips.hng.tech/podcasts/upload';
 
-    const bearerToken = localStorage.getItem('token');
-
     const config = {
       onUploadProgress: (progressEvent) => {
         const { loaded, total } = progressEvent;
@@ -71,7 +71,7 @@ const UploadPodcast = () => {
       },
       headers: {
         'Content-Type': 'multipart/form-data',
-        Authorization: `Bearer ${bearerToken}`
+        Authorization: `Bearer ${user}`
       }
     };
 
@@ -98,9 +98,9 @@ const UploadPodcast = () => {
 
   return (
     <Layout>
+      <PageTitle title="Upload audio" />
       <AuthWrapper>
         <div className="text-center max-w-[1440px] mx-auto   flex flex-col justify-center">
-          <PageTitle title="Upload audio" />
           <div className="opacity-60 my-5 w -[90%] border rounded-lg bg-[#EFF3F6] border-opacity-20 text-center py-5 px-2  gap-3 flex flex-col mx-auto">
             <Text label="Over 0.5MB, up to 500MB, 2 Hours max." type="text4" w="sm" />
             <div className="flex gap-1 justify-center items-center">
