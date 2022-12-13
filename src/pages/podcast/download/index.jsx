@@ -1,18 +1,20 @@
 import Layout from '../../../components/UI/Layout';
 import { useState, useRef, useEffect } from 'react';
 import '../download/styles/index.css';
-import video from './assets/video.mp4';
+// import video from './assets/video.mp4';
 import PageTitle from '../../../components/UI/page-title';
 import AuthWrapper from '../../../components/UI/Auth/AuthWrapper';
 // import '../../../components/UI/Button/button.module.scss'
+import store from '../../../store/store';
 
 const DownloadPodcast = () => {
   const [videoQuality, setVideoQuality] = useState('');
   const [isChecked, setIsChecked] = useState(false);
   const videoRef = useRef();
-
   const [isPaused, setIsPaused] = useState(true);
   const [isFullScreen, setIsFullScreen] = useState(false);
+
+  const video_url = store.getState().cartReducer.podcast_video.video_url;
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -60,7 +62,7 @@ const DownloadPodcast = () => {
 
   let rhsToggleClass = isFullScreen ? 'desktop-rhs hide' : 'desktop-rhs';
 
-  console.log(videoRef.current);
+  // console.log(videoRef.current);
 
   const togglePlay = () => {
     isPaused ? videoRef.current.play() : videoRef.current.pause();
@@ -100,7 +102,7 @@ const DownloadPodcast = () => {
           <div className="download-video">
             <h1 className="page-title">Your Talking Head Video is Available for Download</h1>
             <div className="page-content">
-              <div className="desktop-lhs">
+              <div className="desktop-lhs ">
                 <div className={containerToggleClass()}>
                   {/* <iframe width="560" height="315" src="https://player.vimeo.com/video/499958263?h=06b4122553" title="VoxClips video player" allowFullScreen></iframe> */}
                   <div className="video-controls-container">
@@ -195,7 +197,7 @@ const DownloadPodcast = () => {
                       </button>
                     </div>
                   </div>
-                  <video ref={videoRef} src={video}></video>
+                  <video ref={videoRef} src={video_url} className=" lg:w-[100%]" />
                 </div>
               </div>
 
@@ -292,7 +294,7 @@ const DownloadPodcast = () => {
                     />
                   </div>
                 </fieldset>
-                <a href={isChecked ? video : ''} download={isChecked ? video : ''}>
+                <a href={isChecked ? video_url : ''} download={isChecked ? video_url : ''}>
                   <button
                     disabled={isChecked ? false : true}
                     value="download"
@@ -301,7 +303,7 @@ const DownloadPodcast = () => {
                     Download Now
                   </button>
                 </a>
-                <div className="video-share-container">
+                {/* <div className="video-share-container">
                   <h3>or</h3>
                   <div className="video-share">
                     <h3 className="video-share__heading">Share video via:</h3>
@@ -406,7 +408,7 @@ const DownloadPodcast = () => {
                       </svg>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
