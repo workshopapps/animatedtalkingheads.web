@@ -267,4 +267,4 @@ function DropdownItem(props) {
   );
 }
 
-export default NavSign;
+export default NavSign
