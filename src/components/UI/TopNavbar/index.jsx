@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import { menuAnimate } from './animation';
 import { toast } from 'react-toastify';
 import UserProfile from '../UserProfile';
-import Notification from '../Notificaton';
+//import Notification from '../Notificaton';
 
 
 // const miniLinks = [
@@ -106,19 +106,9 @@ const TopNavbar = () => {
           </div>
           <Link to={routes.contact}>Contact us</Link>
         </div>
-        <div className={`hidden lg:flex`}>
-          {/* { user && (<Link onClick={handleSignOut} to={routes.signIn} style={{ color: '#2563EB', alignSelf: 'center', marginRight:'1.875rem' }} > Sign out</Link>)} */}
-          {user ? (
-            <button
-              className="hover:border-sec-600 focus:bg-white  hover:text-sec-600 text-blue-600  border rounded-lg border-blue-600 px-4 py-2 md:px-7"
-              style={{
-                alignSelf: 'center',
-                marginRight: '1rem'
-              }}
-              onClick={handleSignOut}>
-              Sign out {/* {user?.displayName} */}
-            </button>
-          ) : (
+        <div className={`hidden justify-center lg:flex`}>
+
+          {!user && (
             <Link
               to={routes.signIn}
               className="hover:border-sec-600 focus:bg-white  hover:text-sec-600 text-blue-600  border rounded-lg border-blue-600 px-4 py-2 md:px-7"
@@ -133,11 +123,15 @@ const TopNavbar = () => {
           <Link to={routes.podcastUpload}>
             <Button label={'Create Video'}>Create Video</Button>
           </Link>
-          <UserProfile />
-          {/* <Notification /> */}
+
+          <div>
+          { user && <UserProfile handleSignOut={handleSignOut } /> }
+          </div>
+
         </div>
 
-        <div className='lg:hidden'>
+        <div className='flex lg:hidden'>
+          { user && <UserProfile handleSignOut={handleSignOut } /> }
           <Hamburger size={28} toggled={show} toggle={() => setShow(!show)} />
         </div>
 

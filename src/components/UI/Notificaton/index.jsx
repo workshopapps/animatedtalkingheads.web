@@ -174,14 +174,14 @@ const NavSign = () => {
   );
 };
 
-function DropdownItem(props) {
-  return (
-    <li className={styles.dropdownItem}>
-      <img src={props.img}></img>
-      <a> {props.text} </a>
+// function DropdownItem(props) {
+//   return (
+//     <li className={styles.dropdownItem}>
+//       <img src={props.img}></img>
+//       <a> {props.text} </a>
 
-    </li>
-  );
-}
+//     </li>
+//   );
+// }
 
 export default NavSign;

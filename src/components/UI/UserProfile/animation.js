@@ -3,7 +3,7 @@ export const menuAnimate = {
       opacity: 1,
       //rotateX: 0,
       transition: {
-        duration: 1,
+        duration: 0.4,
         staggerChildren: 0.2,
         staggerDirection: 1
       },
