@@ -11,7 +11,7 @@ const SignIn = () => {
   // const[password,setPassword]=useState("password");
   const navigate = useNavigate();
   // const [error, setError] = useState('')
-  const { setUser } = UserAuth();
+  const { setUser, setUserEmail } = UserAuth();
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -89,6 +89,7 @@ const SignIn = () => {
           // setUserToken(data.user)
           localStorage.setItem('token', token);
           setUser(token);
+          setUserEmail(formData.email)
           navigate('/');
         }
         return;

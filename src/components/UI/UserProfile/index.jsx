@@ -12,8 +12,12 @@ import Logout from '../../../assets/dropdown/Logout.svg';
 import { motion } from 'framer-motion';
 import { menuAnimate } from './animation';
 import { routes } from '../../../libs/links';
+import { UserAuth } from '../../../context/AuthContext'
+
 
 const UserProfile = ({ handleSignOut }) => {
+const { userEmail } = UserAuth();
+
   const [open, setOpen] = useState(false);
 
   const show = () => {
@@ -40,7 +44,7 @@ items-center justify-center'>
         <div className={`${styles.dropdown_menu} ${open ? 'active' : 'inactive'}`}>
           <div className="flex justify-between items-center py-5">
             <FaRegUserCircle className="text-textColor text-2xl ml-3 cursor-pointer text-sec-700" />
-            <h1 className=" text-sec-700 text-2xl"></h1>
+            {userEmail && <h1 className=" text-sec-700 text-2xl">{userEmail}</h1>}
           </div>
           <ul>
             <DropdownItem
@@ -56,7 +60,7 @@ items-center justify-center'>
               text={'My uploads'}
             />
             <DropdownItem
-              to={routes.settings}
+              to={routes.animatedPodcast}
               hide={hide}
               img={Podcast}
               text={'My video podcasts'}
