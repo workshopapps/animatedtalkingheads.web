@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 //import  { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import { Text } from '../../../../components/UI/Text';
 import { BiEditAlt } from 'react-icons/bi';
@@ -6,39 +6,34 @@ import CustomiseCharacterModal from './modal';
 import { useState } from 'react';
 import store from '../../../../store/store.js';
 import { scenes } from '../data';
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { Navigation } from "swiper";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Navigation } from 'swiper';
 import { SET_CURRENT_BACKGROUND } from '../../../../store/actionsTypes/actionTypes';
 
-
-
-
 const CustomizeAudio = ({ speakers }) => {
-
   const [currentScene, setCurrentScene] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const currentHead = store.getState().customizeVideoReducer.currentAvatar;
 
-
   useEffect(() => {
-    let index = activeIndex
-    index = index === 0 ? scenes.length : index
-    index = index > scenes.length ? 1 : index
-    setCurrentScene(index)
+    let index = activeIndex;
+    index = index === 0 ? scenes.length : index;
+    index = index > scenes.length ? 1 : index;
+    setCurrentScene(index);
   }, [activeIndex]);
 
-
   useEffect(() => {
-    store.dispatch({ type: SET_CURRENT_BACKGROUND, payload: scenes[currentScene - 1]});
+    store.dispatch({ type: SET_CURRENT_BACKGROUND, payload: scenes[currentScene - 1] });
   }, [currentScene]);
-
 
   return (
     <div className="scene_wrapper md:p-[20px]  md:px-[55px]">
-      {showModal && <CustomiseCharacterModal speakers={speakers} closeModal={() => setShowModal(!showModal)} />}
+      {showModal && (
+        <CustomiseCharacterModal speakers={speakers} closeModal={() => setShowModal(!showModal)} />
+      )}
 
       {/* action panel */}
       <div className="headers">
@@ -72,13 +67,10 @@ const CustomizeAudio = ({ speakers }) => {
             </div>
           </div>
         </div> */}
-      
-      </div> 
+      </div>
 
       <div className="scene w-full border h-[250px]  md:h-[450px] relative">
-
         <div className={`bg-image w-full h-full`}>
-
           <Swiper
             slidesPerView={1}
             spaceBetween={30}
@@ -87,12 +79,13 @@ const CustomizeAudio = ({ speakers }) => {
             navigation={true}
             modules={[Navigation]}
             className="mySwiper"
-            onRealIndexChange={(element)=>setActiveIndex(element.activeIndex)}
-          >
-
-            <SwiperSlide><img className='object-cover h-[250px]  md:h-[450px] w-full' src={scenes[0].image} /></SwiperSlide>
-            <SwiperSlide><img className='object-cover h-[250px]  md:h-[450px] w-full' src={scenes[1].image} /></SwiperSlide>
-
+            onRealIndexChange={(element) => setActiveIndex(element.activeIndex)}>
+            <SwiperSlide>
+              <img className="object-cover h-[250px]  md:h-[450px] w-full" src={scenes[0].image} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="object-cover h-[250px]  md:h-[450px] w-full" src={scenes[1].image} />
+            </SwiperSlide>
           </Swiper>
 
           <div className="speakers_container  z-10  absolute bottom-20 md:bottom-[70px] left-0 mt-6   middle justify-between w-full">

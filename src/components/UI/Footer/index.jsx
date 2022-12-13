@@ -54,14 +54,14 @@ const Footer = () => {
           <Link to="/">
             <img src={footerLogo} alt="home" />
           </Link>
-          {/* <div className="hidden lg:block">
+          <div className="hidden lg:block">
             <Link to="/settings-appearance">
               <div className="flex gap-3 ">
                 <img src={settings} alt="settings" />
                 <p>Settings</p>
               </div>
             </Link>
-          </div>{' '} */}
+          </div>{' '}
         </div>
         <div className="lg:hidden col-start-2">
           <Link to="/settings">

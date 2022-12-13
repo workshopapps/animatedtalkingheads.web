@@ -1,4 +1,9 @@
-import { ADD_AVATAR, ADD_BG, SET_CURRENT_AVATAR, SET_CURRENT_BACKGROUND } from '../actionsTypes/actionTypes';
+import {
+  ADD_AVATAR,
+  ADD_BG,
+  SET_CURRENT_AVATAR,
+  SET_CURRENT_BACKGROUND
+} from '../actionsTypes/actionTypes';
 import { avatars, scenes } from '../../pages/podcast/customization/data';
 
 const initialState = {
