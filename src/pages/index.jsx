@@ -19,6 +19,8 @@ import StartCreating from '../components/pages/landing/StartCreating';
 
 // import ChatBox from '../components/ChatBox';
 import ReactTooltip from 'react-tooltip';
+// import NavSign from '../components/UI/NavSign';
+
 
 
 const Home = () => {
@@ -33,6 +35,7 @@ const Home = () => {
 
   return (
     <Layout>
+
       <section className="home-section ">
         <div className="home ">
           <div className="hero-container ">

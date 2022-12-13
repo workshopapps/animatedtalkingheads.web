@@ -56,7 +56,7 @@ a {
   background-color: #fff;
   padding: 10px 20px;
   width: 327px;
-  height: 403px;
+  height: 453px;
 
   background: #FEFEFE;
   border-radius: 8px;
@@ -133,7 +133,7 @@ h3 span {
 }
 
 .dropdownItem a {
-  max-width: 100px;
+  max-width: 150px;
   margin-left: 10px;
   transition: var(--speed);
 }
