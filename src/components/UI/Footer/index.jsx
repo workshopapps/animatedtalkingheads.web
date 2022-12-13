@@ -54,14 +54,14 @@ const Footer = () => {
           <Link to="/">
             <img src={footerLogo} alt="home" />
           </Link>
-          <div className="hidden lg:block">
+          {/* <div className="hidden lg:block">
             <Link to="/settings-appearance">
               <div className="flex gap-3 ">
                 <img src={settings} alt="settings" />
                 <p>Settings</p>
               </div>
             </Link>
-          </div>{' '}
+          </div>{' '} */}
         </div>
         <div className="lg:hidden col-start-2">
           <Link to="/settings">
@@ -109,12 +109,12 @@ const Footer = () => {
           <p className="text-base">Connect With Us</p>
           <div className="flex gap-5 items-center">
             <a href="https://www.facebook.com/Hnginternship/">
-              <FaFacebookF size="20" style={{color: "white"}} />
+              <FaFacebookF size="20" style={{ color: "white" }} />
             </a>
-            <a href="https://twitter.com/hnginternship" style={{color: "white"}}>
+            <a href="https://twitter.com/hnginternship" style={{ color: "white" }}>
               <FaTwitter size="20" />
             </a>
-            <a href="https://www.instagram.com/hnginternship/" style={{color: "white"}}>
+            <a href="https://www.instagram.com/hnginternship/" style={{ color: "white" }}>
               <FaInstagram size="20" />
             </a>
           </div>
