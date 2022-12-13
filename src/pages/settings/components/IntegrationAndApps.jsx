@@ -29,6 +29,8 @@ const IntegrationAndApps = () => {
     const [linkedIn, setLinkedin] = useState(true)
 
     const [error, setError] = useState()
+
+    console.log(error)
     // const [socials, setSocials] = useState({
     //     facebook: false, youtube: false,
     //     twitter: false, googleDrive: false, oneDrive: false, dropBox: false, instagram: false,
@@ -197,4 +199,3 @@ const IntegrationAndApps = () => {
 
 
 export default IntegrationAndApps;
-
