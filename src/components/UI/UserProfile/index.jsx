@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import styles from './styles.module.css';
-import { routes } from '../../../libs/links';
-import { toast } from 'react-toastify';
 import { FaRegUserCircle } from 'react-icons/fa';
 import Progress from '../../../assets/dropdown/Progress.svg';
 import Upload from '../../../assets/dropdown/Upload.svg';
@@ -11,97 +9,86 @@ import Podcast from '../../../assets/dropdown/Podcast.svg';
 import Upgrade from '../../../assets/dropdown/Upgrade.svg';
 import Settings from '../../../assets/dropdown/Settings.svg';
 import Logout from '../../../assets/dropdown/Logout.svg';
-import { UserAuth } from '../../../context/AuthContext';
+import { motion } from 'framer-motion';
+import { menuAnimate } from './animation';
+import { routes } from '../../../libs/links';
 
-const NavSign = () => {
-  const { logOut, setUserToken, setUser } = UserAuth();
-  const navigate = useNavigate();
-
+const UserProfile = ({ handleSignOut }) => {
   const [open, setOpen] = useState(false);
 
-  let menuRef = useRef();
-
-  useEffect(() => {
-    let handler = (e) => {
-      if (!menuRef.current.contains(e.target)) {
-        setOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handler);
-
-    return () => {
-      document.removeEventListener('mousedown', handler);
-    };
-  });
-  const handleSignOut = async () => {
-    try {
-      await logOut();
-      setTimeout(() => {
-        localStorage.removeItem('token');
-        setUserToken('');
-        setUser(null);
-      }, 1000);
-      toast.success('Sign out successful!', {
-        position: toast.POSITION.BOTTOM_RIGHT
-      });
-      setUser(null);
-      navigate('/sign-in');
-    } catch (error) {
-      console.log(error);
-    }
+  const show = () => {
+    setOpen(true);
   };
+
+  const hide = () => {
+    setOpen(false);
+  };
+
   return (
-    <div>
-      <div>
-        <div className="">
-          <div ref={menuRef}>
-            <div className={styles.menutrigger}>
-              <div
-                className="relative flex items-center justify-center pt-2 "
-                onClick={() => {
-                  setOpen(!open);
-                }}>
-                <FaRegUserCircle className="text-textColor text-2xl ml-6 cursor-pointer " />
-                <div
-                  className="absolute -top-2 -right-2 w-5 h-5 rounded-full  bg-blue-600  flex
-    items-center justify-center">
-                  <p className="text-xs text-white font-semibold">1</p>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.dropdown_menu} ${open ? 'block' : 'hidden'}`}>
-              <div className="flex justify-between items-center md:py-5">
-                <FaRegUserCircle className="text-textColor text-2xl md:ml-3 cursor-pointer text-sec-700" />
-                <h1 className=" text-sec-700 text-2xl">wanjiku@gmail.com</h1>
-              </div>
-              <ul>
-                <DropdownItem img={Progress} text={'In progress'} />
-                <Link to={routes.dashboard_audios}>
-                  <DropdownItem img={Upload} text={'My uploads'} />
-                </Link>
-                <DropdownItem img={Podcast} text={'My video podcasts'} />
-                <DropdownItem img={Upgrade} text={'Upgrade'} />
-                <DropdownItem img={Settings} text={'Settings'} />
-                <div onClick={handleSignOut}>
-                  <DropdownItem img={Logout} text={'Sign out'} />
-                </div>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <div onClick={open ? hide : show}>
+      <div className="relative flex items-center justify-center pt-[2px] ">
+        <FaRegUserCircle size={30} className="lg:ml-6 cursor-pointer " />
+        {/* <div className='absolute -top-2 -right-2 w-5 h-5 rounded-full  bg-blue-600  flex
+items-center justify-center'>
+          <p className='text-xs text-white font-semibold'>1</p>
+        </div> */}
       </div>
+      <motion.div
+        className={`${open ? 'show' : 'hidden'} lg:hidden`}
+        animate={open ? 'enter' : 'exit'}
+        variants={menuAnimate}>
+        <div className={`${styles.dropdown_menu} ${open ? 'active' : 'inactive'}`}>
+          <div className="flex justify-between items-center py-5">
+            <FaRegUserCircle className="text-textColor text-2xl ml-3 cursor-pointer text-sec-700" />
+            <h1 className=" text-sec-700 text-2xl"></h1>
+          </div>
+          <ul>
+            <DropdownItem
+              to={routes.dashboard_progress}
+              hide={hide}
+              img={Progress}
+              text={'In progress'}
+            />
+            <DropdownItem
+              to={routes.dashboard_audios}
+              hide={hide}
+              img={Upload}
+              text={'My uploads'}
+            />
+            <DropdownItem
+              to={routes.settings}
+              hide={hide}
+              img={Podcast}
+              text={'My video podcasts'}
+            />
+            <DropdownItem to={routes.pricing} hide={hide} img={Upgrade} text={'Upgrade'} />
+            <DropdownItem to={routes.settings} hide={hide} img={Settings} text={'Settings'} />
+            <DropdownItem
+              to={'#'}
+              hide={hide}
+              onClick={handleSignOut}
+              img={Logout}
+              text={'Sign out'}
+            />
+          </ul>
+        </div>
+      </motion.div>
     </div>
   );
 };
 
 function DropdownItem(props) {
   return (
-    <li className={styles.dropdownItem}>
+    <li
+      onClick={() => {
+        props.onClick();
+        props.hide();
+      }}
+      className={styles.dropdownItem}>
       <img src={props.img}></img>
-      <p> {props.text} </p>
+      <Link to={props.to}>{props.text}</Link>
     </li>
   );
 }
 
-export default NavSign;
+export default UserProfile;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Hamburger from 'hamburger-react';
 import { Button } from '../Button';
@@ -10,7 +10,9 @@ import { BiChevronDown } from 'react-icons/bi';
 import { UserAuth } from '../../../context/AuthContext';
 import { motion } from 'framer-motion';
 import { menuAnimate } from './animation';
-import NavSign from '../UserProfile';
+import { toast } from 'react-toastify';
+import UserProfile from '../UserProfile';
+//import Notification from '../Notificaton';
 
 // const miniLinks = [
 //   { name: 'Support', link: '#' },
@@ -21,8 +23,9 @@ import NavSign from '../UserProfile';
 const TopNavbar = () => {
   const [show, setShow] = React.useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const pathname = location.pathname.split('/')[1];
-  const { user } = UserAuth();
+  const { user, logOut, setUserToken, setUser } = UserAuth();
   const close = () => {
     setShow(false);
   };
@@ -37,9 +40,26 @@ const TopNavbar = () => {
     }
   }, [signInPath]);
 
+  const handleSignOut = async () => {
+    try {
+      await logOut();
+      setTimeout(() => {
+        localStorage.removeItem('token');
+        setUserToken('');
+      }, 1000);
+      toast.success('Sign out successful!', {
+        position: toast.POSITION.BOTTOM_RIGHT
+      });
+      setUser(null);
+      navigate('/sign-in');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className={styles.nav}>
-      <div className={`container mx-auto h-full flex justify-between items-center w-[90%]`}>
+      <div className={`h-full flex justify-between items-center px-3 lg:px-20`}>
         <div className="flex">
           <Link to="/">
             <img src={headerLogo} alt="home" />
@@ -82,31 +102,28 @@ const TopNavbar = () => {
           </div>
           <Link to={routes.contact}>Contact us</Link>
         </div>
-        <div className={`hidden lg:flex`}>
-          <Link to={routes.podcastUpload}>
-            <Button label={'Create Video'}>Create Video</Button>
-          </Link>
-
-          {/* { user && (<Link onClick={handleSignOut} to={routes.signIn} style={{ color: '#2563EB', alignSelf: 'center', marginRight:'1.875rem' }} > Sign out</Link>)} */}
-          {user ? (
-            <NavSign />
-          ) : (
+        <div className={`hidden justify-center lg:flex`}>
+          {!user && (
             <Link
               to={routes.signIn}
               className="hover:border-sec-600 focus:bg-white  hover:text-sec-600 text-blue-600  border rounded-lg border-blue-600 px-4 py-2 md:px-7"
               style={{
                 alignSelf: 'center',
-                marginLeft: '1rem'
+                marginRight: '1rem'
               }}>
               Sign In
             </Link>
           )}
 
-          {/* <Notification /> */}
+          <Link to={routes.podcastUpload}>
+            <Button label={'Create Video'}>Create Video</Button>
+          </Link>
+
+          <div>{user && <UserProfile handleSignOut={handleSignOut} />}</div>
         </div>
 
-        <div className="lg:hidden flex gap-5 items-center">
-          {user && <NavSign />}
+        <div className="flex lg:hidden items-center gap-5">
+          {user && <UserProfile handleSignOut={handleSignOut} />}
           <Hamburger size={28} toggled={show} toggle={() => setShow(!show)} />
         </div>
       </div>
@@ -133,7 +150,6 @@ const TopNavbar = () => {
               </Link>
             ))}
           </div>
-
           <div className={`${styles.line}`}> </div> */}
 
           <div className="flex w-full justify-center mt-6 items-center">
@@ -142,8 +158,14 @@ const TopNavbar = () => {
             </Link>
           </div>
 
-          <div className="flex w-full justify-center items-center">
-            {!user && (
+          <div className="flex w-full justify-center items-center ">
+            {user ? (
+              <button
+                className="w-[240px] h-[58px] hover:border-sec-600 focus:bg-white  hover:text-sec-600 text-blue-600  border rounded-lg border-blue-600 px-4 py-2 md:px-7 md:py-3"
+                onClick={handleSignOut}>
+                Sign out {/* {user?.displayName} */}
+              </button>
+            ) : (
               <Link to={routes.signIn}>
                 <button className="w-[240px] h-[58px] hover:border-sec-600 focus:bg-white  hover:text-sec-600 text-blue-600  border rounded-lg border-blue-600 px-4 py-2 md:px-7 md:py-3">
                   Sign In
