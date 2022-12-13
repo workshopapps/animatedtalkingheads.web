@@ -1,18 +1,19 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
 import Hamburger from 'hamburger-react'
 import { Button } from '../Button';
 import styles from './styles.module.css';
 import headerLogo from './../../../assets/icons/header_logo.svg';
 import { links, linksMobile, routes } from '../../../libs/links';
 import { BiChevronDown } from 'react-icons/bi';
-import { UserAuth } from '../../../context/AuthContext';
+// import { UserAuth } from '../../../context/AuthContext';
 import { motion } from "framer-motion";
 import { menuAnimate } from './animation';
-import { toast } from 'react-toastify';
-import UserProfile from '../UserProfile';
-import Notification from '../Notificaton';
+// import { toast } from 'react-toastify';
+import { IoNotificationsOutline } from 'react-icons/io5';
+import Smile from '../../../assets/dropdown/smile.png';
+
 
 
 // const miniLinks = [
@@ -21,45 +22,38 @@ import Notification from '../Notificaton';
 //   { name: 'Community', link: routes.community }
 // ];
 
-const TopNavbar = () => {
+const NavSign = () => {
   const [show, setShow] = React.useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const pathname = location.pathname.split('/')[1];
-  const { user, logOut, setUserToken, setUser } = UserAuth();
+  // const { user, logOut, setUserToken, setUser } = UserAuth();
   const close = () => {
     setShow(false);
   };
 
-  const [signInPath, setSignInPath] = useState(false);
 
 
-  // const currentPath = '/sign-in'
-  // console.log(location.pathname)
+  const [open, setOpen] = useState(false);
+
+  let menuRef = useRef();
+
   useEffect(() => {
-    if (location.pathname == '/sign-in') {
-      setSignInPath(true);
+    let handler = (e) => {
+      if (!menuRef.current.contains(e.target)) {
+        setOpen(false);
+        console.log(menuRef.current);
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
     }
-  }, [signInPath]);
 
-  const handleSignOut = async () => {
-    try {
-      await logOut();
-      setTimeout(() => {
-        localStorage.removeItem('token');
-        setUserToken('')
-
-      }, 1000);
-      toast.success("Sign out successful!", {
-        position: toast.POSITION.BOTTOM_RIGHT
-      })
-      setUser(null)
-      navigate('/sign-in');
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+  });
 
   return (
     <div className={styles.nav}>
@@ -108,34 +102,31 @@ const TopNavbar = () => {
         </div>
         <div className={`hidden lg:flex`}>
           {/* { user && (<Link onClick={handleSignOut} to={routes.signIn} style={{ color: '#2563EB', alignSelf: 'center', marginRight:'1.875rem' }} > Sign out</Link>)} */}
-          {user ? (
-            <button
-              className="hover:border-sec-600 focus:bg-white  hover:text-sec-600 text-blue-600  border rounded-lg border-blue-600 px-4 py-2 md:px-7"
-              style={{
-                alignSelf: 'center',
-                marginRight: '1rem'
-              }}
-              onClick={handleSignOut}>
-              Sign out {/* {user?.displayName} */}
-            </button>
-          ) : (
-            <Link
-              to={routes.signIn}
-              className="hover:border-sec-600 focus:bg-white  hover:text-sec-600 text-blue-600  border rounded-lg border-blue-600 px-4 py-2 md:px-7"
-              style={{
-                alignSelf: 'center',
-                marginRight: '1rem'
-              }}>
-              Sign In
-            </Link>
-          )}
 
           <Link to={routes.podcastUpload}>
             <Button label={'Create Video'}>Create Video</Button>
           </Link>
-          <UserProfile />
-          {/* <Notification /> */}
+          <div className='relative flex items-center justify-center'>
+            <IoNotificationsOutline className='text-textColor text-2xl ml-6 cursor-pointer' />
+            <div className='absolute -top-2 -left-2 w-5 h-5 rounded-full  text-blue-600  flex
+    items-center justify-center'>
+              <p className='text-xs text-white font-semibold'>1</p>
+            </div>
+          </div>
+
+          <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`} >
+            <div className='flex items-center'>
+              <div>
+                <img src={Smile} alt='img' />
+                <h5>Upload successful!</h5>
+              </div>
+            </div>
+
+          </div>
+
         </div>
+
+
 
         <div className='lg:hidden'>
           <Hamburger size={28} toggled={show} toggle={() => setShow(!show)} />
@@ -175,22 +166,6 @@ const TopNavbar = () => {
             </Link>
           </div>
 
-          <div className="flex w-full justify-center items-center">
-            {user ? (
-              <button
-                className="w-[240px] h-[58px] hover:border-sec-600 focus:bg-white  hover:text-sec-600 text-blue-600  border rounded-lg border-blue-600 px-4 py-2 md:px-7 md:py-3"
-                onClick={handleSignOut}>
-                Sign out {/* {user?.displayName} */}
-              </button>
-            ) : (
-              <Link
-                to={routes.signIn}>
-                <button className="w-[240px] h-[58px] hover:border-sec-600 focus:bg-white  hover:text-sec-600 text-blue-600  border rounded-lg border-blue-600 px-4 py-2 md:px-7 md:py-3">
-                  Sign In
-                </button>
-              </Link>
-            )}
-          </div>
 
         </div>
       </motion.div>
@@ -199,4 +174,14 @@ const TopNavbar = () => {
   );
 };
 
-export default TopNavbar;
+function DropdownItem(props) {
+  return (
+    <li className={styles.dropdownItem}>
+      <img src={props.img}></img>
+      <a> {props.text} </a>
+
+    </li>
+  );
+}
+
+export default NavSign;
