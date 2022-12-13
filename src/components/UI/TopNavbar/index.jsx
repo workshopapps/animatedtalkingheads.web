@@ -10,7 +10,9 @@ import { BiChevronDown } from 'react-icons/bi';
 import { UserAuth } from '../../../context/AuthContext';
 import { motion } from "framer-motion";
 import { menuAnimate } from './animation';
-import {  toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+import UserProfile from '../UserProfile';
+//import Notification from '../Notificaton';
 
 
 // const miniLinks = [
@@ -46,7 +48,7 @@ const TopNavbar = () => {
       setTimeout(() => {
         localStorage.removeItem('token');
         setUserToken('')
-        
+
       }, 1000);
       toast.success("Sign out successful!", {
         position: toast.POSITION.BOTTOM_RIGHT
@@ -70,11 +72,10 @@ const TopNavbar = () => {
         <div className={`${styles.links} hidden items-center  lg:flex lg:grow justify-between`}>
           {links.map((link, index) => (
             <Link
-              className={`${
-                `/${pathname}` === link.link || `/${pathname}/1` === link.link
-                  ? `${styles.active}`
-                  : ''
-              } block`}
+              className={`${`/${pathname}` === link.link || `/${pathname}/1` === link.link
+                ? `${styles.active}`
+                : ''
+                } block`}
               key={index}
               to={link.link}>
               {link.name}
@@ -82,7 +83,7 @@ const TopNavbar = () => {
           ))}
 
           <div className={`${styles.dropdown} ${styles.links} px-1 space-x-1 relative middle `}>
-            
+
             <a
               className={
                 pathname === routes.avatars || pathname === routes.scenery ? `${styles.active}` : ''
@@ -105,19 +106,9 @@ const TopNavbar = () => {
           </div>
           <Link to={routes.contact}>Contact us</Link>
         </div>
-        <div className={`hidden lg:flex`}>
-          {/* { user && (<Link onClick={handleSignOut} to={routes.signIn} style={{ color: '#2563EB', alignSelf: 'center', marginRight:'1.875rem' }} > Sign out</Link>)} */}
-          {user ? (
-            <button
-            className="hover:border-sec-600 focus:bg-white  hover:text-sec-600 text-blue-600  border rounded-lg border-blue-600 px-4 py-2 md:px-7"
-              style={{
-                alignSelf: 'center',
-                marginRight: '1rem' 
-              }}
-              onClick={handleSignOut}>
-              Sign out {/* {user?.displayName} */}
-            </button>
-          ) : (
+        <div className={`hidden justify-center lg:flex`}>
+
+          {!user && (
             <Link
               to={routes.signIn}
               className="hover:border-sec-600 focus:bg-white  hover:text-sec-600 text-blue-600  border rounded-lg border-blue-600 px-4 py-2 md:px-7"
@@ -128,12 +119,19 @@ const TopNavbar = () => {
               Sign In
             </Link>
           )}
+
           <Link to={routes.podcastUpload}>
             <Button label={'Create Video'}>Create Video</Button>
           </Link>
+
+          <div>
+          { user && <UserProfile handleSignOut={handleSignOut } /> }
+          </div>
+
         </div>
 
-        <div className='lg:hidden'>
+        <div className='flex lg:hidden'>
+          { user && <UserProfile handleSignOut={handleSignOut } /> }
           <Hamburger size={28} toggled={show} toggle={() => setShow(!show)} />
         </div>
 
@@ -173,7 +171,7 @@ const TopNavbar = () => {
 
           <div className="flex w-full justify-center items-center">
             {user ? (
-              <button 
+              <button
                 className="w-[240px] h-[58px] hover:border-sec-600 focus:bg-white  hover:text-sec-600 text-blue-600  border rounded-lg border-blue-600 px-4 py-2 md:px-7 md:py-3"
                 onClick={handleSignOut}>
                 Sign out {/* {user?.displayName} */}

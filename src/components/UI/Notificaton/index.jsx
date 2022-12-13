@@ -12,8 +12,8 @@ import { motion } from "framer-motion";
 import { menuAnimate } from './animation';
 // import { toast } from 'react-toastify';
 import { IoNotificationsOutline } from 'react-icons/io5';
-import { FaRegUserCircle } from 'react-icons/fa';
-import Progress from "../../../assets/dropdown/progress.png"
+import Smile from '../../../assets/dropdown/smile.png';
+
 
 
 // const miniLinks = [
@@ -106,55 +106,23 @@ const NavSign = () => {
           <Link to={routes.podcastUpload}>
             <Button label={'Create Video'}>Create Video</Button>
           </Link>
-          {/* <div className='relative flex items-center justify-center'>
+          <div className='relative flex items-center justify-center'>
             <IoNotificationsOutline className='text-textColor text-2xl ml-6 cursor-pointer' />
             <div className='absolute -top-2 -left-2 w-5 h-5 rounded-full  text-blue-600  flex
     items-center justify-center'>
               <p className='text-xs text-white font-semibold'>1</p>
             </div>
-          </div> */}
+          </div>
 
-          <div ref={menuRef} >
-            <div className={styles.menutrigger} onClick={() => { setOpen(!open) }}>
-              <div className='relative flex items-center justify-center pt-2'>
-                <IoNotificationsOutline className='text-textColor text-2xl ml-6 cursor-pointer ' />
-                <div className='absolute -top-2 -right-2 w-5 h-5 rounded-full  bg-blue-600 z-auto  flex
-    items-center justify-center'>
-                  <p className='text-xs text-white font-semibold'>1</p>
-                </div>
+          <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`} >
+            <div className='flex items-center'>
+              <div>
+                <img src={Smile} alt='img' />
+                <h5>Upload successful!</h5>
               </div>
             </div>
 
           </div>
-
-          <div ref={menuRef} >
-            <div className={styles.menutrigger} onClick={() => { setOpen(!open) }}>
-              <div className='relative flex items-center justify-center pt-2 '
-                onClick={() => { setOpen(!open) }}>
-                <FaRegUserCircle className='text-textColor text-2xl ml-6 cursor-pointer ' />
-                <div className='absolute -top-2 -right-2 w-5 h-5 rounded-full  bg-blue-600  flex
-    items-center justify-center'>
-                  <p className='text-xs text-white font-semibold'>1</p>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.dropdown_menu} ${open ? 'active' : 'inactive'}`} >
-
-              <div className='flex justify-between items-center py-5'>
-                <FaRegUserCircle className='text-textColor text-2xl ml-3 cursor-pointer text-sec-700' />
-                <h1 className=' text-sec-700 text-2xl'>wanjiku@gmail.com</h1>
-              </div>
-              <ul>
-                <DropdownItem img={Progress} text={"In progress"} />
-                <DropdownItem img={Progress} text={"My uploads"} />
-                <DropdownItem img={Progress} text={"My video podcasts"} />
-                <DropdownItem img={Progress} text={"Upgrade"} />
-                <DropdownItem img={Progress} text={"Settings"} />
-                <DropdownItem img={Progress} text={"Sign out"} />
-              </ul>
-            </div>
-          </div>
-
 
         </div>
 
@@ -206,14 +174,14 @@ const NavSign = () => {
   );
 };
 
-function DropdownItem(props) {
-  return (
-    <li className={styles.dropdownItem}>
-      <img src={props.img}></img>
-      <a> {props.text} </a>
+// function DropdownItem(props) {
+//   return (
+//     <li className={styles.dropdownItem}>
+//       <img src={props.img}></img>
+//       <a> {props.text} </a>
 
-    </li>
-  );
-}
+//     </li>
+//   );
+// }
 
-export default NavSign
+export default NavSign;
