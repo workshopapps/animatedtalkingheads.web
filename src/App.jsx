@@ -31,14 +31,11 @@ import ExploreAvatar from './pages/explore-avatar';
 import ApiPage from './pages/api-page';
 import SignUp from './pages/sign-up';
 import SignIn from './pages/sign-in';
-
 import ForgotPassword from './pages/forgot-password';
 import { AuthContextProvider } from './context/AuthContext';
-
 import store from './store/store';
 import DownloadPodcast from './pages/podcast/download';
 import Characters from './pages/podcast/characters';
-import Setting from './pages/settings/components/Appearance';
 import SettingsAppearance from "./pages/settings/components/Appearance";
 import SettingsIntegration from "./pages/settings/components/IntegrationAndApps";
 import SettingsCommunity from "./pages/settings/components/Community";

@@ -1,49 +1,39 @@
+import { useEffect } from 'react';
+//import  { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import { Text } from '../../../../components/UI/Text';
-
-// import speakerTwo from '../../../../assets/images/headerTwo.png';
-
-import bg1 from '../../../../assets/images/scenery/background1.png';
-import bg2 from '../../../../assets/images/scenery/background2.png';
-import bg3 from '../../../../assets/images/scenery/background3.png';
-import bg4 from '../../../../assets/images/scenery/background4.png';
-import bg5 from '../../../../assets/images/scenery/background5.png';
-import SimpleImageSlider from 'react-simple-image-slider';
 import { BiEditAlt } from 'react-icons/bi';
 import CustomiseCharacterModal from './modal';
-// import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { useState } from 'react';
-
 import store from '../../../../store/store.js';
-// import { setAvatar, setBackgound } from '../../../../store/actions/customizeVideoActions';
+import { scenes } from '../data';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Navigation } from 'swiper';
+import { SET_CURRENT_BACKGROUND } from '../../../../store/actionsTypes/actionTypes';
 
 const CustomizeAudio = ({ speakers }) => {
-  const [currentScene] = useState(0);
+  const [currentScene, setCurrentScene] = useState(1);
   const [showModal, setShowModal] = useState(false);
-
-  const sceneAray = [bg1, bg2, bg3, bg4, bg5];
-  // console.log(sceneAray.length);
-
-  // function changeScene(mode) {
-  //   switch (mode) {
-  //     case 'next':
-  //       if (currentScene < sceneAray.length - 1) {
-  //         // setBackgound()
-  //         return setCurrentScene(currentScene + 1);
-  //       } else return;
-
-  //     case 'prev':
-  //       if (currentScene > 1) {
-  //         return setCurrentScene(currentScene - 1);
-  //       } else return;
-  //   }
-  // }
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const currentHead = store.getState().customizeVideoReducer.currentAvatar;
 
+  useEffect(() => {
+    let index = activeIndex;
+    index = index === 0 ? scenes.length : index;
+    index = index > scenes.length ? 1 : index;
+    setCurrentScene(index);
+  }, [activeIndex]);
+
+  useEffect(() => {
+    store.dispatch({ type: SET_CURRENT_BACKGROUND, payload: scenes[currentScene - 1] });
+  }, [currentScene]);
 
   return (
     <div className="scene_wrapper md:p-[20px]  md:px-[55px]">
-      {showModal && <CustomiseCharacterModal speakers={speakers} closeModal={() => setShowModal(!showModal)} />}
+      {showModal && (
+        <CustomiseCharacterModal speakers={speakers} closeModal={() => setShowModal(!showModal)} />
+      )}
 
       {/* action panel */}
       <div className="headers">
@@ -59,19 +49,19 @@ const CustomizeAudio = ({ speakers }) => {
 
         {/* <div className="text middle space-x-3">
           <Text w={'md'} type={'text4'} cap>
-            Background {currentScene + 1}/{sceneAray.length}
+            Background {mod(currentScene, sceneArray.length) + 1} / {sceneArray.length}
           </Text>
 
           <div className="navigation space-x-2 middle">
             <div
               role={'button'}
-              onClick={() => changeScene('prev')}
+              onClick={() => setCurrentScene(currentScene - 1)}
               className="nav_item border rounded-md p-1 hover:bg-blue-500 hover:text-white">
               <BsChevronLeft className={'text-xl'} />
             </div>
             <div
               role={'button'}
-              onClick={() => changeScene('next')}
+              onClick={() => setCurrentScene(currentScene + 1)}
               className="nav_item border rounded-md p-1 hover:bg-blue-500 hover:text-white">
               <BsChevronRight className={'text-xl'} />
             </div>
@@ -80,36 +70,32 @@ const CustomizeAudio = ({ speakers }) => {
       </div>
 
       <div className="scene w-full border h-[250px]  md:h-[450px] relative">
-        {/* <div
-          style={{ backgroundImage: `url(${sceneAray[currentScene]})` }}
-          className={`bg-image w-full h-full relative sceneBackground`}>
-       
-        </div> */}
+        <div className={`bg-image w-full h-full`}>
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            loop={true}
+            snapIndex={(e) => console.log(e)}
+            navigation={true}
+            modules={[Navigation]}
+            className="mySwiper"
+            onRealIndexChange={(element) => setActiveIndex(element.activeIndex)}>
+            <SwiperSlide>
+              <img className="object-cover h-[250px]  md:h-[450px] w-full" src={scenes[0].image} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="object-cover h-[250px]  md:h-[450px] w-full" src={scenes[1].image} />
+            </SwiperSlide>
+          </Swiper>
 
-        <div
-          style={{ backgroundImage: `url(${sceneAray[currentScene]})` }}
-          className={`bg-image w-full h-full relative sceneBackground`}>
-          <SimpleImageSlider
-            width={'100%'}
-            height={'100%'}
-            images={sceneAray}
-            // showBullets={true}
-            style={{
-              backgroundPosition: 'center'
-            }}
-            onClickBullets={(idx) => console.log(idx)}
-            showNavs={true}
-            navStyle={2}
-            onClickNav={(toRight) => console.log(toRight)}
-          />
-          <div className="speakers_container   absolute bottom-20 md:bottom-[70px] left-0 mt-6   middle justify-between w-full">
+          <div className="speakers_container  z-10  absolute bottom-20 md:bottom-[70px] left-0 mt-6   middle justify-between w-full">
             <div className="speaker_one_head mx-auto w-[180px] md:w-full centered">
-              <img src={currentHead[0]} alt="" width={'150px'} height={'150px'} />
+              <img src={currentHead[0].image} alt="" width={'150px'} height={'150px'} />
             </div>
 
             {speakers === 2 && (
               <div className="speaker_two_head w-[180px] md:w-full  centered">
-                <img src={currentHead[1]} alt="" width={'150px'} height={'150px'} />
+                <img src={currentHead[1].image} alt="" width={'150px'} height={'150px'} />
               </div>
             )}
           </div>
