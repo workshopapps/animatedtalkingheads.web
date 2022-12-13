@@ -1,55 +1,40 @@
-import  { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
+import {useEffect} from 'react';
+//import  { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import { Text } from '../../../../components/UI/Text';
 import { BiEditAlt } from 'react-icons/bi';
 import CustomiseCharacterModal from './modal';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import store from '../../../../store/store.js';
 import { scenes } from '../data';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Navigation } from "swiper";
 import { SET_CURRENT_BACKGROUND } from '../../../../store/actionsTypes/actionTypes';
-import SwipeableViews from 'react-swipeable-views';
-import { virtualize } from 'react-swipeable-views-utils';
-import { mod } from 'react-swipeable-views-core';
-
-const VirtualizeSwipeableViews = virtualize(SwipeableViews);
 
 
-
-function slideRenderer(params) {
-  const { index, key } = params;
-
-  switch (mod(index, 2)) {
-    case 0:
-      return (
-        <div key={key}>
-          <img className='object-cover h-[250px]  md:h-[450px] w-full' src={scenes[0].image} />
-        </div>
-      );
-
-    case 1:
-      return (
-        <div key={key}>
-          <img className='object-cover h-[250px]  md:h-[450px] w-full' src={scenes[1].image} />
-        </div>
-      );
-
-    default:
-      return null;
-  }
-}
 
 
 const CustomizeAudio = ({ speakers }) => {
+
   const [currentScene, setCurrentScene] = useState(1);
   const [showModal, setShowModal] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const sceneArray = [scenes[0].image, scenes[1].image];
   const currentHead = store.getState().customizeVideoReducer.currentAvatar;
 
 
   useEffect(() => {
-    const index = mod(currentScene - 1, 2)
-    store.dispatch({ type: SET_CURRENT_BACKGROUND, payload: scenes[index]});
+    let index = activeIndex
+    index = index === 0 ? scenes.length : index
+    index = index > scenes.length ? 1 : index
+    setCurrentScene(index)
+  }, [activeIndex]);
+
+
+  useEffect(() => {
+    store.dispatch({ type: SET_CURRENT_BACKGROUND, payload: scenes[currentScene - 1]});
   }, [currentScene]);
+
 
   return (
     <div className="scene_wrapper md:p-[20px]  md:px-[55px]">
@@ -67,7 +52,7 @@ const CustomizeAudio = ({ speakers }) => {
           </Text>
         </div>
 
-        <div className="text middle space-x-3">
+        {/* <div className="text middle space-x-3">
           <Text w={'md'} type={'text4'} cap>
             Background {mod(currentScene, sceneArray.length) + 1} / {sceneArray.length}
           </Text>
@@ -86,15 +71,31 @@ const CustomizeAudio = ({ speakers }) => {
               <BsChevronRight className={'text-xl'} />
             </div>
           </div>
-        </div>
-      </div>
+        </div> */}
+      
+      </div> 
 
       <div className="scene w-full border h-[250px]  md:h-[450px] relative">
 
-        <div
-          className={`bg-image w-full h-full`}>
-            <VirtualizeSwipeableViews index={currentScene} slideRenderer={slideRenderer} />
-          <div className="speakers_container   absolute bottom-20 md:bottom-[70px] left-0 mt-6   middle justify-between w-full">
+        <div className={`bg-image w-full h-full`}>
+
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            loop={true}
+            snapIndex={(e) => console.log(e)}
+            navigation={true}
+            modules={[Navigation]}
+            className="mySwiper"
+            onRealIndexChange={(element)=>setActiveIndex(element.activeIndex)}
+          >
+
+            <SwiperSlide><img className='object-cover h-[250px]  md:h-[450px] w-full' src={scenes[0].image} /></SwiperSlide>
+            <SwiperSlide><img className='object-cover h-[250px]  md:h-[450px] w-full' src={scenes[1].image} /></SwiperSlide>
+
+          </Swiper>
+
+          <div className="speakers_container  z-10  absolute bottom-20 md:bottom-[70px] left-0 mt-6   middle justify-between w-full">
             <div className="speaker_one_head mx-auto w-[180px] md:w-full centered">
               <img src={currentHead[0].image} alt="" width={'150px'} height={'150px'} />
             </div>
