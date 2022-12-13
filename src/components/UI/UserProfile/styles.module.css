@@ -1,5 +1,4 @@
 .nav {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -14,14 +13,14 @@
   max-width: 600px;
 }
 
-.nav .links a {
+.nav .links p {
   font-size: 1.4em;
   line-height: 20px;
   color: #292d32;
 }
 
-.nav .links a:hover,
-.nav .link a:active {
+.nav .links p:hover,
+.nav .link p:active {
   color: #2158d2;
 }
 
@@ -29,11 +28,11 @@
   color: #2158d2;
 }
 
-ul {
+.nav ul {
   list-style: none;
 }
 
-a {
+p {
   text-decoration: none;
 }
 
@@ -57,38 +56,11 @@ a {
   padding: 10px 20px;
   width: 327px;
   height: 453px;
-
-  background: #FEFEFE;
+  background: #fefefe;
   border-radius: 8px;
 }
 
-.dropdown_menu::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  right: 20px;
-  height: 20px;
-  width: 20px;
-  background: var(--secondary-bg);
-  transform: rotate(45deg);
-}
-
-.dropdown_menu.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  transition: var(--speed) ease;
-}
-
-.dropdown_menu.inactive {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-20px);
-  transition: var(--speed) ease;
-}
-
-
-h3 {
+.dropdown_menu h3 {
   width: 100%;
   text-align: center;
   font-size: 18px;
@@ -110,8 +82,8 @@ h3 span {
   border-top: 1px solid rgba(0, 0, 0, 0.4);
 }
 
-.dropdown_menu ul li:hover a {
-  color: #2158D2;
+.dropdown_menu ul li:hover p {
+  color: #2158d2;
   cursor: pointer;
 }
 
@@ -132,12 +104,11 @@ h3 span {
   transition: var(--speed);
 }
 
-.dropdownItem a {
+.dropdownItem p {
   max-width: 150px;
   margin-left: 10px;
   transition: var(--speed);
 }
-
 
 .navDummy {
   height: 4em;
@@ -162,7 +133,7 @@ h3 span {
   margin-bottom: 1.25em;
 }
 
-.menu a {
+.menu p {
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
@@ -178,7 +149,7 @@ h3 span {
   margin-top: 14px;
 }
 
-.menu .links2 a {
+.menu .links2 p {
   font-weight: 600;
   font-size: 14px;
   line-height: 18px;
@@ -225,13 +196,12 @@ h3 span {
   }
 }
 
-
 @media screen and (max-width: 1440px) {
   .nav .links {
     max-width: 450px;
   }
 
-  .nav .links a {
+  .nav .links p {
     font-size: 1em;
     line-height: 20px;
     color: #292d32;
