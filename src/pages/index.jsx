@@ -20,6 +20,7 @@ import StartCreating from '../components/pages/landing/StartCreating';
 // import ChatBox from '../components/ChatBox';
 import ReactTooltip from 'react-tooltip';
 
+
 const Home = () => {
   // const defaultOptions = {
   //   loop: true,
@@ -225,6 +226,7 @@ const Home = () => {
       <Freestyle />
       <Transform />
       <StartCreating />
+
     </Layout>
   );
 };
