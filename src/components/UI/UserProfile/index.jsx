@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import styles from './styles.module.css';
 import { FaRegUserCircle } from 'react-icons/fa';
@@ -43,7 +43,7 @@ items-center justify-center'>
         <div className={`${styles.dropdown_menu} ${open ? 'active' : 'inactive'}`} >
           <div className='flex justify-between items-center py-5'>
             <FaRegUserCircle className='text-textColor text-2xl ml-3 cursor-pointer text-sec-700' />
-            <h1 className=' text-sec-700 text-2xl'></h1>
+            <h1 className=' text-sec-700 text-2xl'>wanjiku@gmail.com</h1>
           </div>
           <ul>
             <DropdownItem to={routes.settings} hide={hide} img={Progress} text={"In progress"} />
@@ -61,9 +61,9 @@ items-center justify-center'>
 
 function DropdownItem(props) {
   return (
-    <li onClick={() => {props.onClick(); props.hide(); }} className={styles.dropdownItem}>
+    <li onClick={() => { props.onClick(); props.hide(); }} className={styles.dropdownItem}>
       <img src={props.img}></img>
-      <Link to={props.to}>{props.text}</Link>  
+      <Link to={props.to}>{props.text}</Link>
     </li>
   );
 }
