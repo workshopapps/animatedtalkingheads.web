@@ -110,11 +110,10 @@
 }
 
 @media screen and (max-width: 756px) {
-  a:hover {
+  .nav .links a:hover {
     color: #292d32;
   }
 }
-
 
 @media screen and (max-width: 1440px) {
   .nav .links {

@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="">
       <TopNavbar />
       <div className={styles.navDummy}></div>
       {children}
