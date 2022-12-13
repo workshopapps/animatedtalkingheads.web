@@ -41,7 +41,9 @@ const Home = () => {
           <div className="hero-container ">
             <div className="desktop-lhs">
               <div className="hero-text">
-                <h1 className="hero-heading">Heads that talk, On your podcast.</h1>
+                <h1 className="hero-heading">
+                  Heads that talk,<br></br> On your podcast.
+                </h1>
                 <p className="hero-par">
                   Turn audio podcasts into a video with our various characters customizable to your
                   liking.
