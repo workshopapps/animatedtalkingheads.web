@@ -1,6 +1,6 @@
 import '../animated-podcast/css/index.css'
 
-const AnimatedPodcastData = (props) => {
+const AnimatedPodcastData = () => {
     return (
     <section className="podcast-card">
       <div className='video-preview-container'>
