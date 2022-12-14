@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 // import { UserAuth  } from '../../context/AuthContext';
 import {  toast } from 'react-toastify';
+import axios from 'axios';
 // import { useGoogleLogin } from '@react-oauth/google';
 // import axios from 'axios';
 
@@ -48,16 +49,18 @@ const SignUpSection = (props) => {
         return;
       }
 
+      if(formData.password.length < 6){
+        toast.error('Sorry, your password must be at least 6 characters in length.', {
+          position: toast.POSITION.BOTTOM_RIGHT
+        })
+        return;
+      }
+
       if(formData.password != formData.confirmPassword){
             toast.error('Password mismatch', {
               position: toast.POSITION.BOTTOM_RIGHT
             })
             return;
-      }
-
-      if(formData.password < 6){
-          toast.error('Password mismatch')
-          return;
       }
 
       // if(userToken != ''){
@@ -67,39 +70,47 @@ const SignUpSection = (props) => {
       //   return;
       // }
 
-      fetch('https://api.voxclips.hng.tech/auth/signup', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-    })
+      axios.post('https://api.voxclips.hng.tech/auth/signup',
+        formData)
         .then(res => {
-            if(res.ok){
-              toast.info('Creating user profile', {
-                position: toast.POSITION.BOTTOM_RIGHT,
-                autoClose: 1000
-              });  
-              return res.json()
-            } else {
-              toast.error('An error occured, please try again', {
+            if(res.data.message === 'Email already registered, Sign In') {
+              toast.error('Sorry, this email has already been registered', {
                 position: toast.POSITION.BOTTOM_RIGHT
               })
               return;
             }
+
+            if(res.status === 201){
+              toast.info('Creating user profile', {
+                position: toast.POSITION.BOTTOM_RIGHT,
+                autoClose: 1000
+              });  
+              setTimeout(() => {
+                toast.success('Sign up successful', {
+                  position: toast.POSITION.BOTTOM_RIGHT
+                })
+              }, 2000);
+              navigate('/sign-in')
+              return;
+            } else {
+              toast.error('An error occured, please try again', {
+                position: toast.POSITION.BOTTOM_RIGHT
+              })
+              // return;
+            }
         })
-        .then(() => {
-          setTimeout(() => {
-            toast.success('Sign up successful', {
-              position: toast.POSITION.BOTTOM_RIGHT
-            })
-          }, 2000);
-            navigate('/sign-in')
-            // setUserToken(data.user)
-            // localStorage.setItem("token", userToken)
-            // console.log(userToken)
-            return;
-        })
+        // .then(() => {
+        //   setTimeout(() => {
+        //     toast.success('Sign up successful', {
+        //       position: toast.POSITION.BOTTOM_RIGHT
+        //     })
+        //   }, 2000);
+        //     navigate('/sign-in')
+        //     // setUserToken(data.user)
+        //     // localStorage.setItem("token", userToken)
+        //     // console.log(userToken)
+        //     return;
+        // })
         .catch((error) => {
           toast.error(error, {
             position: toast.POSITION.BOTTOM_RIGHT
