@@ -87,7 +87,7 @@ const UploadPodcast = () => {
       setUpload(false);
       setUploaded(true);
     } catch (error) {
-      // setError(error.message);
+      console.log(error.message);
       setError("We couldn't upload your podcast. Please try again");
       setUpload(false);
       setAudio(false);

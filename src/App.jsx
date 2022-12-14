@@ -35,6 +35,7 @@ import ForgotPassword from './pages/forgot-password';
 import { AuthContextProvider } from './context/AuthContext';
 import store from './store/store';
 import DownloadPodcast from './pages/podcast/download';
+import AnimatedPodcast from './pages/podcast/animated-podcast';
 import Characters from './pages/podcast/characters';
 import SettingsAppearance from './pages/settings/components/Appearance';
 import SettingsIntegration from './pages/settings/components/IntegrationAndApps';
@@ -105,12 +106,12 @@ function App() {
             <Route element={<PrivateRoute />}>
               <Route path={routes.podcastCustomize} element={<Customization />} />
               <Route path={routes.podcastDownload} element={<DownloadPodcast />} />
+              <Route path={routes.animatedPodcast} element={<AnimatedPodcast />} />
               <Route path={routes.podcastUpload} element={<UploadPodcast />} />
               <Route path={routes.dashboard_audios} element={<Uploads />} />
               <Route path={routes.dashboard_progress} element={<InProgress />} />
               <Route path={routes.checkout} element={<Checkout />} />
             </Route>
-
             <Route path={routes.exploreBackground} element={<></>} />
             <Route path={routes.avatars} element={<Avatars />} />
             <Route path={routes.api} element={<ApiPage />} />
@@ -127,7 +128,6 @@ function App() {
             <Route path={routes.privacyChangesToPolicy} element={<PrivacyChanges />} />
             <Route path={routes.privacyhowWeUseInformation} element={<HowWeUseInformation />} />
             <Route path={routes.privacyInformation} element={<PrivacyInformation />} />
-
             <Route path={routes.scenery} element={<Scenery />} />
           </Routes>
         </AuthContextProvider>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import { FaRegUserCircle } from 'react-icons/fa';
 import Progress from '../../../assets/dropdown/Progress.svg';
@@ -12,9 +12,15 @@ import Logout from '../../../assets/dropdown/Logout.svg';
 import { motion } from 'framer-motion';
 import { menuAnimate } from './animation';
 import { routes } from '../../../libs/links';
+import { UserAuth } from '../../../context/AuthContext';
+import axios from 'axios';
 
 const UserProfile = ({ handleSignOut }) => {
+  const { userEmail, user } = UserAuth();
+  const [data, setData] = useState(null);
+  const [plan, setPlan] = useState('');
   const [open, setOpen] = useState(false);
+  const [error, setError] = useState('');
 
   const show = () => {
     setOpen(true);
@@ -24,6 +30,40 @@ const UserProfile = ({ handleSignOut }) => {
     setOpen(false);
   };
 
+  useEffect(() => {
+    if (user) {
+      getData();
+    }
+  }, [user]);
+
+  const getData = () => {
+    const url = 'https://api.voxclips.hng.tech/subscription';
+    axios
+      .get(url, {
+        headers: {
+          Authorization: `Bearer ${user}`
+        }
+      })
+      .then((res) => {
+        console.log(res.data);
+        if (res.status === 200) {
+          setData(res.data);
+          checkPlan(res.data);
+        }
+      })
+      .catch((err) => {
+        setError(err.message);
+        console.log(error);
+      });
+  };
+  const checkPlan = (data_arr) => {
+    if (data_arr.length < 1) {
+      setPlan('Free Plan');
+      console.log(plan);
+    } else if (data_arr.length > 0) {
+      setPlan('Pro Plan');
+    }
+  };
   return (
     <div onClick={open ? hide : show}>
       <div className="relative flex items-center justify-center pt-[2px] ">
@@ -40,7 +80,7 @@ items-center justify-center'>
         <div className={`${styles.dropdown_menu} ${open ? 'active' : 'inactive'}`}>
           <div className="flex justify-between items-center py-5">
             <FaRegUserCircle className="text-textColor text-2xl ml-3 cursor-pointer text-sec-700" />
-            <h1 className=" text-sec-700 text-2xl"></h1>
+            {userEmail && <p className=" text-sec-700 text-2xl">{userEmail}</p>}
           </div>
           <ul>
             <DropdownItem
@@ -56,12 +96,17 @@ items-center justify-center'>
               text={'My uploads'}
             />
             <DropdownItem
-              to={routes.settings}
+              to={routes.animatedPodcast}
               hide={hide}
               img={Podcast}
               text={'My video podcasts'}
             />
-            <DropdownItem to={routes.pricing} hide={hide} img={Upgrade} text={'Upgrade'} />
+            <DropdownItem
+              to={routes.pricing}
+              hide={hide}
+              img={Upgrade}
+              text={`Upgrade ${`(${plan})`}`}
+            />
             <DropdownItem to={routes.settings} hide={hide} img={Settings} text={'Settings'} />
             <DropdownItem
               to={'#'}
