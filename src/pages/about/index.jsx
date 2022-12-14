@@ -13,7 +13,7 @@ import 'swiper/css';
 import { Pagination, Navigation } from 'swiper';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Engineering, Management, Design, Marketing } from './team-data/teamData.jsx';
+import { Engineering, Management, Design, Marketing } from './team-data/teamData.js';
 import style from './css/about.module.css';
 import { Button } from '../../components/UI/Button';
 import PageTitle from '../../components/UI/page-title';
@@ -213,7 +213,7 @@ const About = () => {
                 <div className={style.aboutTeamSection2}>
                   <div className={style.aboutTeamTabs}>
                     <div className={style.aboutTeamTab} tabIndex={0}>
-                      <p>Management</p>
+                      <p>Management </p>
                       <div className={style.aboutTeamSlider} id={style.firstSlider}>
                         <Swiper
                           style={{
@@ -229,9 +229,7 @@ const About = () => {
                           loop={true}>
                           {Management.map((slide) => (
                             <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
-                              <img src={slide.image} alt="" />
-                              <h3>{slide.name}</h3>
-                              <p>{slide.role}</p>
+                              <img src={slide} alt="" />
                             </SwiperSlide>
                           ))}
                         </Swiper>
@@ -252,17 +250,16 @@ const About = () => {
                           spaceBetween={1}
                           slidesPerGroup={1}
                           loop={true}>
-                          {Management.map((slide) => (
+                          {[...Management, ...Engineering, ...Design, ...Marketing].map((slide) => (
                             <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
-                              <img src={slide.image} alt="" />
-                              <h3>{slide.name}</h3>
-                              <p>{slide.role}</p>
+                              <img src={slide} alt="" />
                             </SwiperSlide>
                           ))}
                         </Swiper>
                       </div>
 
                       {/* for small screen */}
+                    
                     </div>
 
                     <div className={style.aboutTeamTab} tabIndex={1}>
@@ -282,9 +279,7 @@ const About = () => {
                           loop={true}>
                           {Engineering.map((slide) => (
                             <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
-                              <img src={slide.image} alt="" />
-                              <h3>{slide.name}</h3>
-                              <p>{slide.role}</p>
+                              <img src={slide} alt="" />
                             </SwiperSlide>
                           ))}
                         </Swiper>
@@ -308,9 +303,7 @@ const About = () => {
                           loop={true}>
                           {Design.map((slide) => (
                             <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
-                              <img src={slide.image} alt="" />
-                              <h3>{slide.name}</h3>
-                              <p>{slide.role}</p>
+                              <img src={slide} alt="" />
                             </SwiperSlide>
                           ))}
                         </Swiper>
@@ -334,9 +327,7 @@ const About = () => {
                           loop={true}>
                           {Marketing.map((slide) => (
                             <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
-                              <img src={slide.image} alt="" />
-                              <h3>{slide.name}</h3>
-                              <p>{slide.role}</p>
+                              <img src={slide} alt="" />
                             </SwiperSlide>
                           ))}
                         </Swiper>
