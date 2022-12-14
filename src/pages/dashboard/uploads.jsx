@@ -45,11 +45,11 @@ export const Uploads = () => {
     return date.split('T')[1].split('.')[0];
   };
 
-  const splitName = (name) => {
-    const arr = name.split('/');
-    const name_of_song = arr[arr.length - 1].split('-').slice(2).join('-');
-    return name_of_song;
-  };
+  // const splitName = (name) => {
+  //   const arr = name.split('/');
+  //   const name_of_song = arr[arr.length - 1].split('-').slice(2).join('-');
+  //   return name_of_song;
+  // };
   const createVideo = (item) => {
     store.dispatch({ type: 'ADD_PODCAST_ITEM', payload: item });
     navigate(routes.podcastCustomize);
@@ -58,12 +58,12 @@ export const Uploads = () => {
     <Layout>
       <PageTitle title="Uploads" />
       <section className="container w-[90%] mx-auto min-h-[50vh] my-20">
-        <div className="flex  text-sm lg:text-base  border-b-[#BDBDBD] border-b py-2">
-          <div className="w-[5%]">S/No</div>
-          <div className="w-[40%] text-center">Audio Name</div>
+        <div className="flex justify-between text-sm lg:text-base  border-b-[#BDBDBD] border-b py-2">
+          <div className="w-[10%]">S/No</div>
+          <div className="w-[20%] text-center">Audio Name</div>
           <div className="w-[20%] text-center ">Date Created</div>
           <div className="w-[20%] text-center">Time</div>
-          <div className="w-[15%] flex justify-center items-center">
+          <div className="w-[20%] flex justify-center items-center">
             <BiMenuAltRight color="#2158D2" />
           </div>
         </div>
@@ -71,12 +71,12 @@ export const Uploads = () => {
           ? data.map((item, index) => (
               <div
                 key={index}
-                className="flex  text-sm lg:text-base  border-b-[#BDBDBD] border-b py-2 lg:py-4">
-                <div className="w-[5%]">{data.indexOf(item) + 1}</div>
-                <div className="w-[40%] text-center ">{splitName(item.file_url)}</div>
+                className="flex justify-between text-sm lg:text-base  border-b-[#BDBDBD] border-b py-2 lg:py-4">
+                <div className="w-[10%]">{data.indexOf(item) + 1}</div>
+                <div className="w-[20%] text-center ">Audio {data.indexOf(item) + 1}</div>
                 <div className="w-[20%] text-center">{getDate(item.createdAt)}</div>
-                <div className="w-[20%] text-center">{getTime(item.updatedAt)}</div>
-                <div className="w-[15%] text-center">
+                <div className="w-[20%] text-center">{getTime(item.createdAt)}</div>
+                <div className="w-[20%] text-center">
                   <button
                     onClick={() => createVideo(item)}
                     className=" text-sm text-[#2158D2] lg:text-base cursor-pointer hover:text-opacity-80">
