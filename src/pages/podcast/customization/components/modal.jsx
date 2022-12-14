@@ -1,5 +1,5 @@
-import ran from '../../../../assets/icons/customize-audio/repeat.svg';
-import rotate from '../../../../assets/icons/customize-audio/rotate-left.svg';
+// import ran from '../../../../assets/icons/customize-audio/repeat.svg';
+// import rotate from '../../../../assets/icons/customize-audio/rotate-left.svg';
 import close from '../../../../assets/icons/close-circle.svg';
 import store from '../../../../store/store.js';
 import { useState } from 'react';
@@ -108,7 +108,7 @@ function HeadCustomCenter({ closeModal, speakers }) {
           </div>
         </div>
 
-        <div className="action centered">
+        {/* <div className="action centered">
           <div className=" space-x-6 middle">
             <div className="random middle space-x-2 cursor-pointer">
               <img src={ran} alt="" />
@@ -120,7 +120,7 @@ function HeadCustomCenter({ closeModal, speakers }) {
               <h1 className="font-semibold text-blue-500">Reset</h1>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="button centered">
           <Button onClick={setCurrentHeads}> Done  </Button>
         </div>
