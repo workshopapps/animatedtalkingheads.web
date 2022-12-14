@@ -17,7 +17,10 @@ export const AuthContextProvider = ({ children }) => {
     localStorage.getItem('token') ? localStorage.getItem('token') : null
   );
 
-  const [userEmail, setUserEmail] = useState('');
+  const [userEmail, setUserEmail] = useState(
+    localStorage.getItem('email') ? localStorage.getItem('token') : ''
+  )
+
   //  setUser(localStorage.getItem('token') ? localStorage.getItem('token') : null);
 
   const createUser = (email, password) => {
@@ -57,6 +60,10 @@ export const AuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     setUser(localStorage.getItem('token'));
+  }, []);
+
+  useEffect(() => {
+    setUserEmail(localStorage.getItem('email'));
   }, []);
 
   return (
