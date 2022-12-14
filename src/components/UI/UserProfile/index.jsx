@@ -22,6 +22,8 @@ const UserProfile = ({ handleSignOut }) => {
   const [open, setOpen] = useState(false);
   const [error, setError] = useState('');
 
+  console.log(data)
+
   const show = () => {
     setOpen(true);
   };
@@ -78,23 +80,15 @@ items-center justify-center'>
         animate={open ? 'enter' : 'exit'}
         variants={menuAnimate}>
 
-        <div className={`${styles.dropdown_menu} ${open ? 'active' : 'inactive'}`} >
-          <div className='flex justify-between items-center py-5'>
-            <FaRegUserCircle className='text-textColor text-2xl ml-3 cursor-pointer text-sec-700' />
-            <h1 className=' text-sec-700 text-2xl'>wanjiku@gmail.com</h1>
-
         <div className={`${styles.dropdown_menu} ${open ? 'active' : 'inactive'}`}>
           <div className="flex justify-between items-center py-5">
             <FaRegUserCircle className="text-textColor text-2xl ml-3 cursor-pointer text-sec-700" />
 
 
+
+            {userEmail && <p className=" text-sec-700 text-base">{userEmail}</p>}
             <h1 className=" text-sec-700 text-2xl"></h1>
 
-
-            {userEmail && <h1 className=" text-sec-700 text-2xl">{userEmail}</h1>}
-
-
-            {userEmail && <p className=" text-sec-700 text-2xl">{userEmail}</p>}
           </div>
           <ul>
             <DropdownItem
@@ -138,9 +132,6 @@ items-center justify-center'>
 
 function DropdownItem(props) {
   return (
-
-    <li onClick={() => { props.onClick(); props.hide(); }} className={styles.dropdownItem}>
-
     <li
       onClick={() => {
         props.onClick();

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 // import styles from './styles.module.css';
 import footerLogo from './../../../assets/icons/footer_logo.svg';
-import settings from './../../../assets/icons/settings.svg';
+//import settings from './../../../assets/icons/settings.svg';
 // import globe from './../../../assets/icons/white_globe.svg';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { routes } from '../../../libs/links';
