@@ -5,9 +5,9 @@ import styles from './styles.module.css';
 import { FaRegUserCircle } from 'react-icons/fa';
 import Progress from '../../../assets/dropdown/Progress.svg';
 import Upload from '../../../assets/dropdown/Upload.svg';
-import Podcast from '../../../assets/dropdown/Podcast.svg';
+//import Podcast from '../../../assets/dropdown/Podcast.svg';
 import Upgrade from '../../../assets/dropdown/Upgrade.svg';
-import Settings from '../../../assets/dropdown/Settings.svg';
+//import Settings from '../../../assets/dropdown/Settings.svg';
 import Logout from '../../../assets/dropdown/Logout.svg';
 import { motion } from 'framer-motion';
 import { menuAnimate } from './animation';
@@ -115,7 +115,7 @@ items-center justify-center'>
               img={Upgrade}
               text={`Upgrade ${`(${plan})`}`}
             />
-            <DropdownItem to={routes.settings} hide={hide} img={Settings} text={'Settings'} />
+            {/* <DropdownItem to={routes.settings} hide={hide} img={Settings} text={'Settings'} /> */}
             <DropdownItem
               to={'#'}
               hide={hide}
