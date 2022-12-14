@@ -45,11 +45,11 @@ export const Uploads = () => {
     return date.split('T')[1].split('.')[0];
   };
 
-  const splitName = (name) => {
-    const arr = name.split('/');
-    const name_of_song = arr[arr.length - 1].split('-').slice(2).join('-');
-    return name_of_song;
-  };
+  // const splitName = (name) => {
+  //   const arr = name.split('/');
+  //   const name_of_song = arr[arr.length - 1].split('-').slice(2).join('-');
+  //   return name_of_song;
+  // };
   const createVideo = (item) => {
     store.dispatch({ type: 'ADD_PODCAST_ITEM', payload: item });
     navigate(routes.podcastCustomize);
