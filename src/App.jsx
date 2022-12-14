@@ -112,7 +112,6 @@ function App() {
               <Route path={routes.dashboard_progress} element={<InProgress />} />
               <Route path={routes.checkout} element={<Checkout />} />
             </Route>
-
             <Route path={routes.exploreBackground} element={<></>} />
             <Route path={routes.avatars} element={<Avatars />} />
             <Route path={routes.api} element={<ApiPage />} />
@@ -129,7 +128,6 @@ function App() {
             <Route path={routes.privacyChangesToPolicy} element={<PrivacyChanges />} />
             <Route path={routes.privacyhowWeUseInformation} element={<HowWeUseInformation />} />
             <Route path={routes.privacyInformation} element={<PrivacyInformation />} />
-
             <Route path={routes.scenery} element={<Scenery />} />
           </Routes>
         </AuthContextProvider>

@@ -12,7 +12,7 @@ import { motion } from 'framer-motion';
 import { menuAnimate } from './animation';
 import { toast } from 'react-toastify';
 import UserProfile from '../UserProfile';
-//import Notification from '../Notificaton';
+import Notification from '../Notificaton';
 
 // const miniLinks = [
 //   { name: 'Support', link: '#' },
@@ -120,10 +120,26 @@ const TopNavbar = () => {
             <Button label={'Create Video'}>Create Video</Button>
           </Link>
 
+
+          <div>
+            {user && <Notification handleSignOut={handleSignOut} />}
+          </div>
+
+          <div>
+            {user && <UserProfile handleSignOut={handleSignOut} />}
+          </div>
+        </div>
+
+
+
+        <div className='flex items-center gap-3 lg:hidden'>
+          {user && <Notification handleSignOut={handleSignOut} />}
+
           <div>{user && <UserProfile handleSignOut={handleSignOut} />}</div>
         </div>
 
         <div className="flex lg:hidden items-center gap-5">
+
           {user && <UserProfile handleSignOut={handleSignOut} />}
           <Hamburger size={28} toggled={show} toggle={() => setShow(!show)} />
         </div>

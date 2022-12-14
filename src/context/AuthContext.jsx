@@ -20,6 +20,7 @@ export const AuthContextProvider = ({ children }) => {
   const [userEmail, setUserEmail] = useState(
     localStorage.getItem('email') ? localStorage.getItem('token') : ''
   )
+
   //  setUser(localStorage.getItem('token') ? localStorage.getItem('token') : null);
 
   const createUser = (email, password) => {
@@ -67,7 +68,17 @@ export const AuthContextProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ createUser, user, logOut, signIn, googleSignIn, facebookSignIn, setUser, userEmail, setUserEmail }}>
+      value={{
+        createUser,
+        user,
+        logOut,
+        signIn,
+        googleSignIn,
+        facebookSignIn,
+        setUser,
+        userEmail,
+        setUserEmail
+      }}>
       {children}
     </UserContext.Provider>
   );

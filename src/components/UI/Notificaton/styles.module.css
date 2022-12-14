@@ -55,9 +55,8 @@ a {
   right: 1px;
   background-color: #fff;
   padding: 10px 20px;
-  width: 327px;
-  height: 403px;
-
+  width: 570px;
+  height: 303px;
   background: #FEFEFE;
   border-radius: 8px;
 }
@@ -186,7 +185,7 @@ h3 span {
   margin-top: 14px;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
   .nav {
     height: 5.5em;
   }
@@ -207,6 +206,8 @@ h3 span {
   align-items: center;
 }
 
+
+
 .dropdown {
   position: relative;
 }
@@ -223,6 +224,23 @@ h3 span {
   a:hover {
     color: #292d32;
   }
+  .dropdown_menu {
+  position: absolute;
+  top: 88px;
+  right: 1px;
+  background-color: #fff;
+  padding: 10px 20px;
+  width: 370px;
+  height: 300px;
+  background: #FEFEFE;
+  border-radius: 8px;
+}
+.text{
+  padding-right: 50px;
+}
+.text1{
+  padding-right: 30px;
+}
 }
 
 
