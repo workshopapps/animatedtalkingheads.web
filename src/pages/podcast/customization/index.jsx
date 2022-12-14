@@ -70,12 +70,13 @@ const CustomizeAudio = () => {
 
     const data = {
       bg_path: currentBackground.id,
-      avater: {
+      avatar_map: {
         A: formatId(currentAvatar[0].id, 0),
         B: numberOfSpeakers > 1 ? formatId(currentAvatar[1].id, 1) : undefined,
         C: numberOfSpeakers > 2 ? formatId(currentAvatar[2].id, 2) : undefined
       }
     };
+    console.log(data);
     return axios.post(url, data, { headers: headers });
   };
 
