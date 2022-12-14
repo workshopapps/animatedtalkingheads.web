@@ -86,10 +86,12 @@ const SignIn = () => {
           }, 2000);
           console.log(data);
           const token = data.user;
+          const email = formData.email;
           // setUserToken(data.user)
           localStorage.setItem('token', token);
+          localStorage.setItem('email', email)
           setUser(token);
-          setUserEmail(formData.email)
+          setUserEmail(email);
           navigate('/');
         }
         return;

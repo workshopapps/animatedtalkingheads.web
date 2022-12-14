@@ -45,6 +45,7 @@ const TopNavbar = () => {
       await logOut();
       setTimeout(() => {
         localStorage.removeItem('token');
+        localStorage.removeItem('email')
         setUserToken('');
       }, 1000);
       toast.success('Sign out successful!', {
