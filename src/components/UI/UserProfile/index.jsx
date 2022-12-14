@@ -103,12 +103,12 @@ items-center justify-center'>
               img={Upload}
               text={'My uploads'}
             />
-            <DropdownItem
+            {/* <DropdownItem
               to={routes.animatedPodcast}
               hide={hide}
               img={Podcast}
               text={'My video podcasts'}
-            />
+            /> */}
             <DropdownItem
               to={routes.pricing}
               hide={hide}
