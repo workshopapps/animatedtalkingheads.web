@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 import { FaRegUserCircle } from 'react-icons/fa';
 import Progress from '../../../assets/dropdown/Progress.svg';
 import Upload from '../../../assets/dropdown/Upload.svg';
-//import Podcast from '../../../assets/dropdown/Podcast.svg';
+import Podcast from '../../../assets/dropdown/Podcast.svg';
 import Upgrade from '../../../assets/dropdown/Upgrade.svg';
 //import Settings from '../../../assets/dropdown/Settings.svg';
 import Logout from '../../../assets/dropdown/Logout.svg';
@@ -103,12 +103,12 @@ items-center justify-center'>
               img={Upload}
               text={'My uploads'}
             />
-            {/* <DropdownItem
+            <DropdownItem
               to={routes.animatedPodcast}
               hide={hide}
               img={Podcast}
               text={'My video podcasts'}
-            /> */}
+            />
             <DropdownItem
               to={routes.pricing}
               hide={hide}
