@@ -31,7 +31,8 @@ const SignIn = () => {
   };
 
   const handlePasswordVisibility = () => {
-    setPasswordVisible((prevPasswordVisible) => !prevPasswordVisible);
+    setPasswordVisible((prevPasswordVisible) =>  !prevPasswordVisible);
+    return;
   };
 
   const handleSubmit = async (e) => {
@@ -227,7 +228,7 @@ const SignIn = () => {
                 value={formData.password}
                 onChange={inputEvent}
               />
-              <button onClick={handlePasswordVisibility}>
+              <button type='button' onClick={handlePasswordVisibility}>
                 {passwordVisible ? (
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
                     <path
@@ -274,7 +275,7 @@ const SignIn = () => {
             </div>
             <p className="forgot-password">
               {' '}
-              Having trouble Login In? <Link to="/forgot-password"> Forgot Password </Link>
+              Having trouble Login in? <Link to="/forgot-password"> Forgot Password </Link>
             </p>
             <button style={{marginBottom: '2rem'}} className="sign-in-btn">Sign In</button>
           </form>
