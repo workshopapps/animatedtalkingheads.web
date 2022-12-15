@@ -322,6 +322,10 @@
   .valuesGridSection {
     grid-template-columns: 1fr;
   }
+
+  .aboutTeamTab p {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 375px) {

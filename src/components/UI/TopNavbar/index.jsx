@@ -12,7 +12,7 @@ import { motion } from 'framer-motion';
 import { menuAnimate } from './animation';
 import { toast } from 'react-toastify';
 import UserProfile from '../UserProfile';
-import Notification from '../Notificaton';
+//import Notification from '../Notificaton';
 
 // const miniLinks = [
 //   { name: 'Support', link: '#' },
@@ -45,6 +45,7 @@ const TopNavbar = () => {
       await logOut();
       setTimeout(() => {
         localStorage.removeItem('token');
+        localStorage.removeItem('email')
         setUserToken('');
       }, 1000);
       toast.success('Sign out successful!', {
@@ -120,9 +121,9 @@ const TopNavbar = () => {
           </Link>
 
 
-          <div>
+          {/* <div>
             {user && <Notification handleSignOut={handleSignOut} />}
-          </div>
+          </div> */}
 
           <div>
             {user && <UserProfile handleSignOut={handleSignOut} />}
@@ -132,9 +133,8 @@ const TopNavbar = () => {
 
 
         <div className='flex items-center gap-3 lg:hidden'>
-          {user && <Notification handleSignOut={handleSignOut} />}
+          {/* {user && <Notification handleSignOut={handleSignOut} />} */}
 
-          <div>{user && <UserProfile handleSignOut={handleSignOut} />}</div>
         </div>
 
         <div className="flex lg:hidden items-center gap-5">

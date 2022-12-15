@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 // import styles from './styles.module.css';
 import footerLogo from './../../../assets/icons/footer_logo.svg';
-import settings from './../../../assets/icons/settings.svg';
+//import settings from './../../../assets/icons/settings.svg';
 // import globe from './../../../assets/icons/white_globe.svg';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { routes } from '../../../libs/links';
@@ -54,23 +54,23 @@ const Footer = () => {
           <Link to="/">
             <img src={footerLogo} alt="home" />
           </Link>
-          <div className="hidden lg:block">
+          {/* <div className="hidden lg:block">
             <Link to="/settings-appearance">
               <div className="flex gap-3 ">
                 <img src={settings} alt="settings" />
                 <p>Settings</p>
               </div>
             </Link>
-          </div>{' '}
+          </div>{' '} */}
         </div>
-        <div className="lg:hidden col-start-2">
+        {/* <div className="lg:hidden col-start-2">
           <Link to="/settings">
             <div className="flex gap-3 ">
               <img src={settings} alt="settings" />
               <p className="text-white">Settings</p>
             </div>
           </Link>
-        </div>
+        </div> */}
         <div className="col-start-1 lg:col-start-2 grid gap-3 lg:gap-5 text-white">
           {links1.map((link, index) => (
             <Link className="text-white" key={index} to={link.link}>
@@ -78,10 +78,14 @@ const Footer = () => {
             </Link>
           ))}
           <div className="lg:hidden">
-            <Link className="text-white" to={routes.about}>About</Link>
+            <Link className="text-white" to={routes.about}>
+              About
+            </Link>
           </div>
           <div className="lg:hidden">
-            <Link className="text-white" to={routes.faqs}>FAQs</Link>
+            <Link className="text-white" to={routes.faqs}>
+              FAQs
+            </Link>
           </div>
         </div>
 
@@ -95,7 +99,9 @@ const Footer = () => {
 
         <div className=" grid gap-3 lg:gap-5  row-start-2 lg:row-start-1 col-start-2 lg:col-start-4 ">
           <div className="lg:hidden">
-            <Link className="text-white" to={routes.pricing}>Pricing</Link>
+            <Link className="text-white" to={routes.pricing}>
+              Pricing
+            </Link>
           </div>
 
           {links3.map((link, index) => (
@@ -109,12 +115,12 @@ const Footer = () => {
           <p className="text-base">Connect With Us</p>
           <div className="flex gap-5 items-center">
             <a href="https://www.facebook.com/Hnginternship/">
-              <FaFacebookF size="20" style={{ color: "white" }} />
+              <FaFacebookF size="20" style={{ color: 'white' }} />
             </a>
-            <a href="https://twitter.com/hnginternship" style={{ color: "white" }}>
+            <a href="https://twitter.com/hnginternship" style={{ color: 'white' }}>
               <FaTwitter size="20" />
             </a>
-            <a href="https://www.instagram.com/hnginternship/" style={{ color: "white" }}>
+            <a href="https://www.instagram.com/hnginternship/" style={{ color: 'white' }}>
               <FaInstagram size="20" />
             </a>
           </div>

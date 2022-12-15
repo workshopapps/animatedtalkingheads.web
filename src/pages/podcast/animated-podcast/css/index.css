@@ -20,7 +20,7 @@ section.animated-podcast-section .animated-podcast .input-text > input {
 }
 section.animated-podcast-section .animated-podcast .podcasts-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(316px, auto));
+  grid-template-columns: repeat(auto-fit, 316px);
   gap: 1.5rem;
 }
 section.animated-podcast-section .animated-podcast .podcasts-wrapper section.podcast-card {
@@ -107,7 +107,7 @@ section.animated-podcast-section
   .podcasts-wrapper
   section.podcast-card
   .video-data
-  > button.btn {
+  button.btn {
   display: flex;
   padding: 1rem 0;
   border-radius: 8px;
@@ -122,8 +122,8 @@ section.animated-podcast-section
   .podcasts-wrapper
   section.podcast-card
   .video-data
-  > button.btn
-  > svg {
+  button.btn
+  svg {
   margin-right: 0.75rem;
 }
 section.animated-podcast-section
@@ -141,7 +141,7 @@ section.animated-podcast-section
   .podcasts-wrapper
   section.podcast-card
   .video-data
-  > .download-btn {
+  .download-btn {
   border: 1px solid #2158d2;
 }
 

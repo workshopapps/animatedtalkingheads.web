@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 // import { UserAuth  } from '../../context/AuthContext';
 import {  toast } from 'react-toastify';
+import axios from 'axios';
 // import { useGoogleLogin } from '@react-oauth/google';
 // import axios from 'axios';
 
@@ -48,16 +49,18 @@ const SignUpSection = (props) => {
         return;
       }
 
+      if(formData.password.length < 6){
+        toast.error('Sorry, your password must be at least 6 characters in length.', {
+          position: toast.POSITION.BOTTOM_RIGHT
+        })
+        return;
+      }
+
       if(formData.password != formData.confirmPassword){
             toast.error('Password mismatch', {
               position: toast.POSITION.BOTTOM_RIGHT
             })
             return;
-      }
-
-      if(formData.password < 6){
-          toast.error('Password mismatch')
-          return;
       }
 
       // if(userToken != ''){
@@ -67,39 +70,47 @@ const SignUpSection = (props) => {
       //   return;
       // }
 
-      fetch('https://api.voxclips.hng.tech/auth/signup', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-    })
+      axios.post('https://api.voxclips.hng.tech/auth/signup',
+        formData)
         .then(res => {
-            if(res.ok){
-              toast.info('Creating user profile', {
-                position: toast.POSITION.BOTTOM_RIGHT,
-                autoClose: 1000
-              });  
-              return res.json()
-            } else {
-              toast.error('An error occured, please try again', {
+            if(res.data.message === 'Email already registered, Sign In') {
+              toast.error('Sorry, this email has already been registered', {
                 position: toast.POSITION.BOTTOM_RIGHT
               })
               return;
             }
+
+            if(res.status === 201){
+              toast.info('Creating user profile', {
+                position: toast.POSITION.BOTTOM_RIGHT,
+                autoClose: 1000
+              });  
+              setTimeout(() => {
+                toast.success('Sign up successful', {
+                  position: toast.POSITION.BOTTOM_RIGHT
+                })
+              }, 2000);
+              navigate('/sign-in')
+              return;
+            } else {
+              toast.error('An error occured, please try again', {
+                position: toast.POSITION.BOTTOM_RIGHT
+              })
+              // return;
+            }
         })
-        .then(() => {
-          setTimeout(() => {
-            toast.success('Sign up successful', {
-              position: toast.POSITION.BOTTOM_RIGHT
-            })
-          }, 2000);
-            navigate('/sign-in')
-            // setUserToken(data.user)
-            // localStorage.setItem("token", userToken)
-            // console.log(userToken)
-            return;
-        })
+        // .then(() => {
+        //   setTimeout(() => {
+        //     toast.success('Sign up successful', {
+        //       position: toast.POSITION.BOTTOM_RIGHT
+        //     })
+        //   }, 2000);
+        //     navigate('/sign-in')
+        //     // setUserToken(data.user)
+        //     // localStorage.setItem("token", userToken)
+        //     // console.log(userToken)
+        //     return;
+        // })
         .catch((error) => {
           toast.error(error, {
             position: toast.POSITION.BOTTOM_RIGHT
@@ -224,7 +235,7 @@ const SignUpSection = (props) => {
                   onChange={inputEvent}
                   
                 />
-              <button onClick={handlePasswordVisibility}> 
+              <button type='button' onClick={handlePasswordVisibility}> 
                 {passwordVisible ? <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m14.53 9.47-5.06 5.06a3.576 3.576 0 1 1 5.06-5.06Z"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.82 5.77C16.07 4.45 14.07 3.73 12 3.73c-3.53 0-6.82 2.08-9.11 5.68-.9 1.41-.9 3.78 0 5.19.79 1.24 1.71 2.31 2.71 3.17M8.42 19.53c1.14.48 2.35.74 3.58.74 3.53 0 6.82-2.08 9.11-5.68.9-1.41.9-3.78 0-5.19-.33-.52-.69-1.01-1.06-1.47"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15.51 12.7a3.565 3.565 0 0 1-2.82 2.82M9.47 14.53 2 22M22 2l-7.47 7.47"/></svg>
                 : <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15.58 12c0 1.98-1.6 3.58-3.58 3.58S8.42 13.98 8.42 12s1.6-3.58 3.58-3.58 3.58 1.6 3.58 3.58Z"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 20.27c3.53 0 6.82-2.08 9.11-5.68.9-1.41.9-3.78 0-5.19-2.29-3.6-5.58-5.68-9.11-5.68-3.53 0-6.82 2.08-9.11 5.68-.9 1.41-.9 3.78 0 5.19 2.29 3.6 5.58 5.68 9.11 5.68Z"/></svg>}
                 </button>
@@ -240,7 +251,7 @@ const SignUpSection = (props) => {
                   onChange={inputEvent}
                   
                 />
-              <button onClick={handleConfirmPasswordVisibility}> 
+              <button type='button' onClick={handleConfirmPasswordVisibility}> 
                 {confirmPasswordVisible ? <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m14.53 9.47-5.06 5.06a3.576 3.576 0 1 1 5.06-5.06Z"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.82 5.77C16.07 4.45 14.07 3.73 12 3.73c-3.53 0-6.82 2.08-9.11 5.68-.9 1.41-.9 3.78 0 5.19.79 1.24 1.71 2.31 2.71 3.17M8.42 19.53c1.14.48 2.35.74 3.58.74 3.53 0 6.82-2.08 9.11-5.68.9-1.41.9-3.78 0-5.19-.33-.52-.69-1.01-1.06-1.47"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15.51 12.7a3.565 3.565 0 0 1-2.82 2.82M9.47 14.53 2 22M22 2l-7.47 7.47"/></svg>
                 : <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15.58 12c0 1.98-1.6 3.58-3.58 3.58S8.42 13.98 8.42 12s1.6-3.58 3.58-3.58 3.58 1.6 3.58 3.58Z"/><path stroke="#BDBDBD" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 20.27c3.53 0 6.82-2.08 9.11-5.68.9-1.41.9-3.78 0-5.19-2.29-3.6-5.58-5.68-9.11-5.68-3.53 0-6.82 2.08-9.11 5.68-.9 1.41-.9 3.78 0 5.19 2.29 3.6 5.58 5.68 9.11 5.68Z"/></svg>}
                 </button>

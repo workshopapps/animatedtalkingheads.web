@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../../context/AuthContext';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 // import { useGoogleLogin } from '@react-oauth/google';
 // import axios from 'axios';
 
@@ -31,7 +32,8 @@ const SignIn = () => {
   };
 
   const handlePasswordVisibility = () => {
-    setPasswordVisible((prevPasswordVisible) => !prevPasswordVisible);
+    setPasswordVisible((prevPasswordVisible) =>  !prevPasswordVisible);
+    return;
   };
 
   const handleSubmit = async (e) => {
@@ -56,52 +58,45 @@ const SignIn = () => {
     //   return;
     // }
 
-    fetch('https://api.voxclips.hng.tech/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
+    axios.post('https://api.voxclips.hng.tech/auth/login', formData)
+    .then(res => {
+      if(res.status === 200) {
+        toast.info('Signing in', {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          autoClose: 1000
+        });
+        setTimeout(() => {
+          toast.success('Sign in successful', {
+            position: toast.POSITION.BOTTOM_RIGHT
+          })
+        }, 2000);
+        const token = res.data.user;
+        const email = formData.email;
+        // setUserToken(data.user)
+        localStorage.setItem('token', token);
+        localStorage.setItem('email', email)
+        setUser(token);
+        setUserEmail(email);
+        navigate('/');
+        return
+      } else {
+        toast.error('An error occured, please try again', {
+          position: toast.POSITION.BOTTOM_RIGHT
+        })
+      }
     })
-      .then((res) => {
-        if (res.ok) {
-          toast.info('Signing in', {
-            position: toast.POSITION.BOTTOM_RIGHT,
-            autoClose: 1000
-          });
-          return res.json();
+    .catch((error) => {
+        if(error.response.status === 400 && error.response.data.error == 'Invalid Credentials'){
+          toast.error('Wrong email or password, please try again or sign up' , {
+            position: toast.POSITION.BOTTOM_RIGHT
+          })
+          return;
         } else {
-          toast.error('Something went wrong, please try again', {
+          toast.error(error.response, {
             position: toast.POSITION.BOTTOM_RIGHT
-          });
-          return;
+          })
         }
-      })
-      .then((data) => {
-        if (data) {
-          setTimeout(() => {
-            toast.success('Sign in successful', {
-              position: toast.POSITION.BOTTOM_RIGHT
-            });
-          }, 2000);
-          console.log(data);
-          const token = data.user;
-          // setUserToken(data.user)
-          localStorage.setItem('token', token);
-          setUser(token);
-          setUserEmail(formData.email)
-          navigate('/');
-        }
-        return;
-      })
-      .catch((error) => {
-        if (error) {
-          toast.error(error, {
-            position: toast.POSITION.BOTTOM_RIGHT
-          });
-          return;
-        }
-      });
+    });
   };
 
 //   const handleGoogleSignIn = useGoogleLogin({
@@ -225,7 +220,7 @@ const SignIn = () => {
                 value={formData.password}
                 onChange={inputEvent}
               />
-              <button onClick={handlePasswordVisibility}>
+              <button type='button' onClick={handlePasswordVisibility}>
                 {passwordVisible ? (
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
                     <path
@@ -272,7 +267,7 @@ const SignIn = () => {
             </div>
             <p className="forgot-password">
               {' '}
-              Having trouble Login In? <Link to="/forgot-password"> Forgot Password </Link>
+              Having trouble Login in? <Link to="/forgot-password"> Forgot Password </Link>
             </p>
             <button style={{marginBottom: '2rem'}} className="sign-in-btn">Sign In</button>
           </form>
