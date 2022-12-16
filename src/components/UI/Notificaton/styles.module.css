@@ -57,7 +57,7 @@ a {
   padding: 10px 20px;
   width: 570px;
   height: 303px;
-  background: #FEFEFE;
+  background: #fefefe;
   border-radius: 8px;
 }
 
@@ -86,7 +86,6 @@ a {
   transition: var(--speed) ease;
 }
 
-
 h3 {
   width: 100%;
   text-align: center;
@@ -110,7 +109,7 @@ h3 span {
 }
 
 .dropdown_menu ul li:hover a {
-  color: #2158D2;
+  color: #2158d2;
   cursor: pointer;
 }
 
@@ -136,7 +135,6 @@ h3 span {
   margin-left: 10px;
   transition: var(--speed);
 }
-
 
 .navDummy {
   height: 4em;
@@ -206,8 +204,6 @@ h3 span {
   align-items: center;
 }
 
-
-
 .dropdown {
   position: relative;
 }
@@ -225,24 +221,23 @@ h3 span {
     color: #292d32;
   }
   .dropdown_menu {
-  position: absolute;
-  top: 88px;
-  right: 1px;
-  background-color: #fff;
-  padding: 10px 20px;
-  width: 370px;
-  height: 300px;
-  background: #FEFEFE;
-  border-radius: 8px;
+    position: absolute;
+    top: 88px;
+    right: 1px;
+    background-color: #fff;
+    padding: 10px 20px;
+    width: 370px;
+    height: 300px;
+    background: #fefefe;
+    border-radius: 8px;
+  }
+  .text {
+    padding-right: 50px;
+  }
+  .text1 {
+    padding-right: 30px;
+  }
 }
-.text{
-  padding-right: 50px;
-}
-.text1{
-  padding-right: 30px;
-}
-}
-
 
 @media screen and (max-width: 1440px) {
   .nav .links {
