@@ -3,10 +3,16 @@ import React from 'react';
 
 import Logo from '../../assets/icons/Logo.svg';
 import TopNavbar from '../../components/UI/TopNavbar';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './get_started.module.css';
+import { UserAuth } from '../../context/AuthContext';
 
 const GetStarted = () => {
+  const { user } = UserAuth();
+  const navigate = useNavigate();
+  const loginPage = () => {
+    user ? navigate('/checkout') : navigate('/sign-in?search=/checkout');
+  };
   return (
     <>
       <div className={styles.get_started}>
@@ -24,11 +30,12 @@ const GetStarted = () => {
                   Use Forever Plan
                 </button>
               </Link>
-              <Link to="/checkout">
-                <button className="w-full py-4 border-pri-600 text-pri-600 text-center rounded-lg bg-white                                                                                                                   border border-[#1877f2']">
-                  Upgrade your Plan
-                </button>
-              </Link>
+
+              <button
+                onClick={loginPage}
+                className="w-full py-4 border-pri-600 text-pri-600 text-center rounded-lg bg-white                                                                                                                   border border-[#1877f2']">
+                Upgrade your Plan
+              </button>
             </div>
           </div>
         </div>

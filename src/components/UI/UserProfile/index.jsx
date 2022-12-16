@@ -22,7 +22,7 @@ const UserProfile = ({ handleSignOut }) => {
   const [open, setOpen] = useState(false);
   const [error, setError] = useState('');
 
-  console.log(data)
+  console.log(data);
 
   const show = () => {
     setOpen(true);
@@ -47,7 +47,6 @@ const UserProfile = ({ handleSignOut }) => {
         }
       })
       .then((res) => {
-        console.log(res.data);
         if (res.status === 200) {
           setData(res.data);
           checkPlan(res.data);
@@ -61,7 +60,6 @@ const UserProfile = ({ handleSignOut }) => {
   const checkPlan = (data_arr) => {
     if (data_arr.length < 1) {
       setPlan('Free Plan');
-      console.log(plan);
     } else if (data_arr.length > 0) {
       setPlan('Pro Plan');
     }
@@ -79,16 +77,12 @@ items-center justify-center'>
         className={`${open ? 'show' : 'hidden'} lg:hidden`}
         animate={open ? 'enter' : 'exit'}
         variants={menuAnimate}>
-
         <div className={`${styles.dropdown_menu} ${open ? 'active' : 'inactive'}`}>
           <div className="flex justify-between items-center py-5">
             <FaRegUserCircle className="text-textColor text-2xl ml-3 cursor-pointer text-sec-700" />
 
-
-
             {userEmail && <p className=" text-sec-700 text-base">{userEmail}</p>}
             <h1 className=" text-sec-700 text-2xl"></h1>
-
           </div>
           <ul>
             <DropdownItem
@@ -138,7 +132,6 @@ function DropdownItem(props) {
         props.hide();
       }}
       className={styles.dropdownItem}>
-
       <img src={props.img}></img>
       <Link to={props.to}>{props.text}</Link>
     </li>

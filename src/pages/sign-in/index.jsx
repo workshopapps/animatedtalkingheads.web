@@ -1,14 +1,20 @@
 import Layout from '../../components/UI/Layout';
 import '../sign-in/styles/index.css';
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../../context/AuthContext';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+
 // import { useGoogleLogin } from '@react-oauth/google';
 // import axios from 'axios';
 
 const SignIn = () => {
+  const useQuery = () => new URLSearchParams(useLocation().search);
+  let query = useQuery();
+
+  const next_route = query.get('search');
+
   // const[password,setPassword]=useState("password");
   const navigate = useNavigate();
   // const [error, setError] = useState('')
@@ -18,7 +24,7 @@ const SignIn = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
-  }); 
+  });
 
   const inputEvent = (event) => {
     const name = event.target.name;
@@ -32,7 +38,7 @@ const SignIn = () => {
   };
 
   const handlePasswordVisibility = () => {
-    setPasswordVisible((prevPasswordVisible) =>  !prevPasswordVisible);
+    setPasswordVisible((prevPasswordVisible) => !prevPasswordVisible);
     return;
   };
 
@@ -58,110 +64,111 @@ const SignIn = () => {
     //   return;
     // }
 
-    axios.post('https://api.voxclips.hng.tech/auth/login', formData)
-    .then(res => {
-      if(res.status === 200) {
-        toast.info('Signing in', {
-          position: toast.POSITION.BOTTOM_RIGHT,
-          autoClose: 1000
-        });
-        setTimeout(() => {
-          toast.success('Sign in successful', {
+    axios
+      .post('https://api.voxclips.hng.tech/auth/login', formData)
+      .then((res) => {
+        if (res.status === 200) {
+          toast.info('Signing in', {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            autoClose: 1000
+          });
+          setTimeout(() => {
+            toast.success('Sign in successful', {
+              position: toast.POSITION.BOTTOM_RIGHT
+            });
+          }, 2000);
+          const token = res.data.user;
+          const email = formData.email;
+          // setUserToken(data.user)
+          localStorage.setItem('token', token);
+          localStorage.setItem('email', email);
+          setUser(token);
+          setUserEmail(email);
+          next_route ? navigate(next_route) : navigate('/');
+          return;
+        } else {
+          toast.error('An error occured, please try again', {
             position: toast.POSITION.BOTTOM_RIGHT
-          })
-        }, 2000);
-        const token = res.data.user;
-        const email = formData.email;
-        // setUserToken(data.user)
-        localStorage.setItem('token', token);
-        localStorage.setItem('email', email)
-        setUser(token);
-        setUserEmail(email);
-        navigate('/');
-        return
-      } else {
-        toast.error('An error occured, please try again', {
-          position: toast.POSITION.BOTTOM_RIGHT
-        })
-      }
-    })
-    .catch((error) => {
-        if(error.response.status === 400 && error.response.data.error == 'Invalid Credentials'){
-          toast.error('Wrong email or password, please try again or sign up' , {
+          });
+        }
+      })
+      .catch((error) => {
+        if (error.response.status === 400 && error.response.data.error == 'Invalid Credentials') {
+          toast.error('Wrong email or password, please try again or sign up', {
             position: toast.POSITION.BOTTOM_RIGHT
-          })
+          });
           return;
         } else {
           toast.error(error.response, {
             position: toast.POSITION.BOTTOM_RIGHT
-          })
+          });
         }
-    });
+      });
   };
 
-//   const handleGoogleSignIn = useGoogleLogin({
-    
-//     onSuccess: async response => {
-//       try{
-//       const res  = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
-//         headers: {
-//           "Authorization": `Bearer ${response.access_token}`
-//         }
-//       })
-//       // console.log(res.data)
-//       const user = res.data;
-//       await fetch("/api/users", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(user),
-//       })
-//         .then((res) => {
-//           if(res.ok) {
-//             toast.info('Signing in', {
-//               position: toast.POSITION.BOTTOM_RIGHT,
-//               autoClose: 1000
-//             });
-//             return res.json();
-//           } else {
-//             toast.error('An error occurred, please sign in with your email and password', {
-//               position: toast.POSITION.BOTTOM_RIGHT
-//             });
-//             return;
-//           }
-//         });
-//     } catch(err){
-//       console.log(err)
-//   }
+  //   const handleGoogleSignIn = useGoogleLogin({
 
-// }
+  //     onSuccess: async response => {
+  //       try{
+  //       const res  = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
+  //         headers: {
+  //           "Authorization": `Bearer ${response.access_token}`
+  //         }
+  //       })
+  //       // console.log(res.data)
+  //       const user = res.data;
+  //       await fetch("/api/users", {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(user),
+  //       })
+  //         .then((res) => {
+  //           if(res.ok) {
+  //             toast.info('Signing in', {
+  //               position: toast.POSITION.BOTTOM_RIGHT,
+  //               autoClose: 1000
+  //             });
+  //             return res.json();
+  //           } else {
+  //             toast.error('An error occurred, please sign in with your email and password', {
+  //               position: toast.POSITION.BOTTOM_RIGHT
+  //             });
+  //             return;
+  //           }
+  //         });
+  //     } catch(err){
+  //       console.log(err)
+  //   }
 
-//   })
+  // }
 
-//   const handleFacebookSignIn = async () => {
-//     // try {
-//     //   await facebookSignIn();
-//     //   navigate('/');
-//     // } catch (error) {
-//     //   console.log(error);
-//     // }
-//     toast.error('Please sign in with your email and password', {
-//       position: toast.POSITION.BOTTOM_RIGHT
-//     });
-//   };
+  //   })
 
-//   const handleAppleSignIn = async () => {
-//     // try {
-//     //   await facebookSignIn();
-//     //   navigate('/');
-//     // } catch (error) {
-//     //   console.log(error);
-//     // }
-//     toast.error('Please sign in with your email and password', {
-//       position: toast.POSITION.BOTTOM_RIGHT
-//     });
-//   };
+  //   const handleFacebookSignIn = async () => {
+  //     // try {
+  //     //   await facebookSignIn();
+  //     //   navigate('/');
+  //     // } catch (error) {
+  //     //   console.log(error);
+  //     // }
+  //     toast.error('Please sign in with your email and password', {
+  //       position: toast.POSITION.BOTTOM_RIGHT
+  //     });
+  //   };
+
+  //   const handleAppleSignIn = async () => {
+  //     // try {
+  //     //   await facebookSignIn();
+  //     //   navigate('/');
+  //     // } catch (error) {
+  //     //   console.log(error);
+  //     // }
+  //     toast.error('Please sign in with your email and password', {
+  //       position: toast.POSITION.BOTTOM_RIGHT
+  //     });
+  //   };
 
   // useEffect(() => {
   //   if(user != null) {
@@ -220,7 +227,7 @@ const SignIn = () => {
                 value={formData.password}
                 onChange={inputEvent}
               />
-              <button type='button' onClick={handlePasswordVisibility}>
+              <button type="button" onClick={handlePasswordVisibility}>
                 {passwordVisible ? (
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
                     <path
@@ -269,7 +276,9 @@ const SignIn = () => {
               {' '}
               Having trouble Login in? <Link to="/forgot-password"> Forgot Password </Link>
             </p>
-            <button style={{marginBottom: '2rem'}} className="sign-in-btn">Sign In</button>
+            <button style={{ marginBottom: '2rem' }} className="sign-in-btn">
+              Sign In
+            </button>
           </form>
           {/* <p className="optional-par"> Or sign In With </p> */}
           {/* <div className="optional-sign-in">
