@@ -27,7 +27,7 @@ pipeline {
                 
 				sh "sudo cp -fr ${WORKSPACE}/animatedtalkingheads.web/build/* /home/omiebi/voxclips/frontend"
 				sh "sudo systemctl restart voxclips.service"
-                                sh "rm -rf"
+                                sh "sudo rm -rf *"
 				
 			} 
 	    }
