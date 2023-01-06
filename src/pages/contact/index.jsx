@@ -49,7 +49,7 @@ const Contact = () => {
       setLoading(true);
 
       try {
-        await axios.post('https://api.voxclips.hng.tech/contact', {
+        await axios.post('https://api.voxclips.hng.tech/rauth/contact', {
           email,
           name: full_name,
           message
