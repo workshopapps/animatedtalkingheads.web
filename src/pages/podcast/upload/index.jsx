@@ -139,7 +139,13 @@ const UploadPodcast = () => {
             onDrop={handleDrop}
             onDragLeave={handleDrag}
             onSubmit={(e) => e.preventDefault()}>
-            <input type="file" id="input-file-upload" className=" hidden" onChange={handleChange} />
+            <input
+              type="file"
+              id="input-file-upload"
+              className=" hidden"
+              onChange={handleChange}
+              accept=".mp3, .mp4"
+            />
             <label
               id="label-file-upload"
               htmlFor="input-file-upload"
