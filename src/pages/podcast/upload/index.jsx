@@ -142,7 +142,7 @@ const UploadPodcast = () => {
             <input
               type="file"
               id="input-file-upload"
-              accept="audio/*"
+              // accept="audio/*"
               className=" hidden"
               onChange={handleChange}
             />
