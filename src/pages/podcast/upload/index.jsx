@@ -5,11 +5,10 @@ import musicnote from '../../../assets/icons/upload_podcast/musicnote.svg';
 import music from '../../../assets/icons/upload_podcast/music.svg';
 import correct from '../../../assets/icons/upload_podcast/correct.svg';
 import { Button } from '../../../components/UI/Button';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Text } from '../../../components/UI/Text';
 import { Link } from 'react-router-dom';
-import { useDropzone } from 'react-dropzone';
 import store from '../../../store/store';
 import axios from 'axios';
 import { Circle } from 'rc-progress';
@@ -30,13 +29,9 @@ const UploadPodcast = () => {
     isDisabled: false
   });
 
-  const onDrop = useCallback((acceptedFiles) => {
-    // const fileName = acceptedFiles[0].name;
-    setAudio(acceptedFiles[0]);
-    setName(acceptedFiles[0].name);
-  }, []);
+  const [dragActive, setDragActive] = useState(false);
 
-  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+  // New Upload functionality
 
   useEffect(() => {
     if (audio) {
@@ -56,8 +51,6 @@ const UploadPodcast = () => {
     formData.append('podcast', audio);
     let uploadStatus = 0;
 
-    // This is a temporary upload endpoint
-    // const url = 'https://upload-api-sample.herokuapp.com/upload_files';
     const url = 'https://api.voxclips.hng.tech/podcasts/upload';
 
     const config = {
@@ -96,6 +89,34 @@ const UploadPodcast = () => {
     }
   };
 
+  const handleDrag = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (e.type === 'dragenter' || e.type === 'dragover') {
+      setDragActive(true);
+    } else if (e.type === 'dragleave') {
+      setDragActive(false);
+    }
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      setAudio(e.dataTransfer.files[0]);
+      setName(e.dataTransfer.files[0].name);
+    }
+  };
+  const handleChange = function (e) {
+    e.preventDefault();
+    if (e.target.files && e.target.files[0]) {
+      setAudio(e.target.files[0]);
+      setName(e.target.files[0].name);
+    }
+  };
+
   return (
     <Layout>
       <PageTitle title="Upload audio" />
@@ -112,81 +133,95 @@ const UploadPodcast = () => {
             </div>
           </div>
 
-          <div
-            {...getRootProps()}
-            className={` w-[80%]  sm:w-[70%] md:w-[60%] lg:w-[70%] cursor-pointer  my-5 py-3 border-[3px] bg-[#FFFFFF] rounded-lg border-dashed border-opacity-20 mx-auto ${
-              error && 'border-red-600 opacity-100'
-            }`}>
-            <div className="flex justify-center">
-              {uploaded ? (
-                <div>
-                  <img
-                    src={correct}
-                    alt="microphone podcast"
-                    className="w-[30px] md:w-[50px] text-[#2563eb]"
-                  />
-                </div>
-              ) : (
-                <div>
-                  <img
-                    src={microphone}
-                    alt="microphone podcast"
-                    className="w-[30px] md:w-[100px]"
-                  />
-                </div>
-              )}
-            </div>
-
-            {!uploaded && (
-              <div>
-                {!upload ? (
-                  <div></div>
+          <form
+            onDragEnter={handleDrag}
+            onDragOver={handleDrag}
+            onDrop={handleDrop}
+            onDragLeave={handleDrag}
+            onSubmit={(e) => e.preventDefault()}>
+            <input
+              type="file"
+              id="input-file-upload"
+              accept="audio/*"
+              className=" hidden"
+              onChange={handleChange}
+            />
+            <label
+              id="label-file-upload"
+              htmlFor="input-file-upload"
+              className={` flex flex-col w-[80%]  sm:w-[70%] md:w-[60%] lg:w-[70%] cursor-pointer  my-5 py-3 border-[2px] bg-[#FFFFFF] rounded-lg border-dashed border-opacity-20 mx-auto ${
+                error && 'border-red-600 opacity-100'
+              }`}>
+              <div className="flex justify-center">
+                {uploaded ? (
+                  <div>
+                    <img
+                      src={correct}
+                      alt="microphone podcast"
+                      className="w-[30px] md:w-[50px] text-[#2563eb]"
+                    />
+                  </div>
                 ) : (
-                  <div className="flex flex-col justify-center gap-5">
-                    <Text label="Your file is uploading" type="text2" w="sm" />
-                    {percentage > 0 && (
-                      <div className=" flex justify-center">
-                        <Circle
-                          percent={percentage}
-                          trailWidth={5}
-                          strokeWidth={5}
-                          strokeColor="#2563eb"
-                          className=" w-[60px] lg:w-[70px]"
-                        />
-                      </div>
-                    )}
+                  <div>
+                    <img
+                      src={microphone}
+                      alt="microphone podcast"
+                      className="w-[30px] md:w-[100px]"
+                    />
                   </div>
                 )}
               </div>
-            )}
 
-            {uploaded && (
-              <div className="flex justify-center mt-11 gap-5 ">
-                <img src={music} alt="microphone podcast" className="w-[20px] md:w-[30px]" />
-              </div>
-            )}
-            <div className="flex flex-col justify-center gap-3 items-center mb-20">
-              <div className=" mt-10">
-                {name ? (
-                  <Text label={name} type="text4" w="sm" />
-                ) : (
-                  <Text label="Drag and Drop Podcast Audio" type="text2" w="sm" />
-                )}
-              </div>
-              <div>
-                <input {...getInputProps({ id: 'mine', accept: 'audio/*' })} />
+              {!uploaded && (
                 <div>
-                  <p>
-                    or{' '}
-                    <span className=" text-[#2563eb] cursor-pointer">
-                      {audio ? 'change file' : 'browse'}
-                    </span>
-                  </p>
+                  {!upload ? (
+                    <div></div>
+                  ) : (
+                    <div className="flex flex-col justify-center gap-5">
+                      <Text label="Your file is uploading" type="text2" w="sm" />
+                      {percentage > 0 && (
+                        <div className=" flex justify-center">
+                          <Circle
+                            percent={percentage}
+                            trailWidth={5}
+                            strokeWidth={5}
+                            strokeColor="#2563eb"
+                            className=" w-[60px] lg:w-[70px]"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {uploaded && (
+                <div className="flex justify-center mt-11 gap-5 ">
+                  <img src={music} alt="microphone podcast" className="w-[20px] md:w-[30px]" />
+                </div>
+              )}
+              <div className="flex flex-col justify-center gap-3 items-center mb-20">
+                <div className=" mt-10">
+                  {name ? (
+                    <Text label={name} type="text4" w="sm" />
+                  ) : (
+                    <Text label="Drag and Drop Podcast Audio" type="text2" w="sm" />
+                  )}
+                </div>
+                <div>
+                  <div>
+                    <p>
+                      or{' '}
+                      <span className=" text-[#2563eb] cursor-pointer hover:underline">
+                        {audio ? 'change file' : 'browse'}
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            {error && <p className="text-red-700">{error}</p>}
-          </div>
+              {error && <p className="text-red-700">{error}</p>}
+            </label>
+          </form>
           {uploaded ? (
             <Link to="/podcast/customize">
               <div className="my-5 justify-center flex">
