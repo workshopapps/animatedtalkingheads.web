@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import footerLogo from './../../../assets/icons/footer_logo.svg';
 //import settings from './../../../assets/icons/settings.svg';
 // import globe from './../../../assets/icons/white_globe.svg';
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { routes } from '../../../libs/links';
 // import ReactTooltip from 'react-tooltip';
 
@@ -114,11 +114,14 @@ const Footer = () => {
         <div className="grid gap-3 lg:gap-5 col-start-1 lg:col-start-5 mt-10 lg:mt-0 ">
           <p className="text-base">Connect With Us</p>
           <div className="flex gap-5 items-center">
-            <a href="https://www.facebook.com/Hnginternship/">
+            <a href="https://web.facebook.com/Voxclips.hq">
               <FaFacebookF size="20" style={{ color: 'white' }} />
             </a>
-            <a href="https://twitter.com/hnginternship" style={{ color: 'white' }}>
+            <a href="https://twitter.com/voxclips_hq?s=09" style={{ color: 'white' }}>
               <FaTwitter size="20" />
+            </a>
+            <a href="https://www.linkedin.com/company/voxclipshq/" style={{ color: 'white' }}>
+              <FaLinkedin size="20" />
             </a>
             <a href="https://www.instagram.com/hnginternship/" style={{ color: 'white' }}>
               <FaInstagram size="20" />
