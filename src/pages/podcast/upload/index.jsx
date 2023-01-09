@@ -15,7 +15,13 @@ import { Circle } from 'rc-progress';
 import PageTitle from '../../../components/UI/page-title';
 import AuthWrapper from '../../../components/UI/Auth/AuthWrapper';
 import { UserAuth } from '../../../context/AuthContext';
+import { audio_formats } from './data';
 
+const audio_types = audio_formats.map((format) => {
+  return `.${format},`;
+});
+
+console.log(audio_types);
 const UploadPodcast = () => {
   const { user } = UserAuth();
   const [audio, setAudio] = useState(null);
@@ -129,7 +135,7 @@ const UploadPodcast = () => {
                 <img src={musicnote} alt="musicnote" className="max-w-[15px]" />
               </span>
 
-              <Text label="File Format: mp3, wav or m4a" type="text4" w="sm" />
+              <Text label="File Format: mp3, mp4, wav, m4a and more" type="text4" w="sm" />
             </div>
           </div>
 
@@ -144,7 +150,7 @@ const UploadPodcast = () => {
               id="input-file-upload"
               className=" hidden"
               onChange={handleChange}
-              accept=".mp3, .mp4"
+              accept={audio_types}
             />
             <label
               id="label-file-upload"
