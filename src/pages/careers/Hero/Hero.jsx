@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './hero.module.scss';
 import Ethics from './ethics/Ethics';
-import hero from '../Images/Hero-img.png';
+import hero from '../Images/Hero-img.webp';
 import equal from '../Images/equality-icon.svg';
 import diverse from '../Images/Diversity-icon.svg';
 import { scroller } from 'react-scroll';
