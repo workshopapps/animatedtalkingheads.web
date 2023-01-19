@@ -36,7 +36,7 @@ const index = () => {
       }
     }
   ];
-  const url = 'https://api.voxclips.hng.tech/paystack/pay';
+  const url = 'https://api.voxclips.hng.tech/api/v1/paystack/pay';
   const [planner, setPlanner] = useState(plan[0]);
   const [name, setName] = useState('');
   const [nameError, setNameError] = useState(false);

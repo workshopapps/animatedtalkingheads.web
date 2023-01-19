@@ -19,7 +19,7 @@ const ForgotPassword = () => {
 
     seIsLoading(true);
     console.log(userEmail);
-    const url = 'https://api.voxclips.hng.tech/rauth/forgotpassword';
+    const url = 'https://api.voxclips.hng.tech/api/v1/rauth/forgotpassword';
     const config = {
       mode: 'cors',
       headers: {

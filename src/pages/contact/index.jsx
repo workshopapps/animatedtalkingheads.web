@@ -49,7 +49,7 @@ const Contact = () => {
       setLoading(true);
 
       try {
-        await axios.post('https://api.voxclips.hng.tech/rauth/contact', {
+        await axios.post('https://api.voxclips.hng.tech/api/v1/rauth/contact', {
           email,
           name: full_name,
           message
@@ -104,8 +104,9 @@ const Contact = () => {
                         onChange={updateName}
                         type="text"
                         placeholder="Enter your Name"
-                        className={`${styles.input} border w-full outline-none p-6 ${efull_name ? `${styles.error}` : ''
-                          }`}
+                        className={`${styles.input} border w-full outline-none p-6 ${
+                          efull_name ? `${styles.error}` : ''
+                        }`}
                       />
                       {efull_name && (
                         <p className="text-red-600 mt-2 text-xs">This field is required</p>
@@ -119,8 +120,9 @@ const Contact = () => {
                         onChange={updateEmail}
                         type="email"
                         placeholder="Enter your email address"
-                        className={`${styles.input} border w-full outline-none p-6 ${eemail ? `${styles.error}` : ''
-                          }`}
+                        className={`${styles.input} border w-full outline-none p-6 ${
+                          eemail ? `${styles.error}` : ''
+                        }`}
                       />
                       {eemail && (
                         <p className="text-red-600 mt-2 text-xs">This field is required</p>
@@ -131,9 +133,11 @@ const Contact = () => {
                     <textarea
                       value={message}
                       onChange={updateMessage}
-                      className={`${styles.input} ${styles.textArea
-                        } md:col-span-2 border p-4 rounded-[10px]  outline-none px-5 ${emessage ? `${styles.error}` : ''
-                        }`}
+                      className={`${styles.input} ${
+                        styles.textArea
+                      } md:col-span-2 border p-4 rounded-[10px]  outline-none px-5 ${
+                        emessage ? `${styles.error}` : ''
+                      }`}
                       placeholder="Type in your message"
                       rows="10"
                     />
@@ -150,8 +154,9 @@ const Contact = () => {
                             <div></div>
                           </div>
                         </div>
-                        ) : "Submit"
-                      }
+                      ) : (
+                        'Submit'
+                      )}
                     </button>
                   </div>
                 </form>

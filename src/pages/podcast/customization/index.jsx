@@ -63,7 +63,7 @@ const CustomizeAudio = () => {
   const podcast_id = store.getState().cartReducer.podcast_audio._id;
 
   const postData = () => {
-    const base_url = 'https://api.voxclips.hng.tech/podcasts/';
+    const base_url = 'https://api.voxclips.hng.tech/api/v1/podcasts/';
     const url = `${base_url}${podcast_id}/generate-video`;
 
     const headers = { Authorization: `Bearer ${bearerToken}` };
@@ -98,7 +98,7 @@ const CustomizeAudio = () => {
   };
 
   const getStatus = () => {
-    const url = `https://api.voxclips.hng.tech/animated-videos/${podcastVideoId}`;
+    const url = `https://api.voxclips.hng.tech/api/v1/animated-videos/${podcastVideoId}`;
     return axios.get(url, {
       headers: {
         Authorization: `Bearer ${bearerToken}`

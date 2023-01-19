@@ -36,7 +36,7 @@ const UploadPodcast = () => {
   });
 
   const [dragActive, setDragActive] = useState(false);
-
+  console.log(dragActive);
   // New Upload functionality
 
   useEffect(() => {
@@ -55,9 +55,10 @@ const UploadPodcast = () => {
     setError(false);
     const formData = new FormData();
     formData.append('podcast', audio);
+    formData.append('file_name', name);
     let uploadStatus = 0;
 
-    const url = 'https://api.voxclips.hng.tech/podcasts/upload';
+    const url = 'https://api.voxclips.hng.tech/api/v1/podcasts/upload';
 
     const config = {
       onUploadProgress: (progressEvent) => {

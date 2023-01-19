@@ -19,7 +19,7 @@ export const Uploads = () => {
   }, [user]);
 
   const getData = () => {
-    const url = 'https://api.voxclips.hng.tech/podcasts';
+    const url = 'https://api.voxclips.hng.tech/api/v1/podcasts';
     axios
       .get(url, {
         headers: {
@@ -73,7 +73,7 @@ export const Uploads = () => {
                 key={index}
                 className="flex justify-between text-sm lg:text-base  border-b-[#BDBDBD] border-b py-2 lg:py-4">
                 <div className="w-[10%]">{data.indexOf(item) + 1}</div>
-                <div className="w-[20%] text-center ">Audio {data.indexOf(item) + 1}</div>
+                <div className="w-[20%] text-center ">{item.file_name}</div>
                 <div className="w-[20%] text-center">{getDate(item.createdAt)}</div>
                 <div className="w-[20%] text-center">{getTime(item.createdAt)}</div>
                 <div className="w-[20%] text-center">
