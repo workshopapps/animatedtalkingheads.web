@@ -39,7 +39,7 @@ const UserProfile = ({ handleSignOut }) => {
   }, [user]);
 
   const getData = () => {
-    const url = 'https://api.voxclips.hng.tech/subscription';
+    const url = 'https://api.voxclips.hng.tech/api/v1/subscription';
     axios
       .get(url, {
         headers: {
@@ -67,7 +67,12 @@ const UserProfile = ({ handleSignOut }) => {
   return (
     <div onClick={open ? hide : show}>
       <div className="relative flex items-center justify-center">
-        <img height={"40px"} width={"40px"} src={profile} className="shadow-lg rounded-full lg:ml-6 cursor-pointer" />
+        <img
+          height={'40px'}
+          width={'40px'}
+          src={profile}
+          className="shadow-lg rounded-full lg:ml-6 cursor-pointer"
+        />
         {/* <div className='absolute -top-2 -right-2 w-5 h-5 rounded-full  bg-blue-600  flex
 items-center justify-center'>
           <p className='text-xs text-white font-semibold'>1</p>
@@ -79,8 +84,12 @@ items-center justify-center'>
         variants={menuAnimate}>
         <div className={`${styles.dropdown_menu} ${open ? 'active' : 'inactive'}`}>
           <div className="flex justify-between items-center py-5">
-
-            <img height={"30px"} width={"30px"} src={profile} className="rounded-full ml-3 cursor-pointer shadow-lg" />
+            <img
+              height={'30px'}
+              width={'30px'}
+              src={profile}
+              className="rounded-full ml-3 cursor-pointer shadow-lg"
+            />
 
             {userEmail && <p className=" text-sec-700 text-base">{userEmail}</p>}
             <h1 className=" text-sec-700 text-2xl"></h1>

@@ -15,7 +15,7 @@ const InProgress = () => {
   }, [user]);
 
   const getData = () => {
-    const url = 'https://api.voxclips.hng.tech/animated-videos';
+    const url = 'https://api.voxclips.hng.tech/api/v1/animated-videos';
     axios
       .get(url, {
         headers: {

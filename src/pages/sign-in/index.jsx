@@ -65,7 +65,7 @@ const SignIn = () => {
     // }
 
     axios
-      .post('https://api.voxclips.hng.tech/auth/login', formData)
+      .post('https://api.voxclips.hng.tech/api/v1/auth/login', formData)
       .then((res) => {
         if (res.status === 200) {
           toast.info('Signing in', {
