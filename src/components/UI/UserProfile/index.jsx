@@ -90,7 +90,6 @@ items-center justify-center'>
               src={profile}
               className="rounded-full ml-3 cursor-pointer shadow-lg"
             />
-
             {userEmail && <p className=" text-sec-700 text-base">{userEmail}</p>}
             <h1 className=" text-sec-700 text-2xl"></h1>
           </div>
