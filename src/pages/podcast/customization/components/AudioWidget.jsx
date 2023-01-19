@@ -1,16 +1,3 @@
-// import { Text } from '../../../../components/UI/Text';
-// //import '../customize-audio.scss';
-// // import bg1 from '../../../../assets/images/scenery/background1.png';
-// // import bg2 from '../../../../assets/images/scenery/background2.png';
-// // import bg3 from '../../../../assets/images/scenery/background3.png';
-// // import bg4 from '../../../../assets/images/scenery/background4.png';
-// // import bg5 from '../../../../assets/images/scenery/background5.png';
-// import { TiMediaPlay } from 'react-icons/ti';
-// import { BsPauseFill } from 'react-icons/bs';
-import React from 'react';
-// import { ReactComponent as Rewinder } from '../../../../assets/icons/customize-audio/rewind.svg';
-// import { ReactComponent as Ffwd } from '../../../../assets/icons/customize-audio/ffw.svg';
-// import mp3 from '../../../../assets/audios/audio.mp3'
 import '../customize-audio.scss';
 import store from '../../../../store/store';
 

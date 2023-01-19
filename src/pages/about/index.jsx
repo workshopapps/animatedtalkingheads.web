@@ -68,14 +68,14 @@ const About = () => {
                 <div className={style.aboutContent}>
                   <h3 className={`${style.contentHeading} mt-6 md:mt-0`}>MISSION</h3>
                   <div className={`${style.contentTheme} max-w-[300px] md:max-w-[836px] `}>
-                    Voxclips is the product of an ideation-to-implementation project that was created to
-                    provide a solution for podcasters who struggle to make any waves doing what they
-                    love
+                    Voxclips is the product of an ideation-to-implementation project that was created 
+                    to provide a solution for podcasters who struggle to make any waves doing what 
+                    they love
                   </div>
                   <p className={style.contentText}>
-                    Our mission is to redefine how Nigerians interact with podcast titles. We have
-                    identified podcasts as a great tool for education, so that is why we have created a
-                    platform that enables podcasters to get creative with how they market their titles.
+                    Our mission is to redefine how people interact with podcast titles. We have identified podcasts as 
+                    a great tool for education, so that is why we have created a platform that enables podcasters 
+                    to get creative with how they market their titles.
                   </p>
                   <p className={style.contentText}>
                     Our ultimate goal is to get more people listening to amazing podcast titles that
@@ -229,7 +229,7 @@ const About = () => {
                           loop={true}>
                           {Management.map((slide) => (
                             <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
-                              <img src={slide} alt="" />
+                              <TeamMember member={slide} />
                             </SwiperSlide>
                           ))}
                         </Swiper>
@@ -252,7 +252,7 @@ const About = () => {
                           loop={true}>
                           {[...Management, ...Engineering, ...Design, ...Marketing].map((slide) => (
                             <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
-                              <img src={slide} alt="" />
+                              <TeamMember member={slide} />
                             </SwiperSlide>
                           ))}
                         </Swiper>
@@ -279,7 +279,7 @@ const About = () => {
                           loop={true}>
                           {Engineering.map((slide) => (
                             <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
-                              <img src={slide} alt="" />
+                              <TeamMember member={slide} />
                             </SwiperSlide>
                           ))}
                         </Swiper>
@@ -303,7 +303,7 @@ const About = () => {
                           loop={true}>
                           {Design.map((slide) => (
                             <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
-                              <img src={slide} alt="" />
+                              <TeamMember member={slide} />
                             </SwiperSlide>
                           ))}
                         </Swiper>
@@ -325,9 +325,9 @@ const About = () => {
                           spaceBetween={1}
                           slidesPerGroup={1}
                           loop={true}>
-                          {Marketing.map((slide) => (
-                            <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
-                              <img src={slide} alt="" />
+                          {Marketing.map((slide, index) => (
+                            <SwiperSlide key={index} className={style.aboutTeamSlide}>
+                              <TeamMember member={slide} />
                             </SwiperSlide>
                           ))}
                         </Swiper>
@@ -371,3 +371,16 @@ const About = () => {
 };
 
 export default About;
+
+
+
+const TeamMember = (props) => {
+  const member = props.member
+  return (
+    <>
+      <img src={member.image} alt="" />
+      <h3>{member.name}</h3>
+      <p>{member.role}</p>
+    </>
+  )
+}
