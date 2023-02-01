@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './meet.module.scss';
-import meetTeam from '../Images/meet-the-team.png';
+import meetTeam from '../Images/meet-the-team.webp';
 
 export default function Meet() {
   return (
