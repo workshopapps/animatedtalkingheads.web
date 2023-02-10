@@ -37,7 +37,7 @@ const Home = () => {
     <Layout>
 
       <section className="home-section">
-        <div className="home ">
+        <div className="home">
           <div className="hero-container">
             <div data-aos="fade-right" className="desktop-lhs">
               <div className="hero-text">
@@ -228,6 +228,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      
       <Freestyle />
       <Transform />
       <StartCreating />
