@@ -58,9 +58,15 @@ import Policy from './pages/term-of-use/Policy';
 import PrivateRoute from './components/pages/PrivateRoute/PrivateRoute';
 import { Uploads } from './pages/dashboard/uploads';
 import InProgress from './pages/dashboard/in_progress';
+import AOS from 'aos'
+import 'aos/dist/aos.css';
 
 function App() {
   const { pathname } = useLocation();
+
+  useEffect(() => {
+    AOS.init({ duration: 500 });
+  }, []);
 
   useEffect(() => {
     window.scrollTo({
