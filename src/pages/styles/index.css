@@ -1,5 +1,8 @@
 section.home-section .home {
   background: #171d2e;
+  height: 640px;
+  display: flex;
+  align-items: center;
 }
 section.home-section .home .hero-container {
   width: 90%;
@@ -145,3 +148,10 @@ section.home-section .home .hero-container .desktop-rhs .lottie {
 }
 
 /*# sourceMappingURL=index.css.map */
+
+@media screen and (max-width: 600px) {
+  section.home-section .home {
+    background: #171d2e;
+    height: 800px;
+  }
+}

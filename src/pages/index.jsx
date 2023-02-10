@@ -36,10 +36,10 @@ const Home = () => {
   return (
     <Layout>
 
-      <section className="home-section ">
+      <section className="home-section">
         <div className="home ">
-          <div className="hero-container ">
-            <div className="desktop-lhs">
+          <div className="hero-container">
+            <div data-aos="fade-right" className="desktop-lhs">
               <div className="hero-text">
                 <h1 className="hero-heading">
                   Heads that talk,<br></br> On your podcast.
@@ -102,7 +102,7 @@ const Home = () => {
                 </Link>
               </div>
             </div>
-            <div className="desktop-rhs">
+            <div data-aos="fade-left" className="desktop-rhs">
               <div className="lottie">
                 <Lottie loop={true} animationData={heroAnimation} />
               </div>
@@ -111,7 +111,7 @@ const Home = () => {
         </div>
       </section>{' '}
       <section className="bg-[#F5F5F5] ">
-        <div className="pt-[60px] container mx-auto">
+        <div data-aos="fade-up" className="py-[60px] container mx-auto">
           <h3 className="text-center text-xl pb-12 md:pb-32 md:text-[40px] text-[#292d32]  ">
             4 Simple clicks gets you there
           </h3>
@@ -153,12 +153,12 @@ const Home = () => {
         </div>
       </section>
       <section className="bg-sec-700 text-white pb-5 ">
-        <div className="container mx-auto w-[90%] ">
+        <div data-aos="fade-up" className="container mx-auto w-[90%] ">
           <h3 className="text-[292d32] pt-20  text-center font-bold text-xl pb-10 md:pb-[72px] md:text-[40px]">
             What people are saying
           </h3>
           <div className="grid md:grid-cols-3  gap-12 justify-around pb-[40px] md:px-6">
-            <div className=" px-8 bg-white mx-auto  mb-12 md:mb-0 md:px-8 md:h-60 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
+            <div data-aos="flip-left" className=" px-8 bg-white mx-auto  mb-12 md:mb-0 md:px-8 md:h-60 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
               <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
                 <img src={MarkImg} alt="Mark Essien" className="w-full h-full" />
               </div>
@@ -169,7 +169,7 @@ const Home = () => {
               </p>
               <h4 className="text-center pb-6 text-[11px] md:text-base text-black">Mark Essien</h4>
             </div>
-            <div className=" px-8 bg-white   mx-auto mb-12 md:mb-0 md:px-8 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
+            <div data-aos="flip-left" className=" px-8 bg-white   mx-auto mb-12 md:mb-0 md:px-8 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
               <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
                 <img src={LavyImg} alt="Mark Essien" className="w-full h-full" />
               </div>
@@ -180,7 +180,7 @@ const Home = () => {
               </p>
               <h4 className="text-center pb-6 text-[11px] md:text-base text-black">Lavy Engine</h4>
             </div>
-            <div className=" px-8 bg-white   mx-auto mb-12 md:mb-0 md:px-8  grid items-center relative rounded-lg md:rounded-2xl md:pb-0">
+            <div data-aos="flip-left" className=" px-8 bg-white   mx-auto mb-12 md:mb-0 md:px-8  grid items-center relative rounded-lg md:rounded-2xl md:pb-0">
               <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
                 <img src={NonsoImg} alt="Mark Essien" className="w-full h-full" />
               </div>
@@ -195,12 +195,12 @@ const Home = () => {
       </section>{' '}
       <section className="py-20 bg-white px-8  container mx-auto">
         <div className="flex justify-around items-center">
-          <div>
+          <div data-aos="fade-right">
             <h3 className="font-bold md:text-[32px] text-base mb-3 md:mb-8 w-44 md:w-[365px] md:leading-[50px]  text-sec">
               Conveniently download your output on different video qualities
             </h3>
           </div>
-          <div>
+          <div data-aos="fade-left">
             <div className="flex justify-between-items-center  md:gap-10 gap-[10px] mb-[10px] md:mb-10 ">
               <div className="bg-[#fbfbfb]  md:gap-10 gap-[10px] rounded p-2.5 md:p-[30px] md:h-32 md:w-32 h-16 w-16">
                 <p className="text-black text-[8px] border-[1px] border-black border-solid h-full w-full rounded grid items-center justify-center  md:text-base">
