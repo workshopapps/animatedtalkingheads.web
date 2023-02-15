@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 // import styles from './styles.module.css';
 import footerLogo from './../../../assets/icons/footer_logo.svg';
-//import settings from './../../../assets/icons/settings.svg';
+import settings from './../../../assets/icons/settings.svg';
 // import globe from './../../../assets/icons/white_globe.svg';
 import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { routes } from '../../../libs/links';
@@ -54,14 +54,14 @@ const Footer = () => {
           <Link to="/">
             <img src={footerLogo} alt="home" />
           </Link>
-          {/* <div className="hidden lg:block">
+          <div className="hidden lg:block">
             <Link to="/settings-appearance">
               <div className="flex gap-3 ">
                 <img src={settings} alt="settings" />
                 <p>Settings</p>
               </div>
             </Link>
-          </div>{' '} */}
+          </div>{' '}
         </div>
         {/* <div className="lg:hidden col-start-2">
           <Link to="/settings">
@@ -123,7 +123,7 @@ const Footer = () => {
             <a href="https://www.linkedin.com/company/voxclipshq/" style={{ color: 'white' }}>
               <FaLinkedin size="20" />
             </a>
-            <a href="https://www.instagram.com/hnginternship/" style={{ color: 'white' }}>
+            <a href="https://instagram.com/voxclips.hq?igshid=YmMyMTA2M2Y=" style={{ color: 'white' }}>
               <FaInstagram size="20" />
             </a>
           </div>
