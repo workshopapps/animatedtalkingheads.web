@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 // import styles from './styles.module.css';
 import footerLogo from './../../../assets/icons/footer_logo.svg';
-//import settings from './../../../assets/icons/settings.svg';
+import settings from './../../../assets/icons/settings.svg';
 // import globe from './../../../assets/icons/white_globe.svg';
 import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { routes } from '../../../libs/links';
@@ -49,19 +49,19 @@ const links3 = [
 const Footer = () => {
   return (
     <footer className="bg-sec-600 text-white text-sm md:text-base ">
-      <div className="grid grid-cols-2  lg:grid-cols-5 gap-y-5 gap-x-5 lg:gap-x-0 py-10 w-[90%] mx-auto max-w-[1440px]">
+      <div data-aos="fade-in" className="grid grid-cols-2  lg:grid-cols-5 gap-y-5 gap-x-5 lg:gap-x-0 py-10 w-[90%] mx-auto max-w-[1440px]">
         <div className=" mb-10 lg:mb-0 flex flex-col justify-between">
           <Link to="/">
             <img src={footerLogo} alt="home" />
           </Link>
-          {/* <div className="hidden lg:block">
+          <div className="hidden lg:block">
             <Link to="/settings-appearance">
               <div className="flex gap-3 ">
                 <img src={settings} alt="settings" />
                 <p>Settings</p>
               </div>
             </Link>
-          </div>{' '} */}
+          </div>{' '}
         </div>
         {/* <div className="lg:hidden col-start-2">
           <Link to="/settings">
@@ -123,7 +123,7 @@ const Footer = () => {
             <a href="https://www.linkedin.com/company/voxclipshq/" style={{ color: 'white' }}>
               <FaLinkedin size="20" />
             </a>
-            <a href="https://www.instagram.com/hnginternship/" style={{ color: 'white' }}>
+            <a href="https://instagram.com/voxclips.hq?igshid=YmMyMTA2M2Y=" style={{ color: 'white' }}>
               <FaInstagram size="20" />
             </a>
           </div>
