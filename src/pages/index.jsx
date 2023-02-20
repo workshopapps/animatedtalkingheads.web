@@ -21,8 +21,6 @@ import StartCreating from '../components/pages/landing/StartCreating';
 import ReactTooltip from 'react-tooltip';
 // import NavSign from '../components/UI/NavSign';
 
-
-
 const Home = () => {
   // const defaultOptions = {
   //   loop: true,
@@ -35,7 +33,6 @@ const Home = () => {
 
   return (
     <Layout>
-
       <section className="home-section ">
         <div className="home ">
           <div className="hero-container ">
@@ -186,7 +183,7 @@ const Home = () => {
               </div>
               <img src={Quotes} alt="" className="pt-[34px] md:pt-12 mx-auto" />
               <p className="text-center text-black opacity-60 text-xs md:text-base italic">
-                Simple, Straightforward and works Nahh. To good to be true
+                Simple, Straightforward and works Nahh. Too good to be true
               </p>
               <h4 className="text-center pb-6 text-[11px] md:text-base text-black ">Nonso</h4>
             </div>
@@ -231,7 +228,6 @@ const Home = () => {
       <Freestyle />
       <Transform />
       <StartCreating />
-
     </Layout>
   );
 };
