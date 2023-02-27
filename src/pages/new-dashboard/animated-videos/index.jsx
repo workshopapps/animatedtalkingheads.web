@@ -12,6 +12,7 @@ import Twitter from './images/twitter.svg';
 import Instagram from './images/instagram.svg';
 import World from './images/world.svg';
 import DropdownBlue from './images/blue-arrow.svg';
+import Logo from './images/voxclips-logo.svg';
 
 const AnimatedVideos = () => {
   return (
@@ -70,60 +71,72 @@ const AnimatedVideos = () => {
           </div>
         </div>
       </div>
-      <footer className="bg-white py-10 px-8">
-        <div className="flex flex-wrap w-4/5 ml-auto mr-auto gap-y-4 gap-x-14 sm:gap-x-32 md:gap-x-56 justify-between items-center">
-          <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
-            How it works
-          </a>
-          <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
-            About
-          </a>
-          <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
-            Terms of Use
-          </a>
-          <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
-            Connect with us
-          </a>
-          <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
-            Use Cases
-          </a>
-          <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
-            FAQs
-          </a>
-          <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
-            APIs
-          </a>
-          <div className="flex gap-x-4">
-            <a href="#">
-              <img src={Facebook} alt="facebook" />{' '}
+      <footer className="bg-white py-10">
+        <div className="px-8 ">
+          <div className="grid md:grid-cols-3 grid-cols-2  w-4/5 ml-auto mr-auto gap-y-4 gap-x-14 sm:gap-x-32 md:gap-x-32 justify-between items-center">
+            <a
+              href="#"
+              className="text-[#2158D2] justify-self-start font-mulish font-normal text-base">
+              How it works
             </a>
-            <a href="#">
-              <img src={Twitter} alt="twitter" />{' '}
+            <a href="#" className="text-[#2158D2] font-mulish font-normal text-base ">
+              About
             </a>
-            <a href="#">
-              <img src={Instagram} alt="instagram" />{' '}
-            </a>
-          </div>
-          <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
-            Avatars
-          </a>
-          <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
-            Pricing
-          </a>
-          <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
-            Contact Us
-          </a>
-          <div className="flex gap-x-1 items-center">
-            <a href="#">
-              <img src={World} alt="" />{' '}
+            <a href="#" className="text-[#2158D2] font-mulish font-normal text-base ">
+              Terms of Use
             </a>
             <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
-              English
+              Connect with us
             </a>
-            <a href="#">
-              <img src={DropdownBlue} alt="" />{' '}
+            <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
+              Use Cases
             </a>
+            <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
+              FAQs
+            </a>
+            <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
+              APIs
+            </a>
+            <div className="flex gap-x-4">
+              <a href="#">
+                <img src={Facebook} alt="facebook" />{' '}
+              </a>
+              <a href="#">
+                <img src={Twitter} alt="twitter" />{' '}
+              </a>
+              <a href="#">
+                <img src={Instagram} alt="instagram" />{' '}
+              </a>
+            </div>
+            <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
+              Avatars
+            </a>
+            <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
+              Pricing
+            </a>
+            <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
+              Contact Us
+            </a>
+            <div className="flex gap-x-1 items-center">
+              <a href="#">
+                <img src={World} alt="" />{' '}
+              </a>
+              <a href="#" className="text-[#2158D2] font-mulish font-normal text-base">
+                English
+              </a>
+              <a href="#">
+                <img src={DropdownBlue} alt="" />{' '}
+              </a>
+            </div>
           </div>
+        </div>
+        <div className="border-t border-solid my-12 border-[#5f5f5f] "></div>
+        <div className="flex items-center justify-center md:justify-start md:px-8 gap-x-2">
+          <a className="flex gap-x-2 text-xl font-bold text-[#292d32] " href="#">
+            {' '}
+            <img src={Logo} alt="logo of voxclips" /> Voxclips
+          </a>
+          <p className=" text-base text-[#292d32]"> Copyright 2022 Voxclips &#169; </p>
         </div>
       </footer>
     </DashboardLayout>
