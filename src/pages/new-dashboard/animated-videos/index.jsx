@@ -17,18 +17,22 @@ import Logo from './images/voxclips-logo.svg';
 const AnimatedVideos = () => {
   return (
     <DashboardLayout>
-      <div className="bg-[#f5f5f5] -z-50 pb-20 md:pb-56">
-        <div className="flex">
-          <div className="text-2xl">Welcome Wanjiku!</div>
-          <div className="flex items-center">
-            <img src={Bell} alt="notification" />
-            <img src={UserImg} alt="user icon" />
-            <h5 className="text-xl hidden md:block">Wanjiku</h5>
-            <img src={Dropdown} alt="dropdown button" />
+      <div className="bg-[#f5f5f5] -z-50 pb-20 md:pb-56 pt-10">
+        <div className="flex items-center justify-between px-12  relative ml-auto mr-auto">
+          <div className="text-lg mb-4 md:mb-6 md:text-2xl text-[#2d2d2d]">Welcome Wanjiku!</div>
+          <div className="flex items-center gap-x-3 ">
+            <div className="pr-2 w-7 md:w-full">
+              <img className="w-full" src={Bell} alt="notification" />
+            </div>
+            <img className="w-9 md:w-full" src={UserImg} alt="user icon" />
+            <h5 className="text-xl hidden md:block text-[#292d32] ">Wanjiku</h5>
+            <img className="w-4 md:w-full" src={Dropdown} alt="dropdown button" />
           </div>
         </div>
-        <div className="flex">
-          <h1 className="text-2xl max-w-md">Find and share all your animated podcasts</h1>
+        <div className="flex relative ml-auto mr-auto px-12 mb-12 md:mb-20">
+          <h1 className="text-2xl md:text-4xl w-3/5 font-bold text-[#292d32]">
+            Find and share all your animated podcasts.
+          </h1>
           <div className="flex">
             <img src={Star} alt="star" />
           </div>
@@ -42,8 +46,9 @@ const AnimatedVideos = () => {
               alt=""
             />
             <div className="text-2xl grid place-items-center">
-              <p className="text-center grid gap-y-4 place-items-center z-10 ">
-                Podcasts <span className="block">Uploaded</span> <span className="block">25</span>
+              <p className="text-center grid gap-y-4 place-items-center z-10 text-3xl md:text-4xl font-semibold">
+                Podcasts <span className="block text-[#292d32]">Uploaded</span>{' '}
+                <span className="block font-bold text-4xl md:text-5xl">25</span>
               </p>
             </div>
           </div>
@@ -54,8 +59,9 @@ const AnimatedVideos = () => {
               alt=""
             />
             <div className="text-2xl grid place-items-center">
-              <p className="text-center grid gap-y-4 place-items-center z-10">
-                Animations <span className="block">Created</span> <span className="block">25</span>
+              <p className="text-center grid gap-y-4 place-items-center z-10 text-[#292d32] text-3xl md:text-4xl font-semibold">
+                Animations <span className="block">Created</span>{' '}
+                <span className="block font-bold text-4xl md:text-5xl">25</span>
               </p>
             </div>
           </div>
@@ -73,7 +79,7 @@ const AnimatedVideos = () => {
       </div>
       <footer className="bg-white py-10">
         <div className="px-8 ">
-          <div className="grid md:grid-cols-3 grid-cols-2  w-4/5 ml-auto mr-auto gap-y-4 gap-x-14 sm:gap-x-32 md:gap-x-32 justify-between items-center">
+          <div className="grid md:grid-cols-4 grid-cols-2  w-4/5 ml-auto mr-auto gap-y-4 gap-x-14  md:gap-x-20 justify-between items-center">
             <a
               href="#"
               className="text-[#2158D2] justify-self-start font-mulish font-normal text-base">
