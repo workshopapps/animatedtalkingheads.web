@@ -155,3 +155,17 @@ section.home-section .home .hero-container .desktop-rhs .lottie {
     height: 800px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  section.home-section .home {
+    background: #171d2e;
+    height: 800px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section.home-section .home {
+    background: #171d2e;
+    height: 800px;
+  }
+}
