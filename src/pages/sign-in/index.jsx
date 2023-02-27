@@ -63,6 +63,7 @@ const SignIn = () => {
     //   })
     //   return;
     // }
+    const tokenCreationDate = new Date().getTime();
 
     axios
       .post('https://api.voxclips.hng.tech/api/v1/auth/login', formData)
@@ -81,6 +82,7 @@ const SignIn = () => {
           const email = formData.email;
           // setUserToken(data.user)
           localStorage.setItem('token', token);
+          localStorage.setItem(`${token}_date`, tokenCreationDate);
           localStorage.setItem('email', email);
           setUser(token);
           setUserEmail(email);
