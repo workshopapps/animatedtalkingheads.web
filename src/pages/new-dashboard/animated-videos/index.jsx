@@ -5,6 +5,7 @@ import UserImg from './images/user-icon.svg';
 import Dropdown from './images/arrow-down.svg';
 import Star from './images/blue-star.svg';
 import Podcasts from './images/podcast-upload.png';
+import Animation from './images/animation.png';
 import Create from './images/create.svg';
 import Share from './images/share.svg';
 import Facebook from './images/facebook.svg';
@@ -39,23 +40,23 @@ const AnimatedVideos = () => {
         </div>
 
         <div className="md:flex grid gap-y-8 mb-10">
-          <div className="md:w-2/5 w-4/5 relative ml-auto mr-auto h-72 md:h-80 grid gap-y-8">
+          <div className="md:w-2/5 w-4/5 relative ml-auto mr-auto h-72 md:h-80 grid gap-y-8 rounded-lg">
             <img
-              className="absolute top-0 left-0 w-full h-full object-cover -z-5"
+              className="absolute top-0 left-0 w-full h-full rounded-lg object-cover -z-5"
               src={Podcasts}
               alt=""
             />
             <div className="text-2xl grid place-items-center">
-              <p className="text-center grid gap-y-4 place-items-center z-10 text-3xl md:text-4xl font-semibold">
-                Podcasts <span className="block text-[#292d32]">Uploaded</span>{' '}
+              <p className="text-center grid gap-y-4 place-items-center z-10 text-3xl md:text-4xl font-semibold text-[#292d32]">
+                Podcasts <span className="block">Uploaded</span>{' '}
                 <span className="block font-bold text-4xl md:text-5xl">25</span>
               </p>
             </div>
           </div>
-          <div className="md:w-2/5 w-4/5 relative ml-auto mr-auto h-72 md:h-80 grid gap-y-8">
+          <div className="md:w-2/5 w-4/5 relative ml-auto mr-auto h-72 md:h-80 grid gap-y-8 rounded-lg">
             <img
-              className="absolute top-0 left-0 w-full h-full -z-5 object-cover"
-              src={Podcasts}
+              className="absolute top-0 left-0 w-full rounded-lg h-full -z-5 object-cover"
+              src={Animation}
               alt=""
             />
             <div className="text-2xl grid place-items-center">
