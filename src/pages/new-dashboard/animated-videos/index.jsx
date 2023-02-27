@@ -4,7 +4,7 @@ import Bell from './images/bell.svg';
 import UserImg from './images/user-icon.svg';
 import Dropdown from './images/arrow-down.svg';
 import Star from './images/blue-star.svg';
-import Podcasts from './images/podcast-upload.png';
+import Podcasts from './images/podcast.png';
 import Animation from './images/animation.png';
 import Create from './images/create.svg';
 import Share from './images/share.svg';
