@@ -40,7 +40,7 @@ const About = () => {
 
                 <div className={`${style.aboutContent} mb-20]`}>
                   <h3 className={style.contentHeading}>THE GOAL</h3>
-                  <div className={`${style.contentTheme} max-w-[836px] mb-[24px]`}>
+                  <div className={`${style.contentTheme} max-w-[836px] mb-[10px]`}>
                     We are helping newbie podcasters beat the odds and get discovered organically
                   </div>
                   <p>
@@ -66,15 +66,15 @@ const About = () => {
 
 
                 <div className={style.aboutContent}>
-                  <h3 className={`${style.contentHeading} mt-6 md:mt-0`}>MISSION</h3>
+                  <h3 className={`${style.contentHeading} mt-[30px] `}>MISSION</h3>
                   <div className={`${style.contentTheme} max-w-[300px] md:max-w-[836px] `}>
-                    Voxclips is the product of an ideation-to-implementation project that was created 
-                    to provide a solution for podcasters who struggle to make any waves doing what 
+                    Voxclips is the product of an ideation-to-implementation project that was created
+                    to provide a solution for podcasters who struggle to make any waves doing what
                     they love
                   </div>
                   <p className={style.contentText}>
-                    Our mission is to redefine how people interact with podcast titles. We have identified podcasts as 
-                    a great tool for education, so that is why we have created a platform that enables podcasters 
+                    Our mission is to redefine how people interact with podcast titles. We have identified podcasts as
+                    a great tool for education, so that is why we have created a platform that enables podcasters
                     to get creative with how they market their titles.
                   </p>
                   <p className={style.contentText}>
@@ -100,7 +100,7 @@ const About = () => {
                       <h3>VALUES</h3>
                       <div className='flex justify-center'>
                         <p className={style.valuesText}>
-                          Our internal and external values as a company are summarised in our CLUTCH acronym; these are our fundamental guiding principles in interacting with our project, and the people who we have provided 
+                          Our internal and external values as a company are summarised in our CLUTCH acronym; these are our fundamental guiding principles in interacting with our project, and the people who we have provided
                           a solution for
                         </p>
                       </div>
@@ -162,211 +162,211 @@ const About = () => {
                 </div>
               </div>
             </div>
-          {/* values section */}
+            {/* values section */}
 
-          {/* story section */}
+            {/* story section */}
 
-          <section className={style.aboutSection}>
-            <div className='flex flex-col items-center'>
-              <div className='max-w-[1532px]'>
-                <div className={`flex justify-center`}>
-                  <div className={style.aboutContent}>
-                    <h3 className={style.contentHeading}>OUR STORY</h3>
-                    <div className={style.contentTheme}>
-                      Voxclips was developed by team Clutch—a team of skilled learners who were part of
-                      the HNG internship (9th cohort), under the guidance of the renowned technopreneur,
-                      Mark Essien.
-                    </div>
-                    <p className={style.contentText}>
-                      The problem that Voxclips is solving is one that we have identified to be an
-                      itch-on-the-back problem for creatives with great content who struggle to thrive
-                      in the podcast industry.
-                    </p>
-                    <p className={style.contentText}>
-                      We were provided an incubation platform by the HNG organising team where we
-                      prioritised learning, and worked together as a team in an agile framework that not
-                      only saw us scaling different tasks, but also working to help one another become
-                      better.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* team section */}
-
-          <section className={style.meetSection}>
-            <div className='flex flex-col items-center'>
-              <div className='max-w-[1532px]'>
-                <div className={`flex flex-col items-center`}>
-                <div className={style.meetContent}>
-                  <h3 className={style.contentHeading}>MEET THE TEAM</h3>
-                  <div className={`${style.contentTheme}`}>
-                    <p className={`text-white`}>
-                      Voxclip was developed by a team of motivated managers, developers, designers and
-                      marketers coming together to solve a problem in the creative industry.
-                    </p>
-                  </div>
-                </div>
-
-                <div className={style.aboutTeamSection2}>
-                  <div className={style.aboutTeamTabs}>
-                    <div className={style.aboutTeamTab} tabIndex={0}>
-                      <p>Management </p>
-                      <div className={style.aboutTeamSlider} id={style.firstSlider}>
-                        <Swiper
-                          style={{
-                            '--swiper-navigation-size': '25px',
-                            '--swiper-navigation-color': '#171d2e'
-                          }}
-                          modules={[Pagination, Navigation]}
-                          loopFillGroupWithBlank={true}
-                          navigation={true}
-                          slidesPerView={4}
-                          spaceBetween={1}
-                          slidesPerGroup={1}
-                          loop={true}>
-                          {Management.map((slide) => (
-                            <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
-                              <TeamMember member={slide} />
-                            </SwiperSlide>
-                          ))}
-                        </Swiper>
+            <section className={style.aboutSection}>
+              <div className='flex flex-col items-center'>
+                <div className='max-w-[1532px]'>
+                  <div className={`flex justify-center`}>
+                    <div className={style.aboutContent}>
+                      <h3 className={style.contentHeading}>OUR STORY</h3>
+                      <div className={style.contentTheme}>
+                        Voxclips was developed by team Clutch—a team of skilled learners who were part of
+                        the HNG internship (9th cohort), under the guidance of the renowned technopreneur,
+                        Mark Essien.
                       </div>
-
-                      {/* for small screen */}
-
-                      <div className={style.aboutTeamSlider} id={style.swiperSmallScreen}>
-                        <Swiper
-                          style={{
-                            '--swiper-navigation-size': '25px',
-                            '--swiper-navigation-color': '#171d2e'
-                          }}
-                          modules={[Pagination, Navigation]}
-                          loopFillGroupWithBlank={true}
-                          navigation={true}
-                          slidesPerView={1}
-                          spaceBetween={1}
-                          slidesPerGroup={1}
-                          loop={true}>
-                          {[...Management, ...Engineering, ...Design, ...Marketing].map((slide) => (
-                            <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
-                              <TeamMember member={slide} />
-                            </SwiperSlide>
-                          ))}
-                        </Swiper>
-                      </div>
-
-                      {/* for small screen */}
-                    
-                    </div>
-
-                    <div className={style.aboutTeamTab} tabIndex={1}>
-                      <p id={style.secondSlider}>Engineering</p>
-                      <div className={style.aboutTeamSlider} id={style.secondSlider}>
-                        <Swiper
-                          style={{
-                            '--swiper-navigation-size': '25px',
-                            '--swiper-navigation-color': '#171d2e'
-                          }}
-                          modules={[Pagination, Navigation]}
-                          loopFillGroupWithBlank={true}
-                          navigation={true}
-                          slidesPerView={4}
-                          spaceBetween={40}
-                          slidesPerGroup={1}
-                          loop={true}>
-                          {Engineering.map((slide) => (
-                            <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
-                              <TeamMember member={slide} />
-                            </SwiperSlide>
-                          ))}
-                        </Swiper>
-                      </div>
-                    </div>
-
-                    <div className={style.aboutTeamTab} tabIndex={2}>
-                      <p id={style.thirdSlider}>Design</p>
-                      <div className={style.aboutTeamSlider} id={style.thirdSlider}>
-                        <Swiper
-                          style={{
-                            '--swiper-navigation-size': '25px',
-                            '--swiper-navigation-color': '#171d2e'
-                          }}
-                          modules={[Pagination, Navigation]}
-                          loopFillGroupWithBlank={true}
-                          navigation={true}
-                          slidesPerView={4}
-                          spaceBetween={40}
-                          slidesPerGroup={1}
-                          loop={true}>
-                          {Design.map((slide) => (
-                            <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
-                              <TeamMember member={slide} />
-                            </SwiperSlide>
-                          ))}
-                        </Swiper>
-                      </div>
-                    </div>
-
-                    <div className={style.aboutTeamTab} tabIndex={3}>
-                      <p id={style.fourthSlider}>Marketing</p>
-                      <div className={style.aboutTeamSlider} id={style.fourthSlider}>
-                        <Swiper
-                          style={{
-                            '--swiper-navigation-size': '25px',
-                            '--swiper-navigation-color': '#171d2e'
-                          }}
-                          modules={[Pagination, Navigation]}
-                          loopFillGroupWithBlank={true}
-                          navigation={true}
-                          slidesPerView={4}
-                          spaceBetween={1}
-                          slidesPerGroup={1}
-                          loop={true}>
-                          {Marketing.map((slide, index) => (
-                            <SwiperSlide key={index} className={style.aboutTeamSlide}>
-                              <TeamMember member={slide} />
-                            </SwiperSlide>
-                          ))}
-                        </Swiper>
-                      </div>
+                      <p className={style.contentText}>
+                        The problem that Voxclips is solving is one that we have identified to be an
+                        itch-on-the-back problem for creatives with great content who struggle to thrive
+                        in the podcast industry.
+                      </p>
+                      <p className={style.contentText}>
+                        We were provided an incubation platform by the HNG organising team where we
+                        prioritised learning, and worked together as a team in an agile framework that not
+                        only saw us scaling different tasks, but also working to help one another become
+                        better.
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
+            </section>
+
+            {/* team section */}
+
+            <section className={style.meetSection}>
+              <div className='flex flex-col items-center'>
+                <div className='max-w-[1532px]'>
+                  <div className={`flex flex-col items-center`}>
+                    <div className={style.meetContent}>
+                      <h3 className={`style.contentHeading mb-5`}>MEET THE TEAM</h3>
+                      <div className={`${style.contentTheme}`}>
+                        <p className={`text-white`}>
+                          Voxclip was developed by a team of motivated managers, developers, designers and
+                          marketers coming together to solve a problem in the creative industry.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className={style.aboutTeamSection2}>
+                      <div className={style.aboutTeamTabs}>
+                        <div className={style.aboutTeamTab} tabIndex={0}>
+                          <p>Management </p>
+                          <div className={style.aboutTeamSlider} id={style.firstSlider}>
+                            <Swiper
+                              style={{
+                                '--swiper-navigation-size': '25px',
+                                '--swiper-navigation-color': '#171d2e'
+                              }}
+                              modules={[Pagination, Navigation]}
+                              loopFillGroupWithBlank={true}
+                              navigation={true}
+                              slidesPerView={4}
+                              spaceBetween={1}
+                              slidesPerGroup={1}
+                              loop={true}>
+                              {Management.map((slide) => (
+                                <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
+                                  <TeamMember member={slide} />
+                                </SwiperSlide>
+                              ))}
+                            </Swiper>
+                          </div>
+
+                          {/* for small screen */}
+
+                          <div className={style.aboutTeamSlider} id={style.swiperSmallScreen}>
+                            <Swiper
+                              style={{
+                                '--swiper-navigation-size': '25px',
+                                '--swiper-navigation-color': '#171d2e'
+                              }}
+                              modules={[Pagination, Navigation]}
+                              loopFillGroupWithBlank={true}
+                              navigation={true}
+                              slidesPerView={1}
+                              spaceBetween={1}
+                              slidesPerGroup={1}
+                              loop={true}>
+                              {[...Management, ...Engineering, ...Design, ...Marketing].map((slide) => (
+                                <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
+                                  <TeamMember member={slide} />
+                                </SwiperSlide>
+                              ))}
+                            </Swiper>
+                          </div>
+
+                          {/* for small screen */}
+
+                        </div>
+
+                        <div className={style.aboutTeamTab} tabIndex={1}>
+                          <p id={style.secondSlider}>Engineering</p>
+                          <div className={style.aboutTeamSlider} id={style.secondSlider}>
+                            <Swiper
+                              style={{
+                                '--swiper-navigation-size': '25px',
+                                '--swiper-navigation-color': '#171d2e'
+                              }}
+                              modules={[Pagination, Navigation]}
+                              loopFillGroupWithBlank={true}
+                              navigation={true}
+                              slidesPerView={4}
+                              spaceBetween={40}
+                              slidesPerGroup={1}
+                              loop={true}>
+                              {Engineering.map((slide) => (
+                                <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
+                                  <TeamMember member={slide} />
+                                </SwiperSlide>
+                              ))}
+                            </Swiper>
+                          </div>
+                        </div>
+
+                        <div className={style.aboutTeamTab} tabIndex={2}>
+                          <p id={style.thirdSlider}>Design</p>
+                          <div className={style.aboutTeamSlider} id={style.thirdSlider}>
+                            <Swiper
+                              style={{
+                                '--swiper-navigation-size': '25px',
+                                '--swiper-navigation-color': '#171d2e'
+                              }}
+                              modules={[Pagination, Navigation]}
+                              loopFillGroupWithBlank={true}
+                              navigation={true}
+                              slidesPerView={4}
+                              spaceBetween={40}
+                              slidesPerGroup={1}
+                              loop={true}>
+                              {Design.map((slide) => (
+                                <SwiperSlide className={style.aboutTeamSlide} key={slide.name}>
+                                  <TeamMember member={slide} />
+                                </SwiperSlide>
+                              ))}
+                            </Swiper>
+                          </div>
+                        </div>
+
+                        <div className={style.aboutTeamTab} tabIndex={3}>
+                          <p id={style.fourthSlider}>Marketing</p>
+                          <div className={style.aboutTeamSlider} id={style.fourthSlider}>
+                            <Swiper
+                              style={{
+                                '--swiper-navigation-size': '25px',
+                                '--swiper-navigation-color': '#171d2e'
+                              }}
+                              modules={[Pagination, Navigation]}
+                              loopFillGroupWithBlank={true}
+                              navigation={true}
+                              slidesPerView={4}
+                              spaceBetween={1}
+                              slidesPerGroup={1}
+                              loop={true}>
+                              {Marketing.map((slide, index) => (
+                                <SwiperSlide key={index} className={style.aboutTeamSlide}>
+                                  <TeamMember member={slide} />
+                                </SwiperSlide>
+                              ))}
+                            </Swiper>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* team section */}
+
+            {/* build section */}
+
+            <div className={style.aboutBuild}>
+              <div className={style.aboutBuildBox}>
+                <h3>Try Viral for a Change</h3>
+                <p className={'max-w-[500px] w-full text-sm md:text-xl font-thin'}>
+                  With Voxclips, you can create brilliant cartoon videos
+                  of talking heads that your audience will love. <br />
+                  We are committed to giving creators a chance <br />
+                  to creatively market their content across multiple streams,
+                  create a following from these sources, organically <br />
+                  grow and monetize their content.
+                </p>
+                <Link to="/podcast/upload">
+                  <Button>Try for free now</Button>
+                </Link>
+              </div>
             </div>
-            </div>
+
+            {/* build section */}
           </section>
-
-          {/* team section */}
-
-          {/* build section */}
-
-          <div className={style.aboutBuild}>
-            <div className={style.aboutBuildBox}>
-              <h3>Try Viral for a Change</h3>
-              <p className={'max-w-[800px] w-full text-sm md:text-2xl'}>
-                With Voxclips, you can create brilliant cartoon videos 
-                of talking heads that your audience will love. <br />
-                We are committed to giving creators a chance <br />
-                to creatively market their content across multiple streams, 
-                create a following from these sources, organically <br />
-                grow and monetize their content.
-              </p>
-              <Link to="/podcast/upload">
-                <Button>Try for free now</Button>
-              </Link>
-            </div>
-          </div>
-
-          {/* build section */}
-        </section>
+        </div>
       </div>
-    </div>
-    {/* about page wrapper */}
-  </Layout>
+      {/* about page wrapper */}
+    </Layout>
   );
 };
 
