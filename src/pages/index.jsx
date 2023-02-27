@@ -21,8 +21,6 @@ import StartCreating from '../components/pages/landing/StartCreating';
 import ReactTooltip from 'react-tooltip';
 // import NavSign from '../components/UI/NavSign';
 
-
-
 const Home = () => {
   // const defaultOptions = {
   //   loop: true,
@@ -35,7 +33,6 @@ const Home = () => {
 
   return (
     <Layout>
-
       <section className="home-section">
         <div className="home">
           <div className="hero-container">
@@ -158,7 +155,9 @@ const Home = () => {
             What people are saying
           </h3>
           <div className="grid md:grid-cols-3  gap-12 justify-around pb-[40px] md:px-6">
-            <div data-aos="flip-left" className=" px-8 bg-white mx-auto  mb-12 md:mb-0 md:px-8 md:h-60 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
+            <div
+              data-aos="flip-left"
+              className=" px-8 bg-white mx-auto  mb-12 md:mb-0 md:px-8 md:h-60 h-36 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
               <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
                 <img src={MarkImg} alt="Mark Essien" className="w-full h-full" />
               </div>
@@ -169,7 +168,9 @@ const Home = () => {
               </p>
               <h4 className="text-center pb-6 text-[11px] md:text-base text-black">Mark Essien</h4>
             </div>
-            <div data-aos="flip-left" className=" px-8 bg-white   mx-auto mb-12 md:mb-0 md:px-8 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
+            <div
+              data-aos="flip-left"
+              className=" px-8 bg-white   mx-auto mb-12 md:mb-0 md:px-8 grid items-center relative rounded-lg md:rounded-2xl  md:pb-0">
               <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
                 <img src={LavyImg} alt="Mark Essien" className="w-full h-full" />
               </div>
@@ -180,13 +181,15 @@ const Home = () => {
               </p>
               <h4 className="text-center pb-6 text-[11px] md:text-base text-black">Lavy Engine</h4>
             </div>
-            <div data-aos="flip-left" className=" px-8 bg-white   mx-auto mb-12 md:mb-0 md:px-8  grid items-center relative rounded-lg md:rounded-2xl md:pb-0">
+            <div
+              data-aos="flip-left"
+              className=" px-8 bg-white   mx-auto mb-12 md:mb-0 md:px-8  grid items-center relative rounded-lg md:rounded-2xl md:pb-0">
               <div className=" h-12 w-12 md:h-[69] md:w-[69] absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] ">
                 <img src={NonsoImg} alt="Mark Essien" className="w-full h-full" />
               </div>
               <img src={Quotes} alt="" className="pt-[34px] md:pt-12 mx-auto" />
               <p className="text-center text-black opacity-60 text-xs md:text-base italic">
-                Simple, Straightforward and works Nahh. To good to be true
+                Simple, Straightforward and works Nahh. Too good to be true
               </p>
               <h4 className="text-center pb-6 text-[11px] md:text-base text-black ">Nonso</h4>
             </div>
@@ -228,11 +231,9 @@ const Home = () => {
           </div>
         </div>
       </section>
-      
       <Freestyle />
       <Transform />
       <StartCreating />
-
     </Layout>
   );
 };
