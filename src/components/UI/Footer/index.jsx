@@ -46,11 +46,13 @@ const links3 = [
   // { name: 'Privacy Policy', link: routes.privacy }
 ];
 
-const Footer = () => {
+const Footer = ({ bg, text, icon, logo, width }) => {
   return (
-    <footer className="bg-sec-600 text-white text-sm md:text-base ">
-      <div data-aos="fade-in" className="grid grid-cols-2  lg:grid-cols-5 gap-y-5 gap-x-5 lg:gap-x-0 py-10 w-[90%] mx-auto max-w-[1440px]">
-        <div className=" mb-10 lg:mb-0 flex flex-col justify-between">
+    <footer className={` ${bg} ${text} text-sm md:text-base `}>
+      <div
+        data-aos="fade-in"
+        className={`${width} grid grid-cols-2  lg:grid-cols-5 gap-y-5 gap-x-5 lg:gap-x-0 py-10 max-w-[1440px]`}>
+        <div className={`${logo} mb-10 lg:mb-0 flex flex-col justify-between`}>
           <Link to="/">
             <img src={footerLogo} alt="home" />
           </Link>
@@ -73,17 +75,17 @@ const Footer = () => {
         </div> */}
         <div className="col-start-1 lg:col-start-2 grid gap-3 lg:gap-5 text-white">
           {links1.map((link, index) => (
-            <Link className="text-white" key={index} to={link.link}>
+            <Link className={`${text}`} key={index} to={link.link}>
               {link.name}
             </Link>
           ))}
           <div className="lg:hidden">
-            <Link className="text-white" to={routes.about}>
+            <Link className={`${text}`} to={routes.about}>
               About
             </Link>
           </div>
           <div className="lg:hidden">
-            <Link className="text-white" to={routes.faqs}>
+            <Link className={`${text}`} to={routes.faqs}>
               FAQs
             </Link>
           </div>
@@ -91,7 +93,7 @@ const Footer = () => {
 
         <div className="hidden lg:grid gap-3 col-start-1 lg:col-start-3 lg:gap-5 ">
           {links2.map((link, index) => (
-            <Link className="block text-white" key={index} to={link.link}>
+            <Link className={`block ${text}`} key={index} to={link.link}>
               {link.name}
             </Link>
           ))}
@@ -99,13 +101,13 @@ const Footer = () => {
 
         <div className=" grid gap-3 lg:gap-5  row-start-2 lg:row-start-1 col-start-2 lg:col-start-4 ">
           <div className="lg:hidden">
-            <Link className="text-white" to={routes.pricing}>
+            <Link className={text} to={routes.pricing}>
               Pricing
             </Link>
           </div>
 
           {links3.map((link, index) => (
-            <Link className="block text-white" key={index} to={link.link}>
+            <Link className={`block ${text}`} key={index} to={link.link}>
               {link.name}
             </Link>
           ))}
@@ -115,15 +117,15 @@ const Footer = () => {
           <p className="text-base">Connect With Us</p>
           <div className="flex gap-5 items-center">
             <a href="https://web.facebook.com/Voxclips.hq">
-              <FaFacebookF size="20" style={{ color: 'white' }} />
+              <FaFacebookF size="20" style={{ color: icon }} />
             </a>
-            <a href="https://twitter.com/voxclips_hq?s=09" style={{ color: 'white' }}>
+            <a href="https://twitter.com/voxclips_hq?s=09" style={{ color: icon }}>
               <FaTwitter size="20" />
             </a>
-            <a href="https://www.linkedin.com/company/voxclipshq/" style={{ color: 'white' }}>
+            <a href="https://www.linkedin.com/company/voxclipshq/" style={{ color: icon }}>
               <FaLinkedin size="20" />
             </a>
-            <a href="https://instagram.com/voxclips.hq?igshid=YmMyMTA2M2Y=" style={{ color: 'white' }}>
+            <a href="https://instagram.com/voxclips.hq?igshid=YmMyMTA2M2Y=" style={{ color: icon }}>
               <FaInstagram size="20" />
             </a>
           </div>

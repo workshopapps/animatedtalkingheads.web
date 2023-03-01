@@ -77,7 +77,7 @@ const AnimatedVideos = () => {
           </div>
         </div>
       </div>
-      <footer className="bg-white py-10">
+      {/* <footer className="bg-white py-10">
         <div className="px-8 ">
           <div className="grid md:grid-cols-4 grid-cols-2  w-4/5 ml-auto mr-auto gap-y-4 gap-x-14  md:gap-x-20 justify-between items-center">
             <a
@@ -144,7 +144,7 @@ const AnimatedVideos = () => {
           </a>
           <p className=" text-base text-[#292d32]"> Copyright 2022 Voxclips &#169; </p>
         </div>
-      </footer>
+      </footer> */}
     </DashboardLayout>
   );
 };
