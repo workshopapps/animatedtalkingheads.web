@@ -62,12 +62,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ReactGA from 'react-ga';
 
-const TRACKING_ID = "G-W6DC5Q2C00"; // OUR_TRACKING_ID
-
-import AnimatedVideos from './pages/new-dashboard/animated-videos';
-
 const TRACKING_ID = 'G-W6DC5Q2C00'; // OUR_TRACKING_ID
 
+import AnimatedVideos from './pages/new-dashboard/animated-videos';
 
 ReactGA.initialize(TRACKING_ID);
 
