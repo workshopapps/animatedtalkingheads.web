@@ -10,6 +10,7 @@ import store from '../../../store/store.js';
 import axios from 'axios';
 import AuthWrapper from '../../../components/UI/Auth/AuthWrapper';
 import PropagateLoader from 'react-spinners/PropagateLoader';
+import BarLoader from 'react-spinners/BarLoader';
 import { useQuery } from 'react-query';
 import { Text } from '../../../components/UI/Text';
 import { Modal } from '../../../components/UI/Modal/Modal';
@@ -18,12 +19,15 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { Button } from '../../../components/UI/Button';
 import { setAvatar } from '../../../store/actions/customizeVideoActions';
 import { formatId } from './data';
+import markIcon from '../../../assets/icons/mark-icon.png';
+import { MdCancel } from 'react-icons/md';
+import { GiCancel } from 'react-icons/gi';
 
 const CustomizeAudio = () => {
   const [numberOfSpeakers, setNumbers] = useState(1);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [error] = useState(false);
-  const [status, setStatus] = useState('');
+  const [modalOpen, setModalOpen] = useState(true);
+  const [render, setRender] = useState(true);
+  const [success, setSuccess] = useState(false);
   const [pollInterval, setPollingInterval] = useState(false);
   const [podcastVideoId, setPodcastVideoId] = useState('');
 
@@ -88,10 +92,10 @@ const CustomizeAudio = () => {
     }
   });
 
-  const handleClick = async () => {
+  const handleRender = async () => {
     try {
       refetch();
-      showModal();
+      setRender(true);
     } catch (err) {
       console.log({ err });
     }
@@ -112,13 +116,15 @@ const CustomizeAudio = () => {
 
     if (response?.data?.status === ERROR) {
       setPollingInterval(false);
-      setStatus('ERROR');
+      setSuccess(false);
+      setModalOpen(true);
     }
 
     if (response?.data?.status === COMPLETED) {
       store.dispatch({ type: 'ADD_PODCAST_VIDEO', payload: response.data });
       setPollingInterval(false);
-      navigate('/podcast/download');
+      setSuccess(true);
+      setModalOpen(true);
     }
   };
 
@@ -127,128 +133,232 @@ const CustomizeAudio = () => {
     onSuccess: onPollingRequestSuccess
   });
   const handleClose = () => {
-    hideModal();
-    setStatus('');
+    navigate('/');
   };
   const handleCancel = () => {
-    hideModal();
     setPollingInterval(false);
-    setStatus('');
+    navigate('/uploads');
   };
   return (
     <Layout>
       <AuthWrapper>
-        <div className={`customize-audio lg:px-20`}>
-          <div className="breadcrumbs p-3 space-x-1  w-full flex items-center text-sec-500 capitalize md:space-x-3">
-            <Text w={'md'} type={'text4'} cap>
-              <Link to="/">Home</Link>
-            </Text>
+        {/* breadcrumbs */}
+        {/* <div className="breadcrumbs p-3 space-x-1  w-full flex items-center text-sec-500 capitalize md:space-x-3">
+          <Text w={'md'} type={'text4'} cap>
+            <Link to="/">Home</Link>
+          </Text>
 
-            <div className="icon">
-              <img src={caretRight} alt="" />
-            </div>
-            <Text w={'md'} type={'text4'} cap>
-              <Link to="/podcast/upload">Upload</Link>
-            </Text>
-            <div className="icon">
-              <img src={caretRight} alt="" />
-            </div>
-            <Text w={'md'} type={'text4'} cap className={'text-blue-700'}>
-              <Link to="/podcast/customize">customize Upload</Link>
-            </Text>
+          <div className="icon">
+            <img src={caretRight} alt="" />
           </div>
-
-          <main className="content w-full md:w-[80%]  mx-auto flex my-11 p-2 flex-col items-center">
-            {/* pafe info */}
-            <div className="info text-center  w-[350px] space-y-6 md:space-y-11 ">
-              <Text w={'md'} type={'header2'} cap>
-                Customise Video
-              </Text>
-
-              <Text w={'md'} type={'text4'} cap className={'text-sec-400'}>
-                How many speakers are in your podcasts
-              </Text>
-
-              <div className="speaker-select mx-auto flex justify-center">
-                <div className="middle ">
-                  <div
-                    role={'button'}
-                    onClick={() => SpeakersCountHandler('minus')}
-                    className="p-3 centered">
-                    <AiOutlineMinus />
+          <Text w={'md'} type={'text4'} cap>
+            <Link to="/podcast/upload">Upload</Link>
+          </Text>
+          <div className="icon">
+            <img src={caretRight} alt="" />
+          </div>
+          <Text w={'md'} type={'text4'} cap className={'text-blue-700'}>
+            <Link to="/podcast/customize">customize Upload</Link>
+          </Text>
+        </div> */}
+        <div className=" first-letter:py-[50px] px-[10px] text-center justify-center ">
+          <div className="flex flex-col lg:flex-row-reverse lg:w-[100%] ">
+            {render ? (
+              <div className=" flex flex-col  mt-[40px] lg:mt-[60px] gap-10 lg:w-[40%]">
+                <div className="flex flex-col justify-center gap-5">
+                  <div>
+                    <Text w={'md'} type={'header2'} cap>
+                      Rendering...
+                    </Text>
                   </div>
-                  <div
-                    onClick={setAV}
-                    className="p-3 middle space-x-3  px-6 border rounded-xl centered">
-                    {Array(numberOfSpeakers)
-                      .fill(1)
-                      .map((item, index) => (
-                        <div key={index} className="icon">
-                          <img src={user} alt="" />
-                        </div>
-                      ))}
-                  </div>
-                  <div
-                    role={'button'}
-                    onClick={() => SpeakersCountHandler('add')}
-                    className="p-3 centered">
-                    <AiOutlinePlus className={'text-blue-800'} />
+                  <div className="text-center flex justify-center ">
+                    <Text
+                      w={'md'}
+                      type={'text4'}
+                      className={
+                        'text-sec-400 w-[70%] lg:w-[70%] xl:w-[60%] 2xl:w-[60%] max-w-[350px]  text-center md:text-left'
+                      }>
+                      Your video is rendering. You may go get some tea while at it. You would be
+                      notified when it's complete.
+                    </Text>
                   </div>
                 </div>
-              </div>
-            </div>
-            {/* pafe info */}
 
-            <div className="customization-center  my-4 w-full space-y-3">
-              <Text
-                w={'md'}
-                type={'text4'}
-                cap
-                className={'text-[#666666] text-center md:text-left'}>
-                Video Selection Preview
-              </Text>
-
-              <VideoScene speakers={numberOfSpeakers} />
-            </div>
-            <AudioWidget />
-          </main>
-
-          {error && <p className="text-red-600 text-center">{error}</p>}
-          <div className="centered w-full my-[5%]">
-            <Button label={'render video'} onClick={handleClick}>
-              Render video
-            </Button>
-          </div>
-        </div>
-        {modalOpen && (
-          <Modal onClose={hideModal}>
-            {status === 'ERROR' ? (
-              <div className=" py-7 flex flex-col gap-10">
-                <div className=" flex flex-col gap-5">
-                  {' '}
-                  <h1 className=" text-[22px] text-[red]"> Something went wrong!</h1>
-                  <p> We could not render your video at the moment. Please try again</p>
+                <div className=" text-center flex justify-center">
+                  <BarLoader color="#27AE60" width={300} height={10} />
                 </div>
-                <div>
-                  {' '}
-                  <button onClick={handleClose}>Close</button>
+                <div className=" flex gap-6 justify-center">
+                  <button
+                    className=" border-2 py-2 px-6 rounded-[10px] text-[#2563eb] border-[#2563eb] text-[16px] cursor-pointer hover:bg-gray-100"
+                    onClick={handleCancel}>
+                    Cancel{' '}
+                  </button>
+                  <Button>Go to Dashboard</Button>
                 </div>
               </div>
             ) : (
-              <div className={styles.progressBarBox}>
-                <h5>Your video is rendering...</h5>
+              <div className="info text-center  space-y-6 md:space-y-11  lg:mt-[50px] lg:w-[40%]">
+                <Text w={'md'} type={'header2'} cap>
+                  Customise Video
+                </Text>
 
-                <div className={styles.progressBar}>
-                  <PropagateLoader color="hsla(214, 98%, 47%, 1)" />
-                  <p className="text-[12px] pt-12">
-                    This may take a while. You will get an email notification when it is done
-                    rendering.
-                  </p>
+                <Text w={'md'} type={'text4'} className={'text-sec-400'}>
+                  How many speakers are in your podcasts?
+                </Text>
+
+                <div className="speaker-select mx-auto flex justify-center ">
+                  <div className="middle ">
+                    <div
+                      role={'button'}
+                      onClick={() => SpeakersCountHandler('minus')}
+                      className="p-3 centered">
+                      <AiOutlineMinus />
+                    </div>
+                    <div
+                      onClick={setAV}
+                      className="p-3 middle space-x-3  px-6 border rounded-xl centered">
+                      {Array(numberOfSpeakers)
+                        .fill(1)
+                        .map((item, index) => (
+                          <div key={index} className="icon">
+                            <img src={user} alt="" />
+                          </div>
+                        ))}
+                    </div>
+                    <div
+                      role={'button'}
+                      onClick={() => SpeakersCountHandler('add')}
+                      className="p-3 centered">
+                      <AiOutlinePlus className={'text-blue-800'} />
+                    </div>
+                  </div>
                 </div>
-                <button onClick={handleCancel} className=" hover:text-[hsla(214, 98%, 47%, 1)]">
-                  Cancel
-                </button>
+                {render ? (
+                  <div>
+                    <button
+                      className=" border-2 py-2 px-6 rounded-[10px] text-[#2563eb] border-[#2563eb] text-[16px] cursor-pointer  hover:bg-gray-100"
+                      onClick={handleCancel}>
+                      Cancel{' '}
+                    </button>
+                  </div>
+                ) : (
+                  <div className="hidden lg:flex justify-center text-center w-full my-[5%] lg:pt-[200px]">
+                    <Button label={'render video'} onClick={handleRender}>
+                      Render video
+                    </Button>
+                  </div>
+                )}
               </div>
+            )}
+
+            <div className={`customize-audio lg:px-0   lg:w-[60%] lg:ml-[65px]`}>
+              <main className="content w-full flex my-7 p-2 flex-col items-center">
+                {/* <div className="absolute  w-[600px] h-[500px] bg-gray-400"></div> */}
+                <div className="customization-center  my-4 w-full space-y-3 rounded-lg ">
+                  {/* <Text w={'md'} type={'text4'} cap className={'text-[#666666] text-center md:text-left'}>
+                    Video Selection Preview
+                      </Text> */}
+
+                  <VideoScene speakers={numberOfSpeakers} />
+                </div>
+                {render ? <div className=" bg-black absolute w-22"> </div> : <div></div>}
+                {render ? <div></div> : <AudioWidget />}
+
+                {render ? (
+                  <div></div>
+                ) : (
+                  <div className="centered w-full my-[5%] lg:hidden">
+                    <Button label={'render video'} onClick={handleRender}>
+                      Render videoZS
+                    </Button>
+                  </div>
+                )}
+              </main>
+
+              {/* {error && <p className="text-red-600 text-center">{error}</p>} */}
+            </div>
+          </div>
+        </div>
+
+        {modalOpen && (
+          <Modal onClose={hideModal}>
+            {success ? (
+              <>
+                <div className="flex justify-center">
+                  <img src={markIcon} className=" w-[70px] md:w-[90px] lg:w-[120px]" />
+                </div>
+                <div className=" flex flex-col text-center justify-center gap-6  bg-[#F8F8F8] ">
+                  <MdCancel
+                    size={30}
+                    onClick={handleClose}
+                    className="absolute text-[#72a2f4] right-1 top-0 cursor-pointer hover:text-[#2563eb]"
+                  />
+
+                  <div className="flex flex-col justify-center gap-6">
+                    <div>
+                      {' '}
+                      <h1 className=" text-[16px] lg:text-[20px] font-bold">
+                        Your video has rendered successfully
+                      </h1>
+                    </div>
+                    <div>
+                      {' '}
+                      <p>
+                        Your video is ready for download. You can also check your videos in your
+                        dashboard
+                      </p>
+                    </div>
+                    <div className=" flex flex-col gap-6 ">
+                      <div>
+                        <Button onClick={() => navigate('/podcast/download')}>
+                          Download Video
+                        </Button>
+                      </div>
+                      <div>
+                        <button
+                          className="border-2 py-2 px-5 rounded-[10px] text-[#2563eb] border-[#2563eb] text-[16px] cursor-pointer  hover:bg-gray-100 "
+                          onClick={() => navigate('/podcast/animated-podcast')}>
+                          Check my Dashboard{' '}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className=" flex flex-col text-center justify-center gap-6  bg-[#F8F8F8] ">
+                  <div className="flex justify-center">
+                    <GiCancel className=" text-[red] lg:text-[60px] md:text-[50px] text-[40px]" />
+                  </div>
+                  {/* <MdCancel
+                      size={30}
+                      onClick={handleClose}
+                      className="absolute text-[#72a2f4] right-1 top-0 cursor-pointer hover:text-[#2563eb]"
+                    /> */}
+
+                  <div className="flex flex-col justify-center gap-6">
+                    <div>
+                      {' '}
+                      <h1 className=" text-[16px] lg:text-[20px] font-semibold">
+                        Ooops...we couldn't render your video. Please try again
+                      </h1>
+                    </div>
+                    <div className=" flex flex-col gap-6 ">
+                      <div>
+                        <Button onClick={() => navigate('/uploads')}>Try Again</Button>
+                      </div>
+                      <div>
+                        <button
+                          className="border-2 py-2 px-5 rounded-[10px] text-[#2563eb] border-[#2563eb] text-[16px] cursor-pointer  hover:bg-gray-100 "
+                          onClick={() => navigate('/podcast/animated-podcast')}>
+                          Check my Dashboard{' '}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
             )}
           </Modal>
         )}

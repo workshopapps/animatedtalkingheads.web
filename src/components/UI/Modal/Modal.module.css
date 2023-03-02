@@ -5,16 +5,18 @@
   width: 100%;
   height: 100vh;
   z-index: 20;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal {
   position: fixed;
   /* position: absolute; */
   top: 20%;
-  left: 25%;
-  width: 50%;
-  background-color: white;
+  left: 50%;
+  right: 38%;
+  width: 25%;
+  min-width: 280px;
+  background-color: #f8f8f8;
   transform: translate(-80%, -75%);
   /* border-radius: 14px; */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
@@ -23,6 +25,8 @@
   padding: 2rem;
   animation: slide-down 300ms ease-out forwards;
   text-align: center;
+  border-radius: 1rem;
+  margin-left: -200px;
 }
 
 @media (min-width: 768px) {
