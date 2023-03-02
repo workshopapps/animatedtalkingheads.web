@@ -294,7 +294,11 @@ const DownloadPodcast = () => {
                     />
                   </div>
                 </fieldset>
-                <a href={isChecked ? video_url : ''} target={"_blank"} rel="noreferrer" download={isChecked ? video_url : ''}>
+                <a
+                  href={isChecked ? video_url : ''}
+                  target={'_blank'}
+                  rel="noreferrer"
+                  download={isChecked ? video_url : ''}>
                   <button
                     disabled={isChecked ? false : true}
                     value="download"
