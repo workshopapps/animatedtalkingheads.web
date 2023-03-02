@@ -25,9 +25,9 @@ import { GiCancel } from 'react-icons/gi';
 
 const CustomizeAudio = () => {
   const [numberOfSpeakers, setNumbers] = useState(1);
-  const [modalOpen, setModalOpen] = useState(true);
-  const [render, setRender] = useState(true);
-  const [success, setSuccess] = useState(false);
+  const [modalOpen, setModalOpen] = useState();
+  const [render, setRender] = useState();
+  const [success, setSuccess] = useState();
   const [pollInterval, setPollingInterval] = useState(false);
   const [podcastVideoId, setPodcastVideoId] = useState('');
 
