@@ -197,7 +197,7 @@ const DownloadPodcast = () => {
                       </button>
                     </div>
                   </div>
-                  <video ref={videoRef} src={video_url} className=" lg:w-[100%]" />
+                  <video ref={videoRef} src={video_url} controls className=" lg:w-[100%]" />
                 </div>
               </div>
 
@@ -294,7 +294,7 @@ const DownloadPodcast = () => {
                     />
                   </div>
                 </fieldset>
-                <a href={isChecked ? video_url : ''} download={isChecked ? video_url : ''}>
+                <a href={isChecked ? video_url : ''} target={"_blank"} rel="noreferrer" download={isChecked ? video_url : ''}>
                   <button
                     disabled={isChecked ? false : true}
                     value="download"

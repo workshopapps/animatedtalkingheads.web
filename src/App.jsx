@@ -58,16 +58,20 @@ import Policy from './pages/term-of-use/Policy';
 import PrivateRoute from './components/pages/PrivateRoute/PrivateRoute';
 import { Uploads } from './pages/dashboard/uploads';
 import InProgress from './pages/dashboard/in_progress';
-import AOS from 'aos'
+import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ReactGA from 'react-ga';
 
 const TRACKING_ID = "G-W6DC5Q2C00"; // OUR_TRACKING_ID
 
+import AnimatedVideos from './pages/new-dashboard/animated-videos';
+
+const TRACKING_ID = 'G-W6DC5Q2C00'; // OUR_TRACKING_ID
+
+
 ReactGA.initialize(TRACKING_ID);
 
 function App() {
-
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -77,8 +81,6 @@ function App() {
   useEffect(() => {
     ReactGA.pageview(pathname + window.location.search);
   }, [pathname]);
-
-
 
   useEffect(() => {
     window.scrollTo({
@@ -129,6 +131,7 @@ function App() {
               <Route path={routes.dashboard_audios} element={<Uploads />} />
               <Route path={routes.dashboard_progress} element={<InProgress />} />
               <Route path={routes.checkout} element={<Checkout />} />
+              <Route path="/dashboard/animated-videos" element={<AnimatedVideos />} />
             </Route>
             <Route path={routes.exploreBackground} element={<></>} />
             <Route path={routes.avatars} element={<Avatars />} />

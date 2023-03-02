@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 //import  { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import { Text } from '../../../../components/UI/Text';
 import { BiEditAlt } from 'react-icons/bi';
@@ -80,12 +80,15 @@ const CustomizeAudio = ({ speakers }) => {
             modules={[Navigation]}
             className="mySwiper"
             onRealIndexChange={(element) => setActiveIndex(element.activeIndex)}>
-            <SwiperSlide>
-              <img className="object-cover h-[250px]  md:h-[450px] w-full" src={scenes[0].image} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img className="object-cover h-[250px]  md:h-[450px] w-full" src={scenes[1].image} />
-            </SwiperSlide>
+            {
+              scenes.map((scene, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <img className="object-cover h-[250px]  md:h-[450px] w-full" src={scene.image} />
+                  </SwiperSlide>
+                )
+              })
+            }
           </Swiper>
 
           <div className="speakers_container  z-10  absolute bottom-20 md:bottom-[70px] left-0 mt-6   middle justify-between w-full">
@@ -115,4 +118,4 @@ const CustomizeAudio = ({ speakers }) => {
   );
 };
 
-export default CustomizeAudio;
+export default memo(CustomizeAudio);
