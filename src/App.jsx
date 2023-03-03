@@ -65,6 +65,9 @@ import ReactGA from 'react-ga';
 const TRACKING_ID = 'G-W6DC5Q2C00'; // OUR_TRACKING_ID
 
 import AnimatedVideos from './pages/new-dashboard/animated-videos';
+import UploadedAudios from './pages/new-dashboard/uploaded-audios';
+import Inprogress from './pages/new-dashboard/In-progress';
+import Dashboard from './pages/new-dashboard/dashboard';
 
 // const TRACKING_ID = 'G-W6DC5Q2C00'; // OUR_TRACKING_ID
 
@@ -131,6 +134,9 @@ function App() {
               <Route path={routes.dashboard_progress} element={<InProgress />} />
               <Route path={routes.checkout} element={<Checkout />} />
               <Route path="/animated-videos" element={<AnimatedVideos />} />
+              <Route path="/uploaded-audios" element={<UploadedAudios />} />
+              <Route path="/in-progress-dashboard" element={<Inprogress />} />
+              <Route path="/dashboard" element={<Dashboard />} />
             </Route>
             <Route path={routes.exploreBackground} element={<></>} />
             <Route path={routes.avatars} element={<Avatars />} />

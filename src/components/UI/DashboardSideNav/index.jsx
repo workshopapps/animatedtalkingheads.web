@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './styles.module.css';
 
 const links = [
   { id: 1, link: '/dashboard', title: 'Overview', icon: 'Home' },
-  { id: 2, link: '/in-progress', title: 'In progress', icon: 'Progess' },
-  { id: 3, link: '/audio-uploads', title: 'Audio Uploads', icon: 'Edit' },
+  { id: 2, link: '/in-progress-dashboard', title: 'In progress', icon: 'Progess' },
+  { id: 3, link: '/uploaded-audios', title: 'Audio Uploads', icon: 'Edit' },
   { id: 4, link: '/animated-videos', title: 'Your Podcasts', icon: 'Podcast' }
 ];
 const SideNav = () => {
   const [hovered, setHovered] = useState(links.map(() => false));
-  const [activeIndex, setActiveIndex] = useState(-1);
+  const location = useLocation();
   return (
     <div className=" mt-10">
       <div className="w-[90%] ml-auto">
@@ -32,8 +32,7 @@ const SideNav = () => {
                 newHovered[index] = false;
                 setHovered(newHovered);
               }}
-              onClick={() => setActiveIndex(index)}
-              className={` ${activeIndex === index ? styles.color : 'white'}`}>
+              className={` ${location.pathname === link.link ? styles.color : 'white'}`}>
               <div className="flex  my-2 py-3 w-[90%] ml-auto">
                 <div className="flex w-[20%]">
                   {link.id === 1 ? (
@@ -46,10 +45,7 @@ const SideNav = () => {
                     <Podcast hovered={hovered[index]} />
                   ) : null}
                 </div>
-                <p
-                  className={`${activeIndex === index ? '' : ''} ${
-                    hovered[index] ? 'text-white' : 'text-[#C3C1C1]'
-                  } `}>
+                <p className={` ${hovered[index] ? 'text-white' : 'text-[#C3C1C1]'} `}>
                   {link.title}
                 </p>
               </div>
