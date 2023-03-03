@@ -10,7 +10,13 @@ const Layout = ({ children }) => {
       <TopNavbar />
       <div className={styles.navDummy}></div>
       {children}
-      <Footer />
+      <Footer
+        bg="bg-sec-600 "
+        text="text-white"
+        icon="white"
+        logo="block"
+        width="w-[90%] mx-auto"
+      />
     </div>
   );
 };
