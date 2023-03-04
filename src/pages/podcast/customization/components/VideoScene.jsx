@@ -43,7 +43,7 @@ const CustomizeAudio = ({ speakers }) => {
           className="video-action-panel   hidden md:flex   md:middle space-x-3">
           <BiEditAlt className={'text-blue-700 text-xl'} />
           <Text w={'md'} type={'text4'} cap className={'text-blue-700'}>
-            Customise Character
+            Change Character
           </Text>
         </div>
 
@@ -111,7 +111,7 @@ const CustomizeAudio = ({ speakers }) => {
         className="video-action-panel justify-center md:hidden  middle space-x-3">
         <BiEditAlt className={'text-blue-700 text-xl'} />
         <Text w={'md'} type={'text4'} cap className={'text-blue-700'}>
-          Customise Character
+          Change Character
         </Text>
       </div>
     </div>
