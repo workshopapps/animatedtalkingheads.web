@@ -269,7 +269,7 @@ const CustomizeAudio = () => {
                 ) : (
                   <div className="centered w-full my-[5%] lg:hidden">
                     <Button label={'render video'} onClick={handleRender}>
-                      Render videoZS
+                      Render video
                     </Button>
                   </div>
                 )}
@@ -351,7 +351,7 @@ const CustomizeAudio = () => {
                       <div>
                         <button
                           className="border-2 py-2 px-5 rounded-[10px] text-[#2563eb] border-[#2563eb] text-[16px] cursor-pointer  hover:bg-gray-100 "
-                          onClick={() => navigate('/podcast/animated-podcast')}>
+                          onClick={() => navigate('/dashboard')}>
                           Check my Dashboard{' '}
                         </button>
                       </div>

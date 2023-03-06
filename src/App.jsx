@@ -60,18 +60,10 @@ import { Uploads } from './pages/dashboard/uploads';
 import InProgress from './pages/dashboard/in_progress';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import ReactGA from 'react-ga';
-
-const TRACKING_ID = 'G-W6DC5Q2C00'; // OUR_TRACKING_ID
-
 import AnimatedVideos from './pages/new-dashboard/animated-videos';
 import UploadedAudios from './pages/new-dashboard/uploaded-audios';
 import Inprogress from './pages/new-dashboard/In-progress';
 import Dashboard from './pages/new-dashboard/dashboard';
-
-// const TRACKING_ID = 'G-W6DC5Q2C00'; // OUR_TRACKING_ID
-
-ReactGA.initialize(TRACKING_ID);
 
 function App() {
   const { pathname } = useLocation();
@@ -79,10 +71,6 @@ function App() {
   useEffect(() => {
     AOS.init({ duration: 500 });
   }, []);
-
-  useEffect(() => {
-    ReactGA.pageview(pathname + window.location.search);
-  }, [pathname]);
 
   useEffect(() => {
     window.scrollTo({
