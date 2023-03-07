@@ -65,14 +65,12 @@ import UploadedAudios from './pages/new-dashboard/uploaded-audios';
 import Inprogress from './pages/new-dashboard/In-progress';
 import Dashboard from './pages/new-dashboard/dashboard';
 
-
 function App() {
   const { pathname } = useLocation();
 
   useEffect(() => {
     AOS.init({ duration: 500 });
   }, []);
-
 
   useEffect(() => {
     window.scrollTo({
