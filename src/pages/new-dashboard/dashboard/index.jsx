@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import DashboardLayout from '../../../components/UI/DashboardLayout';
-import profile from '../../../assets/dashboard/profile.png';
-import { IoIosArrowDown } from 'react-icons/io';
+import UserProfile from '../../../components/UI/UserProfile';
+import { UserAuth } from '../../../context/AuthContext';
+import { useState } from 'react';
 
 const Dashboard = () => {
+  const { userEmail } = UserAuth();
+  const [user, setUser] = useState('');
+  useEffect(() => {
+    if (userEmail) {
+      setUser(userEmail.split('@')[0]);
+    }
+  }, [user]);
+
   return (
     <DashboardLayout>
       <section className="w-[90%] mx-auto my-10">
         <div className="flex justify-between basis-full mb-5">
-          <p className="text-sec text-[28px] lg:text-[36px] font-[600]">Welcome Home, Wanjiku!</p>
+          <p className="text-sec text-[28px] lg:text-[36px] font-[600]">
+            Welcome Home, {user && user}
+          </p>
           <div className="flex gap-3 items-center">
-            <div>
-              <img src={profile} alt="profile avatar" className="w-[40px] h-[40px] rounded-full" />
-            </div>
-            <p>Wanjiku</p>
-            <IoIosArrowDown />
+            <UserProfile />
+            <p>{userEmail && userEmail}</p>
           </div>
         </div>
         <div className="flex justify-between">

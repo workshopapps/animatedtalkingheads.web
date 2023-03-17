@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import Progress from '../../../assets/dropdown/Progress.svg';
-import Upload from '../../../assets/dropdown/Upload.svg';
-import Podcast from '../../../assets/dropdown/Podcast.svg';
+// import Upload from '../../../assets/dropdown/Upload.svg';
+// import Podcast from '../../../assets/dropdown/Podcast.svg';
 import Upgrade from '../../../assets/dropdown/Upgrade.svg';
 //import Settings from '../../../assets/dropdown/Settings.svg';
 import Logout from '../../../assets/dropdown/Logout.svg';
@@ -94,24 +94,8 @@ items-center justify-center'>
             <h1 className=" text-sec-700 text-2xl"></h1>
           </div>
           <ul>
-            <DropdownItem
-              to={routes.dashboard_progress}
-              hide={hide}
-              img={Progress}
-              text={'In progress'}
-            />
-            <DropdownItem
-              to={routes.dashboard_audios}
-              hide={hide}
-              img={Upload}
-              text={'My uploads'}
-            />
-            <DropdownItem
-              to={routes.animatedPodcast}
-              hide={hide}
-              img={Podcast}
-              text={'My video podcasts'}
-            />
+            <DropdownItem to={routes.dashboard} hide={hide} img={Progress} text={'Dashboard'} />
+
             <DropdownItem
               to={routes.pricing}
               hide={hide}
