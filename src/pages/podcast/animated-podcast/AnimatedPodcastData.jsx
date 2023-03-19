@@ -2,7 +2,7 @@ import '../animated-podcast/css/index.css';
 
 const AnimatedPodcastData = ({ video }) => {
   return (
-    <section className="podcast-card border border-[#171D2E] rounded-lg">
+    <section className="flex flex-col podcast-card border border-[#171D2E] rounded-lg">
       <div className="video-preview-container ">
         <video
           controls
@@ -13,7 +13,7 @@ const AnimatedPodcastData = ({ video }) => {
           Sorry, your browser doesn't support embedded videos, but don't worry, you can
         </video>
       </div>
-      <div className="video-data w-[90%] mx-auto">
+      <div className="basis-full video-data w-[90%] mx-auto">
         <div className="video-details">
           <p className="text-sm">{video.video_name ? video.video_name : video._id}</p>
           {/* <p className='date-created'>Date Created: props.date, 2022</p> */}
@@ -22,7 +22,8 @@ const AnimatedPodcastData = ({ video }) => {
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" fill="none"><path fill="#fff" d="M17.75 15a3.75 3.75 0 0 0-2.918 1.418L9.349 12.99c.2-.645.2-1.335 0-1.98l5.483-3.427a3.75 3.75 0 1 0-.833-2.333c.004.336.054.669.15.99L8.667 9.668a3.75 3.75 0 1 0 0 4.665l5.482 3.427a3.59 3.59 0 0 0-.15.99A3.75 3.75 0 1 0 17.75 15Zm0-12a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Zm-12 11.25a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5Zm12 6.75a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5Z"/></svg>
           Share Animation
         </button> */}
-
+      </div>
+      <div className=" w-[90%] mx-auto">
         <a
           target={'_blank'}
           rel="noreferrer"

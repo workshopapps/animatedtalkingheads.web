@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './styles.module.css';
+import { routes } from '../../../libs/links';
 
 const links = [
-  { id: 1, link: '/dashboard', title: 'Overview', icon: 'Home' },
-  { id: 2, link: '/in-progress-dashboard', title: 'In progress', icon: 'Progess' },
-  { id: 3, link: '/uploaded-audios', title: 'Audio Uploads', icon: 'Edit' },
-  { id: 4, link: '/animated-videos', title: 'Your Podcasts', icon: 'Podcast' }
+  { id: 1, link: routes.dashboard, title: 'Overview', icon: 'Home' },
+  { id: 2, link: routes.in_progress, title: 'In progress', icon: 'Progess' },
+  { id: 3, link: routes.uploaded_audios, title: 'Audio Uploads', icon: 'Edit' },
+  { id: 4, link: routes.animated_videos, title: 'Your Podcasts', icon: 'Podcast' }
 ];
 const SideNav = () => {
   const [hovered, setHovered] = useState(links.map(() => false));
