@@ -64,6 +64,8 @@ import AnimatedVideos from './pages/new-dashboard/animated-videos';
 import UploadedAudios from './pages/new-dashboard/uploaded-audios';
 import Inprogress from './pages/new-dashboard/In-progress';
 import Dashboard from './pages/new-dashboard/dashboard';
+import Account from './pages/account';
+import Billing from './pages/account/billing';
 
 function App() {
   const { pathname } = useLocation();
@@ -145,6 +147,10 @@ function App() {
             <Route path={routes.privacyhowWeUseInformation} element={<HowWeUseInformation />} />
             <Route path={routes.privacyInformation} element={<PrivacyInformation />} />
             <Route path={routes.scenery} element={<Scenery />} />
+
+            <Route path={routes.myAccount} element={<Account />} />
+            <Route path={routes.myBilling} element={<Billing />} />
+
           </Routes>
         </AuthContextProvider>
         <ToastContainer />
