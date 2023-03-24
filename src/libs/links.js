@@ -54,7 +54,9 @@ export const routes = {
   signUp: '/sign-up',
   signIn: '/sign-in',
   dashboard_progress: '/in-progress',
-  dashboard_audios: '/uploads'
+  dashboard_audios: '/uploads',
+  myAccount: '/my-account',
+  myBilling: '/my-billing',
 };
 
 export const links = [
