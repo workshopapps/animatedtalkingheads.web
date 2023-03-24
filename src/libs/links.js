@@ -57,6 +57,10 @@ export const routes = {
   dashboard_audios: '/uploads',
   myAccount: '/my-account',
   myBilling: '/my-billing',
+  dashboard: '/dashboard',
+  animated_videos: '/animated-videos',
+  uploaded_audios: '/uploaded-audios',
+  in_progress: '/in-progress-dashboard'
 };
 
 export const links = [

@@ -123,10 +123,12 @@ function App() {
               <Route path={routes.dashboard_audios} element={<Uploads />} />
               <Route path={routes.dashboard_progress} element={<InProgress />} />
               <Route path={routes.checkout} element={<Checkout />} />
-              <Route path="/animated-videos" element={<AnimatedVideos />} />
-              <Route path="/uploaded-audios" element={<UploadedAudios />} />
-              <Route path="/in-progress-dashboard" element={<Inprogress />} />
-              <Route path="/dashboard" element={<Dashboard />} />
+              {/* new dashboard routes  */}
+              <Route path={routes.animated_videos} element={<AnimatedVideos />} />
+              <Route path={routes.uploaded_audios} element={<UploadedAudios />} />
+              <Route path={routes.in_progress} element={<Inprogress />} />
+              <Route path={routes.dashboard} element={<Dashboard />} />
+              {/* new dashboard routes  */}
             </Route>
             <Route path={routes.exploreBackground} element={<></>} />
             <Route path={routes.avatars} element={<Avatars />} />
