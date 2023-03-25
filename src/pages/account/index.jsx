@@ -4,6 +4,7 @@ import profile from '../../components/UI/UserProfile/avatar.png';
 import AccountContainer from '../../components/pages/account/AccountContainer';
 import InfoField, { PasswordField, UpgradeField } from '../../components/pages/account/InfoField';
 import { Select } from '../../components/pages/account/Input';
+import IntegrationSection from '../../components/pages/account/IntegrationSection';
 
 const Account = () => {
 
@@ -14,7 +15,7 @@ const Account = () => {
   return (
     <AccountContainer link={"account"}>
 
-      <div className='grid grid-cols-8 w-full max-w-[760px]'>
+      <div className='grid grid-cols-1 lg:grid-cols-8 w-full max-w-[1440px]'>
 
         <div className='col-span-3'>
 
@@ -28,11 +29,11 @@ const Account = () => {
 
         </div>
 
-        <div className='col-span-5'>
+        <div className='col-span-4'>
 
-          <InfoField field={"Name"} value={"Mercy Wanjiku"} /> 
+          <InfoField field={"Name"} value={"John Doe"} /> 
 
-          <InfoField field={"Email"} value={"Wanjikuuno@gmail.com"} /> 
+          <InfoField field={"Email"} value={localStorage.getItem("email")} /> 
 
           <PasswordField field={"Password"} value={"Enable two-factor authentication"}  /> 
 
@@ -56,13 +57,11 @@ const Account = () => {
             <p className='mt-1 ml-2 bg-[#2158D2] text-white text-[10px] px-2 rounded-sm text-center h-4'>PRO</p>
           </div>
 
+          <IntegrationSection />
 
-          <h3 className='font-semibold mb-2'> Account</h3>
+          <h3 className='font-semibold mt-10 mb-2'> Account</h3>
 
           <button className='text-[#FF453A] mb-10'> Delete account </button>
-
-
-        
         
         </div>
 

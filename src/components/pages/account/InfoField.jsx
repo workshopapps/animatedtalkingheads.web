@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 
 const InfoField = ({field, value, value2}) => {
 
@@ -7,7 +7,8 @@ const InfoField = ({field, value, value2}) => {
             <p className="font-semibold mb-4"> {field} </p>
             <p> {value} </p>
             <div className="font-normal text-[#2158D2] mt-4 mb-6 cursor-pointer">
-                <Link> { value2 || `Change ${field.toLowerCase()}` } </Link>
+                { value2 || `Change ${field.toLowerCase()}` }
+                {/* <Link> { value2 || `Change ${field.toLowerCase()}` } </Link> */}
             </div>
         </div>
     )
