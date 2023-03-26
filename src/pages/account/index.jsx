@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { UserAuth } from '../../context/AuthContext';
 import profile from '../../components/UI/UserProfile/avatar.png';
 import AccountContainer from '../../components/pages/account/AccountContainer';
 import InfoField, { PasswordField, UpgradeField } from '../../components/pages/account/InfoField';
 import { Select } from '../../components/pages/account/Input';
 import IntegrationSection from '../../components/pages/account/IntegrationSection';
+import ModalWrapper from '../../components/UI/Modal/ModalWrapper';
+import UploadImage from '../../components/pages/account/UploadImage';
 
 const Account = () => {
 
   const { user } = UserAuth();
 
+  const [uploadImg, setUploadImg] = useState(false);
+
   console.log(user)
+
+  const handleUploadClose = () => {
+    setUploadImg(false)
+  }
 
   return (
     <AccountContainer link={"account"}>
@@ -23,7 +31,7 @@ const Account = () => {
 
             <img className='rounded-full h-40 w-40' src={profile} />
 
-            <button className='text-[#2158D2]'>Edit</button> 
+            <button onClick={() => setUploadImg(false)} className='text-[#2158D2]'>Edit</button> 
 
           </div>
 
@@ -66,6 +74,12 @@ const Account = () => {
         </div>
 
       </div>
+
+      <ModalWrapper>
+
+      </ModalWrapper>
+
+      <UploadImage open={uploadImg} handleClose={handleUploadClose} />
       
     </AccountContainer>
   );
