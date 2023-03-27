@@ -55,6 +55,8 @@ export const routes = {
   signIn: '/sign-in',
   dashboard_progress: '/in-progress',
   dashboard_audios: '/uploads',
+  myAccount: '/my-account',
+  myBilling: '/my-billing',
   dashboard: '/dashboard',
   animated_videos: '/animated-videos',
   uploaded_audios: '/uploaded-audios',
