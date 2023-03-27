@@ -13,13 +13,13 @@ const SideNav = () => {
   const [hovered, setHovered] = useState(links.map(() => false));
   const location = useLocation();
   return (
-    <div className=" mt-10">
-      <div className="w-[90%] ml-auto">
+    <div className=" md:mt-10 py-2 ">
+      <div className="w-[90%] ml-auto hidden md:block">
         <Link to="/">
           <Logo text="white" />
         </Link>
       </div>
-      <div className="my-10">
+      <div className="w-[90%] mx-auto md:w-full md:my-10 flex md:flex-col justify-between">
         {links.map((link, index) => (
           <Link to={link.link} key={link.id}>
             <div
@@ -33,9 +33,11 @@ const SideNav = () => {
                 newHovered[index] = false;
                 setHovered(newHovered);
               }}
-              className={` ${location.pathname === link.link ? styles.color : 'white'}`}>
-              <div className="flex  my-2 py-3 w-[90%] ml-auto">
-                <div className="flex w-[20%]">
+              className={` ${
+                location.pathname === link.link ? `${styles.color} flex-grow` : 'white'
+              }`}>
+              <div className="flex gap-2 px-2 md:px-0  my-2 py-3 md:w-[90%] md:ml-auto">
+                <div className="flex md:w-[20%]">
                   {link.id === 1 ? (
                     <Home hovered={hovered[index]} />
                   ) : link.id === 2 ? (
@@ -46,7 +48,14 @@ const SideNav = () => {
                     <Podcast hovered={hovered[index]} />
                   ) : null}
                 </div>
-                <p className={` ${hovered[index] ? 'text-white' : 'text-[#C3C1C1]'} `}>
+                <p
+                  className={`hidden md:flex ${hovered[index] ? 'text-white' : 'text-[#C3C1C1]'} `}>
+                  {link.title}
+                </p>
+                <p
+                  className={`md:hidden text-base ${
+                    location.pathname === link.link ? 'block' : 'hidden'
+                  } ${hovered[index] ? 'text-white' : 'text-[#C3C1C1]'} `}>
                   {link.title}
                 </p>
               </div>

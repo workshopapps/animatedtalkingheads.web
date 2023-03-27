@@ -58,7 +58,7 @@ const Inprogress = () => {
         <Title title="In Progress" buttonLink="/podcast/upload" buttonText="Upload Audio" />
       </section>
       <section className=" w-[90%] mx-auto min-h-[50vh] my-10">
-        <div className="flex justify-between text-sm lg:text-base  border-b-[#BDBDBD] border-b py-2">
+        <div className="hidden md:flex justify-between text-sm lg:text-base  border-b-[#BDBDBD] border-b py-2">
           <div className="w-[10%]">S/No</div>
 
           <div className="w-[25%] text-center ">Audio</div>
@@ -69,20 +69,23 @@ const Inprogress = () => {
         {data
           ? data.map((item, index) => (
               <div className="" key={index}>
-                {item.status === 'PENDING' && (
-                  <div className="flex justify-between text-sm lg:text-base  border-b-[#BDBDBD] border-b py-2 lg:py-4">
-                    <div className="w-[10%]">{data.indexOf(item) + 1}</div>
+                {item.status !== 'PENDING' && (
+                  <div className="flex flex-col md:flex-row rounded-lg gap-y-3   bg-[#EFEFEF] my-3 md:my-0   p-2  justify-between text-sm lg:text-base  border-b-[#BDBDBD]  py-2 lg:py-4">
+                    <div className="hidden md:flex md:w-[10%]">{data.indexOf(item) + 1}</div>
 
-                    <div className="w-[25%] text-center ">{item.file_name}</div>
-                    <div className="w-[20%] ">
+                    <div className="md:w-[25%] text-xs lg:text-base md:text-center flex justify-between">
+                      <p>{item.file_name}</p>
+                      <p>{getDate(item.createdAt)}</p>
+                    </div>
+                    <div className="md:w-[20%] ">
                       <div className="flex justify-between text-xs text-[14px]">
                         <p>Rendering</p>
-                        <p></p>
+                        <p>%</p>
                       </div>
                       <div className="bg-[#E2B93B] w-full h-[16px] rounded-lg mt-2"></div>
                     </div>
-                    <div className="w-[15%] ">{getDate(item.createdAt)}</div>
-                    <div className="w-[20%] text-center">
+                    <div className="md:w-[15%] ">{getDate(item.createdAt)}</div>
+                    <div className="flex flex-start md:first-letter:w-[20%] text-center">
                       <button
                         disabled
                         onClick={() => createVideo(item)}
