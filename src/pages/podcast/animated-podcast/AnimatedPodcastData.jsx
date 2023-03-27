@@ -15,7 +15,9 @@ const AnimatedPodcastData = ({ video }) => {
       </div>
       <div className="basis-full video-data w-[90%] mx-auto">
         <div className="video-details">
-          <p className="text-sm">{video.video_name ? video.video_name : video._id}</p>
+          <p className="text-sm mt-5 font-bold">
+            {video.video_name ? video.video_name : video._id}
+          </p>
           {/* <p className='date-created'>Date Created: props.date, 2022</p> */}
         </div>
         {/* <button className='btn share-btn'>
