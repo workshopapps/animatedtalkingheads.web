@@ -3,6 +3,11 @@ import DashboardLayout from '../../../components/UI/DashboardLayout';
 import UserProfile from '../../../components/UI/UserProfile';
 import { UserAuth } from '../../../context/AuthContext';
 import { useState } from 'react';
+import Title from '../../../components/UI/DashboardLayout/Title';
+import styles from './styles.module.css';
+import star1 from '../../../assets/dashboard/star1.svg';
+import star2 from '../../../assets/dashboard/star2.svg';
+import star3 from '../../../assets/dashboard/star3.svg';
 
 const Dashboard = () => {
   const { userEmail } = UserAuth();
@@ -16,27 +21,30 @@ const Dashboard = () => {
   return (
     <DashboardLayout>
       <section className="w-[90%] mx-auto my-10">
+        <div className="md:hidden">
+          <Title hide={true} />
+        </div>
         <div className="flex justify-between basis-full mb-5">
-          <p className="text-sec text-[28px] lg:text-[36px] font-[600]">
+          <p className="text-sec text-[24px] lg:text-[36px] font-[600]">
             Welcome Home, {user && user}
           </p>
-          <div className="flex gap-3 items-center">
+          <div className="hidden md:flex gap-3 items-center">
             <UserProfile />
             <p>{userEmail && userEmail}</p>
           </div>
         </div>
-        <div className="flex justify-between">
-          <p className="text-sec text-[32px] lg:text-[48px] font-[700] w-[65%] leading-none">
+        <div className="flex  relative">
+          <p className="text-sec text-[32px] lg:text-[48px] font-[700] w-[80%] md:w-[65%] leading-none">
             Find and share all your animated podcasts.
           </p>
-          <div className="w-[40%]">
-            <Star1 />
-            <Star3 />
-            <Star2 />
+          <div className=" max-w-[20%] md:max-w-[40%]">
+            <img src={star1} alt="star 1" />
+            <img src={star2} alt="star 2" className="ml-5 md:ml-10 mt-[-10px]" />
+            <img src={star3} alt="star 3" className="mt-[-30px] md:mt-0 ml-[-20px]" />
           </div>
         </div>
       </section>
-      <section className="w-[90%] mx-auto my-10 mb-20 grid grid-cols-2 gap-10">
+      <section className="w-[90%] mx-auto my-10 mb-20 grid grid-cols-1 md:grid-cols-2 gap-10">
         <div>
           <Grid_section title1="Podcasts" title2="Uploaded" number="25" />
           <button className="w-full rounded-lg border text-white border-[#2158D2] bg-[#2158D2] flex justify-center gap-5 py-4">
@@ -58,52 +66,6 @@ const Dashboard = () => {
 
 export default Dashboard;
 
-export const Star1 = (props) => (
-  <svg
-    width={64}
-    height={73}
-    viewBox="0 0 64 73"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}>
-    <path
-      d="M32 0L34.5 14L36.5 20.5L37.5124 23.1717C38.3237 25.3129 40.0138 27.0039 42.1546 27.8164L44.5 28.7065L51.2324 31L57.5 32.5L64 33.6842L57.5 35L51.2324 36.5L44.5 38.5L42.5026 39.3147C40.1651 40.2681 38.4147 42.269 37.7805 44.7126L35.5 53.5L31.5 73L28.5 54L26.2664 45.0538C25.6088 42.4201 23.6607 40.2996 21.0921 39.4216L19 38.7065L12.2324 36.5L0 33.6842L12.7324 31L18.5 29.2065L21.9352 27.8411C24.0227 27.0113 25.6652 25.3422 26.4611 23.2416L27.5 20.5L29.5 14L32 0Z"
-      fill="#D7E7FF"
-    />
-  </svg>
-);
-const Star2 = (props) => (
-  <svg
-    width={64}
-    height={73}
-    viewBox="0 0 64 73"
-    fill="none"
-    className=""
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}>
-    <path
-      d="M32 0L34.5 14L36.5 20.5L37.5124 23.1717C38.3237 25.3129 40.0138 27.0039 42.1546 27.8164L44.5 28.7065L51.2324 31L57.5 32.5L64 33.6842L57.5 35L51.2324 36.5L44.5 38.5L42.5026 39.3147C40.1651 40.2681 38.4147 42.269 37.7805 44.7126L35.5 53.5L31.5 73L28.5 54L26.2664 45.0538C25.6088 42.4201 23.6607 40.2996 21.0921 39.4216L19 38.7065L12.2324 36.5L0 33.6842L12.7324 31L18.5 29.2065L21.9352 27.8411C24.0227 27.0113 25.6652 25.3422 26.4611 23.2416L27.5 20.5L29.5 14L32 0Z"
-      fill="#77ADFF"
-    />
-  </svg>
-);
-export const Star3 = (props) => {
-  return (
-    <svg
-      width={87}
-      height={100}
-      viewBox="0 0 87 100"
-      fill="none"
-      className="ml-20"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}>
-      <path
-        d="M43.5 0L46.8984 19.0312L49.6172 27.8672L50.9934 31.499C52.0963 34.4098 54.3937 36.7084 57.3039 37.8129L60.4922 39.023L69.6441 42.1406L78.1641 44.1797L87 45.7895L78.1641 47.5781L69.6441 49.6172L60.4922 52.3359L57.777 53.4434C54.5994 54.7395 52.22 57.4594 51.3579 60.7812L48.2578 72.7266L42.8203 99.2344L38.7422 73.4062L35.7059 61.2449C34.812 57.6648 32.1637 54.7822 28.672 53.5887L25.8281 52.6167L16.6284 49.6172L0 45.7895L17.3081 42.1406L25.1484 39.7026L29.8182 37.8465C32.6559 36.7186 34.8886 34.4495 35.9706 31.594L37.3828 27.8672L40.1016 19.0312L43.5 0Z"
-        fill="#2158D2"
-      />
-    </svg>
-  );
-};
 const Edit = (props) => (
   <svg
     width={24}
@@ -142,7 +104,7 @@ const Share = (props) => (
 );
 export const Grid_section = ({ title1, title2, number }) => {
   return (
-    <div className="bg-gray-400 mb-10 h-[400px] flex items-center justify-center">
+    <div className={`${styles.grid_background} mb-10 h-[400px] flex items-center justify-center`}>
       <div>
         <p className="text-center text-[28px] lg:text-[36px] ">
           {title1}

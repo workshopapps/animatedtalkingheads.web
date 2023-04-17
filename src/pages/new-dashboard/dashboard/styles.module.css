@@ -1,0 +1,5 @@
+.grid_background {
+  background: url('../../../assets/dashboard/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
