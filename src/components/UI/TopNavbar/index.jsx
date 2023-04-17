@@ -51,6 +51,9 @@ const TopNavbar = () => {
         localStorage.removeItem('email');
         localStorage.removeItem(`${tokenKey}_date`)
 
+        // console.log(`localStorage.getitem(${tokenKey}_date)`);
+        localStorage.removeItem(`${tokenKey}_date`)
+
         // console.log(`localStorage.getitem(${tokenKey}_date)`)
         setUserToken('');
       }, 1000);
@@ -64,25 +67,25 @@ const TopNavbar = () => {
     }
   };
 
-  const handleSessionTimeOut = async () => {
-    try {
-      await logOut();
-      setTimeout(() => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('email');
-        localStorage.removeItem(`${tokenKey}_date`)
-        // console.log(`localStorage.getitem(${tokenKey}_date)`)
-        setUserToken('');
-      }, 1000);
-      toast.error('Session Timeout', {
-        position: toast.POSITION.BOTTOM_RIGHT
-      });
-      setUser(null);
-      navigate('/sign-in');
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // const handleSessionTimeOut = async () => {
+  //   try {
+  //     await logOut();
+  //     setTimeout(() => {
+  //       localStorage.removeItem('token');
+  //       localStorage.removeItem('email');
+  //       localStorage.removeItem(`${tokenKey}_date`)
+  //       // console.log(`localStorage.getitem(${tokenKey}_date)`)
+  //       setUserToken('');
+  //     }, 1000);
+  //     toast.error('Session Timeout', {
+  //       position: toast.POSITION.BOTTOM_RIGHT
+  //     });
+  //     setUser(null);
+  //     // navigate('/sign-in');
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
 
   useEffect(() => {
@@ -90,7 +93,48 @@ const TopNavbar = () => {
     const currentDate = new Date().getTime(); // get the current date in milliseconds
 
     if (!isTokenCleared && currentDate - tokenDate >= 1728000000) { // 20 days in milliseconds
-      handleSessionTimeOut();
+      // handleSessionTimeOut();
+      setIsTokenCleared(true)
+      return;
+
+    }
+
+    // const currentDate = new Date.getItem(); //get current date in milliseconds
+
+    // if(currentDate - token)
+    // if (tokenDate !== null) {
+    //   console.log(tokenDate)
+    // }
+    console.log(tokenDate)
+  })
+
+  // const handleSessionTimeOut = async () => {
+  //   try {
+  //     await logOut();
+  //     setTimeout(() => {
+  //       localStorage.removeItem('token');
+  //       localStorage.removeItem('email');
+  //       localStorage.removeItem(`${tokenKey}_date`)
+  //       // console.log(`localStorage.getitem(${tokenKey}_date)`)
+  //       setUserToken('');
+  //     }, 1000);
+  //     toast.error('Session Timeout', {
+  //       position: toast.POSITION.BOTTOM_RIGHT
+  //     });
+  //     setUser(null);
+  //     // navigate('/sign-in');
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+
+
+  useEffect(() => {
+    const tokenDate = localStorage.getItem(`${tokenKey}_date`)
+    const currentDate = new Date().getTime(); // get the current date in milliseconds
+
+    if (!isTokenCleared && currentDate - tokenDate >= 1728000000) { // 20 days in milliseconds
+      // handleSessionTimeOut();
       setIsTokenCleared(true)
       return;
 

@@ -5,7 +5,10 @@ import convert from '../../assets/how-it-works/convert.png';
 import documentUploadIcon from '../../assets/how-it-works/icons/document-upload.svg';
 import documentDownloadIcon from '../../assets/how-it-works/icons/document-download.svg';
 import uploadArrowUp from '../../assets/how-it-works/icons/arrow-up.svg';
-import upload from '../../assets/how-it-works/upload.png';
+// import upload from '../../assets/how-it-works/upload.png';
+import Lottie from 'lottie-react';
+import uploadAnimation from '../../assets/animations/uploadAudioLottie.json';
+
 //import videoThumbnailImg from '../../assets/how-it-works/how it works.svg';
 
 import styles from './styles.module.css';
@@ -21,7 +24,7 @@ const items = [
     heading: 'Upload your audio podcast',
     description: 'Get started and upload a sound file of your podcast from any device.',
     icon: documentUploadIcon,
-    illustration: upload
+    animation: uploadAnimation
   },
 
   {
@@ -30,6 +33,7 @@ const items = [
     heading: 'Customise your character',
     description: 'Select a character from our extensive library and modify it to your taste.',
     icon: uploadArrowUp,
+    animation: '',
     illustration: customizeCharacterIllustration
   },
   {
@@ -38,6 +42,7 @@ const items = [
     heading: 'Customise your character and select a background',
     description: 'Select an eye catching backdrop image and include subtitles.',
     icon: uploadArrowUp,
+    animation: '',
     illustration: customizeTwo
   },
   {
@@ -47,6 +52,7 @@ const items = [
     description:
       'After Voxclips has generated your video podcast for you, download and enjoy. You now have a fascinating podcast video that viewers can watch.',
     icon: documentDownloadIcon,
+    animation: '',
     illustration: convert
   }
 ];
@@ -101,7 +107,13 @@ const HowItWorks = () => {
                 </div>
 
                 <div className=" w-full">
-                  <img className=" w-full" src={item.illustration} alt="" />
+                  {item.animation ? (
+                    <div className="lottie w-full">
+                      <Lottie loop={true} autoplay={true} animationData={uploadAnimation} />
+                    </div>
+                  ) : (
+                    <img className=" w-full" src={item.illustration} alt="" />
+                  )}
                 </div>
               </div>
             ))}
