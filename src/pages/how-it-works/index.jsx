@@ -107,15 +107,13 @@ const HowItWorks = () => {
                 </div>
 
                 <div className=" w-full">
-                  {/* if(items.animation != '') {
-                    return (
-                      <div className="lottie w-full">
-                        <Lottie loop={true} autoplay={true} animationData={uploadAnimation} />
-                      </div>
-                    )
-                  }  */}
-                  
-                  {/* <img className=" w-full" src={item.illustration} alt="" /> */}
+                  {item.animation ? (
+                    <div className="lottie w-full">
+                      <Lottie loop={true} autoplay={true} animationData={uploadAnimation} />
+                    </div>
+                  ) : (
+                    <img className=" w-full" src={item.illustration} alt="" />
+                  )}
                 </div>
               </div>
             ))}
