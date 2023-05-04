@@ -19,17 +19,26 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { Button } from '../../../components/UI/Button';
 import { setAvatar } from '../../../store/actions/customizeVideoActions';
 import { formatId } from './data';
-import markIcon from '../../../assets/icons/mark-icon.png';
-import { MdCancel } from 'react-icons/md';
-import { GiCancel } from 'react-icons/gi';
+import { IoMdClose } from 'react-icons/io';
+import Lottie from 'lottie-react';
+import renderedAnimationSuccess from '../../../assets/animations/videoRenderedLottie.json';
+import renderAnimationError from '../../../assets/animations/videoRenderErrorLottie.json';
+import ReactDOM from 'react-dom';
 
 const CustomizeAudio = () => {
   const [numberOfSpeakers, setNumbers] = useState(1);
-  const [modalOpen, setModalOpen] = useState();
-  const [render, setRender] = useState();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [render, setRender] = useState(null);
   const [success, setSuccess] = useState();
   const [pollInterval, setPollingInterval] = useState(false);
   const [podcastVideoId, setPodcastVideoId] = useState('');
+
+  // Render overlay
+  const portalElement = document.getElementById('videoScene');
+
+  const overlay = () => {
+    return <>{ReactDOM.createPortal(<Backdrop />, portalElement)}</>;
+  };
 
   const navigate = useNavigate();
 
@@ -259,7 +268,7 @@ const CustomizeAudio = () => {
                     Video Selection Preview
                       </Text> */}
 
-                  <VideoScene speakers={numberOfSpeakers} />
+                  <VideoScene speakers={numberOfSpeakers} renderingStatus={render} />
                 </div>
                 {render ? <div className=" bg-black absolute w-22"> </div> : <div></div>}
                 {render ? <div></div> : <AudioWidget />}
@@ -284,26 +293,28 @@ const CustomizeAudio = () => {
           <Modal onClose={hideModal}>
             {success ? (
               <>
-                <div className="flex justify-center">
-                  <img src={markIcon} className=" w-[70px] md:w-[90px] lg:w-[120px]" />
+                <div className="flex justify-center h-[200px]">
+                  <Lottie loop={true} animationData={renderedAnimationSuccess} />
                 </div>
-                <div className=" flex flex-col text-center justify-center gap-6  bg-[#F8F8F8] ">
-                  <MdCancel
-                    size={30}
-                    onClick={handleClose}
-                    className="absolute text-[#72a2f4] right-1 top-0 cursor-pointer hover:text-[#2563eb]"
-                  />
+                <div className=" flex flex-col text-center justify-center">
+                  <div className="absolute flex justify-center bg-[#ffff] w-[40px] right-[-20px] top-[-20px] rounded-full py-1">
+                    <IoMdClose
+                      size={35}
+                      onClick={handleClose}
+                      className=" text-[#2158D2] right-[-20px] top-[-20px] cursor-pointer hover:text-[#2563eb] p-[1px]"
+                    />
+                  </div>
 
-                  <div className="flex flex-col justify-center gap-6">
+                  <div className="flex flex-col justify-center gap-4">
                     <div>
                       {' '}
-                      <h1 className=" text-[16px] lg:text-[20px] font-bold">
+                      <h1 className=" text-[18px] md:text-[22px] font-bold ]">
                         Your video has rendered successfully
                       </h1>
                     </div>
                     <div>
                       {' '}
-                      <p>
+                      <p className="text-[14px]">
                         Your video is ready for download. You can also check your videos in your
                         dashboard
                       </p>
@@ -327,22 +338,28 @@ const CustomizeAudio = () => {
               </>
             ) : (
               <>
-                <div className=" flex flex-col text-center justify-center gap-6  bg-[#F8F8F8] ">
+                <div className=" flex flex-col text-center justify-center gap-0  bg-[#F8F8F8] ">
                   <div className="flex justify-center">
-                    <GiCancel className=" text-[red] lg:text-[60px] md:text-[50px] text-[40px]" />
+                    <Lottie
+                      loop={true}
+                      animationData={renderAnimationError}
+                      className="w-[150px] md:w-[200px]"
+                    />
                   </div>
-                  {/* <MdCancel
-                      size={30}
+                  <div className="absolute flex justify-center bg-[#ffff] w-[40px] right-[-20px] top-[-20px] rounded-full py-1">
+                    <IoMdClose
+                      size={35}
                       onClick={handleClose}
-                      className="absolute text-[#72a2f4] right-1 top-0 cursor-pointer hover:text-[#2563eb]"
-                    /> */}
+                      className=" text-[#2158D2] right-[-20px] top-[-20px] cursor-pointer hover:text-[#2563eb] p-[1px]"
+                    />
+                  </div>
 
                   <div className="flex flex-col justify-center gap-6">
                     <div>
                       {' '}
-                      <h1 className=" text-[16px] lg:text-[20px] font-semibold">
-                        Ooops...we couldn't render your video. Please try again
-                      </h1>
+                      <p className=" text-[20px] lg:text-[20px] font-semibold">
+                        Ooops! Something went wrong and we couldn't render your video.
+                      </p>
                     </div>
                     <div className=" flex flex-col gap-6 ">
                       <div>
