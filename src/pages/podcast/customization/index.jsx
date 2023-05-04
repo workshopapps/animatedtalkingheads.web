@@ -23,7 +23,6 @@ import { IoMdClose } from 'react-icons/io';
 import Lottie from 'lottie-react';
 import renderedAnimationSuccess from '../../../assets/animations/videoRenderedLottie.json';
 import renderAnimationError from '../../../assets/animations/videoRenderErrorLottie.json';
-import ReactDOM from 'react-dom';
 
 const CustomizeAudio = () => {
   const [numberOfSpeakers, setNumbers] = useState(1);
@@ -32,13 +31,6 @@ const CustomizeAudio = () => {
   const [success, setSuccess] = useState();
   const [pollInterval, setPollingInterval] = useState(false);
   const [podcastVideoId, setPodcastVideoId] = useState('');
-
-  // Render overlay
-  const portalElement = document.getElementById('videoScene');
-
-  const overlay = () => {
-    return <>{ReactDOM.createPortal(<Backdrop />, portalElement)}</>;
-  };
 
   const navigate = useNavigate();
 
