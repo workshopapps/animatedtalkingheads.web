@@ -154,7 +154,7 @@ const TopNavbar = () => {
       <div className={`h-full flex justify-between items-center px-3 lg:px-20`}>
         <div className="flex">
           <Link to="/">
-            <img src={headerLogo} alt="home" />
+            <img height={"auto"} width={"70px"} src={headerLogo} alt="home" /> 
           </Link>
         </div>
         <div className={`${styles.links} hidden items-center  lg:flex lg:grow justify-between`}>

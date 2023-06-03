@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './styles.module.css';
 import { routes } from '../../../libs/links';
+import footerLogo from './../../../assets/icons/footer-logo.png';
 
 const links = [
   { id: 1, link: routes.dashboard, title: 'Overview', icon: 'Home' },
@@ -14,9 +15,9 @@ const SideNav = () => {
   const location = useLocation();
   return (
     <div className=" md:mt-10 py-2 ">
-      <div className="w-[90%] ml-auto hidden md:block">
+      <div className="hidden md:flex justify-center">
         <Link to="/">
-          <Logo text="white" />
+          <img width={"130px"} height={"auto"} src={footerLogo} alt="home" />
         </Link>
       </div>
       <div className="w-[90%] mx-auto md:w-full md:my-10 flex md:flex-col justify-between">

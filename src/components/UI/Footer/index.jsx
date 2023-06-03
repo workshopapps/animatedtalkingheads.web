@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 // import styles from './styles.module.css';
-import footerLogo from './../../../assets/icons/footer_logo.svg';
+import footerLogo from './../../../assets/icons/footer-logo.png';
 import settings from './../../../assets/icons/settings.svg';
 // import globe from './../../../assets/icons/white_globe.svg';
 import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
@@ -54,7 +54,7 @@ const Footer = ({ bg, text, icon, logo, width }) => {
         className={`${width} grid grid-cols-2  lg:grid-cols-5 gap-y-5 gap-x-5 lg:gap-x-0 py-10 max-w-[1440px]`}>
         <div className={`${logo} mb-10 lg:mb-0 flex flex-col justify-between`}>
           <Link to="/">
-            <img src={footerLogo} alt="home" />
+            <img width={"70px"} height={"auto"} src={footerLogo} alt="home" />
           </Link>
           <div className="hidden lg:block">
             <Link to="/settings-appearance">
